@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schema/docfx.schema.json",
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "Virtufin.WorkManager/Virtufin.WorkManager.csproj"
+          ],
+          "src": "/workspace/virtufin/virtufin-workmanager/src"
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "dest": ".",
+    "template": ["default", "modern", "templates/custom"],
+    "content": [
+      { "files": ["api/**/*.yml"] },
+      { "files": ["index.md"] }
+    ],
+    "globalMetadata": {
+      "_appTitle": "Virtufin WorkManager - C# Reference",
+      "_appName": "Virtufin.WorkManager",
+      "_appLogoPath": "logo.png",
+      "_appFaviconPath": "favicon.ico",
+      "_appFooter": "© 2026 Häner Consulting. All Rights Reserved.",
+      "_disableContribution": true,
+      "_disableAffix": true,
+      "gitCommitHash": "e24b768",
+      "gitCommitUrl": "{git_repo_url}/commit/e24b768f843c2f531dd0933fffaa2de0b718cc46",
+      "gitBranch": "master"
+    }
+  }
+}

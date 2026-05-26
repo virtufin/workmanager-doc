@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Configuration
+  commentId: N:Virtufin.WorkManager.Configuration
+  id: Virtufin.WorkManager.Configuration
+  children:
+  - Virtufin.WorkManager.Configuration.DaprConstants
+  - Virtufin.WorkManager.Configuration.PortConstants
+  langs:
+  - csharp
+  - vb
+  name: Virtufin.WorkManager.Configuration
+  nameWithType: Virtufin.WorkManager.Configuration
+  fullName: Virtufin.WorkManager.Configuration
+  type: Namespace
+  assemblies:
+  - Virtufin.WorkManager
+references:
+- uid: Virtufin.WorkManager.Configuration.DaprConstants
+  commentId: T:Virtufin.WorkManager.Configuration.DaprConstants
+  href: Virtufin.WorkManager.Configuration.DaprConstants.html
+  name: DaprConstants
+  nameWithType: DaprConstants
+  fullName: Virtufin.WorkManager.Configuration.DaprConstants
+- uid: Virtufin.WorkManager.Configuration.PortConstants
+  commentId: T:Virtufin.WorkManager.Configuration.PortConstants
+  href: Virtufin.WorkManager.Configuration.PortConstants.html
+  name: PortConstants
+  nameWithType: PortConstants
+  fullName: Virtufin.WorkManager.Configuration.PortConstants

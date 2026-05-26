@@ -1,0 +1,86 @@
+### YamlMime:TableOfContent
+items:
+- uid: Virtufin.WorkManager.Components
+  name: Virtufin.WorkManager.Components
+  type: Namespace
+  items:
+  - uid: Virtufin.WorkManager.Components.WorkManager
+    name: WorkManager
+    type: Class
+- uid: Virtufin.WorkManager.Configuration
+  name: Virtufin.WorkManager.Configuration
+  type: Namespace
+  items:
+  - uid: Virtufin.WorkManager.Configuration.DaprConstants
+    name: DaprConstants
+    type: Class
+  - uid: Virtufin.WorkManager.Configuration.PortConstants
+    name: PortConstants
+    type: Class
+- uid: Virtufin.WorkManager.Contracts
+  name: Virtufin.WorkManager.Contracts
+  type: Namespace
+  items:
+  - uid: Virtufin.WorkManager.Contracts.CodeSource
+    name: CodeSource
+    type: Class
+  - uid: Virtufin.WorkManager.Contracts.CodeSourceContent
+    name: CodeSourceContent
+    type: Class
+  - uid: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter
+    name: CodeSourceJsonConverter
+    type: Class
+  - uid: Virtufin.WorkManager.Contracts.CodeSourceUrl
+    name: CodeSourceUrl
+    type: Class
+  - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest
+    name: CreateWorkerRequest
+    type: Class
+  - uid: Virtufin.WorkManager.Contracts.EngineInfo
+    name: EngineInfo
+    type: Class
+  - uid: Virtufin.WorkManager.Contracts.HistoryEntry
+    name: HistoryEntry
+    type: Class
+  - uid: Virtufin.WorkManager.Contracts.IEngineRegistry
+    name: IEngineRegistry
+    type: Interface
+  - uid: Virtufin.WorkManager.Contracts.LockData
+    name: LockData
+    type: Class
+  - uid: Virtufin.WorkManager.Contracts.WorkerConfig
+    name: WorkerConfig
+    type: Class
+  - uid: Virtufin.WorkManager.Contracts.WorkerInfo
+    name: WorkerInfo
+    type: Class
+  - uid: Virtufin.WorkManager.Contracts.WorkerStatus
+    name: WorkerStatus
+    type: Enum
+- uid: Virtufin.WorkManager.Runtime
+  name: Virtufin.WorkManager.Runtime
+  type: Namespace
+  items:
+  - uid: Virtufin.WorkManager.Runtime.EngineNotFoundException
+    name: EngineNotFoundException
+    type: Class
+  - uid: Virtufin.WorkManager.Runtime.EngineRegistry
+    name: EngineRegistry
+    type: Class
+  - uid: Virtufin.WorkManager.Runtime.Worker
+    name: Worker
+    type: Class
+  - uid: Virtufin.WorkManager.Runtime.WorkerNotFoundException
+    name: WorkerNotFoundException
+    type: Class
+  - uid: Virtufin.WorkManager.Runtime.WorkerRegistry
+    name: WorkerRegistry
+    type: Class
+- uid: Virtufin.WorkManager.Services
+  name: Virtufin.WorkManager.Services
+  type: Namespace
+  items:
+  - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService
+    name: WorkManagerGrpcService
+    type: Class
+memberLayout: SamePage

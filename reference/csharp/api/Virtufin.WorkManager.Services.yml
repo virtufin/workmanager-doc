@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Services
+  commentId: N:Virtufin.WorkManager.Services
+  id: Virtufin.WorkManager.Services
+  children:
+  - Virtufin.WorkManager.Services.WorkManagerGrpcService
+  langs:
+  - csharp
+  - vb
+  name: Virtufin.WorkManager.Services
+  nameWithType: Virtufin.WorkManager.Services
+  fullName: Virtufin.WorkManager.Services
+  type: Namespace
+  assemblies:
+  - Virtufin.WorkManager
+references:
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService
+  commentId: T:Virtufin.WorkManager.Services.WorkManagerGrpcService
+  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html
+  name: WorkManagerGrpcService
+  nameWithType: WorkManagerGrpcService
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService

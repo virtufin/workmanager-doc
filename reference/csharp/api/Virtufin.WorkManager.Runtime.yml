@@ -1,0 +1,82 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Runtime
+  commentId: N:Virtufin.WorkManager.Runtime
+  id: Virtufin.WorkManager.Runtime
+  children:
+  - Virtufin.WorkManager.Runtime.EngineNotFoundException
+  - Virtufin.WorkManager.Runtime.EngineRegistry
+  - Virtufin.WorkManager.Runtime.Worker
+  - Virtufin.WorkManager.Runtime.WorkerNotFoundException
+  - Virtufin.WorkManager.Runtime.WorkerRegistry
+  langs:
+  - csharp
+  - vb
+  name: Virtufin.WorkManager.Runtime
+  nameWithType: Virtufin.WorkManager.Runtime
+  fullName: Virtufin.WorkManager.Runtime
+  type: Namespace
+  assemblies:
+  - Virtufin.WorkManager
+references:
+- uid: Virtufin.WorkManager.Runtime.EngineRegistry
+  commentId: T:Virtufin.WorkManager.Runtime.EngineRegistry
+  href: Virtufin.WorkManager.Runtime.EngineRegistry.html
+  name: EngineRegistry
+  nameWithType: EngineRegistry
+  fullName: Virtufin.WorkManager.Runtime.EngineRegistry
+- uid: Virtufin.WorkManager.Runtime.WorkerNotFoundException
+  commentId: T:Virtufin.WorkManager.Runtime.WorkerNotFoundException
+  href: Virtufin.WorkManager.Runtime.WorkerNotFoundException.html
+  name: WorkerNotFoundException
+  nameWithType: WorkerNotFoundException
+  fullName: Virtufin.WorkManager.Runtime.WorkerNotFoundException
+- uid: Virtufin.WorkManager.Runtime.EngineNotFoundException
+  commentId: T:Virtufin.WorkManager.Runtime.EngineNotFoundException
+  href: Virtufin.WorkManager.Runtime.EngineNotFoundException.html
+  name: EngineNotFoundException
+  nameWithType: EngineNotFoundException
+  fullName: Virtufin.WorkManager.Runtime.EngineNotFoundException
+- uid: Virtufin.WorkManager.Runtime.Worker
+  commentId: T:Virtufin.WorkManager.Runtime.Worker
+  parent: Virtufin.WorkManager.Runtime
+  href: Virtufin.WorkManager.Runtime.Worker.html
+  name: Worker
+  nameWithType: Worker
+  fullName: Virtufin.WorkManager.Runtime.Worker
+- uid: Virtufin.WorkManager.Runtime.WorkerRegistry
+  commentId: T:Virtufin.WorkManager.Runtime.WorkerRegistry
+  href: Virtufin.WorkManager.Runtime.WorkerRegistry.html
+  name: WorkerRegistry
+  nameWithType: WorkerRegistry
+  fullName: Virtufin.WorkManager.Runtime.WorkerRegistry
+- uid: Virtufin.WorkManager.Runtime
+  commentId: N:Virtufin.WorkManager.Runtime
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Runtime
+  nameWithType: Virtufin.WorkManager.Runtime
+  fullName: Virtufin.WorkManager.Runtime
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Runtime
+    name: Runtime
+    href: Virtufin.WorkManager.Runtime.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Runtime
+    name: Runtime
+    href: Virtufin.WorkManager.Runtime.html

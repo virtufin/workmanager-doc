@@ -1,0 +1,627 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Runtime.WorkerRegistry
+  commentId: T:Virtufin.WorkManager.Runtime.WorkerRegistry
+  id: WorkerRegistry
+  parent: Virtufin.WorkManager.Runtime
+  children:
+  - Virtufin.WorkManager.Runtime.WorkerRegistry.Add(Virtufin.WorkManager.Runtime.Worker)
+  - Virtufin.WorkManager.Runtime.WorkerRegistry.Exists(System.Guid)
+  - Virtufin.WorkManager.Runtime.WorkerRegistry.Get(System.Guid)
+  - Virtufin.WorkManager.Runtime.WorkerRegistry.GetAll
+  - Virtufin.WorkManager.Runtime.WorkerRegistry.Remove(System.Guid,Virtufin.WorkManager.Runtime.Worker@)
+  langs:
+  - csharp
+  - vb
+  name: WorkerRegistry
+  nameWithType: WorkerRegistry
+  fullName: Virtufin.WorkManager.Runtime.WorkerRegistry
+  type: Class
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: WorkerRegistry
+    path: ../../../src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
+    startLine: 8
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Runtime
+  summary: Registry for managing worker instances.
+  example: []
+  syntax:
+    content: public sealed class WorkerRegistry
+    content.vb: Public NotInheritable Class WorkerRegistry
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Virtufin.WorkManager.Runtime.WorkerRegistry.Add(Virtufin.WorkManager.Runtime.Worker)
+  commentId: M:Virtufin.WorkManager.Runtime.WorkerRegistry.Add(Virtufin.WorkManager.Runtime.Worker)
+  id: Add(Virtufin.WorkManager.Runtime.Worker)
+  parent: Virtufin.WorkManager.Runtime.WorkerRegistry
+  langs:
+  - csharp
+  - vb
+  name: Add(Worker)
+  nameWithType: WorkerRegistry.Add(Worker)
+  fullName: Virtufin.WorkManager.Runtime.WorkerRegistry.Add(Virtufin.WorkManager.Runtime.Worker)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Add
+    path: ../../../src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
+    startLine: 17
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Runtime
+  summary: Adds a worker to the registry.
+  example: []
+  syntax:
+    content: public void Add(Worker worker)
+    parameters:
+    - id: worker
+      type: Virtufin.WorkManager.Runtime.Worker
+      description: The worker to add.
+    content.vb: Public Sub Add(worker As Worker)
+  overload: Virtufin.WorkManager.Runtime.WorkerRegistry.Add*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown if a worker with the same ID already exists.
+- uid: Virtufin.WorkManager.Runtime.WorkerRegistry.Remove(System.Guid,Virtufin.WorkManager.Runtime.Worker@)
+  commentId: M:Virtufin.WorkManager.Runtime.WorkerRegistry.Remove(System.Guid,Virtufin.WorkManager.Runtime.Worker@)
+  id: Remove(System.Guid,Virtufin.WorkManager.Runtime.Worker@)
+  parent: Virtufin.WorkManager.Runtime.WorkerRegistry
+  langs:
+  - csharp
+  - vb
+  name: Remove(Guid, out Worker?)
+  nameWithType: WorkerRegistry.Remove(Guid, out Worker?)
+  fullName: Virtufin.WorkManager.Runtime.WorkerRegistry.Remove(System.Guid, out Virtufin.WorkManager.Runtime.Worker?)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Remove
+    path: ../../../src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
+    startLine: 31
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Runtime
+  summary: Removes a worker from the registry.
+  example: []
+  syntax:
+    content: public bool Remove(Guid id, out Worker? worker)
+    parameters:
+    - id: id
+      type: System.Guid
+      description: The ID of the worker to remove.
+    - id: worker
+      type: Virtufin.WorkManager.Runtime.Worker
+      description: When the method returns, contains the removed worker if found; otherwise, <code>null</code>.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the worker was removed; otherwise, <code>false</code>.
+    content.vb: Public Function Remove(id As Guid, worker As Worker) As Boolean
+  overload: Virtufin.WorkManager.Runtime.WorkerRegistry.Remove*
+  nameWithType.vb: WorkerRegistry.Remove(Guid, Worker)
+  fullName.vb: Virtufin.WorkManager.Runtime.WorkerRegistry.Remove(System.Guid, Virtufin.WorkManager.Runtime.Worker)
+  name.vb: Remove(Guid, Worker)
+- uid: Virtufin.WorkManager.Runtime.WorkerRegistry.Get(System.Guid)
+  commentId: M:Virtufin.WorkManager.Runtime.WorkerRegistry.Get(System.Guid)
+  id: Get(System.Guid)
+  parent: Virtufin.WorkManager.Runtime.WorkerRegistry
+  langs:
+  - csharp
+  - vb
+  name: Get(Guid)
+  nameWithType: WorkerRegistry.Get(Guid)
+  fullName: Virtufin.WorkManager.Runtime.WorkerRegistry.Get(System.Guid)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Get
+    path: ../../../src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
+    startLine: 41
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Runtime
+  summary: Gets a worker by ID.
+  example: []
+  syntax:
+    content: public Worker? Get(Guid id)
+    parameters:
+    - id: id
+      type: System.Guid
+      description: The worker's ID.
+    return:
+      type: Virtufin.WorkManager.Runtime.Worker
+      description: The worker, or <code>null</code> if not found.
+    content.vb: Public Function [Get](id As Guid) As Worker
+  overload: Virtufin.WorkManager.Runtime.WorkerRegistry.Get*
+- uid: Virtufin.WorkManager.Runtime.WorkerRegistry.GetAll
+  commentId: M:Virtufin.WorkManager.Runtime.WorkerRegistry.GetAll
+  id: GetAll
+  parent: Virtufin.WorkManager.Runtime.WorkerRegistry
+  langs:
+  - csharp
+  - vb
+  name: GetAll()
+  nameWithType: WorkerRegistry.GetAll()
+  fullName: Virtufin.WorkManager.Runtime.WorkerRegistry.GetAll()
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: GetAll
+    path: ../../../src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
+    startLine: 50
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Runtime
+  summary: Gets all registered workers.
+  example: []
+  syntax:
+    content: public IReadOnlyList<Worker> GetAll()
+    return:
+      type: System.Collections.Generic.IReadOnlyList{Virtufin.WorkManager.Runtime.Worker}
+      description: A read-only list of all workers.
+    content.vb: Public Function GetAll() As IReadOnlyList(Of Worker)
+  overload: Virtufin.WorkManager.Runtime.WorkerRegistry.GetAll*
+- uid: Virtufin.WorkManager.Runtime.WorkerRegistry.Exists(System.Guid)
+  commentId: M:Virtufin.WorkManager.Runtime.WorkerRegistry.Exists(System.Guid)
+  id: Exists(System.Guid)
+  parent: Virtufin.WorkManager.Runtime.WorkerRegistry
+  langs:
+  - csharp
+  - vb
+  name: Exists(Guid)
+  nameWithType: WorkerRegistry.Exists(Guid)
+  fullName: Virtufin.WorkManager.Runtime.WorkerRegistry.Exists(System.Guid)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Exists
+    path: ../../../src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
+    startLine: 60
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Runtime
+  summary: Checks if a worker with the given ID exists.
+  example: []
+  syntax:
+    content: public bool Exists(Guid id)
+    parameters:
+    - id: id
+      type: System.Guid
+      description: The worker's ID.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the worker exists; otherwise, <code>false</code>.
+    content.vb: Public Function Exists(id As Guid) As Boolean
+  overload: Virtufin.WorkManager.Runtime.WorkerRegistry.Exists*
+references:
+- uid: Virtufin.WorkManager.Runtime
+  commentId: N:Virtufin.WorkManager.Runtime
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Runtime
+  nameWithType: Virtufin.WorkManager.Runtime
+  fullName: Virtufin.WorkManager.Runtime
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Runtime
+    name: Runtime
+    href: Virtufin.WorkManager.Runtime.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Runtime
+    name: Runtime
+    href: Virtufin.WorkManager.Runtime.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
+- uid: Virtufin.WorkManager.Runtime.WorkerRegistry.Add*
+  commentId: Overload:Virtufin.WorkManager.Runtime.WorkerRegistry.Add
+  href: Virtufin.WorkManager.Runtime.WorkerRegistry.html#Virtufin_WorkManager_Runtime_WorkerRegistry_Add_Virtufin_WorkManager_Runtime_Worker_
+  name: Add
+  nameWithType: WorkerRegistry.Add
+  fullName: Virtufin.WorkManager.Runtime.WorkerRegistry.Add
+- uid: Virtufin.WorkManager.Runtime.Worker
+  commentId: T:Virtufin.WorkManager.Runtime.Worker
+  parent: Virtufin.WorkManager.Runtime
+  href: Virtufin.WorkManager.Runtime.Worker.html
+  name: Worker
+  nameWithType: Worker
+  fullName: Virtufin.WorkManager.Runtime.Worker
+- uid: Virtufin.WorkManager.Runtime.WorkerRegistry.Remove*
+  commentId: Overload:Virtufin.WorkManager.Runtime.WorkerRegistry.Remove
+  href: Virtufin.WorkManager.Runtime.WorkerRegistry.html#Virtufin_WorkManager_Runtime_WorkerRegistry_Remove_System_Guid_Virtufin_WorkManager_Runtime_Worker__
+  name: Remove
+  nameWithType: WorkerRegistry.Remove
+  fullName: Virtufin.WorkManager.Runtime.WorkerRegistry.Remove
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Virtufin.WorkManager.Runtime.WorkerRegistry.Get*
+  commentId: Overload:Virtufin.WorkManager.Runtime.WorkerRegistry.Get
+  href: Virtufin.WorkManager.Runtime.WorkerRegistry.html#Virtufin_WorkManager_Runtime_WorkerRegistry_Get_System_Guid_
+  name: Get
+  nameWithType: WorkerRegistry.Get
+  fullName: Virtufin.WorkManager.Runtime.WorkerRegistry.Get
+- uid: Virtufin.WorkManager.Runtime.WorkerRegistry.GetAll*
+  commentId: Overload:Virtufin.WorkManager.Runtime.WorkerRegistry.GetAll
+  href: Virtufin.WorkManager.Runtime.WorkerRegistry.html#Virtufin_WorkManager_Runtime_WorkerRegistry_GetAll
+  name: GetAll
+  nameWithType: WorkerRegistry.GetAll
+  fullName: Virtufin.WorkManager.Runtime.WorkerRegistry.GetAll
+- uid: System.Collections.Generic.IReadOnlyList{Virtufin.WorkManager.Runtime.Worker}
+  commentId: T:System.Collections.Generic.IReadOnlyList{Virtufin.WorkManager.Runtime.Worker}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<Worker>
+  nameWithType: IReadOnlyList<Worker>
+  fullName: System.Collections.Generic.IReadOnlyList<Virtufin.WorkManager.Runtime.Worker>
+  nameWithType.vb: IReadOnlyList(Of Worker)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Virtufin.WorkManager.Runtime.Worker)
+  name.vb: IReadOnlyList(Of Worker)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Virtufin.WorkManager.Runtime.Worker
+    name: Worker
+    href: Virtufin.WorkManager.Runtime.Worker.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Runtime.Worker
+    name: Worker
+    href: Virtufin.WorkManager.Runtime.Worker.html
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Virtufin.WorkManager.Runtime.WorkerRegistry.Exists*
+  commentId: Overload:Virtufin.WorkManager.Runtime.WorkerRegistry.Exists
+  href: Virtufin.WorkManager.Runtime.WorkerRegistry.html#Virtufin_WorkManager_Runtime_WorkerRegistry_Exists_System_Guid_
+  name: Exists
+  nameWithType: WorkerRegistry.Exists
+  fullName: Virtufin.WorkManager.Runtime.WorkerRegistry.Exists

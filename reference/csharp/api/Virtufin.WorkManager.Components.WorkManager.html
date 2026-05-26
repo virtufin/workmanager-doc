@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class WorkManager | Virtufin WorkManager - C# Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class WorkManager | Virtufin WorkManager - C# Reference ">
+      
+      <meta name="description" content="Manages worker lifecycle, subscriptions, and processing.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.png" alt="Virtufin.WorkManager">
+            Virtufin.WorkManager
+          </a>
+          <div class="git-info">
+            <a href="{git_repo_url}/commit/e24b768f843c2f531dd0933fffaa2de0b718cc46" target="_blank" rel="noopener" class="commit-badge" title="View commit e24b768">
+              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
+                <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"></rect>
+                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e24b768</text>
+              </svg>
+            </a>
+          </div>          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Virtufin.WorkManager.Components.WorkManager">
+
+
+
+  <h1 id="Virtufin_WorkManager_Components_WorkManager" data-uid="Virtufin.WorkManager.Components.WorkManager" class="text-break">
+Class WorkManager  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Virtufin.html">Virtufin</a>.<a class="xref" href="Virtufin.WorkManager.html">WorkManager</a>.<a class="xref" href="Virtufin.WorkManager.Components.html">Components</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Virtufin.WorkManager.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Manages worker lifecycle, subscriptions, and processing.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class WorkManager : IAsyncDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">WorkManager</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Virtufin_WorkManager_Components_WorkManager__ctor_" data-uid="Virtufin.WorkManager.Components.WorkManager.#ctor*"></a>
+
+  <h3 id="Virtufin_WorkManager_Components_WorkManager__ctor_Dapr_Messaging_PublishSubscribe_DaprPublishSubscribeClient_Dapr_Client_DaprClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_System_String_System_String_" data-uid="Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,System.String,System.String)">
+  WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger&lt;WorkManager&gt;, ILoggerFactory, string?, string?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new WorkManager instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WorkManager(DaprPublishSubscribeClient pubsubClient, DaprClient daprClient, IHttpClientFactory httpClientFactory, IEngineRegistry engineRegistry, ILogger&lt;WorkManager&gt; logger, ILoggerFactory loggerFactory, string? stateStoreName = null, string? pubsubName = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>pubsubClient</code> <span class="xref">DaprPublishSubscribeClient</span></dt>
+    <dd></dd>
+    <dt><code>daprClient</code> <span class="xref">DaprClient</span></dt>
+    <dd></dd>
+    <dt><code>httpClientFactory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.http.ihttpclientfactory">IHttpClientFactory</a></dt>
+    <dd></dd>
+    <dt><code>engineRegistry</code> <a class="xref" href="Virtufin.WorkManager.Contracts.IEngineRegistry.html">IEngineRegistry</a></dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="Virtufin.WorkManager.Components.WorkManager.html">WorkManager</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>loggerFactory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggerfactory">ILoggerFactory</a></dt>
+    <dd></dd>
+    <dt><code>stateStoreName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>pubsubName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Virtufin_WorkManager_Components_WorkManager_CreateWorkerAsync_" data-uid="Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync*"></a>
+
+  <h3 id="Virtufin_WorkManager_Components_WorkManager_CreateWorkerAsync_Virtufin_WorkManager_Contracts_CreateWorkerRequest_System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)">
+  CreateWorkerAsync(CreateWorkerRequest, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new worker and starts processing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateWorkerAsync(CreateWorkerRequest request, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <a class="xref" href="Virtufin.WorkManager.Contracts.CreateWorkerRequest.html">CreateWorkerRequest</a></dt>
+    <dd><p>The worker creation request.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Cancellation token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</dt>
+    <dd><p>The ID of the created worker.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Virtufin.WorkManager.Runtime.EngineNotFoundException.html">EngineNotFoundException</a></dt>
+    <dd><p>Thrown if no engine is registered for the requested MIME type.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Virtufin_WorkManager_Components_WorkManager_DeleteWorkerAsync_" data-uid="Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync*"></a>
+
+  <h3 id="Virtufin_WorkManager_Components_WorkManager_DeleteWorkerAsync_System_Guid_System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync(System.Guid,System.Threading.CancellationToken)">
+  DeleteWorkerAsync(Guid, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deletes a worker and its subscriptions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task DeleteWorkerAsync(Guid id, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>The worker ID.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Cancellation token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Virtufin.WorkManager.Runtime.WorkerNotFoundException.html">WorkerNotFoundException</a></dt>
+    <dd><p>Thrown if the worker is not found.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Virtufin_WorkManager_Components_WorkManager_DisposeAsync_" data-uid="Virtufin.WorkManager.Components.WorkManager.DisposeAsync*"></a>
+
+  <h3 id="Virtufin_WorkManager_Components_WorkManager_DisposeAsync" data-uid="Virtufin.WorkManager.Components.WorkManager.DisposeAsync">
+  DisposeAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or
+resetting unmanaged resources asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ValueTask DisposeAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask">ValueTask</a></dt>
+    <dd><p>A task that represents the asynchronous dispose operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Virtufin_WorkManager_Components_WorkManager_GetWorkerHistory_" data-uid="Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory*"></a>
+
+  <h3 id="Virtufin_WorkManager_Components_WorkManager_GetWorkerHistory_System_Guid_" data-uid="Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)">
+  GetWorkerHistory(Guid)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the code change history for a worker.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;HistoryEntry&gt; GetWorkerHistory(Guid id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>The worker ID.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Virtufin.WorkManager.Contracts.HistoryEntry.html">HistoryEntry</a>&gt;</dt>
+    <dd><p>A read-only list of history entries.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Virtufin.WorkManager.Runtime.WorkerNotFoundException.html">WorkerNotFoundException</a></dt>
+    <dd><p>Thrown if the worker is not found.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Virtufin_WorkManager_Components_WorkManager_ListWorkers_" data-uid="Virtufin.WorkManager.Components.WorkManager.ListWorkers*"></a>
+
+  <h3 id="Virtufin_WorkManager_Components_WorkManager_ListWorkers" data-uid="Virtufin.WorkManager.Components.WorkManager.ListWorkers">
+  ListWorkers()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Lists all workers with their current status.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;WorkerInfo&gt; ListWorkers()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Virtufin.WorkManager.Contracts.WorkerInfo.html">WorkerInfo</a>&gt;</dt>
+    <dd><p>A read-only list of worker information.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Virtufin_WorkManager_Components_WorkManager_LoadCodeFromContent_" data-uid="Virtufin.WorkManager.Components.WorkManager.LoadCodeFromContent*"></a>
+
+  <h3 id="Virtufin_WorkManager_Components_WorkManager_LoadCodeFromContent_System_Guid_System_Byte___System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Components.WorkManager.LoadCodeFromContent(System.Guid,System.Byte[],System.Threading.CancellationToken)">
+  LoadCodeFromContent(Guid, byte[], CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads new code from content into an existing worker.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task LoadCodeFromContent(Guid id, byte[] content, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>The worker ID.</p>
+</dd>
+    <dt><code>content</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The code content.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Cancellation token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Virtufin.WorkManager.Runtime.WorkerNotFoundException.html">WorkerNotFoundException</a></dt>
+    <dd><p>Thrown if the worker is not found.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if content is empty.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Virtufin_WorkManager_Components_WorkManager_LoadCodeFromUrl_" data-uid="Virtufin.WorkManager.Components.WorkManager.LoadCodeFromUrl*"></a>
+
+  <h3 id="Virtufin_WorkManager_Components_WorkManager_LoadCodeFromUrl_System_Guid_System_Uri_System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Components.WorkManager.LoadCodeFromUrl(System.Guid,System.Uri,System.Threading.CancellationToken)">
+  LoadCodeFromUrl(Guid, Uri, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads new code from a URL into an existing worker.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task LoadCodeFromUrl(Guid id, Uri url, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>The worker ID.</p>
+</dd>
+    <dt><code>url</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></dt>
+    <dd><p>The URL to fetch code from.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Cancellation token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Virtufin.WorkManager.Runtime.WorkerNotFoundException.html">WorkerNotFoundException</a></dt>
+    <dd><p>Thrown if the worker is not found.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if the URL is not absolute or has an invalid scheme.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Virtufin_WorkManager_Components_WorkManager_RecoverWorkersAsync_" data-uid="Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync*"></a>
+
+  <h3 id="Virtufin_WorkManager_Components_WorkManager_RecoverWorkersAsync_System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync(System.Threading.CancellationToken)">
+  RecoverWorkersAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Recovers all workers from persistent state and resumes processing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task RecoverWorkersAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Cancellation token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Virtufin.WorkManager.Runtime.EngineNotFoundException.html">EngineNotFoundException</a></dt>
+    <dd><p>Thrown if an engine is missing for a recovered worker.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Virtufin_WorkManager_Components_WorkManager_RegisterEngine_" data-uid="Virtufin.WorkManager.Components.WorkManager.RegisterEngine*"></a>
+
+  <h3 id="Virtufin_WorkManager_Components_WorkManager_RegisterEngine_System_Net_Mime_ContentType_System_String_System_Func_Virtufin_WorkManager_Engines_IEngine__" data-uid="Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})">
+  RegisterEngine(ContentType, string, Func&lt;IEngine&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Registers an engine to handle code execution for a specific content type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RegisterEngine(ContentType contentType, string languageName, Func&lt;IEngine&gt; engineFactory)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>contentType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.mime.contenttype">ContentType</a></dt>
+    <dd><p>The content type handled by the engine (e.g., &quot;text/x-python&quot;).</p>
+</dd>
+    <dt><code>languageName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The programming language name (e.g., &quot;Python&quot;).</p>
+</dd>
+    <dt><code>engineFactory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<span class="xref">IEngine</span>&gt;</dt>
+    <dd><p>Factory function that creates new engine instances.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></dt>
+    <dd><p>Thrown if an engine is already registered for the content type.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Virtufin_WorkManager_Components_WorkManager_StartWorkerAsync_" data-uid="Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync*"></a>
+
+  <h3 id="Virtufin_WorkManager_Components_WorkManager_StartWorkerAsync_System_Guid_System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync(System.Guid,System.Threading.CancellationToken)">
+  StartWorkerAsync(Guid, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Starts a stopped worker, resuming topic subscriptions and processing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StartWorkerAsync(Guid id, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>The worker ID.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Cancellation token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Virtufin.WorkManager.Runtime.WorkerNotFoundException.html">WorkerNotFoundException</a></dt>
+    <dd><p>Thrown if the worker is not found.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Virtufin_WorkManager_Components_WorkManager_StopWorkerAsync_" data-uid="Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync*"></a>
+
+  <h3 id="Virtufin_WorkManager_Components_WorkManager_StopWorkerAsync_System_Guid_System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync(System.Guid,System.Threading.CancellationToken)">
+  StopWorkerAsync(Guid, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Stops a running worker, pausing topic subscriptions and processing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StopWorkerAsync(Guid id, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd><p>The worker ID.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Cancellation token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Virtufin.WorkManager.Runtime.WorkerNotFoundException.html">WorkerNotFoundException</a></dt>
+    <dd><p>Thrown if the worker is not found.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+
+
+      </div>
+
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © 2026 Häner Consulting. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

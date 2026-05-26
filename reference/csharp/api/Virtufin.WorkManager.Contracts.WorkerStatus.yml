@@ -1,0 +1,155 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Contracts.WorkerStatus
+  commentId: T:Virtufin.WorkManager.Contracts.WorkerStatus
+  id: WorkerStatus
+  parent: Virtufin.WorkManager.Contracts
+  children:
+  - Virtufin.WorkManager.Contracts.WorkerStatus.Running
+  - Virtufin.WorkManager.Contracts.WorkerStatus.Stopped
+  - Virtufin.WorkManager.Contracts.WorkerStatus.Unspecified
+  langs:
+  - csharp
+  - vb
+  name: WorkerStatus
+  nameWithType: WorkerStatus
+  fullName: Virtufin.WorkManager.Contracts.WorkerStatus
+  type: Enum
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: WorkerStatus
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 127
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: Represents the operational status of a worker.
+  example: []
+  syntax:
+    content: public enum WorkerStatus
+    content.vb: Public Enum WorkerStatus
+- uid: Virtufin.WorkManager.Contracts.WorkerStatus.Unspecified
+  commentId: F:Virtufin.WorkManager.Contracts.WorkerStatus.Unspecified
+  id: Unspecified
+  parent: Virtufin.WorkManager.Contracts.WorkerStatus
+  langs:
+  - csharp
+  - vb
+  name: Unspecified
+  nameWithType: WorkerStatus.Unspecified
+  fullName: Virtufin.WorkManager.Contracts.WorkerStatus.Unspecified
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Unspecified
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 132
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: Unspecified status.
+  example: []
+  syntax:
+    content: Unspecified = 0
+    return:
+      type: Virtufin.WorkManager.Contracts.WorkerStatus
+- uid: Virtufin.WorkManager.Contracts.WorkerStatus.Stopped
+  commentId: F:Virtufin.WorkManager.Contracts.WorkerStatus.Stopped
+  id: Stopped
+  parent: Virtufin.WorkManager.Contracts.WorkerStatus
+  langs:
+  - csharp
+  - vb
+  name: Stopped
+  nameWithType: WorkerStatus.Stopped
+  fullName: Virtufin.WorkManager.Contracts.WorkerStatus.Stopped
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Stopped
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 136
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: The worker is stopped.
+  example: []
+  syntax:
+    content: Stopped = 1
+    return:
+      type: Virtufin.WorkManager.Contracts.WorkerStatus
+- uid: Virtufin.WorkManager.Contracts.WorkerStatus.Running
+  commentId: F:Virtufin.WorkManager.Contracts.WorkerStatus.Running
+  id: Running
+  parent: Virtufin.WorkManager.Contracts.WorkerStatus
+  langs:
+  - csharp
+  - vb
+  name: Running
+  nameWithType: WorkerStatus.Running
+  fullName: Virtufin.WorkManager.Contracts.WorkerStatus.Running
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Running
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 140
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: The worker is running.
+  example: []
+  syntax:
+    content: Running = 2
+    return:
+      type: Virtufin.WorkManager.Contracts.WorkerStatus
+references:
+- uid: Virtufin.WorkManager.Contracts
+  commentId: N:Virtufin.WorkManager.Contracts
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Contracts
+  nameWithType: Virtufin.WorkManager.Contracts
+  fullName: Virtufin.WorkManager.Contracts
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
+- uid: Virtufin.WorkManager.Contracts.WorkerStatus
+  commentId: T:Virtufin.WorkManager.Contracts.WorkerStatus
+  parent: Virtufin.WorkManager.Contracts
+  href: Virtufin.WorkManager.Contracts.WorkerStatus.html
+  name: WorkerStatus
+  nameWithType: WorkerStatus
+  fullName: Virtufin.WorkManager.Contracts.WorkerStatus

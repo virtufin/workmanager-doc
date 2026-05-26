@@ -1,0 +1,494 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Contracts.CodeSourceContent
+  commentId: T:Virtufin.WorkManager.Contracts.CodeSourceContent
+  id: CodeSourceContent
+  parent: Virtufin.WorkManager.Contracts
+  children:
+  - Virtufin.WorkManager.Contracts.CodeSourceContent.#ctor(System.Byte[])
+  - Virtufin.WorkManager.Contracts.CodeSourceContent.Content
+  langs:
+  - csharp
+  - vb
+  name: CodeSourceContent
+  nameWithType: CodeSourceContent
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceContent
+  type: Class
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: CodeSourceContent
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 22
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: Represents code sourced from direct content.
+  example: []
+  syntax:
+    content: 'public sealed record CodeSourceContent : CodeSource, IEquatable<CodeSource>, IEquatable<CodeSourceContent>'
+    content.vb: Public NotInheritable Class CodeSourceContent Inherits CodeSource Implements IEquatable(Of CodeSource), IEquatable(Of CodeSourceContent)
+  inheritance:
+  - System.Object
+  - Virtufin.WorkManager.Contracts.CodeSource
+  implements:
+  - System.IEquatable{Virtufin.WorkManager.Contracts.CodeSource}
+  - System.IEquatable{Virtufin.WorkManager.Contracts.CodeSourceContent}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Virtufin.WorkManager.Contracts.CodeSourceContent.#ctor(System.Byte[])
+  commentId: M:Virtufin.WorkManager.Contracts.CodeSourceContent.#ctor(System.Byte[])
+  id: '#ctor(System.Byte[])'
+  parent: Virtufin.WorkManager.Contracts.CodeSourceContent
+  langs:
+  - csharp
+  - vb
+  name: CodeSourceContent(byte[])
+  nameWithType: CodeSourceContent.CodeSourceContent(byte[])
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceContent.CodeSourceContent(byte[])
+  type: Constructor
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: .ctor
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 22
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: Represents code sourced from direct content.
+  example: []
+  syntax:
+    content: public CodeSourceContent(byte[] Content)
+    parameters:
+    - id: Content
+      type: System.Byte[]
+      description: The byte content of the code.
+    content.vb: Public Sub New(Content As Byte())
+  overload: Virtufin.WorkManager.Contracts.CodeSourceContent.#ctor*
+  nameWithType.vb: CodeSourceContent.New(Byte())
+  fullName.vb: Virtufin.WorkManager.Contracts.CodeSourceContent.New(Byte())
+  name.vb: New(Byte())
+- uid: Virtufin.WorkManager.Contracts.CodeSourceContent.Content
+  commentId: P:Virtufin.WorkManager.Contracts.CodeSourceContent.Content
+  id: Content
+  parent: Virtufin.WorkManager.Contracts.CodeSourceContent
+  langs:
+  - csharp
+  - vb
+  name: Content
+  nameWithType: CodeSourceContent.Content
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceContent.Content
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Content
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 22
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: The byte content of the code.
+  example: []
+  syntax:
+    content: public byte[] Content { get; init; }
+    parameters: []
+    return:
+      type: System.Byte[]
+    content.vb: Public Property Content As Byte()
+  overload: Virtufin.WorkManager.Contracts.CodeSourceContent.Content*
+references:
+- uid: Virtufin.WorkManager.Contracts
+  commentId: N:Virtufin.WorkManager.Contracts
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Contracts
+  nameWithType: Virtufin.WorkManager.Contracts
+  fullName: Virtufin.WorkManager.Contracts
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Virtufin.WorkManager.Contracts.CodeSource
+  commentId: T:Virtufin.WorkManager.Contracts.CodeSource
+  parent: Virtufin.WorkManager.Contracts
+  href: Virtufin.WorkManager.Contracts.CodeSource.html
+  name: CodeSource
+  nameWithType: CodeSource
+  fullName: Virtufin.WorkManager.Contracts.CodeSource
+- uid: System.IEquatable{Virtufin.WorkManager.Contracts.CodeSource}
+  commentId: T:System.IEquatable{Virtufin.WorkManager.Contracts.CodeSource}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<CodeSource>
+  nameWithType: IEquatable<CodeSource>
+  fullName: System.IEquatable<Virtufin.WorkManager.Contracts.CodeSource>
+  nameWithType.vb: IEquatable(Of CodeSource)
+  fullName.vb: System.IEquatable(Of Virtufin.WorkManager.Contracts.CodeSource)
+  name.vb: IEquatable(Of CodeSource)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: Virtufin.WorkManager.Contracts.CodeSource
+    name: CodeSource
+    href: Virtufin.WorkManager.Contracts.CodeSource.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Contracts.CodeSource
+    name: CodeSource
+    href: Virtufin.WorkManager.Contracts.CodeSource.html
+  - name: )
+- uid: System.IEquatable{Virtufin.WorkManager.Contracts.CodeSourceContent}
+  commentId: T:System.IEquatable{Virtufin.WorkManager.Contracts.CodeSourceContent}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<CodeSourceContent>
+  nameWithType: IEquatable<CodeSourceContent>
+  fullName: System.IEquatable<Virtufin.WorkManager.Contracts.CodeSourceContent>
+  nameWithType.vb: IEquatable(Of CodeSourceContent)
+  fullName.vb: System.IEquatable(Of Virtufin.WorkManager.Contracts.CodeSourceContent)
+  name.vb: IEquatable(Of CodeSourceContent)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: Virtufin.WorkManager.Contracts.CodeSourceContent
+    name: CodeSourceContent
+    href: Virtufin.WorkManager.Contracts.CodeSourceContent.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Contracts.CodeSourceContent
+    name: CodeSourceContent
+    href: Virtufin.WorkManager.Contracts.CodeSourceContent.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Virtufin.WorkManager.Contracts.CodeSourceContent.#ctor*
+  commentId: Overload:Virtufin.WorkManager.Contracts.CodeSourceContent.#ctor
+  href: Virtufin.WorkManager.Contracts.CodeSourceContent.html#Virtufin_WorkManager_Contracts_CodeSourceContent__ctor_System_Byte___
+  name: CodeSourceContent
+  nameWithType: CodeSourceContent.CodeSourceContent
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceContent.CodeSourceContent
+  nameWithType.vb: CodeSourceContent.New
+  fullName.vb: Virtufin.WorkManager.Contracts.CodeSourceContent.New
+  name.vb: New
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: Virtufin.WorkManager.Contracts.CodeSourceContent.Content*
+  commentId: Overload:Virtufin.WorkManager.Contracts.CodeSourceContent.Content
+  href: Virtufin.WorkManager.Contracts.CodeSourceContent.html#Virtufin_WorkManager_Contracts_CodeSourceContent_Content
+  name: Content
+  nameWithType: CodeSourceContent.Content
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceContent.Content

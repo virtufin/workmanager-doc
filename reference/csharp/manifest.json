@@ -1,0 +1,388 @@
+{
+  "source_base_path": "/workspace/virtufin/virtufin-workmanager/docs-site/reference/csharp",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Components.WorkManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Components.WorkManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Components.WorkManager",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Components.WorkManager.yml\" sourcestartlinenumber=\"1\">Manages worker lifecycle, subscriptions, and processing.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Components.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Components.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Components",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Configuration.DaprConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Configuration.DaprConstants.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Configuration.DaprConstants",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Configuration.PortConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Configuration.PortConstants.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Configuration.PortConstants",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.PortConstants.yml\" sourcestartlinenumber=\"1\">Default port constants used by the WorkManager service.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Configuration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Configuration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Contracts.CodeSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Contracts.CodeSource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Contracts.CodeSource",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Contracts.CodeSource.yml\" sourcestartlinenumber=\"1\">Abstract base record representing the source of worker code.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Contracts.CodeSourceContent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Contracts.CodeSourceContent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Contracts.CodeSourceContent",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Contracts.CodeSourceContent.yml\" sourcestartlinenumber=\"1\">Represents code sourced from direct content.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Contracts.CodeSourceJsonConverter",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.yml\" sourcestartlinenumber=\"1\">JSON converter for <xref href=\"Virtufin.WorkManager.Contracts.CodeSource\" data-throw-if-not-resolved=\"false\"></xref> types.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Contracts.CodeSourceUrl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Contracts.CodeSourceUrl.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Contracts.CodeSourceUrl",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Contracts.CodeSourceUrl.yml\" sourcestartlinenumber=\"1\">Represents code sourced from a URL.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Contracts.CreateWorkerRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Contracts.CreateWorkerRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Contracts.CreateWorkerRequest",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Contracts.CreateWorkerRequest.yml\" sourcestartlinenumber=\"1\">Request to create a new worker.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Contracts.EngineInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Contracts.EngineInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Contracts.EngineInfo",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Contracts.EngineInfo.yml\" sourcestartlinenumber=\"1\">Information about a registered engine.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Contracts.HistoryEntry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Contracts.HistoryEntry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Contracts.HistoryEntry",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Contracts.HistoryEntry.yml\" sourcestartlinenumber=\"1\">Represents a history entry for code changes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Contracts.IEngineRegistry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Contracts.IEngineRegistry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Contracts.IEngineRegistry",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Contracts.IEngineRegistry.yml\" sourcestartlinenumber=\"1\">Provides mechanisms for registering and retrieving engine instances based on content type.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Contracts.LockData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Contracts.LockData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Contracts.LockData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Contracts.WorkerConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Contracts.WorkerConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Contracts.WorkerConfig",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Contracts.WorkerConfig.yml\" sourcestartlinenumber=\"1\">Configuration for a worker instance.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Contracts.WorkerInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Contracts.WorkerInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Contracts.WorkerInfo",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Contracts.WorkerInfo.yml\" sourcestartlinenumber=\"1\">Information about a worker instance.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Contracts.WorkerStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Contracts.WorkerStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Contracts.WorkerStatus",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Contracts.WorkerStatus.yml\" sourcestartlinenumber=\"1\">Represents the operational status of a worker.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Contracts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Contracts.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Contracts",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Runtime.EngineNotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Runtime.EngineNotFoundException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Runtime.EngineNotFoundException",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Runtime.EngineNotFoundException.yml\" sourcestartlinenumber=\"1\">Exception thrown when no engine is registered for a MIME type.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Runtime.EngineRegistry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Runtime.EngineRegistry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Runtime.EngineRegistry",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Runtime.EngineRegistry.yml\" sourcestartlinenumber=\"1\">Registry for managing engine instances.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Runtime.Worker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Runtime.Worker.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Runtime.Worker",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Runtime.Worker.yml\" sourcestartlinenumber=\"1\">Represents a worker instance that processes cloud events using an engine.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Runtime.WorkerNotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Runtime.WorkerNotFoundException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Runtime.WorkerNotFoundException",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Runtime.WorkerNotFoundException.yml\" sourcestartlinenumber=\"1\">Exception thrown when a worker is not found.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Runtime.WorkerRegistry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Runtime.WorkerRegistry.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Runtime.WorkerRegistry",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Runtime.WorkerRegistry.yml\" sourcestartlinenumber=\"1\">Registry for managing worker instances.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Runtime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Runtime.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Runtime",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.WorkManagerGrpcService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.WorkManagerGrpcService",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerGrpcService.yml\" sourcestartlinenumber=\"1\">gRPC service implementation for the WorkManager.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

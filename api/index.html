@@ -1,0 +1,1968 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Virtufin WorkManager system">
+      
+      
+      
+        <link rel="canonical" href="https://workmanager.doc.virtufin.com/api/">
+      
+      
+        <link rel="prev" href="../configuration/">
+      
+      
+        <link rel="next" href="../csharp-client/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Reference - Virtufin WorkManager Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Virtufin WorkManager Documentation" class="md-header__button md-logo" aria-label="Virtufin WorkManager Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Virtufin WorkManager Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <div class="md-source-wrapper">
+  <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager" title="Go to repository" class="md-source-repo-link">
+    <div class="md-source__icon md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    </div>
+    <span class="md-source__repository">virtufin/virtufin-workmanager</span>
+  </a>
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e24b768f843c2f531dd0933fffaa2de0b718cc46"
+       class="md-source-commit-badge"
+       target="_blank"
+       rel="noopener"
+       title="View commit e24b768">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
+        <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e24b768</text>
+      </svg>
+    </a>
+</div>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../introduction/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getting-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../engines/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Engine System
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../worker-lifecycle/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Worker Lifecycle
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../configuration/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Configuration
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Virtufin WorkManager Documentation" class="md-nav__button md-logo" aria-label="Virtufin WorkManager Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+    Virtufin WorkManager Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <div class="md-source-wrapper">
+  <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager" title="Go to repository" class="md-source-repo-link">
+    <div class="md-source__icon md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    </div>
+    <span class="md-source__repository">virtufin/virtufin-workmanager</span>
+  </a>
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e24b768f843c2f531dd0933fffaa2de0b718cc46"
+       class="md-source-commit-badge"
+       target="_blank"
+       rel="noopener"
+       title="View commit e24b768">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
+        <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e24b768</text>
+      </svg>
+    </a>
+</div>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engine System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../worker-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worker Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#workmanager-componentsworkmanagercs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkManager (Components/WorkManager.cs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WorkManager (Components/WorkManager.cs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createworkerasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CreateWorkerAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadcodefromcontent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoadCodeFromContent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadcodefromurl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoadCodeFromUrl
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleteworkerasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeleteWorkerAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startworkerasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StartWorkerAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopworkerasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StopWorkerAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listworkers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ListWorkers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getworkerhistory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWorkerHistory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recoverworkersasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RecoverWorkersAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registerengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegisterEngine
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iengineregistry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IEngineRegistry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IEngineRegistry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Register
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unregister" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unregister
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetEngine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listengines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ListEngines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workerregistry-runtimeworkerregistrycs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkerRegistry (Runtime/WorkerRegistry.cs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WorkerRegistry (Runtime/WorkerRegistry.cs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remove
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetAll
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exists
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exceptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exceptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workernotfoundexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkerNotFoundException
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enginenotfoundexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EngineNotFoundException
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workerstatus-enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkerStatus Enum
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csharp-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C# SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typescript-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TypeScript SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#workmanager-componentsworkmanagercs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkManager (Components/WorkManager.cs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WorkManager (Components/WorkManager.cs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createworkerasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CreateWorkerAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadcodefromcontent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoadCodeFromContent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadcodefromurl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LoadCodeFromUrl
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleteworkerasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeleteWorkerAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startworkerasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StartWorkerAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopworkerasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StopWorkerAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listworkers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ListWorkers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getworkerhistory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetWorkerHistory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recoverworkersasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RecoverWorkersAsync
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registerengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RegisterEngine
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iengineregistry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IEngineRegistry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IEngineRegistry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Register
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unregister" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unregister
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetEngine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listengines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ListEngines
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workerregistry-runtimeworkerregistrycs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkerRegistry (Runtime/WorkerRegistry.cs)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WorkerRegistry (Runtime/WorkerRegistry.cs)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remove
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetAll
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exists
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exceptions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exceptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workernotfoundexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkerNotFoundException
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enginenotfoundexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EngineNotFoundException
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workerstatus-enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkerStatus Enum
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-reference">API Reference</h1>
+<h2 id="workmanager-componentsworkmanagercs">WorkManager (Components/WorkManager.cs)</h2>
+<p>Main service component managing worker lifecycle, subscriptions, and processing.</p>
+<h3 id="createworkerasync">CreateWorkerAsync</h3>
+<p>Creates a new worker and starts processing.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Guid</span><span class="o">&gt;</span><span class="w"> </span><span class="n">CreateWorkerAsync</span><span class="p">(</span><span class="n">CreateWorkerRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>request</code></td>
+<td><code>CreateWorkerRequest</code></td>
+<td>Worker configuration</td>
+</tr>
+<tr>
+<td><code>cancellationToken</code></td>
+<td><code>CancellationToken</code></td>
+<td>Optional cancellation token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>CreateWorkerRequest:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CodeSource</code></td>
+<td><code>CodeSource</code></td>
+<td>Source of worker code (<code>CodeSourceUrl</code> or <code>CodeSourceContent</code>)</td>
+</tr>
+<tr>
+<td><code>MimeType</code></td>
+<td><code>string</code></td>
+<td>MIME type (e.g., <code>"text/x-python"</code>)</td>
+</tr>
+<tr>
+<td><code>Topic</code></td>
+<td><code>string</code></td>
+<td>Pub/sub topic to subscribe to</td>
+</tr>
+<tr>
+<td><code>Group</code></td>
+<td><code>string?</code></td>
+<td>Optional group for coordinated execution</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> The newly created worker's ID.</p>
+<p><strong>Exceptions:</strong>
+- <code>EngineNotFoundException</code>: No engine registered for the MIME type.</p>
+<hr />
+<h3 id="loadcodefromcontent">LoadCodeFromContent</h3>
+<p>Loads new code from inline content into an existing worker.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">LoadCodeFromContent</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kt">byte</span><span class="p">[]</span><span class="w"> </span><span class="n">content</span><span class="p">,</span><span class="w"> </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Guid</code></td>
+<td>Worker ID</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td><code>byte[]</code></td>
+<td>New code content (UTF-8 bytes)</td>
+</tr>
+<tr>
+<td><code>cancellationToken</code></td>
+<td><code>CancellationToken</code></td>
+<td>Optional cancellation token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong>
+- <code>WorkerNotFoundException</code>: Worker does not exist.
+- <code>ArgumentException</code>: Content is empty.</p>
+<hr />
+<h3 id="loadcodefromurl">LoadCodeFromUrl</h3>
+<p>Loads new code from a URL into an existing worker.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">LoadCodeFromUrl</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">Uri</span><span class="w"> </span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Guid</code></td>
+<td>Worker ID</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>Uri</code></td>
+<td>Absolute HTTP or HTTPS URL</td>
+</tr>
+<tr>
+<td><code>cancellationToken</code></td>
+<td><code>CancellationToken</code></td>
+<td>Optional cancellation token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong>
+- <code>WorkerNotFoundException</code>: Worker does not exist.
+- <code>ArgumentException</code>: URL is not absolute or has invalid scheme (not http/https).</p>
+<hr />
+<h3 id="deleteworkerasync">DeleteWorkerAsync</h3>
+<p>Deletes a worker and its subscriptions.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">DeleteWorkerAsync</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Guid</code></td>
+<td>Worker ID</td>
+</tr>
+<tr>
+<td><code>cancellationToken</code></td>
+<td><code>CancellationToken</code></td>
+<td>Optional cancellation token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong>
+- <code>WorkerNotFoundException</code>: Worker does not exist.</p>
+<hr />
+<h3 id="startworkerasync">StartWorkerAsync</h3>
+<p>Starts a stopped worker, resuming topic subscriptions and processing.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">StartWorkerAsync</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Guid</code></td>
+<td>Worker ID</td>
+</tr>
+<tr>
+<td><code>cancellationToken</code></td>
+<td><code>CancellationToken</code></td>
+<td>Optional cancellation token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong>
+- <code>WorkerNotFoundException</code>: Worker does not exist.</p>
+<p><strong>Notes:</strong> If worker is already running, this is a no-op.</p>
+<hr />
+<h3 id="stopworkerasync">StopWorkerAsync</h3>
+<p>Stops a running worker, pausing topic subscriptions and processing.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">StopWorkerAsync</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Guid</code></td>
+<td>Worker ID</td>
+</tr>
+<tr>
+<td><code>cancellationToken</code></td>
+<td><code>CancellationToken</code></td>
+<td>Optional cancellation token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong>
+- <code>WorkerNotFoundException</code>: Worker does not exist.</p>
+<p><strong>Notes:</strong> If worker is already stopped, this is a no-op.</p>
+<hr />
+<h3 id="listworkers">ListWorkers</h3>
+<p>Lists all workers with their current status.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">WorkerInfo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ListWorkers</span><span class="p">()</span>
+</code></pre></div>
+<p><strong>Returns:</strong> Read-only list of <code>WorkerInfo</code> records.</p>
+<p><strong>WorkerInfo fields:</strong>
+| Field | Type | Description |
+|-------|------|-------------|
+| <code>Id</code> | <code>Guid</code> | Unique identifier |
+| <code>CodeSource</code> | <code>CodeSource</code> | Original code source |
+| <code>MimeType</code> | <code>string</code> | Content MIME type |
+| <code>Language</code> | <code>string</code> | Programming language name |
+| <code>Topic</code> | <code>string</code> | Subscribed topic |
+| <code>Group</code> | <code>string?</code> | Coordination group |
+| <code>CreatedAt</code> | <code>DateTime</code> | Creation timestamp |
+| <code>Status</code> | <code>WorkerStatus</code> | <code>Running</code> or <code>Stopped</code> |</p>
+<hr />
+<h3 id="getworkerhistory">GetWorkerHistory</h3>
+<p>Gets the code change history for a worker.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">HistoryEntry</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetWorkerHistory</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Guid</code></td>
+<td>Worker ID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> List of history entries (oldest first).</p>
+<p><strong>HistoryEntry fields:</strong>
+| Field | Type | Description |
+|-------|------|-------------|
+| <code>CodeSource</code> | <code>CodeSource</code> | Code source at this point |
+| <code>CreatedAt</code> | <code>DateTime</code> | When this version was loaded |</p>
+<p><strong>Exceptions:</strong>
+- <code>WorkerNotFoundException</code>: Worker does not exist.</p>
+<hr />
+<h3 id="recoverworkersasync">RecoverWorkersAsync</h3>
+<p>Recovers all workers from persistent state and resumes processing.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">RecoverWorkersAsync</span><span class="p">(</span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cancellationToken</code></td>
+<td><code>CancellationToken</code></td>
+<td>Optional cancellation token</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong>
+- <code>EngineNotFoundException</code>: An engine is missing for a recovered worker's MIME type.</p>
+<p><strong>Notes:</strong> All engines must be registered before calling this method.</p>
+<hr />
+<h3 id="registerengine">RegisterEngine</h3>
+<p>Registers an engine to handle code execution for a specific content type.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">RegisterEngine</span><span class="p">(</span><span class="n">ContentType</span><span class="w"> </span><span class="n">contentType</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">languageName</span><span class="p">,</span><span class="w"> </span><span class="n">Func</span><span class="o">&lt;</span><span class="n">IEngine</span><span class="o">&gt;</span><span class="w"> </span><span class="n">engineFactory</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>contentType</code></td>
+<td><code>ContentType</code></td>
+<td>Content type handled (e.g., <code>new ContentType("text/x-python")</code>)</td>
+</tr>
+<tr>
+<td><code>languageName</code></td>
+<td><code>string</code></td>
+<td>Human-readable language name</td>
+</tr>
+<tr>
+<td><code>engineFactory</code></td>
+<td><code>Func&lt;IEngine&gt;</code></td>
+<td>Factory function creating new engine instances</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong>
+- <code>InvalidOperationException</code>: Engine already registered for this content type.</p>
+<hr />
+<h2 id="iengineregistry">IEngineRegistry</h2>
+<p>Interface for engine registration and lookup.</p>
+<h3 id="register">Register</h3>
+<div class="highlight"><pre><span></span><code><span class="k">void</span><span class="w"> </span><span class="nf">Register</span><span class="p">(</span><span class="n">ContentType</span><span class="w"> </span><span class="n">contentType</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">languageName</span><span class="p">,</span><span class="w"> </span><span class="n">Func</span><span class="o">&lt;</span><span class="n">IEngine</span><span class="o">&gt;</span><span class="w"> </span><span class="n">engineFactory</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="unregister">Unregister</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">Unregister</span><span class="p">(</span><span class="n">ContentType</span><span class="w"> </span><span class="n">contentType</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Returns:</strong> <code>true</code> if an engine was unregistered; <code>false</code> if none existed.</p>
+<h3 id="getengine">GetEngine</h3>
+<div class="highlight"><pre><span></span><code><span class="n">IEngine</span><span class="o">?</span><span class="w"> </span><span class="n">GetEngine</span><span class="p">(</span><span class="n">ContentType</span><span class="w"> </span><span class="n">contentType</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Returns:</strong> New engine instance for the content type, or <code>null</code> if none registered.</p>
+<h3 id="listengines">ListEngines</h3>
+<div class="highlight"><pre><span></span><code><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">EngineInfo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ListEngines</span><span class="p">()</span>
+</code></pre></div>
+<p><strong>Returns:</strong> List of all registered engines with their MIME types and language names.</p>
+<hr />
+<h2 id="workerregistry-runtimeworkerregistrycs">WorkerRegistry (Runtime/WorkerRegistry.cs)</h2>
+<p>In-memory worker storage.</p>
+<h3 id="add">Add</h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="n">Worker</span><span class="w"> </span><span class="n">worker</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Exceptions:</strong>
+- <code>InvalidOperationException</code>: Worker with same ID already exists.</p>
+<h3 id="remove">Remove</h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Remove</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">Worker</span><span class="o">?</span><span class="w"> </span><span class="n">worker</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Returns:</strong> <code>true</code> if worker was removed; <code>false</code> if not found.</p>
+<h3 id="get">Get</h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="n">Worker</span><span class="o">?</span><span class="w"> </span><span class="n">Get</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Returns:</strong> Worker instance or <code>null</code> if not found.</p>
+<h3 id="getall">GetAll</h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">Worker</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetAll</span><span class="p">()</span>
+</code></pre></div>
+<p><strong>Returns:</strong> All registered workers.</p>
+<h3 id="exists">Exists</h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Exists</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Returns:</strong> <code>true</code> if worker exists; <code>false</code> otherwise.</p>
+<hr />
+<h2 id="exceptions">Exceptions</h2>
+<h3 id="workernotfoundexception">WorkerNotFoundException</h3>
+<p>Thrown when a worker operation targets a non-existent worker.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">WorkerNotFoundException</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Exception</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Guid</span><span class="w"> </span><span class="n">WorkerId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="enginenotfoundexception">EngineNotFoundException</h3>
+<p>Thrown when no engine is registered for a requested MIME type.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">EngineNotFoundException</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Exception</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">MimeType</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="workerstatus-enum">WorkerStatus Enum</h2>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">WorkerStatus</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Unspecified</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Stopped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Running</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Häner Consulting. All Rights Reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

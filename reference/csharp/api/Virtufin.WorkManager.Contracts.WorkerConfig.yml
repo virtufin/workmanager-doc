@@ -1,0 +1,810 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig
+  commentId: T:Virtufin.WorkManager.Contracts.WorkerConfig
+  id: WorkerConfig
+  parent: Virtufin.WorkManager.Contracts
+  children:
+  - Virtufin.WorkManager.Contracts.WorkerConfig.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry})
+  - Virtufin.WorkManager.Contracts.WorkerConfig.CodeSource
+  - Virtufin.WorkManager.Contracts.WorkerConfig.CreatedAt
+  - Virtufin.WorkManager.Contracts.WorkerConfig.Group
+  - Virtufin.WorkManager.Contracts.WorkerConfig.History
+  - Virtufin.WorkManager.Contracts.WorkerConfig.Id
+  - Virtufin.WorkManager.Contracts.WorkerConfig.MimeType
+  - Virtufin.WorkManager.Contracts.WorkerConfig.Topic
+  langs:
+  - csharp
+  - vb
+  name: WorkerConfig
+  nameWithType: WorkerConfig
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig
+  type: Class
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: WorkerConfig
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 104
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: Configuration for a worker instance.
+  example: []
+  syntax:
+    content: 'public sealed record WorkerConfig : IEquatable<WorkerConfig>'
+    content.vb: Public NotInheritable Class WorkerConfig Implements IEquatable(Of WorkerConfig)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{Virtufin.WorkManager.Contracts.WorkerConfig}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry})
+  commentId: M:Virtufin.WorkManager.Contracts.WorkerConfig.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry})
+  id: '#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry})'
+  parent: Virtufin.WorkManager.Contracts.WorkerConfig
+  langs:
+  - csharp
+  - vb
+  name: WorkerConfig(Guid, CodeSource, string, string, string?, DateTime, List<HistoryEntry>)
+  nameWithType: WorkerConfig.WorkerConfig(Guid, CodeSource, string, string, string?, DateTime, List<HistoryEntry>)
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.WorkerConfig(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, string, string?, System.DateTime, System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>)
+  type: Constructor
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: .ctor
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 104
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: Configuration for a worker instance.
+  example: []
+  syntax:
+    content: public WorkerConfig(Guid Id, CodeSource CodeSource, string MimeType, string Topic, string? Group, DateTime CreatedAt, List<HistoryEntry> History)
+    parameters:
+    - id: Id
+      type: System.Guid
+      description: The unique identifier.
+    - id: CodeSource
+      type: Virtufin.WorkManager.Contracts.CodeSource
+      description: The source of the worker's code.
+    - id: MimeType
+      type: System.String
+      description: The MIME type of the code.
+    - id: Topic
+      type: System.String
+      description: The topic to subscribe to.
+    - id: Group
+      type: System.String
+      description: The optional group identifier.
+    - id: CreatedAt
+      type: System.DateTime
+      description: The creation timestamp.
+    - id: History
+      type: System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry}
+      description: The history of code changes.
+    content.vb: Public Sub New(Id As Guid, CodeSource As CodeSource, MimeType As String, Topic As String, Group As String, CreatedAt As Date, History As List(Of HistoryEntry))
+  overload: Virtufin.WorkManager.Contracts.WorkerConfig.#ctor*
+  nameWithType.vb: WorkerConfig.New(Guid, CodeSource, String, String, String, Date, List(Of HistoryEntry))
+  fullName.vb: Virtufin.WorkManager.Contracts.WorkerConfig.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, String, String, Date, System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry))
+  name.vb: New(Guid, CodeSource, String, String, String, Date, List(Of HistoryEntry))
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.Id
+  commentId: P:Virtufin.WorkManager.Contracts.WorkerConfig.Id
+  id: Id
+  parent: Virtufin.WorkManager.Contracts.WorkerConfig
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: WorkerConfig.Id
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.Id
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Id
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 105
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: The unique identifier.
+  example: []
+  syntax:
+    content: public Guid Id { get; init; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property Id As Guid
+  overload: Virtufin.WorkManager.Contracts.WorkerConfig.Id*
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.CodeSource
+  commentId: P:Virtufin.WorkManager.Contracts.WorkerConfig.CodeSource
+  id: CodeSource
+  parent: Virtufin.WorkManager.Contracts.WorkerConfig
+  langs:
+  - csharp
+  - vb
+  name: CodeSource
+  nameWithType: WorkerConfig.CodeSource
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.CodeSource
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: CodeSource
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 106
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: The source of the worker's code.
+  example: []
+  syntax:
+    content: public CodeSource CodeSource { get; init; }
+    parameters: []
+    return:
+      type: Virtufin.WorkManager.Contracts.CodeSource
+    content.vb: Public Property CodeSource As CodeSource
+  overload: Virtufin.WorkManager.Contracts.WorkerConfig.CodeSource*
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.MimeType
+  commentId: P:Virtufin.WorkManager.Contracts.WorkerConfig.MimeType
+  id: MimeType
+  parent: Virtufin.WorkManager.Contracts.WorkerConfig
+  langs:
+  - csharp
+  - vb
+  name: MimeType
+  nameWithType: WorkerConfig.MimeType
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.MimeType
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: MimeType
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 107
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: The MIME type of the code.
+  example: []
+  syntax:
+    content: public string MimeType { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property MimeType As String
+  overload: Virtufin.WorkManager.Contracts.WorkerConfig.MimeType*
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.Topic
+  commentId: P:Virtufin.WorkManager.Contracts.WorkerConfig.Topic
+  id: Topic
+  parent: Virtufin.WorkManager.Contracts.WorkerConfig
+  langs:
+  - csharp
+  - vb
+  name: Topic
+  nameWithType: WorkerConfig.Topic
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.Topic
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Topic
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 108
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: The topic to subscribe to.
+  example: []
+  syntax:
+    content: public string Topic { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Topic As String
+  overload: Virtufin.WorkManager.Contracts.WorkerConfig.Topic*
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.Group
+  commentId: P:Virtufin.WorkManager.Contracts.WorkerConfig.Group
+  id: Group
+  parent: Virtufin.WorkManager.Contracts.WorkerConfig
+  langs:
+  - csharp
+  - vb
+  name: Group
+  nameWithType: WorkerConfig.Group
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.Group
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Group
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 109
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: The optional group identifier.
+  example: []
+  syntax:
+    content: public string? Group { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Group As String
+  overload: Virtufin.WorkManager.Contracts.WorkerConfig.Group*
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.CreatedAt
+  commentId: P:Virtufin.WorkManager.Contracts.WorkerConfig.CreatedAt
+  id: CreatedAt
+  parent: Virtufin.WorkManager.Contracts.WorkerConfig
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: WorkerConfig.CreatedAt
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: CreatedAt
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 110
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: The creation timestamp.
+  example: []
+  syntax:
+    content: public DateTime CreatedAt { get; init; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property CreatedAt As Date
+  overload: Virtufin.WorkManager.Contracts.WorkerConfig.CreatedAt*
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.History
+  commentId: P:Virtufin.WorkManager.Contracts.WorkerConfig.History
+  id: History
+  parent: Virtufin.WorkManager.Contracts.WorkerConfig
+  langs:
+  - csharp
+  - vb
+  name: History
+  nameWithType: WorkerConfig.History
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.History
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: History
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 111
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: The history of code changes.
+  example: []
+  syntax:
+    content: public List<HistoryEntry> History { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry}
+    content.vb: Public Property History As List(Of HistoryEntry)
+  overload: Virtufin.WorkManager.Contracts.WorkerConfig.History*
+references:
+- uid: Virtufin.WorkManager.Contracts
+  commentId: N:Virtufin.WorkManager.Contracts
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Contracts
+  nameWithType: Virtufin.WorkManager.Contracts
+  fullName: Virtufin.WorkManager.Contracts
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{Virtufin.WorkManager.Contracts.WorkerConfig}
+  commentId: T:System.IEquatable{Virtufin.WorkManager.Contracts.WorkerConfig}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<WorkerConfig>
+  nameWithType: IEquatable<WorkerConfig>
+  fullName: System.IEquatable<Virtufin.WorkManager.Contracts.WorkerConfig>
+  nameWithType.vb: IEquatable(Of WorkerConfig)
+  fullName.vb: System.IEquatable(Of Virtufin.WorkManager.Contracts.WorkerConfig)
+  name.vb: IEquatable(Of WorkerConfig)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: Virtufin.WorkManager.Contracts.WorkerConfig
+    name: WorkerConfig
+    href: Virtufin.WorkManager.Contracts.WorkerConfig.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Contracts.WorkerConfig
+    name: WorkerConfig
+    href: Virtufin.WorkManager.Contracts.WorkerConfig.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.#ctor*
+  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerConfig.#ctor
+  href: Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_String_System_String_System_DateTime_System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__
+  name: WorkerConfig
+  nameWithType: WorkerConfig.WorkerConfig
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.WorkerConfig
+  nameWithType.vb: WorkerConfig.New
+  fullName.vb: Virtufin.WorkManager.Contracts.WorkerConfig.New
+  name.vb: New
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: Virtufin.WorkManager.Contracts.CodeSource
+  commentId: T:Virtufin.WorkManager.Contracts.CodeSource
+  parent: Virtufin.WorkManager.Contracts
+  href: Virtufin.WorkManager.Contracts.CodeSource.html
+  name: CodeSource
+  nameWithType: CodeSource
+  fullName: Virtufin.WorkManager.Contracts.CodeSource
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry}
+  commentId: T:System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<HistoryEntry>
+  nameWithType: List<HistoryEntry>
+  fullName: System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>
+  nameWithType.vb: List(Of HistoryEntry)
+  fullName.vb: System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry)
+  name.vb: List(Of HistoryEntry)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Virtufin.WorkManager.Contracts.HistoryEntry
+    name: HistoryEntry
+    href: Virtufin.WorkManager.Contracts.HistoryEntry.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Contracts.HistoryEntry
+    name: HistoryEntry
+    href: Virtufin.WorkManager.Contracts.HistoryEntry.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.Id*
+  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerConfig.Id
+  href: Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig_Id
+  name: Id
+  nameWithType: WorkerConfig.Id
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.Id
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.CodeSource*
+  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerConfig.CodeSource
+  href: Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig_CodeSource
+  name: CodeSource
+  nameWithType: WorkerConfig.CodeSource
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.CodeSource
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.MimeType*
+  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerConfig.MimeType
+  href: Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig_MimeType
+  name: MimeType
+  nameWithType: WorkerConfig.MimeType
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.MimeType
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.Topic*
+  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerConfig.Topic
+  href: Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig_Topic
+  name: Topic
+  nameWithType: WorkerConfig.Topic
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.Topic
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.Group*
+  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerConfig.Group
+  href: Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig_Group
+  name: Group
+  nameWithType: WorkerConfig.Group
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.Group
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.CreatedAt*
+  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerConfig.CreatedAt
+  href: Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig_CreatedAt
+  name: CreatedAt
+  nameWithType: WorkerConfig.CreatedAt
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.CreatedAt
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.History*
+  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerConfig.History
+  href: Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig_History
+  name: History
+  nameWithType: WorkerConfig.History
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.History

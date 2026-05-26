@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Components
+  commentId: N:Virtufin.WorkManager.Components
+  id: Virtufin.WorkManager.Components
+  children:
+  - Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: Virtufin.WorkManager.Components
+  nameWithType: Virtufin.WorkManager.Components
+  fullName: Virtufin.WorkManager.Components
+  type: Namespace
+  assemblies:
+  - Virtufin.WorkManager
+references:
+- uid: Virtufin.WorkManager.Components.WorkManager
+  commentId: T:Virtufin.WorkManager.Components.WorkManager
+  parent: Virtufin.WorkManager.Components
+  href: Virtufin.WorkManager.Components.WorkManager.html
+  name: WorkManager
+  nameWithType: WorkManager
+  fullName: Virtufin.WorkManager.Components.WorkManager
+- uid: Virtufin.WorkManager.Components
+  commentId: N:Virtufin.WorkManager.Components
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Components
+  nameWithType: Virtufin.WorkManager.Components
+  fullName: Virtufin.WorkManager.Components
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Components
+    name: Components
+    href: Virtufin.WorkManager.Components.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Components
+    name: Components
+    href: Virtufin.WorkManager.Components.html

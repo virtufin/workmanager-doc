@@ -1,0 +1,1624 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Components.WorkManager
+  commentId: T:Virtufin.WorkManager.Components.WorkManager
+  id: WorkManager
+  parent: Virtufin.WorkManager.Components
+  children:
+  - Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,System.String,System.String)
+  - Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync(System.Guid,System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Components.WorkManager.DisposeAsync
+  - Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)
+  - Virtufin.WorkManager.Components.WorkManager.ListWorkers
+  - Virtufin.WorkManager.Components.WorkManager.LoadCodeFromContent(System.Guid,System.Byte[],System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Components.WorkManager.LoadCodeFromUrl(System.Guid,System.Uri,System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync(System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
+  - Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync(System.Guid,System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync(System.Guid,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: WorkManager
+  nameWithType: WorkManager
+  fullName: Virtufin.WorkManager.Components.WorkManager
+  type: Class
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: WorkManager
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 21
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Manages worker lifecycle, subscriptions, and processing.
+  example: []
+  syntax:
+    content: 'public sealed class WorkManager : IAsyncDisposable'
+    content.vb: Public NotInheritable Class WorkManager Implements IAsyncDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IAsyncDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,System.String,System.String)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,System.String,System.String)
+  id: '#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,System.String,System.String)'
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, string?, string?)
+  nameWithType: WorkManager.WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, string?, string?)
+  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>, Microsoft.Extensions.Logging.ILoggerFactory, string?, string?)
+  type: Constructor
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: .ctor
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 50
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Creates a new WorkManager instance.
+  example: []
+  syntax:
+    content: public WorkManager(DaprPublishSubscribeClient pubsubClient, DaprClient daprClient, IHttpClientFactory httpClientFactory, IEngineRegistry engineRegistry, ILogger<WorkManager> logger, ILoggerFactory loggerFactory, string? stateStoreName = null, string? pubsubName = null)
+    parameters:
+    - id: pubsubClient
+      type: Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient
+    - id: daprClient
+      type: Dapr.Client.DaprClient
+    - id: httpClientFactory
+      type: System.Net.Http.IHttpClientFactory
+    - id: engineRegistry
+      type: Virtufin.WorkManager.Contracts.IEngineRegistry
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager}
+    - id: loggerFactory
+      type: Microsoft.Extensions.Logging.ILoggerFactory
+    - id: stateStoreName
+      type: System.String
+    - id: pubsubName
+      type: System.String
+    content.vb: Public Sub New(pubsubClient As DaprPublishSubscribeClient, daprClient As DaprClient, httpClientFactory As IHttpClientFactory, engineRegistry As IEngineRegistry, logger As ILogger(Of WorkManager), loggerFactory As ILoggerFactory, stateStoreName As String = Nothing, pubsubName As String = Nothing)
+  overload: Virtufin.WorkManager.Components.WorkManager.#ctor*
+  nameWithType.vb: WorkManager.New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, String, String)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager), Microsoft.Extensions.Logging.ILoggerFactory, String, String)
+  name.vb: New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, String, String)
+- uid: Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
+  id: RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: RegisterEngine(ContentType, string, Func<IEngine>)
+  nameWithType: WorkManager.RegisterEngine(ContentType, string, Func<IEngine>)
+  fullName: Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType, string, System.Func<Virtufin.WorkManager.Engines.IEngine>)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: RegisterEngine
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 79
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Registers an engine to handle code execution for a specific content type.
+  example: []
+  syntax:
+    content: public void RegisterEngine(ContentType contentType, string languageName, Func<IEngine> engineFactory)
+    parameters:
+    - id: contentType
+      type: System.Net.Mime.ContentType
+      description: The content type handled by the engine (e.g., "text/x-python").
+    - id: languageName
+      type: System.String
+      description: The programming language name (e.g., "Python").
+    - id: engineFactory
+      type: System.Func{Virtufin.WorkManager.Engines.IEngine}
+      description: Factory function that creates new engine instances.
+    content.vb: Public Sub RegisterEngine(contentType As ContentType, languageName As String, engineFactory As Func(Of IEngine))
+  overload: Virtufin.WorkManager.Components.WorkManager.RegisterEngine*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown if an engine is already registered for the content type.
+  nameWithType.vb: WorkManager.RegisterEngine(ContentType, String, Func(Of IEngine))
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType, String, System.Func(Of Virtufin.WorkManager.Engines.IEngine))
+  name.vb: RegisterEngine(ContentType, String, Func(Of IEngine))
+- uid: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
+  id: CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: CreateWorkerAsync(CreateWorkerRequest, CancellationToken)
+  nameWithType: WorkManager.CreateWorkerAsync(CreateWorkerRequest, CancellationToken)
+  fullName: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: CreateWorkerAsync
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 91
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Creates a new worker and starts processing.
+  example: []
+  syntax:
+    content: public Task<Guid> CreateWorkerAsync(CreateWorkerRequest request, CancellationToken cancellationToken = default)
+    parameters:
+    - id: request
+      type: Virtufin.WorkManager.Contracts.CreateWorkerRequest
+      description: The worker creation request.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token.
+    return:
+      type: System.Threading.Tasks.Task{System.Guid}
+      description: The ID of the created worker.
+    content.vb: Public Function CreateWorkerAsync(request As CreateWorkerRequest, cancellationToken As CancellationToken = Nothing) As Task(Of Guid)
+  overload: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync*
+  exceptions:
+  - type: Virtufin.WorkManager.Runtime.EngineNotFoundException
+    commentId: T:Virtufin.WorkManager.Runtime.EngineNotFoundException
+    description: Thrown if no engine is registered for the requested MIME type.
+- uid: Virtufin.WorkManager.Components.WorkManager.LoadCodeFromContent(System.Guid,System.Byte[],System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.LoadCodeFromContent(System.Guid,System.Byte[],System.Threading.CancellationToken)
+  id: LoadCodeFromContent(System.Guid,System.Byte[],System.Threading.CancellationToken)
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: LoadCodeFromContent(Guid, byte[], CancellationToken)
+  nameWithType: WorkManager.LoadCodeFromContent(Guid, byte[], CancellationToken)
+  fullName: Virtufin.WorkManager.Components.WorkManager.LoadCodeFromContent(System.Guid, byte[], System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: LoadCodeFromContent
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 146
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Loads new code from content into an existing worker.
+  example: []
+  syntax:
+    content: public Task LoadCodeFromContent(Guid id, byte[] content, CancellationToken cancellationToken = default)
+    parameters:
+    - id: id
+      type: System.Guid
+      description: The worker ID.
+    - id: content
+      type: System.Byte[]
+      description: The code content.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function LoadCodeFromContent(id As Guid, content As Byte(), cancellationToken As CancellationToken = Nothing) As Task
+  overload: Virtufin.WorkManager.Components.WorkManager.LoadCodeFromContent*
+  exceptions:
+  - type: Virtufin.WorkManager.Runtime.WorkerNotFoundException
+    commentId: T:Virtufin.WorkManager.Runtime.WorkerNotFoundException
+    description: Thrown if the worker is not found.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if content is empty.
+  nameWithType.vb: WorkManager.LoadCodeFromContent(Guid, Byte(), CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.LoadCodeFromContent(System.Guid, Byte(), System.Threading.CancellationToken)
+  name.vb: LoadCodeFromContent(Guid, Byte(), CancellationToken)
+- uid: Virtufin.WorkManager.Components.WorkManager.LoadCodeFromUrl(System.Guid,System.Uri,System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.LoadCodeFromUrl(System.Guid,System.Uri,System.Threading.CancellationToken)
+  id: LoadCodeFromUrl(System.Guid,System.Uri,System.Threading.CancellationToken)
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: LoadCodeFromUrl(Guid, Uri, CancellationToken)
+  nameWithType: WorkManager.LoadCodeFromUrl(Guid, Uri, CancellationToken)
+  fullName: Virtufin.WorkManager.Components.WorkManager.LoadCodeFromUrl(System.Guid, System.Uri, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: LoadCodeFromUrl
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 176
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Loads new code from a URL into an existing worker.
+  example: []
+  syntax:
+    content: public Task LoadCodeFromUrl(Guid id, Uri url, CancellationToken cancellationToken = default)
+    parameters:
+    - id: id
+      type: System.Guid
+      description: The worker ID.
+    - id: url
+      type: System.Uri
+      description: The URL to fetch code from.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function LoadCodeFromUrl(id As Guid, url As Uri, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Virtufin.WorkManager.Components.WorkManager.LoadCodeFromUrl*
+  exceptions:
+  - type: Virtufin.WorkManager.Runtime.WorkerNotFoundException
+    commentId: T:Virtufin.WorkManager.Runtime.WorkerNotFoundException
+    description: Thrown if the worker is not found.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if the URL is not absolute or has an invalid scheme.
+- uid: Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync(System.Guid,System.Threading.CancellationToken)
+  id: DeleteWorkerAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: DeleteWorkerAsync(Guid, CancellationToken)
+  nameWithType: WorkManager.DeleteWorkerAsync(Guid, CancellationToken)
+  fullName: Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: DeleteWorkerAsync
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 206
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Deletes a worker and its subscriptions.
+  example: []
+  syntax:
+    content: public Task DeleteWorkerAsync(Guid id, CancellationToken cancellationToken = default)
+    parameters:
+    - id: id
+      type: System.Guid
+      description: The worker ID.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function DeleteWorkerAsync(id As Guid, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync*
+  exceptions:
+  - type: Virtufin.WorkManager.Runtime.WorkerNotFoundException
+    commentId: T:Virtufin.WorkManager.Runtime.WorkerNotFoundException
+    description: Thrown if the worker is not found.
+- uid: Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync(System.Guid,System.Threading.CancellationToken)
+  id: StartWorkerAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: StartWorkerAsync(Guid, CancellationToken)
+  nameWithType: WorkManager.StartWorkerAsync(Guid, CancellationToken)
+  fullName: Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: StartWorkerAsync
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 227
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Starts a stopped worker, resuming topic subscriptions and processing.
+  example: []
+  syntax:
+    content: public Task StartWorkerAsync(Guid id, CancellationToken cancellationToken = default)
+    parameters:
+    - id: id
+      type: System.Guid
+      description: The worker ID.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function StartWorkerAsync(id As Guid, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync*
+  exceptions:
+  - type: Virtufin.WorkManager.Runtime.WorkerNotFoundException
+    commentId: T:Virtufin.WorkManager.Runtime.WorkerNotFoundException
+    description: Thrown if the worker is not found.
+- uid: Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync(System.Guid,System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync(System.Guid,System.Threading.CancellationToken)
+  id: StopWorkerAsync(System.Guid,System.Threading.CancellationToken)
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: StopWorkerAsync(Guid, CancellationToken)
+  nameWithType: WorkManager.StopWorkerAsync(Guid, CancellationToken)
+  fullName: Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync(System.Guid, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: StopWorkerAsync
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 250
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Stops a running worker, pausing topic subscriptions and processing.
+  example: []
+  syntax:
+    content: public Task StopWorkerAsync(Guid id, CancellationToken cancellationToken = default)
+    parameters:
+    - id: id
+      type: System.Guid
+      description: The worker ID.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function StopWorkerAsync(id As Guid, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync*
+  exceptions:
+  - type: Virtufin.WorkManager.Runtime.WorkerNotFoundException
+    commentId: T:Virtufin.WorkManager.Runtime.WorkerNotFoundException
+    description: Thrown if the worker is not found.
+- uid: Virtufin.WorkManager.Components.WorkManager.ListWorkers
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.ListWorkers
+  id: ListWorkers
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: ListWorkers()
+  nameWithType: WorkManager.ListWorkers()
+  fullName: Virtufin.WorkManager.Components.WorkManager.ListWorkers()
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: ListWorkers
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 271
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Lists all workers with their current status.
+  example: []
+  syntax:
+    content: public IReadOnlyList<WorkerInfo> ListWorkers()
+    return:
+      type: System.Collections.Generic.IReadOnlyList{Virtufin.WorkManager.Contracts.WorkerInfo}
+      description: A read-only list of worker information.
+    content.vb: Public Function ListWorkers() As IReadOnlyList(Of WorkerInfo)
+  overload: Virtufin.WorkManager.Components.WorkManager.ListWorkers*
+- uid: Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)
+  id: GetWorkerHistory(System.Guid)
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: GetWorkerHistory(Guid)
+  nameWithType: WorkManager.GetWorkerHistory(Guid)
+  fullName: Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: GetWorkerHistory
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 297
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Gets the code change history for a worker.
+  example: []
+  syntax:
+    content: public IReadOnlyList<HistoryEntry> GetWorkerHistory(Guid id)
+    parameters:
+    - id: id
+      type: System.Guid
+      description: The worker ID.
+    return:
+      type: System.Collections.Generic.IReadOnlyList{Virtufin.WorkManager.Contracts.HistoryEntry}
+      description: A read-only list of history entries.
+    content.vb: Public Function GetWorkerHistory(id As Guid) As IReadOnlyList(Of HistoryEntry)
+  overload: Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory*
+  exceptions:
+  - type: Virtufin.WorkManager.Runtime.WorkerNotFoundException
+    commentId: T:Virtufin.WorkManager.Runtime.WorkerNotFoundException
+    description: Thrown if the worker is not found.
+- uid: Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync(System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync(System.Threading.CancellationToken)
+  id: RecoverWorkersAsync(System.Threading.CancellationToken)
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: RecoverWorkersAsync(CancellationToken)
+  nameWithType: WorkManager.RecoverWorkersAsync(CancellationToken)
+  fullName: Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: RecoverWorkersAsync
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 310
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Recovers all workers from persistent state and resumes processing.
+  example: []
+  syntax:
+    content: public Task RecoverWorkersAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function RecoverWorkersAsync(cancellationToken As CancellationToken = Nothing) As Task
+  overload: Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync*
+  exceptions:
+  - type: Virtufin.WorkManager.Runtime.EngineNotFoundException
+    commentId: T:Virtufin.WorkManager.Runtime.EngineNotFoundException
+    description: Thrown if an engine is missing for a recovered worker.
+- uid: Virtufin.WorkManager.Components.WorkManager.DisposeAsync
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.DisposeAsync
+  id: DisposeAsync
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: DisposeAsync()
+  nameWithType: WorkManager.DisposeAsync()
+  fullName: Virtufin.WorkManager.Components.WorkManager.DisposeAsync()
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: DisposeAsync
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 686
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: >-
+    Performs application-defined tasks associated with freeing, releasing, or
+
+    resetting unmanaged resources asynchronously.
+  example: []
+  syntax:
+    content: public ValueTask DisposeAsync()
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A task that represents the asynchronous dispose operation.
+    content.vb: Public Function DisposeAsync() As ValueTask
+  overload: Virtufin.WorkManager.Components.WorkManager.DisposeAsync*
+  implements:
+  - System.IAsyncDisposable.DisposeAsync
+references:
+- uid: Virtufin.WorkManager.Components
+  commentId: N:Virtufin.WorkManager.Components
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Components
+  nameWithType: Virtufin.WorkManager.Components
+  fullName: Virtufin.WorkManager.Components
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Components
+    name: Components
+    href: Virtufin.WorkManager.Components.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Components
+    name: Components
+    href: Virtufin.WorkManager.Components.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IAsyncDisposable
+  commentId: T:System.IAsyncDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable
+  name: IAsyncDisposable
+  nameWithType: IAsyncDisposable
+  fullName: System.IAsyncDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Virtufin.WorkManager.Components.WorkManager.#ctor*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.#ctor
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Dapr_Messaging_PublishSubscribe_DaprPublishSubscribeClient_Dapr_Client_DaprClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_System_String_System_String_
+  name: WorkManager
+  nameWithType: WorkManager.WorkManager
+  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager
+  nameWithType.vb: WorkManager.New
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New
+  name.vb: New
+- uid: Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient
+  commentId: T:Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient
+  parent: Dapr.Messaging.PublishSubscribe
+  isExternal: true
+  name: DaprPublishSubscribeClient
+  nameWithType: DaprPublishSubscribeClient
+  fullName: Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient
+- uid: Dapr.Client.DaprClient
+  commentId: T:Dapr.Client.DaprClient
+  parent: Dapr.Client
+  isExternal: true
+  name: DaprClient
+  nameWithType: DaprClient
+  fullName: Dapr.Client.DaprClient
+- uid: System.Net.Http.IHttpClientFactory
+  commentId: T:System.Net.Http.IHttpClientFactory
+  parent: System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.ihttpclientfactory
+  name: IHttpClientFactory
+  nameWithType: IHttpClientFactory
+  fullName: System.Net.Http.IHttpClientFactory
+- uid: Virtufin.WorkManager.Contracts.IEngineRegistry
+  commentId: T:Virtufin.WorkManager.Contracts.IEngineRegistry
+  parent: Virtufin.WorkManager.Contracts
+  href: Virtufin.WorkManager.Contracts.IEngineRegistry.html
+  name: IEngineRegistry
+  nameWithType: IEngineRegistry
+  fullName: Virtufin.WorkManager.Contracts.IEngineRegistry
+- uid: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<WorkManager>
+  nameWithType: ILogger<WorkManager>
+  fullName: Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>
+  nameWithType.vb: ILogger(Of WorkManager)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager)
+  name.vb: ILogger(Of WorkManager)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - uid: Virtufin.WorkManager.Components.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.Components.WorkManager.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Components.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.Components.WorkManager.html
+  - name: )
+- uid: Microsoft.Extensions.Logging.ILoggerFactory
+  commentId: T:Microsoft.Extensions.Logging.ILoggerFactory
+  parent: Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggerfactory
+  name: ILoggerFactory
+  nameWithType: ILoggerFactory
+  fullName: Microsoft.Extensions.Logging.ILoggerFactory
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Dapr.Messaging.PublishSubscribe
+  commentId: N:Dapr.Messaging.PublishSubscribe
+  isExternal: true
+  name: Dapr.Messaging.PublishSubscribe
+  nameWithType: Dapr.Messaging.PublishSubscribe
+  fullName: Dapr.Messaging.PublishSubscribe
+  spec.csharp:
+  - uid: Dapr
+    name: Dapr
+    isExternal: true
+  - name: .
+  - uid: Dapr.Messaging
+    name: Messaging
+    isExternal: true
+  - name: .
+  - uid: Dapr.Messaging.PublishSubscribe
+    name: PublishSubscribe
+    isExternal: true
+  spec.vb:
+  - uid: Dapr
+    name: Dapr
+    isExternal: true
+  - name: .
+  - uid: Dapr.Messaging
+    name: Messaging
+    isExternal: true
+  - name: .
+  - uid: Dapr.Messaging.PublishSubscribe
+    name: PublishSubscribe
+    isExternal: true
+- uid: Dapr.Client
+  commentId: N:Dapr.Client
+  isExternal: true
+  name: Dapr.Client
+  nameWithType: Dapr.Client
+  fullName: Dapr.Client
+  spec.csharp:
+  - uid: Dapr
+    name: Dapr
+    isExternal: true
+  - name: .
+  - uid: Dapr.Client
+    name: Client
+    isExternal: true
+  spec.vb:
+  - uid: Dapr
+    name: Dapr
+    isExternal: true
+  - name: .
+  - uid: Dapr.Client
+    name: Client
+    isExternal: true
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+- uid: Virtufin.WorkManager.Contracts
+  commentId: N:Virtufin.WorkManager.Contracts
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Contracts
+  nameWithType: Virtufin.WorkManager.Contracts
+  fullName: Virtufin.WorkManager.Contracts
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - name: TCategoryName
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCategoryName
+  - name: )
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
+- uid: Virtufin.WorkManager.Components.WorkManager.RegisterEngine*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.RegisterEngine
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_RegisterEngine_System_Net_Mime_ContentType_System_String_System_Func_Virtufin_WorkManager_Engines_IEngine__
+  name: RegisterEngine
+  nameWithType: WorkManager.RegisterEngine
+  fullName: Virtufin.WorkManager.Components.WorkManager.RegisterEngine
+- uid: System.Net.Mime.ContentType
+  commentId: T:System.Net.Mime.ContentType
+  parent: System.Net.Mime
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.mime.contenttype
+  name: ContentType
+  nameWithType: ContentType
+  fullName: System.Net.Mime.ContentType
+- uid: System.Func{Virtufin.WorkManager.Engines.IEngine}
+  commentId: T:System.Func{Virtufin.WorkManager.Engines.IEngine}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<IEngine>
+  nameWithType: Func<IEngine>
+  fullName: System.Func<Virtufin.WorkManager.Engines.IEngine>
+  nameWithType.vb: Func(Of IEngine)
+  fullName.vb: System.Func(Of Virtufin.WorkManager.Engines.IEngine)
+  name.vb: Func(Of IEngine)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: Virtufin.WorkManager.Engines.IEngine
+    name: IEngine
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Engines.IEngine
+    name: IEngine
+  - name: )
+- uid: System.Net.Mime
+  commentId: N:System.Net.Mime
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net.Mime
+  nameWithType: System.Net.Mime
+  fullName: System.Net.Mime
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Mime
+    name: Mime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.mime
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Mime
+    name: Mime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.mime
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: Virtufin.WorkManager.Runtime.EngineNotFoundException
+  commentId: T:Virtufin.WorkManager.Runtime.EngineNotFoundException
+  href: Virtufin.WorkManager.Runtime.EngineNotFoundException.html
+  name: EngineNotFoundException
+  nameWithType: EngineNotFoundException
+  fullName: Virtufin.WorkManager.Runtime.EngineNotFoundException
+- uid: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_CreateWorkerAsync_Virtufin_WorkManager_Contracts_CreateWorkerRequest_System_Threading_CancellationToken_
+  name: CreateWorkerAsync
+  nameWithType: WorkManager.CreateWorkerAsync
+  fullName: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync
+- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest
+  commentId: T:Virtufin.WorkManager.Contracts.CreateWorkerRequest
+  parent: Virtufin.WorkManager.Contracts
+  href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html
+  name: CreateWorkerRequest
+  nameWithType: CreateWorkerRequest
+  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Guid}
+  commentId: T:System.Threading.Tasks.Task{System.Guid}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Guid>
+  nameWithType: Task<Guid>
+  fullName: System.Threading.Tasks.Task<System.Guid>
+  nameWithType.vb: Task(Of Guid)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Guid)
+  name.vb: Task(Of Guid)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Virtufin.WorkManager.Runtime.WorkerNotFoundException
+  commentId: T:Virtufin.WorkManager.Runtime.WorkerNotFoundException
+  href: Virtufin.WorkManager.Runtime.WorkerNotFoundException.html
+  name: WorkerNotFoundException
+  nameWithType: WorkerNotFoundException
+  fullName: Virtufin.WorkManager.Runtime.WorkerNotFoundException
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: Virtufin.WorkManager.Components.WorkManager.LoadCodeFromContent*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.LoadCodeFromContent
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_LoadCodeFromContent_System_Guid_System_Byte___System_Threading_CancellationToken_
+  name: LoadCodeFromContent
+  nameWithType: WorkManager.LoadCodeFromContent
+  fullName: Virtufin.WorkManager.Components.WorkManager.LoadCodeFromContent
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Virtufin.WorkManager.Components.WorkManager.LoadCodeFromUrl*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.LoadCodeFromUrl
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_LoadCodeFromUrl_System_Guid_System_Uri_System_Threading_CancellationToken_
+  name: LoadCodeFromUrl
+  nameWithType: WorkManager.LoadCodeFromUrl
+  fullName: Virtufin.WorkManager.Components.WorkManager.LoadCodeFromUrl
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uri
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_DeleteWorkerAsync_System_Guid_System_Threading_CancellationToken_
+  name: DeleteWorkerAsync
+  nameWithType: WorkManager.DeleteWorkerAsync
+  fullName: Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync
+- uid: Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_StartWorkerAsync_System_Guid_System_Threading_CancellationToken_
+  name: StartWorkerAsync
+  nameWithType: WorkManager.StartWorkerAsync
+  fullName: Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync
+- uid: Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_StopWorkerAsync_System_Guid_System_Threading_CancellationToken_
+  name: StopWorkerAsync
+  nameWithType: WorkManager.StopWorkerAsync
+  fullName: Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync
+- uid: Virtufin.WorkManager.Components.WorkManager.ListWorkers*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.ListWorkers
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_ListWorkers
+  name: ListWorkers
+  nameWithType: WorkManager.ListWorkers
+  fullName: Virtufin.WorkManager.Components.WorkManager.ListWorkers
+- uid: System.Collections.Generic.IReadOnlyList{Virtufin.WorkManager.Contracts.WorkerInfo}
+  commentId: T:System.Collections.Generic.IReadOnlyList{Virtufin.WorkManager.Contracts.WorkerInfo}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<WorkerInfo>
+  nameWithType: IReadOnlyList<WorkerInfo>
+  fullName: System.Collections.Generic.IReadOnlyList<Virtufin.WorkManager.Contracts.WorkerInfo>
+  nameWithType.vb: IReadOnlyList(Of WorkerInfo)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Virtufin.WorkManager.Contracts.WorkerInfo)
+  name.vb: IReadOnlyList(Of WorkerInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Virtufin.WorkManager.Contracts.WorkerInfo
+    name: WorkerInfo
+    href: Virtufin.WorkManager.Contracts.WorkerInfo.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Contracts.WorkerInfo
+    name: WorkerInfo
+    href: Virtufin.WorkManager.Contracts.WorkerInfo.html
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_GetWorkerHistory_System_Guid_
+  name: GetWorkerHistory
+  nameWithType: WorkManager.GetWorkerHistory
+  fullName: Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory
+- uid: System.Collections.Generic.IReadOnlyList{Virtufin.WorkManager.Contracts.HistoryEntry}
+  commentId: T:System.Collections.Generic.IReadOnlyList{Virtufin.WorkManager.Contracts.HistoryEntry}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<HistoryEntry>
+  nameWithType: IReadOnlyList<HistoryEntry>
+  fullName: System.Collections.Generic.IReadOnlyList<Virtufin.WorkManager.Contracts.HistoryEntry>
+  nameWithType.vb: IReadOnlyList(Of HistoryEntry)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Virtufin.WorkManager.Contracts.HistoryEntry)
+  name.vb: IReadOnlyList(Of HistoryEntry)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Virtufin.WorkManager.Contracts.HistoryEntry
+    name: HistoryEntry
+    href: Virtufin.WorkManager.Contracts.HistoryEntry.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Contracts.HistoryEntry
+    name: HistoryEntry
+    href: Virtufin.WorkManager.Contracts.HistoryEntry.html
+  - name: )
+- uid: Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_RecoverWorkersAsync_System_Threading_CancellationToken_
+  name: RecoverWorkersAsync
+  nameWithType: WorkManager.RecoverWorkersAsync
+  fullName: Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync
+- uid: Virtufin.WorkManager.Components.WorkManager.DisposeAsync*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.DisposeAsync
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_DisposeAsync
+  name: DisposeAsync
+  nameWithType: WorkManager.DisposeAsync
+  fullName: Virtufin.WorkManager.Components.WorkManager.DisposeAsync
+- uid: System.IAsyncDisposable.DisposeAsync
+  commentId: M:System.IAsyncDisposable.DisposeAsync
+  parent: System.IAsyncDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  name: DisposeAsync()
+  nameWithType: IAsyncDisposable.DisposeAsync()
+  fullName: System.IAsyncDisposable.DisposeAsync()
+  spec.csharp:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.ValueTask
+  commentId: T:System.Threading.Tasks.ValueTask
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  name: ValueTask
+  nameWithType: ValueTask
+  fullName: System.Threading.Tasks.ValueTask

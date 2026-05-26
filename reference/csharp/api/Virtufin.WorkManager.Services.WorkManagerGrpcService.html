@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class WorkManagerGrpcService | Virtufin WorkManager - C# Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class WorkManagerGrpcService | Virtufin WorkManager - C# Reference ">
+      
+      <meta name="description" content="gRPC service implementation for the WorkManager.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+      
+      
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.png" alt="Virtufin.WorkManager">
+            Virtufin.WorkManager
+          </a>
+          <div class="git-info">
+            <a href="{git_repo_url}/commit/e24b768f843c2f531dd0933fffaa2de0b718cc46" target="_blank" rel="noopener" class="commit-badge" title="View commit e24b768">
+              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
+                <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"></rect>
+                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e24b768</text>
+              </svg>
+            </a>
+          </div>          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService">
+
+
+
+  <h1 id="Virtufin_WorkManager_Services_WorkManagerGrpcService" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService" class="text-break">
+Class WorkManagerGrpcService  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Virtufin.html">Virtufin</a>.<a class="xref" href="Virtufin.WorkManager.html">WorkManager</a>.<a class="xref" href="Virtufin.WorkManager.Services.html">Services</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Virtufin.WorkManager.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>gRPC service implementation for the WorkManager.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class WorkManagerGrpcService : WorkManager.WorkManagerBase</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">WorkManager</span>.<span class="xref">WorkManagerBase</span></div>
+      <div><span class="xref">WorkManagerGrpcService</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Virtufin_WorkManager_Services_WorkManagerGrpcService__ctor_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor*"></a>
+
+  <h3 id="Virtufin_WorkManager_Services_WorkManagerGrpcService__ctor_Virtufin_WorkManager_Components_WorkManager_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerGrpcService__" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService})">
+  WorkManagerGrpcService(WorkManager, ILogger&lt;WorkManagerGrpcService&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WorkManagerGrpcService(WorkManager workManager, ILogger&lt;WorkManagerGrpcService&gt; logger)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>workManager</code> <a class="xref" href="Virtufin.WorkManager.Components.WorkManager.html">WorkManager</a></dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="Virtufin.WorkManager.Services.WorkManagerGrpcService.html">WorkManagerGrpcService</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Virtufin_WorkManager_Services_WorkManagerGrpcService_CreateWorker_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.CreateWorker*"></a>
+
+  <h3 id="Virtufin_WorkManager_Services_WorkManagerGrpcService_CreateWorker_Virtufin_WorkManager_Protos_CreateWorkerRequest_Grpc_Core_ServerCallContext_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.CreateWorker(Virtufin.WorkManager.Protos.CreateWorkerRequest,Grpc.Core.ServerCallContext)">
+  CreateWorker(CreateWorkerRequest, ServerCallContext)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;CreateWorkerResponse&gt; CreateWorker(CreateWorkerRequest request, ServerCallContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <span class="xref">CreateWorkerRequest</span></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs">ServerCallContext</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">CreateWorkerResponse</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Virtufin_WorkManager_Services_WorkManagerGrpcService_DeleteWorker_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.DeleteWorker*"></a>
+
+  <h3 id="Virtufin_WorkManager_Services_WorkManagerGrpcService_DeleteWorker_Virtufin_WorkManager_Protos_DeleteWorkerRequest_Grpc_Core_ServerCallContext_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.DeleteWorker(Virtufin.WorkManager.Protos.DeleteWorkerRequest,Grpc.Core.ServerCallContext)">
+  DeleteWorker(DeleteWorkerRequest, ServerCallContext)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;DeleteWorkerResponse&gt; DeleteWorker(DeleteWorkerRequest request, ServerCallContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <span class="xref">DeleteWorkerRequest</span></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs">ServerCallContext</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">DeleteWorkerResponse</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Virtufin_WorkManager_Services_WorkManagerGrpcService_GetWorkerHistory_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory*"></a>
+
+  <h3 id="Virtufin_WorkManager_Services_WorkManagerGrpcService_GetWorkerHistory_Virtufin_WorkManager_Protos_GetWorkerHistoryRequest_Grpc_Core_ServerCallContext_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)">
+  GetWorkerHistory(GetWorkerHistoryRequest, ServerCallContext)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;GetWorkerHistoryResponse&gt; GetWorkerHistory(GetWorkerHistoryRequest request, ServerCallContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <span class="xref">GetWorkerHistoryRequest</span></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs">ServerCallContext</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">GetWorkerHistoryResponse</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Virtufin_WorkManager_Services_WorkManagerGrpcService_ListWorkers_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers*"></a>
+
+  <h3 id="Virtufin_WorkManager_Services_WorkManagerGrpcService_ListWorkers_Virtufin_WorkManager_Protos_ListWorkersRequest_Grpc_Core_ServerCallContext_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)">
+  ListWorkers(ListWorkersRequest, ServerCallContext)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;ListWorkersResponse&gt; ListWorkers(ListWorkersRequest request, ServerCallContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <span class="xref">ListWorkersRequest</span></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs">ServerCallContext</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">ListWorkersResponse</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Virtufin_WorkManager_Services_WorkManagerGrpcService_LoadCodeFromContent_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromContent*"></a>
+
+  <h3 id="Virtufin_WorkManager_Services_WorkManagerGrpcService_LoadCodeFromContent_Virtufin_WorkManager_Protos_LoadCodeFromContentRequest_Grpc_Core_ServerCallContext_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromContent(Virtufin.WorkManager.Protos.LoadCodeFromContentRequest,Grpc.Core.ServerCallContext)">
+  LoadCodeFromContent(LoadCodeFromContentRequest, ServerCallContext)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;LoadCodeFromContentResponse&gt; LoadCodeFromContent(LoadCodeFromContentRequest request, ServerCallContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <span class="xref">LoadCodeFromContentRequest</span></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs">ServerCallContext</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">LoadCodeFromContentResponse</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Virtufin_WorkManager_Services_WorkManagerGrpcService_LoadCodeFromUrl_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromUrl*"></a>
+
+  <h3 id="Virtufin_WorkManager_Services_WorkManagerGrpcService_LoadCodeFromUrl_Virtufin_WorkManager_Protos_LoadCodeFromUrlRequest_Grpc_Core_ServerCallContext_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromUrl(Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest,Grpc.Core.ServerCallContext)">
+  LoadCodeFromUrl(LoadCodeFromUrlRequest, ServerCallContext)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;LoadCodeFromUrlResponse&gt; LoadCodeFromUrl(LoadCodeFromUrlRequest request, ServerCallContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <span class="xref">LoadCodeFromUrlRequest</span></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs">ServerCallContext</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">LoadCodeFromUrlResponse</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Virtufin_WorkManager_Services_WorkManagerGrpcService_RecoverWorkers_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.RecoverWorkers*"></a>
+
+  <h3 id="Virtufin_WorkManager_Services_WorkManagerGrpcService_RecoverWorkers_Virtufin_WorkManager_Protos_RecoverWorkersRequest_Grpc_Core_ServerCallContext_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.RecoverWorkers(Virtufin.WorkManager.Protos.RecoverWorkersRequest,Grpc.Core.ServerCallContext)">
+  RecoverWorkers(RecoverWorkersRequest, ServerCallContext)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;RecoverWorkersResponse&gt; RecoverWorkers(RecoverWorkersRequest request, ServerCallContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <span class="xref">RecoverWorkersRequest</span></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs">ServerCallContext</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">RecoverWorkersResponse</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Virtufin_WorkManager_Services_WorkManagerGrpcService_StartWorker_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.StartWorker*"></a>
+
+  <h3 id="Virtufin_WorkManager_Services_WorkManagerGrpcService_StartWorker_Virtufin_WorkManager_Protos_StartWorkerRequest_Grpc_Core_ServerCallContext_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.StartWorker(Virtufin.WorkManager.Protos.StartWorkerRequest,Grpc.Core.ServerCallContext)">
+  StartWorker(StartWorkerRequest, ServerCallContext)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;StartWorkerResponse&gt; StartWorker(StartWorkerRequest request, ServerCallContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <span class="xref">StartWorkerRequest</span></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs">ServerCallContext</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">StartWorkerResponse</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Virtufin_WorkManager_Services_WorkManagerGrpcService_StopWorker_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.StopWorker*"></a>
+
+  <h3 id="Virtufin_WorkManager_Services_WorkManagerGrpcService_StopWorker_Virtufin_WorkManager_Protos_StopWorkerRequest_Grpc_Core_ServerCallContext_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.StopWorker(Virtufin.WorkManager.Protos.StopWorkerRequest,Grpc.Core.ServerCallContext)">
+  StopWorker(StopWorkerRequest, ServerCallContext)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;StopWorkerResponse&gt; StopWorker(StopWorkerRequest request, ServerCallContext context)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <span class="xref">StopWorkerRequest</span></dt>
+    <dd></dd>
+    <dt><code>context</code> <a class="xref" href="https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs">ServerCallContext</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">StopWorkerResponse</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          © 2026 Häner Consulting. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

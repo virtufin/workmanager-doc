@@ -1,0 +1,1125 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter
+  commentId: T:Virtufin.WorkManager.Contracts.CodeSourceJsonConverter
+  id: CodeSourceJsonConverter
+  parent: Virtufin.WorkManager.Contracts
+  children:
+  - Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  - Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Write(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+  langs:
+  - csharp
+  - vb
+  name: CodeSourceJsonConverter
+  nameWithType: CodeSourceJsonConverter
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter
+  type: Class
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: CodeSourceJsonConverter
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 31
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: JSON converter for <xref href="Virtufin.WorkManager.Contracts.CodeSource" data-throw-if-not-resolved="false"></xref> types.
+  remarks: >-
+    This converter handles polymorphic serialization/deserialization of <xref href="Virtufin.WorkManager.Contracts.CodeSource" data-throw-if-not-resolved="false"></xref> subtypes
+
+    by detecting the presence of 'Url' or 'Content' properties in the JSON object.
+  example: []
+  syntax:
+    content: 'public sealed class CodeSourceJsonConverter : JsonConverter<CodeSource>'
+    content.vb: Public NotInheritable Class CodeSourceJsonConverter Inherits JsonConverter(Of CodeSource)
+  inheritance:
+  - System.Object
+  - System.Text.Json.Serialization.JsonConverter
+  - System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}
+  inheritedMembers:
+  - System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.CanConvert(System.Type)
+  - System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  - System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+  - System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.HandleNull
+  - System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.Type
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  commentId: M:Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  id: Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  parent: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter
+  langs:
+  - csharp
+  - vb
+  name: Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  nameWithType: CodeSourceJsonConverter.Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Read(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Read
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 34
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: Reads and converts the JSON to type <xref href="Virtufin.WorkManager.Contracts.CodeSource" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public override CodeSource? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    parameters:
+    - id: reader
+      type: System.Text.Json.Utf8JsonReader
+      description: The reader.
+    - id: typeToConvert
+      type: System.Type
+      description: The type to convert.
+    - id: options
+      type: System.Text.Json.JsonSerializerOptions
+      description: An object that specifies serialization options to use.
+    return:
+      type: Virtufin.WorkManager.Contracts.CodeSource
+      description: The converted value.
+    content.vb: Public Overrides Function Read(reader As Utf8JsonReader, typeToConvert As Type, options As JsonSerializerOptions) As CodeSource
+  overridden: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  overload: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Read*
+  nameWithType.vb: CodeSourceJsonConverter.Read(Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName.vb: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Read(System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  name.vb: Read(Utf8JsonReader, Type, JsonSerializerOptions)
+- uid: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Write(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+  commentId: M:Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Write(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+  id: Write(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+  parent: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter
+  langs:
+  - csharp
+  - vb
+  name: Write(Utf8JsonWriter, CodeSource, JsonSerializerOptions)
+  nameWithType: CodeSourceJsonConverter.Write(Utf8JsonWriter, CodeSource, JsonSerializerOptions)
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Write(System.Text.Json.Utf8JsonWriter, Virtufin.WorkManager.Contracts.CodeSource, System.Text.Json.JsonSerializerOptions)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Write
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 74
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: Writes a specified value as JSON.
+  example: []
+  syntax:
+    content: public override void Write(Utf8JsonWriter writer, CodeSource value, JsonSerializerOptions options)
+    parameters:
+    - id: writer
+      type: System.Text.Json.Utf8JsonWriter
+      description: The writer to write to.
+    - id: value
+      type: Virtufin.WorkManager.Contracts.CodeSource
+      description: The value to convert to JSON.
+    - id: options
+      type: System.Text.Json.JsonSerializerOptions
+      description: An object that specifies serialization options to use.
+    content.vb: Public Overrides Sub Write(writer As Utf8JsonWriter, value As CodeSource, options As JsonSerializerOptions)
+  overridden: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.Write(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+  overload: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Write*
+references:
+- uid: Virtufin.WorkManager.Contracts.CodeSource
+  commentId: T:Virtufin.WorkManager.Contracts.CodeSource
+  parent: Virtufin.WorkManager.Contracts
+  href: Virtufin.WorkManager.Contracts.CodeSource.html
+  name: CodeSource
+  nameWithType: CodeSource
+  fullName: Virtufin.WorkManager.Contracts.CodeSource
+- uid: Virtufin.WorkManager.Contracts
+  commentId: N:Virtufin.WorkManager.Contracts
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Contracts
+  nameWithType: Virtufin.WorkManager.Contracts
+  fullName: Virtufin.WorkManager.Contracts
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Text.Json.Serialization.JsonConverter
+  commentId: T:System.Text.Json.Serialization.JsonConverter
+  parent: System.Text.Json.Serialization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter
+  name: JsonConverter
+  nameWithType: JsonConverter
+  fullName: System.Text.Json.Serialization.JsonConverter
+- uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}
+  commentId: T:System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}
+  parent: System.Text.Json.Serialization
+  definition: System.Text.Json.Serialization.JsonConverter`1
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1
+  name: JsonConverter<CodeSource>
+  nameWithType: JsonConverter<CodeSource>
+  fullName: System.Text.Json.Serialization.JsonConverter<Virtufin.WorkManager.Contracts.CodeSource>
+  nameWithType.vb: JsonConverter(Of CodeSource)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of Virtufin.WorkManager.Contracts.CodeSource)
+  name.vb: JsonConverter(Of CodeSource)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter`1
+    name: JsonConverter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1
+  - name: <
+  - uid: Virtufin.WorkManager.Contracts.CodeSource
+    name: CodeSource
+    href: Virtufin.WorkManager.Contracts.CodeSource.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter`1
+    name: JsonConverter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Contracts.CodeSource
+    name: CodeSource
+    href: Virtufin.WorkManager.Contracts.CodeSource.html
+  - name: )
+- uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.CanConvert(System.Type)
+  commentId: M:System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.CanConvert(System.Type)
+  parent: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}
+  definition: System.Text.Json.Serialization.JsonConverter`1.CanConvert(System.Type)
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.canconvert
+  name: CanConvert(Type)
+  nameWithType: JsonConverter<CodeSource>.CanConvert(Type)
+  fullName: System.Text.Json.Serialization.JsonConverter<Virtufin.WorkManager.Contracts.CodeSource>.CanConvert(System.Type)
+  nameWithType.vb: JsonConverter(Of CodeSource).CanConvert(Type)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of Virtufin.WorkManager.Contracts.CodeSource).CanConvert(System.Type)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.CanConvert(System.Type)
+    name: CanConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.canconvert
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.CanConvert(System.Type)
+    name: CanConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.canconvert
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  parent: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}
+  definition: System.Text.Json.Serialization.JsonConverter`1.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.readaspropertyname
+  name: ReadAsPropertyName(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  nameWithType: JsonConverter<CodeSource>.ReadAsPropertyName(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<Virtufin.WorkManager.Contracts.CodeSource>.ReadAsPropertyName(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of CodeSource).ReadAsPropertyName(Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of Virtufin.WorkManager.Contracts.CodeSource).ReadAsPropertyName(System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  name.vb: ReadAsPropertyName(Utf8JsonReader, Type, JsonSerializerOptions)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+    name: ReadAsPropertyName
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.readaspropertyname
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: System.Text.Json.Utf8JsonReader
+    name: Utf8JsonReader
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+    name: ReadAsPropertyName
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.readaspropertyname
+  - name: (
+  - uid: System.Text.Json.Utf8JsonReader
+    name: Utf8JsonReader
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+- uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+  parent: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}
+  definition: System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.writeaspropertyname
+  name: WriteAsPropertyName(Utf8JsonWriter, CodeSource, JsonSerializerOptions)
+  nameWithType: JsonConverter<CodeSource>.WriteAsPropertyName(Utf8JsonWriter, CodeSource, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<Virtufin.WorkManager.Contracts.CodeSource>.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter, Virtufin.WorkManager.Contracts.CodeSource, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of CodeSource).WriteAsPropertyName(Utf8JsonWriter, CodeSource, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of Virtufin.WorkManager.Contracts.CodeSource).WriteAsPropertyName(System.Text.Json.Utf8JsonWriter, Virtufin.WorkManager.Contracts.CodeSource, System.Text.Json.JsonSerializerOptions)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+    name: WriteAsPropertyName
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.writeaspropertyname
+  - name: (
+  - uid: System.Text.Json.Utf8JsonWriter
+    name: Utf8JsonWriter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
+  - name: ','
+  - name: " "
+  - uid: Virtufin.WorkManager.Contracts.CodeSource
+    name: CodeSource
+    href: Virtufin.WorkManager.Contracts.CodeSource.html
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+    name: WriteAsPropertyName
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.writeaspropertyname
+  - name: (
+  - uid: System.Text.Json.Utf8JsonWriter
+    name: Utf8JsonWriter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
+  - name: ','
+  - name: " "
+  - uid: Virtufin.WorkManager.Contracts.CodeSource
+    name: CodeSource
+    href: Virtufin.WorkManager.Contracts.CodeSource.html
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+- uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.HandleNull
+  commentId: P:System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.HandleNull
+  parent: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}
+  definition: System.Text.Json.Serialization.JsonConverter`1.HandleNull
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.handlenull
+  name: HandleNull
+  nameWithType: JsonConverter<CodeSource>.HandleNull
+  fullName: System.Text.Json.Serialization.JsonConverter<Virtufin.WorkManager.Contracts.CodeSource>.HandleNull
+  nameWithType.vb: JsonConverter(Of CodeSource).HandleNull
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of Virtufin.WorkManager.Contracts.CodeSource).HandleNull
+- uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.Type
+  commentId: P:System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.Type
+  parent: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}
+  definition: System.Text.Json.Serialization.JsonConverter`1.Type
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.type
+  name: Type
+  nameWithType: JsonConverter<CodeSource>.Type
+  fullName: System.Text.Json.Serialization.JsonConverter<Virtufin.WorkManager.Contracts.CodeSource>.Type
+  nameWithType.vb: JsonConverter(Of CodeSource).Type
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of Virtufin.WorkManager.Contracts.CodeSource).Type
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Text.Json.Serialization
+  commentId: N:System.Text.Json.Serialization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Text.Json.Serialization
+  nameWithType: System.Text.Json.Serialization
+  fullName: System.Text.Json.Serialization
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  - name: .
+  - uid: System.Text.Json
+    name: Json
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json
+  - name: .
+  - uid: System.Text.Json.Serialization
+    name: Serialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  - name: .
+  - uid: System.Text.Json
+    name: Json
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json
+  - name: .
+  - uid: System.Text.Json.Serialization
+    name: Serialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization
+- uid: System.Text.Json.Serialization.JsonConverter`1
+  commentId: T:System.Text.Json.Serialization.JsonConverter`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1
+  name: JsonConverter<T>
+  nameWithType: JsonConverter<T>
+  fullName: System.Text.Json.Serialization.JsonConverter<T>
+  nameWithType.vb: JsonConverter(Of T)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T)
+  name.vb: JsonConverter(Of T)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter`1
+    name: JsonConverter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter`1
+    name: JsonConverter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Text.Json.Serialization.JsonConverter`1.CanConvert(System.Type)
+  commentId: M:System.Text.Json.Serialization.JsonConverter`1.CanConvert(System.Type)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.canconvert
+  name: CanConvert(Type)
+  nameWithType: JsonConverter<T>.CanConvert(Type)
+  fullName: System.Text.Json.Serialization.JsonConverter<T>.CanConvert(System.Type)
+  nameWithType.vb: JsonConverter(Of T).CanConvert(Type)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).CanConvert(System.Type)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.CanConvert(System.Type)
+    name: CanConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.canconvert
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.CanConvert(System.Type)
+    name: CanConvert
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.canconvert
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: System.Text.Json.Serialization.JsonConverter`1.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter`1.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.readaspropertyname
+  name: ReadAsPropertyName(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  nameWithType: JsonConverter<T>.ReadAsPropertyName(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<T>.ReadAsPropertyName(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of T).ReadAsPropertyName(Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).ReadAsPropertyName(System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  name.vb: ReadAsPropertyName(Utf8JsonReader, Type, JsonSerializerOptions)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+    name: ReadAsPropertyName
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.readaspropertyname
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: System.Text.Json.Utf8JsonReader
+    name: Utf8JsonReader
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+    name: ReadAsPropertyName
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.readaspropertyname
+  - name: (
+  - uid: System.Text.Json.Utf8JsonReader
+    name: Utf8JsonReader
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+- uid: System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.writeaspropertyname
+  name: WriteAsPropertyName(Utf8JsonWriter, T, JsonSerializerOptions)
+  nameWithType: JsonConverter<T>.WriteAsPropertyName(Utf8JsonWriter, T, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<T>.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter, T, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of T).WriteAsPropertyName(Utf8JsonWriter, T, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).WriteAsPropertyName(System.Text.Json.Utf8JsonWriter, T, System.Text.Json.JsonSerializerOptions)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+    name: WriteAsPropertyName
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.writeaspropertyname
+  - name: (
+  - uid: System.Text.Json.Utf8JsonWriter
+    name: Utf8JsonWriter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+    name: WriteAsPropertyName
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.writeaspropertyname
+  - name: (
+  - uid: System.Text.Json.Utf8JsonWriter
+    name: Utf8JsonWriter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+- uid: System.Text.Json.Serialization.JsonConverter`1.HandleNull
+  commentId: P:System.Text.Json.Serialization.JsonConverter`1.HandleNull
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.handlenull
+  name: HandleNull
+  nameWithType: JsonConverter<T>.HandleNull
+  fullName: System.Text.Json.Serialization.JsonConverter<T>.HandleNull
+  nameWithType.vb: JsonConverter(Of T).HandleNull
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).HandleNull
+- uid: System.Text.Json.Serialization.JsonConverter`1.Type
+  commentId: P:System.Text.Json.Serialization.JsonConverter`1.Type
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.type
+  name: Type
+  nameWithType: JsonConverter<T>.Type
+  fullName: System.Text.Json.Serialization.JsonConverter<T>.Type
+  nameWithType.vb: JsonConverter(Of T).Type
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).Type
+- uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  parent: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}
+  definition: System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.read
+  name: Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  nameWithType: JsonConverter<CodeSource>.Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<Virtufin.WorkManager.Contracts.CodeSource>.Read(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of CodeSource).Read(Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of Virtufin.WorkManager.Contracts.CodeSource).Read(System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  name.vb: Read(Utf8JsonReader, Type, JsonSerializerOptions)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+    name: Read
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.read
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: System.Text.Json.Utf8JsonReader
+    name: Utf8JsonReader
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+    name: Read
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.read
+  - name: (
+  - uid: System.Text.Json.Utf8JsonReader
+    name: Utf8JsonReader
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+- uid: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Read*
+  commentId: Overload:Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Read
+  href: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.html#Virtufin_WorkManager_Contracts_CodeSourceJsonConverter_Read_System_Text_Json_Utf8JsonReader__System_Type_System_Text_Json_JsonSerializerOptions_
+  name: Read
+  nameWithType: CodeSourceJsonConverter.Read
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Read
+- uid: System.Text.Json.Utf8JsonReader
+  commentId: T:System.Text.Json.Utf8JsonReader
+  parent: System.Text.Json
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
+  name: Utf8JsonReader
+  nameWithType: Utf8JsonReader
+  fullName: System.Text.Json.Utf8JsonReader
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Text.Json.JsonSerializerOptions
+  commentId: T:System.Text.Json.JsonSerializerOptions
+  parent: System.Text.Json
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  name: JsonSerializerOptions
+  nameWithType: JsonSerializerOptions
+  fullName: System.Text.Json.JsonSerializerOptions
+- uid: System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.read
+  name: Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  nameWithType: JsonConverter<T>.Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<T>.Read(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of T).Read(Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).Read(System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  name.vb: Read(Utf8JsonReader, Type, JsonSerializerOptions)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+    name: Read
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.read
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: System.Text.Json.Utf8JsonReader
+    name: Utf8JsonReader
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+    name: Read
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.read
+  - name: (
+  - uid: System.Text.Json.Utf8JsonReader
+    name: Utf8JsonReader
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+- uid: System.Text.Json
+  commentId: N:System.Text.Json
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Text.Json
+  nameWithType: System.Text.Json
+  fullName: System.Text.Json
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  - name: .
+  - uid: System.Text.Json
+    name: Json
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  - name: .
+  - uid: System.Text.Json
+    name: Json
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json
+- uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.Write(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.Write(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+  parent: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}
+  definition: System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.write
+  name: Write(Utf8JsonWriter, CodeSource, JsonSerializerOptions)
+  nameWithType: JsonConverter<CodeSource>.Write(Utf8JsonWriter, CodeSource, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<Virtufin.WorkManager.Contracts.CodeSource>.Write(System.Text.Json.Utf8JsonWriter, Virtufin.WorkManager.Contracts.CodeSource, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of CodeSource).Write(Utf8JsonWriter, CodeSource, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of Virtufin.WorkManager.Contracts.CodeSource).Write(System.Text.Json.Utf8JsonWriter, Virtufin.WorkManager.Contracts.CodeSource, System.Text.Json.JsonSerializerOptions)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.Write(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+    name: Write
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.write
+  - name: (
+  - uid: System.Text.Json.Utf8JsonWriter
+    name: Utf8JsonWriter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
+  - name: ','
+  - name: " "
+  - uid: Virtufin.WorkManager.Contracts.CodeSource
+    name: CodeSource
+    href: Virtufin.WorkManager.Contracts.CodeSource.html
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter{Virtufin.WorkManager.Contracts.CodeSource}.Write(System.Text.Json.Utf8JsonWriter,Virtufin.WorkManager.Contracts.CodeSource,System.Text.Json.JsonSerializerOptions)
+    name: Write
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.write
+  - name: (
+  - uid: System.Text.Json.Utf8JsonWriter
+    name: Utf8JsonWriter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
+  - name: ','
+  - name: " "
+  - uid: Virtufin.WorkManager.Contracts.CodeSource
+    name: CodeSource
+    href: Virtufin.WorkManager.Contracts.CodeSource.html
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+- uid: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Write*
+  commentId: Overload:Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Write
+  href: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.html#Virtufin_WorkManager_Contracts_CodeSourceJsonConverter_Write_System_Text_Json_Utf8JsonWriter_Virtufin_WorkManager_Contracts_CodeSource_System_Text_Json_JsonSerializerOptions_
+  name: Write
+  nameWithType: CodeSourceJsonConverter.Write
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.Write
+- uid: System.Text.Json.Utf8JsonWriter
+  commentId: T:System.Text.Json.Utf8JsonWriter
+  parent: System.Text.Json
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
+  name: Utf8JsonWriter
+  nameWithType: Utf8JsonWriter
+  fullName: System.Text.Json.Utf8JsonWriter
+- uid: System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.write
+  name: Write(Utf8JsonWriter, T, JsonSerializerOptions)
+  nameWithType: JsonConverter<T>.Write(Utf8JsonWriter, T, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<T>.Write(System.Text.Json.Utf8JsonWriter, T, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of T).Write(Utf8JsonWriter, T, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).Write(System.Text.Json.Utf8JsonWriter, T, System.Text.Json.JsonSerializerOptions)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+    name: Write
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.write
+  - name: (
+  - uid: System.Text.Json.Utf8JsonWriter
+    name: Utf8JsonWriter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+    name: Write
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.write
+  - name: (
+  - uid: System.Text.Json.Utf8JsonWriter
+    name: Utf8JsonWriter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
+  - name: )

@@ -1,0 +1,134 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Contracts
+  commentId: N:Virtufin.WorkManager.Contracts
+  id: Virtufin.WorkManager.Contracts
+  children:
+  - Virtufin.WorkManager.Contracts.CodeSource
+  - Virtufin.WorkManager.Contracts.CodeSourceContent
+  - Virtufin.WorkManager.Contracts.CodeSourceJsonConverter
+  - Virtufin.WorkManager.Contracts.CodeSourceUrl
+  - Virtufin.WorkManager.Contracts.CreateWorkerRequest
+  - Virtufin.WorkManager.Contracts.EngineInfo
+  - Virtufin.WorkManager.Contracts.HistoryEntry
+  - Virtufin.WorkManager.Contracts.IEngineRegistry
+  - Virtufin.WorkManager.Contracts.LockData
+  - Virtufin.WorkManager.Contracts.WorkerConfig
+  - Virtufin.WorkManager.Contracts.WorkerInfo
+  - Virtufin.WorkManager.Contracts.WorkerStatus
+  langs:
+  - csharp
+  - vb
+  name: Virtufin.WorkManager.Contracts
+  nameWithType: Virtufin.WorkManager.Contracts
+  fullName: Virtufin.WorkManager.Contracts
+  type: Namespace
+  assemblies:
+  - Virtufin.WorkManager
+references:
+- uid: Virtufin.WorkManager.Contracts.EngineInfo
+  commentId: T:Virtufin.WorkManager.Contracts.EngineInfo
+  href: Virtufin.WorkManager.Contracts.EngineInfo.html
+  name: EngineInfo
+  nameWithType: EngineInfo
+  fullName: Virtufin.WorkManager.Contracts.EngineInfo
+- uid: Virtufin.WorkManager.Contracts.IEngineRegistry
+  commentId: T:Virtufin.WorkManager.Contracts.IEngineRegistry
+  parent: Virtufin.WorkManager.Contracts
+  href: Virtufin.WorkManager.Contracts.IEngineRegistry.html
+  name: IEngineRegistry
+  nameWithType: IEngineRegistry
+  fullName: Virtufin.WorkManager.Contracts.IEngineRegistry
+- uid: Virtufin.WorkManager.Contracts.CodeSource
+  commentId: T:Virtufin.WorkManager.Contracts.CodeSource
+  parent: Virtufin.WorkManager.Contracts
+  href: Virtufin.WorkManager.Contracts.CodeSource.html
+  name: CodeSource
+  nameWithType: CodeSource
+  fullName: Virtufin.WorkManager.Contracts.CodeSource
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl
+  commentId: T:Virtufin.WorkManager.Contracts.CodeSourceUrl
+  href: Virtufin.WorkManager.Contracts.CodeSourceUrl.html
+  name: CodeSourceUrl
+  nameWithType: CodeSourceUrl
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl
+- uid: Virtufin.WorkManager.Contracts.CodeSourceContent
+  commentId: T:Virtufin.WorkManager.Contracts.CodeSourceContent
+  href: Virtufin.WorkManager.Contracts.CodeSourceContent.html
+  name: CodeSourceContent
+  nameWithType: CodeSourceContent
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceContent
+- uid: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter
+  commentId: T:Virtufin.WorkManager.Contracts.CodeSourceJsonConverter
+  href: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.html
+  name: CodeSourceJsonConverter
+  nameWithType: CodeSourceJsonConverter
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig
+  commentId: T:Virtufin.WorkManager.Contracts.WorkerConfig
+  href: Virtufin.WorkManager.Contracts.WorkerConfig.html
+  name: WorkerConfig
+  nameWithType: WorkerConfig
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig
+- uid: Virtufin.WorkManager.Contracts.HistoryEntry
+  commentId: T:Virtufin.WorkManager.Contracts.HistoryEntry
+  href: Virtufin.WorkManager.Contracts.HistoryEntry.html
+  name: HistoryEntry
+  nameWithType: HistoryEntry
+  fullName: Virtufin.WorkManager.Contracts.HistoryEntry
+- uid: Virtufin.WorkManager.Contracts.WorkerStatus
+  commentId: T:Virtufin.WorkManager.Contracts.WorkerStatus
+  parent: Virtufin.WorkManager.Contracts
+  href: Virtufin.WorkManager.Contracts.WorkerStatus.html
+  name: WorkerStatus
+  nameWithType: WorkerStatus
+  fullName: Virtufin.WorkManager.Contracts.WorkerStatus
+- uid: Virtufin.WorkManager.Contracts.WorkerInfo
+  commentId: T:Virtufin.WorkManager.Contracts.WorkerInfo
+  href: Virtufin.WorkManager.Contracts.WorkerInfo.html
+  name: WorkerInfo
+  nameWithType: WorkerInfo
+  fullName: Virtufin.WorkManager.Contracts.WorkerInfo
+- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest
+  commentId: T:Virtufin.WorkManager.Contracts.CreateWorkerRequest
+  parent: Virtufin.WorkManager.Contracts
+  href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html
+  name: CreateWorkerRequest
+  nameWithType: CreateWorkerRequest
+  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest
+- uid: Virtufin.WorkManager.Contracts.LockData
+  commentId: T:Virtufin.WorkManager.Contracts.LockData
+  href: Virtufin.WorkManager.Contracts.LockData.html
+  name: LockData
+  nameWithType: LockData
+  fullName: Virtufin.WorkManager.Contracts.LockData
+- uid: Virtufin.WorkManager.Contracts
+  commentId: N:Virtufin.WorkManager.Contracts
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Contracts
+  nameWithType: Virtufin.WorkManager.Contracts
+  fullName: Virtufin.WorkManager.Contracts
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
