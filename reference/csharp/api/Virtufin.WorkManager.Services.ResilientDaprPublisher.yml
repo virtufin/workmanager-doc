@@ -146,7 +146,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 209
+    startLine: 213
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services

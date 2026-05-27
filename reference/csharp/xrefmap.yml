@@ -32,6 +32,12 @@ references:
   fullName.vb: Virtufin.WorkManager.Components.WorkManager.New
   nameWithType: WorkManager.WorkManager
   nameWithType.vb: WorkManager.New
+- uid: Virtufin.WorkManager.Components.WorkManager.CodeFetcherHttpClientName
+  name: CodeFetcherHttpClientName
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_CodeFetcherHttpClientName
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.CodeFetcherHttpClientName
+  fullName: Virtufin.WorkManager.Components.WorkManager.CodeFetcherHttpClientName
+  nameWithType: WorkManager.CodeFetcherHttpClientName
 - uid: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
   name: CreateWorkerAsync(CreateWorkerRequest, CancellationToken)
   href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_CreateWorkerAsync_Virtufin_WorkManager_Contracts_CreateWorkerRequest_System_Threading_CancellationToken_
@@ -51,6 +57,12 @@ references:
   commentId: F:Virtufin.WorkManager.Components.WorkManager.DeadLetterTopicSuffix
   fullName: Virtufin.WorkManager.Components.WorkManager.DeadLetterTopicSuffix
   nameWithType: WorkManager.DeadLetterTopicSuffix
+- uid: Virtufin.WorkManager.Components.WorkManager.DefaultCodeFetchTimeoutSeconds
+  name: DefaultCodeFetchTimeoutSeconds
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_DefaultCodeFetchTimeoutSeconds
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.DefaultCodeFetchTimeoutSeconds
+  fullName: Virtufin.WorkManager.Components.WorkManager.DefaultCodeFetchTimeoutSeconds
+  nameWithType: WorkManager.DefaultCodeFetchTimeoutSeconds
 - uid: Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync(System.Guid,System.Threading.CancellationToken)
   name: DeleteWorkerAsync(Guid, CancellationToken)
   href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_DeleteWorkerAsync_System_Guid_System_Threading_CancellationToken_
@@ -187,6 +199,18 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync
   nameWithType: WorkManager.StopWorkerAsync
+- uid: Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventSourceUri
+  name: UnknownCloudEventSourceUri
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_UnknownCloudEventSourceUri
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventSourceUri
+  fullName: Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventSourceUri
+  nameWithType: WorkManager.UnknownCloudEventSourceUri
+- uid: Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventType
+  name: UnknownCloudEventType
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_UnknownCloudEventType
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventType
+  fullName: Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventType
+  nameWithType: WorkManager.UnknownCloudEventType
 - uid: Virtufin.WorkManager.Configuration
   name: Virtufin.WorkManager.Configuration
   href: api/Virtufin.WorkManager.Configuration.html
@@ -1442,6 +1466,12 @@ references:
   commentId: F:Virtufin.WorkManager.Services.AppMetrics.MessagesProcessed
   fullName: Virtufin.WorkManager.Services.AppMetrics.MessagesProcessed
   nameWithType: AppMetrics.MessagesProcessed
+- uid: Virtufin.WorkManager.Services.AppMetrics.MeterName
+  name: MeterName
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_MeterName
+  commentId: F:Virtufin.WorkManager.Services.AppMetrics.MeterName
+  fullName: Virtufin.WorkManager.Services.AppMetrics.MeterName
+  nameWithType: AppMetrics.MeterName
 - uid: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity)
   name: RecordDaprCallLatency(Activity?)
   href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_RecordDaprCallLatency_System_Diagnostics_Activity_

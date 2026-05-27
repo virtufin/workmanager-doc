@@ -6,8 +6,10 @@ items:
   parent: Virtufin.WorkManager.Components
   children:
   - Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)
+  - Virtufin.WorkManager.Components.WorkManager.CodeFetcherHttpClientName
   - Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.DeadLetterTopicSuffix
+  - Virtufin.WorkManager.Components.WorkManager.DefaultCodeFetchTimeoutSeconds
   - Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync(System.Guid,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.DisposeAsync
   - Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)
@@ -18,6 +20,8 @@ items:
   - Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
   - Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync(System.Guid,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync(System.Guid,System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventSourceUri
+  - Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventType
   langs:
   - csharp
   - vb
@@ -81,6 +85,114 @@ items:
     return:
       type: System.String
     content.vb: Public Const DeadLetterTopicSuffix As String = "-dead"
+- uid: Virtufin.WorkManager.Components.WorkManager.CodeFetcherHttpClientName
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.CodeFetcherHttpClientName
+  id: CodeFetcherHttpClientName
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: CodeFetcherHttpClientName
+  nameWithType: WorkManager.CodeFetcherHttpClientName
+  fullName: Virtufin.WorkManager.Components.WorkManager.CodeFetcherHttpClientName
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: CodeFetcherHttpClientName
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 51
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  syntax:
+    content: public const string CodeFetcherHttpClientName = "CodeFetcher"
+    return:
+      type: System.String
+    content.vb: Public Const CodeFetcherHttpClientName As String = "CodeFetcher"
+- uid: Virtufin.WorkManager.Components.WorkManager.DefaultCodeFetchTimeoutSeconds
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.DefaultCodeFetchTimeoutSeconds
+  id: DefaultCodeFetchTimeoutSeconds
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: DefaultCodeFetchTimeoutSeconds
+  nameWithType: WorkManager.DefaultCodeFetchTimeoutSeconds
+  fullName: Virtufin.WorkManager.Components.WorkManager.DefaultCodeFetchTimeoutSeconds
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: DefaultCodeFetchTimeoutSeconds
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 52
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  syntax:
+    content: public const int DefaultCodeFetchTimeoutSeconds = 30
+    return:
+      type: System.Int32
+    content.vb: Public Const DefaultCodeFetchTimeoutSeconds As Integer = 30
+- uid: Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventType
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventType
+  id: UnknownCloudEventType
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: UnknownCloudEventType
+  nameWithType: WorkManager.UnknownCloudEventType
+  fullName: Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventType
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: UnknownCloudEventType
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 53
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  syntax:
+    content: public const string UnknownCloudEventType = "unknown"
+    return:
+      type: System.String
+    content.vb: Public Const UnknownCloudEventType As String = "unknown"
+- uid: Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventSourceUri
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventSourceUri
+  id: UnknownCloudEventSourceUri
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: UnknownCloudEventSourceUri
+  nameWithType: WorkManager.UnknownCloudEventSourceUri
+  fullName: Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventSourceUri
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: UnknownCloudEventSourceUri
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 54
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  syntax:
+    content: public static readonly Uri UnknownCloudEventSourceUri
+    return:
+      type: System.Uri
+    content.vb: Public Shared ReadOnly UnknownCloudEventSourceUri As Uri
 - uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)
   commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)
   id: '#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)'
@@ -99,7 +211,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 63
+    startLine: 71
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -153,7 +265,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RegisterEngine
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 103
+    startLine: 111
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -198,7 +310,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CreateWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 115
+    startLine: 123
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -240,7 +352,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCodeFromContent
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 175
+    startLine: 183
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -290,7 +402,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCodeFromUrl
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 205
+    startLine: 213
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -337,7 +449,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeleteWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 237
+    startLine: 245
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -378,7 +490,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StartWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 258
+    startLine: 266
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -419,7 +531,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StopWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 281
+    startLine: 289
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -460,7 +572,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 302
+    startLine: 310
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -491,7 +603,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 328
+    startLine: 336
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -530,7 +642,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoverWorkersAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 341
+    startLine: 349
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -568,7 +680,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 819
+    startLine: 830
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -849,6 +961,25 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uri
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
 - uid: Virtufin.WorkManager.Components.WorkManager.#ctor*
   commentId: Overload:Virtufin.WorkManager.Components.WorkManager.#ctor
   href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Dapr_Messaging_PublishSubscribe_DaprPublishSubscribeClient_Dapr_Client_DaprClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_System_String_System_String_System_String_
@@ -1491,14 +1622,6 @@ references:
   name: LoadCodeFromUrl
   nameWithType: WorkManager.LoadCodeFromUrl
   fullName: Virtufin.WorkManager.Components.WorkManager.LoadCodeFromUrl
-- uid: System.Uri
-  commentId: T:System.Uri
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.uri
-  name: Uri
-  nameWithType: Uri
-  fullName: System.Uri
 - uid: Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync*
   commentId: Overload:Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync
   href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_DeleteWorkerAsync_System_Guid_System_Threading_CancellationToken_

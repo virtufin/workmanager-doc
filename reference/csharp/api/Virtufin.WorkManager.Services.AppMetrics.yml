@@ -8,6 +8,7 @@ items:
   - Virtufin.WorkManager.Services.AppMetrics.DaprCallLatency
   - Virtufin.WorkManager.Services.AppMetrics.LockContentionEvents
   - Virtufin.WorkManager.Services.AppMetrics.MessagesProcessed
+  - Virtufin.WorkManager.Services.AppMetrics.MeterName
   - Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity)
   - Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(System.String)
   - Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed(System.String)
@@ -46,6 +47,33 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: Virtufin.WorkManager.Services.AppMetrics.MeterName
+  commentId: F:Virtufin.WorkManager.Services.AppMetrics.MeterName
+  id: MeterName
+  parent: Virtufin.WorkManager.Services.AppMetrics
+  langs:
+  - csharp
+  - vb
+  name: MeterName
+  nameWithType: AppMetrics.MeterName
+  fullName: Virtufin.WorkManager.Services.AppMetrics.MeterName
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/AppMetrics.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: MeterName
+    path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
+    startLine: 10
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  syntax:
+    content: public const string MeterName = "Virtufin.WorkManager"
+    return:
+      type: System.String
+    content.vb: Public Const MeterName As String = "Virtufin.WorkManager"
 - uid: Virtufin.WorkManager.Services.AppMetrics.WorkerCountByStatus
   commentId: F:Virtufin.WorkManager.Services.AppMetrics.WorkerCountByStatus
   id: WorkerCountByStatus
@@ -64,7 +92,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: WorkerCountByStatus
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 13
+    startLine: 28
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -93,7 +121,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: MessagesProcessed
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 23
+    startLine: 38
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -122,7 +150,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LockContentionEvents
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 28
+    startLine: 43
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -151,7 +179,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DaprCallLatency
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 33
+    startLine: 48
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -180,7 +208,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetWorkerCounts
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 45
+    startLine: 60
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -216,7 +244,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecordMessageProcessed
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 54
+    startLine: 69
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -250,7 +278,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecordLockContention
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 62
+    startLine: 77
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -284,7 +312,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecordDaprCallLatency
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 70
+    startLine: 85
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -568,6 +596,17 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: System.Diagnostics.Metrics.ObservableGauge{System.Int32}
   commentId: T:System.Diagnostics.Metrics.ObservableGauge{System.Int32}
   parent: System.Diagnostics.Metrics
@@ -817,17 +856,6 @@ references:
   name: RecordMessageProcessed
   nameWithType: AppMetrics.RecordMessageProcessed
   fullName: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention*
   commentId: Overload:Virtufin.WorkManager.Services.AppMetrics.RecordLockContention
   href: Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_RecordLockContention_System_String_
