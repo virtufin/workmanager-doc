@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/fad6d7c364e12b064b83c7cc6cad57909cf4fea1"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/2cda912fcf2c24cd3abc126543912545e5626d81"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit fad6d7c">
+       title="View commit 2cda912">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">fad6d7c</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">2cda912</text>
       </svg>
     </a>
 </div>
@@ -370,14 +370,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/fad6d7c364e12b064b83c7cc6cad57909cf4fea1"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/2cda912fcf2c24cd3abc126543912545e5626d81"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit fad6d7c">
+       title="View commit 2cda912">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">fad6d7c</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">2cda912</text>
       </svg>
     </a>
 </div>
@@ -1544,35 +1544,13 @@
 <h1 id="worker-lifecycle">Worker Lifecycle</h1>
 <p>Workers go through several state transitions during their lifetime. This guide covers creation, state management, and cleanup.</p>
 <h2 id="worker-states">Worker States</h2>
-<div class="highlight"><pre><span></span><code>┌──────────────┐
-│   (None)     │  Worker doesn&#39;t exist
-└──────┬───────┘
-       │ CreateWorkerAsync()
-       ▼
-┌──────────────┐
-│   Stopped    │  Created but not yet subscribed
-└──────┬───────┘
-       │ StartWorkerAsync()
-       ▼
-┌──────────────┐
-│   Running    │  Subscribed and processing
-└──────┬───────┘
-       │ StopWorkerAsync()
-       ▼
-┌──────────────┐
-│   Stopped    │  Subscription paused
-└──────┬───────┘
-       │ StartWorkerAsync()
-       ▼
-┌──────────────┐
-│   Running    │  Resumed processing
-└──────┬───────┘
-       │ DeleteWorkerAsync()
-       ▼
-┌──────────────┐
-│   Deleted    │  Removed from registry and state
-└──────────────┘
-</code></pre></div>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Stopped : CreateWorkerAsync()
+    Stopped --&gt; Running : StartWorkerAsync()
+    Running --&gt; Stopped : StopWorkerAsync()
+    Stopped --&gt; Running : StartWorkerAsync()
+    Running --&gt; Deleted : DeleteWorkerAsync()
+    Stopped --&gt; Deleted : DeleteWorkerAsync()</code></pre>
 <h2 id="creation">Creation</h2>
 <h3 id="createworkerasync">CreateWorkerAsync</h3>
 <div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">workerId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">workManager</span><span class="p">.</span><span class="n">CreateWorkerAsync</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CreateWorkerRequest</span><span class="p">(</span>
@@ -1777,7 +1755,7 @@ TryAcquireGroupLock()
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-05-27T05:54:32Z</span>
+  <span style="display:table-cell;text-align:right">2026-05-27T07:37:02Z</span>
 </div>
 
     </div>
