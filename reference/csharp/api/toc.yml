@@ -67,6 +67,9 @@ items:
   - uid: Virtufin.WorkManager.Runtime.EngineRegistry
     name: EngineRegistry
     type: Class
+  - uid: Virtufin.WorkManager.Runtime.LockContentionException
+    name: LockContentionException
+    type: Class
   - uid: Virtufin.WorkManager.Runtime.Worker
     name: Worker
     type: Class
@@ -80,7 +83,28 @@ items:
   name: Virtufin.WorkManager.Services
   type: Namespace
   items:
+  - uid: Virtufin.WorkManager.Services.AppMetrics
+    name: AppMetrics
+    type: Class
+  - uid: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
+    name: DaprCircuitBreakerHealthCheck
+    type: Class
+  - uid: Virtufin.WorkManager.Services.DaprResiliencePipeline
+    name: DaprResiliencePipeline
+    type: Class
+  - uid: Virtufin.WorkManager.Services.RecoveryHealthCheck
+    name: RecoveryHealthCheck
+    type: Class
+  - uid: Virtufin.WorkManager.Services.RecoveryState
+    name: RecoveryState
+    type: Class
+  - uid: Virtufin.WorkManager.Services.ResilientDaprPublisher
+    name: ResilientDaprPublisher
+    type: Class
   - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService
     name: WorkManagerGrpcService
+    type: Class
+  - uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
+    name: WorkManagerRecoveryHostedService
     type: Class
 memberLayout: SamePage

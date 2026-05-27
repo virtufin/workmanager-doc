@@ -284,6 +284,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Runtime.LockContentionException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Runtime.LockContentionException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Runtime.LockContentionException",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Runtime.LockContentionException.yml\" sourcestartlinenumber=\"1\">Exception thrown when a distributed group lock cannot be acquired,\nindicating the message should be retried.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Virtufin.WorkManager.Runtime.Worker.yml",
       "output": {
         ".html": {
@@ -340,6 +354,90 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.AppMetrics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.AppMetrics.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.AppMetrics",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.AppMetrics.yml\" sourcestartlinenumber=\"1\">Application-level metrics for the WorkManager service.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.yml\" sourcestartlinenumber=\"1\">Health check that reports Dapr circuit breaker state.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.DaprResiliencePipeline.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.DaprResiliencePipeline.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.DaprResiliencePipeline",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.DaprResiliencePipeline.yml\" sourcestartlinenumber=\"1\">Provides resilience policies for Dapr operations with retry and circuit breaker.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.RecoveryHealthCheck.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.RecoveryHealthCheck.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.RecoveryHealthCheck",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.RecoveryHealthCheck.yml\" sourcestartlinenumber=\"1\">Health check that verifies worker recovery has completed successfully.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.RecoveryState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.RecoveryState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.RecoveryState",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.RecoveryState.yml\" sourcestartlinenumber=\"1\">Tracks the state of worker recovery on startup.\nUsed by the recovery health check to gate Kestrel readiness.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.ResilientDaprPublisher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.ResilientDaprPublisher.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.ResilientDaprPublisher",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.ResilientDaprPublisher.yml\" sourcestartlinenumber=\"1\">Buffers outbound pub/sub messages during Dapr outages and flushes on reconnect.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Virtufin.WorkManager.Services.WorkManagerGrpcService.yml",
       "output": {
         ".html": {
@@ -351,6 +449,20 @@
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Services.WorkManagerGrpcService",
       "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerGrpcService.yml\" sourcestartlinenumber=\"1\">gRPC service implementation for the WorkManager.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"1\">Hosted service that automatically recovers workers on application startup.\nGates Kestrel readiness until recovery is complete.</p>\n"
     },
     {
       "type": "ManagedReference",

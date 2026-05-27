@@ -21,7 +21,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CodeSourceContent
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -61,7 +61,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -96,7 +96,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Content
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts

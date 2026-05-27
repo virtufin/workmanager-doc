@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/2cda912fcf2c24cd3abc126543912545e5626d81"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/842d93a4042d71fed0c50677e23d59c305a36d24"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 2cda912">
+       title="View commit 842d93a">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">2cda912</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">842d93a</text>
       </svg>
     </a>
 </div>
@@ -319,7 +319,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../development.md" class="md-tabs__link">
+        <a href="../development/" class="md-tabs__link">
           
   
   
@@ -370,14 +370,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/2cda912fcf2c24cd3abc126543912545e5626d81"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/842d93a4042d71fed0c50677e23d59c305a36d24"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 2cda912">
+       title="View commit 842d93a">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">2cda912</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">842d93a</text>
       </svg>
     </a>
 </div>
@@ -807,6 +807,45 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#performance-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Characteristics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Characteristics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-engine-internals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python Engine Internals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1113,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../development.md" class="md-nav__link">
+      <a href="../development/" class="md-nav__link">
         
   
   
@@ -1141,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deployment.md" class="md-nav__link">
+      <a href="../deployment/" class="md-nav__link">
         
   
   
@@ -1319,6 +1358,45 @@
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Characteristics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Characteristics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-engine-internals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python Engine Internals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1531,6 +1609,57 @@ Same as <code>CSharpSourceEngine</code> - the assembly must contain a <code>Proc
 <li><code>PythonEngine</code> uses <code>IDisposable</code> - dispose is called when engine is replaced</li>
 <li><code>CSharpSourceEngine</code> and <code>CSharpDllEngine</code> do not require disposal</li>
 </ul>
+<h2 id="performance-characteristics">Performance Characteristics</h2>
+<table>
+<thead>
+<tr>
+<th>Engine</th>
+<th>Startup</th>
+<th>Per-Message</th>
+<th>Throughput</th>
+<th>Recommended For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CSharpSourceEngine</strong></td>
+<td>~2s (Roslyn compilation)</td>
+<td>&lt; 1ms</td>
+<td>High</td>
+<td>High-throughput topics, complex logic</td>
+</tr>
+<tr>
+<td><strong>CSharpDllEngine</strong></td>
+<td>&lt; 10ms</td>
+<td>&lt; 1ms</td>
+<td>Highest</td>
+<td>Pre-compiled .NET assemblies</td>
+</tr>
+<tr>
+<td><strong>PythonEngine</strong></td>
+<td>~500ms (subprocess start)</td>
+<td>1-5ms</td>
+<td>Medium</td>
+<td>Prototyping, scripting, Python-specific libraries</td>
+</tr>
+</tbody>
+</table>
+<h3 id="python-engine-internals">Python Engine Internals</h3>
+<p>The Python engine uses a <strong>persistent subprocess</strong> that communicates via stdin/stdout:</p>
+<ul>
+<li>The subprocess is started once at <code>LoadCode</code> and stays alive for the worker's lifetime</li>
+<li>CloudEvents are exchanged as <strong>JSON lines</strong> — the host writes the input event to stdin and reads the response from stdout</li>
+<li>A <strong>health check</strong> pings the subprocess every 10 seconds with an empty heartbeat; if the subprocess fails to respond, it is automatically restarted</li>
+<li><strong>Stderr</strong> is captured as a Warning-level log channel, <strong>not</strong> treated as an error</li>
+<li><strong>No temporary files</strong> are written — code is injected directly via stdin at startup</li>
+</ul>
+<h3 id="recommendations">Recommendations</h3>
+<ul>
+<li>Use <strong>CSharpSourceEngine</strong> for high-throughput or latency-sensitive topics</li>
+<li>Use <strong>PythonEngine</strong> for rapid prototyping, scripting, or when Python-specific packages are needed</li>
+<li>The first Roslyn compilation in CSharpSourceEngine incurs a ~2s startup cost; subsequent messages are sub-millisecond</li>
+<li>Python worker subprocess overhead is ~500ms at startup and 1-5ms per message</li>
+</ul>
 
 
 
@@ -1562,7 +1691,7 @@ Same as <code>CSharpSourceEngine</code> - the assembly must contain a <code>Proc
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-05-27T07:37:02Z</span>
+  <span style="display:table-cell;text-align:right">2026-05-27T21:18:26Z</span>
 </div>
 
     </div>

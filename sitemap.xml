@@ -44,4 +44,12 @@
          <loc>https://workmanager.doc.virtufin.com/worker-lifecycle/</loc>
          <lastmod>2026-05-27</lastmod>
     </url>
+    <url>
+         <loc>https://workmanager.doc.virtufin.com/deployment/</loc>
+         <lastmod>2026-05-27</lastmod>
+    </url>
+    <url>
+         <loc>https://workmanager.doc.virtufin.com/development/</loc>
+         <lastmod>2026-05-27</lastmod>
+    </url>
 </urlset>

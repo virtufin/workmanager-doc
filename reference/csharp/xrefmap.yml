@@ -13,15 +13,15 @@ references:
   commentId: T:Virtufin.WorkManager.Components.WorkManager
   fullName: Virtufin.WorkManager.Components.WorkManager
   nameWithType: WorkManager
-- uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,System.String,System.String)
-  name: WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, string?, string?)
-  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Dapr_Messaging_PublishSubscribe_DaprPublishSubscribeClient_Dapr_Client_DaprClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_System_String_System_String_
-  commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,System.String,System.String)
-  name.vb: New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, String, String)
-  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>, Microsoft.Extensions.Logging.ILoggerFactory, string?, string?)
-  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager), Microsoft.Extensions.Logging.ILoggerFactory, String, String)
-  nameWithType: WorkManager.WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, string?, string?)
-  nameWithType.vb: WorkManager.New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, String, String)
+- uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)
+  name: WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, string?, string?, string?)
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Dapr_Messaging_PublishSubscribe_DaprPublishSubscribeClient_Dapr_Client_DaprClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_System_String_System_String_System_String_
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)
+  name.vb: New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, String, String, String)
+  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>, Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, string?, string?, string?)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager), Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, String, String, String)
+  nameWithType: WorkManager.WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, string?, string?, string?)
+  nameWithType.vb: WorkManager.New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, String, String, String)
 - uid: Virtufin.WorkManager.Components.WorkManager.#ctor*
   name: WorkManager
   href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_
@@ -45,6 +45,12 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync
   nameWithType: WorkManager.CreateWorkerAsync
+- uid: Virtufin.WorkManager.Components.WorkManager.DeadLetterTopicSuffix
+  name: DeadLetterTopicSuffix
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_DeadLetterTopicSuffix
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.DeadLetterTopicSuffix
+  fullName: Virtufin.WorkManager.Components.WorkManager.DeadLetterTopicSuffix
+  nameWithType: WorkManager.DeadLetterTopicSuffix
 - uid: Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync(System.Guid,System.Threading.CancellationToken)
   name: DeleteWorkerAsync(Guid, CancellationToken)
   href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_DeleteWorkerAsync_System_Guid_System_Threading_CancellationToken_
@@ -362,15 +368,15 @@ references:
   commentId: T:Virtufin.WorkManager.Contracts.CodeSourceUrl
   fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl
   nameWithType: CodeSourceUrl
-- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri)
-  name: CodeSourceUrl(Uri)
-  href: api/Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl__ctor_System_Uri_
-  commentId: M:Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri)
-  name.vb: New(Uri)
-  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.CodeSourceUrl(System.Uri)
-  fullName.vb: Virtufin.WorkManager.Contracts.CodeSourceUrl.New(System.Uri)
-  nameWithType: CodeSourceUrl.CodeSourceUrl(Uri)
-  nameWithType.vb: CodeSourceUrl.New(Uri)
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String)
+  name: CodeSourceUrl(Uri, string?)
+  href: api/Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl__ctor_System_Uri_System_String_
+  commentId: M:Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String)
+  name.vb: New(Uri, String)
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.CodeSourceUrl(System.Uri, string?)
+  fullName.vb: Virtufin.WorkManager.Contracts.CodeSourceUrl.New(System.Uri, String)
+  nameWithType: CodeSourceUrl.CodeSourceUrl(Uri, string?)
+  nameWithType.vb: CodeSourceUrl.New(Uri, String)
 - uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor*
   name: CodeSourceUrl
   href: api/Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl__ctor_
@@ -381,6 +387,19 @@ references:
   fullName.vb: Virtufin.WorkManager.Contracts.CodeSourceUrl.New
   nameWithType: CodeSourceUrl.CodeSourceUrl
   nameWithType.vb: CodeSourceUrl.New
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256
+  name: ContentSha256
+  href: api/Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl_ContentSha256
+  commentId: P:Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256
+  nameWithType: CodeSourceUrl.ContentSha256
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256*
+  name: ContentSha256
+  href: api/Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl_ContentSha256_
+  commentId: Overload:Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256
+  nameWithType: CodeSourceUrl.ContentSha256
 - uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.Url
   name: Url
   href: api/Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl_Url
@@ -640,15 +659,15 @@ references:
   commentId: T:Virtufin.WorkManager.Contracts.LockData
   fullName: Virtufin.WorkManager.Contracts.LockData
   nameWithType: LockData
-- uid: Virtufin.WorkManager.Contracts.LockData.#ctor(System.String,System.DateTime)
-  name: LockData(string, DateTime)
-  href: api/Virtufin.WorkManager.Contracts.LockData.html#Virtufin_WorkManager_Contracts_LockData__ctor_System_String_System_DateTime_
-  commentId: M:Virtufin.WorkManager.Contracts.LockData.#ctor(System.String,System.DateTime)
-  name.vb: New(String, Date)
-  fullName: Virtufin.WorkManager.Contracts.LockData.LockData(string, System.DateTime)
-  fullName.vb: Virtufin.WorkManager.Contracts.LockData.New(String, Date)
-  nameWithType: LockData.LockData(string, DateTime)
-  nameWithType.vb: LockData.New(String, Date)
+- uid: Virtufin.WorkManager.Contracts.LockData.#ctor(System.String,System.DateTime,System.Int64)
+  name: LockData(string, DateTime, long)
+  href: api/Virtufin.WorkManager.Contracts.LockData.html#Virtufin_WorkManager_Contracts_LockData__ctor_System_String_System_DateTime_System_Int64_
+  commentId: M:Virtufin.WorkManager.Contracts.LockData.#ctor(System.String,System.DateTime,System.Int64)
+  name.vb: New(String, Date, Long)
+  fullName: Virtufin.WorkManager.Contracts.LockData.LockData(string, System.DateTime, long)
+  fullName.vb: Virtufin.WorkManager.Contracts.LockData.New(String, Date, Long)
+  nameWithType: LockData.LockData(string, DateTime, long)
+  nameWithType.vb: LockData.New(String, Date, Long)
 - uid: Virtufin.WorkManager.Contracts.LockData.#ctor*
   name: LockData
   href: api/Virtufin.WorkManager.Contracts.LockData.html#Virtufin_WorkManager_Contracts_LockData__ctor_
@@ -672,6 +691,19 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Contracts.LockData.AcquiredAt
   nameWithType: LockData.AcquiredAt
+- uid: Virtufin.WorkManager.Contracts.LockData.FencingToken
+  name: FencingToken
+  href: api/Virtufin.WorkManager.Contracts.LockData.html#Virtufin_WorkManager_Contracts_LockData_FencingToken
+  commentId: P:Virtufin.WorkManager.Contracts.LockData.FencingToken
+  fullName: Virtufin.WorkManager.Contracts.LockData.FencingToken
+  nameWithType: LockData.FencingToken
+- uid: Virtufin.WorkManager.Contracts.LockData.FencingToken*
+  name: FencingToken
+  href: api/Virtufin.WorkManager.Contracts.LockData.html#Virtufin_WorkManager_Contracts_LockData_FencingToken_
+  commentId: Overload:Virtufin.WorkManager.Contracts.LockData.FencingToken
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Contracts.LockData.FencingToken
+  nameWithType: LockData.FencingToken
 - uid: Virtufin.WorkManager.Contracts.LockData.OwnerInstanceId
   name: OwnerInstanceId
   href: api/Virtufin.WorkManager.Contracts.LockData.html#Virtufin_WorkManager_Contracts_LockData_OwnerInstanceId
@@ -1059,6 +1091,57 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Runtime.EngineRegistry.Unregister
   nameWithType: EngineRegistry.Unregister
+- uid: Virtufin.WorkManager.Runtime.LockContentionException
+  name: LockContentionException
+  href: api/Virtufin.WorkManager.Runtime.LockContentionException.html
+  commentId: T:Virtufin.WorkManager.Runtime.LockContentionException
+  fullName: Virtufin.WorkManager.Runtime.LockContentionException
+  nameWithType: LockContentionException
+- uid: Virtufin.WorkManager.Runtime.LockContentionException.#ctor(System.String,System.Guid)
+  name: LockContentionException(string, Guid)
+  href: api/Virtufin.WorkManager.Runtime.LockContentionException.html#Virtufin_WorkManager_Runtime_LockContentionException__ctor_System_String_System_Guid_
+  commentId: M:Virtufin.WorkManager.Runtime.LockContentionException.#ctor(System.String,System.Guid)
+  name.vb: New(String, Guid)
+  fullName: Virtufin.WorkManager.Runtime.LockContentionException.LockContentionException(string, System.Guid)
+  fullName.vb: Virtufin.WorkManager.Runtime.LockContentionException.New(String, System.Guid)
+  nameWithType: LockContentionException.LockContentionException(string, Guid)
+  nameWithType.vb: LockContentionException.New(String, Guid)
+- uid: Virtufin.WorkManager.Runtime.LockContentionException.#ctor*
+  name: LockContentionException
+  href: api/Virtufin.WorkManager.Runtime.LockContentionException.html#Virtufin_WorkManager_Runtime_LockContentionException__ctor_
+  commentId: Overload:Virtufin.WorkManager.Runtime.LockContentionException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Virtufin.WorkManager.Runtime.LockContentionException.LockContentionException
+  fullName.vb: Virtufin.WorkManager.Runtime.LockContentionException.New
+  nameWithType: LockContentionException.LockContentionException
+  nameWithType.vb: LockContentionException.New
+- uid: Virtufin.WorkManager.Runtime.LockContentionException.GroupId
+  name: GroupId
+  href: api/Virtufin.WorkManager.Runtime.LockContentionException.html#Virtufin_WorkManager_Runtime_LockContentionException_GroupId
+  commentId: P:Virtufin.WorkManager.Runtime.LockContentionException.GroupId
+  fullName: Virtufin.WorkManager.Runtime.LockContentionException.GroupId
+  nameWithType: LockContentionException.GroupId
+- uid: Virtufin.WorkManager.Runtime.LockContentionException.GroupId*
+  name: GroupId
+  href: api/Virtufin.WorkManager.Runtime.LockContentionException.html#Virtufin_WorkManager_Runtime_LockContentionException_GroupId_
+  commentId: Overload:Virtufin.WorkManager.Runtime.LockContentionException.GroupId
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Runtime.LockContentionException.GroupId
+  nameWithType: LockContentionException.GroupId
+- uid: Virtufin.WorkManager.Runtime.LockContentionException.WorkerId
+  name: WorkerId
+  href: api/Virtufin.WorkManager.Runtime.LockContentionException.html#Virtufin_WorkManager_Runtime_LockContentionException_WorkerId
+  commentId: P:Virtufin.WorkManager.Runtime.LockContentionException.WorkerId
+  fullName: Virtufin.WorkManager.Runtime.LockContentionException.WorkerId
+  nameWithType: LockContentionException.WorkerId
+- uid: Virtufin.WorkManager.Runtime.LockContentionException.WorkerId*
+  name: WorkerId
+  href: api/Virtufin.WorkManager.Runtime.LockContentionException.html#Virtufin_WorkManager_Runtime_LockContentionException_WorkerId_
+  commentId: Overload:Virtufin.WorkManager.Runtime.LockContentionException.WorkerId
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Runtime.LockContentionException.WorkerId
+  nameWithType: LockContentionException.WorkerId
 - uid: Virtufin.WorkManager.Runtime.Worker
   name: Worker
   href: api/Virtufin.WorkManager.Runtime.Worker.html
@@ -1335,6 +1418,364 @@ references:
   commentId: N:Virtufin.WorkManager.Services
   fullName: Virtufin.WorkManager.Services
   nameWithType: Virtufin.WorkManager.Services
+- uid: Virtufin.WorkManager.Services.AppMetrics
+  name: AppMetrics
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html
+  commentId: T:Virtufin.WorkManager.Services.AppMetrics
+  fullName: Virtufin.WorkManager.Services.AppMetrics
+  nameWithType: AppMetrics
+- uid: Virtufin.WorkManager.Services.AppMetrics.DaprCallLatency
+  name: DaprCallLatency
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_DaprCallLatency
+  commentId: F:Virtufin.WorkManager.Services.AppMetrics.DaprCallLatency
+  fullName: Virtufin.WorkManager.Services.AppMetrics.DaprCallLatency
+  nameWithType: AppMetrics.DaprCallLatency
+- uid: Virtufin.WorkManager.Services.AppMetrics.LockContentionEvents
+  name: LockContentionEvents
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_LockContentionEvents
+  commentId: F:Virtufin.WorkManager.Services.AppMetrics.LockContentionEvents
+  fullName: Virtufin.WorkManager.Services.AppMetrics.LockContentionEvents
+  nameWithType: AppMetrics.LockContentionEvents
+- uid: Virtufin.WorkManager.Services.AppMetrics.MessagesProcessed
+  name: MessagesProcessed
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_MessagesProcessed
+  commentId: F:Virtufin.WorkManager.Services.AppMetrics.MessagesProcessed
+  fullName: Virtufin.WorkManager.Services.AppMetrics.MessagesProcessed
+  nameWithType: AppMetrics.MessagesProcessed
+- uid: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity)
+  name: RecordDaprCallLatency(Activity?)
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_RecordDaprCallLatency_System_Diagnostics_Activity_
+  commentId: M:Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity)
+  name.vb: RecordDaprCallLatency(Activity)
+  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity?)
+  fullName.vb: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity)
+  nameWithType: AppMetrics.RecordDaprCallLatency(Activity?)
+  nameWithType.vb: AppMetrics.RecordDaprCallLatency(Activity)
+- uid: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency*
+  name: RecordDaprCallLatency
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_RecordDaprCallLatency_
+  commentId: Overload:Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency
+  nameWithType: AppMetrics.RecordDaprCallLatency
+- uid: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(System.String)
+  name: RecordLockContention(string)
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_RecordLockContention_System_String_
+  commentId: M:Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(System.String)
+  name.vb: RecordLockContention(String)
+  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(string)
+  fullName.vb: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(String)
+  nameWithType: AppMetrics.RecordLockContention(string)
+  nameWithType.vb: AppMetrics.RecordLockContention(String)
+- uid: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention*
+  name: RecordLockContention
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_RecordLockContention_
+  commentId: Overload:Virtufin.WorkManager.Services.AppMetrics.RecordLockContention
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention
+  nameWithType: AppMetrics.RecordLockContention
+- uid: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed(System.String)
+  name: RecordMessageProcessed(string)
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_RecordMessageProcessed_System_String_
+  commentId: M:Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed(System.String)
+  name.vb: RecordMessageProcessed(String)
+  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed(string)
+  fullName.vb: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed(String)
+  nameWithType: AppMetrics.RecordMessageProcessed(string)
+  nameWithType.vb: AppMetrics.RecordMessageProcessed(String)
+- uid: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed*
+  name: RecordMessageProcessed
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_RecordMessageProcessed_
+  commentId: Overload:Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed
+  nameWithType: AppMetrics.RecordMessageProcessed
+- uid: Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts(System.Int32,System.Int32)
+  name: SetWorkerCounts(int, int)
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_SetWorkerCounts_System_Int32_System_Int32_
+  commentId: M:Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts(System.Int32,System.Int32)
+  name.vb: SetWorkerCounts(Integer, Integer)
+  fullName: Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts(int, int)
+  fullName.vb: Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts(Integer, Integer)
+  nameWithType: AppMetrics.SetWorkerCounts(int, int)
+  nameWithType.vb: AppMetrics.SetWorkerCounts(Integer, Integer)
+- uid: Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts*
+  name: SetWorkerCounts
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_SetWorkerCounts_
+  commentId: Overload:Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts
+  nameWithType: AppMetrics.SetWorkerCounts
+- uid: Virtufin.WorkManager.Services.AppMetrics.WorkerCountByStatus
+  name: WorkerCountByStatus
+  href: api/Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_WorkerCountByStatus
+  commentId: F:Virtufin.WorkManager.Services.AppMetrics.WorkerCountByStatus
+  fullName: Virtufin.WorkManager.Services.AppMetrics.WorkerCountByStatus
+  nameWithType: AppMetrics.WorkerCountByStatus
+- uid: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
+  name: DaprCircuitBreakerHealthCheck
+  href: api/Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.html
+  commentId: T:Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
+  fullName: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
+  nameWithType: DaprCircuitBreakerHealthCheck
+- uid: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.#ctor(Virtufin.WorkManager.Services.DaprResiliencePipeline)
+  name: DaprCircuitBreakerHealthCheck(DaprResiliencePipeline)
+  href: api/Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.html#Virtufin_WorkManager_Services_DaprCircuitBreakerHealthCheck__ctor_Virtufin_WorkManager_Services_DaprResiliencePipeline_
+  commentId: M:Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.#ctor(Virtufin.WorkManager.Services.DaprResiliencePipeline)
+  name.vb: New(DaprResiliencePipeline)
+  fullName: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.DaprCircuitBreakerHealthCheck(Virtufin.WorkManager.Services.DaprResiliencePipeline)
+  fullName.vb: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.New(Virtufin.WorkManager.Services.DaprResiliencePipeline)
+  nameWithType: DaprCircuitBreakerHealthCheck.DaprCircuitBreakerHealthCheck(DaprResiliencePipeline)
+  nameWithType.vb: DaprCircuitBreakerHealthCheck.New(DaprResiliencePipeline)
+- uid: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.#ctor*
+  name: DaprCircuitBreakerHealthCheck
+  href: api/Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.html#Virtufin_WorkManager_Services_DaprCircuitBreakerHealthCheck__ctor_
+  commentId: Overload:Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.DaprCircuitBreakerHealthCheck
+  fullName.vb: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.New
+  nameWithType: DaprCircuitBreakerHealthCheck.DaprCircuitBreakerHealthCheck
+  nameWithType.vb: DaprCircuitBreakerHealthCheck.New
+- uid: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)
+  name: CheckHealthAsync(HealthCheckContext, CancellationToken)
+  href: api/Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.html#Virtufin_WorkManager_Services_DaprCircuitBreakerHealthCheck_CheckHealthAsync_Microsoft_Extensions_Diagnostics_HealthChecks_HealthCheckContext_System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)
+  fullName: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext, System.Threading.CancellationToken)
+  nameWithType: DaprCircuitBreakerHealthCheck.CheckHealthAsync(HealthCheckContext, CancellationToken)
+- uid: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.CheckHealthAsync*
+  name: CheckHealthAsync
+  href: api/Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.html#Virtufin_WorkManager_Services_DaprCircuitBreakerHealthCheck_CheckHealthAsync_
+  commentId: Overload:Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.CheckHealthAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.CheckHealthAsync
+  nameWithType: DaprCircuitBreakerHealthCheck.CheckHealthAsync
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline
+  name: DaprResiliencePipeline
+  href: api/Virtufin.WorkManager.Services.DaprResiliencePipeline.html
+  commentId: T:Virtufin.WorkManager.Services.DaprResiliencePipeline
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline
+  nameWithType: DaprResiliencePipeline
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline})
+  name: DaprResiliencePipeline(ILogger<DaprResiliencePipeline>)
+  href: api/Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline__ctor_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_DaprResiliencePipeline__
+  commentId: M:Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline})
+  name.vb: New(ILogger(Of DaprResiliencePipeline))
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.DaprResiliencePipeline(Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.DaprResiliencePipeline>)
+  fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.New(Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.DaprResiliencePipeline))
+  nameWithType: DaprResiliencePipeline.DaprResiliencePipeline(ILogger<DaprResiliencePipeline>)
+  nameWithType.vb: DaprResiliencePipeline.New(ILogger(Of DaprResiliencePipeline))
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor*
+  name: DaprResiliencePipeline
+  href: api/Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline__ctor_
+  commentId: Overload:Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.DaprResiliencePipeline
+  fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.New
+  nameWithType: DaprResiliencePipeline.DaprResiliencePipeline
+  nameWithType.vb: DaprResiliencePipeline.New
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken
+  name: CircuitBroken
+  href: api/Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline_CircuitBroken
+  commentId: P:Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken
+  nameWithType: DaprResiliencePipeline.CircuitBroken
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken*
+  name: CircuitBroken
+  href: api/Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline_CircuitBroken_
+  commentId: Overload:Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken
+  nameWithType: DaprResiliencePipeline.CircuitBroken
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  name: ExecuteAsync(Func<CancellationToken, Task>, CancellationToken)
+  href: api/Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline_ExecuteAsync_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  name.vb: ExecuteAsync(Func(Of CancellationToken, Task), CancellationToken)
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>, System.Threading.CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task), System.Threading.CancellationToken)
+  nameWithType: DaprResiliencePipeline.ExecuteAsync(Func<CancellationToken, Task>, CancellationToken)
+  nameWithType.vb: DaprResiliencePipeline.ExecuteAsync(Func(Of CancellationToken, Task), CancellationToken)
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync*
+  name: ExecuteAsync
+  href: api/Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline_ExecuteAsync_
+  commentId: Overload:Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync
+  nameWithType: DaprResiliencePipeline.ExecuteAsync
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+  name: ExecuteAsync<T>(Func<CancellationToken, Task<T>>, CancellationToken)
+  href: api/Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline_ExecuteAsync__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+  name.vb: ExecuteAsync(Of T)(Func(Of CancellationToken, Task(Of T)), CancellationToken)
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync<T>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<T>>, System.Threading.CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(Of T)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of T)), System.Threading.CancellationToken)
+  nameWithType: DaprResiliencePipeline.ExecuteAsync<T>(Func<CancellationToken, Task<T>>, CancellationToken)
+  nameWithType.vb: DaprResiliencePipeline.ExecuteAsync(Of T)(Func(Of CancellationToken, Task(Of T)), CancellationToken)
+- uid: Virtufin.WorkManager.Services.RecoveryHealthCheck
+  name: RecoveryHealthCheck
+  href: api/Virtufin.WorkManager.Services.RecoveryHealthCheck.html
+  commentId: T:Virtufin.WorkManager.Services.RecoveryHealthCheck
+  fullName: Virtufin.WorkManager.Services.RecoveryHealthCheck
+  nameWithType: RecoveryHealthCheck
+- uid: Virtufin.WorkManager.Services.RecoveryHealthCheck.#ctor(Virtufin.WorkManager.Services.RecoveryState)
+  name: RecoveryHealthCheck(RecoveryState)
+  href: api/Virtufin.WorkManager.Services.RecoveryHealthCheck.html#Virtufin_WorkManager_Services_RecoveryHealthCheck__ctor_Virtufin_WorkManager_Services_RecoveryState_
+  commentId: M:Virtufin.WorkManager.Services.RecoveryHealthCheck.#ctor(Virtufin.WorkManager.Services.RecoveryState)
+  name.vb: New(RecoveryState)
+  fullName: Virtufin.WorkManager.Services.RecoveryHealthCheck.RecoveryHealthCheck(Virtufin.WorkManager.Services.RecoveryState)
+  fullName.vb: Virtufin.WorkManager.Services.RecoveryHealthCheck.New(Virtufin.WorkManager.Services.RecoveryState)
+  nameWithType: RecoveryHealthCheck.RecoveryHealthCheck(RecoveryState)
+  nameWithType.vb: RecoveryHealthCheck.New(RecoveryState)
+- uid: Virtufin.WorkManager.Services.RecoveryHealthCheck.#ctor*
+  name: RecoveryHealthCheck
+  href: api/Virtufin.WorkManager.Services.RecoveryHealthCheck.html#Virtufin_WorkManager_Services_RecoveryHealthCheck__ctor_
+  commentId: Overload:Virtufin.WorkManager.Services.RecoveryHealthCheck.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Virtufin.WorkManager.Services.RecoveryHealthCheck.RecoveryHealthCheck
+  fullName.vb: Virtufin.WorkManager.Services.RecoveryHealthCheck.New
+  nameWithType: RecoveryHealthCheck.RecoveryHealthCheck
+  nameWithType.vb: RecoveryHealthCheck.New
+- uid: Virtufin.WorkManager.Services.RecoveryHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)
+  name: CheckHealthAsync(HealthCheckContext, CancellationToken)
+  href: api/Virtufin.WorkManager.Services.RecoveryHealthCheck.html#Virtufin_WorkManager_Services_RecoveryHealthCheck_CheckHealthAsync_Microsoft_Extensions_Diagnostics_HealthChecks_HealthCheckContext_System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Services.RecoveryHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)
+  fullName: Virtufin.WorkManager.Services.RecoveryHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext, System.Threading.CancellationToken)
+  nameWithType: RecoveryHealthCheck.CheckHealthAsync(HealthCheckContext, CancellationToken)
+- uid: Virtufin.WorkManager.Services.RecoveryHealthCheck.CheckHealthAsync*
+  name: CheckHealthAsync
+  href: api/Virtufin.WorkManager.Services.RecoveryHealthCheck.html#Virtufin_WorkManager_Services_RecoveryHealthCheck_CheckHealthAsync_
+  commentId: Overload:Virtufin.WorkManager.Services.RecoveryHealthCheck.CheckHealthAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.RecoveryHealthCheck.CheckHealthAsync
+  nameWithType: RecoveryHealthCheck.CheckHealthAsync
+- uid: Virtufin.WorkManager.Services.RecoveryState
+  name: RecoveryState
+  href: api/Virtufin.WorkManager.Services.RecoveryState.html
+  commentId: T:Virtufin.WorkManager.Services.RecoveryState
+  fullName: Virtufin.WorkManager.Services.RecoveryState
+  nameWithType: RecoveryState
+- uid: Virtufin.WorkManager.Services.RecoveryState.CompleteRecovery
+  name: CompleteRecovery()
+  href: api/Virtufin.WorkManager.Services.RecoveryState.html#Virtufin_WorkManager_Services_RecoveryState_CompleteRecovery
+  commentId: M:Virtufin.WorkManager.Services.RecoveryState.CompleteRecovery
+  fullName: Virtufin.WorkManager.Services.RecoveryState.CompleteRecovery()
+  nameWithType: RecoveryState.CompleteRecovery()
+- uid: Virtufin.WorkManager.Services.RecoveryState.CompleteRecovery*
+  name: CompleteRecovery
+  href: api/Virtufin.WorkManager.Services.RecoveryState.html#Virtufin_WorkManager_Services_RecoveryState_CompleteRecovery_
+  commentId: Overload:Virtufin.WorkManager.Services.RecoveryState.CompleteRecovery
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.RecoveryState.CompleteRecovery
+  nameWithType: RecoveryState.CompleteRecovery
+- uid: Virtufin.WorkManager.Services.RecoveryState.FailRecovery(System.Exception)
+  name: FailRecovery(Exception)
+  href: api/Virtufin.WorkManager.Services.RecoveryState.html#Virtufin_WorkManager_Services_RecoveryState_FailRecovery_System_Exception_
+  commentId: M:Virtufin.WorkManager.Services.RecoveryState.FailRecovery(System.Exception)
+  fullName: Virtufin.WorkManager.Services.RecoveryState.FailRecovery(System.Exception)
+  nameWithType: RecoveryState.FailRecovery(Exception)
+- uid: Virtufin.WorkManager.Services.RecoveryState.FailRecovery*
+  name: FailRecovery
+  href: api/Virtufin.WorkManager.Services.RecoveryState.html#Virtufin_WorkManager_Services_RecoveryState_FailRecovery_
+  commentId: Overload:Virtufin.WorkManager.Services.RecoveryState.FailRecovery
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.RecoveryState.FailRecovery
+  nameWithType: RecoveryState.FailRecovery
+- uid: Virtufin.WorkManager.Services.RecoveryState.RecoveryCompleted
+  name: RecoveryCompleted
+  href: api/Virtufin.WorkManager.Services.RecoveryState.html#Virtufin_WorkManager_Services_RecoveryState_RecoveryCompleted
+  commentId: P:Virtufin.WorkManager.Services.RecoveryState.RecoveryCompleted
+  fullName: Virtufin.WorkManager.Services.RecoveryState.RecoveryCompleted
+  nameWithType: RecoveryState.RecoveryCompleted
+- uid: Virtufin.WorkManager.Services.RecoveryState.RecoveryCompleted*
+  name: RecoveryCompleted
+  href: api/Virtufin.WorkManager.Services.RecoveryState.html#Virtufin_WorkManager_Services_RecoveryState_RecoveryCompleted_
+  commentId: Overload:Virtufin.WorkManager.Services.RecoveryState.RecoveryCompleted
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.RecoveryState.RecoveryCompleted
+  nameWithType: RecoveryState.RecoveryCompleted
+- uid: Virtufin.WorkManager.Services.RecoveryState.RecoveryException
+  name: RecoveryException
+  href: api/Virtufin.WorkManager.Services.RecoveryState.html#Virtufin_WorkManager_Services_RecoveryState_RecoveryException
+  commentId: P:Virtufin.WorkManager.Services.RecoveryState.RecoveryException
+  fullName: Virtufin.WorkManager.Services.RecoveryState.RecoveryException
+  nameWithType: RecoveryState.RecoveryException
+- uid: Virtufin.WorkManager.Services.RecoveryState.RecoveryException*
+  name: RecoveryException
+  href: api/Virtufin.WorkManager.Services.RecoveryState.html#Virtufin_WorkManager_Services_RecoveryState_RecoveryException_
+  commentId: Overload:Virtufin.WorkManager.Services.RecoveryState.RecoveryException
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.RecoveryState.RecoveryException
+  nameWithType: RecoveryState.RecoveryException
+- uid: Virtufin.WorkManager.Services.RecoveryState.RecoveryFailed
+  name: RecoveryFailed
+  href: api/Virtufin.WorkManager.Services.RecoveryState.html#Virtufin_WorkManager_Services_RecoveryState_RecoveryFailed
+  commentId: P:Virtufin.WorkManager.Services.RecoveryState.RecoveryFailed
+  fullName: Virtufin.WorkManager.Services.RecoveryState.RecoveryFailed
+  nameWithType: RecoveryState.RecoveryFailed
+- uid: Virtufin.WorkManager.Services.RecoveryState.RecoveryFailed*
+  name: RecoveryFailed
+  href: api/Virtufin.WorkManager.Services.RecoveryState.html#Virtufin_WorkManager_Services_RecoveryState_RecoveryFailed_
+  commentId: Overload:Virtufin.WorkManager.Services.RecoveryState.RecoveryFailed
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.RecoveryState.RecoveryFailed
+  nameWithType: RecoveryState.RecoveryFailed
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher
+  name: ResilientDaprPublisher
+  href: api/Virtufin.WorkManager.Services.ResilientDaprPublisher.html
+  commentId: T:Virtufin.WorkManager.Services.ResilientDaprPublisher
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher
+  nameWithType: ResilientDaprPublisher
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor(Dapr.Client.DaprClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.String,System.Int32)
+  name: ResilientDaprPublisher(DaprClient, DaprResiliencePipeline, ILogger<ResilientDaprPublisher>, string, int)
+  href: api/Virtufin.WorkManager.Services.ResilientDaprPublisher.html#Virtufin_WorkManager_Services_ResilientDaprPublisher__ctor_Dapr_Client_DaprClient_Virtufin_WorkManager_Services_DaprResiliencePipeline_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_ResilientDaprPublisher__System_String_System_Int32_
+  commentId: M:Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor(Dapr.Client.DaprClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.String,System.Int32)
+  name.vb: New(DaprClient, DaprResiliencePipeline, ILogger(Of ResilientDaprPublisher), String, Integer)
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.ResilientDaprPublisher(Dapr.Client.DaprClient, Virtufin.WorkManager.Services.DaprResiliencePipeline, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.ResilientDaprPublisher>, string, int)
+  fullName.vb: Virtufin.WorkManager.Services.ResilientDaprPublisher.New(Dapr.Client.DaprClient, Virtufin.WorkManager.Services.DaprResiliencePipeline, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.ResilientDaprPublisher), String, Integer)
+  nameWithType: ResilientDaprPublisher.ResilientDaprPublisher(DaprClient, DaprResiliencePipeline, ILogger<ResilientDaprPublisher>, string, int)
+  nameWithType.vb: ResilientDaprPublisher.New(DaprClient, DaprResiliencePipeline, ILogger(Of ResilientDaprPublisher), String, Integer)
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor*
+  name: ResilientDaprPublisher
+  href: api/Virtufin.WorkManager.Services.ResilientDaprPublisher.html#Virtufin_WorkManager_Services_ResilientDaprPublisher__ctor_
+  commentId: Overload:Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.ResilientDaprPublisher
+  fullName.vb: Virtufin.WorkManager.Services.ResilientDaprPublisher.New
+  nameWithType: ResilientDaprPublisher.ResilientDaprPublisher
+  nameWithType.vb: ResilientDaprPublisher.New
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync
+  name: DisposeAsync()
+  href: api/Virtufin.WorkManager.Services.ResilientDaprPublisher.html#Virtufin_WorkManager_Services_ResilientDaprPublisher_DisposeAsync
+  commentId: M:Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync()
+  nameWithType: ResilientDaprPublisher.DisposeAsync()
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync*
+  name: DisposeAsync
+  href: api/Virtufin.WorkManager.Services.ResilientDaprPublisher.html#Virtufin_WorkManager_Services_ResilientDaprPublisher_DisposeAsync_
+  commentId: Overload:Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync
+  nameWithType: ResilientDaprPublisher.DisposeAsync
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(System.String,System.ReadOnlyMemory{System.Byte},System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Threading.CancellationToken)
+  name: PublishAsync(string, ReadOnlyMemory<byte>, string, Dictionary<string, string>, CancellationToken)
+  href: api/Virtufin.WorkManager.Services.ResilientDaprPublisher.html#Virtufin_WorkManager_Services_ResilientDaprPublisher_PublishAsync_System_String_System_ReadOnlyMemory_System_Byte__System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(System.String,System.ReadOnlyMemory{System.Byte},System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Threading.CancellationToken)
+  name.vb: PublishAsync(String, ReadOnlyMemory(Of Byte), String, Dictionary(Of String, String), CancellationToken)
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(string, System.ReadOnlyMemory<byte>, string, System.Collections.Generic.Dictionary<string, string>, System.Threading.CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(String, System.ReadOnlyMemory(Of Byte), String, System.Collections.Generic.Dictionary(Of String, String), System.Threading.CancellationToken)
+  nameWithType: ResilientDaprPublisher.PublishAsync(string, ReadOnlyMemory<byte>, string, Dictionary<string, string>, CancellationToken)
+  nameWithType.vb: ResilientDaprPublisher.PublishAsync(String, ReadOnlyMemory(Of Byte), String, Dictionary(Of String, String), CancellationToken)
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync*
+  name: PublishAsync
+  href: api/Virtufin.WorkManager.Services.ResilientDaprPublisher.html#Virtufin_WorkManager_Services_ResilientDaprPublisher_PublishAsync_
+  commentId: Overload:Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync
+  nameWithType: ResilientDaprPublisher.PublishAsync
 - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService
   name: WorkManagerGrpcService
   href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html
@@ -1477,3 +1918,41 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.StopWorker
   nameWithType: WorkManagerGrpcService.StopWorker
+- uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
+  name: WorkManagerRecoveryHostedService
+  href: api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html
+  commentId: T:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
+  fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
+  nameWithType: WorkManagerRecoveryHostedService
+- uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState)
+  name: WorkManagerRecoveryHostedService(WorkManager, ILogger<WorkManagerRecoveryHostedService>, RecoveryState)
+  href: api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html#Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__ctor_Virtufin_WorkManager_Components_WorkManager_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__Virtufin_WorkManager_Services_RecoveryState_
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState)
+  name.vb: New(WorkManager, ILogger(Of WorkManagerRecoveryHostedService), RecoveryState)
+  fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService>, Virtufin.WorkManager.Services.RecoveryState)
+  fullName.vb: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.New(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService), Virtufin.WorkManager.Services.RecoveryState)
+  nameWithType: WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService(WorkManager, ILogger<WorkManagerRecoveryHostedService>, RecoveryState)
+  nameWithType.vb: WorkManagerRecoveryHostedService.New(WorkManager, ILogger(Of WorkManagerRecoveryHostedService), RecoveryState)
+- uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor*
+  name: WorkManagerRecoveryHostedService
+  href: api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html#Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__ctor_
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService
+  fullName.vb: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.New
+  nameWithType: WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService
+  nameWithType.vb: WorkManagerRecoveryHostedService.New
+- uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.ExecuteAsync(System.Threading.CancellationToken)
+  name: ExecuteAsync(CancellationToken)
+  href: api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html#Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService_ExecuteAsync_System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.ExecuteAsync(System.Threading.CancellationToken)
+  fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.ExecuteAsync(System.Threading.CancellationToken)
+  nameWithType: WorkManagerRecoveryHostedService.ExecuteAsync(CancellationToken)
+- uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.ExecuteAsync*
+  name: ExecuteAsync
+  href: api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html#Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService_ExecuteAsync_
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.ExecuteAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.ExecuteAsync
+  nameWithType: WorkManagerRecoveryHostedService.ExecuteAsync

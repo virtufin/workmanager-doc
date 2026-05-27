@@ -6,6 +6,7 @@ items:
   children:
   - Virtufin.WorkManager.Runtime.EngineNotFoundException
   - Virtufin.WorkManager.Runtime.EngineRegistry
+  - Virtufin.WorkManager.Runtime.LockContentionException
   - Virtufin.WorkManager.Runtime.Worker
   - Virtufin.WorkManager.Runtime.WorkerNotFoundException
   - Virtufin.WorkManager.Runtime.WorkerRegistry
@@ -37,6 +38,12 @@ references:
   name: EngineNotFoundException
   nameWithType: EngineNotFoundException
   fullName: Virtufin.WorkManager.Runtime.EngineNotFoundException
+- uid: Virtufin.WorkManager.Runtime.LockContentionException
+  commentId: T:Virtufin.WorkManager.Runtime.LockContentionException
+  href: Virtufin.WorkManager.Runtime.LockContentionException.html
+  name: LockContentionException
+  nameWithType: LockContentionException
+  fullName: Virtufin.WorkManager.Runtime.LockContentionException
 - uid: Virtufin.WorkManager.Runtime.Worker
   commentId: T:Virtufin.WorkManager.Runtime.Worker
   parent: Virtufin.WorkManager.Runtime

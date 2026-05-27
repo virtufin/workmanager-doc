@@ -1,0 +1,877 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Services.AppMetrics
+  commentId: T:Virtufin.WorkManager.Services.AppMetrics
+  id: AppMetrics
+  parent: Virtufin.WorkManager.Services
+  children:
+  - Virtufin.WorkManager.Services.AppMetrics.DaprCallLatency
+  - Virtufin.WorkManager.Services.AppMetrics.LockContentionEvents
+  - Virtufin.WorkManager.Services.AppMetrics.MessagesProcessed
+  - Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity)
+  - Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(System.String)
+  - Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed(System.String)
+  - Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts(System.Int32,System.Int32)
+  - Virtufin.WorkManager.Services.AppMetrics.WorkerCountByStatus
+  langs:
+  - csharp
+  - vb
+  name: AppMetrics
+  nameWithType: AppMetrics
+  fullName: Virtufin.WorkManager.Services.AppMetrics
+  type: Class
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/AppMetrics.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: AppMetrics
+    path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
+    startLine: 8
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: Application-level metrics for the WorkManager service.
+  example: []
+  syntax:
+    content: public static class AppMetrics
+    content.vb: Public Module AppMetrics
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Virtufin.WorkManager.Services.AppMetrics.WorkerCountByStatus
+  commentId: F:Virtufin.WorkManager.Services.AppMetrics.WorkerCountByStatus
+  id: WorkerCountByStatus
+  parent: Virtufin.WorkManager.Services.AppMetrics
+  langs:
+  - csharp
+  - vb
+  name: WorkerCountByStatus
+  nameWithType: AppMetrics.WorkerCountByStatus
+  fullName: Virtufin.WorkManager.Services.AppMetrics.WorkerCountByStatus
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/AppMetrics.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: WorkerCountByStatus
+    path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
+    startLine: 13
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: Number of workers by status (Running, Stopped).
+  example: []
+  syntax:
+    content: public static readonly ObservableGauge<int> WorkerCountByStatus
+    return:
+      type: System.Diagnostics.Metrics.ObservableGauge{System.Int32}
+    content.vb: Public Shared ReadOnly WorkerCountByStatus As ObservableGauge(Of Integer)
+- uid: Virtufin.WorkManager.Services.AppMetrics.MessagesProcessed
+  commentId: F:Virtufin.WorkManager.Services.AppMetrics.MessagesProcessed
+  id: MessagesProcessed
+  parent: Virtufin.WorkManager.Services.AppMetrics
+  langs:
+  - csharp
+  - vb
+  name: MessagesProcessed
+  nameWithType: AppMetrics.MessagesProcessed
+  fullName: Virtufin.WorkManager.Services.AppMetrics.MessagesProcessed
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/AppMetrics.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: MessagesProcessed
+    path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
+    startLine: 23
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: Counter for messages processed per topic.
+  example: []
+  syntax:
+    content: public static readonly Counter<long> MessagesProcessed
+    return:
+      type: System.Diagnostics.Metrics.Counter{System.Int64}
+    content.vb: Public Shared ReadOnly MessagesProcessed As Counter(Of Long)
+- uid: Virtufin.WorkManager.Services.AppMetrics.LockContentionEvents
+  commentId: F:Virtufin.WorkManager.Services.AppMetrics.LockContentionEvents
+  id: LockContentionEvents
+  parent: Virtufin.WorkManager.Services.AppMetrics
+  langs:
+  - csharp
+  - vb
+  name: LockContentionEvents
+  nameWithType: AppMetrics.LockContentionEvents
+  fullName: Virtufin.WorkManager.Services.AppMetrics.LockContentionEvents
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/AppMetrics.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: LockContentionEvents
+    path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
+    startLine: 28
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: Counter for lock contention events.
+  example: []
+  syntax:
+    content: public static readonly Counter<long> LockContentionEvents
+    return:
+      type: System.Diagnostics.Metrics.Counter{System.Int64}
+    content.vb: Public Shared ReadOnly LockContentionEvents As Counter(Of Long)
+- uid: Virtufin.WorkManager.Services.AppMetrics.DaprCallLatency
+  commentId: F:Virtufin.WorkManager.Services.AppMetrics.DaprCallLatency
+  id: DaprCallLatency
+  parent: Virtufin.WorkManager.Services.AppMetrics
+  langs:
+  - csharp
+  - vb
+  name: DaprCallLatency
+  nameWithType: AppMetrics.DaprCallLatency
+  fullName: Virtufin.WorkManager.Services.AppMetrics.DaprCallLatency
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/AppMetrics.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: DaprCallLatency
+    path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
+    startLine: 33
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: Histogram for Dapr call latency.
+  example: []
+  syntax:
+    content: public static readonly Histogram<double> DaprCallLatency
+    return:
+      type: System.Diagnostics.Metrics.Histogram{System.Double}
+    content.vb: Public Shared ReadOnly DaprCallLatency As Histogram(Of Double)
+- uid: Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts(System.Int32,System.Int32)
+  commentId: M:Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts(System.Int32,System.Int32)
+  id: SetWorkerCounts(System.Int32,System.Int32)
+  parent: Virtufin.WorkManager.Services.AppMetrics
+  langs:
+  - csharp
+  - vb
+  name: SetWorkerCounts(int, int)
+  nameWithType: AppMetrics.SetWorkerCounts(int, int)
+  fullName: Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts(int, int)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/AppMetrics.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: SetWorkerCounts
+    path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
+    startLine: 45
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: Updates the worker count gauges.
+  example: []
+  syntax:
+    content: public static void SetWorkerCounts(int running, int stopped)
+    parameters:
+    - id: running
+      type: System.Int32
+    - id: stopped
+      type: System.Int32
+    content.vb: Public Shared Sub SetWorkerCounts(running As Integer, stopped As Integer)
+  overload: Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts*
+  nameWithType.vb: AppMetrics.SetWorkerCounts(Integer, Integer)
+  fullName.vb: Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts(Integer, Integer)
+  name.vb: SetWorkerCounts(Integer, Integer)
+- uid: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed(System.String)
+  commentId: M:Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed(System.String)
+  id: RecordMessageProcessed(System.String)
+  parent: Virtufin.WorkManager.Services.AppMetrics
+  langs:
+  - csharp
+  - vb
+  name: RecordMessageProcessed(string)
+  nameWithType: AppMetrics.RecordMessageProcessed(string)
+  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed(string)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/AppMetrics.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: RecordMessageProcessed
+    path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
+    startLine: 54
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: Records a message processed for a topic.
+  example: []
+  syntax:
+    content: public static void RecordMessageProcessed(string topic)
+    parameters:
+    - id: topic
+      type: System.String
+    content.vb: Public Shared Sub RecordMessageProcessed(topic As String)
+  overload: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed*
+  nameWithType.vb: AppMetrics.RecordMessageProcessed(String)
+  fullName.vb: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed(String)
+  name.vb: RecordMessageProcessed(String)
+- uid: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(System.String)
+  commentId: M:Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(System.String)
+  id: RecordLockContention(System.String)
+  parent: Virtufin.WorkManager.Services.AppMetrics
+  langs:
+  - csharp
+  - vb
+  name: RecordLockContention(string)
+  nameWithType: AppMetrics.RecordLockContention(string)
+  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(string)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/AppMetrics.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: RecordLockContention
+    path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
+    startLine: 62
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: Records a lock contention event.
+  example: []
+  syntax:
+    content: public static void RecordLockContention(string groupId)
+    parameters:
+    - id: groupId
+      type: System.String
+    content.vb: Public Shared Sub RecordLockContention(groupId As String)
+  overload: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention*
+  nameWithType.vb: AppMetrics.RecordLockContention(String)
+  fullName.vb: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(String)
+  name.vb: RecordLockContention(String)
+- uid: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity)
+  commentId: M:Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity)
+  id: RecordDaprCallLatency(System.Diagnostics.Activity)
+  parent: Virtufin.WorkManager.Services.AppMetrics
+  langs:
+  - csharp
+  - vb
+  name: RecordDaprCallLatency(Activity?)
+  nameWithType: AppMetrics.RecordDaprCallLatency(Activity?)
+  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity?)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/AppMetrics.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: RecordDaprCallLatency
+    path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
+    startLine: 70
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: Records Dapr call latency.
+  example: []
+  syntax:
+    content: public static void RecordDaprCallLatency(Activity? activity)
+    parameters:
+    - id: activity
+      type: System.Diagnostics.Activity
+    content.vb: Public Shared Sub RecordDaprCallLatency(activity As Activity)
+  overload: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency*
+  nameWithType.vb: AppMetrics.RecordDaprCallLatency(Activity)
+  fullName.vb: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity)
+  name.vb: RecordDaprCallLatency(Activity)
+references:
+- uid: Virtufin.WorkManager.Services
+  commentId: N:Virtufin.WorkManager.Services
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Services
+  nameWithType: Virtufin.WorkManager.Services
+  fullName: Virtufin.WorkManager.Services
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Services
+    name: Services
+    href: Virtufin.WorkManager.Services.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Services
+    name: Services
+    href: Virtufin.WorkManager.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Diagnostics.Metrics.ObservableGauge{System.Int32}
+  commentId: T:System.Diagnostics.Metrics.ObservableGauge{System.Int32}
+  parent: System.Diagnostics.Metrics
+  definition: System.Diagnostics.Metrics.ObservableGauge`1
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.observablegauge-1
+  name: ObservableGauge<int>
+  nameWithType: ObservableGauge<int>
+  fullName: System.Diagnostics.Metrics.ObservableGauge<int>
+  nameWithType.vb: ObservableGauge(Of Integer)
+  fullName.vb: System.Diagnostics.Metrics.ObservableGauge(Of Integer)
+  name.vb: ObservableGauge(Of Integer)
+  spec.csharp:
+  - uid: System.Diagnostics.Metrics.ObservableGauge`1
+    name: ObservableGauge
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.observablegauge-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Diagnostics.Metrics.ObservableGauge`1
+    name: ObservableGauge
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.observablegauge-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Diagnostics.Metrics.ObservableGauge`1
+  commentId: T:System.Diagnostics.Metrics.ObservableGauge`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.observablegauge-1
+  name: ObservableGauge<T>
+  nameWithType: ObservableGauge<T>
+  fullName: System.Diagnostics.Metrics.ObservableGauge<T>
+  nameWithType.vb: ObservableGauge(Of T)
+  fullName.vb: System.Diagnostics.Metrics.ObservableGauge(Of T)
+  name.vb: ObservableGauge(Of T)
+  spec.csharp:
+  - uid: System.Diagnostics.Metrics.ObservableGauge`1
+    name: ObservableGauge
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.observablegauge-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Diagnostics.Metrics.ObservableGauge`1
+    name: ObservableGauge
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.observablegauge-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Diagnostics.Metrics
+  commentId: N:System.Diagnostics.Metrics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Diagnostics.Metrics
+  nameWithType: System.Diagnostics.Metrics
+  fullName: System.Diagnostics.Metrics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+  - name: .
+  - uid: System.Diagnostics.Metrics
+    name: Metrics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+  - name: .
+  - uid: System.Diagnostics.Metrics
+    name: Metrics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics
+- uid: System.Diagnostics.Metrics.Counter{System.Int64}
+  commentId: T:System.Diagnostics.Metrics.Counter{System.Int64}
+  parent: System.Diagnostics.Metrics
+  definition: System.Diagnostics.Metrics.Counter`1
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.counter-1
+  name: Counter<long>
+  nameWithType: Counter<long>
+  fullName: System.Diagnostics.Metrics.Counter<long>
+  nameWithType.vb: Counter(Of Long)
+  fullName.vb: System.Diagnostics.Metrics.Counter(Of Long)
+  name.vb: Counter(Of Long)
+  spec.csharp:
+  - uid: System.Diagnostics.Metrics.Counter`1
+    name: Counter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.counter-1
+  - name: <
+  - uid: System.Int64
+    name: long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: '>'
+  spec.vb:
+  - uid: System.Diagnostics.Metrics.Counter`1
+    name: Counter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.counter-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int64
+    name: Long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: )
+- uid: System.Diagnostics.Metrics.Counter`1
+  commentId: T:System.Diagnostics.Metrics.Counter`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.counter-1
+  name: Counter<T>
+  nameWithType: Counter<T>
+  fullName: System.Diagnostics.Metrics.Counter<T>
+  nameWithType.vb: Counter(Of T)
+  fullName.vb: System.Diagnostics.Metrics.Counter(Of T)
+  name.vb: Counter(Of T)
+  spec.csharp:
+  - uid: System.Diagnostics.Metrics.Counter`1
+    name: Counter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.counter-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Diagnostics.Metrics.Counter`1
+    name: Counter
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.counter-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Diagnostics.Metrics.Histogram{System.Double}
+  commentId: T:System.Diagnostics.Metrics.Histogram{System.Double}
+  parent: System.Diagnostics.Metrics
+  definition: System.Diagnostics.Metrics.Histogram`1
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.histogram-1
+  name: Histogram<double>
+  nameWithType: Histogram<double>
+  fullName: System.Diagnostics.Metrics.Histogram<double>
+  nameWithType.vb: Histogram(Of Double)
+  fullName.vb: System.Diagnostics.Metrics.Histogram(Of Double)
+  name.vb: Histogram(Of Double)
+  spec.csharp:
+  - uid: System.Diagnostics.Metrics.Histogram`1
+    name: Histogram
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.histogram-1
+  - name: <
+  - uid: System.Double
+    name: double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: '>'
+  spec.vb:
+  - uid: System.Diagnostics.Metrics.Histogram`1
+    name: Histogram
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.histogram-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Double
+    name: Double
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.double
+  - name: )
+- uid: System.Diagnostics.Metrics.Histogram`1
+  commentId: T:System.Diagnostics.Metrics.Histogram`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.histogram-1
+  name: Histogram<T>
+  nameWithType: Histogram<T>
+  fullName: System.Diagnostics.Metrics.Histogram<T>
+  nameWithType.vb: Histogram(Of T)
+  fullName.vb: System.Diagnostics.Metrics.Histogram(Of T)
+  name.vb: Histogram(Of T)
+  spec.csharp:
+  - uid: System.Diagnostics.Metrics.Histogram`1
+    name: Histogram
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.histogram-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Diagnostics.Metrics.Histogram`1
+    name: Histogram
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics.metrics.histogram-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts*
+  commentId: Overload:Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts
+  href: Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_SetWorkerCounts_System_Int32_System_Int32_
+  name: SetWorkerCounts
+  nameWithType: AppMetrics.SetWorkerCounts
+  fullName: Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed*
+  commentId: Overload:Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed
+  href: Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_RecordMessageProcessed_System_String_
+  name: RecordMessageProcessed
+  nameWithType: AppMetrics.RecordMessageProcessed
+  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention*
+  commentId: Overload:Virtufin.WorkManager.Services.AppMetrics.RecordLockContention
+  href: Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_RecordLockContention_System_String_
+  name: RecordLockContention
+  nameWithType: AppMetrics.RecordLockContention
+  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention
+- uid: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency*
+  commentId: Overload:Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency
+  href: Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_RecordDaprCallLatency_System_Diagnostics_Activity_
+  name: RecordDaprCallLatency
+  nameWithType: AppMetrics.RecordDaprCallLatency
+  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency
+- uid: System.Diagnostics.Activity
+  commentId: T:System.Diagnostics.Activity
+  parent: System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.diagnostics.activity
+  name: Activity
+  nameWithType: Activity
+  fullName: System.Diagnostics.Activity
+- uid: System.Diagnostics
+  commentId: N:System.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Diagnostics
+  nameWithType: System.Diagnostics
+  fullName: System.Diagnostics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.diagnostics

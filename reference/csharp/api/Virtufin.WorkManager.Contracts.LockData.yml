@@ -5,8 +5,9 @@ items:
   id: LockData
   parent: Virtufin.WorkManager.Contracts
   children:
-  - Virtufin.WorkManager.Contracts.LockData.#ctor(System.String,System.DateTime)
+  - Virtufin.WorkManager.Contracts.LockData.#ctor(System.String,System.DateTime,System.Int64)
   - Virtufin.WorkManager.Contracts.LockData.AcquiredAt
+  - Virtufin.WorkManager.Contracts.LockData.FencingToken
   - Virtufin.WorkManager.Contracts.LockData.OwnerInstanceId
   langs:
   - csharp
@@ -22,7 +23,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LockData
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 204
+    startLine: 212
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -40,16 +41,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Contracts.LockData.#ctor(System.String,System.DateTime)
-  commentId: M:Virtufin.WorkManager.Contracts.LockData.#ctor(System.String,System.DateTime)
-  id: '#ctor(System.String,System.DateTime)'
+- uid: Virtufin.WorkManager.Contracts.LockData.#ctor(System.String,System.DateTime,System.Int64)
+  commentId: M:Virtufin.WorkManager.Contracts.LockData.#ctor(System.String,System.DateTime,System.Int64)
+  id: '#ctor(System.String,System.DateTime,System.Int64)'
   parent: Virtufin.WorkManager.Contracts.LockData
   langs:
   - csharp
   - vb
-  name: LockData(string, DateTime)
-  nameWithType: LockData.LockData(string, DateTime)
-  fullName: Virtufin.WorkManager.Contracts.LockData.LockData(string, System.DateTime)
+  name: LockData(string, DateTime, long)
+  nameWithType: LockData.LockData(string, DateTime, long)
+  fullName: Virtufin.WorkManager.Contracts.LockData.LockData(string, System.DateTime, long)
   type: Constructor
   source:
     remote:
@@ -58,22 +59,24 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 204
+    startLine: 212
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
   syntax:
-    content: public LockData(string OwnerInstanceId, DateTime AcquiredAt)
+    content: public LockData(string OwnerInstanceId, DateTime AcquiredAt, long FencingToken = 0)
     parameters:
     - id: OwnerInstanceId
       type: System.String
     - id: AcquiredAt
       type: System.DateTime
-    content.vb: Public Sub New(OwnerInstanceId As String, AcquiredAt As Date)
+    - id: FencingToken
+      type: System.Int64
+    content.vb: Public Sub New(OwnerInstanceId As String, AcquiredAt As Date, FencingToken As Long = 0)
   overload: Virtufin.WorkManager.Contracts.LockData.#ctor*
-  nameWithType.vb: LockData.New(String, Date)
-  fullName.vb: Virtufin.WorkManager.Contracts.LockData.New(String, Date)
-  name.vb: New(String, Date)
+  nameWithType.vb: LockData.New(String, Date, Long)
+  fullName.vb: Virtufin.WorkManager.Contracts.LockData.New(String, Date, Long)
+  name.vb: New(String, Date, Long)
 - uid: Virtufin.WorkManager.Contracts.LockData.OwnerInstanceId
   commentId: P:Virtufin.WorkManager.Contracts.LockData.OwnerInstanceId
   id: OwnerInstanceId
@@ -92,7 +95,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: OwnerInstanceId
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 204
+    startLine: 212
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -121,7 +124,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: AcquiredAt
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 204
+    startLine: 212
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -132,6 +135,35 @@ items:
       type: System.DateTime
     content.vb: Public Property AcquiredAt As Date
   overload: Virtufin.WorkManager.Contracts.LockData.AcquiredAt*
+- uid: Virtufin.WorkManager.Contracts.LockData.FencingToken
+  commentId: P:Virtufin.WorkManager.Contracts.LockData.FencingToken
+  id: FencingToken
+  parent: Virtufin.WorkManager.Contracts.LockData
+  langs:
+  - csharp
+  - vb
+  name: FencingToken
+  nameWithType: LockData.FencingToken
+  fullName: Virtufin.WorkManager.Contracts.LockData.FencingToken
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: FencingToken
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 212
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  syntax:
+    content: public long FencingToken { get; init; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property FencingToken As Long
+  overload: Virtufin.WorkManager.Contracts.LockData.FencingToken*
 references:
 - uid: Virtufin.WorkManager.Contracts
   commentId: N:Virtufin.WorkManager.Contracts
@@ -439,7 +471,7 @@ references:
   - name: )
 - uid: Virtufin.WorkManager.Contracts.LockData.#ctor*
   commentId: Overload:Virtufin.WorkManager.Contracts.LockData.#ctor
-  href: Virtufin.WorkManager.Contracts.LockData.html#Virtufin_WorkManager_Contracts_LockData__ctor_System_String_System_DateTime_
+  href: Virtufin.WorkManager.Contracts.LockData.html#Virtufin_WorkManager_Contracts_LockData__ctor_System_String_System_DateTime_System_Int64_
   name: LockData
   nameWithType: LockData.LockData
   fullName: Virtufin.WorkManager.Contracts.LockData.LockData
@@ -468,6 +500,17 @@ references:
   nameWithType.vb: Date
   fullName.vb: Date
   name.vb: Date
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
 - uid: Virtufin.WorkManager.Contracts.LockData.OwnerInstanceId*
   commentId: Overload:Virtufin.WorkManager.Contracts.LockData.OwnerInstanceId
   href: Virtufin.WorkManager.Contracts.LockData.html#Virtufin_WorkManager_Contracts_LockData_OwnerInstanceId
@@ -480,3 +523,9 @@ references:
   name: AcquiredAt
   nameWithType: LockData.AcquiredAt
   fullName: Virtufin.WorkManager.Contracts.LockData.AcquiredAt
+- uid: Virtufin.WorkManager.Contracts.LockData.FencingToken*
+  commentId: Overload:Virtufin.WorkManager.Contracts.LockData.FencingToken
+  href: Virtufin.WorkManager.Contracts.LockData.html#Virtufin_WorkManager_Contracts_LockData_FencingToken
+  name: FencingToken
+  nameWithType: LockData.FencingToken
+  fullName: Virtufin.WorkManager.Contracts.LockData.FencingToken

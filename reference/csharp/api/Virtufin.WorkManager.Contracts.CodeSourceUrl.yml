@@ -5,7 +5,8 @@ items:
   id: CodeSourceUrl
   parent: Virtufin.WorkManager.Contracts
   children:
-  - Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri)
+  - Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String)
+  - Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256
   - Virtufin.WorkManager.Contracts.CodeSourceUrl.Url
   langs:
   - csharp
@@ -21,7 +22,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CodeSourceUrl
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -43,16 +44,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri)
-  commentId: M:Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri)
-  id: '#ctor(System.Uri)'
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String)
+  commentId: M:Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String)
+  id: '#ctor(System.Uri,System.String)'
   parent: Virtufin.WorkManager.Contracts.CodeSourceUrl
   langs:
   - csharp
   - vb
-  name: CodeSourceUrl(Uri)
-  nameWithType: CodeSourceUrl.CodeSourceUrl(Uri)
-  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.CodeSourceUrl(System.Uri)
+  name: CodeSourceUrl(Uri, string?)
+  nameWithType: CodeSourceUrl.CodeSourceUrl(Uri, string?)
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.CodeSourceUrl(System.Uri, string?)
   type: Constructor
   source:
     remote:
@@ -61,23 +62,26 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
   summary: Represents code sourced from a URL.
   example: []
   syntax:
-    content: public CodeSourceUrl(Uri Url)
+    content: public CodeSourceUrl(Uri Url, string? ContentSha256 = null)
     parameters:
     - id: Url
       type: System.Uri
       description: The URL pointing to the code.
-    content.vb: Public Sub New(Url As Uri)
+    - id: ContentSha256
+      type: System.String
+      description: Optional SHA-256 digest of the expected content, for integrity verification.
+    content.vb: Public Sub New(Url As Uri, ContentSha256 As String = Nothing)
   overload: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor*
-  nameWithType.vb: CodeSourceUrl.New(Uri)
-  fullName.vb: Virtufin.WorkManager.Contracts.CodeSourceUrl.New(System.Uri)
-  name.vb: New(Uri)
+  nameWithType.vb: CodeSourceUrl.New(Uri, String)
+  fullName.vb: Virtufin.WorkManager.Contracts.CodeSourceUrl.New(System.Uri, String)
+  name.vb: New(Uri, String)
 - uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.Url
   commentId: P:Virtufin.WorkManager.Contracts.CodeSourceUrl.Url
   id: Url
@@ -96,7 +100,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Url
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -109,6 +113,37 @@ items:
       type: System.Uri
     content.vb: Public Property Url As Uri
   overload: Virtufin.WorkManager.Contracts.CodeSourceUrl.Url*
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256
+  commentId: P:Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256
+  id: ContentSha256
+  parent: Virtufin.WorkManager.Contracts.CodeSourceUrl
+  langs:
+  - csharp
+  - vb
+  name: ContentSha256
+  nameWithType: CodeSourceUrl.ContentSha256
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: ContentSha256
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 17
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: Optional SHA-256 digest of the expected content, for integrity verification.
+  example: []
+  syntax:
+    content: public string? ContentSha256 { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ContentSha256 As String
+  overload: Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256*
 references:
 - uid: Virtufin.WorkManager.Contracts
   commentId: N:Virtufin.WorkManager.Contracts
@@ -456,7 +491,7 @@ references:
   - name: )
 - uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor*
   commentId: Overload:Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor
-  href: Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl__ctor_System_Uri_
+  href: Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl__ctor_System_Uri_System_String_
   name: CodeSourceUrl
   nameWithType: CodeSourceUrl.CodeSourceUrl
   fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.CodeSourceUrl
@@ -471,9 +506,26 @@ references:
   name: Uri
   nameWithType: Uri
   fullName: System.Uri
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.Url*
   commentId: Overload:Virtufin.WorkManager.Contracts.CodeSourceUrl.Url
   href: Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl_Url
   name: Url
   nameWithType: CodeSourceUrl.Url
   fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.Url
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256*
+  commentId: Overload:Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256
+  href: Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl_ContentSha256
+  name: ContentSha256
+  nameWithType: CodeSourceUrl.ContentSha256
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256

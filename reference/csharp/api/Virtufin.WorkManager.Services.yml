@@ -4,7 +4,14 @@ items:
   commentId: N:Virtufin.WorkManager.Services
   id: Virtufin.WorkManager.Services
   children:
+  - Virtufin.WorkManager.Services.AppMetrics
+  - Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
+  - Virtufin.WorkManager.Services.DaprResiliencePipeline
+  - Virtufin.WorkManager.Services.RecoveryHealthCheck
+  - Virtufin.WorkManager.Services.RecoveryState
+  - Virtufin.WorkManager.Services.ResilientDaprPublisher
   - Virtufin.WorkManager.Services.WorkManagerGrpcService
+  - Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
   langs:
   - csharp
   - vb
@@ -15,9 +22,84 @@ items:
   assemblies:
   - Virtufin.WorkManager
 references:
+- uid: Virtufin.WorkManager.Services.AppMetrics
+  commentId: T:Virtufin.WorkManager.Services.AppMetrics
+  href: Virtufin.WorkManager.Services.AppMetrics.html
+  name: AppMetrics
+  nameWithType: AppMetrics
+  fullName: Virtufin.WorkManager.Services.AppMetrics
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline
+  commentId: T:Virtufin.WorkManager.Services.DaprResiliencePipeline
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.DaprResiliencePipeline.html
+  name: DaprResiliencePipeline
+  nameWithType: DaprResiliencePipeline
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline
+- uid: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
+  commentId: T:Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
+  href: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.html
+  name: DaprCircuitBreakerHealthCheck
+  nameWithType: DaprCircuitBreakerHealthCheck
+  fullName: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher
+  commentId: T:Virtufin.WorkManager.Services.ResilientDaprPublisher
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.ResilientDaprPublisher.html
+  name: ResilientDaprPublisher
+  nameWithType: ResilientDaprPublisher
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher
+- uid: Virtufin.WorkManager.Services.RecoveryState
+  commentId: T:Virtufin.WorkManager.Services.RecoveryState
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.RecoveryState.html
+  name: RecoveryState
+  nameWithType: RecoveryState
+  fullName: Virtufin.WorkManager.Services.RecoveryState
+- uid: Virtufin.WorkManager.Services.RecoveryHealthCheck
+  commentId: T:Virtufin.WorkManager.Services.RecoveryHealthCheck
+  href: Virtufin.WorkManager.Services.RecoveryHealthCheck.html
+  name: RecoveryHealthCheck
+  nameWithType: RecoveryHealthCheck
+  fullName: Virtufin.WorkManager.Services.RecoveryHealthCheck
 - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService
   commentId: T:Virtufin.WorkManager.Services.WorkManagerGrpcService
   href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html
   name: WorkManagerGrpcService
   nameWithType: WorkManagerGrpcService
   fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService
+- uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
+  commentId: T:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
+  href: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html
+  name: WorkManagerRecoveryHostedService
+  nameWithType: WorkManagerRecoveryHostedService
+  fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
+- uid: Virtufin.WorkManager.Services
+  commentId: N:Virtufin.WorkManager.Services
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Services
+  nameWithType: Virtufin.WorkManager.Services
+  fullName: Virtufin.WorkManager.Services
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Services
+    name: Services
+    href: Virtufin.WorkManager.Services.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Services
+    name: Services
+    href: Virtufin.WorkManager.Services.html

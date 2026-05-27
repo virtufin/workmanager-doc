@@ -1,0 +1,886 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher
+  commentId: T:Virtufin.WorkManager.Services.ResilientDaprPublisher
+  id: ResilientDaprPublisher
+  parent: Virtufin.WorkManager.Services
+  children:
+  - Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor(Dapr.Client.DaprClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.String,System.Int32)
+  - Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync
+  - Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(System.String,System.ReadOnlyMemory{System.Byte},System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: ResilientDaprPublisher
+  nameWithType: ResilientDaprPublisher
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher
+  type: Class
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: ResilientDaprPublisher
+    path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
+    startLine: 130
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: Buffers outbound pub/sub messages during Dapr outages and flushes on reconnect.
+  example: []
+  syntax:
+    content: 'public sealed class ResilientDaprPublisher : IAsyncDisposable'
+    content.vb: Public NotInheritable Class ResilientDaprPublisher Implements IAsyncDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IAsyncDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor(Dapr.Client.DaprClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.String,System.Int32)
+  commentId: M:Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor(Dapr.Client.DaprClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.String,System.Int32)
+  id: '#ctor(Dapr.Client.DaprClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.String,System.Int32)'
+  parent: Virtufin.WorkManager.Services.ResilientDaprPublisher
+  langs:
+  - csharp
+  - vb
+  name: ResilientDaprPublisher(DaprClient, DaprResiliencePipeline, ILogger<ResilientDaprPublisher>, string, int)
+  nameWithType: ResilientDaprPublisher.ResilientDaprPublisher(DaprClient, DaprResiliencePipeline, ILogger<ResilientDaprPublisher>, string, int)
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.ResilientDaprPublisher(Dapr.Client.DaprClient, Virtufin.WorkManager.Services.DaprResiliencePipeline, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.ResilientDaprPublisher>, string, int)
+  type: Constructor
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: .ctor
+    path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
+    startLine: 145
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: Creates a new ResilientDaprPublisher.
+  example: []
+  syntax:
+    content: public ResilientDaprPublisher(DaprClient daprClient, DaprResiliencePipeline resilience, ILogger<ResilientDaprPublisher> logger, string pubsubName, int maxBufferSize = 1000)
+    parameters:
+    - id: daprClient
+      type: Dapr.Client.DaprClient
+    - id: resilience
+      type: Virtufin.WorkManager.Services.DaprResiliencePipeline
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher}
+    - id: pubsubName
+      type: System.String
+    - id: maxBufferSize
+      type: System.Int32
+    content.vb: Public Sub New(daprClient As DaprClient, resilience As DaprResiliencePipeline, logger As ILogger(Of ResilientDaprPublisher), pubsubName As String, maxBufferSize As Integer = 1000)
+  overload: Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor*
+  nameWithType.vb: ResilientDaprPublisher.New(DaprClient, DaprResiliencePipeline, ILogger(Of ResilientDaprPublisher), String, Integer)
+  fullName.vb: Virtufin.WorkManager.Services.ResilientDaprPublisher.New(Dapr.Client.DaprClient, Virtufin.WorkManager.Services.DaprResiliencePipeline, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.ResilientDaprPublisher), String, Integer)
+  name.vb: New(DaprClient, DaprResiliencePipeline, ILogger(Of ResilientDaprPublisher), String, Integer)
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(System.String,System.ReadOnlyMemory{System.Byte},System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(System.String,System.ReadOnlyMemory{System.Byte},System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Threading.CancellationToken)
+  id: PublishAsync(System.String,System.ReadOnlyMemory{System.Byte},System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Threading.CancellationToken)
+  parent: Virtufin.WorkManager.Services.ResilientDaprPublisher
+  langs:
+  - csharp
+  - vb
+  name: PublishAsync(string, ReadOnlyMemory<byte>, string, Dictionary<string, string>, CancellationToken)
+  nameWithType: ResilientDaprPublisher.PublishAsync(string, ReadOnlyMemory<byte>, string, Dictionary<string, string>, CancellationToken)
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(string, System.ReadOnlyMemory<byte>, string, System.Collections.Generic.Dictionary<string, string>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: PublishAsync
+    path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
+    startLine: 163
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: Publishes an event with resilience. If the circuit is broken, buffers the message.
+  example: []
+  syntax:
+    content: public Task PublishAsync(string topic, ReadOnlyMemory<byte> data, string contentType, Dictionary<string, string> metadata, CancellationToken cancellationToken)
+    parameters:
+    - id: topic
+      type: System.String
+    - id: data
+      type: System.ReadOnlyMemory{System.Byte}
+    - id: contentType
+      type: System.String
+    - id: metadata
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function PublishAsync(topic As String, data As ReadOnlyMemory(Of Byte), contentType As String, metadata As Dictionary(Of String, String), cancellationToken As CancellationToken) As Task
+  overload: Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync*
+  nameWithType.vb: ResilientDaprPublisher.PublishAsync(String, ReadOnlyMemory(Of Byte), String, Dictionary(Of String, String), CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(String, System.ReadOnlyMemory(Of Byte), String, System.Collections.Generic.Dictionary(Of String, String), System.Threading.CancellationToken)
+  name.vb: PublishAsync(String, ReadOnlyMemory(Of Byte), String, Dictionary(Of String, String), CancellationToken)
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync
+  commentId: M:Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync
+  id: DisposeAsync
+  parent: Virtufin.WorkManager.Services.ResilientDaprPublisher
+  langs:
+  - csharp
+  - vb
+  name: DisposeAsync()
+  nameWithType: ResilientDaprPublisher.DisposeAsync()
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync()
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: DisposeAsync
+    path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
+    startLine: 209
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: >-
+    Performs application-defined tasks associated with freeing, releasing, or
+
+    resetting unmanaged resources asynchronously.
+  example: []
+  syntax:
+    content: public ValueTask DisposeAsync()
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A task that represents the asynchronous dispose operation.
+    content.vb: Public Function DisposeAsync() As ValueTask
+  overload: Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync*
+  implements:
+  - System.IAsyncDisposable.DisposeAsync
+references:
+- uid: Virtufin.WorkManager.Services
+  commentId: N:Virtufin.WorkManager.Services
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Services
+  nameWithType: Virtufin.WorkManager.Services
+  fullName: Virtufin.WorkManager.Services
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Services
+    name: Services
+    href: Virtufin.WorkManager.Services.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Services
+    name: Services
+    href: Virtufin.WorkManager.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IAsyncDisposable
+  commentId: T:System.IAsyncDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable
+  name: IAsyncDisposable
+  nameWithType: IAsyncDisposable
+  fullName: System.IAsyncDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor*
+  commentId: Overload:Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor
+  href: Virtufin.WorkManager.Services.ResilientDaprPublisher.html#Virtufin_WorkManager_Services_ResilientDaprPublisher__ctor_Dapr_Client_DaprClient_Virtufin_WorkManager_Services_DaprResiliencePipeline_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_ResilientDaprPublisher__System_String_System_Int32_
+  name: ResilientDaprPublisher
+  nameWithType: ResilientDaprPublisher.ResilientDaprPublisher
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.ResilientDaprPublisher
+  nameWithType.vb: ResilientDaprPublisher.New
+  fullName.vb: Virtufin.WorkManager.Services.ResilientDaprPublisher.New
+  name.vb: New
+- uid: Dapr.Client.DaprClient
+  commentId: T:Dapr.Client.DaprClient
+  parent: Dapr.Client
+  isExternal: true
+  name: DaprClient
+  nameWithType: DaprClient
+  fullName: Dapr.Client.DaprClient
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline
+  commentId: T:Virtufin.WorkManager.Services.DaprResiliencePipeline
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.DaprResiliencePipeline.html
+  name: DaprResiliencePipeline
+  nameWithType: DaprResiliencePipeline
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline
+- uid: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<ResilientDaprPublisher>
+  nameWithType: ILogger<ResilientDaprPublisher>
+  fullName: Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.ResilientDaprPublisher>
+  nameWithType.vb: ILogger(Of ResilientDaprPublisher)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.ResilientDaprPublisher)
+  name.vb: ILogger(Of ResilientDaprPublisher)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - uid: Virtufin.WorkManager.Services.ResilientDaprPublisher
+    name: ResilientDaprPublisher
+    href: Virtufin.WorkManager.Services.ResilientDaprPublisher.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Services.ResilientDaprPublisher
+    name: ResilientDaprPublisher
+    href: Virtufin.WorkManager.Services.ResilientDaprPublisher.html
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Dapr.Client
+  commentId: N:Dapr.Client
+  isExternal: true
+  name: Dapr.Client
+  nameWithType: Dapr.Client
+  fullName: Dapr.Client
+  spec.csharp:
+  - uid: Dapr
+    name: Dapr
+    isExternal: true
+  - name: .
+  - uid: Dapr.Client
+    name: Client
+    isExternal: true
+  spec.vb:
+  - uid: Dapr
+    name: Dapr
+    isExternal: true
+  - name: .
+  - uid: Dapr.Client
+    name: Client
+    isExternal: true
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - name: TCategoryName
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCategoryName
+  - name: )
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync*
+  commentId: Overload:Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync
+  href: Virtufin.WorkManager.Services.ResilientDaprPublisher.html#Virtufin_WorkManager_Services_ResilientDaprPublisher_PublishAsync_System_String_System_ReadOnlyMemory_System_Byte__System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_Threading_CancellationToken_
+  name: PublishAsync
+  nameWithType: ResilientDaprPublisher.PublishAsync
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync
+- uid: System.ReadOnlyMemory{System.Byte}
+  commentId: T:System.ReadOnlyMemory{System.Byte}
+  parent: System
+  definition: System.ReadOnlyMemory`1
+  href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  name: ReadOnlyMemory<byte>
+  nameWithType: ReadOnlyMemory<byte>
+  fullName: System.ReadOnlyMemory<byte>
+  nameWithType.vb: ReadOnlyMemory(Of Byte)
+  fullName.vb: System.ReadOnlyMemory(Of Byte)
+  name.vb: ReadOnlyMemory(Of Byte)
+  spec.csharp:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: <
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: )
+- uid: System.Collections.Generic.Dictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, string>
+  nameWithType: Dictionary<string, string>
+  fullName: System.Collections.Generic.Dictionary<string, string>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.ReadOnlyMemory`1
+  commentId: T:System.ReadOnlyMemory`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  name: ReadOnlyMemory<T>
+  nameWithType: ReadOnlyMemory<T>
+  fullName: System.ReadOnlyMemory<T>
+  nameWithType.vb: ReadOnlyMemory(Of T)
+  fullName.vb: System.ReadOnlyMemory(Of T)
+  name.vb: ReadOnlyMemory(Of T)
+  spec.csharp:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync*
+  commentId: Overload:Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync
+  href: Virtufin.WorkManager.Services.ResilientDaprPublisher.html#Virtufin_WorkManager_Services_ResilientDaprPublisher_DisposeAsync
+  name: DisposeAsync
+  nameWithType: ResilientDaprPublisher.DisposeAsync
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync
+- uid: System.IAsyncDisposable.DisposeAsync
+  commentId: M:System.IAsyncDisposable.DisposeAsync
+  parent: System.IAsyncDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  name: DisposeAsync()
+  nameWithType: IAsyncDisposable.DisposeAsync()
+  fullName: System.IAsyncDisposable.DisposeAsync()
+  spec.csharp:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.ValueTask
+  commentId: T:System.Threading.Tasks.ValueTask
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  name: ValueTask
+  nameWithType: ValueTask
+  fullName: System.Threading.Tasks.ValueTask

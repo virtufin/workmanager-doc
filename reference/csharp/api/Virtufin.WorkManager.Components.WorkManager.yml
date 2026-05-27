@@ -5,8 +5,9 @@ items:
   id: WorkManager
   parent: Virtufin.WorkManager.Components
   children:
-  - Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,System.String,System.String)
+  - Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)
   - Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Components.WorkManager.DeadLetterTopicSuffix
   - Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync(System.Guid,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.DisposeAsync
   - Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)
@@ -31,7 +32,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: WorkManager
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -51,16 +52,45 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,System.String,System.String)
-  commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,System.String,System.String)
-  id: '#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,System.String,System.String)'
+- uid: Virtufin.WorkManager.Components.WorkManager.DeadLetterTopicSuffix
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.DeadLetterTopicSuffix
+  id: DeadLetterTopicSuffix
   parent: Virtufin.WorkManager.Components.WorkManager
   langs:
   - csharp
   - vb
-  name: WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, string?, string?)
-  nameWithType: WorkManager.WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, string?, string?)
-  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>, Microsoft.Extensions.Logging.ILoggerFactory, string?, string?)
+  name: DeadLetterTopicSuffix
+  nameWithType: WorkManager.DeadLetterTopicSuffix
+  fullName: Virtufin.WorkManager.Components.WorkManager.DeadLetterTopicSuffix
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: DeadLetterTopicSuffix
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 49
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Suffix appended to the topic name for dead-letter messages that have exhausted retries.
+  example: []
+  syntax:
+    content: public const string DeadLetterTopicSuffix = "-dead"
+    return:
+      type: System.String
+    content.vb: Public Const DeadLetterTopicSuffix As String = "-dead"
+- uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)
+  id: '#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)'
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, string?, string?, string?)
+  nameWithType: WorkManager.WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, string?, string?, string?)
+  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>, Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, string?, string?, string?)
   type: Constructor
   source:
     remote:
@@ -69,14 +99,14 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 50
+    startLine: 63
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
   summary: Creates a new WorkManager instance.
   example: []
   syntax:
-    content: public WorkManager(DaprPublishSubscribeClient pubsubClient, DaprClient daprClient, IHttpClientFactory httpClientFactory, IEngineRegistry engineRegistry, ILogger<WorkManager> logger, ILoggerFactory loggerFactory, string? stateStoreName = null, string? pubsubName = null)
+    content: public WorkManager(DaprPublishSubscribeClient pubsubClient, DaprClient daprClient, IHttpClientFactory httpClientFactory, IEngineRegistry engineRegistry, ILogger<WorkManager> logger, ILoggerFactory loggerFactory, DaprResiliencePipeline resilience, ResilientDaprPublisher publisher, string? stateStoreName = null, string? pubsubName = null, string? allowedCodeSourceHosts = null)
     parameters:
     - id: pubsubClient
       type: Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient
@@ -90,15 +120,21 @@ items:
       type: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager}
     - id: loggerFactory
       type: Microsoft.Extensions.Logging.ILoggerFactory
+    - id: resilience
+      type: Virtufin.WorkManager.Services.DaprResiliencePipeline
+    - id: publisher
+      type: Virtufin.WorkManager.Services.ResilientDaprPublisher
     - id: stateStoreName
       type: System.String
     - id: pubsubName
       type: System.String
-    content.vb: Public Sub New(pubsubClient As DaprPublishSubscribeClient, daprClient As DaprClient, httpClientFactory As IHttpClientFactory, engineRegistry As IEngineRegistry, logger As ILogger(Of WorkManager), loggerFactory As ILoggerFactory, stateStoreName As String = Nothing, pubsubName As String = Nothing)
+    - id: allowedCodeSourceHosts
+      type: System.String
+    content.vb: Public Sub New(pubsubClient As DaprPublishSubscribeClient, daprClient As DaprClient, httpClientFactory As IHttpClientFactory, engineRegistry As IEngineRegistry, logger As ILogger(Of WorkManager), loggerFactory As ILoggerFactory, resilience As DaprResiliencePipeline, publisher As ResilientDaprPublisher, stateStoreName As String = Nothing, pubsubName As String = Nothing, allowedCodeSourceHosts As String = Nothing)
   overload: Virtufin.WorkManager.Components.WorkManager.#ctor*
-  nameWithType.vb: WorkManager.New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, String, String)
-  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager), Microsoft.Extensions.Logging.ILoggerFactory, String, String)
-  name.vb: New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, String, String)
+  nameWithType.vb: WorkManager.New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, String, String, String)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager), Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, String, String, String)
+  name.vb: New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, String, String, String)
 - uid: Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
   commentId: M:Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
   id: RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
@@ -117,7 +153,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RegisterEngine
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 79
+    startLine: 103
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -162,7 +198,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CreateWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 91
+    startLine: 115
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -204,7 +240,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCodeFromContent
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 146
+    startLine: 175
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -254,7 +290,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCodeFromUrl
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 176
+    startLine: 205
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -301,7 +337,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeleteWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 206
+    startLine: 237
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -342,7 +378,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StartWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 227
+    startLine: 258
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -383,7 +419,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StopWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 250
+    startLine: 281
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -424,7 +460,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 271
+    startLine: 302
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -455,7 +491,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 297
+    startLine: 328
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -494,7 +530,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoverWorkersAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 310
+    startLine: 341
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -532,7 +568,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 686
+    startLine: 819
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -802,9 +838,20 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: Virtufin.WorkManager.Components.WorkManager.#ctor*
   commentId: Overload:Virtufin.WorkManager.Components.WorkManager.#ctor
-  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Dapr_Messaging_PublishSubscribe_DaprPublishSubscribeClient_Dapr_Client_DaprClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_System_String_System_String_
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Dapr_Messaging_PublishSubscribe_DaprPublishSubscribeClient_Dapr_Client_DaprClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_System_String_System_String_System_String_
   name: WorkManager
   nameWithType: WorkManager.WorkManager
   fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager
@@ -881,17 +928,20 @@ references:
   name: ILoggerFactory
   nameWithType: ILoggerFactory
   fullName: Microsoft.Extensions.Logging.ILoggerFactory
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline
+  commentId: T:Virtufin.WorkManager.Services.DaprResiliencePipeline
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.DaprResiliencePipeline.html
+  name: DaprResiliencePipeline
+  nameWithType: DaprResiliencePipeline
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher
+  commentId: T:Virtufin.WorkManager.Services.ResilientDaprPublisher
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.ResilientDaprPublisher.html
+  name: ResilientDaprPublisher
+  nameWithType: ResilientDaprPublisher
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher
 - uid: Dapr.Messaging.PublishSubscribe
   commentId: N:Dapr.Messaging.PublishSubscribe
   isExternal: true
@@ -1076,6 +1126,36 @@ references:
     name: Logging
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: Virtufin.WorkManager.Services
+  commentId: N:Virtufin.WorkManager.Services
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Services
+  nameWithType: Virtufin.WorkManager.Services
+  fullName: Virtufin.WorkManager.Services
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Services
+    name: Services
+    href: Virtufin.WorkManager.Services.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Services
+    name: Services
+    href: Virtufin.WorkManager.Services.html
 - uid: System.InvalidOperationException
   commentId: T:System.InvalidOperationException
   isExternal: true
