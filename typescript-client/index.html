@@ -201,14 +201,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/f1794c387ea0d11636f92546329a0227e4ff9d77"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/d9b15de1df2e84c764d052cbf18217da3c839b6c"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit f1794c3">
+       title="View commit d9b15de">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">f1794c3</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">d9b15de</text>
       </svg>
     </a>
 </div>
@@ -368,14 +368,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/f1794c387ea0d11636f92546329a0227e4ff9d77"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/d9b15de1df2e84c764d052cbf18217da3c839b6c"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit f1794c3">
+       title="View commit d9b15de">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">f1794c3</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">d9b15de</text>
       </svg>
     </a>
 </div>
@@ -916,6 +916,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-gitea-npm-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Gitea npm Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-local-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Local Source
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1341,6 +1369,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-gitea-npm-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Gitea npm Registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-local-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Local Source
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1618,9 +1674,14 @@
 <h1 id="typescript-client-library">TypeScript Client Library</h1>
 <p>The Virtufin WorkManager TypeScript client library (<code>@virtufin/workmanager</code>) provides a TypeScript interface for interacting with the WorkManager service using gRPC-web and Connect-RPC.</p>
 <h2 id="installation">Installation</h2>
+<h3 id="from-gitea-npm-registry">From Gitea npm Registry</h3>
+<p>Configure authentication with a Gitea personal access token (scope: <code>read:packages</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;//gitea.haenerconsulting.com/api/packages/virtufin/npm/:_authToken=&lt;your-gitea-token&gt;&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.npmrc
+</code></pre></div>
+<p>Then install:</p>
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>@virtufin/workmanager
 </code></pre></div>
-<p>Or reference the source directly:</p>
+<h3 id="from-local-source">From Local Source</h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;dependencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;@virtufin/workmanager&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;file:path/to/src/typescript&quot;</span>
@@ -1993,7 +2054,7 @@
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-05-28T07:50:01Z</span>
+  <span style="display:table-cell;text-align:right">2026-05-28T08:00:11Z</span>
 </div>
 
     </div>
