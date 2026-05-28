@@ -1010,6 +1010,9 @@ references:
   commentId: F:Virtufin.WorkManager.Contracts.WorkerStatus.Unspecified
   fullName: Virtufin.WorkManager.Contracts.WorkerStatus.Unspecified
   nameWithType: WorkerStatus.Unspecified
+- uid: Virtufin.WorkManager.Reference
+  name: C# API Reference
+  href: index.html
 - uid: Virtufin.WorkManager.Runtime
   name: Virtufin.WorkManager.Runtime
   href: api/Virtufin.WorkManager.Runtime.html
