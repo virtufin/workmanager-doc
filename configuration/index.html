@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/0a2f378fbb5b70b8c8dff8bd27c945c1e6594709"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/fc3984bcae692734b3bce3ad20b3e94f2714507e"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 0a2f378">
+       title="View commit fc3984b">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">0a2f378</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">fc3984b</text>
       </svg>
     </a>
 </div>
@@ -390,14 +390,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/0a2f378fbb5b70b8c8dff8bd27c945c1e6594709"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/fc3984bcae692734b3bce3ad20b3e94f2714507e"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 0a2f378">
+       title="View commit fc3984b">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">0a2f378</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">fc3984b</text>
       </svg>
     </a>
 </div>
@@ -1517,13 +1517,13 @@
 <tbody>
 <tr>
 <td><code>HttpPort</code></td>
-<td>HTTP port for REST APIs</td>
+<td>Shared HTTP and gRPC port</td>
 <td><code>5001</code></td>
 </tr>
 <tr>
 <td><code>GrpcPort</code></td>
-<td>gRPC port for gRPC services</td>
-<td><code>5002</code></td>
+<td>Deprecated — merged into <code>HttpPort</code>. Both HTTP and gRPC now share the same port</td>
+<td><code>5001</code></td>
 </tr>
 <tr>
 <td><code>DaprHttpPort</code></td>
@@ -1580,7 +1580,6 @@
 <h2 id="environment-variables">Environment Variables</h2>
 <p>Set configuration using environment variables:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HttpPort</span><span class="o">=</span><span class="m">8080</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">GrpcPort</span><span class="o">=</span><span class="m">8081</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">DaprHttpPort</span><span class="o">=</span><span class="m">3500</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">DaprGrpcPort</span><span class="o">=</span><span class="m">50001</span>
 <span class="nb">export</span><span class="w"> </span>Logging:LogLevel:Default<span class="o">=</span>Debug
@@ -1589,7 +1588,7 @@
 </code></pre></div>
 <h2 id="command-line-arguments">Command-Line Arguments</h2>
 <p>Pass arguments when running the application:</p>
-<div class="highlight"><pre><span></span><code>Virtufin.WorkManager<span class="w"> </span>--http-port<span class="w"> </span><span class="m">8080</span><span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">8081</span>
+<div class="highlight"><pre><span></span><code>Virtufin.WorkManager<span class="w"> </span>--http-port<span class="w"> </span><span class="m">8080</span>
 </code></pre></div>
 <h3 id="available-arguments">Available Arguments</h3>
 <table>
@@ -1603,13 +1602,8 @@
 <tbody>
 <tr>
 <td><code>--http-port &lt;port&gt;</code></td>
-<td>HTTP port for REST APIs</td>
+<td>Shared HTTP and gRPC port</td>
 <td><code>5001</code></td>
-</tr>
-<tr>
-<td><code>--grpc-port &lt;port&gt;</code></td>
-<td>gRPC port for gRPC services</td>
-<td><code>5002</code></td>
 </tr>
 <tr>
 <td><code>--dapr-http-port &lt;port&gt;</code></td>
@@ -1626,18 +1620,17 @@
 <h2 id="examples">Examples</h2>
 <h3 id="using-environment-variables">Using Environment Variables</h3>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HttpPort</span><span class="o">=</span><span class="m">3000</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">GrpcPort</span><span class="o">=</span><span class="m">3001</span>
 ./Virtufin.WorkManager
 </code></pre></div>
 <h3 id="using-command-line-arguments">Using Command-Line Arguments</h3>
-<div class="highlight"><pre><span></span><code>./Virtufin.WorkManager<span class="w"> </span>--http-port<span class="w"> </span><span class="m">3000</span><span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">3001</span><span class="w"> </span>--log-level<span class="w"> </span>Debug
+<div class="highlight"><pre><span></span><code>./Virtufin.WorkManager<span class="w"> </span>--http-port<span class="w"> </span><span class="m">3000</span><span class="w"> </span>--log-level<span class="w"> </span>Debug
 </code></pre></div>
 <h3 id="combining-both">Combining Both</h3>
 <p>Environment variables set defaults, command-line arguments override:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HttpPort</span><span class="o">=</span><span class="m">3000</span>
-./Virtufin.WorkManager<span class="w"> </span>--grpc-port<span class="w"> </span><span class="m">3001</span>
+./Virtufin.WorkManager
 </code></pre></div>
-<p>In this example, <code>HttpPort</code> is <code>3000</code> (from environment) and <code>GrpcPort</code> is <code>3001</code> (from command line).</p>
+<p>In this example, <code>HttpPort</code> is <code>3000</code> (from environment).</p>
 
 
 
@@ -1669,7 +1662,7 @@
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-05-31T05:34:57Z</span>
+  <span style="display:table-cell;text-align:right">2026-05-31T05:40:34Z</span>
 </div>
 
     </div>

@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/0a2f378fbb5b70b8c8dff8bd27c945c1e6594709"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/fc3984bcae692734b3bce3ad20b3e94f2714507e"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 0a2f378">
+       title="View commit fc3984b">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">0a2f378</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">fc3984b</text>
       </svg>
     </a>
 </div>
@@ -390,14 +390,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/0a2f378fbb5b70b8c8dff8bd27c945c1e6594709"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/fc3984bcae692734b3bce3ad20b3e94f2714507e"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 0a2f378">
+       title="View commit fc3984b">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">0a2f378</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">fc3984b</text>
       </svg>
     </a>
 </div>
@@ -1779,7 +1779,7 @@ pip<span class="w"> </span>install<span class="w"> </span>virtufin-workmanager<s
 <span class="kn">from</span><span class="w"> </span><span class="nn">virtufin</span><span class="w"> </span><span class="kn">import</span> <span class="n">WorkManagerClient</span>
 
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="k">async</span> <span class="k">with</span> <span class="n">WorkManagerClient</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">5002</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">WorkManagerClient</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">5001</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
         <span class="c1"># Create a worker</span>
         <span class="n">worker_id</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">create_worker</span><span class="p">(</span>
             <span class="n">code_source</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;def Process(event):</span><span class="se">\n</span><span class="s2">    return {</span><span class="se">\&quot;</span><span class="s2">type</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">com.example.output</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">source</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">test</span><span class="se">\&quot;</span><span class="s2">, </span><span class="se">\&quot;</span><span class="s2">data</span><span class="se">\&quot;</span><span class="s2">: event[</span><span class="se">\&quot;</span><span class="s2">data</span><span class="se">\&quot;</span><span class="s2">]}&quot;</span><span class="p">},</span>
@@ -1801,7 +1801,7 @@ pip<span class="w"> </span>install<span class="w"> </span>virtufin-workmanager<s
 <h2 id="workmanagerclient">WorkManagerClient</h2>
 <p>The main client class for interacting with the WorkManager service.</p>
 <h3 id="constructor">Constructor</h3>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5102</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5001</span><span class="p">)</span>
 </code></pre></div>
 <table>
 <thead>
@@ -1822,8 +1822,8 @@ pip<span class="w"> </span>install<span class="w"> </span>virtufin-workmanager<s
 <tr>
 <td><code>port</code></td>
 <td><code>int</code></td>
-<td><code>5102</code></td>
-<td>gRPC server port</td>
+<td><code>5001</code></td>
+<td>Shared HTTP/gRPC server port</td>
 </tr>
 </tbody>
 </table>
@@ -2119,7 +2119,7 @@ pip<span class="w"> </span>install<span class="w"> </span>virtufin-workmanager<s
 <span class="s1">&#39;&#39;&#39;</span>
 
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-    <span class="k">async</span> <span class="k">with</span> <span class="n">WorkManagerClient</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">5002</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">WorkManagerClient</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="mi">5001</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating worker...&quot;</span><span class="p">)</span>
         <span class="n">worker_id</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">create_worker</span><span class="p">(</span>
             <span class="n">code_source</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">WORKER_CODE</span><span class="p">},</span>
@@ -2226,7 +2226,7 @@ pip<span class="w"> </span>install<span class="w"> </span>virtufin-workmanager<s
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-05-31T05:34:57Z</span>
+  <span style="display:table-cell;text-align:right">2026-05-31T05:40:34Z</span>
 </div>
 
     </div>
