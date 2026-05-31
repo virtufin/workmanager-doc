@@ -56,7 +56,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Configuration.PortConstants",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.PortConstants.yml\" sourcestartlinenumber=\"1\">Default port constants used by the WorkManager service.</p>\n"
+      "Summary": null
     },
     {
       "type": "ManagedReference",
