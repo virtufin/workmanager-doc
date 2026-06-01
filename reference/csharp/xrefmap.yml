@@ -283,24 +283,24 @@ references:
   commentId: F:Virtufin.WorkManager.Configuration.PortConstants.DefaultGrpcPort
   fullName: Virtufin.WorkManager.Configuration.PortConstants.DefaultGrpcPort
   nameWithType: PortConstants.DefaultGrpcPort
-- uid: Virtufin.WorkManager.Configuration.PortConstants.DefaultServerPort
-  name: DefaultServerPort
-  href: api/Virtufin.WorkManager.Configuration.PortConstants.html#Virtufin_WorkManager_Configuration_PortConstants_DefaultServerPort
-  commentId: F:Virtufin.WorkManager.Configuration.PortConstants.DefaultServerPort
-  fullName: Virtufin.WorkManager.Configuration.PortConstants.DefaultServerPort
-  nameWithType: PortConstants.DefaultServerPort
+- uid: Virtufin.WorkManager.Configuration.PortConstants.DefaultHttpPort
+  name: DefaultHttpPort
+  href: api/Virtufin.WorkManager.Configuration.PortConstants.html#Virtufin_WorkManager_Configuration_PortConstants_DefaultHttpPort
+  commentId: F:Virtufin.WorkManager.Configuration.PortConstants.DefaultHttpPort
+  fullName: Virtufin.WorkManager.Configuration.PortConstants.DefaultHttpPort
+  nameWithType: PortConstants.DefaultHttpPort
 - uid: Virtufin.WorkManager.Configuration.PortConstants.GrpcPortKey
   name: GrpcPortKey
   href: api/Virtufin.WorkManager.Configuration.PortConstants.html#Virtufin_WorkManager_Configuration_PortConstants_GrpcPortKey
   commentId: F:Virtufin.WorkManager.Configuration.PortConstants.GrpcPortKey
   fullName: Virtufin.WorkManager.Configuration.PortConstants.GrpcPortKey
   nameWithType: PortConstants.GrpcPortKey
-- uid: Virtufin.WorkManager.Configuration.PortConstants.ServerPortKey
-  name: ServerPortKey
-  href: api/Virtufin.WorkManager.Configuration.PortConstants.html#Virtufin_WorkManager_Configuration_PortConstants_ServerPortKey
-  commentId: F:Virtufin.WorkManager.Configuration.PortConstants.ServerPortKey
-  fullName: Virtufin.WorkManager.Configuration.PortConstants.ServerPortKey
-  nameWithType: PortConstants.ServerPortKey
+- uid: Virtufin.WorkManager.Configuration.PortConstants.HttpPortKey
+  name: HttpPortKey
+  href: api/Virtufin.WorkManager.Configuration.PortConstants.html#Virtufin_WorkManager_Configuration_PortConstants_HttpPortKey
+  commentId: F:Virtufin.WorkManager.Configuration.PortConstants.HttpPortKey
+  fullName: Virtufin.WorkManager.Configuration.PortConstants.HttpPortKey
+  nameWithType: PortConstants.HttpPortKey
 - uid: Virtufin.WorkManager.Contracts
   name: Virtufin.WorkManager.Contracts
   href: api/Virtufin.WorkManager.Contracts.html
