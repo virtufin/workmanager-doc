@@ -9,7 +9,9 @@ items:
   - Virtufin.WorkManager.Configuration.PortConstants.DaprHttpPortKey
   - Virtufin.WorkManager.Configuration.PortConstants.DefaultDaprGrpcPort
   - Virtufin.WorkManager.Configuration.PortConstants.DefaultDaprHttpPort
+  - Virtufin.WorkManager.Configuration.PortConstants.DefaultGrpcPort
   - Virtufin.WorkManager.Configuration.PortConstants.DefaultServerPort
+  - Virtufin.WorkManager.Configuration.PortConstants.GrpcPortKey
   - Virtufin.WorkManager.Configuration.PortConstants.ServerPortKey
   langs:
   - csharp
@@ -69,6 +71,33 @@ items:
     return:
       type: System.Int32
     content.vb: Public Const DefaultServerPort As Integer = 5001
+- uid: Virtufin.WorkManager.Configuration.PortConstants.DefaultGrpcPort
+  commentId: F:Virtufin.WorkManager.Configuration.PortConstants.DefaultGrpcPort
+  id: DefaultGrpcPort
+  parent: Virtufin.WorkManager.Configuration.PortConstants
+  langs:
+  - csharp
+  - vb
+  name: DefaultGrpcPort
+  nameWithType: PortConstants.DefaultGrpcPort
+  fullName: Virtufin.WorkManager.Configuration.PortConstants.DefaultGrpcPort
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/PortConstants.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: DefaultGrpcPort
+    path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
+    startLine: 5
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  syntax:
+    content: public const int DefaultGrpcPort = 5002
+    return:
+      type: System.Int32
+    content.vb: Public Const DefaultGrpcPort As Integer = 5002
 - uid: Virtufin.WorkManager.Configuration.PortConstants.DefaultDaprHttpPort
   commentId: F:Virtufin.WorkManager.Configuration.PortConstants.DefaultDaprHttpPort
   id: DefaultDaprHttpPort
@@ -87,7 +116,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DefaultDaprHttpPort
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
-    startLine: 5
+    startLine: 6
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
@@ -114,7 +143,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DefaultDaprGrpcPort
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
@@ -141,7 +170,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ServerPortKey
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
@@ -150,6 +179,33 @@ items:
     return:
       type: System.String
     content.vb: Public Const ServerPortKey As String = "ServerPort"
+- uid: Virtufin.WorkManager.Configuration.PortConstants.GrpcPortKey
+  commentId: F:Virtufin.WorkManager.Configuration.PortConstants.GrpcPortKey
+  id: GrpcPortKey
+  parent: Virtufin.WorkManager.Configuration.PortConstants
+  langs:
+  - csharp
+  - vb
+  name: GrpcPortKey
+  nameWithType: PortConstants.GrpcPortKey
+  fullName: Virtufin.WorkManager.Configuration.PortConstants.GrpcPortKey
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/PortConstants.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: GrpcPortKey
+    path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
+    startLine: 9
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  syntax:
+    content: public const string GrpcPortKey = "GrpcPort"
+    return:
+      type: System.String
+    content.vb: Public Const GrpcPortKey As String = "GrpcPort"
 - uid: Virtufin.WorkManager.Configuration.PortConstants.DaprHttpPortKey
   commentId: F:Virtufin.WorkManager.Configuration.PortConstants.DaprHttpPortKey
   id: DaprHttpPortKey
@@ -168,7 +224,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DaprHttpPortKey
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
-    startLine: 8
+    startLine: 10
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
@@ -195,7 +251,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DaprGrpcPortKey
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration

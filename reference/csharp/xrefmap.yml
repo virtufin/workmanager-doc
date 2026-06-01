@@ -277,12 +277,24 @@ references:
   commentId: F:Virtufin.WorkManager.Configuration.PortConstants.DefaultDaprHttpPort
   fullName: Virtufin.WorkManager.Configuration.PortConstants.DefaultDaprHttpPort
   nameWithType: PortConstants.DefaultDaprHttpPort
+- uid: Virtufin.WorkManager.Configuration.PortConstants.DefaultGrpcPort
+  name: DefaultGrpcPort
+  href: api/Virtufin.WorkManager.Configuration.PortConstants.html#Virtufin_WorkManager_Configuration_PortConstants_DefaultGrpcPort
+  commentId: F:Virtufin.WorkManager.Configuration.PortConstants.DefaultGrpcPort
+  fullName: Virtufin.WorkManager.Configuration.PortConstants.DefaultGrpcPort
+  nameWithType: PortConstants.DefaultGrpcPort
 - uid: Virtufin.WorkManager.Configuration.PortConstants.DefaultServerPort
   name: DefaultServerPort
   href: api/Virtufin.WorkManager.Configuration.PortConstants.html#Virtufin_WorkManager_Configuration_PortConstants_DefaultServerPort
   commentId: F:Virtufin.WorkManager.Configuration.PortConstants.DefaultServerPort
   fullName: Virtufin.WorkManager.Configuration.PortConstants.DefaultServerPort
   nameWithType: PortConstants.DefaultServerPort
+- uid: Virtufin.WorkManager.Configuration.PortConstants.GrpcPortKey
+  name: GrpcPortKey
+  href: api/Virtufin.WorkManager.Configuration.PortConstants.html#Virtufin_WorkManager_Configuration_PortConstants_GrpcPortKey
+  commentId: F:Virtufin.WorkManager.Configuration.PortConstants.GrpcPortKey
+  fullName: Virtufin.WorkManager.Configuration.PortConstants.GrpcPortKey
+  nameWithType: PortConstants.GrpcPortKey
 - uid: Virtufin.WorkManager.Configuration.PortConstants.ServerPortKey
   name: ServerPortKey
   href: api/Virtufin.WorkManager.Configuration.PortConstants.html#Virtufin_WorkManager_Configuration_PortConstants_ServerPortKey
