@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e89bbeaf7768fd2a698c20adf9678586a7f1ac3e"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/0982849916b9384d19196fbab4b6ba95184b213e"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit e89bbea">
+       title="View commit 0982849">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e89bbea</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">0982849</text>
       </svg>
     </a>
 </div>
@@ -390,14 +390,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e89bbeaf7768fd2a698c20adf9678586a7f1ac3e"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/0982849916b9384d19196fbab4b6ba95184b213e"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit e89bbea">
+       title="View commit 0982849">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e89bbea</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">0982849</text>
       </svg>
     </a>
 </div>
@@ -1649,13 +1649,27 @@ flowchart LR
 - Runtime exceptions propagate to the caller</p>
 <h3 id="dotnetdllengine">DotnetDllEngine</h3>
 <p><strong>MIME Type:</strong> <code>application/x-dotnet-dll</code></p>
-<p>Loads pre-compiled .NET assemblies from byte content.</p>
-<p><strong>Code Requirements:</strong>
-Same as <code>CSharpSourceEngine</code> - the assembly must contain a <code>Process</code> method with the same signature.</p>
-<p><strong>Error Handling:</strong>
-- If assembly cannot be loaded, exception is thrown
-- If <code>Process</code> method is not found, exception is thrown
-- Runtime exceptions propagate to the caller</p>
+<p>Loads pre-compiled .NET assemblies from byte content. Assemblies are loaded in an isolated <code>AssemblyLoadContext</code> with dependency resolution via a <code>Resolving</code> handler that resolves transitive NuGet dependencies from the uploaded ZIP.</p>
+<p><strong>Code Requirements:</strong></p>
+<p>Workers must use the <code>Virtufin.Worker.DevKit</code> NuGet package and implement the <code>IWorker</code> interface or extend <code>WorkerBase</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">CloudNative.CloudEvents</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Virtufin.Worker.DevKit</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">WorkerBase</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ResponseType</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;my.response&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Uri</span><span class="w"> </span><span class="n">Source</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="s">&quot;urn:my-worker&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CloudEvent</span><span class="o">?</span><span class="w"> </span><span class="n">Process</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Process the event and return a response</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="s">&quot;process&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Done&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Discovery:</strong> The engine scans all loaded assemblies for the first non-abstract, non-interface type implementing <code>IWorker</code>. If no implementation is found, an <code>InvalidOperationException</code> is thrown. No method-name scanning or convention matching is used.</p>
+<p><strong>Virtufin.Worker.DevKit</strong> is a lightweight NuGet package (dependency: <code>CloudNative.CloudEvents</code> only) that provides the <code>IWorker</code> interface and <code>WorkerBase</code> abstract class. It is specifically for the DotnetDllEngine — not used by other engines.</p>
+<p>See <a href="../dotnet-dll-workers/">DotnetDllEngine Workers</a> for a complete guide on implementing workers.</p>
 <h2 id="engine-registration">Engine Registration</h2>
 <p>Engines are registered in <code>Program.cs</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">engines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="p">(</span><span class="n">ContentType</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">Func</span><span class="o">&lt;</span><span class="n">IEngine</span><span class="o">&gt;</span><span class="p">)[]</span>
@@ -1801,7 +1815,7 @@ Same as <code>CSharpSourceEngine</code> - the assembly must contain a <code>Proc
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-06-03T08:37:59Z</span>
+  <span style="display:table-cell;text-align:right">2026-06-03T08:50:06Z</span>
 </div>
 
     </div>
