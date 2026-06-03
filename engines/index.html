@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/ba4741ed0dfbd6e836741acaa363b25011cc29d7"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/43f6753ade94615ead0989ddfafea88c4c7ec16f"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit ba4741e">
+       title="View commit 43f6753">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">ba4741e</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">43f6753</text>
       </svg>
     </a>
 </div>
@@ -390,14 +390,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/ba4741ed0dfbd6e836741acaa363b25011cc29d7"
+    <a href="https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager/commit/43f6753ade94615ead0989ddfafea88c4c7ec16f"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit ba4741e">
+       title="View commit 43f6753">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">ba4741e</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">43f6753</text>
       </svg>
     </a>
 </div>
@@ -768,10 +768,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#csharpdllengine" class="md-nav__link">
+  <a href="#dotnetdllengine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CSharpDllEngine
+        DotnetDllEngine
       
     </span>
   </a>
@@ -1411,10 +1411,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#csharpdllengine" class="md-nav__link">
+  <a href="#dotnetdllengine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CSharpDllEngine
+        DotnetDllEngine
       
     </span>
   </a>
@@ -1559,12 +1559,12 @@
     subgraph ER["EngineRegistry"]
         P["text/x-python"] --&gt; PE[PythonEngine Factory]
         C["text/x-csharp"] --&gt; CS[CSharpSourceEngine Factory]
-        D["text/x-dll"] --&gt; CD[CSharpDllEngine Factory]
+        D["application/x-dotnet-dll"] --&gt; CD[DotnetDllEngine Factory]
     end
     ER --&gt; EF[Engine Factory&lt;br/&gt;per worker]
     EF --&gt; E1[PythonEngine Instance]
     EF --&gt; E2[CSharpSourceEngine Instance]
-    EF --&gt; E3[CSharpDllEngine Instance]</code></pre>
+    EF --&gt; E3[DotnetDllEngine Instance]</code></pre>
 <div class="highlight"><pre><span></span><code>**Engine Instance Lifecycle:**
 
 ```mermaid
@@ -1647,8 +1647,8 @@ flowchart LR
 <p><strong>Error Handling:</strong>
 - Compilation errors throw <code>InvalidOperationException</code> with full error messages
 - Runtime exceptions propagate to the caller</p>
-<h3 id="csharpdllengine">CSharpDllEngine</h3>
-<p><strong>MIME Type:</strong> <code>text/x-dll</code></p>
+<h3 id="dotnetdllengine">DotnetDllEngine</h3>
+<p><strong>MIME Type:</strong> <code>application/x-dotnet-dll</code></p>
 <p>Loads pre-compiled .NET assemblies from byte content.</p>
 <p><strong>Code Requirements:</strong>
 Same as <code>CSharpSourceEngine</code> - the assembly must contain a <code>Process</code> method with the same signature.</p>
@@ -1717,7 +1717,7 @@ Same as <code>CSharpSourceEngine</code> - the assembly must contain a <code>Proc
 <p>Engine instances are specific to a single worker and accessed sequentially (one message at a time). However:</p>
 <ul>
 <li><code>PythonEngine</code> uses <code>IDisposable</code> - dispose is called when engine is replaced</li>
-<li><code>CSharpSourceEngine</code> and <code>CSharpDllEngine</code> do not require disposal</li>
+<li><code>CSharpSourceEngine</code> and <code>DotnetDllEngine</code> do not require disposal</li>
 </ul>
 <h2 id="performance-characteristics">Performance Characteristics</h2>
 <table>
@@ -1739,7 +1739,7 @@ Same as <code>CSharpSourceEngine</code> - the assembly must contain a <code>Proc
 <td>High-throughput topics, complex logic</td>
 </tr>
 <tr>
-<td><strong>CSharpDllEngine</strong></td>
+<td><strong>DotnetDllEngine</strong></td>
 <td>&lt; 10ms</td>
 <td>&lt; 1ms</td>
 <td>Highest</td>
@@ -1801,7 +1801,7 @@ Same as <code>CSharpSourceEngine</code> - the assembly must contain a <code>Proc
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-06-03T02:32:40Z</span>
+  <span style="display:table-cell;text-align:right">2026-06-03T06:58:28Z</span>
 </div>
 
     </div>
