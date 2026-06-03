@@ -352,7 +352,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCodeFromContent
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 183
+    startLine: 181
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -402,7 +402,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCodeFromUrl
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 213
+    startLine: 211
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -449,7 +449,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeleteWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 245
+    startLine: 243
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -490,7 +490,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StartWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 266
+    startLine: 264
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -531,7 +531,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StopWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 289
+    startLine: 287
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -572,7 +572,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 310
+    startLine: 308
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -603,7 +603,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 336
+    startLine: 334
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -642,7 +642,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoverWorkersAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 349
+    startLine: 347
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -680,7 +680,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 830
+    startLine: 828
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
