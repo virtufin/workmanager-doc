@@ -680,7 +680,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 895
+    startLine: 907
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
