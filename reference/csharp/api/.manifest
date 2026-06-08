@@ -114,7 +114,7 @@
   "Virtufin.WorkManager.Runtime.Worker.Id": "Virtufin.WorkManager.Runtime.Worker.yml",
   "Virtufin.WorkManager.Runtime.Worker.LoadCode(System.Byte[])": "Virtufin.WorkManager.Runtime.Worker.yml",
   "Virtufin.WorkManager.Runtime.Worker.MimeType": "Virtufin.WorkManager.Runtime.Worker.yml",
-  "Virtufin.WorkManager.Runtime.Worker.Process(CloudNative.CloudEvents.CloudEvent)": "Virtufin.WorkManager.Runtime.Worker.yml",
+  "Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)": "Virtufin.WorkManager.Runtime.Worker.yml",
   "Virtufin.WorkManager.Runtime.Worker.Status": "Virtufin.WorkManager.Runtime.Worker.yml",
   "Virtufin.WorkManager.Runtime.Worker.Topic": "Virtufin.WorkManager.Runtime.Worker.yml",
   "Virtufin.WorkManager.Runtime.WorkerNotFoundException": "Virtufin.WorkManager.Runtime.WorkerNotFoundException.yml",

@@ -13,7 +13,7 @@ items:
   - Virtufin.WorkManager.Runtime.Worker.Id
   - Virtufin.WorkManager.Runtime.Worker.LoadCode(System.Byte[])
   - Virtufin.WorkManager.Runtime.Worker.MimeType
-  - Virtufin.WorkManager.Runtime.Worker.Process(CloudNative.CloudEvents.CloudEvent)
+  - Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
   - Virtufin.WorkManager.Runtime.Worker.Status
   - Virtufin.WorkManager.Runtime.Worker.Topic
   langs:
@@ -381,23 +381,23 @@ items:
   nameWithType.vb: Worker.LoadCode(Byte())
   fullName.vb: Virtufin.WorkManager.Runtime.Worker.LoadCode(Byte())
   name.vb: LoadCode(Byte())
-- uid: Virtufin.WorkManager.Runtime.Worker.Process(CloudNative.CloudEvents.CloudEvent)
-  commentId: M:Virtufin.WorkManager.Runtime.Worker.Process(CloudNative.CloudEvents.CloudEvent)
-  id: Process(CloudNative.CloudEvents.CloudEvent)
+- uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
+  id: ProcessAsync(CloudNative.CloudEvents.CloudEvent)
   parent: Virtufin.WorkManager.Runtime.Worker
   langs:
   - csharp
   - vb
-  name: Process(CloudEvent)
-  nameWithType: Worker.Process(CloudEvent)
-  fullName: Virtufin.WorkManager.Runtime.Worker.Process(CloudNative.CloudEvents.CloudEvent)
+  name: ProcessAsync(CloudEvent)
+  nameWithType: Worker.ProcessAsync(CloudEvent)
+  fullName: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
   type: Method
   source:
     remote:
       path: src/Virtufin.WorkManager/Runtime/Worker.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: Process
+    id: ProcessAsync
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
     startLine: 71
   assemblies:
@@ -406,16 +406,16 @@ items:
   summary: Processes a cloud event through the worker's engine.
   example: []
   syntax:
-    content: public CloudEvent? Process(CloudEvent input)
+    content: public Task<CloudEvent?> ProcessAsync(CloudEvent input)
     parameters:
     - id: input
       type: CloudNative.CloudEvents.CloudEvent
       description: The incoming cloud event.
     return:
-      type: CloudNative.CloudEvents.CloudEvent
+      type: System.Threading.Tasks.Task{CloudNative.CloudEvents.CloudEvent}
       description: The response cloud event, or <code>null</code> if no response.
-    content.vb: Public Function Process(input As CloudEvent) As CloudEvent
-  overload: Virtufin.WorkManager.Runtime.Worker.Process*
+    content.vb: Public Function ProcessAsync(input As CloudEvent) As Task(Of CloudEvent)
+  overload: Virtufin.WorkManager.Runtime.Worker.ProcessAsync*
 references:
 - uid: Virtufin.WorkManager.Runtime
   commentId: N:Virtufin.WorkManager.Runtime
@@ -1045,12 +1045,12 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.byte
   - name: (
   - name: )
-- uid: Virtufin.WorkManager.Runtime.Worker.Process*
-  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.Process
-  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_Process_CloudNative_CloudEvents_CloudEvent_
-  name: Process
-  nameWithType: Worker.Process
-  fullName: Virtufin.WorkManager.Runtime.Worker.Process
+- uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync*
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.ProcessAsync
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_ProcessAsync_CloudNative_CloudEvents_CloudEvent_
+  name: ProcessAsync
+  nameWithType: Worker.ProcessAsync
+  fullName: Virtufin.WorkManager.Runtime.Worker.ProcessAsync
 - uid: CloudNative.CloudEvents.CloudEvent
   commentId: T:CloudNative.CloudEvents.CloudEvent
   parent: CloudNative.CloudEvents
@@ -1059,6 +1059,41 @@ references:
   name: CloudEvent
   nameWithType: CloudEvent
   fullName: CloudNative.CloudEvents.CloudEvent
+- uid: System.Threading.Tasks.Task{CloudNative.CloudEvents.CloudEvent}
+  commentId: T:System.Threading.Tasks.Task{CloudNative.CloudEvents.CloudEvent}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<CloudEvent>
+  nameWithType: Task<CloudEvent>
+  fullName: System.Threading.Tasks.Task<CloudNative.CloudEvents.CloudEvent>
+  nameWithType.vb: Task(Of CloudEvent)
+  fullName.vb: System.Threading.Tasks.Task(Of CloudNative.CloudEvents.CloudEvent)
+  name.vb: Task(Of CloudEvent)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: CloudNative.CloudEvents.CloudEvent
+    name: CloudEvent
+    isExternal: true
+    href: https://github.com/cloudevents/sdk-csharp/blob/master/src/CloudNative.CloudEvents/CloudEvent.cs
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: CloudNative.CloudEvents.CloudEvent
+    name: CloudEvent
+    isExternal: true
+    href: https://github.com/cloudevents/sdk-csharp/blob/master/src/CloudNative.CloudEvents/CloudEvent.cs
+  - name: )
 - uid: CloudNative.CloudEvents
   commentId: N:CloudNative.CloudEvents
   isExternal: true
@@ -1081,3 +1116,68 @@ references:
   - uid: CloudNative.CloudEvents
     name: CloudEvents
     isExternal: true
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

@@ -1288,19 +1288,19 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Runtime.Worker.MimeType
   nameWithType: Worker.MimeType
-- uid: Virtufin.WorkManager.Runtime.Worker.Process(CloudNative.CloudEvents.CloudEvent)
-  name: Process(CloudEvent)
-  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_Process_CloudNative_CloudEvents_CloudEvent_
-  commentId: M:Virtufin.WorkManager.Runtime.Worker.Process(CloudNative.CloudEvents.CloudEvent)
-  fullName: Virtufin.WorkManager.Runtime.Worker.Process(CloudNative.CloudEvents.CloudEvent)
-  nameWithType: Worker.Process(CloudEvent)
-- uid: Virtufin.WorkManager.Runtime.Worker.Process*
-  name: Process
-  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_Process_
-  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.Process
+- uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
+  name: ProcessAsync(CloudEvent)
+  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_ProcessAsync_CloudNative_CloudEvents_CloudEvent_
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
+  fullName: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
+  nameWithType: Worker.ProcessAsync(CloudEvent)
+- uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync*
+  name: ProcessAsync
+  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_ProcessAsync_
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.ProcessAsync
   isSpec: "True"
-  fullName: Virtufin.WorkManager.Runtime.Worker.Process
-  nameWithType: Worker.Process
+  fullName: Virtufin.WorkManager.Runtime.Worker.ProcessAsync
+  nameWithType: Worker.ProcessAsync
 - uid: Virtufin.WorkManager.Runtime.Worker.Status
   name: Status
   href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_Status
