@@ -7,7 +7,7 @@ Worker lifecycle management and code execution service with Dapr integration.
 ## Features
 
 - Worker lifecycle management (create, start, stop, delete)
-- Code execution engines: Python, C# Source, C# DLL, Dotnet DLL
+- Code execution engines: Python, C# Source, Dotnet DLL
 - Pub/sub-based worker invocation via Dapr
 - State store persistence for worker configurations and history
 - gRPC API with reflection
