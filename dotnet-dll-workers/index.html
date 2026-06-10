@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e3f77fd7e440a62e3694075efe971c06f01c511d"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/0d295582c7b12957e87ac6b086f806190b9a0326"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit e3f77fd">
+       title="View commit 0d29558">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e3f77fd</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">0d29558</text>
       </svg>
     </a>
 </div>
@@ -382,14 +382,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e3f77fd7e440a62e3694075efe971c06f01c511d"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/0d295582c7b12957e87ac6b086f806190b9a0326"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit e3f77fd">
+       title="View commit 0d29558">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e3f77fd</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">0d29558</text>
       </svg>
     </a>
 </div>
@@ -1229,6 +1229,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#apiworker-and-apicommandworker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ApiWorker and ApiCommandWorker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ApiWorker and ApiCommandWorker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apiworker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ApiWorker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apicommandworker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ApiCommandWorker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-manual-apiclient-to-apicommandworker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration: Manual ApiClient to ApiCommandWorker
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependency-resolution" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1501,6 +1551,56 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#apiworker-and-apicommandworker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ApiWorker and ApiCommandWorker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ApiWorker and ApiCommandWorker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apiworker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ApiWorker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apicommandworker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ApiCommandWorker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration-manual-apiclient-to-apicommandworker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration: Manual ApiClient to ApiCommandWorker
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dependency-resolution" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1595,7 +1695,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <h4 id="option-b-extend-workerbase-directly">Option B: Extend WorkerBase Directly</h4>
-<p>For non-command-based workers, extend <code>WorkerBase</code> and override <code>Process</code>:</p>
+<p>For non-command-based workers, extend <code>WorkerBase</code> and override <code>ProcessAsync</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">CloudNative.CloudEvents</span><span class="p">;</span>
 <span class="k">using</span><span class="w"> </span><span class="nn">Virtufin.Worker.DevKit</span><span class="p">;</span>
 
@@ -1603,7 +1703,7 @@
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyWorker</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="s">&quot;my.response&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;urn:my-worker&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">Process</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">ProcessAsync</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="p">.</span><span class="n">Data</span><span class="o">?.</span><span class="n">ToString</span><span class="p">()</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s">&quot;no data&quot;</span><span class="p">;</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;process&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="s">$&quot;Processed: {payload}&quot;</span><span class="p">);</span>
@@ -1616,7 +1716,7 @@
 
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MinimalWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IWorker</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">Process</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">ProcessAsync</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">FromResult</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CloudEvent</span>
 <span class="w">        </span><span class="p">{</span>
@@ -1653,7 +1753,7 @@ curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>
 <h2 id="discovery">Discovery</h2>
 <p>The engine scans <strong>all assemblies</strong> loaded in the isolated <code>AssemblyLoadContext</code> for a non-abstract, non-interface type implementing <code>Virtufin.Worker.DevKit.IWorker</code>.</p>
 <p>If exactly one implementation is found:
-- <strong>Instance method</strong> (<code>Process</code> is not static): A single instance is created via <code>Activator.CreateInstance()</code>. State is preserved across invocations (engine-specific, not shared between workers).
+- <strong>Instance method</strong> (<code>ProcessAsync</code> is not static): A single instance is created via <code>Activator.CreateInstance()</code>. State is preserved across invocations (engine-specific, not shared between workers).
 - <strong>Static method</strong>: No instance is created. The method is invoked directly.</p>
 <p>If no <code>IWorker</code> implementation is found, an <code>InvalidOperationException</code> is thrown with:</p>
 <blockquote>
@@ -1671,7 +1771,7 @@ curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>
 </thead>
 <tbody>
 <tr>
-<td>Constructor <code>(responseType, source)</code></td>
+<td>Constructor <code>(responseEventType, source)</code></td>
 <td>Sets the <code>CloudEvent.Type</code> and <code>CloudEvent.Source</code> used in all responses</td>
 </tr>
 <tr>
@@ -1709,6 +1809,119 @@ curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>
 </tbody>
 </table>
 <p>The base class handles JSON parsing, command extraction, error wrapping, and correlation ID propagation — the override only contains the dispatch logic.</p>
+<h2 id="apiworker-and-apicommandworker">ApiWorker and ApiCommandWorker</h2>
+<p><code>ApiWorker</code> extends <code>WorkerBase</code> and provides an <code>ApiClient</code> for backend service calls. <code>ApiCommandWorker</code> extends <code>CommandWorker</code> with the same capability.</p>
+<h3 id="apiworker">ApiWorker</h3>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Constructor <code>(apiHost, apiPort, responseEventType, source)</code></td>
+<td>Initializes the base <code>WorkerBase</code> and creates an <code>ApiClient</code> at <code>apiHost:apiPort</code></td>
+</tr>
+<tr>
+<td><code>ProcessAsync(CloudEvent, ApiClient)</code></td>
+<td>Abstract — override to process events with pre-configured API access</td>
+</tr>
+<tr>
+<td><code>ApiClient</code> property</td>
+<td>The configured client for calling backend services</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">CloudNative.CloudEvents</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Virtufin.Worker.DevKit</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyApiWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ApiWorker</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyApiWorker</span><span class="p">()</span>
+<span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="s">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5002</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my.response&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;urn:my-api-worker&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">ProcessAsync</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">ApiClient</span><span class="w"> </span><span class="n">api</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">api</span><span class="p">.</span><span class="n">InvokeAsync</span><span class="p">(</span><span class="s">&quot;target-service&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SomeMethod&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;process&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="s">$&quot;Result: {result}&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="apicommandworker">ApiCommandWorker</h3>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Constructor <code>(apiHost, apiPort, responseEventType, source)</code></td>
+<td>Initializes the base <code>CommandWorker</code> and <code>ApiClient</code></td>
+</tr>
+<tr>
+<td><code>HandleCommandAsync(input, command, node)</code></td>
+<td>Abstract — same as <code>CommandWorker</code>, with <code>ApiClient</code> available</td>
+</tr>
+<tr>
+<td><code>ApiClient</code> property</td>
+<td>The configured client for calling backend services</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System.Text.Json.Nodes</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">CloudNative.CloudEvents</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Virtufin.Worker.DevKit</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyApiCommandWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ApiCommandWorker</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyApiCommandWorker</span><span class="p">()</span>
+<span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="s">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5002</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my.response&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;urn:my-api-command-worker&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleCommandAsync</span><span class="p">(</span>
+<span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">ApiClient</span><span class="p">.</span><span class="n">InvokeAsync</span><span class="p">(</span><span class="s">&quot;target-service&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="n">result</span><span class="o">?.</span><span class="n">ToString</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="migration-manual-apiclient-to-apicommandworker">Migration: Manual ApiClient to ApiCommandWorker</h3>
+<p><strong>Before (manual ApiClient):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CommandWorker</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">ApiClient</span><span class="w"> </span><span class="n">_client</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyWorker</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="s">&quot;my.response&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;urn:my-worker&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ApiClient</span><span class="p">(</span><span class="s">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5002</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleCommandAsync</span><span class="p">(</span>
+<span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_client</span><span class="p">.</span><span class="n">InvokeAsync</span><span class="p">(</span><span class="s">&quot;backend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="n">result</span><span class="o">?.</span><span class="n">ToString</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>After (ApiCommandWorker):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ApiCommandWorker</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyWorker</span><span class="p">()</span>
+<span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="s">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5002</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my.response&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;urn:my-worker&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleCommandAsync</span><span class="p">(</span>
+<span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">ApiClient</span><span class="p">.</span><span class="n">InvokeAsync</span><span class="p">(</span><span class="s">&quot;backend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="n">result</span><span class="o">?.</span><span class="n">ToString</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="dependency-resolution">Dependency Resolution</h2>
 <p>Worker assemblies may depend on third-party NuGet packages. Include all dependency <code>.dll</code> files in the ZIP. The engine's <code>AssemblyLoadContext.Resolving</code> handler resolves transitive dependencies by assembly name from the ZIP contents.</p>
 <p>However, <strong>do not include</strong> these assemblies in the ZIP:</p>
@@ -1748,7 +1961,7 @@ curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>
 <td>Caught, logged as error, <code>null</code> returned</td>
 </tr>
 <tr>
-<td><code>Process</code> called before <code>LoadCode</code></td>
+<td><code>ProcessAsync</code> called before <code>LoadCode</code></td>
 <td><code>InvalidOperationException</code></td>
 </tr>
 <tr>
@@ -1775,7 +1988,7 @@ curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>
 <td>&lt; 100ms typical</td>
 </tr>
 <tr>
-<td>Per-message <code>Process</code> invocation</td>
+<td>Per-message <code>ProcessAsync</code> invocation</td>
 <td>&lt; 1ms</td>
 </tr>
 </tbody>
@@ -1811,7 +2024,7 @@ curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-06-09T19:40:46Z</span>
+  <span style="display:table-cell;text-align:right">2026-06-10T18:15:55Z</span>
 </div>
 
     </div>

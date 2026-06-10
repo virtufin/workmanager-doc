@@ -12,6 +12,29 @@ Worker lifecycle management and code execution service with Dapr integration.
 - State store persistence for worker configurations and history
 - gRPC API with reflection
 
+## Project Structure
+
+```
+virtufin-workmanager/
+├── src/
+│   ├── Virtufin.WorkManager/              # .NET service (gRPC server, worker engine)
+│   ├── Virtufin.WorkManager.Client/       # .NET client NuGet package
+│   ├── Virtufin.WorkManager.Protos/       # Protobuf definitions (workmanager.proto)
+│   ├── Virtufin.Worker.DevKit/            # Worker base classes (WorkerBase, CommandWorker)
+│   ├── Virtufin.WorkManager.Engines/      # Engine registry
+│   ├── Virtufin.WorkManager.Engine.*/     # Engine implementations (Python, CSharpSource, DotnetDll)
+│   ├── python/virtufin/workmanager/       # Python client library
+│   └── typescript/src/                    # TypeScript client library
+├── tests/
+│   ├── python/                            # Python client tests
+│   ├── typescript/                        # TypeScript client tests
+│   └── Virtufin.WorkManager.*.Tests/      # .NET tests
+├── docs/                                  # MkDocs documentation
+├── deploy/                                # Deployment configs
+├── versions.env                           # Version pin
+└── AGENTS.md                              # Agent documentation
+```
+
 ## Deployment
 
 All deployment infrastructure is managed in dedicated repositories.

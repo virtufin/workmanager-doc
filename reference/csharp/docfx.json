@@ -5,7 +5,8 @@
       "src": [
         {
           "files": [
-            "Virtufin.WorkManager/Virtufin.WorkManager.csproj"
+            "Virtufin.WorkManager/Virtufin.WorkManager.csproj",
+            "Virtufin.WorkManager.Client/Virtufin.WorkManager.Client.csproj"
           ],
           "src": "/workspace/virtufin/virtufin-workmanager/src"
         }
@@ -28,8 +29,8 @@
       "_appFooter": "© 2026 Häner Consulting. All Rights Reserved.",
       "_disableContribution": true,
       "_disableAffix": true,
-      "gitCommitHash": "e3f77fd",
-      "gitCommitUrl": "{git_repo_url}/commit/e3f77fd7e440a62e3694075efe971c06f01c511d",
+      "gitCommitHash": "0d29558",
+      "gitCommitUrl": "{git_repo_url}/commit/0d295582c7b12957e87ac6b086f806190b9a0326",
       "gitBranch": "master"
     }
   }
