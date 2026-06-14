@@ -11,9 +11,9 @@ items:
   - Virtufin.WorkManager.Runtime.Worker.Group
   - Virtufin.WorkManager.Runtime.Worker.History
   - Virtufin.WorkManager.Runtime.Worker.Id
-  - Virtufin.WorkManager.Runtime.Worker.LoadCode(System.Byte[])
+  - Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
   - Virtufin.WorkManager.Runtime.Worker.MimeType
-  - Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
+  - Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Runtime.Worker.Status
   - Virtufin.WorkManager.Runtime.Worker.Topic
   langs:
@@ -346,51 +346,56 @@ items:
   nameWithType.vb: Worker.New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry))
   fullName.vb: Virtufin.WorkManager.Runtime.Worker.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, Virtufin.WorkManager.Engines.IEngine, String, String, Date, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Runtime.Worker), System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry))
   name.vb: New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry))
-- uid: Virtufin.WorkManager.Runtime.Worker.LoadCode(System.Byte[])
-  commentId: M:Virtufin.WorkManager.Runtime.Worker.LoadCode(System.Byte[])
-  id: LoadCode(System.Byte[])
+- uid: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
+  id: LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
   parent: Virtufin.WorkManager.Runtime.Worker
   langs:
   - csharp
   - vb
-  name: LoadCode(byte[])
-  nameWithType: Worker.LoadCode(byte[])
-  fullName: Virtufin.WorkManager.Runtime.Worker.LoadCode(byte[])
+  name: LoadCodeAsync(byte[], CancellationToken)
+  nameWithType: Worker.LoadCodeAsync(byte[], CancellationToken)
+  fullName: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(byte[], System.Threading.CancellationToken)
   type: Method
   source:
     remote:
       path: src/Virtufin.WorkManager/Runtime/Worker.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: LoadCode
+    id: LoadCodeAsync
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 61
+    startLine: 62
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
   summary: Loads code into the worker's engine.
   example: []
   syntax:
-    content: public void LoadCode(byte[] blob)
+    content: public Task LoadCodeAsync(byte[] blob, CancellationToken cancellationToken = default)
     parameters:
     - id: blob
       type: System.Byte[]
       description: The code blob to load.
-    content.vb: Public Sub LoadCode(blob As Byte())
-  overload: Virtufin.WorkManager.Runtime.Worker.LoadCode*
-  nameWithType.vb: Worker.LoadCode(Byte())
-  fullName.vb: Virtufin.WorkManager.Runtime.Worker.LoadCode(Byte())
-  name.vb: LoadCode(Byte())
-- uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
-  commentId: M:Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
-  id: ProcessAsync(CloudNative.CloudEvents.CloudEvent)
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function LoadCodeAsync(blob As Byte(), cancellationToken As CancellationToken = Nothing) As Task
+  overload: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync*
+  nameWithType.vb: Worker.LoadCodeAsync(Byte(), CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(Byte(), System.Threading.CancellationToken)
+  name.vb: LoadCodeAsync(Byte(), CancellationToken)
+- uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent,System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent,System.Threading.CancellationToken)
+  id: ProcessAsync(CloudNative.CloudEvents.CloudEvent,System.Threading.CancellationToken)
   parent: Virtufin.WorkManager.Runtime.Worker
   langs:
   - csharp
   - vb
-  name: ProcessAsync(CloudEvent)
-  nameWithType: Worker.ProcessAsync(CloudEvent)
-  fullName: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
+  name: ProcessAsync(CloudEvent, CancellationToken)
+  nameWithType: Worker.ProcessAsync(CloudEvent, CancellationToken)
+  fullName: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -399,22 +404,25 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ProcessAsync
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 71
+    startLine: 73
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
   summary: Processes a cloud event through the worker's engine.
   example: []
   syntax:
-    content: public Task<CloudEvent?> ProcessAsync(CloudEvent input)
+    content: public Task<CloudEvent?> ProcessAsync(CloudEvent input, CancellationToken cancellationToken = default)
     parameters:
     - id: input
       type: CloudNative.CloudEvents.CloudEvent
       description: The incoming cloud event.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token.
     return:
       type: System.Threading.Tasks.Task{CloudNative.CloudEvents.CloudEvent}
       description: The response cloud event, or <code>null</code> if no response.
-    content.vb: Public Function ProcessAsync(input As CloudEvent) As Task(Of CloudEvent)
+    content.vb: Public Function ProcessAsync(input As CloudEvent, cancellationToken As CancellationToken = Nothing) As Task(Of CloudEvent)
   overload: Virtufin.WorkManager.Runtime.Worker.ProcessAsync*
 references:
 - uid: Virtufin.WorkManager.Runtime
@@ -1016,12 +1024,12 @@ references:
     name: Logging
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
-- uid: Virtufin.WorkManager.Runtime.Worker.LoadCode*
-  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.LoadCode
-  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_LoadCode_System_Byte___
-  name: LoadCode
-  nameWithType: Worker.LoadCode
-  fullName: Virtufin.WorkManager.Runtime.Worker.LoadCode
+- uid: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync*
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_LoadCodeAsync_System_Byte___System_Threading_CancellationToken_
+  name: LoadCodeAsync
+  nameWithType: Worker.LoadCodeAsync
+  fullName: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync
 - uid: System.Byte[]
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.byte
@@ -1045,9 +1053,89 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.byte
   - name: (
   - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
 - uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync*
   commentId: Overload:Virtufin.WorkManager.Runtime.Worker.ProcessAsync
-  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_ProcessAsync_CloudNative_CloudEvents_CloudEvent_
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_ProcessAsync_CloudNative_CloudEvents_CloudEvent_System_Threading_CancellationToken_
   name: ProcessAsync
   nameWithType: Worker.ProcessAsync
   fullName: Virtufin.WorkManager.Runtime.Worker.ProcessAsync
@@ -1144,40 +1232,3 @@ references:
   - name: " "
   - name: TResult
   - name: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

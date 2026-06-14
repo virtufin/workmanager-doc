@@ -1259,22 +1259,22 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Runtime.Worker.Id
   nameWithType: Worker.Id
-- uid: Virtufin.WorkManager.Runtime.Worker.LoadCode(System.Byte[])
-  name: LoadCode(byte[])
-  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_LoadCode_System_Byte___
-  commentId: M:Virtufin.WorkManager.Runtime.Worker.LoadCode(System.Byte[])
-  name.vb: LoadCode(Byte())
-  fullName: Virtufin.WorkManager.Runtime.Worker.LoadCode(byte[])
-  fullName.vb: Virtufin.WorkManager.Runtime.Worker.LoadCode(Byte())
-  nameWithType: Worker.LoadCode(byte[])
-  nameWithType.vb: Worker.LoadCode(Byte())
-- uid: Virtufin.WorkManager.Runtime.Worker.LoadCode*
-  name: LoadCode
-  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_LoadCode_
-  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.LoadCode
+- uid: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
+  name: LoadCodeAsync(byte[], CancellationToken)
+  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_LoadCodeAsync_System_Byte___System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
+  name.vb: LoadCodeAsync(Byte(), CancellationToken)
+  fullName: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(byte[], System.Threading.CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(Byte(), System.Threading.CancellationToken)
+  nameWithType: Worker.LoadCodeAsync(byte[], CancellationToken)
+  nameWithType.vb: Worker.LoadCodeAsync(Byte(), CancellationToken)
+- uid: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync*
+  name: LoadCodeAsync
+  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_LoadCodeAsync_
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync
   isSpec: "True"
-  fullName: Virtufin.WorkManager.Runtime.Worker.LoadCode
-  nameWithType: Worker.LoadCode
+  fullName: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync
+  nameWithType: Worker.LoadCodeAsync
 - uid: Virtufin.WorkManager.Runtime.Worker.MimeType
   name: MimeType
   href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_MimeType
@@ -1288,12 +1288,12 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Runtime.Worker.MimeType
   nameWithType: Worker.MimeType
-- uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
-  name: ProcessAsync(CloudEvent)
-  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_ProcessAsync_CloudNative_CloudEvents_CloudEvent_
-  commentId: M:Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
-  fullName: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent)
-  nameWithType: Worker.ProcessAsync(CloudEvent)
+- uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent,System.Threading.CancellationToken)
+  name: ProcessAsync(CloudEvent, CancellationToken)
+  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_ProcessAsync_CloudNative_CloudEvents_CloudEvent_System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent,System.Threading.CancellationToken)
+  fullName: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent, System.Threading.CancellationToken)
+  nameWithType: Worker.ProcessAsync(CloudEvent, CancellationToken)
 - uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync*
   name: ProcessAsync
   href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_ProcessAsync_

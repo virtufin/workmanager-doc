@@ -1,5 +1,10 @@
 # Virtufin WorkManager
 
+[![Build Status](https://git.haenerconsulting.com/virtufin/virtufin-workmanager/actions/workflows/docs/badge.svg?branch=master)](https://git.haenerconsulting.com/virtufin/virtufin-workmanager/actions)
+[![NuGet](https://git.haenerconsulting.com/virtufin/virtufin-workmanager/actions/workflows/nuget/badge.svg?branch=master)](https://git.haenerconsulting.com/virtufin/virtufin-workmanager/packages/nuget/Virtufin.WorkManager.Client)
+[![PyPI](https://git.haenerconsulting.com/virtufin/virtufin-workmanager/actions/workflows/pypi/badge.svg?branch=master)](https://git.haenerconsulting.com/virtufin/virtufin-workmanager/packages/pypi/virtufin-workmanager)
+[![npm](https://git.haenerconsulting.com/virtufin/virtufin-workmanager/actions/workflows/npm/badge.svg?branch=master)](https://git.haenerconsulting.com/virtufin/virtufin-workmanager/packages/npm/virtufin-workmanager)
+
 📖 Documentation: [workmanager.doc.virtufin.com](https://workmanager.doc.virtufin.com)
 
 Worker lifecycle management and code execution service with Dapr integration.
