@@ -863,15 +863,15 @@ references:
   commentId: T:Virtufin.WorkManager.Contracts.WorkerInfo
   fullName: Virtufin.WorkManager.Contracts.WorkerInfo
   nameWithType: WorkerInfo
-- uid: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus)
-  name: WorkerInfo(Guid, CodeSource, string, string, string, string?, DateTime, WorkerStatus)
-  href: api/Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_String_System_String_System_String_System_DateTime_Virtufin_WorkManager_Contracts_WorkerStatus_
-  commentId: M:Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus)
-  name.vb: New(Guid, CodeSource, String, String, String, String, Date, WorkerStatus)
-  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.WorkerInfo(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, string, string, string?, System.DateTime, Virtufin.WorkManager.Contracts.WorkerStatus)
-  fullName.vb: Virtufin.WorkManager.Contracts.WorkerInfo.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, String, String, String, Date, Virtufin.WorkManager.Contracts.WorkerStatus)
-  nameWithType: WorkerInfo.WorkerInfo(Guid, CodeSource, string, string, string, string?, DateTime, WorkerStatus)
-  nameWithType.vb: WorkerInfo.New(Guid, CodeSource, String, String, String, String, Date, WorkerStatus)
+- uid: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus)
+  name: WorkerInfo(Guid, string, string, string, string?, DateTime, WorkerStatus)
+  href: api/Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo__ctor_System_Guid_System_String_System_String_System_String_System_String_System_DateTime_Virtufin_WorkManager_Contracts_WorkerStatus_
+  commentId: M:Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus)
+  name.vb: New(Guid, String, String, String, String, Date, WorkerStatus)
+  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.WorkerInfo(System.Guid, string, string, string, string?, System.DateTime, Virtufin.WorkManager.Contracts.WorkerStatus)
+  fullName.vb: Virtufin.WorkManager.Contracts.WorkerInfo.New(System.Guid, String, String, String, String, Date, Virtufin.WorkManager.Contracts.WorkerStatus)
+  nameWithType: WorkerInfo.WorkerInfo(Guid, string, string, string, string?, DateTime, WorkerStatus)
+  nameWithType.vb: WorkerInfo.New(Guid, String, String, String, String, Date, WorkerStatus)
 - uid: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor*
   name: WorkerInfo
   href: api/Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo__ctor_
@@ -882,19 +882,6 @@ references:
   fullName.vb: Virtufin.WorkManager.Contracts.WorkerInfo.New
   nameWithType: WorkerInfo.WorkerInfo
   nameWithType.vb: WorkerInfo.New
-- uid: Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource
-  name: CodeSource
-  href: api/Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo_CodeSource
-  commentId: P:Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource
-  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource
-  nameWithType: WorkerInfo.CodeSource
-- uid: Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource*
-  name: CodeSource
-  href: api/Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo_CodeSource_
-  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource
-  isSpec: "True"
-  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource
-  nameWithType: WorkerInfo.CodeSource
 - uid: Virtufin.WorkManager.Contracts.WorkerInfo.CreatedAt
   name: CreatedAt
   href: api/Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo_CreatedAt

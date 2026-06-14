@@ -5,8 +5,7 @@ items:
   id: WorkerInfo
   parent: Virtufin.WorkManager.Contracts
   children:
-  - Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus)
-  - Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource
+  - Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus)
   - Virtufin.WorkManager.Contracts.WorkerInfo.CreatedAt
   - Virtufin.WorkManager.Contracts.WorkerInfo.Group
   - Virtufin.WorkManager.Contracts.WorkerInfo.Id
@@ -48,16 +47,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus)
-  commentId: M:Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus)
-  id: '#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus)'
+- uid: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus)
+  commentId: M:Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus)
+  id: '#ctor(System.Guid,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus)'
   parent: Virtufin.WorkManager.Contracts.WorkerInfo
   langs:
   - csharp
   - vb
-  name: WorkerInfo(Guid, CodeSource, string, string, string, string?, DateTime, WorkerStatus)
-  nameWithType: WorkerInfo.WorkerInfo(Guid, CodeSource, string, string, string, string?, DateTime, WorkerStatus)
-  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.WorkerInfo(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, string, string, string?, System.DateTime, Virtufin.WorkManager.Contracts.WorkerStatus)
+  name: WorkerInfo(Guid, string, string, string, string?, DateTime, WorkerStatus)
+  nameWithType: WorkerInfo.WorkerInfo(Guid, string, string, string, string?, DateTime, WorkerStatus)
+  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.WorkerInfo(System.Guid, string, string, string, string?, System.DateTime, Virtufin.WorkManager.Contracts.WorkerStatus)
   type: Constructor
   source:
     remote:
@@ -73,14 +72,11 @@ items:
   summary: Information about a worker instance.
   example: []
   syntax:
-    content: public WorkerInfo(Guid Id, CodeSource CodeSource, string MimeType, string Language, string Topic, string? Group, DateTime CreatedAt, WorkerStatus Status)
+    content: public WorkerInfo(Guid Id, string MimeType, string Language, string Topic, string? Group, DateTime CreatedAt, WorkerStatus Status)
     parameters:
     - id: Id
       type: System.Guid
       description: The unique identifier.
-    - id: CodeSource
-      type: Virtufin.WorkManager.Contracts.CodeSource
-      description: The source of the worker's code.
     - id: MimeType
       type: System.String
       description: The MIME type of the code.
@@ -99,11 +95,11 @@ items:
     - id: Status
       type: Virtufin.WorkManager.Contracts.WorkerStatus
       description: The current status.
-    content.vb: Public Sub New(Id As Guid, CodeSource As CodeSource, MimeType As String, Language As String, Topic As String, Group As String, CreatedAt As Date, Status As WorkerStatus)
+    content.vb: Public Sub New(Id As Guid, MimeType As String, Language As String, Topic As String, Group As String, CreatedAt As Date, Status As WorkerStatus)
   overload: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor*
-  nameWithType.vb: WorkerInfo.New(Guid, CodeSource, String, String, String, String, Date, WorkerStatus)
-  fullName.vb: Virtufin.WorkManager.Contracts.WorkerInfo.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, String, String, String, Date, Virtufin.WorkManager.Contracts.WorkerStatus)
-  name.vb: New(Guid, CodeSource, String, String, String, String, Date, WorkerStatus)
+  nameWithType.vb: WorkerInfo.New(Guid, String, String, String, String, Date, WorkerStatus)
+  fullName.vb: Virtufin.WorkManager.Contracts.WorkerInfo.New(System.Guid, String, String, String, String, Date, Virtufin.WorkManager.Contracts.WorkerStatus)
+  name.vb: New(Guid, String, String, String, String, Date, WorkerStatus)
 - uid: Virtufin.WorkManager.Contracts.WorkerInfo.Id
   commentId: P:Virtufin.WorkManager.Contracts.WorkerInfo.Id
   id: Id
@@ -135,37 +131,6 @@ items:
       type: System.Guid
     content.vb: Public Property Id As Guid
   overload: Virtufin.WorkManager.Contracts.WorkerInfo.Id*
-- uid: Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource
-  commentId: P:Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource
-  id: CodeSource
-  parent: Virtufin.WorkManager.Contracts.WorkerInfo
-  langs:
-  - csharp
-  - vb
-  name: CodeSource
-  nameWithType: WorkerInfo.CodeSource
-  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource
-  type: Property
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: CodeSource
-    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 164
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Contracts
-  summary: The source of the worker's code.
-  example: []
-  syntax:
-    content: public CodeSource CodeSource { get; init; }
-    parameters: []
-    return:
-      type: Virtufin.WorkManager.Contracts.CodeSource
-    content.vb: Public Property CodeSource As CodeSource
-  overload: Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource*
 - uid: Virtufin.WorkManager.Contracts.WorkerInfo.MimeType
   commentId: P:Virtufin.WorkManager.Contracts.WorkerInfo.MimeType
   id: MimeType
@@ -184,7 +149,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: MimeType
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 165
+    startLine: 164
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -215,7 +180,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Language
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 166
+    startLine: 165
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -246,7 +211,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Topic
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 167
+    startLine: 166
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -277,7 +242,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Group
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 168
+    startLine: 167
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -308,7 +273,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CreatedAt
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 169
+    startLine: 168
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -339,7 +304,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Status
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 170
+    startLine: 169
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -659,7 +624,7 @@ references:
   - name: )
 - uid: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor*
   commentId: Overload:Virtufin.WorkManager.Contracts.WorkerInfo.#ctor
-  href: Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_String_System_String_System_String_System_DateTime_Virtufin_WorkManager_Contracts_WorkerStatus_
+  href: Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo__ctor_System_Guid_System_String_System_String_System_String_System_String_System_DateTime_Virtufin_WorkManager_Contracts_WorkerStatus_
   name: WorkerInfo
   nameWithType: WorkerInfo.WorkerInfo
   fullName: Virtufin.WorkManager.Contracts.WorkerInfo.WorkerInfo
@@ -674,13 +639,6 @@ references:
   name: Guid
   nameWithType: Guid
   fullName: System.Guid
-- uid: Virtufin.WorkManager.Contracts.CodeSource
-  commentId: T:Virtufin.WorkManager.Contracts.CodeSource
-  parent: Virtufin.WorkManager.Contracts
-  href: Virtufin.WorkManager.Contracts.CodeSource.html
-  name: CodeSource
-  nameWithType: CodeSource
-  fullName: Virtufin.WorkManager.Contracts.CodeSource
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -716,12 +674,6 @@ references:
   name: Id
   nameWithType: WorkerInfo.Id
   fullName: Virtufin.WorkManager.Contracts.WorkerInfo.Id
-- uid: Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource*
-  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource
-  href: Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo_CodeSource
-  name: CodeSource
-  nameWithType: WorkerInfo.CodeSource
-  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.CodeSource
 - uid: Virtufin.WorkManager.Contracts.WorkerInfo.MimeType*
   commentId: Overload:Virtufin.WorkManager.Contracts.WorkerInfo.MimeType
   href: Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo_MimeType
