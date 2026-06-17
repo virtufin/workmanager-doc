@@ -83,6 +83,9 @@ items:
   name: Virtufin.WorkManager.Services
   type: Namespace
   items:
+  - uid: Virtufin.WorkManager.Services.ApiLifecyclePublisher
+    name: ApiLifecyclePublisher
+    type: Class
   - uid: Virtufin.WorkManager.Services.AppMetrics
     name: AppMetrics
     type: Class

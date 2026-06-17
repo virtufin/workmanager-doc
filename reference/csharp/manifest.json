@@ -354,6 +354,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.ApiLifecyclePublisher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.ApiLifecyclePublisher.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.ApiLifecyclePublisher",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.ApiLifecyclePublisher.yml\" sourcestartlinenumber=\"1\">Publishes worker lifecycle events to the virtufin-api's\n<code>system-events</code> topic. Events are CloudEvents v1.0 envelopes\nwith the WorkManager's URN as the source. The publisher is\nbest-effort: failures are logged but never propagated, so an\nunreachable API does not break the WorkManager's worker state\nmachine.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Virtufin.WorkManager.Services.AppMetrics.yml",
       "output": {
         ".html": {

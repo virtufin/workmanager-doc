@@ -1432,6 +1432,47 @@ references:
   commentId: N:Virtufin.WorkManager.Services
   fullName: Virtufin.WorkManager.Services
   nameWithType: Virtufin.WorkManager.Services
+- uid: Virtufin.WorkManager.Services.ApiLifecyclePublisher
+  name: ApiLifecyclePublisher
+  href: api/Virtufin.WorkManager.Services.ApiLifecyclePublisher.html
+  commentId: T:Virtufin.WorkManager.Services.ApiLifecyclePublisher
+  fullName: Virtufin.WorkManager.Services.ApiLifecyclePublisher
+  nameWithType: ApiLifecyclePublisher
+- uid: Virtufin.WorkManager.Services.ApiLifecyclePublisher.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ApiLifecyclePublisher},Virtufin.Api.Protos.Pubsub.PubsubClient)
+  name: ApiLifecyclePublisher(ILogger<ApiLifecyclePublisher>, PubsubClient)
+  href: api/Virtufin.WorkManager.Services.ApiLifecyclePublisher.html#Virtufin_WorkManager_Services_ApiLifecyclePublisher__ctor_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_ApiLifecyclePublisher__Virtufin_Api_Protos_Pubsub_PubsubClient_
+  commentId: M:Virtufin.WorkManager.Services.ApiLifecyclePublisher.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ApiLifecyclePublisher},Virtufin.Api.Protos.Pubsub.PubsubClient)
+  name.vb: New(ILogger(Of ApiLifecyclePublisher), PubsubClient)
+  fullName: Virtufin.WorkManager.Services.ApiLifecyclePublisher.ApiLifecyclePublisher(Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.ApiLifecyclePublisher>, Virtufin.Api.Protos.Pubsub.PubsubClient)
+  fullName.vb: Virtufin.WorkManager.Services.ApiLifecyclePublisher.New(Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.ApiLifecyclePublisher), Virtufin.Api.Protos.Pubsub.PubsubClient)
+  nameWithType: ApiLifecyclePublisher.ApiLifecyclePublisher(ILogger<ApiLifecyclePublisher>, Pubsub.PubsubClient)
+  nameWithType.vb: ApiLifecyclePublisher.New(ILogger(Of ApiLifecyclePublisher), Pubsub.PubsubClient)
+- uid: Virtufin.WorkManager.Services.ApiLifecyclePublisher.#ctor*
+  name: ApiLifecyclePublisher
+  href: api/Virtufin.WorkManager.Services.ApiLifecyclePublisher.html#Virtufin_WorkManager_Services_ApiLifecyclePublisher__ctor_
+  commentId: Overload:Virtufin.WorkManager.Services.ApiLifecyclePublisher.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Virtufin.WorkManager.Services.ApiLifecyclePublisher.ApiLifecyclePublisher
+  fullName.vb: Virtufin.WorkManager.Services.ApiLifecyclePublisher.New
+  nameWithType: ApiLifecyclePublisher.ApiLifecyclePublisher
+  nameWithType.vb: ApiLifecyclePublisher.New
+- uid: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(System.String,System.Guid,System.String,System.String,System.Exception,System.Threading.CancellationToken)
+  name: PublishWorkerEventAsync(string, Guid, string?, string?, Exception?, CancellationToken)
+  href: api/Virtufin.WorkManager.Services.ApiLifecyclePublisher.html#Virtufin_WorkManager_Services_ApiLifecyclePublisher_PublishWorkerEventAsync_System_String_System_Guid_System_String_System_String_System_Exception_System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(System.String,System.Guid,System.String,System.String,System.Exception,System.Threading.CancellationToken)
+  name.vb: PublishWorkerEventAsync(String, Guid, String, String, Exception, CancellationToken)
+  fullName: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(string, System.Guid, string?, string?, System.Exception?, System.Threading.CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(String, System.Guid, String, String, System.Exception, System.Threading.CancellationToken)
+  nameWithType: ApiLifecyclePublisher.PublishWorkerEventAsync(string, Guid, string?, string?, Exception?, CancellationToken)
+  nameWithType.vb: ApiLifecyclePublisher.PublishWorkerEventAsync(String, Guid, String, String, Exception, CancellationToken)
+- uid: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync*
+  name: PublishWorkerEventAsync
+  href: api/Virtufin.WorkManager.Services.ApiLifecyclePublisher.html#Virtufin_WorkManager_Services_ApiLifecyclePublisher_PublishWorkerEventAsync_
+  commentId: Overload:Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync
+  nameWithType: ApiLifecyclePublisher.PublishWorkerEventAsync
 - uid: Virtufin.WorkManager.Services.AppMetrics
   name: AppMetrics
   href: api/Virtufin.WorkManager.Services.AppMetrics.html

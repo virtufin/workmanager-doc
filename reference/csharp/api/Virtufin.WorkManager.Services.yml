@@ -4,6 +4,7 @@ items:
   commentId: N:Virtufin.WorkManager.Services
   id: Virtufin.WorkManager.Services
   children:
+  - Virtufin.WorkManager.Services.ApiLifecyclePublisher
   - Virtufin.WorkManager.Services.AppMetrics
   - Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
   - Virtufin.WorkManager.Services.DaprResiliencePipeline
@@ -22,6 +23,12 @@ items:
   assemblies:
   - Virtufin.WorkManager
 references:
+- uid: Virtufin.WorkManager.Services.ApiLifecyclePublisher
+  commentId: T:Virtufin.WorkManager.Services.ApiLifecyclePublisher
+  href: Virtufin.WorkManager.Services.ApiLifecyclePublisher.html
+  name: ApiLifecyclePublisher
+  nameWithType: ApiLifecyclePublisher
+  fullName: Virtufin.WorkManager.Services.ApiLifecyclePublisher
 - uid: Virtufin.WorkManager.Services.AppMetrics
   commentId: T:Virtufin.WorkManager.Services.AppMetrics
   href: Virtufin.WorkManager.Services.AppMetrics.html

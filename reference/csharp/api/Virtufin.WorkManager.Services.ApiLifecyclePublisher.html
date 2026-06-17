@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class CodeSource | Virtufin WorkManager - C# Reference </title>
+      <title>Class ApiLifecyclePublisher | Virtufin WorkManager - C# Reference </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class CodeSource | Virtufin WorkManager - C# Reference ">
+      <meta name="title" content="Class ApiLifecyclePublisher | Virtufin WorkManager - C# Reference ">
       
-      <meta name="description" content="Abstract base record representing the source of worker code.">
+      <meta name="description" content="Publishes worker lifecycle events to the virtufin-api&#39;s system-events topic. Events are CloudEvents v1.0 envelopes with the WorkManager&#39;s URN as the source. The publisher is best-effort: failures are logged but never propagated, so an unreachable API does not break the WorkManager&#39;s worker state machine.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,25 +88,30 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Virtufin.WorkManager.Contracts.CodeSource">
+        <article data-uid="Virtufin.WorkManager.Services.ApiLifecyclePublisher">
 
 
 
-  <h1 id="Virtufin_WorkManager_Contracts_CodeSource" data-uid="Virtufin.WorkManager.Contracts.CodeSource" class="text-break">
-Class CodeSource  
+  <h1 id="Virtufin_WorkManager_Services_ApiLifecyclePublisher" data-uid="Virtufin.WorkManager.Services.ApiLifecyclePublisher" class="text-break">
+Class ApiLifecyclePublisher  
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="Virtufin.html">Virtufin</a>.<a class="xref" href="Virtufin.WorkManager.html">WorkManager</a>.<a class="xref" href="Virtufin.WorkManager.Contracts.html">Contracts</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Virtufin.html">Virtufin</a>.<a class="xref" href="Virtufin.WorkManager.html">WorkManager</a>.<a class="xref" href="Virtufin.WorkManager.Services.html">Services</a></dd></dl>
   <dl><dt>Assembly</dt><dd>Virtufin.WorkManager.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Abstract base record representing the source of worker code.</p>
+  <div class="markdown summary"><p>Publishes worker lifecycle events to the virtufin-api's
+<code>system-events</code> topic. Events are CloudEvents v1.0 envelopes
+with the WorkManager's URN as the source. The publisher is
+best-effort: failures are logged but never propagated, so an
+unreachable API does not break the WorkManager's worker state
+machine.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract record CodeSource : IEquatable&lt;CodeSource&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class ApiLifecyclePublisher</code></pre>
   </div>
 
 
@@ -116,24 +121,11 @@ Class CodeSource
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">CodeSource</span></div>
+      <div><span class="xref">ApiLifecyclePublisher</span></div>
     </dd>
   </dl>
 
-  <dl class="typelist implements">
-    <dt>Implements</dt>
-    <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Virtufin.WorkManager.Contracts.CodeSource.html">CodeSource</a>&gt;</div>
-    </dd>
-  </dl>
 
-  <dl class="typelist derived">
-    <dt>Derived</dt>
-    <dd>
-      <div><a class="xref" href="Virtufin.WorkManager.Contracts.CodeSourceContent.html">CodeSourceContent</a></div>
-      <div><a class="xref" href="Virtufin.WorkManager.Contracts.CodeSourceUrl.html">CodeSourceUrl</a></div>
-    </dd>
-  </dl>
 
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
@@ -160,6 +152,93 @@ Class CodeSource
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Virtufin_WorkManager_Services_ApiLifecyclePublisher__ctor_" data-uid="Virtufin.WorkManager.Services.ApiLifecyclePublisher.#ctor*"></a>
+
+  <h3 id="Virtufin_WorkManager_Services_ApiLifecyclePublisher__ctor_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_ApiLifecyclePublisher__Virtufin_Api_Protos_Pubsub_PubsubClient_" data-uid="Virtufin.WorkManager.Services.ApiLifecyclePublisher.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ApiLifecyclePublisher},Virtufin.Api.Protos.Pubsub.PubsubClient)">
+  ApiLifecyclePublisher(ILogger&lt;ApiLifecyclePublisher&gt;, PubsubClient)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ApiLifecyclePublisher(ILogger&lt;ApiLifecyclePublisher&gt; logger, Pubsub.PubsubClient pubsub)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="Virtufin.WorkManager.Services.ApiLifecyclePublisher.html">ApiLifecyclePublisher</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>pubsub</code> <span class="xref">Pubsub</span>.<span class="xref">PubsubClient</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Virtufin_WorkManager_Services_ApiLifecyclePublisher_PublishWorkerEventAsync_" data-uid="Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync*"></a>
+
+  <h3 id="Virtufin_WorkManager_Services_ApiLifecyclePublisher_PublishWorkerEventAsync_System_String_System_Guid_System_String_System_String_System_Exception_System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(System.String,System.Guid,System.String,System.String,System.Exception,System.Threading.CancellationToken)">
+  PublishWorkerEventAsync(string, Guid, string?, string?, Exception?, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task PublishWorkerEventAsync(string type, Guid workerId, string? group, string? topic, Exception? error = null, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>workerId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+    <dt><code>group</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>topic</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>error</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
 
 
 
