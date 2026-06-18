@@ -6,6 +6,7 @@ items:
   children:
   - Virtufin.WorkManager.Configuration.DaprConstants
   - Virtufin.WorkManager.Configuration.PortConstants
+  - Virtufin.WorkManager.Configuration.Topics
   langs:
   - csharp
   - vb
@@ -28,3 +29,9 @@ references:
   name: PortConstants
   nameWithType: PortConstants
   fullName: Virtufin.WorkManager.Configuration.PortConstants
+- uid: Virtufin.WorkManager.Configuration.Topics
+  commentId: T:Virtufin.WorkManager.Configuration.Topics
+  href: Virtufin.WorkManager.Configuration.Topics.html
+  name: Topics
+  nameWithType: Topics
+  fullName: Virtufin.WorkManager.Configuration.Topics

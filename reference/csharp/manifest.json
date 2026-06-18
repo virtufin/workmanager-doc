@@ -60,6 +60,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Configuration.Topics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Configuration.Topics.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Configuration.Topics",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.Topics.yml\" sourcestartlinenumber=\"1\">Pubsub topics published by the WorkManager. Each service owns\nits own topic; ce-type discriminates events inside the topic.\nThis is the source of truth for any service that needs to consume\nworkmanager.* events — see the worker-management spec for the\nevent taxonomy.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Virtufin.WorkManager.Configuration.yml",
       "output": {
         ".html": {

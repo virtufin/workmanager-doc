@@ -21,7 +21,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ApiLifecyclePublisher
     path: ../../../src/Virtufin.WorkManager/Services/ApiLifecyclePublisher.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -69,7 +69,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/ApiLifecyclePublisher.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -103,7 +103,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: PublishWorkerEventAsync
     path: ../../../src/Virtufin.WorkManager/Services/ApiLifecyclePublisher.cs
-    startLine: 30
+    startLine: 31
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services

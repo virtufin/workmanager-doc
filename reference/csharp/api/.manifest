@@ -33,6 +33,8 @@
   "Virtufin.WorkManager.Configuration.PortConstants.DefaultHttpPort": "Virtufin.WorkManager.Configuration.PortConstants.yml",
   "Virtufin.WorkManager.Configuration.PortConstants.GrpcPortKey": "Virtufin.WorkManager.Configuration.PortConstants.yml",
   "Virtufin.WorkManager.Configuration.PortConstants.HttpPortKey": "Virtufin.WorkManager.Configuration.PortConstants.yml",
+  "Virtufin.WorkManager.Configuration.Topics": "Virtufin.WorkManager.Configuration.Topics.yml",
+  "Virtufin.WorkManager.Configuration.Topics.WorkerStatus": "Virtufin.WorkManager.Configuration.Topics.yml",
   "Virtufin.WorkManager.Contracts": "Virtufin.WorkManager.Contracts.yml",
   "Virtufin.WorkManager.Contracts.CodeSource": "Virtufin.WorkManager.Contracts.CodeSource.yml",
   "Virtufin.WorkManager.Contracts.CodeSourceContent": "Virtufin.WorkManager.Contracts.CodeSourceContent.yml",

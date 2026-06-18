@@ -301,6 +301,18 @@ references:
   commentId: F:Virtufin.WorkManager.Configuration.PortConstants.HttpPortKey
   fullName: Virtufin.WorkManager.Configuration.PortConstants.HttpPortKey
   nameWithType: PortConstants.HttpPortKey
+- uid: Virtufin.WorkManager.Configuration.Topics
+  name: Topics
+  href: api/Virtufin.WorkManager.Configuration.Topics.html
+  commentId: T:Virtufin.WorkManager.Configuration.Topics
+  fullName: Virtufin.WorkManager.Configuration.Topics
+  nameWithType: Topics
+- uid: Virtufin.WorkManager.Configuration.Topics.WorkerStatus
+  name: WorkerStatus
+  href: api/Virtufin.WorkManager.Configuration.Topics.html#Virtufin_WorkManager_Configuration_Topics_WorkerStatus
+  commentId: F:Virtufin.WorkManager.Configuration.Topics.WorkerStatus
+  fullName: Virtufin.WorkManager.Configuration.Topics.WorkerStatus
+  nameWithType: Topics.WorkerStatus
 - uid: Virtufin.WorkManager.Contracts
   name: Virtufin.WorkManager.Contracts
   href: api/Virtufin.WorkManager.Contracts.html

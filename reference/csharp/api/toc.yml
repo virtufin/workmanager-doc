@@ -17,6 +17,9 @@ items:
   - uid: Virtufin.WorkManager.Configuration.PortConstants
     name: PortConstants
     type: Class
+  - uid: Virtufin.WorkManager.Configuration.Topics
+    name: Topics
+    type: Class
 - uid: Virtufin.WorkManager.Contracts
   name: Virtufin.WorkManager.Contracts
   type: Namespace
