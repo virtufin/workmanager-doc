@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/27f8bd628cfe45c5cf1c0d3d0a6dbe93c46f4e46"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/18a1a5aef67ee6a83f1534a44a45ae71f7247a5e"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 27f8bd6">
+       title="View commit 18a1a5a">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">27f8bd6</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">18a1a5a</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/27f8bd628cfe45c5cf1c0d3d0a6dbe93c46f4e46"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/18a1a5aef67ee6a83f1534a44a45ae71f7247a5e"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 27f8bd6">
+       title="View commit 18a1a5a">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">27f8bd6</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">18a1a5a</text>
       </svg>
     </a>
 </div>
@@ -797,6 +797,17 @@
     <span class="md-ellipsis">
       
         CSharpSourceEngine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nativedllengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NativeDllEngine
       
     </span>
   </a>
@@ -1311,6 +1322,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../native-dll-workers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NativeDll Workers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1504,6 +1543,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#nativedllengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NativeDllEngine
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dotnetdllengine" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1653,11 +1703,13 @@
         P["text/x-python"] --&gt; PE[PythonEngine Factory]
         C["text/x-csharp"] --&gt; CS[CSharpSourceEngine Factory]
         D["application/x-dotnet-dll"] --&gt; CD[DotnetDllEngine Factory]
+        N["application/x-native-dll"] --&gt; CN[NativeDllEngine Factory]
     end
     ER --&gt; EF[Engine Factory&lt;br/&gt;per worker]
     EF --&gt; E1[PythonEngine Instance]
     EF --&gt; E2[CSharpSourceEngine Instance]
-    EF --&gt; E3[DotnetDllEngine Instance]</code></pre>
+    EF --&gt; E3[DotnetDllEngine Instance]
+    EF --&gt; E4[NativeDllEngine Instance]</code></pre>
 <div class="highlight"><pre><span></span><code>**Engine Instance Lifecycle:**
 
 ```mermaid
@@ -1740,6 +1792,21 @@ flowchart LR
 <p><strong>Error Handling:</strong>
 - Compilation errors throw <code>InvalidOperationException</code> with full error messages
 - Runtime exceptions propagate to the caller</p>
+<h3 id="nativedllengine">NativeDllEngine</h3>
+<p><strong>MIME Type:</strong> <code>application/x-native-dll</code></p>
+<p>Loads per-architecture native shared libraries (<code>.so</code> / <code>.dylib</code> / <code>.dll</code>) via <code>NativeLibrary.Load</code> in-process inside the AOT-compiled WorkManager. Exchanges FlatBuffers-encoded CloudEvents with the worker's <code>Process</code> export and supports host callbacks (<code>log</code>, <code>gateway_call</code>, <code>free_response</code>) on the <code>VirtufinHost</code> struct.</p>
+<p><strong>Isolation caveat:</strong> the engine runs in-process; an unrecoverable native error terminates the entire WorkManager. See <a href="../native-dll-workers/">NativeDllEngine Workers</a> for the full author guide, C ABI, and defensive-coding requirements.</p>
+<p><strong>Performance:</strong> low-latency (~50-200 µs/message) without a subprocess boundary. Suitable for trusted, pre-compiled native code.</p>
+<p><strong>Code requirements:</strong>
+- Worker is a per-architecture shared library at <code>runtimes/&lt;rid&gt;/native/lib&lt;library&gt;.so</code> (or <code>.dylib</code> / <code>.dll</code>).
+- A <code>manifest.json</code> at the zip root declares <code>abi_version</code>, <code>library</code> basename, and the <code>entry_point</code> / <code>free_result</code> export names.
+- Two exported C functions: <code>Process(const VirtufinHost*, const uint8_t* in, int32_t in_len, uint8_t** out, int32_t* out_len)</code> and <code>FreeResult(uint8_t*)</code>.
+- See <a href="../native-dll-workers/">NativeDllEngine Workers</a> for a full example and the vendored <code>virtufin_worker_api_c.h</code>.</p>
+<p><strong>Error handling:</strong>
+- ABI mismatch (<code>NotSupportedException</code>).
+- Missing manifest, missing RID entry (<code>InvalidWorkerZipException</code> / <code>UnsupportedArchitectureException</code>).
+- Process returns non-zero → engine returns null (caller publishes <code>worker.error</code>).
+- Process returns <code>error_message</code> in <code>WorkerResponse</code> → engine throws <code>InvalidOperationException</code>; lifecycle publisher surfaces <code>worker.error</code>.</p>
 <h3 id="dotnetdllengine">DotnetDllEngine</h3>
 <p><strong>MIME Type:</strong> <code>application/x-dotnet-dll</code></p>
 <p>Loads pre-compiled .NET assemblies from byte content. Assemblies are loaded in an isolated <code>AssemblyLoadContext</code> with dependency resolution via a <code>Resolving</code> handler that resolves transitive NuGet dependencies from the uploaded ZIP.</p>
@@ -1825,6 +1892,7 @@ flowchart LR
 <ul>
 <li><code>PythonEngine</code> uses <code>IDisposable</code> - dispose is called when engine is replaced</li>
 <li><code>CSharpSourceEngine</code> and <code>DotnetDllEngine</code> do not require disposal</li>
+<li><code>NativeDllEngine</code> implements <code>IAsyncDisposable</code>; dispose frees the loaded library and releases the host struct</li>
 </ul>
 <h2 id="performance-characteristics">Performance Characteristics</h2>
 <table>
@@ -1858,6 +1926,13 @@ flowchart LR
 <td>1-5ms</td>
 <td>Medium</td>
 <td>Prototyping, scripting, Python-specific libraries</td>
+</tr>
+<tr>
+<td><strong>NativeDllEngine</strong></td>
+<td>&lt; 10ms (per-RID resolve + dlopen)</td>
+<td>~50-200 µs</td>
+<td>High</td>
+<td>Pre-compiled native libraries (C/C++/Rust/Zig) where latency matters and the worker is trusted</td>
 </tr>
 </tbody>
 </table>
@@ -1908,7 +1983,7 @@ flowchart LR
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-06-20T12:43:25Z</span>
+  <span style="display:table-cell;text-align:right">2026-06-23T23:02:32Z</span>
 </div>
 
     </div>

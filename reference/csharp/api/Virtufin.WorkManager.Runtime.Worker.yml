@@ -404,7 +404,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ProcessAsync
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 73
+    startLine: 81
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime

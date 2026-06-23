@@ -1,0 +1,2254 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Virtufin WorkManager system">
+      
+      
+      
+        <link rel="canonical" href="https://workmanager.doc.virtufin.com/native-dll-workers/">
+      
+      
+        <link rel="prev" href="../dotnet-dll-workers/">
+      
+      
+        <link rel="next" href="../deployment/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>NativeDll Workers - Virtufin WorkManager Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nativedllengine-workers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Virtufin WorkManager Documentation" class="md-header__button md-logo" aria-label="Virtufin WorkManager Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Virtufin WorkManager Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NativeDll Workers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <div class="md-source-wrapper">
+  <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager" title="Go to repository" class="md-source-repo-link">
+    <div class="md-source__icon md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    </div>
+    <span class="md-source__repository">virtufin/virtufin-workmanager</span>
+  </a>
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/18a1a5aef67ee6a83f1534a44a45ae71f7247a5e"
+       class="md-source-commit-badge"
+       target="_blank"
+       rel="noopener"
+       title="View commit 18a1a5a">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
+        <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">18a1a5a</text>
+      </svg>
+    </a>
+</div>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../README.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Project README
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../introduction/" class="md-tabs__link">
+          
+  
+  
+  Introduction
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../architecture/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../development/" class="md-tabs__link">
+          
+  
+  
+  Operations
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Virtufin WorkManager Documentation" class="md-nav__button md-logo" aria-label="Virtufin WorkManager Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+    Virtufin WorkManager Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <div class="md-source-wrapper">
+  <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager" title="Go to repository" class="md-source-repo-link">
+    <div class="md-source__icon md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    </div>
+    <span class="md-source__repository">virtufin/virtufin-workmanager</span>
+  </a>
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/18a1a5aef67ee6a83f1534a44a45ae71f7247a5e"
+       class="md-source-commit-badge"
+       target="_blank"
+       rel="noopener"
+       title="View commit 18a1a5a">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
+        <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">18a1a5a</text>
+      </svg>
+    </a>
+</div>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engine System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../worker-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worker Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csharp-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C# SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typescript-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TypeScript SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dotnet-dll-workers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DotnetDll Workers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NativeDll Workers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NativeDll Workers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-vendor-the-c-abi-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Vendor the C ABI headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-implement-the-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Implement the Worker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Implement the Worker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-pure-c-recommended-for-new-workers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Pure C (recommended for new workers)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-c-via-flatbuffers-helpers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: C++ via FlatBuffers helpers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-add-a-manifestjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Add a manifest.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-build-per-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Build per-architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Deploy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-c-abi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The C ABI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The C ABI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freeresult-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FreeResult function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtufinhost-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VirtufinHost struct
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloudevent-flatbuffer-wire-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CloudEvent FlatBuffer wire format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caveats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Caveats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-process-crash-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In-process crash isolation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unmanaged-timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unmanaged timeout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abi-version-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ABI version policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ci-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-vendor-the-c-abi-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Vendor the C ABI headers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-implement-the-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Implement the Worker
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Implement the Worker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-pure-c-recommended-for-new-workers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Pure C (recommended for new workers)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-c-via-flatbuffers-helpers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: C++ via FlatBuffers helpers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-add-a-manifestjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Add a manifest.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-build-per-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Build per-architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Deploy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-c-abi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The C ABI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The C ABI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#process-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Process function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freeresult-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FreeResult function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtufinhost-struct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VirtufinHost struct
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloudevent-flatbuffer-wire-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CloudEvent FlatBuffer wire format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caveats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Caveats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-process-crash-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In-process crash isolation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unmanaged-timeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unmanaged timeout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abi-version-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ABI version policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ci-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI Notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="nativedllengine-workers">NativeDllEngine Workers</h1>
+<p>The <code>NativeDllEngine</code> loads per-architecture native shared libraries (<code>.so</code> / <code>.dylib</code> / <code>.dll</code>) into the (NativeAOT-compiled) WorkManager process. Workers implement a small C ABI defined in <code>virtufin_worker_api_c.h</code> and exchange CloudEvents with the engine via FlatBuffers-encoded buffers.</p>
+<blockquote>
+<p><strong>Scope:</strong> <code>NativeDllEngine</code> is in-process. A segfault, illegal instruction, or stack overflow in a native worker <strong>terminates the entire WorkManager</strong>. Authors MUST treat the worker as part of the engine's address space — defensive bounds checks, NULL checks, and input validation are required. See <a href="#caveats">Caveats</a> below.</p>
+</blockquote>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="1-vendor-the-c-abi-headers">1. Vendor the C ABI headers</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># From your native worker project</span>
+cp<span class="w"> </span>/path/to/virtufin-workmanager/src/Virtufin.Worker.DevKit/Schemas/virtufin_worker_api_c.h<span class="w"> </span>.
+cp<span class="w"> </span>/path/to/virtufin-workmanager/src/Virtufin.Worker.DevKit/Schemas/virtufin_worker_api_fb.h<span class="w"> </span>.
+</code></pre></div>
+<p><code>virtufin_worker_api_c.h</code> is the C-only header (your worker includes this). <code>virtufin_worker_api_fb.h</code> is the C++ header generated from <code>worker_api.fbs</code> by <code>flatc</code>; only C++ workers need it. Both are pinned to a specific FlatBuffers runtime version via <code>static_assert</code>; rebuild them with <code>flatc</code> if you ship a newer FlatBuffers runtime.</p>
+<h3 id="2-implement-the-worker">2. Implement the Worker</h3>
+<h4 id="option-a-pure-c-recommended-for-new-workers">Option A: Pure C (recommended for new workers)</h4>
+<p>The C ABI is a single header plus three exported functions. No external deps beyond <code>libc</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;virtufin_worker_api_c.h&quot;</span>
+
+<span class="cp">#define SOURCE_URN &quot;urn:com.example.myworker&quot;</span>
+<span class="cp">#define REPLY_TYPE &quot;com.example.myworker.reply&quot;</span>
+
+<span class="kt">int32_t</span><span class="w"> </span><span class="nf">Process</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">VirtufinHost</span><span class="o">*</span><span class="w"> </span><span class="n">host</span><span class="p">,</span>
+<span class="w">                </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">in_buf</span><span class="p">,</span>
+<span class="w">                </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">in_len</span><span class="p">,</span>
+<span class="w">                </span><span class="kt">uint8_t</span><span class="o">**</span><span class="w"> </span><span class="n">out_buf</span><span class="p">,</span>
+<span class="w">                </span><span class="kt">int32_t</span><span class="o">*</span><span class="w"> </span><span class="n">out_len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* 1. Decode the input CloudEvent. The engine passes the FlatBuffer</span>
+<span class="cm">     *    bytes via (in_buf, in_len); pure-C workers can either parse</span>
+<span class="cm">     *    the buffer via the FlatBuffers C runtime (vendored with</span>
+<span class="cm">     *    virtufin_worker_api_fb.h) or treat the bytes as opaque and</span>
+<span class="cm">     *    just respond with a fixed payload.</span>
+<span class="cm">     *</span>
+<span class="cm">     * 2. Use host-&gt;gateway_call() to invoke the virtufin-api Gateway</span>
+<span class="cm">     *    for backend service calls. host-&gt;log() for structured logging.</span>
+<span class="cm">     *</span>
+<span class="cm">     * 3. Build a WorkerResponse FlatBuffer and return it via *out_buf.</span>
+<span class="cm">     *    The engine calls FreeResult(*out_buf) exactly once after this</span>
+<span class="cm">     *    function returns; you MUST use the same allocator (malloc)</span>
+<span class="cm">     *    that FreeResult releases (free).</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">host</span><span class="p">;</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">in_buf</span><span class="p">;</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">in_len</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Minimal reply: type=&quot;com.example.myworker.reply&quot;. The engine</span>
+<span class="cm">     * publishes this CloudEvent on the worker&#39;s reply topic. */</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">reply_type</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">REPLY_TYPE</span><span class="p">;</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">source_urn</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SOURCE_URN</span><span class="p">;</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">msg_id</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ok&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="cm">/* Build the CloudEvent + WorkerResponse FlatBuffers inline, or use</span>
+<span class="cm">     * the vendored C++ helpers if you compile as C++. */</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">build_minimal_worker_response</span><span class="p">(</span>
+<span class="w">        </span><span class="n">msg_id</span><span class="p">,</span><span class="w"> </span><span class="n">reply_type</span><span class="p">,</span><span class="w"> </span><span class="n">source_urn</span><span class="p">,</span><span class="w"> </span><span class="n">out_len</span><span class="p">);</span>
+<span class="w">    </span><span class="o">*</span><span class="n">out_buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buf</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">FreeResult</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="option-b-c-via-flatbuffers-helpers">Option B: C++ via FlatBuffers helpers</h4>
+<p>If you compile as C++, the vendored <code>virtufin_worker_api_fb.h</code> provides <code>CreateCloudEvent</code>, <code>CreateWorkerResponse</code>, and <code>CreateExtension</code> builders:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;virtufin_worker_api_c.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;virtufin_worker_api_fb.h&quot;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">Virtufin</span><span class="o">::</span><span class="nn">Worker</span><span class="o">::</span><span class="nn">FlatBuffers</span><span class="p">;</span>
+
+<span class="kt">int32_t</span><span class="w"> </span><span class="nf">Process</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">VirtufinHost</span><span class="o">*</span><span class="w"> </span><span class="cm">/*host*/</span><span class="p">,</span>
+<span class="w">                </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">in_buf</span><span class="p">,</span>
+<span class="w">                </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">in_len</span><span class="p">,</span>
+<span class="w">                </span><span class="kt">uint8_t</span><span class="o">**</span><span class="w"> </span><span class="n">out_buf</span><span class="p">,</span>
+<span class="w">                </span><span class="kt">int32_t</span><span class="o">*</span><span class="w"> </span><span class="n">out_len</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">flatbuffers</span><span class="o">::</span><span class="n">FlatBufferBuilder</span><span class="w"> </span><span class="n">fbb</span><span class="p">;</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">id</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">fbb</span><span class="p">.</span><span class="n">CreateString</span><span class="p">(</span><span class="s">&quot;reply-id&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">type</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">fbb</span><span class="p">.</span><span class="n">CreateString</span><span class="p">(</span><span class="s">&quot;com.example.myworker.reply&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fbb</span><span class="p">.</span><span class="n">CreateString</span><span class="p">(</span><span class="n">SOURCE_URN</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">ce</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CreateCloudEventDirect</span><span class="p">(</span><span class="n">fbb</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1.0&quot;</span><span class="p">,</span>
+<span class="w">                                      </span><span class="nb">nullptr</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">,</span>
+<span class="w">                                      </span><span class="nb">nullptr</span><span class="p">,</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">resp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CreateWorkerResponse</span><span class="p">(</span><span class="n">fbb</span><span class="p">,</span><span class="w"> </span><span class="n">ce</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cm">/* error_message */</span><span class="p">);</span>
+<span class="w">    </span><span class="n">fbb</span><span class="p">.</span><span class="n">Finish</span><span class="p">(</span><span class="n">resp</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int32_t</span><span class="p">)</span><span class="n">fbb</span><span class="p">.</span><span class="n">GetSize</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">bytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span><span class="w"> </span><span class="n">fbb</span><span class="p">.</span><span class="n">GetBufferPointer</span><span class="p">(),</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+<span class="w">    </span><span class="o">*</span><span class="n">out_buf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bytes</span><span class="p">;</span>
+<span class="w">    </span><span class="o">*</span><span class="n">out_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="3-add-a-manifestjson">3. Add a manifest.json</h3>
+<p>The engine requires a <code>manifest.json</code> at the root of the worker zip:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;abi_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;library&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myworker&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;entry_point&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Process&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;free_result&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FreeResult&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>abi_version</code></td>
+<td>yes</td>
+<td>—</td>
+<td>Integer. The engine supports <code>{ 1 }</code> today; higher values are rejected with a clear error.</td>
+</tr>
+<tr>
+<td><code>library</code></td>
+<td>yes</td>
+<td>—</td>
+<td>Library basename (no extension, no <code>lib</code> prefix). Must match <code>[A-Za-z0-9_.-]+</code>, length ≤ 128.</td>
+</tr>
+<tr>
+<td><code>entry_point</code></td>
+<td>no</td>
+<td><code>Process</code></td>
+<td>The name of the exported function the engine calls.</td>
+</tr>
+<tr>
+<td><code>free_result</code></td>
+<td>no</td>
+<td><code>FreeResult</code></td>
+<td>The name of the exported function that releases the result buffer.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-build-per-architecture">4. Build per-architecture</h3>
+<p>The worker zip follows the NuGet convention: <code>runtimes/&lt;rid&gt;/native/&lt;file&gt;</code>. Supported RIDs in v1 are <code>linux-x64</code> and <code>linux-arm64</code>. The engine looks up the entry whose RID matches <code>RuntimeInformation.RuntimeIdentifier</code> of the running process.</p>
+<div class="highlight"><pre><span></span><code>worker.zip/
+├── manifest.json
+└── runtimes/
+    └── linux-x64/
+        └── native/
+            └── libmyworker.so
+</code></pre></div>
+<p>Build script (Linux x86_64 example):</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
+<span class="nb">set</span><span class="w"> </span>-euo<span class="w"> </span>pipefail
+<span class="nv">RID</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="nv">linux</span><span class="p">-x64</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">OUT</span><span class="o">=</span><span class="s2">&quot;runtimes/</span><span class="si">${</span><span class="nv">RID</span><span class="si">}</span><span class="s2">/native&quot;</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUT</span><span class="si">}</span><span class="s2">&quot;</span>
+cc<span class="w"> </span>-std<span class="o">=</span>c11<span class="w"> </span>-O2<span class="w"> </span>-fPIC<span class="w"> </span>-shared<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-I.<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-o<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUT</span><span class="si">}</span><span class="s2">/libmyworker.so&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>myworker.c
+cp<span class="w"> </span>manifest.json<span class="w"> </span>manifest.json
+<span class="o">(</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>runtimes<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>zip<span class="w"> </span>-r<span class="w"> </span>../worker.zip<span class="w"> </span>.<span class="w"> </span><span class="o">)</span>
+zip<span class="w"> </span>-j<span class="w"> </span>worker.zip<span class="w"> </span>manifest.json
+</code></pre></div>
+<p>For Windows and macOS support, change the file extension to <code>.dll</code> and <code>.dylib</code> respectively. The engine's <code>LibraryName.BuildFileName</code> derives the right filename per platform.</p>
+<h3 id="5-deploy">5. Deploy</h3>
+<div class="highlight"><pre><span></span><code><span class="nv">WORKER_ID</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:25001/v1/workers&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;mimeType&quot;: &quot;application/x-native-dll&quot;,</span>
+<span class="s1">    &quot;topic&quot;: &quot;commands.myworker&quot;,</span>
+<span class="s1">    &quot;group&quot;: &quot;myworker-group&quot;,</span>
+<span class="s1">    &quot;codeSource&quot;: { &quot;content&quot;: &quot;&#39;</span><span class="k">$(</span>base64<span class="w"> </span>-i<span class="w"> </span>worker.zip<span class="k">)</span><span class="s1">&#39;&quot; }</span>
+<span class="s1">  }&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.id&#39;</span><span class="k">)</span>
+
+curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:25001/v1/workers/</span><span class="nv">$WORKER_ID</span><span class="s2">/start&quot;</span>
+</code></pre></div>
+<p>Or load from URL:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:25001/v1/workers/</span><span class="nv">$WORKER_ID</span><span class="s2">/code-from-url&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;url&quot;: &quot;https://artifacts.example.com/myworker.zip&quot;}&#39;</span>
+</code></pre></div>
+<h2 id="discovery">Discovery</h2>
+<p>The engine loads the worker's library via <code>NativeLibrary.Load</code> and resolves two exports via <code>NativeLibrary.GetExport</code>:</p>
+<ul>
+<li><code>entry_point</code> (default <code>Process</code>) — invoked once per CloudEvent the engine delivers to the worker.</li>
+<li><code>free_result</code> (default <code>FreeResult</code>) — invoked exactly once per <code>Process</code> call that returned a non-null <code>*out_buf</code> (including on the error path).</li>
+</ul>
+<p>A worker is considered "found" if both exports resolve; otherwise the engine refuses the load with a clear error.</p>
+<h2 id="the-c-abi">The C ABI</h2>
+<h3 id="process-function">Process function</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">int32_t</span><span class="w"> </span><span class="nf">Process</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">VirtufinHost</span><span class="o">*</span><span class="w"> </span><span class="n">host</span><span class="p">,</span>
+<span class="w">                </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="w">    </span><span class="n">in_buf</span><span class="p">,</span>
+<span class="w">                </span><span class="kt">int32_t</span><span class="w">           </span><span class="n">in_len</span><span class="p">,</span>
+<span class="w">                </span><span class="kt">uint8_t</span><span class="o">**</span><span class="w">         </span><span class="n">out_buf</span><span class="p">,</span>
+<span class="w">                </span><span class="kt">int32_t</span><span class="o">*</span><span class="w">          </span><span class="n">out_len</span><span class="p">);</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Direction</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>host</code></td>
+<td>in</td>
+<td>Opaque pointer to a <code>VirtufinHost*</code> struct. Always non-null. See below.</td>
+</tr>
+<tr>
+<td><code>in_buf</code></td>
+<td>in</td>
+<td>FlatBuffer-encoded <code>CloudEvent</code> matching <code>worker_api.fbs</code>. Length in <code>in_len</code>.</td>
+</tr>
+<tr>
+<td><code>in_len</code></td>
+<td>in</td>
+<td>Byte length of <code>in_buf</code>.</td>
+</tr>
+<tr>
+<td><code>out_buf</code></td>
+<td>out</td>
+<td>On success, set to a <code>WorkerResponse</code> FlatBuffer the worker allocated via <code>malloc</code> (or compatible). On failure, set to NULL.</td>
+</tr>
+<tr>
+<td><code>out_len</code></td>
+<td>out</td>
+<td>Byte length of <code>*out_buf</code>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Return value:</strong> <code>0</code> on success, non-zero on internal failure (e.g. <code>malloc</code> returned NULL).</p>
+<h3 id="freeresult-function">FreeResult function</h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">FreeResult</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+</code></pre></div>
+<p>Releases a buffer previously returned by <code>Process</code> via <code>*out_buf</code>. The engine calls this exactly once per non-null <code>*out_buf</code>, including on the error path. The worker MUST use the same allocator (<code>malloc</code>) that this function releases (<code>free</code>).</p>
+<h3 id="virtufinhost-struct">VirtufinHost struct</h3>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">VirtufinHost</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="o">*</span><span class="w">  </span><span class="n">engine_ptr</span><span class="p">;</span><span class="w">       </span><span class="c1">// opaque GCHandle to the engine</span>
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">abi_version</span><span class="p">;</span><span class="w">     </span><span class="c1">// currently 1</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">   </span><span class="p">(</span><span class="o">*</span><span class="n">log</span><span class="p">)(</span><span class="kt">void</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int32_t</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int32_t</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">gateway_call</span><span class="p">)(</span><span class="kt">void</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="p">,</span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">int32_t</span><span class="p">,</span>
+<span class="w">                            </span><span class="kt">uint8_t</span><span class="o">**</span><span class="p">,</span><span class="w"> </span><span class="kt">int32_t</span><span class="o">*</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w">    </span><span class="p">(</span><span class="o">*</span><span class="n">free_response</span><span class="p">)(</span><span class="kt">void</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="o">*</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="n">VirtufinHost</span><span class="p">;</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>engine_ptr</code></td>
+<td>opaque</td>
+<td>Workers MUST NOT dereference this. It's an opaque handle for the engine's use.</td>
+</tr>
+<tr>
+<td><code>abi_version</code></td>
+<td>int32</td>
+<td>Currently <code>1</code>. Workers may branch on this for forward-compat.</td>
+</tr>
+<tr>
+<td><code>log</code></td>
+<td>fn</td>
+<td>Structured logging callback. <code>level</code>: 0=trace, 1=debug, 2=info, 3=warn, 4=error. <code>message</code> is a NUL-terminated UTF-8 string valid for the duration of the call.</td>
+</tr>
+<tr>
+<td><code>gateway_call</code></td>
+<td>fn</td>
+<td>Call a virtufin-api Gateway service. Returns 0 on success; engine-allocated response is freed by <code>free_response</code>.</td>
+</tr>
+<tr>
+<td><code>free_response</code></td>
+<td>fn</td>
+<td>Releases a buffer returned by <code>gateway_call</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>The struct layout is 40 bytes on 64-bit platforms (<code>void*</code> = 8, <code>int32_t</code> = 4 padded to 8, three function pointers = 24). On 32-bit platforms the layout differs and is not currently supported.</p>
+<h2 id="cloudevent-flatbuffer-wire-format">CloudEvent FlatBuffer wire format</h2>
+<p>The engine serialises the input <code>CloudEvent</code> into a FlatBuffer matching <code>worker_api.fbs</code>. See <code>src/Virtufin.Worker.DevKit/Schemas/worker_api.fbs</code> for the full schema. Key fields:</p>
+<ul>
+<li><code>id</code>, <code>type</code>, <code>source</code>, <code>specversion</code> — CloudEvents core attributes.</li>
+<li><code>datacontenttype</code>, <code>dataschema</code>, <code>subject</code>, <code>time</code> — optional core attributes.</li>
+<li><code>data</code> — opaque byte payload (the CloudEvent's <code>Data</code> field, JSON-encoded if non-string).</li>
+<li><code>extensions</code> — vector of <code>(name, value)</code> string pairs. The <code>correlationid</code> extension is always the first entry if present in the input.</li>
+</ul>
+<p>The worker returns a <code>WorkerResponse</code> FlatBuffer with exactly one of:
+- <code>result_event</code> (a CloudEvent to publish on the reply topic)
+- <code>error_message</code> (a human-readable error string; the engine surfaces this as a <code>worker.error</code> lifecycle event)</p>
+<p>Both are valid; if both are set, the engine publishes the result and surfaces the error.</p>
+<h2 id="caveats">Caveats</h2>
+<h3 id="in-process-crash-isolation">In-process crash isolation</h3>
+<p>A native worker runs in the same address space as the AOT-compiled WorkManager. An unrecoverable native fault (segfault, illegal instruction, stack overflow) terminates the entire WorkManager process — there is no managed <code>try/catch</code> that can rescue such a fault.</p>
+<table>
+<thead>
+<tr>
+<th>Engine</th>
+<th>Crash isolation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PythonEngine</code></td>
+<td>Process boundary (subprocess)</td>
+</tr>
+<tr>
+<td><code>DotnetDllEngine</code></td>
+<td>Process boundary (JIT worker host subprocess)</td>
+</tr>
+<tr>
+<td><code>CSharpSourceEngine</code></td>
+<td>AppDomain equivalent (Roslyn-compiled)</td>
+</tr>
+<tr>
+<td><code>NativeDllEngine</code></td>
+<td><strong>None</strong> — in-process</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Author defensively:</strong> bounds-check every input length, validate pointers, prefer <code>malloc</code>-family allocation that the engine can free, and unit-test your worker against malformed inputs.</p>
+<h3 id="unmanaged-timeout">Unmanaged timeout</h3>
+<p><code>MessageHandlingTimeoutSeconds</code> is enforced via a <code>CancellationToken</code> on the managed side. The engine sets the token and then calls <code>Process</code>. The token's cancellation <strong>does not interrupt native code</strong> — a hung <code>Process</code> blocks the caller until the timeout fires, at which point the engine surfaces a <code>worker.error</code> lifecycle event and leaves the worker in an errored state. The native call continues to run until it returns or the process crashes.</p>
+<p>Workers that may run for a long time should honor the timeout cooperatively (e.g. via a watchdog thread setting a "should stop" flag the worker polls) or be guaranteed to return within the configured timeout.</p>
+<h3 id="abi-version-policy">ABI version policy</h3>
+<p>The engine accepts workers declaring any ABI version in <code>WorkerManifest.SupportedAbiVersions</code> (currently <code>{ 1 }</code>). When the WorkManager ships a new major ABI version, the previous version is retained in the supported set for at least one release cycle. Workers declaring ABIs older than the lowest supported version are refused with a clear error.</p>
+<h2 id="performance">Performance</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Duration (typical)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First <code>LoadCodeAsync</code> (per-RID library resolve + <code>dlopen</code>)</td>
+<td>~10 ms</td>
+</tr>
+<tr>
+<td>Per-message <code>ProcessAsync</code> (FlatBuffer encode + native call + decode)</td>
+<td>~50-200 µs</td>
+</tr>
+<tr>
+<td><code>DisposeAsync</code> (library unload + host struct free + temp file delete)</td>
+<td>~5 ms</td>
+</tr>
+</tbody>
+</table>
+<p>Compared to <code>DotnetDllEngine</code>, <code>NativeDllEngine</code> trades subprocess isolation for lower latency and no JIT startup cost. Compared to <code>CSharpSourceEngine</code>, <code>NativeDllEngine</code> skips Roslyn compilation at load time (the library is pre-compiled) but adds a per-message FlatBuffer round-trip.</p>
+<h2 id="debugging">Debugging</h2>
+<ul>
+<li>The engine logs each <code>LoadCodeAsync</code> and <code>DisposeAsync</code> at info level with the resolved entry path, library basename, and ABI version.</li>
+<li>Native worker logs flow through the engine's <code>Log</code> callback and appear in the WorkManager log as <code>[Information] Native worker: &lt;message&gt;</code> or <code>[Warning] / [Error]</code> depending on the worker's chosen level.</li>
+<li>Set <code>Logging:LogLevel:Virtufin.WorkManager.Engine.NativeDll</code> to <code>Debug</code> to see the per-call host callback invocations.</li>
+</ul>
+<h2 id="ci-notes">CI Notes</h2>
+<p>The engine's integration test (<code>Virtufin.WorkManager.Engine.NativeDll.Tests</code>) builds a small C++ shim (<code>libecho_worker.dylib</code>/<code>.so</code>) via a <code>BeforeTargets="Build"</code> target that invokes <code>Resources/build_echo_worker.sh</code>. The script is a no-op when <code>clang++</code> is not on <code>PATH</code>, so CI runners without a C++ toolchain (e.g. the Gitea act runner) build the test project without building the shim. Local macOS dev builds have <code>clang++</code> via <code>xcode-select</code> and run the script normally. To force the shim build off in any environment, pass <code>-p:BuildEchoWorkerShim=false</code> to <code>dotnet build</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <div style="display:table;width:100%">
+  <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
+  <span style="display:table-cell;text-align:right">2026-06-23T23:02:32Z</span>
+</div>
+
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
