@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/18a1a5aef67ee6a83f1534a44a45ae71f7247a5e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/c216aff685d1e4a4c74a280c5b350848948b67d6"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 18a1a5a">
+       title="View commit c216aff">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">18a1a5a</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">c216aff</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/18a1a5aef67ee6a83f1534a44a45ae71f7247a5e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/c216aff685d1e4a4c74a280c5b350848948b67d6"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 18a1a5a">
+       title="View commit c216aff">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">18a1a5a</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">c216aff</text>
       </svg>
     </a>
 </div>
@@ -1301,6 +1301,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../devkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worker DevKit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../dotnet-dll-workers/" class="md-nav__link">
         
   
@@ -1735,6 +1763,26 @@ flowchart LR
 <h3 id="pythonengine">PythonEngine</h3>
 <p><strong>MIME Type:</strong> <code>text/x-python</code></p>
 <p>Executes Python code in a persistent sandboxed <code>python3</code> subprocess. Code is injected directly via stdin at startup — no temporary files are written. The subprocess stays alive for the worker's lifetime, communicating via a JSON-line message loop over stdin/stdout.</p>
+<p><strong>Data flow:</strong></p>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant Sub as Pub/Sub
+    participant WM as WorkManager&lt;br/&gt;(PythonEngine)
+    participant Py as python3 subprocess
+    participant Code as Worker's Process()
+
+    Sub-&gt;&gt;WM: input CloudEvent
+    WM-&gt;&gt;WM: write worker code to .py temp file
+    WM-&gt;&gt;Py: start python3 X.py --socket S
+    Py-&gt;&gt;WM: ready frame (JSON over Unix domain socket)
+    Note over WM,Py: engine waits for ready; if timeout, restart
+    WM-&gt;&gt;Py: process frame (cloudEvent)
+    Py-&gt;&gt;Code: Process(ce_dict)
+    Code--&gt;&gt;Py: result dict (or None)
+    Py-&gt;&gt;WM: result frame
+    WM-&gt;&gt;WM: parse CE → publish reply&lt;br/&gt;(or null → no reply)
+    WM-&gt;&gt;Sub: reply CloudEvent
+    Note over WM,Py: 10s health-check ping (empty heartbeat);&lt;br/&gt;unresponsive subprocess is auto-restarted.</code></pre>
 <p><strong>Code Requirements:</strong>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">Process</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
     <span class="c1"># event is a dict with CloudEvent fields</span>
@@ -1766,6 +1814,30 @@ flowchart LR
 <h3 id="csharpsourceengine">CSharpSourceEngine</h3>
 <p><strong>MIME Type:</strong> <code>text/x-csharp</code></p>
 <p>Compiles and executes C# source code at runtime using Roslyn. The code is compiled into an in-memory assembly.</p>
+<p><strong>Data flow:</strong></p>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant Sub as Pub/Sub
+    participant WM as WorkManager&lt;br/&gt;(CSharpSourceEngine)
+    participant Ros as Roslyn compiler
+    participant W as Compiled worker&lt;br/&gt;(in-memory assembly)
+
+    Note over WM,Ros: === LoadCodeAsync (once per worker) ===
+    WM-&gt;&gt;WM: Encoding.UTF8.GetString(code)
+    WM-&gt;&gt;Ros: CSharpSyntaxTree.ParseText(source)
+    Ros--&gt;&gt;WM: syntaxTree
+    WM-&gt;&gt;Ros: CSharpCompilation.Create(...)&lt;br/&gt;.Emit(MemoryStream)
+    Ros--&gt;&gt;WM: EmitResult
+    WM-&gt;&gt;WM: Assembly.Load(ilBytes)
+    WM-&gt;&gt;W: find static/instance "Process" via reflection
+    WM-&gt;&gt;WM: cache Func&lt;CloudEvent, CloudEvent?&gt; delegate
+    Note over WM,W: --- one-time, ~2s startup ---
+
+    Note over Sub,W: === Per-message ProcessAsync ===
+    Sub-&gt;&gt;WM: input CloudEvent
+    WM-&gt;&gt;W: invoke cached delegate(ce)
+    W--&gt;&gt;WM: result CloudEvent (or null)
+    WM-&gt;&gt;Sub: reply CloudEvent</code></pre>
 <p><strong>Code Requirements:</strong>
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">CloudNative.CloudEvents</span><span class="p">;</span>
 
@@ -1795,21 +1867,83 @@ flowchart LR
 <h3 id="nativedllengine">NativeDllEngine</h3>
 <p><strong>MIME Type:</strong> <code>application/x-native-dll</code></p>
 <p>Loads per-architecture native shared libraries (<code>.so</code> / <code>.dylib</code> / <code>.dll</code>) via <code>NativeLibrary.Load</code> in-process inside the AOT-compiled WorkManager. Exchanges FlatBuffers-encoded CloudEvents with the worker's <code>Process</code> export and supports host callbacks (<code>log</code>, <code>gateway_call</code>, <code>free_response</code>) on the <code>VirtufinHost</code> struct.</p>
+<p><strong>Data flow:</strong></p>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant Sub as Pub/Sub
+    participant WM as WorkManager&lt;br/&gt;(NativeDllEngine,&lt;br/&gt;AOT)
+    participant Lib as Native worker&lt;br/&gt;(lib*.so)
+    participant Base as AotNativeWorkerBase
+    participant Ctx as WorkerContext
+
+    Note over WM,Lib: === LoadCodeAsync (once per worker) ===
+    WM-&gt;&gt;WM: extract zip to temp dir
+    WM-&gt;&gt;WM: find runtimes/&lt;rid&gt;/native/lib*.so
+    WM-&gt;&gt;Lib: NativeLibrary.Load(path)
+    WM-&gt;&gt;Lib: GetExport("Process") → fn-ptr
+    WM-&gt;&gt;Lib: GetExport("FreeResult") → fn-ptr
+    WM-&gt;&gt;WM: build VirtufinHost vtable&lt;br/&gt;(log, gateway_call, free_response)
+    Note over WM,Lib: --- one-time, &lt;10ms startup ---
+
+    Note over Sub,Lib: === Per-message ProcessAsync ===
+    Sub-&gt;&gt;WM: input CloudEvent
+    WM-&gt;&gt;WM: CloudEventCodec.EncodeCloudEvent(ce) → inBytes
+    WM-&gt;&gt;WM: inBuf = Marshal.AllocHGlobal(inBytes)
+    WM-&gt;&gt;Lib: Process(host, inBuf, inLen, &amp;outBuf, &amp;outLen)
+    Lib-&gt;&gt;Base: ProcessStatic~T~(host, inBuf, inLen, ...)
+    Base-&gt;&gt;Base: CloudEventCodec.DecodeCloudEvent(inBuf) → ce
+    Base-&gt;&gt;Base: _instances.GetOrAdd(host) → worker
+    Base-&gt;&gt;Ctx: worker.HandleAsync(ce, ctx)
+    Ctx--&gt;&gt;Base: result CloudEvent (or null)
+    Base-&gt;&gt;Base: CloudEventCodec.EncodeWorkerResponse(result) → outBytes
+    Base-&gt;&gt;WM: outBuf = AllocHGlobal(outBytes), outLen = outBytes.Length
+    WM-&gt;&gt;WM: Marshal.Copy(outBuf, span)
+    WM-&gt;&gt;Lib: FreeResult(outBuf)
+    WM-&gt;&gt;WM: CloudEventCodec.DecodeWorkerResponse(span)
+    WM-&gt;&gt;Sub: publish reply CloudEvent</code></pre>
 <p><strong>Isolation caveat:</strong> the engine runs in-process; an unrecoverable native error terminates the entire WorkManager. See <a href="../native-dll-workers/">NativeDllEngine Workers</a> for the full author guide, C ABI, and defensive-coding requirements.</p>
 <p><strong>Performance:</strong> low-latency (~50-200 µs/message) without a subprocess boundary. Suitable for trusted, pre-compiled native code.</p>
 <p><strong>Code requirements:</strong>
-- Worker is a per-architecture shared library at <code>runtimes/&lt;rid&gt;/native/lib&lt;library&gt;.so</code> (or <code>.dylib</code> / <code>.dll</code>).
-- A <code>manifest.json</code> at the zip root declares <code>abi_version</code>, <code>library</code> basename, and the <code>entry_point</code> / <code>free_result</code> export names.
+- Worker is a per-architecture shared library at <code>runtimes/&lt;rid&gt;/native/lib&lt;library&gt;.so</code> (or <code>.dylib</code> / <code>.dll</code>), packaged in a standard NuGet <code>.nupkg</code>.
+- The worker's <code>.nuspec</code> declares <code>virtufin*</code> extension elements (<code>virtufinAbiVersion</code>, <code>virtufinEntryPoint</code>, <code>virtufinFreeResult</code>, <code>virtufinLibrary</code>) inside <code>&lt;metadata&gt;</code>.
 - Two exported C functions: <code>Process(const VirtufinHost*, const uint8_t* in, int32_t in_len, uint8_t** out, int32_t* out_len)</code> and <code>FreeResult(uint8_t*)</code>.
 - See <a href="../native-dll-workers/">NativeDllEngine Workers</a> for a full example and the vendored <code>virtufin_worker_api_c.h</code>.</p>
 <p><strong>Error handling:</strong>
 - ABI mismatch (<code>NotSupportedException</code>).
-- Missing manifest, missing RID entry (<code>InvalidWorkerZipException</code> / <code>UnsupportedArchitectureException</code>).
+- Missing / malformed <code>.nuspec</code>, invalid library basename, missing RID entry (<code>InvalidWorkerNuspecException</code> / <code>UnsupportedArchitectureException</code>).
 - Process returns non-zero → engine returns null (caller publishes <code>worker.error</code>).
 - Process returns <code>error_message</code> in <code>WorkerResponse</code> → engine throws <code>InvalidOperationException</code>; lifecycle publisher surfaces <code>worker.error</code>.</p>
 <h3 id="dotnetdllengine">DotnetDllEngine</h3>
 <p><strong>MIME Type:</strong> <code>application/x-dotnet-dll</code></p>
 <p>Loads pre-compiled .NET assemblies from byte content. Assemblies are loaded in an isolated <code>AssemblyLoadContext</code> with dependency resolution via a <code>Resolving</code> handler that resolves transitive NuGet dependencies from the uploaded ZIP.</p>
+<p><strong>Data flow:</strong></p>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant Sub as Pub/Sub
+    participant WM as WorkManager&lt;br/&gt;(DotnetDllEngine,&lt;br/&gt;AOT)
+    participant Host as DotnetDllWorkerHost&lt;br/&gt;subprocess (JIT)
+    participant Ctx as AssemblyLoadContext
+    participant W as IWorker impl
+
+    Note over WM,Host: === LoadCodeAsync (once per worker) ===
+    WM-&gt;&gt;WM: write worker.nupkg to temp file
+    WM-&gt;&gt;Host: start DotnetDllWorkerHost&lt;br/&gt;--socket S --nupkg N
+    Host-&gt;&gt;WM: ready frame (JSON over Unix domain socket)
+    Note over WM,Host: engine waits for ready
+    Host-&gt;&gt;Ctx: new AssemblyLoadContext&lt;br/&gt;(isolated from WM process)
+    Ctx-&gt;&gt;Host: Resolving handler&lt;br/&gt;(NuGet deps from the nupkg)
+    Host-&gt;&gt;Host: scan assemblies for IWorker impl
+    Host-&gt;&gt;W: (worker class instantiated)
+
+    Note over Sub,W: === Per-message ProcessAsync ===
+    Sub-&gt;&gt;WM: input CloudEvent
+    WM-&gt;&gt;Host: process frame (cloudEvent)
+    Host-&gt;&gt;W: worker.ProcessAsync(ce)
+    W--&gt;&gt;Host: result CloudEvent (or null)
+    Host-&gt;&gt;WM: result frame
+    WM-&gt;&gt;WM: parse CE → publish reply&lt;br/&gt;(or null → no reply)
+    WM-&gt;&gt;Sub: reply CloudEvent
+    Note over WM,Host: same socket+JSON frame protocol as PythonEngine.</code></pre>
 <p><strong>Code Requirements:</strong></p>
 <p>Workers must use the <code>Virtufin.Worker.DevKit</code> NuGet package and implement the <code>IWorker</code> interface or extend <code>WorkerBase</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">CloudNative.CloudEvents</span><span class="p">;</span>
@@ -1829,6 +1963,7 @@ flowchart LR
 </code></pre></div>
 <p><strong>Discovery:</strong> The engine scans all loaded assemblies for the first non-abstract, non-interface type implementing <code>IWorker</code>. If no implementation is found, an <code>InvalidOperationException</code> is thrown. No method-name scanning or convention matching is used.</p>
 <p><strong>Virtufin.Worker.DevKit</strong> is a lightweight NuGet package (dependency: <code>CloudNative.CloudEvents</code> only) that provides the <code>IWorker</code> interface and <code>WorkerBase</code> abstract class. It is specifically for the DotnetDllEngine — not used by other engines.</p>
+<p>The same package also provides the AOT-native base classes (<code>AotNativeWorkerBase</code>, <code>AotNativeCommandWorker&lt;T&gt;</code>, <code>AotNativeApiWorker</code>, <code>AotNativeApiCommandWorker&lt;T&gt;</code>) plus the <code>CloudEventCodec</code> and <code>WorkerContext</code> used by the NativeDllEngine. See <a href="../devkit/">Worker DevKit</a> for the full class hierarchy, the AOT data flow, and the FlatBuffer wire format.</p>
 <p>See <a href="../dotnet-dll-workers/">DotnetDllEngine Workers</a> for a complete guide on implementing workers.</p>
 <h2 id="engine-registration">Engine Registration</h2>
 <p>Engines are registered in <code>Program.cs</code>:</p>
@@ -1983,7 +2118,7 @@ flowchart LR
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-06-23T23:02:32Z</span>
+  <span style="display:table-cell;text-align:right">2026-06-24T11:29:23Z</span>
 </div>
 
     </div>

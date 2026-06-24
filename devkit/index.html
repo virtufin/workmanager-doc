@@ -1,0 +1,2187 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Virtufin WorkManager system">
+      
+      
+      
+        <link rel="canonical" href="https://workmanager.doc.virtufin.com/devkit/">
+      
+      
+        <link rel="prev" href="../development/">
+      
+      
+        <link rel="next" href="../dotnet-dll-workers/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Worker DevKit - Virtufin WorkManager Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#worker-devkit" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Virtufin WorkManager Documentation" class="md-header__button md-logo" aria-label="Virtufin WorkManager Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Virtufin WorkManager Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Worker DevKit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <div class="md-source-wrapper">
+  <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager" title="Go to repository" class="md-source-repo-link">
+    <div class="md-source__icon md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    </div>
+    <span class="md-source__repository">virtufin/virtufin-workmanager</span>
+  </a>
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/c216aff685d1e4a4c74a280c5b350848948b67d6"
+       class="md-source-commit-badge"
+       target="_blank"
+       rel="noopener"
+       title="View commit c216aff">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
+        <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">c216aff</text>
+      </svg>
+    </a>
+</div>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../README.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Project README
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../introduction/" class="md-tabs__link">
+          
+  
+  
+  Introduction
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../architecture/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../development/" class="md-tabs__link">
+          
+  
+  
+  Operations
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Virtufin WorkManager Documentation" class="md-nav__button md-logo" aria-label="Virtufin WorkManager Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo.svg" alt="logo">
+
+    </a>
+    Virtufin WorkManager Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <div class="md-source-wrapper">
+  <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager" title="Go to repository" class="md-source-repo-link">
+    <div class="md-source__icon md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    </div>
+    <span class="md-source__repository">virtufin/virtufin-workmanager</span>
+  </a>
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/c216aff685d1e4a4c74a280c5b350848948b67d6"
+       class="md-source-commit-badge"
+       target="_blank"
+       rel="noopener"
+       title="View commit c216aff">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
+        <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">c216aff</text>
+      </svg>
+    </a>
+</div>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../README.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engine System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../worker-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worker Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../csharp-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C# SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typescript-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TypeScript SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worker DevKit
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worker DevKit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#class-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-api-jit-side-dotnetdllengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public API (JIT side: DotnetDllEngine)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Public API (JIT side: DotnetDllEngine)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iworker-and-workerbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IWorker and WorkerBase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IWorker and WorkerBase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-helpers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response helpers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replytopic-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        replytopic extension
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commandworkert-typed-command-dispatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CommandWorker&lt;T&gt; — typed command dispatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apiworker-and-apicommandworkert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ApiWorker and ApiCommandWorker&lt;T&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aot-native-side-nativedllengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AOT native side (NativeDllEngine)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AOT native side (NativeDllEngine)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aotnativeworkerbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AotNativeWorkerBase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workercontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkerContext
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudeventcodec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CloudEventCodec
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aot-commandworker-and-apiworker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AOT *CommandWorker* and *ApiWorker*
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wire-format-flatbuffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wire format (FlatBuffer)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wire format (FlatBuffer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regenerating-the-wire-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regenerating the wire format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dotnet-dll-workers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DotnetDll Workers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../native-dll-workers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NativeDll Workers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#class-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-api-jit-side-dotnetdllengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public API (JIT side: DotnetDllEngine)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Public API (JIT side: DotnetDllEngine)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iworker-and-workerbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IWorker and WorkerBase
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IWorker and WorkerBase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response-helpers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response helpers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replytopic-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        replytopic extension
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commandworkert-typed-command-dispatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CommandWorker&lt;T&gt; — typed command dispatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apiworker-and-apicommandworkert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ApiWorker and ApiCommandWorker&lt;T&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aot-native-side-nativedllengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AOT native side (NativeDllEngine)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AOT native side (NativeDllEngine)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aotnativeworkerbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AotNativeWorkerBase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workercontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorkerContext
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloudeventcodec" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CloudEventCodec
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aot-commandworker-and-apiworker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AOT *CommandWorker* and *ApiWorker*
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wire-format-flatbuffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wire format (FlatBuffer)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wire format (FlatBuffer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regenerating-the-wire-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regenerating the wire format
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="worker-devkit">Worker DevKit</h1>
+<p>The <code>Virtufin.Worker.DevKit</code> NuGet package is the shared base library for all
+Virtufin workers. It provides a single, idiomatic .NET API for writing workers
+that runs against the two managed engines:</p>
+<table>
+<thead>
+<tr>
+<th>Engine</th>
+<th>DevKit class to extend</th>
+<th>Runs in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DotnetDllEngine</code></td>
+<td><code>WorkerBase</code> (or one of its subclasses)</td>
+<td>Out-of-process JIT subprocess</td>
+</tr>
+<tr>
+<td><code>NativeDllEngine</code></td>
+<td><code>AotNativeWorkerBase</code> (or one of its subclasses)</td>
+<td>In-process (AOT-compiled, FlatBuffer wire format)</td>
+</tr>
+</tbody>
+</table>
+<p>The package is dependency-light: it only references <code>CloudNative.CloudEvents</code>
+(plus, for the API helpers, <code>Virtufin.Api.Client</code>). The AOT native side also
+references <code>Google.FlatBuffers</code>.</p>
+<p>The package is published from this repository at the same <code>LIBRARY_VERSION</code> as
+the WorkManager service. See the introduction for the package-publishing model.</p>
+<h2 id="class-hierarchy">Class hierarchy</h2>
+<pre class="mermaid"><code>classDiagram
+    class IWorker {
+        &lt;&lt;interface&gt;&gt;
+        +ProcessAsync(CloudEvent) Task~CloudEvent?~
+    }
+
+    class WorkerBase {
+        &lt;&lt;abstract&gt;&gt;
+        +Source Uri
+        +ResponseEventType string
+        +Response(action, ...) CloudEvent
+        +Error(...) CloudEvent
+        +WithCorrelationId(input) CloudEvent
+    }
+    IWorker &lt;|.. WorkerBase
+
+    class CommandWorker~T~ {
+        &lt;&lt;abstract, generic&gt;&gt;
+        +HandleAsync(input, T, JsonNode) Task~CloudEvent?~
+    }
+    WorkerBase &lt;|-- CommandWorker~T~
+
+    class ApiWorker {
+        &lt;&lt;abstract&gt;&gt;
+        +Api ApiClient
+        +ProcessAsync(input, Api) Task~CloudEvent?~
+    }
+    WorkerBase &lt;|-- ApiWorker
+
+    class ApiCommandWorker~T~ {
+        &lt;&lt;abstract, generic&gt;&gt;
+        +Api ApiClient?
+        +HandleAsync(input, T, JsonNode, Api) Task~CloudEvent?~
+    }
+    CommandWorker~T~ &lt;|-- ApiCommandWorker~T~
+    ApiWorker &lt;|-- ApiCommandWorker~T~ : (alternative ctor)
+
+    class AotNativeWorkerBase {
+        &lt;&lt;abstract&gt;&gt;
+        +HandleAsync(input, WorkerContext) Task~CloudEvent?~
+        #ProcessStatic~T~(host, inBuf, inLen) int
+    }
+    WorkerBase &lt;|-- AotNativeWorkerBase
+
+    class AotNativeCommandWorker~T~ {
+        &lt;&lt;abstract, generic&gt;&gt;
+        +HandleAsync(input, T, JsonNode, ctx) Task~CloudEvent?~
+    }
+    AotNativeWorkerBase &lt;|-- AotNativeCommandWorker~T~
+
+    class AotNativeApiWorker {
+        &lt;&lt;abstract&gt;&gt;
+        +Gateway NativeApiGateway
+        +HandleAsync(input, gateway, ctx) Task~CloudEvent?~
+    }
+    AotNativeWorkerBase &lt;|-- AotNativeApiWorker
+
+    class AotNativeApiCommandWorker~T~ {
+        &lt;&lt;abstract, generic&gt;&gt;
+        +HandleAsync(input, T, JsonNode, gateway, ctx) Task~CloudEvent?~
+    }
+    AotNativeApiCommandWorker~T~ &lt;|-- AotNativeApiWorker
+    AotNativeApiCommandWorker~T~ &lt;|-- AotNativeCommandWorker~T~</code></pre>
+<p><code>CommandWorker&lt;T&gt;</code> and the <code>*CommandWorker*</code> variants require the enum
+identifier names to match the wire-level command strings (case-insensitive).
+See the <code>CommandWorker&lt;T&gt;</code> section below for the data flow.</p>
+<h2 id="public-api-jit-side-dotnetdllengine">Public API (JIT side: <code>DotnetDllEngine</code>)</h2>
+<h3 id="iworker-and-workerbase"><code>IWorker</code> and <code>WorkerBase</code></h3>
+<p>The minimal contract a worker must satisfy:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IWorker</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">ProcessAsync</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>WorkerBase</code> is the abstract base class. You provide the <code>Source</code> URI and the
+<code>ResponseEventType</code> CloudEvent <code>type</code> string in the constructor; <code>WorkerBase</code>
+provides response-building helpers, automatic correlation-id propagation, and
+the canonical CloudEvent extension attribute names.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">WorkerBase</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IWorker</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">CorrelationIdAttribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;correlationid&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ReplyTopicAttribute</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;replytopic&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">FieldError</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;error&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DataContentTypeJson</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;application/json&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="nf">WorkerBase</span><span class="p">(</span><span class="n">Uri</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">responseEventType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">ProcessAsync</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="n">CloudEvent</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">action</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="kt">object?</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="n">CloudEvent</span><span class="w"> </span><span class="nf">Error</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="n">CloudEvent</span><span class="w"> </span><span class="nf">WithCorrelationId</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="response-helpers">Response helpers</h4>
+<p><code>Response</code> builds a CloudEvent with the configured <code>Source</code> and
+<code>ResponseEventType</code>. If the input has a <code>correlationid</code> extension, the reply
+inherits it automatically (this is what <code>WithCorrelationId</code> does):</p>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant Sub as Pub/Sub
+    participant WM as WorkManager
+    participant W as WorkerBase.ProcessAsync
+    participant H as HandleAsync
+
+    Sub-&gt;&gt;WM: input CE (with correlationid)
+    WM-&gt;&gt;W: ProcessAsync(ce)
+    W-&gt;&gt;H: HandleAsync(ce)
+    H--&gt;&gt;W: action="create", data=...
+    W--&gt;&gt;WM: Response() → CE with same correlationid
+    WM-&gt;&gt;Sub: publish response</code></pre>
+<p><code>Error</code> builds a CloudEvent with <code>data.action = "error"</code> and the message. The
+WorkManager surfaces this as a <code>worker.error</code> lifecycle event.</p>
+<h4 id="replytopic-extension"><code>replytopic</code> extension</h4>
+<p>If the input CloudEvent carries a <code>replytopic</code> extension attribute, the
+WorkManager routes the response to that topic instead of the worker's default
+reply topic. <code>WorkerBase</code> does not need to do anything — the engine reads
+this extension and overrides the publish topic.</p>
+<h3 id="commandworkert-typed-command-dispatch"><code>CommandWorker&lt;T&gt;</code> — typed command dispatch</h3>
+<p>The <code>CommandWorker&lt;T&gt;</code> base class is for workers that handle a finite set of
+named commands carried in the CloudEvent <code>data</code> payload. The wire format is:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;create&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;api_host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><code>CommandWorker&lt;T&gt;</code> parses <code>data.command</code>, calls
+<code>Enum.TryParse&lt;T&gt;(command, ignoreCase: true, out _)</code>, and forwards the parsed
+enum value plus the full <code>JsonNode</code> payload to your override:</p>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant Sub as Pub/Sub
+    participant WM as WorkManager
+    participant CW as CommandWorker.ProcessAsync
+    participant H as HandleAsync
+
+    Sub-&gt;&gt;WM: data = {"command": "create", ...}
+    WM-&gt;&gt;CW: ProcessAsync(ce)
+    CW-&gt;&gt;CW: JsonNode.Parse(data) → node&lt;br/&gt;node["command"] → "create"&lt;br/&gt;Enum.TryParse~T~("create") → MyCmd.create
+    CW-&gt;&gt;H: HandleAsync(ce, MyCmd.create, node)
+    alt Handler returns CloudEvent
+        H--&gt;&gt;CW: response CE
+        CW--&gt;&gt;WM: response CE
+    else Handler returns null
+        H--&gt;&gt;CW: null (no reply)
+        CW--&gt;&gt;WM: null
+    end</code></pre>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">MyCommand</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">create</span><span class="p">,</span><span class="w"> </span><span class="n">destroy</span><span class="p">,</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CommandWorker</span><span class="o">&lt;</span><span class="n">MyCommand</span><span class="o">&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyWorker</span><span class="p">(</span><span class="n">Uri</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="s">&quot;urn:com.example.myworker&quot;</span><span class="p">),</span>
+<span class="w">                    </span><span class="kt">string</span><span class="w"> </span><span class="n">responseEventType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;com.example.myworker.response&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">responseEventType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleAsync</span><span class="p">(</span>
+<span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">MyCommand</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span>
+<span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="k">switch</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">MyCommand</span><span class="p">.</span><span class="n">create</span><span class="w">  </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">HandleCreateAsync</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">),</span>
+<span class="w">            </span><span class="n">MyCommand</span><span class="p">.</span><span class="n">destroy</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">HandleDestroyAsync</span><span class="p">(</span><span class="n">input</span><span class="p">),</span>
+<span class="w">            </span><span class="n">MyCommand</span><span class="p">.</span><span class="n">list</span><span class="w">    </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">HandleListAsync</span><span class="p">(</span><span class="n">input</span><span class="p">),</span>
+<span class="w">            </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The enum identifier names are the wire strings. The same enum drives both the
+gRPC service definition (proto) and the worker handler, so a rename in one
+place surfaces as a wire-protocol break.</p>
+<h3 id="apiworker-and-apicommandworkert"><code>ApiWorker</code> and <code>ApiCommandWorker&lt;T&gt;</code></h3>
+<p><code>ApiWorker</code> extends <code>WorkerBase</code> and injects a pre-configured <code>Virtufin.Api.Client.ApiClient</code>
+for backend calls through the API Gateway. <code>ApiCommandWorker&lt;T&gt;</code> combines
+typed command dispatch with the API client.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyApiWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ApiCommandWorker</span><span class="o">&lt;</span><span class="n">MyCommand</span><span class="o">&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyApiWorker</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span>
+<span class="w">        </span><span class="n">source</span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="s">&quot;urn:com.example.myworker&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">responseEventType</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;com.example.myworker.response&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">apiHost</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;localhost&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">apiPort</span><span class="p">:</span><span class="w"> </span><span class="mi">5002</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleAsync</span><span class="p">(</span>
+<span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">MyCommand</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">ApiClient</span><span class="w"> </span><span class="n">api</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">command</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MyCommand</span><span class="p">.</span><span class="n">create</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">api</span><span class="p">.</span><span class="n">SomeService</span><span class="p">.</span><span class="n">CreateAsync</span><span class="p">(...);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="s">&quot;create&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="n">created</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Two constructors are available:</p>
+<ul>
+<li>Fixed API host/port: pass <code>apiHost</code> and <code>apiPort</code> to the base ctor; <code>Api</code> is
+  ready in <code>HandleAsync</code>.</li>
+<li>Lazy: pass only <code>source</code> and <code>responseEventType</code>. <code>Api</code> is <code>null</code> until
+  <code>EnsureClient(apiHost, apiPort)</code> (or <code>EnsureClientFromCommand(node)</code>) is
+  called. Use this when the API host comes from the command payload.</li>
+</ul>
+<h2 id="aot-native-side-nativedllengine">AOT native side (<code>NativeDllEngine</code>)</h2>
+<p>The AOT side mirrors the JIT API but operates in-process via the FlatBuffer
+wire format. The class hierarchy is rooted at <code>AotNativeWorkerBase</code>.</p>
+<h3 id="aotnativeworkerbase"><code>AotNativeWorkerBase</code></h3>
+<p><code>AotNativeWorkerBase</code> is the in-process equivalent of <code>WorkerBase</code>. It is
+loaded by <code>NativeDllEngine</code> and called via a <code>[UnmanagedCallersOnly]</code> exported
+<code>Process</code> function. The base class owns the FlatBuffer decode/encode, the
+<code>Marshal.AllocHGlobal</code> round-trip, and the per-instance lookup. Subclasses
+override <code>HandleAsync(CloudEvent input, WorkerContext context)</code> only.</p>
+<p>Per-instance state: each unique host pointer (one per <code>LoadCodeAsync</code> call)
+gets its own worker instance, looked up via a <code>ConcurrentDictionary&lt;IntPtr,
+AotNativeWorkerBase&gt;</code>. Multiple workers sharing the same loaded library still
+get independent state.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant WM as WorkManager&lt;br/&gt;(NativeDllEngine)
+    participant Lib as Native worker&lt;br/&gt;(lib*.so)
+    participant Base as AotNativeWorkerBase
+    participant Sub as HandleAsync
+    participant Ctx as WorkerContext
+
+    WM-&gt;&gt;Lib: Process(host, inBuf, inLen, &amp;outBuf, &amp;outLen)
+    Note over WM,Lib: inBuf is a CloudEvent FlatBuffer
+    Lib-&gt;&gt;Base: ProcessStatic~T~(host, inBuf, inLen, ...)
+    Base-&gt;&gt;Base: CloudEventCodec.DecodeCloudEvent(inBuf) → ce
+    Base-&gt;&gt;Base: _instances.GetOrAdd(host) → worker
+    Base-&gt;&gt;Sub: worker.HandleAsync(ce, context)
+    Sub-&gt;&gt;Ctx: ctx.Log("...", level)
+    Ctx-&gt;&gt;Lib: VirtufinHost.log(host, level, msg)
+    Lib--&gt;&gt;Ctx: log goes back to WM via callback
+    Sub-&gt;&gt;Ctx: ctx.GatewayCallAsync(...)
+    Ctx-&gt;&gt;Lib: VirtufinHost.gateway_call(host, ...)
+    Lib--&gt;&gt;Ctx: gateway goes back to WM
+    Sub--&gt;&gt;Base: result CE (or null)
+    Base-&gt;&gt;Base: CloudEventCodec.EncodeWorkerResponse(result) → bytes
+    Base-&gt;&gt;Base: Marshal.AllocHGlobal(bytes)&lt;br/&gt;outBuf = ptr, outLen = bytes.Length
+    Base--&gt;&gt;Lib: 0
+    Lib--&gt;&gt;WM: outBuf, outLen
+    WM-&gt;&gt;WM: Marshal.Copy → span → DecodeWorkerResponse
+    WM-&gt;&gt;Lib: FreeResult(outBuf)
+    WM-&gt;&gt;WM: publish reply CE</code></pre>
+<h3 id="workercontext"><code>WorkerContext</code></h3>
+<p><code>WorkerContext</code> wraps the native <code>VirtufinHost*</code> that the engine hands to the
+worker. It exposes typed helpers for the three host callbacks:</p>
+<ul>
+<li><code>Log(string message, LogLevel level)</code> — write to the WorkManager log</li>
+<li><code>GatewayCallAsync(...)</code> — invoke a backend service through the API
+  Gateway via the host's <code>gateway_call</code> callback</li>
+<li><code>FreeResponse(byte[])</code> — release a buffer previously returned by the
+  gateway</li>
+</ul>
+<p>Workers receive a <code>WorkerContext</code> for every <code>HandleAsync</code> call. Do not
+dereference <code>WorkerContext.Host</code>; it is opaque.</p>
+<h3 id="cloudeventcodec"><code>CloudEventCodec</code></h3>
+<p><code>CloudEventCodec</code> is the single source of truth for the CloudEvent ↔ FlatBuffer
+mapping shared by <code>NativeDllEngine</code> (engine side) and
+<code>AotNativeWorkerBase</code> (AOT-compiled worker side). The wire format is the
+FlatBuffer binary produced by <code>FlatBufferBuilder.Finish(offset)</code> without a
+size prefix — <code>ByteBuffer.Wrap(bytes)</code> consumes the bytes.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Direction</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EncodeCloudEvent(CloudEvent) → byte[]</code></td>
+<td>managed → wire</td>
+<td>Encode a managed <code>CloudEvent</code> to the FlatBuffer wire format.</td>
+</tr>
+<tr>
+<td><code>DecodeCloudEvent(byte[]) → CloudEvent</code></td>
+<td>wire → managed</td>
+<td>Decode a <code>Process</code> input buffer.</td>
+</tr>
+<tr>
+<td><code>EncodeWorkerResponse(CloudEvent?) → byte[]</code></td>
+<td>managed → wire</td>
+<td>Encode the <code>WorkerResponse</code> returned from <code>Process</code>.</td>
+</tr>
+<tr>
+<td><code>DecodeWorkerResponse(byte[]) → (CloudEvent?, string?)</code></td>
+<td>wire → managed</td>
+<td>Decode the <code>WorkerResponse</code>; <code>(null, "...")</code> on error.</td>
+</tr>
+</tbody>
+</table>
+<p>If the worker's <code>WorkerResponse.error_message</code> is set, the engine surfaces a
+<code>worker.error</code> lifecycle event and (if no <code>result_event</code> is also set) throws
+<code>InvalidOperationException</code>. If neither field is set, the worker declines to
+publish a reply (the engine returns <code>null</code>).</p>
+<h3 id="aot-commandworker-and-apiworker">AOT <code>*CommandWorker*</code> and <code>*ApiWorker*</code></h3>
+<p>The AOT side mirrors the JIT hierarchy with the same command-dispatch and
+API-helper semantics, but every <code>HandleAsync</code> takes a <code>WorkerContext</code> (and
+optionally a <code>NativeApiGateway</code>):</p>
+<table>
+<thead>
+<tr>
+<th>JIT class</th>
+<th>AOT class</th>
+<th>Extra parameters on <code>HandleAsync</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CommandWorker&lt;T&gt;</code></td>
+<td><code>AotNativeCommandWorker&lt;T&gt;</code></td>
+<td><code>(input, T command, JsonNode node, WorkerContext ctx)</code></td>
+</tr>
+<tr>
+<td><code>ApiWorker</code></td>
+<td><code>AotNativeApiWorker</code></td>
+<td><code>(input, NativeApiGateway gateway, WorkerContext ctx)</code></td>
+</tr>
+<tr>
+<td><code>ApiCommandWorker&lt;T&gt;</code></td>
+<td><code>AotNativeApiCommandWorker&lt;T&gt;</code></td>
+<td><code>(input, T command, JsonNode node, NativeApiGateway gateway, WorkerContext ctx)</code></td>
+</tr>
+</tbody>
+</table>
+<p>These are convenience bases that combine the FlatBuffer / context handling
+with the typed command parsing and API gateway plumbing. Subclasses only
+override the <code>HandleAsync</code> variant that takes the inputs they need.</p>
+<h2 id="wire-format-flatbuffer">Wire format (FlatBuffer)</h2>
+<p>The on-the-wire schema is the FlatBuffer defined in
+<code>src/Virtufin.Worker.DevKit/Schemas/worker_api.fbs</code>. Three top-level tables:</p>
+<ul>
+<li><code>CloudEvent</code> — the input to <code>Process</code>. Mirrors the CloudEvents 1.0 spec
+  fields (<code>id</code>, <code>type</code>, <code>source</code>, <code>specversion</code>, <code>datacontenttype</code>,
+  <code>dataschema</code>, <code>subject</code>, <code>time</code>, <code>data: [ubyte]</code>) plus an <code>extensions:
+  [Extension]</code> vector carrying (name, value) string pairs. Non-string
+  extension values are JSON-encoded by the engine before being placed in the
+  wire buffer.</li>
+<li><code>WorkerResponse</code> — the output of <code>Process</code>. Exactly one of
+  <code>result_event: CloudEvent</code> or <code>error_message: string</code> is set.</li>
+<li><code>Extension</code> — the <code>(name, value)</code> pair for the <code>extensions</code> vector.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>namespace Virtufin.Worker.FlatBuffers;
+
+table CloudEvent { id, type, source, specversion, datacontenttype,
+                   dataschema, subject, time, data: [ubyte],
+                   extensions: [Extension]; }
+table Extension  { name, value: string; }
+table WorkerResponse { result_event: CloudEvent; error_message: string; }
+</code></pre></div>
+<p>The matching generated C# types live in <code>src/Virtufin.Worker.DevKit/Generated/</code>
+(<code>CloudEvent.cs</code>, <code>Extension.cs</code>, <code>WorkerResponse.cs</code>) and are checked in.</p>
+<h3 id="regenerating-the-wire-format">Regenerating the wire format</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Requires flatc (Google FlatBuffers compiler) on PATH.</span>
+flatc<span class="w"> </span>--csharp<span class="w"> </span>-o<span class="w"> </span>src/Virtufin.Worker.DevKit/Generated<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>src/Virtufin.Worker.DevKit/Schemas/worker_api.fbs
+</code></pre></div>
+<p>Regenerate when the schema changes; do not hand-edit the files under
+<code>Generated/</code>.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../engines/">Engine System</a> — how each engine loads, calls, and disposes
+  the worker</li>
+<li><a href="../dotnet-dll-workers/">DotnetDll Workers</a> — full guide for JIT workers,
+  including dependency resolution and the <code>Virtufin.Worker.DevKit</code> package
+  reference</li>
+<li><a href="../native-dll-workers/">NativeDll Workers</a> — full guide for in-process
+  native workers, including the C ABI, host struct, and per-RID build
+  instructions</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <div style="display:table;width:100%">
+  <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
+  <span style="display:table-cell;text-align:right">2026-06-24T11:29:23Z</span>
+</div>
+
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
