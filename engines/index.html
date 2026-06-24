@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/c216aff685d1e4a4c74a280c5b350848948b67d6"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/6fd629b3cc48d476a2651e0d9611d5bfa41e37c4"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit c216aff">
+       title="View commit 6fd629b">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">c216aff</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">6fd629b</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/c216aff685d1e4a4c74a280c5b350848948b67d6"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/6fd629b3cc48d476a2651e0d9611d5bfa41e37c4"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit c216aff">
+       title="View commit 6fd629b">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">c216aff</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">6fd629b</text>
       </svg>
     </a>
 </div>
@@ -815,10 +815,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dotnetdllengine" class="md-nav__link">
+  <a href="#dotnetdllengine-in-process-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DotnetDllEngine
+        DotnetDllEngine (in-process, default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dotnetdllsubprocessengine-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DotnetDllSubProcessEngine (fallback)
       
     </span>
   </a>
@@ -1582,10 +1593,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dotnetdllengine" class="md-nav__link">
+  <a href="#dotnetdllengine-in-process-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DotnetDllEngine
+        DotnetDllEngine (in-process, default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dotnetdllsubprocessengine-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DotnetDllSubProcessEngine (fallback)
       
     </span>
   </a>
@@ -1913,58 +1935,74 @@ flowchart LR
 - Missing / malformed <code>.nuspec</code>, invalid library basename, missing RID entry (<code>InvalidWorkerNuspecException</code> / <code>UnsupportedArchitectureException</code>).
 - Process returns non-zero → engine returns null (caller publishes <code>worker.error</code>).
 - Process returns <code>error_message</code> in <code>WorkerResponse</code> → engine throws <code>InvalidOperationException</code>; lifecycle publisher surfaces <code>worker.error</code>.</p>
-<h3 id="dotnetdllengine">DotnetDllEngine</h3>
+<h3 id="dotnetdllengine-in-process-default">DotnetDllEngine (in-process, default)</h3>
 <p><strong>MIME Type:</strong> <code>application/x-dotnet-dll</code></p>
-<p>Loads pre-compiled .NET assemblies from byte content. Assemblies are loaded in an isolated <code>AssemblyLoadContext</code> with dependency resolution via a <code>Resolving</code> handler that resolves transitive NuGet dependencies from the uploaded ZIP.</p>
+<p><strong>Default engine</strong> as of <code>LIBRARY_VERSION 0.0.59</code>. The engine is
+AOT-compiled into the WorkManager binary and embeds the .NET
+runtime (<code>CoreCLR</code>) on first use via <code>libhostfxr</code>. Worker DLLs
+are loaded into a per-worker, collectible
+<code>AssemblyLoadContext</code>. Per-call latency: sub-microsecond (direct
+in-process method dispatch, no socket, no JSON).</p>
+<p>See <a href="../in-process-dotnet-dll-workers/">In-Process Dotnet DLL Workers</a>
+for the full architecture, setup contract, and trade-offs.</p>
 <p><strong>Data flow:</strong></p>
 <pre class="mermaid"><code>sequenceDiagram
     autonumber
     participant Sub as Pub/Sub
-    participant WM as WorkManager&lt;br/&gt;(DotnetDllEngine,&lt;br/&gt;AOT)
-    participant Host as DotnetDllWorkerHost&lt;br/&gt;subprocess (JIT)
+    participant WM as WorkManager&lt;br/&gt;(DotnetDllEngine,&lt;br/&gt;AOT + CoreCLR)
     participant Ctx as AssemblyLoadContext
     participant W as IWorker impl
 
-    Note over WM,Host: === LoadCodeAsync (once per worker) ===
-    WM-&gt;&gt;WM: write worker.nupkg to temp file
-    WM-&gt;&gt;Host: start DotnetDllWorkerHost&lt;br/&gt;--socket S --nupkg N
-    Host-&gt;&gt;WM: ready frame (JSON over Unix domain socket)
-    Note over WM,Host: engine waits for ready
-    Host-&gt;&gt;Ctx: new AssemblyLoadContext&lt;br/&gt;(isolated from WM process)
-    Ctx-&gt;&gt;Host: Resolving handler&lt;br/&gt;(NuGet deps from the nupkg)
-    Host-&gt;&gt;Host: scan assemblies for IWorker impl
-    Host-&gt;&gt;W: (worker class instantiated)
+    Note over WM: === First LoadCodeAsync (one-time) ===
+    WM-&gt;&gt;WM: HostFxrBootstrap&lt;br/&gt;ensure CoreCLR loaded
+    Note over WM,Ctx: === Per-worker LoadCodeAsync ===
+    WM-&gt;&gt;WM: WorkerNupkgLoader.Extract
+    WM-&gt;&gt;Ctx: new AssemblyLoadContext
+    WM-&gt;&gt;Ctx: LoadFromStream(worker.dll)
+    WM-&gt;&gt;Ctx: scan for IWorker impl
+    WM-&gt;&gt;W: Activator.CreateInstance
 
     Note over Sub,W: === Per-message ProcessAsync ===
     Sub-&gt;&gt;WM: input CloudEvent
-    WM-&gt;&gt;Host: process frame (cloudEvent)
-    Host-&gt;&gt;W: worker.ProcessAsync(ce)
-    W--&gt;&gt;Host: result CloudEvent (or null)
-    Host-&gt;&gt;WM: result frame
-    WM-&gt;&gt;WM: parse CE → publish reply&lt;br/&gt;(or null → no reply)
-    WM-&gt;&gt;Sub: reply CloudEvent
-    Note over WM,Host: same socket+JSON frame protocol as PythonEngine.</code></pre>
-<p><strong>Code Requirements:</strong></p>
-<p>Workers must use the <code>Virtufin.Worker.DevKit</code> NuGet package and implement the <code>IWorker</code> interface or extend <code>WorkerBase</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">CloudNative.CloudEvents</span><span class="p">;</span>
-<span class="k">using</span><span class="w"> </span><span class="nn">Virtufin.Worker.DevKit</span><span class="p">;</span>
-
-<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">WorkerBase</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ResponseType</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;my.response&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Uri</span><span class="w"> </span><span class="n">Source</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="p">(</span><span class="s">&quot;urn:my-worker&quot;</span><span class="p">);</span>
-
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CloudEvent</span><span class="o">?</span><span class="w"> </span><span class="n">ProcessAsync</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Process the event and return a response</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="s">&quot;process&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Done&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p><strong>Discovery:</strong> The engine scans all loaded assemblies for the first non-abstract, non-interface type implementing <code>IWorker</code>. If no implementation is found, an <code>InvalidOperationException</code> is thrown. No method-name scanning or convention matching is used.</p>
-<p><strong>Virtufin.Worker.DevKit</strong> is a lightweight NuGet package (dependency: <code>CloudNative.CloudEvents</code> only) that provides the <code>IWorker</code> interface and <code>WorkerBase</code> abstract class. It is specifically for the DotnetDllEngine — not used by other engines.</p>
-<p>The same package also provides the AOT-native base classes (<code>AotNativeWorkerBase</code>, <code>AotNativeCommandWorker&lt;T&gt;</code>, <code>AotNativeApiWorker</code>, <code>AotNativeApiCommandWorker&lt;T&gt;</code>) plus the <code>CloudEventCodec</code> and <code>WorkerContext</code> used by the NativeDllEngine. See <a href="../devkit/">Worker DevKit</a> for the full class hierarchy, the AOT data flow, and the FlatBuffer wire format.</p>
-<p>See <a href="../dotnet-dll-workers/">DotnetDllEngine Workers</a> for a complete guide on implementing workers.</p>
+    WM-&gt;&gt;W: worker.ProcessAsync(ce)&lt;br/&gt;(direct call, &lt;1 µs)
+    W--&gt;&gt;WM: result CloudEvent (or null)
+    WM-&gt;&gt;Sub: reply CloudEvent</code></pre>
+<p><strong>Code Requirements:</strong> Same as before — workers implement
+<code>Virtufin.Worker.DevKit.IWorker</code> (or extend <code>WorkerBase</code>). The
+worker DLL is published as a NuGet <code>.nupkg</code> with a
+<code>lib/&lt;tfm&gt;/&lt;id&gt;.dll</code> entry and a <code>&lt;virtufinLibrary&gt;</code> extension
+in the nuspec. See
+<a href="../dotnet-dll-workers/">Dotnet DLL Workers</a> for the full author
+guide.</p>
+<p><strong>Discovery:</strong> The engine scans the loaded assembly for the
+first non-abstract, non-interface type implementing <code>IWorker</code>.
+If no implementation is found, an <code>InvalidOperationException</code>
+is thrown.</p>
+<p><strong>Virtufin.Worker.DevKit</strong> is a lightweight NuGet package
+(dependency: <code>CloudNative.CloudEvents</code> only) that provides the
+<code>IWorker</code> interface and <code>WorkerBase</code> abstract class. It is
+specifically for the Dotnet DLL engines (in-process and
+out-of-process) — not used by other engines.</p>
+<p>The same package also provides the AOT-native base classes
+(<code>AotNativeWorkerBase</code>, <code>AotNativeCommandWorker&lt;T&gt;</code>,
+<code>AotNativeApiWorker</code>, <code>AotNativeApiCommandWorker&lt;T&gt;</code>) plus the
+<code>CloudEventCodec</code> and <code>WorkerContext</code> used by the
+NativeDllEngine. See <a href="../devkit/">Worker DevKit</a> for the full
+class hierarchy, the AOT data flow, and the FlatBuffer wire
+format.</p>
+<h3 id="dotnetdllsubprocessengine-fallback">DotnetDllSubProcessEngine (fallback)</h3>
+<p><strong>MIME Type:</strong> <code>application/x-dotnet-dll</code> (same as the in-process
+engine; only one is registered at a time)</p>
+<p><strong>Fallback engine</strong> — not registered by default. The engine
+spawns a <code>Virtufin.WorkManager.DotnetDllWorkerSubProcess</code>
+subprocess per worker and exchanges CloudEvents over a Unix
+domain socket. Per-call latency: ~100-1000 µs. Use this only
+when a specific worker requires subprocess isolation, a fresh
+process, or thread-static state that does not survive
+<code>AssemblyLoadContext</code> loading.</p>
+<p>To re-enable, see
+<a href="../in-process-dotnet-dll-workers/#how-to-opt-back-into-the-out-of-process-engine">In-Process Dotnet DLL Workers § How to opt back into the
+out-of-process engine</a>.</p>
 <h2 id="engine-registration">Engine Registration</h2>
 <p>Engines are registered in <code>Program.cs</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">engines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="p">(</span><span class="n">ContentType</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">Func</span><span class="o">&lt;</span><span class="n">IEngine</span><span class="o">&gt;</span><span class="p">)[]</span>
@@ -2118,7 +2156,7 @@ flowchart LR
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-06-24T11:29:23Z</span>
+  <span style="display:table-cell;text-align:right">2026-06-24T11:41:02Z</span>
 </div>
 
     </div>
