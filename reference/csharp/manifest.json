@@ -4,6 +4,20 @@
   "files": [
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Components.NuGetAuthHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Components.NuGetAuthHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Components.NuGetAuthHandler",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Components.NuGetAuthHandler.yml\" sourcestartlinenumber=\"1\">HTTP message handler that injects HTTP Basic credentials into\noutbound requests to the configured NuGet registry. Used by the\nWorkManager's <xref href=\"System.Net.Http.IHttpClientFactory\" data-throw-if-not-resolved=\"false\"></xref>-managed\n<code>CodeFetcher</code> client so it can download worker\n<code>.nupkg</code> artefacts from a private Gitea NuGet registry\n(e.g. <code>https://nuget.haenerconsulting.com/api/packages/virtufin/nuget/package/...</code>)\nwithout requiring public-read access on the registry.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Virtufin.WorkManager.Components.WorkManager.yml",
       "output": {
         ".html": {

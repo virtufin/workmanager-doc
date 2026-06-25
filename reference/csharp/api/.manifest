@@ -1,5 +1,10 @@
 {
   "Virtufin.WorkManager.Components": "Virtufin.WorkManager.Components.yml",
+  "Virtufin.WorkManager.Components.NuGetAuthHandler": "Virtufin.WorkManager.Components.NuGetAuthHandler.yml",
+  "Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String)": "Virtufin.WorkManager.Components.NuGetAuthHandler.yml",
+  "Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHost": "Virtufin.WorkManager.Components.NuGetAuthHandler.yml",
+  "Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost": "Virtufin.WorkManager.Components.NuGetAuthHandler.yml",
+  "Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)": "Virtufin.WorkManager.Components.NuGetAuthHandler.yml",
   "Virtufin.WorkManager.Components.WorkManager": "Virtufin.WorkManager.Components.WorkManager.yml",
   "Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)": "Virtufin.WorkManager.Components.WorkManager.yml",
   "Virtufin.WorkManager.Components.WorkManager.CodeFetcherHttpClientName": "Virtufin.WorkManager.Components.WorkManager.yml",

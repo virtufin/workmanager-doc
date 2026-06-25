@@ -26,8 +26,14 @@ items:
   summary: Abstract base record representing the source of worker code.
   example: []
   syntax:
-    content: 'public abstract record CodeSource : IEquatable<CodeSource>'
-    content.vb: Public MustInherit Class CodeSource Implements IEquatable(Of CodeSource)
+    content: >-
+      [JsonConverter(typeof(CodeSourceJsonConverter))]
+
+      public abstract record CodeSource : IEquatable<CodeSource>
+    content.vb: >-
+      <JsonConverter(GetType(CodeSourceJsonConverter))>
+
+      Public MustInherit Class CodeSource Implements IEquatable(Of CodeSource)
   inheritance:
   - System.Object
   derivedClasses:
@@ -43,6 +49,12 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+  attributes:
+  - type: System.Text.Json.Serialization.JsonConverterAttribute
+    ctor: System.Text.Json.Serialization.JsonConverterAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter
 references:
 - uid: Virtufin.WorkManager.Contracts
   commentId: N:Virtufin.WorkManager.Contracts

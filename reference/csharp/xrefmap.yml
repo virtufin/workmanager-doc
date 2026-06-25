@@ -7,6 +7,63 @@ references:
   commentId: N:Virtufin.WorkManager.Components
   fullName: Virtufin.WorkManager.Components
   nameWithType: Virtufin.WorkManager.Components
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler
+  name: NuGetAuthHandler
+  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html
+  commentId: T:Virtufin.WorkManager.Components.NuGetAuthHandler
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler
+  nameWithType: NuGetAuthHandler
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String)
+  name: NuGetAuthHandler(string)
+  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler__ctor_System_String_
+  commentId: M:Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.NuGetAuthHandler(string)
+  fullName.vb: Virtufin.WorkManager.Components.NuGetAuthHandler.New(String)
+  nameWithType: NuGetAuthHandler.NuGetAuthHandler(string)
+  nameWithType.vb: NuGetAuthHandler.New(String)
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor*
+  name: NuGetAuthHandler
+  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler__ctor_
+  commentId: Overload:Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.NuGetAuthHandler
+  fullName.vb: Virtufin.WorkManager.Components.NuGetAuthHandler.New
+  nameWithType: NuGetAuthHandler.NuGetAuthHandler
+  nameWithType.vb: NuGetAuthHandler.New
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHost
+  name: DefaultRegistryHost
+  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_DefaultRegistryHost
+  commentId: F:Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHost
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHost
+  nameWithType: NuGetAuthHandler.DefaultRegistryHost
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
+  name: RegistryHost
+  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHost
+  commentId: P:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
+  nameWithType: NuGetAuthHandler.RegistryHost
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost*
+  name: RegistryHost
+  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHost_
+  commentId: Overload:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
+  nameWithType: NuGetAuthHandler.RegistryHost
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  name: SendAsync(HttpRequestMessage, CancellationToken)
+  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_SendAsync_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
+  nameWithType: NuGetAuthHandler.SendAsync(HttpRequestMessage, CancellationToken)
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync*
+  name: SendAsync
+  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_SendAsync_
+  commentId: Overload:Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync
+  nameWithType: NuGetAuthHandler.SendAsync
 - uid: Virtufin.WorkManager.Components.WorkManager
   name: WorkManager
   href: api/Virtufin.WorkManager.Components.WorkManager.html

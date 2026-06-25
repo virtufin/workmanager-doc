@@ -60,6 +60,7 @@ references:
   fullName: Virtufin.WorkManager.Contracts.CodeSourceContent
 - uid: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter
   commentId: T:Virtufin.WorkManager.Contracts.CodeSourceJsonConverter
+  parent: Virtufin.WorkManager.Contracts
   href: Virtufin.WorkManager.Contracts.CodeSourceJsonConverter.html
   name: CodeSourceJsonConverter
   nameWithType: CodeSourceJsonConverter

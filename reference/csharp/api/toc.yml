@@ -4,6 +4,9 @@ items:
   name: Virtufin.WorkManager.Components
   type: Namespace
   items:
+  - uid: Virtufin.WorkManager.Components.NuGetAuthHandler
+    name: NuGetAuthHandler
+    type: Class
   - uid: Virtufin.WorkManager.Components.WorkManager
     name: WorkManager
     type: Class
