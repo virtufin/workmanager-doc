@@ -199,14 +199,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/54d512679df6ee8d0140c1d1c7094e6021b16af8"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/8afd9fe81e0e9753be0bd95f4ecb38eb071513cd"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 54d5126">
+       title="View commit 8afd9fe">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">54d5126</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">8afd9fe</text>
       </svg>
     </a>
 </div>
@@ -393,14 +393,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/54d512679df6ee8d0140c1d1c7094e6021b16af8"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/8afd9fe81e0e9753be0bd95f4ecb38eb071513cd"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 54d5126">
+       title="View commit 8afd9fe">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">54d5126</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">8afd9fe</text>
       </svg>
     </a>
 </div>
@@ -1359,17 +1359,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-opt-back-into-the-out-of-process-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How to opt back into the out-of-process engine
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#caveats-and-known-issues" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1537,23 +1526,6 @@ for programmatic inspection. Common failures you'll see:</p>
   override signature; bundle that assembly in the host too (or
   restructure the override to use BCL types only).</li>
 </ul>
-<h2 id="how-to-opt-back-into-the-out-of-process-engine">How to opt back into the out-of-process engine</h2>
-<p>The out-of-process engine is kept in the tree as a documented
-fallback. To re-enable it:</p>
-<ol>
-<li>In <code>src/Virtufin.WorkManager/Program.cs</code>, comment out the
-   <code>application/x-dotnet-dll</code> registration for the in-process
-   engine:
-   <div class="highlight"><pre><span></span><code><span class="c1">// (new ContentType(&quot;application/x-dotnet-dll&quot;), &quot;Dotnet DLL (in-process)&quot;, () =&gt; new DotnetDllEngine(...)),</span>
-</code></pre></div></li>
-<li>Uncomment the out-of-process engine line:
-   <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ContentType</span><span class="p">(</span><span class="s">&quot;application/x-dotnet-dll&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;Dotnet DLL (sub-process)&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DotnetDllSubProcessEngine</span><span class="p">(...)),</span>
-</code></pre></div></li>
-<li>The renamed out-of-process host
-   (<code>Virtufin.WorkManager.DotnetDllWorkerSubProcess</code>) is still
-   built; deploy it to <code>dotnet-dll-worker-sub-process/</code> next
-   to the WM binary.</li>
-</ol>
 <h2 id="caveats-and-known-issues">Caveats and known issues</h2>
 <ul>
 <li><strong>Thread-static state:</strong> <code>AssemblyLoadContext</code> reload does
@@ -1599,7 +1571,7 @@ fallback. To re-enable it:</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-06-25T10:02:19Z</span>
+  <span style="display:table-cell;text-align:right">2026-06-25T10:32:33Z</span>
 </div>
 
     </div>
