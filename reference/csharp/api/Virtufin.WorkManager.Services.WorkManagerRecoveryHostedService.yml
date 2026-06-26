@@ -5,7 +5,7 @@ items:
   id: WorkManagerRecoveryHostedService
   parent: Virtufin.WorkManager.Services
   children:
-  - Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState)
+  - Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Services.IWorkerRecoveryExecutor,Virtufin.WorkManager.Services.IRecoveryLeaderElector,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState,Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
   - Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.ExecuteAsync(System.Threading.CancellationToken)
   langs:
   - csharp
@@ -21,14 +21,35 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: WorkManagerRecoveryHostedService
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerRecoveryHostedService.cs
-    startLine: 10
+    startLine: 22
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
   summary: >-
-    Hosted service that automatically recovers workers on application startup.
+    Hosted service that automatically recovers workers on application startup,
 
-    Gates Kestrel readiness until recovery is complete.
+    gated by <xref href="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled" data-throw-if-not-resolved="false"></xref> and coordinated across
+
+    multiple WorkManager instances via <xref href="Virtufin.WorkManager.Services.RecoveryLeaderElector" data-throw-if-not-resolved="false"></xref>.
+
+
+    When multiple instances start concurrently, only the leader performs
+
+    recovery — the others wait for the leader lease to expire (or be released)
+
+    before they would attempt to take over. This avoids the N×W engine-load
+
+    waste described in WM #4.
+
+
+    Kestrel readiness is gated via <xref href="Virtufin.WorkManager.Services.RecoveryHealthCheck" data-throw-if-not-resolved="false"></xref>:
+
+    - <code>Degraded</code> while recovery is in progress.
+
+    - <code>Unhealthy</code> if recovery failed.
+
+    - <code>Healthy</code> once recovery completes (whether this instance performed it
+      or another leader did).
   example: []
   syntax:
     content: 'public sealed class WorkManagerRecoveryHostedService : BackgroundService, IHostedService, IDisposable'
@@ -50,16 +71,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState)
-  commentId: M:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState)
-  id: '#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState)'
+- uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Services.IWorkerRecoveryExecutor,Virtufin.WorkManager.Services.IRecoveryLeaderElector,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState,Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Services.IWorkerRecoveryExecutor,Virtufin.WorkManager.Services.IRecoveryLeaderElector,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState,Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  id: '#ctor(Virtufin.WorkManager.Services.IWorkerRecoveryExecutor,Virtufin.WorkManager.Services.IRecoveryLeaderElector,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState,Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)'
   parent: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
   langs:
   - csharp
   - vb
-  name: WorkManagerRecoveryHostedService(WorkManager, ILogger<WorkManagerRecoveryHostedService>, RecoveryState)
-  nameWithType: WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService(WorkManager, ILogger<WorkManagerRecoveryHostedService>, RecoveryState)
-  fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService>, Virtufin.WorkManager.Services.RecoveryState)
+  name: WorkManagerRecoveryHostedService(IWorkerRecoveryExecutor, IRecoveryLeaderElector, ILogger<WorkManagerRecoveryHostedService>, RecoveryState, WorkerRecoveryOptions)
+  nameWithType: WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService(IWorkerRecoveryExecutor, IRecoveryLeaderElector, ILogger<WorkManagerRecoveryHostedService>, RecoveryState, WorkerRecoveryOptions)
+  fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService(Virtufin.WorkManager.Services.IWorkerRecoveryExecutor, Virtufin.WorkManager.Services.IRecoveryLeaderElector, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService>, Virtufin.WorkManager.Services.RecoveryState, Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
   type: Constructor
   source:
     remote:
@@ -68,26 +89,28 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerRecoveryHostedService.cs
-    startLine: 19
+    startLine: 30
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
-  summary: Creates a new WorkManagerRecoveryHostedService.
-  example: []
   syntax:
-    content: public WorkManagerRecoveryHostedService(WorkManager workManager, ILogger<WorkManagerRecoveryHostedService> logger, RecoveryState recoveryState)
+    content: public WorkManagerRecoveryHostedService(IWorkerRecoveryExecutor executor, IRecoveryLeaderElector leaderElector, ILogger<WorkManagerRecoveryHostedService> logger, RecoveryState recoveryState, WorkerRecoveryOptions options)
     parameters:
-    - id: workManager
-      type: Virtufin.WorkManager.Components.WorkManager
+    - id: executor
+      type: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+    - id: leaderElector
+      type: Virtufin.WorkManager.Services.IRecoveryLeaderElector
     - id: logger
       type: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService}
     - id: recoveryState
       type: Virtufin.WorkManager.Services.RecoveryState
-    content.vb: Public Sub New(workManager As WorkManager, logger As ILogger(Of WorkManagerRecoveryHostedService), recoveryState As RecoveryState)
+    - id: options
+      type: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+    content.vb: Public Sub New(executor As IWorkerRecoveryExecutor, leaderElector As IRecoveryLeaderElector, logger As ILogger(Of WorkManagerRecoveryHostedService), recoveryState As RecoveryState, options As WorkerRecoveryOptions)
   overload: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor*
-  nameWithType.vb: WorkManagerRecoveryHostedService.New(WorkManager, ILogger(Of WorkManagerRecoveryHostedService), RecoveryState)
-  fullName.vb: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.New(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService), Virtufin.WorkManager.Services.RecoveryState)
-  name.vb: New(WorkManager, ILogger(Of WorkManagerRecoveryHostedService), RecoveryState)
+  nameWithType.vb: WorkManagerRecoveryHostedService.New(IWorkerRecoveryExecutor, IRecoveryLeaderElector, ILogger(Of WorkManagerRecoveryHostedService), RecoveryState, WorkerRecoveryOptions)
+  fullName.vb: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.New(Virtufin.WorkManager.Services.IWorkerRecoveryExecutor, Virtufin.WorkManager.Services.IRecoveryLeaderElector, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService), Virtufin.WorkManager.Services.RecoveryState, Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  name.vb: New(IWorkerRecoveryExecutor, IRecoveryLeaderElector, ILogger(Of WorkManagerRecoveryHostedService), RecoveryState, WorkerRecoveryOptions)
 - uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.ExecuteAsync(System.Threading.CancellationToken)
   commentId: M:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.ExecuteAsync(System.Threading.CancellationToken)
   id: ExecuteAsync(System.Threading.CancellationToken)
@@ -106,7 +129,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ExecuteAsync
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerRecoveryHostedService.cs
-    startLine: 30
+    startLine: 44
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -129,6 +152,24 @@ items:
   overridden: Microsoft.Extensions.Hosting.BackgroundService.ExecuteAsync(System.Threading.CancellationToken)
   overload: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.ExecuteAsync*
 references:
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+  commentId: P:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+  href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_Enabled
+  name: Enabled
+  nameWithType: WorkerRecoveryOptions.Enabled
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector
+  commentId: T:Virtufin.WorkManager.Services.RecoveryLeaderElector
+  href: Virtufin.WorkManager.Services.RecoveryLeaderElector.html
+  name: RecoveryLeaderElector
+  nameWithType: RecoveryLeaderElector
+  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector
+- uid: Virtufin.WorkManager.Services.RecoveryHealthCheck
+  commentId: T:Virtufin.WorkManager.Services.RecoveryHealthCheck
+  href: Virtufin.WorkManager.Services.RecoveryHealthCheck.html
+  name: RecoveryHealthCheck
+  nameWithType: RecoveryHealthCheck
+  fullName: Virtufin.WorkManager.Services.RecoveryHealthCheck
 - uid: Virtufin.WorkManager.Services
   commentId: N:Virtufin.WorkManager.Services
   href: Virtufin.html
@@ -525,20 +566,27 @@ references:
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting
 - uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor*
   commentId: Overload:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor
-  href: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html#Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__ctor_Virtufin_WorkManager_Components_WorkManager_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__Virtufin_WorkManager_Services_RecoveryState_
+  href: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html#Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__ctor_Virtufin_WorkManager_Services_IWorkerRecoveryExecutor_Virtufin_WorkManager_Services_IRecoveryLeaderElector_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__Virtufin_WorkManager_Services_RecoveryState_Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_
   name: WorkManagerRecoveryHostedService
   nameWithType: WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService
   fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService
   nameWithType.vb: WorkManagerRecoveryHostedService.New
   fullName.vb: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.New
   name.vb: New
-- uid: Virtufin.WorkManager.Components.WorkManager
-  commentId: T:Virtufin.WorkManager.Components.WorkManager
-  parent: Virtufin.WorkManager.Components
-  href: Virtufin.WorkManager.Components.WorkManager.html
-  name: WorkManager
-  nameWithType: WorkManager
-  fullName: Virtufin.WorkManager.Components.WorkManager
+- uid: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+  commentId: T:Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.html
+  name: IWorkerRecoveryExecutor
+  nameWithType: IWorkerRecoveryExecutor
+  fullName: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+- uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector
+  commentId: T:Virtufin.WorkManager.Services.IRecoveryLeaderElector
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.IRecoveryLeaderElector.html
+  name: IRecoveryLeaderElector
+  nameWithType: IRecoveryLeaderElector
+  fullName: Virtufin.WorkManager.Services.IRecoveryLeaderElector
 - uid: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService}
   commentId: T:Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService}
   parent: Microsoft.Extensions.Logging
@@ -579,36 +627,13 @@ references:
   name: RecoveryState
   nameWithType: RecoveryState
   fullName: Virtufin.WorkManager.Services.RecoveryState
-- uid: Virtufin.WorkManager.Components
-  commentId: N:Virtufin.WorkManager.Components
-  href: Virtufin.html
-  name: Virtufin.WorkManager.Components
-  nameWithType: Virtufin.WorkManager.Components
-  fullName: Virtufin.WorkManager.Components
-  spec.csharp:
-  - uid: Virtufin
-    name: Virtufin
-    href: Virtufin.html
-  - name: .
-  - uid: Virtufin.WorkManager
-    name: WorkManager
-    href: Virtufin.WorkManager.html
-  - name: .
-  - uid: Virtufin.WorkManager.Components
-    name: Components
-    href: Virtufin.WorkManager.Components.html
-  spec.vb:
-  - uid: Virtufin
-    name: Virtufin
-    href: Virtufin.html
-  - name: .
-  - uid: Virtufin.WorkManager
-    name: WorkManager
-    href: Virtufin.WorkManager.html
-  - name: .
-  - uid: Virtufin.WorkManager.Components
-    name: Components
-    href: Virtufin.WorkManager.Components.html
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  commentId: T:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  parent: Virtufin.WorkManager.Configuration
+  href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html
+  name: WorkerRecoveryOptions
+  nameWithType: WorkerRecoveryOptions
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
 - uid: Microsoft.Extensions.Logging.ILogger`1
   commentId: T:Microsoft.Extensions.Logging.ILogger`1
   isExternal: true
@@ -674,6 +699,36 @@ references:
     name: Logging
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: Virtufin.WorkManager.Configuration
+  commentId: N:Virtufin.WorkManager.Configuration
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Configuration
+  nameWithType: Virtufin.WorkManager.Configuration
+  fullName: Virtufin.WorkManager.Configuration
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Configuration
+    name: Configuration
+    href: Virtufin.WorkManager.Configuration.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Configuration
+    name: Configuration
+    href: Virtufin.WorkManager.Configuration.html
 - uid: Microsoft.Extensions.Hosting.IHostedService.StopAsync(System.Threading.CancellationToken)
   commentId: M:Microsoft.Extensions.Hosting.IHostedService.StopAsync(System.Threading.CancellationToken)
   isExternal: true

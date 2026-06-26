@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/31855087c5923849fac68d469246409889f9ae0c"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/241debb3a04b2c7680f0b70a07d8af23454cb13d"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 3185508">
+       title="View commit 241debb">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3185508</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">241debb</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/31855087c5923849fac68d469246409889f9ae0c"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/241debb3a04b2c7680f0b70a07d8af23454cb13d"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 3185508">
+       title="View commit 241debb">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3185508</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">241debb</text>
       </svg>
     </a>
 </div>
@@ -565,6 +565,34 @@
     
   
     Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Service Integration
   
 
     
@@ -842,6 +870,39 @@
     <span class="md-ellipsis">
       
         Dapr Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-lock-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group Lock Tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worker-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worker Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dapr-resiliency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dapr Resiliency
       
     </span>
   </a>
@@ -1532,6 +1593,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#group-lock-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Group Lock Tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worker-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worker Recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dapr-resiliency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dapr Resiliency
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1726,6 +1820,120 @@
 </tr>
 </tbody>
 </table>
+<h3 id="group-lock-tuning">Group Lock Tuning</h3>
+<p>When multiple workers share a group, the WorkManager acquires a
+distributed lock via the Dapr state store before publishing the
+worker's response. Lock contention is handled via Dapr redelivery
+(see <a href="worker-lifecycle/#group-lock">Worker Lifecycle</a> for the
+contract). These env vars tune the acquire loop; they do <strong>not</strong>
+gate the number of Dapr redeliveries — that is controlled by the
+Dapr pubsub component's <code>maxRetries</code> metadata.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GROUP_LOCK_MAX_RETRIES</code></td>
+<td>Max acquire attempts before throwing <code>LockContentionException</code>. The thrown exception causes the message to be nacked (<code>TopicResponseAction.Retry</code>), which makes Dapr redeliver it after backoff.</td>
+<td><code>3</code></td>
+<td><code>1</code>–<code>20</code></td>
+</tr>
+<tr>
+<td><code>GROUP_LOCK_RETRY_BASE_DELAY_MS</code></td>
+<td>Base delay between acquire attempts. Actual delay is <code>RetryBaseDelayMs * 2^attempt</code>.</td>
+<td><code>500</code></td>
+<td><code>10</code>–<code>60000</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="worker-recovery">Worker Recovery</h3>
+<p>The <code>WorkManagerRecoveryHostedService</code> runs on startup and restores
+all persisted worker assignments. Multiple WorkManager instances
+elect a single leader via a Dapr state-store lease so concurrent
+recovery doesn't waste memory (see
+<a href="worker-lifecycle/#multi-instance-safety-leader-election">Worker Lifecycle: Multi-instance safety</a>).</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WORKER_RECOVERY_ON_START</code></td>
+<td>Whether to run recovery automatically on startup. When <code>false</code>, the health check reports <code>Healthy</code> and workers must be restored manually via the <code>RecoverWorkers</code> gRPC endpoint.</td>
+<td><code>true</code></td>
+<td><code>true</code>/<code>false</code>/<code>1</code>/<code>0</code>/<code>yes</code>/<code>no</code>/<code>on</code>/<code>off</code></td>
+</tr>
+<tr>
+<td><code>WORKER_RECOVERY_LEASE_TTL_SECONDS</code></td>
+<td>How long the recovery leader lease is held before another instance may take over. Also the upper bound on how long a crashed leader blocks others.</td>
+<td><code>300</code></td>
+<td><code>10</code>–<code>86400</code></td>
+</tr>
+<tr>
+<td><code>WORKER_RECOVERY_ACQUIRE_TIMEOUT_SECONDS</code></td>
+<td>How long this instance will wait to acquire the lease before skipping recovery.</td>
+<td><code>30</code></td>
+<td><code>1</code>–<code>600</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="dapr-resiliency">Dapr Resiliency</h3>
+<p>The <code>DaprResiliencePipeline</code> wraps every Dapr SDK call the WorkManager
+makes (pub/sub publish, state store read/write, recovery lease
+acquisition) in a Polly pipeline: retry with exponential backoff,
+then circuit breaker. The circuit state is exposed at
+<code>/health</code> (tag <code>dapr</code>); when the circuit opens, the health check
+reports <code>Unhealthy</code> and messages on dependent topics will be
+nacked (Retry) rather than silently dropped.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DAPR_RETRY_ATTEMPTS</code></td>
+<td>Max retry attempts per Dapr call before the pipeline throws.</td>
+<td><code>3</code></td>
+<td><code>0</code>–<code>20</code></td>
+</tr>
+<tr>
+<td><code>DAPR_RETRY_BASE_DELAY_MS</code></td>
+<td>Base delay between attempts; actual delay is <code>RetryBaseDelayMs * 2^attempt</code>.</td>
+<td><code>200</code></td>
+<td><code>10</code>–<code>60000</code></td>
+</tr>
+<tr>
+<td><code>DAPR_CIRCUIT_BREAKER_THRESHOLD</code></td>
+<td>Minimum throughput before the circuit can trip (Polly <code>MinimumThroughput</code>).</td>
+<td><code>5</code></td>
+<td><code>1</code>–<code>1000</code></td>
+</tr>
+<tr>
+<td><code>DAPR_CIRCUIT_BREAKER_DURATION_SECONDS</code></td>
+<td>How long the circuit stays open before transitioning to half-open.</td>
+<td><code>30</code></td>
+<td><code>1</code>–<code>3600</code></td>
+</tr>
+</tbody>
+</table>
+<p>The circuit breaker uses Polly's <code>FailureRatio = 0.5</code> (a 50% failure
+rate trips the circuit). The above env vars control the other knobs.</p>
 <h2 id="environment-variables">Environment Variables</h2>
 <p>Set configuration using environment variables:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">HttpPort</span><span class="o">=</span><span class="m">8080</span>
@@ -1735,6 +1943,15 @@
 <span class="nb">export</span><span class="w"> </span>Logging:LogLevel:Default<span class="o">=</span>Debug
 <span class="nb">export</span><span class="w"> </span><span class="nv">pubsubName</span><span class="o">=</span>my-pubsub
 <span class="nb">export</span><span class="w"> </span><span class="nv">stateStoreName</span><span class="o">=</span>my-state
+<span class="nb">export</span><span class="w"> </span><span class="nv">GROUP_LOCK_MAX_RETRIES</span><span class="o">=</span><span class="m">5</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GROUP_LOCK_RETRY_BASE_DELAY_MS</span><span class="o">=</span><span class="m">250</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">WORKER_RECOVERY_ON_START</span><span class="o">=</span><span class="nb">true</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">WORKER_RECOVERY_LEASE_TTL_SECONDS</span><span class="o">=</span><span class="m">300</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">WORKER_RECOVERY_ACQUIRE_TIMEOUT_SECONDS</span><span class="o">=</span><span class="m">30</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DAPR_RETRY_ATTEMPTS</span><span class="o">=</span><span class="m">3</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DAPR_RETRY_BASE_DELAY_MS</span><span class="o">=</span><span class="m">200</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DAPR_CIRCUIT_BREAKER_THRESHOLD</span><span class="o">=</span><span class="m">5</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">DAPR_CIRCUIT_BREAKER_DURATION_SECONDS</span><span class="o">=</span><span class="m">30</span>
 </code></pre></div>
 <h2 id="command-line-arguments">Command-Line Arguments</h2>
 <p>Pass arguments when running the application:</p>
@@ -1818,7 +2035,7 @@
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-06-26T01:10:03Z</span>
+  <span style="display:table-cell;text-align:right">2026-06-26T21:39:08Z</span>
 </div>
 
     </div>

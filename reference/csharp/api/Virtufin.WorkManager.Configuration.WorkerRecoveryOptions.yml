@@ -1,0 +1,816 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  commentId: T:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  id: WorkerRecoveryOptions
+  parent: Virtufin.WorkManager.Configuration
+  children:
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultEnabled
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultLeaseTtlSeconds
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.EnabledEnvVar
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment(System.Func{System.String,System.String})
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSecondsEnvVar
+  langs:
+  - csharp
+  - vb
+  name: WorkerRecoveryOptions
+  nameWithType: WorkerRecoveryOptions
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  type: Class
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: WorkerRecoveryOptions
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 6
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: >-
+    Worker recovery tuning. Controls whether <xref href="Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService" data-throw-if-not-resolved="false"></xref>
+
+    runs on startup and how it elects a leader when multiple WorkManager instances start concurrently.
+  example: []
+  syntax:
+    content: 'public sealed record WorkerRecoveryOptions : IEquatable<WorkerRecoveryOptions>'
+    content.vb: Public NotInheritable Class WorkerRecoveryOptions Implements IEquatable(Of WorkerRecoveryOptions)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{Virtufin.WorkManager.Configuration.WorkerRecoveryOptions}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.EnabledEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.EnabledEnvVar
+  id: EnabledEnvVar
+  parent: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  langs:
+  - csharp
+  - vb
+  name: EnabledEnvVar
+  nameWithType: WorkerRecoveryOptions.EnabledEnvVar
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.EnabledEnvVar
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: EnabledEnvVar
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 9
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: Env var that gates whether recovery runs at all on startup.
+  example: []
+  syntax:
+    content: public const string EnabledEnvVar = "WORKER_RECOVERY_ON_START"
+    return:
+      type: System.String
+    content.vb: Public Const EnabledEnvVar As String = "WORKER_RECOVERY_ON_START"
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSecondsEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSecondsEnvVar
+  id: LeaseTtlSecondsEnvVar
+  parent: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  langs:
+  - csharp
+  - vb
+  name: LeaseTtlSecondsEnvVar
+  nameWithType: WorkerRecoveryOptions.LeaseTtlSecondsEnvVar
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSecondsEnvVar
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: LeaseTtlSecondsEnvVar
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 12
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: Env var for the lease TTL in seconds when this instance wins the leader election.
+  example: []
+  syntax:
+    content: public const string LeaseTtlSecondsEnvVar = "WORKER_RECOVERY_LEASE_TTL_SECONDS"
+    return:
+      type: System.String
+    content.vb: Public Const LeaseTtlSecondsEnvVar As String = "WORKER_RECOVERY_LEASE_TTL_SECONDS"
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar
+  id: AcquireTimeoutSecondsEnvVar
+  parent: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  langs:
+  - csharp
+  - vb
+  name: AcquireTimeoutSecondsEnvVar
+  nameWithType: WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: AcquireTimeoutSecondsEnvVar
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 15
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: Env var for how long to wait for the leader lease before giving up.
+  example: []
+  syntax:
+    content: public const string AcquireTimeoutSecondsEnvVar = "WORKER_RECOVERY_ACQUIRE_TIMEOUT_SECONDS"
+    return:
+      type: System.String
+    content.vb: Public Const AcquireTimeoutSecondsEnvVar As String = "WORKER_RECOVERY_ACQUIRE_TIMEOUT_SECONDS"
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultEnabled
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultEnabled
+  id: DefaultEnabled
+  parent: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  langs:
+  - csharp
+  - vb
+  name: DefaultEnabled
+  nameWithType: WorkerRecoveryOptions.DefaultEnabled
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultEnabled
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: DefaultEnabled
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 18
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: 'Default: recovery is enabled.'
+  example: []
+  syntax:
+    content: public const bool DefaultEnabled = true
+    return:
+      type: System.Boolean
+    content.vb: Public Const DefaultEnabled As Boolean = True
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultLeaseTtlSeconds
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultLeaseTtlSeconds
+  id: DefaultLeaseTtlSeconds
+  parent: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  langs:
+  - csharp
+  - vb
+  name: DefaultLeaseTtlSeconds
+  nameWithType: WorkerRecoveryOptions.DefaultLeaseTtlSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultLeaseTtlSeconds
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: DefaultLeaseTtlSeconds
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 21
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: Default lease TTL (5 minutes — long enough for typical recovery, short enough to release on crash).
+  example: []
+  syntax:
+    content: public const int DefaultLeaseTtlSeconds = 300
+    return:
+      type: System.Int32
+    content.vb: Public Const DefaultLeaseTtlSeconds As Integer = 300
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
+  id: DefaultAcquireTimeoutSeconds
+  parent: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  langs:
+  - csharp
+  - vb
+  name: DefaultAcquireTimeoutSeconds
+  nameWithType: WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: DefaultAcquireTimeoutSeconds
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 24
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: Default acquire timeout (30s — matches the typical Dapr state store call latency).
+  example: []
+  syntax:
+    content: public const int DefaultAcquireTimeoutSeconds = 30
+    return:
+      type: System.Int32
+    content.vb: Public Const DefaultAcquireTimeoutSeconds As Integer = 30
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+  commentId: P:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+  id: Enabled
+  parent: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  langs:
+  - csharp
+  - vb
+  name: Enabled
+  nameWithType: WorkerRecoveryOptions.Enabled
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Enabled
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 27
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: Whether recovery runs on startup at all.
+  example: []
+  syntax:
+    content: public bool Enabled { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Enabled As Boolean
+  overload: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled*
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds
+  commentId: P:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds
+  id: LeaseTtlSeconds
+  parent: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  langs:
+  - csharp
+  - vb
+  name: LeaseTtlSeconds
+  nameWithType: WorkerRecoveryOptions.LeaseTtlSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: LeaseTtlSeconds
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 30
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: How long the leader lease is held before another instance may take over.
+  example: []
+  syntax:
+    content: public int LeaseTtlSeconds { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property LeaseTtlSeconds As Integer
+  overload: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds*
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+  commentId: P:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+  id: AcquireTimeoutSeconds
+  parent: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  langs:
+  - csharp
+  - vb
+  name: AcquireTimeoutSeconds
+  nameWithType: WorkerRecoveryOptions.AcquireTimeoutSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: AcquireTimeoutSeconds
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 33
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: How long this instance will wait to acquire the lease before skipping recovery.
+  example: []
+  syntax:
+    content: public int AcquireTimeoutSeconds { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property AcquireTimeoutSeconds As Integer
+  overload: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds*
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment(System.Func{System.String,System.String})
+  commentId: M:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment(System.Func{System.String,System.String})
+  id: FromEnvironment(System.Func{System.String,System.String})
+  parent: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  langs:
+  - csharp
+  - vb
+  name: FromEnvironment(Func<string, string?>)
+  nameWithType: WorkerRecoveryOptions.FromEnvironment(Func<string, string?>)
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment(System.Func<string, string?>)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: FromEnvironment
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 39
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: >-
+    Reads options from the supplied environment-variable provider.
+
+    Falls back to defaults when keys are absent or malformed.
+  example: []
+  syntax:
+    content: public static WorkerRecoveryOptions FromEnvironment(Func<string, string?> getEnvironment)
+    parameters:
+    - id: getEnvironment
+      type: System.Func{System.String,System.String}
+    return:
+      type: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+    content.vb: Public Shared Function FromEnvironment(getEnvironment As Func(Of String, String)) As WorkerRecoveryOptions
+  overload: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment*
+  nameWithType.vb: WorkerRecoveryOptions.FromEnvironment(Func(Of String, String))
+  fullName.vb: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment(System.Func(Of String, String))
+  name.vb: FromEnvironment(Func(Of String, String))
+references:
+- uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
+  commentId: T:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
+  href: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html
+  name: WorkManagerRecoveryHostedService
+  nameWithType: WorkManagerRecoveryHostedService
+  fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
+- uid: Virtufin.WorkManager.Configuration
+  commentId: N:Virtufin.WorkManager.Configuration
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Configuration
+  nameWithType: Virtufin.WorkManager.Configuration
+  fullName: Virtufin.WorkManager.Configuration
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Configuration
+    name: Configuration
+    href: Virtufin.WorkManager.Configuration.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Configuration
+    name: Configuration
+    href: Virtufin.WorkManager.Configuration.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{Virtufin.WorkManager.Configuration.WorkerRecoveryOptions}
+  commentId: T:System.IEquatable{Virtufin.WorkManager.Configuration.WorkerRecoveryOptions}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<WorkerRecoveryOptions>
+  nameWithType: IEquatable<WorkerRecoveryOptions>
+  fullName: System.IEquatable<Virtufin.WorkManager.Configuration.WorkerRecoveryOptions>
+  nameWithType.vb: IEquatable(Of WorkerRecoveryOptions)
+  fullName.vb: System.IEquatable(Of Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  name.vb: IEquatable(Of WorkerRecoveryOptions)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+    name: WorkerRecoveryOptions
+    href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+    name: WorkerRecoveryOptions
+    href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled*
+  commentId: Overload:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+  href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_Enabled
+  name: Enabled
+  nameWithType: WorkerRecoveryOptions.Enabled
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds*
+  commentId: Overload:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds
+  href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_LeaseTtlSeconds
+  name: LeaseTtlSeconds
+  nameWithType: WorkerRecoveryOptions.LeaseTtlSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds*
+  commentId: Overload:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+  href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_AcquireTimeoutSeconds
+  name: AcquireTimeoutSeconds
+  nameWithType: WorkerRecoveryOptions.AcquireTimeoutSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment*
+  commentId: Overload:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment
+  href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_FromEnvironment_System_Func_System_String_System_String__
+  name: FromEnvironment
+  nameWithType: WorkerRecoveryOptions.FromEnvironment
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment
+- uid: System.Func{System.String,System.String}
+  commentId: T:System.Func{System.String,System.String}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<string, string>
+  nameWithType: Func<string, string>
+  fullName: System.Func<string, string>
+  nameWithType.vb: Func(Of String, String)
+  fullName.vb: System.Func(Of String, String)
+  name.vb: Func(Of String, String)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  commentId: T:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  parent: Virtufin.WorkManager.Configuration
+  href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html
+  name: WorkerRecoveryOptions
+  nameWithType: WorkerRecoveryOptions
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )

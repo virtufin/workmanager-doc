@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class WorkManagerRecoveryHostedService | Virtufin WorkManager - C# Reference ">
       
-      <meta name="description" content="Hosted service that automatically recovers workers on application startup. Gates Kestrel readiness until recovery is complete.">
+      <meta name="description" content="Hosted service that automatically recovers workers on application startup, gated by  and coordinated across multiple WorkManager instances via . When multiple instances start concurrently, only the leader performs recovery — the others wait for the leader lease to expire (or be released) before they would attempt to take over. This avoids the N&#215;W engine-load waste described in WM #4. Kestrel readiness is gated via :  Degraded while recovery is in progress. Unhealthy if recovery failed. Healthy once recovery completes (whether this instance performed it or another leader did).">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -49,10 +49,10 @@
             Virtufin.WorkManager
           </a>
           <div class="git-info">
-            <a href="{git_repo_url}/commit/31855087c5923849fac68d469246409889f9ae0c" target="_blank" rel="noopener" class="commit-badge" title="View commit 3185508">
+            <a href="{git_repo_url}/commit/241debb3a04b2c7680f0b70a07d8af23454cb13d" target="_blank" rel="noopener" class="commit-badge" title="View commit 241debb">
               <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
                 <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"></rect>
-                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3185508</text>
+                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">241debb</text>
               </svg>
             </a>
           </div>          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,8 +101,20 @@ Class WorkManagerRecoveryHostedService
   <dl><dt>Assembly</dt><dd>Virtufin.WorkManager.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Hosted service that automatically recovers workers on application startup.
-Gates Kestrel readiness until recovery is complete.</p>
+  <div class="markdown summary"><p>Hosted service that automatically recovers workers on application startup,
+gated by <a class="xref" href="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_Enabled">Enabled</a> and coordinated across
+multiple WorkManager instances via <a class="xref" href="Virtufin.WorkManager.Services.RecoveryLeaderElector.html">RecoveryLeaderElector</a>.</p>
+<p>When multiple instances start concurrently, only the leader performs
+recovery — the others wait for the leader lease to expire (or be released)
+before they would attempt to take over. This avoids the N×W engine-load
+waste described in WM #4.</p>
+<p>Kestrel readiness is gated via <a class="xref" href="Virtufin.WorkManager.Services.RecoveryHealthCheck.html">RecoveryHealthCheck</a>:</p>
+<ul>
+<li><code>Degraded</code> while recovery is in progress.</li>
+<li><code>Unhealthy</code> if recovery failed.</li>
+<li><code>Healthy</code> once recovery completes (whether this instance performed it
+or another leader did).</li>
+</ul>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -177,26 +189,29 @@ Gates Kestrel readiness until recovery is complete.</p>
 
   <a id="Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__ctor_" data-uid="Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor*"></a>
 
-  <h3 id="Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__ctor_Virtufin_WorkManager_Components_WorkManager_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__Virtufin_WorkManager_Services_RecoveryState_" data-uid="Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState)">
-  WorkManagerRecoveryHostedService(WorkManager, ILogger&lt;WorkManagerRecoveryHostedService&gt;, RecoveryState)
+  <h3 id="Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__ctor_Virtufin_WorkManager_Services_IWorkerRecoveryExecutor_Virtufin_WorkManager_Services_IRecoveryLeaderElector_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__Virtufin_WorkManager_Services_RecoveryState_Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_" data-uid="Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Services.IWorkerRecoveryExecutor,Virtufin.WorkManager.Services.IRecoveryLeaderElector,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState,Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)">
+  WorkManagerRecoveryHostedService(IWorkerRecoveryExecutor, IRecoveryLeaderElector, ILogger&lt;WorkManagerRecoveryHostedService&gt;, RecoveryState, WorkerRecoveryOptions)
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Creates a new WorkManagerRecoveryHostedService.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public WorkManagerRecoveryHostedService(WorkManager workManager, ILogger&lt;WorkManagerRecoveryHostedService&gt; logger, RecoveryState recoveryState)</code></pre>
+    <pre><code class="lang-csharp hljs">public WorkManagerRecoveryHostedService(IWorkerRecoveryExecutor executor, IRecoveryLeaderElector leaderElector, ILogger&lt;WorkManagerRecoveryHostedService&gt; logger, RecoveryState recoveryState, WorkerRecoveryOptions options)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>workManager</code> <a class="xref" href="Virtufin.WorkManager.Components.WorkManager.html">WorkManager</a></dt>
+    <dt><code>executor</code> <a class="xref" href="Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.html">IWorkerRecoveryExecutor</a></dt>
+    <dd></dd>
+    <dt><code>leaderElector</code> <a class="xref" href="Virtufin.WorkManager.Services.IRecoveryLeaderElector.html">IRecoveryLeaderElector</a></dt>
     <dd></dd>
     <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html">WorkManagerRecoveryHostedService</a>&gt;</dt>
     <dd></dd>
     <dt><code>recoveryState</code> <a class="xref" href="Virtufin.WorkManager.Services.RecoveryState.html">RecoveryState</a></dt>
+    <dd></dd>
+    <dt><code>options</code> <a class="xref" href="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html">WorkerRecoveryOptions</a></dt>
     <dd></dd>
   </dl>
 

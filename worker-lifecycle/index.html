@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/31855087c5923849fac68d469246409889f9ae0c"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/241debb3a04b2c7680f0b70a07d8af23454cb13d"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 3185508">
+       title="View commit 241debb">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3185508</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">241debb</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/31855087c5923849fac68d469246409889f9ae0c"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/241debb3a04b2c7680f0b70a07d8af23454cb13d"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 3185508">
+       title="View commit 241debb">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3185508</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">241debb</text>
       </svg>
     </a>
 </div>
@@ -565,6 +565,34 @@
     
   
     Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Service Integration
   
 
     
@@ -937,6 +965,28 @@
     <span class="md-ellipsis">
       
         How recovery works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-instance-safety-leader-election" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-instance safety (leader election)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-automatic-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disabling automatic recovery
       
     </span>
   </a>
@@ -1756,6 +1806,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#multi-instance-safety-leader-election" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-instance safety (leader election)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-automatic-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disabling automatic recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#error-handling" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1941,6 +2013,27 @@
 <li>Sets status to <code>Running</code></li>
 <li>After recovery, the health check reports <code>Healthy</code> and Kestrel starts serving traffic</li>
 </ol>
+<h3 id="multi-instance-safety-leader-election">Multi-instance safety (leader election)</h3>
+<p>When multiple WorkManager instances start concurrently (rolling
+updates, HPA scaling, pod rescheduling), only one instance performs
+recovery — the others would otherwise load every worker's engine
+into RAM, wasting memory and CPU (see WM #4 — the N×W engine-load
+problem).</p>
+<p>The <code>RecoveryLeaderElector</code> acquires a CAS lease on the Dapr state
+store key <code>workmanager/recovery/leader</code> (TTL <code>WORKER_RECOVERY_LEASE_TTL_SECONDS</code>,
+default 5 minutes). The instance that wins the lease performs
+recovery; the others mark recovery complete locally and rely on
+the normal message-flow path. If the leader crashes mid-recovery,
+the lease auto-expires and another instance can take over after
+<code>WORKER_RECOVERY_ACQUIRE_TIMEOUT_SECONDS</code>.</p>
+<p>The lease is released in a <code>finally</code> block when the leader finishes
+(success or failure), so the next scale-up cycle acquires it
+promptly rather than waiting for the TTL.</p>
+<h3 id="disabling-automatic-recovery">Disabling automatic recovery</h3>
+<p>Set <code>WORKER_RECOVERY_ON_START=false</code> to opt out. The health check
+still reports <code>Healthy</code> (operators have explicitly chosen this
+mode), and workers must be restored manually via the <code>RecoverWorkers</code>
+gRPC endpoint.</p>
 <h3 id="error-handling">Error handling</h3>
 <ul>
 <li>Recovery failures are surfaced as structured <code>Error</code>-level log events with per-worker detail</li>
@@ -1950,7 +2043,7 @@
 </ul>
 <h3 id="monitoring">Monitoring</h3>
 <p>The <code>/health</code> endpoint includes a <code>recovery</code> health check that reports:
-- <code>Healthy</code> — all workers recovered successfully
+- <code>Healthy</code> — all workers recovered successfully (or recovery disabled by config, or another instance is the recovery leader)
 - <code>Degraded</code> — recovery still in progress (during startup)
 - <code>Unhealthy</code> — recovery failed (pod will not become ready)</p>
 <h2 id="history-tracking">History Tracking</h2>
@@ -1989,21 +2082,22 @@
 </code></pre></div>
 <p><strong>Behavior:</strong>
 - Only one worker in a group processes a message at a time
-- Distributed lock acquired before processing with exponential backoff retry (500ms base, max 3 attempts)
+- Distributed lock acquired before processing with exponential backoff retry (default 500ms base, default max 3 attempts — both tunable via <code>GROUP_LOCK_RETRY_BASE_DELAY_MS</code> and <code>GROUP_LOCK_MAX_RETRIES</code>, see <a href="configuration/#group-lock-tuning">Configuration</a>)
 - Each lock acquisition increments a monotonic <strong>fencing token</strong>, preventing lock theft races
 - Lock released after processing (or on error)
 - Lock max age is 30 seconds (stale locks can be stolen if the original holder hasn't made writes)
 - If lock cannot be acquired after all retries, a <code>LockContentionException</code> is thrown, which causes Dapr to nack the message and redeliver it later</p>
-<p><strong>Retry semantics:</strong>
-- Lock contention triggers a <strong>nack</strong> (negative acknowledgement), NOT a silent skip
+<p><strong>Retry semantics (audit, June 2026):</strong>
+- The subscribe handler returns <code>TopicResponseAction.Retry</code> on <code>LockContentionException</code> (see <code>Components/WorkManager.cs:SubscribeToTopicAsync</code>). The Dapr SDK sends a negative acknowledgement with <code>retry=true</code>, which causes Dapr to redeliver the message after backoff. <strong>No message is silently dropped on lock contention.</strong>
 - Dapr redelivers the message with exponential backoff (configured in the pubsub component)
 - After exhausting all Dapr redeliveries (<code>maxRedeliveryCount: 3</code>), messages are routed to the dead-letter topic
-- Monitor the dead-letter topic for alerting on persistent lock contention</p>
+- Monitor the dead-letter topic for alerting on persistent lock contention
+- The acquire-loop retries are <strong>independent</strong> of the Dapr redelivery retries: the former exhausts the local in-process backoff (default 3 attempts with 500ms → 1s → 2s backoff), then throws, then Dapr handles redelivery at the broker level</p>
 <p><strong>Lock lifecycle:</strong>
 <div class="highlight"><pre><span></span><code>Message received
      │
      ▼
-AcquireGroupLock() ── retry (500ms → 1s → 2s, max 3)
+AcquireGroupLock() ── retry (base × 2^attempt, max GROUP_LOCK_MAX_RETRIES)
      │
      ├── Lock acquired (fencing token incremented) ──► Process message ──► ReleaseLock()
      │
@@ -2011,7 +2105,7 @@ AcquireGroupLock() ── retry (500ms → 1s → 2s, max 3)
      │
      ├── Lock stolen from stale holder ──► fence check: if owner wrote, abort steal
      │
-     └── Exhausted retries ──► LockContentionException ──► Dapr nack ──► redeliver ──► dead-letter topic
+     └── Exhausted retries ──► LockContentionException ──► TopicResponseAction.Retry ──► Dapr nack(retry=true) ──► redeliver ──► dead-letter topic (after Dapr maxRedeliveryCount)
 </code></pre></div></p>
 <p><strong>Fencing token:</strong> Each lock includes a monotonically increasing integer. Before a stale lock is stolen, the new owner checks whether the original owner made writes under the old fence token. If writes were made, the lock theft is aborted, preventing dual-processing of the same message. This protects against slow-but-valid workers (e.g., first-time Roslyn compilation) from having their lock stolen mid-processing.</p>
 <h2 id="cleanup-on-disposal">Cleanup on Disposal</h2>
@@ -2073,7 +2167,7 @@ AcquireGroupLock() ── retry (500ms → 1s → 2s, max 3)
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-06-26T01:10:03Z</span>
+  <span style="display:table-cell;text-align:right">2026-06-26T21:39:08Z</span>
 </div>
 
     </div>

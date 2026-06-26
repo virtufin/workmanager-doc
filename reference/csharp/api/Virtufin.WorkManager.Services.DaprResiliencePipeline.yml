@@ -5,7 +5,7 @@ items:
   id: DaprResiliencePipeline
   parent: Virtufin.WorkManager.Services
   children:
-  - Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline})
+  - Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline},Virtufin.WorkManager.Configuration.DaprResilienceOptions)
   - Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken
   - Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
   - Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
@@ -23,11 +23,14 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DaprResiliencePipeline
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 15
+    startLine: 17
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
-  summary: Provides resilience policies for Dapr operations with retry and circuit breaker.
+  summary: >-
+    Provides resilience policies for Dapr operations with retry and circuit breaker.
+
+    Constants are configurable via <xref href="Virtufin.WorkManager.Configuration.DaprResilienceOptions" data-throw-if-not-resolved="false"></xref> (env-var-driven).
   example: []
   syntax:
     content: public sealed class DaprResiliencePipeline
@@ -59,7 +62,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CircuitBroken
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 29
+    startLine: 27
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -72,16 +75,16 @@ items:
       type: System.Boolean
     content.vb: Public ReadOnly Property CircuitBroken As Boolean
   overload: Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken*
-- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline})
-  commentId: M:Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline})
-  id: '#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline})'
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline},Virtufin.WorkManager.Configuration.DaprResilienceOptions)
+  commentId: M:Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline},Virtufin.WorkManager.Configuration.DaprResilienceOptions)
+  id: '#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline},Virtufin.WorkManager.Configuration.DaprResilienceOptions)'
   parent: Virtufin.WorkManager.Services.DaprResiliencePipeline
   langs:
   - csharp
   - vb
-  name: DaprResiliencePipeline(ILogger<DaprResiliencePipeline>)
-  nameWithType: DaprResiliencePipeline.DaprResiliencePipeline(ILogger<DaprResiliencePipeline>)
-  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.DaprResiliencePipeline(Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.DaprResiliencePipeline>)
+  name: DaprResiliencePipeline(ILogger<DaprResiliencePipeline>, DaprResilienceOptions)
+  nameWithType: DaprResiliencePipeline.DaprResiliencePipeline(ILogger<DaprResiliencePipeline>, DaprResilienceOptions)
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.DaprResiliencePipeline(Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.DaprResiliencePipeline>, Virtufin.WorkManager.Configuration.DaprResilienceOptions)
   type: Constructor
   source:
     remote:
@@ -90,22 +93,24 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 34
+    startLine: 32
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
-  summary: Creates a new DaprResiliencePipeline.
+  summary: Creates a new DaprResiliencePipeline with the supplied options.
   example: []
   syntax:
-    content: public DaprResiliencePipeline(ILogger<DaprResiliencePipeline> logger)
+    content: public DaprResiliencePipeline(ILogger<DaprResiliencePipeline> logger, DaprResilienceOptions options)
     parameters:
     - id: logger
       type: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline}
-    content.vb: Public Sub New(logger As ILogger(Of DaprResiliencePipeline))
+    - id: options
+      type: Virtufin.WorkManager.Configuration.DaprResilienceOptions
+    content.vb: Public Sub New(logger As ILogger(Of DaprResiliencePipeline), options As DaprResilienceOptions)
   overload: Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor*
-  nameWithType.vb: DaprResiliencePipeline.New(ILogger(Of DaprResiliencePipeline))
-  fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.New(Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.DaprResiliencePipeline))
-  name.vb: New(ILogger(Of DaprResiliencePipeline))
+  nameWithType.vb: DaprResiliencePipeline.New(ILogger(Of DaprResiliencePipeline), DaprResilienceOptions)
+  fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.New(Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.DaprResiliencePipeline), Virtufin.WorkManager.Configuration.DaprResilienceOptions)
+  name.vb: New(ILogger(Of DaprResiliencePipeline), DaprResilienceOptions)
 - uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
   commentId: M:Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
   id: ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
@@ -124,7 +129,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ExecuteAsync
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 87
+    startLine: 86
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -164,7 +169,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ExecuteAsync
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 95
+    startLine: 94
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -185,6 +190,13 @@ items:
   fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task), System.Threading.CancellationToken)
   name.vb: ExecuteAsync(Func(Of CancellationToken, Task), CancellationToken)
 references:
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions
+  commentId: T:Virtufin.WorkManager.Configuration.DaprResilienceOptions
+  parent: Virtufin.WorkManager.Configuration
+  href: Virtufin.WorkManager.Configuration.DaprResilienceOptions.html
+  name: DaprResilienceOptions
+  nameWithType: DaprResilienceOptions
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions
 - uid: Virtufin.WorkManager.Services
   commentId: N:Virtufin.WorkManager.Services
   href: Virtufin.html
@@ -421,6 +433,36 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: Virtufin.WorkManager.Configuration
+  commentId: N:Virtufin.WorkManager.Configuration
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Configuration
+  nameWithType: Virtufin.WorkManager.Configuration
+  fullName: Virtufin.WorkManager.Configuration
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Configuration
+    name: Configuration
+    href: Virtufin.WorkManager.Configuration.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Configuration
+    name: Configuration
+    href: Virtufin.WorkManager.Configuration.html
 - uid: System
   commentId: N:System
   isExternal: true
@@ -447,7 +489,7 @@ references:
   name.vb: Boolean
 - uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor*
   commentId: Overload:Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor
-  href: Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline__ctor_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_DaprResiliencePipeline__
+  href: Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline__ctor_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_DaprResiliencePipeline__Virtufin_WorkManager_Configuration_DaprResilienceOptions_
   name: DaprResiliencePipeline
   nameWithType: DaprResiliencePipeline.DaprResiliencePipeline
   fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.DaprResiliencePipeline

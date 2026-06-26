@@ -5,8 +5,11 @@ items:
   id: Virtufin.WorkManager.Configuration
   children:
   - Virtufin.WorkManager.Configuration.DaprConstants
+  - Virtufin.WorkManager.Configuration.DaprResilienceOptions
+  - Virtufin.WorkManager.Configuration.GroupLockOptions
   - Virtufin.WorkManager.Configuration.PortConstants
   - Virtufin.WorkManager.Configuration.Topics
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
   langs:
   - csharp
   - vb
@@ -23,6 +26,20 @@ references:
   name: DaprConstants
   nameWithType: DaprConstants
   fullName: Virtufin.WorkManager.Configuration.DaprConstants
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions
+  commentId: T:Virtufin.WorkManager.Configuration.DaprResilienceOptions
+  parent: Virtufin.WorkManager.Configuration
+  href: Virtufin.WorkManager.Configuration.DaprResilienceOptions.html
+  name: DaprResilienceOptions
+  nameWithType: DaprResilienceOptions
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions
+- uid: Virtufin.WorkManager.Configuration.GroupLockOptions
+  commentId: T:Virtufin.WorkManager.Configuration.GroupLockOptions
+  parent: Virtufin.WorkManager.Configuration
+  href: Virtufin.WorkManager.Configuration.GroupLockOptions.html
+  name: GroupLockOptions
+  nameWithType: GroupLockOptions
+  fullName: Virtufin.WorkManager.Configuration.GroupLockOptions
 - uid: Virtufin.WorkManager.Configuration.PortConstants
   commentId: T:Virtufin.WorkManager.Configuration.PortConstants
   href: Virtufin.WorkManager.Configuration.PortConstants.html
@@ -35,3 +52,40 @@ references:
   name: Topics
   nameWithType: Topics
   fullName: Virtufin.WorkManager.Configuration.Topics
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  commentId: T:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  parent: Virtufin.WorkManager.Configuration
+  href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html
+  name: WorkerRecoveryOptions
+  nameWithType: WorkerRecoveryOptions
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+- uid: Virtufin.WorkManager.Configuration
+  commentId: N:Virtufin.WorkManager.Configuration
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Configuration
+  nameWithType: Virtufin.WorkManager.Configuration
+  fullName: Virtufin.WorkManager.Configuration
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Configuration
+    name: Configuration
+    href: Virtufin.WorkManager.Configuration.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Configuration
+    name: Configuration
+    href: Virtufin.WorkManager.Configuration.html

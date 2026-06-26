@@ -70,15 +70,15 @@ references:
   commentId: T:Virtufin.WorkManager.Components.WorkManager
   fullName: Virtufin.WorkManager.Components.WorkManager
   nameWithType: WorkManager
-- uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)
-  name: WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, string?, string?, string?)
-  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Dapr_Messaging_PublishSubscribe_DaprPublishSubscribeClient_Dapr_Client_DaprClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_System_String_System_String_System_String_
-  commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)
-  name.vb: New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, String, String, String)
-  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>, Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, string?, string?, string?)
-  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager), Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, String, String, String)
-  nameWithType: WorkManager.WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, string?, string?, string?)
-  nameWithType.vb: WorkManager.New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, String, String, String)
+- uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String,Virtufin.WorkManager.Configuration.GroupLockOptions)
+  name: WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, string?, string?, string?, GroupLockOptions?)
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Dapr_Messaging_PublishSubscribe_DaprPublishSubscribeClient_Dapr_Client_DaprClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_System_String_System_String_System_String_Virtufin_WorkManager_Configuration_GroupLockOptions_
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String,Virtufin.WorkManager.Configuration.GroupLockOptions)
+  name.vb: New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, String, String, String, GroupLockOptions)
+  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>, Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, string?, string?, string?, Virtufin.WorkManager.Configuration.GroupLockOptions?)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager), Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, String, String, String, Virtufin.WorkManager.Configuration.GroupLockOptions)
+  nameWithType: WorkManager.WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, string?, string?, string?, GroupLockOptions?)
+  nameWithType.vb: WorkManager.New(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, String, String, String, GroupLockOptions)
 - uid: Virtufin.WorkManager.Components.WorkManager.#ctor*
   name: WorkManager
   href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_
@@ -304,6 +304,200 @@ references:
   commentId: F:Virtufin.WorkManager.Configuration.DaprConstants.StateStoreNameKey
   fullName: Virtufin.WorkManager.Configuration.DaprConstants.StateStoreNameKey
   nameWithType: DaprConstants.StateStoreNameKey
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions
+  name: DaprResilienceOptions
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html
+  commentId: T:Virtufin.WorkManager.Configuration.DaprResilienceOptions
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions
+  nameWithType: DaprResilienceOptions
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerBreakDurationSeconds
+  name: CircuitBreakerBreakDurationSeconds
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_CircuitBreakerBreakDurationSeconds
+  commentId: P:Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerBreakDurationSeconds
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerBreakDurationSeconds
+  nameWithType: DaprResilienceOptions.CircuitBreakerBreakDurationSeconds
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerBreakDurationSeconds*
+  name: CircuitBreakerBreakDurationSeconds
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_CircuitBreakerBreakDurationSeconds_
+  commentId: Overload:Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerBreakDurationSeconds
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerBreakDurationSeconds
+  nameWithType: DaprResilienceOptions.CircuitBreakerBreakDurationSeconds
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerBreakDurationSecondsEnvVar
+  name: CircuitBreakerBreakDurationSecondsEnvVar
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_CircuitBreakerBreakDurationSecondsEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerBreakDurationSecondsEnvVar
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerBreakDurationSecondsEnvVar
+  nameWithType: DaprResilienceOptions.CircuitBreakerBreakDurationSecondsEnvVar
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerMinimumThroughput
+  name: CircuitBreakerMinimumThroughput
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_CircuitBreakerMinimumThroughput
+  commentId: P:Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerMinimumThroughput
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerMinimumThroughput
+  nameWithType: DaprResilienceOptions.CircuitBreakerMinimumThroughput
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerMinimumThroughput*
+  name: CircuitBreakerMinimumThroughput
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_CircuitBreakerMinimumThroughput_
+  commentId: Overload:Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerMinimumThroughput
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerMinimumThroughput
+  nameWithType: DaprResilienceOptions.CircuitBreakerMinimumThroughput
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerMinimumThroughputEnvVar
+  name: CircuitBreakerMinimumThroughputEnvVar
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_CircuitBreakerMinimumThroughputEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerMinimumThroughputEnvVar
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.CircuitBreakerMinimumThroughputEnvVar
+  nameWithType: DaprResilienceOptions.CircuitBreakerMinimumThroughputEnvVar
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.DefaultCircuitBreakerBreakDurationSeconds
+  name: DefaultCircuitBreakerBreakDurationSeconds
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_DefaultCircuitBreakerBreakDurationSeconds
+  commentId: F:Virtufin.WorkManager.Configuration.DaprResilienceOptions.DefaultCircuitBreakerBreakDurationSeconds
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.DefaultCircuitBreakerBreakDurationSeconds
+  nameWithType: DaprResilienceOptions.DefaultCircuitBreakerBreakDurationSeconds
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.DefaultCircuitBreakerMinimumThroughput
+  name: DefaultCircuitBreakerMinimumThroughput
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_DefaultCircuitBreakerMinimumThroughput
+  commentId: F:Virtufin.WorkManager.Configuration.DaprResilienceOptions.DefaultCircuitBreakerMinimumThroughput
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.DefaultCircuitBreakerMinimumThroughput
+  nameWithType: DaprResilienceOptions.DefaultCircuitBreakerMinimumThroughput
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.DefaultRetryAttempts
+  name: DefaultRetryAttempts
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_DefaultRetryAttempts
+  commentId: F:Virtufin.WorkManager.Configuration.DaprResilienceOptions.DefaultRetryAttempts
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.DefaultRetryAttempts
+  nameWithType: DaprResilienceOptions.DefaultRetryAttempts
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.DefaultRetryBaseDelayMs
+  name: DefaultRetryBaseDelayMs
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_DefaultRetryBaseDelayMs
+  commentId: F:Virtufin.WorkManager.Configuration.DaprResilienceOptions.DefaultRetryBaseDelayMs
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.DefaultRetryBaseDelayMs
+  nameWithType: DaprResilienceOptions.DefaultRetryBaseDelayMs
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.FromEnvironment(System.Func{System.String,System.String})
+  name: FromEnvironment(Func<string, string?>)
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_FromEnvironment_System_Func_System_String_System_String__
+  commentId: M:Virtufin.WorkManager.Configuration.DaprResilienceOptions.FromEnvironment(System.Func{System.String,System.String})
+  name.vb: FromEnvironment(Func(Of String, String))
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.FromEnvironment(System.Func<string, string?>)
+  fullName.vb: Virtufin.WorkManager.Configuration.DaprResilienceOptions.FromEnvironment(System.Func(Of String, String))
+  nameWithType: DaprResilienceOptions.FromEnvironment(Func<string, string?>)
+  nameWithType.vb: DaprResilienceOptions.FromEnvironment(Func(Of String, String))
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.FromEnvironment*
+  name: FromEnvironment
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_FromEnvironment_
+  commentId: Overload:Virtufin.WorkManager.Configuration.DaprResilienceOptions.FromEnvironment
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.FromEnvironment
+  nameWithType: DaprResilienceOptions.FromEnvironment
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryAttempts
+  name: RetryAttempts
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_RetryAttempts
+  commentId: P:Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryAttempts
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryAttempts
+  nameWithType: DaprResilienceOptions.RetryAttempts
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryAttempts*
+  name: RetryAttempts
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_RetryAttempts_
+  commentId: Overload:Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryAttempts
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryAttempts
+  nameWithType: DaprResilienceOptions.RetryAttempts
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryAttemptsEnvVar
+  name: RetryAttemptsEnvVar
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_RetryAttemptsEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryAttemptsEnvVar
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryAttemptsEnvVar
+  nameWithType: DaprResilienceOptions.RetryAttemptsEnvVar
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryBaseDelayMs
+  name: RetryBaseDelayMs
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_RetryBaseDelayMs
+  commentId: P:Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryBaseDelayMs
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryBaseDelayMs
+  nameWithType: DaprResilienceOptions.RetryBaseDelayMs
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryBaseDelayMs*
+  name: RetryBaseDelayMs
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_RetryBaseDelayMs_
+  commentId: Overload:Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryBaseDelayMs
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryBaseDelayMs
+  nameWithType: DaprResilienceOptions.RetryBaseDelayMs
+- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryBaseDelayMsEnvVar
+  name: RetryBaseDelayMsEnvVar
+  href: api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html#Virtufin_WorkManager_Configuration_DaprResilienceOptions_RetryBaseDelayMsEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryBaseDelayMsEnvVar
+  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions.RetryBaseDelayMsEnvVar
+  nameWithType: DaprResilienceOptions.RetryBaseDelayMsEnvVar
+- uid: Virtufin.WorkManager.Configuration.GroupLockOptions
+  name: GroupLockOptions
+  href: api/Virtufin.WorkManager.Configuration.GroupLockOptions.html
+  commentId: T:Virtufin.WorkManager.Configuration.GroupLockOptions
+  fullName: Virtufin.WorkManager.Configuration.GroupLockOptions
+  nameWithType: GroupLockOptions
+- uid: Virtufin.WorkManager.Configuration.GroupLockOptions.DefaultMaxRetries
+  name: DefaultMaxRetries
+  href: api/Virtufin.WorkManager.Configuration.GroupLockOptions.html#Virtufin_WorkManager_Configuration_GroupLockOptions_DefaultMaxRetries
+  commentId: F:Virtufin.WorkManager.Configuration.GroupLockOptions.DefaultMaxRetries
+  fullName: Virtufin.WorkManager.Configuration.GroupLockOptions.DefaultMaxRetries
+  nameWithType: GroupLockOptions.DefaultMaxRetries
+- uid: Virtufin.WorkManager.Configuration.GroupLockOptions.DefaultRetryBaseDelayMs
+  name: DefaultRetryBaseDelayMs
+  href: api/Virtufin.WorkManager.Configuration.GroupLockOptions.html#Virtufin_WorkManager_Configuration_GroupLockOptions_DefaultRetryBaseDelayMs
+  commentId: F:Virtufin.WorkManager.Configuration.GroupLockOptions.DefaultRetryBaseDelayMs
+  fullName: Virtufin.WorkManager.Configuration.GroupLockOptions.DefaultRetryBaseDelayMs
+  nameWithType: GroupLockOptions.DefaultRetryBaseDelayMs
+- uid: Virtufin.WorkManager.Configuration.GroupLockOptions.FromEnvironment(System.Func{System.String,System.String})
+  name: FromEnvironment(Func<string, string?>)
+  href: api/Virtufin.WorkManager.Configuration.GroupLockOptions.html#Virtufin_WorkManager_Configuration_GroupLockOptions_FromEnvironment_System_Func_System_String_System_String__
+  commentId: M:Virtufin.WorkManager.Configuration.GroupLockOptions.FromEnvironment(System.Func{System.String,System.String})
+  name.vb: FromEnvironment(Func(Of String, String))
+  fullName: Virtufin.WorkManager.Configuration.GroupLockOptions.FromEnvironment(System.Func<string, string?>)
+  fullName.vb: Virtufin.WorkManager.Configuration.GroupLockOptions.FromEnvironment(System.Func(Of String, String))
+  nameWithType: GroupLockOptions.FromEnvironment(Func<string, string?>)
+  nameWithType.vb: GroupLockOptions.FromEnvironment(Func(Of String, String))
+- uid: Virtufin.WorkManager.Configuration.GroupLockOptions.FromEnvironment*
+  name: FromEnvironment
+  href: api/Virtufin.WorkManager.Configuration.GroupLockOptions.html#Virtufin_WorkManager_Configuration_GroupLockOptions_FromEnvironment_
+  commentId: Overload:Virtufin.WorkManager.Configuration.GroupLockOptions.FromEnvironment
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.GroupLockOptions.FromEnvironment
+  nameWithType: GroupLockOptions.FromEnvironment
+- uid: Virtufin.WorkManager.Configuration.GroupLockOptions.MaxRetries
+  name: MaxRetries
+  href: api/Virtufin.WorkManager.Configuration.GroupLockOptions.html#Virtufin_WorkManager_Configuration_GroupLockOptions_MaxRetries
+  commentId: P:Virtufin.WorkManager.Configuration.GroupLockOptions.MaxRetries
+  fullName: Virtufin.WorkManager.Configuration.GroupLockOptions.MaxRetries
+  nameWithType: GroupLockOptions.MaxRetries
+- uid: Virtufin.WorkManager.Configuration.GroupLockOptions.MaxRetries*
+  name: MaxRetries
+  href: api/Virtufin.WorkManager.Configuration.GroupLockOptions.html#Virtufin_WorkManager_Configuration_GroupLockOptions_MaxRetries_
+  commentId: Overload:Virtufin.WorkManager.Configuration.GroupLockOptions.MaxRetries
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.GroupLockOptions.MaxRetries
+  nameWithType: GroupLockOptions.MaxRetries
+- uid: Virtufin.WorkManager.Configuration.GroupLockOptions.MaxRetriesEnvVar
+  name: MaxRetriesEnvVar
+  href: api/Virtufin.WorkManager.Configuration.GroupLockOptions.html#Virtufin_WorkManager_Configuration_GroupLockOptions_MaxRetriesEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.GroupLockOptions.MaxRetriesEnvVar
+  fullName: Virtufin.WorkManager.Configuration.GroupLockOptions.MaxRetriesEnvVar
+  nameWithType: GroupLockOptions.MaxRetriesEnvVar
+- uid: Virtufin.WorkManager.Configuration.GroupLockOptions.RetryBaseDelayMs
+  name: RetryBaseDelayMs
+  href: api/Virtufin.WorkManager.Configuration.GroupLockOptions.html#Virtufin_WorkManager_Configuration_GroupLockOptions_RetryBaseDelayMs
+  commentId: P:Virtufin.WorkManager.Configuration.GroupLockOptions.RetryBaseDelayMs
+  fullName: Virtufin.WorkManager.Configuration.GroupLockOptions.RetryBaseDelayMs
+  nameWithType: GroupLockOptions.RetryBaseDelayMs
+- uid: Virtufin.WorkManager.Configuration.GroupLockOptions.RetryBaseDelayMs*
+  name: RetryBaseDelayMs
+  href: api/Virtufin.WorkManager.Configuration.GroupLockOptions.html#Virtufin_WorkManager_Configuration_GroupLockOptions_RetryBaseDelayMs_
+  commentId: Overload:Virtufin.WorkManager.Configuration.GroupLockOptions.RetryBaseDelayMs
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.GroupLockOptions.RetryBaseDelayMs
+  nameWithType: GroupLockOptions.RetryBaseDelayMs
+- uid: Virtufin.WorkManager.Configuration.GroupLockOptions.RetryBaseDelayMsEnvVar
+  name: RetryBaseDelayMsEnvVar
+  href: api/Virtufin.WorkManager.Configuration.GroupLockOptions.html#Virtufin_WorkManager_Configuration_GroupLockOptions_RetryBaseDelayMsEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.GroupLockOptions.RetryBaseDelayMsEnvVar
+  fullName: Virtufin.WorkManager.Configuration.GroupLockOptions.RetryBaseDelayMsEnvVar
+  nameWithType: GroupLockOptions.RetryBaseDelayMsEnvVar
 - uid: Virtufin.WorkManager.Configuration.PortConstants
   name: PortConstants
   href: api/Virtufin.WorkManager.Configuration.PortConstants.html
@@ -370,6 +564,103 @@ references:
   commentId: F:Virtufin.WorkManager.Configuration.Topics.WorkerStatus
   fullName: Virtufin.WorkManager.Configuration.Topics.WorkerStatus
   nameWithType: Topics.WorkerStatus
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  name: WorkerRecoveryOptions
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html
+  commentId: T:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  nameWithType: WorkerRecoveryOptions
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+  name: AcquireTimeoutSeconds
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_AcquireTimeoutSeconds
+  commentId: P:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+  nameWithType: WorkerRecoveryOptions.AcquireTimeoutSeconds
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds*
+  name: AcquireTimeoutSeconds
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_AcquireTimeoutSeconds_
+  commentId: Overload:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+  nameWithType: WorkerRecoveryOptions.AcquireTimeoutSeconds
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar
+  name: AcquireTimeoutSecondsEnvVar
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_AcquireTimeoutSecondsEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar
+  nameWithType: WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
+  name: DefaultAcquireTimeoutSeconds
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_DefaultAcquireTimeoutSeconds
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
+  nameWithType: WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultEnabled
+  name: DefaultEnabled
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_DefaultEnabled
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultEnabled
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultEnabled
+  nameWithType: WorkerRecoveryOptions.DefaultEnabled
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultLeaseTtlSeconds
+  name: DefaultLeaseTtlSeconds
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_DefaultLeaseTtlSeconds
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultLeaseTtlSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultLeaseTtlSeconds
+  nameWithType: WorkerRecoveryOptions.DefaultLeaseTtlSeconds
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+  name: Enabled
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_Enabled
+  commentId: P:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+  nameWithType: WorkerRecoveryOptions.Enabled
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled*
+  name: Enabled
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_Enabled_
+  commentId: Overload:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
+  nameWithType: WorkerRecoveryOptions.Enabled
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.EnabledEnvVar
+  name: EnabledEnvVar
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_EnabledEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.EnabledEnvVar
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.EnabledEnvVar
+  nameWithType: WorkerRecoveryOptions.EnabledEnvVar
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment(System.Func{System.String,System.String})
+  name: FromEnvironment(Func<string, string?>)
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_FromEnvironment_System_Func_System_String_System_String__
+  commentId: M:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment(System.Func{System.String,System.String})
+  name.vb: FromEnvironment(Func(Of String, String))
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment(System.Func<string, string?>)
+  fullName.vb: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment(System.Func(Of String, String))
+  nameWithType: WorkerRecoveryOptions.FromEnvironment(Func<string, string?>)
+  nameWithType.vb: WorkerRecoveryOptions.FromEnvironment(Func(Of String, String))
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment*
+  name: FromEnvironment
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_FromEnvironment_
+  commentId: Overload:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment
+  nameWithType: WorkerRecoveryOptions.FromEnvironment
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds
+  name: LeaseTtlSeconds
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_LeaseTtlSeconds
+  commentId: P:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds
+  nameWithType: WorkerRecoveryOptions.LeaseTtlSeconds
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds*
+  name: LeaseTtlSeconds
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_LeaseTtlSeconds_
+  commentId: Overload:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds
+  nameWithType: WorkerRecoveryOptions.LeaseTtlSeconds
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSecondsEnvVar
+  name: LeaseTtlSecondsEnvVar
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_LeaseTtlSecondsEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSecondsEnvVar
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSecondsEnvVar
+  nameWithType: WorkerRecoveryOptions.LeaseTtlSecondsEnvVar
 - uid: Virtufin.WorkManager.Contracts
   name: Virtufin.WorkManager.Contracts
   href: api/Virtufin.WorkManager.Contracts.html
@@ -1686,15 +1977,15 @@ references:
   commentId: T:Virtufin.WorkManager.Services.DaprResiliencePipeline
   fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline
   nameWithType: DaprResiliencePipeline
-- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline})
-  name: DaprResiliencePipeline(ILogger<DaprResiliencePipeline>)
-  href: api/Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline__ctor_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_DaprResiliencePipeline__
-  commentId: M:Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline})
-  name.vb: New(ILogger(Of DaprResiliencePipeline))
-  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.DaprResiliencePipeline(Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.DaprResiliencePipeline>)
-  fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.New(Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.DaprResiliencePipeline))
-  nameWithType: DaprResiliencePipeline.DaprResiliencePipeline(ILogger<DaprResiliencePipeline>)
-  nameWithType.vb: DaprResiliencePipeline.New(ILogger(Of DaprResiliencePipeline))
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline},Virtufin.WorkManager.Configuration.DaprResilienceOptions)
+  name: DaprResiliencePipeline(ILogger<DaprResiliencePipeline>, DaprResilienceOptions)
+  href: api/Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline__ctor_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_DaprResiliencePipeline__Virtufin_WorkManager_Configuration_DaprResilienceOptions_
+  commentId: M:Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline},Virtufin.WorkManager.Configuration.DaprResilienceOptions)
+  name.vb: New(ILogger(Of DaprResiliencePipeline), DaprResilienceOptions)
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.DaprResiliencePipeline(Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.DaprResiliencePipeline>, Virtufin.WorkManager.Configuration.DaprResilienceOptions)
+  fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.New(Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.DaprResiliencePipeline), Virtufin.WorkManager.Configuration.DaprResilienceOptions)
+  nameWithType: DaprResiliencePipeline.DaprResiliencePipeline(ILogger<DaprResiliencePipeline>, DaprResilienceOptions)
+  nameWithType.vb: DaprResiliencePipeline.New(ILogger(Of DaprResiliencePipeline), DaprResilienceOptions)
 - uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor*
   name: DaprResiliencePipeline
   href: api/Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline__ctor_
@@ -1743,6 +2034,134 @@ references:
   fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(Of T)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of T)), System.Threading.CancellationToken)
   nameWithType: DaprResiliencePipeline.ExecuteAsync<T>(Func<CancellationToken, Task<T>>, CancellationToken)
   nameWithType.vb: DaprResiliencePipeline.ExecuteAsync(Of T)(Func(Of CancellationToken, Task(Of T)), CancellationToken)
+- uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector
+  name: IRecoveryLeaderElector
+  href: api/Virtufin.WorkManager.Services.IRecoveryLeaderElector.html
+  commentId: T:Virtufin.WorkManager.Services.IRecoveryLeaderElector
+  fullName: Virtufin.WorkManager.Services.IRecoveryLeaderElector
+  nameWithType: IRecoveryLeaderElector
+- uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync
+  name: ReleaseLeaseAsync()
+  href: api/Virtufin.WorkManager.Services.IRecoveryLeaderElector.html#Virtufin_WorkManager_Services_IRecoveryLeaderElector_ReleaseLeaseAsync
+  commentId: M:Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync
+  fullName: Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync()
+  nameWithType: IRecoveryLeaderElector.ReleaseLeaseAsync()
+- uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync*
+  name: ReleaseLeaseAsync
+  href: api/Virtufin.WorkManager.Services.IRecoveryLeaderElector.html#Virtufin_WorkManager_Services_IRecoveryLeaderElector_ReleaseLeaseAsync_
+  commentId: Overload:Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync
+  nameWithType: IRecoveryLeaderElector.ReleaseLeaseAsync
+- uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync(System.Threading.CancellationToken)
+  name: TryAcquireLeaseAsync(CancellationToken)
+  href: api/Virtufin.WorkManager.Services.IRecoveryLeaderElector.html#Virtufin_WorkManager_Services_IRecoveryLeaderElector_TryAcquireLeaseAsync_System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync(System.Threading.CancellationToken)
+  fullName: Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync(System.Threading.CancellationToken)
+  nameWithType: IRecoveryLeaderElector.TryAcquireLeaseAsync(CancellationToken)
+- uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync*
+  name: TryAcquireLeaseAsync
+  href: api/Virtufin.WorkManager.Services.IRecoveryLeaderElector.html#Virtufin_WorkManager_Services_IRecoveryLeaderElector_TryAcquireLeaseAsync_
+  commentId: Overload:Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync
+  nameWithType: IRecoveryLeaderElector.TryAcquireLeaseAsync
+- uid: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+  name: IWorkerRecoveryExecutor
+  href: api/Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.html
+  commentId: T:Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+  fullName: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+  nameWithType: IWorkerRecoveryExecutor
+- uid: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.RecoverWorkersAsync(System.Threading.CancellationToken)
+  name: RecoverWorkersAsync(CancellationToken)
+  href: api/Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.html#Virtufin_WorkManager_Services_IWorkerRecoveryExecutor_RecoverWorkersAsync_System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.RecoverWorkersAsync(System.Threading.CancellationToken)
+  fullName: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.RecoverWorkersAsync(System.Threading.CancellationToken)
+  nameWithType: IWorkerRecoveryExecutor.RecoverWorkersAsync(CancellationToken)
+- uid: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.RecoverWorkersAsync*
+  name: RecoverWorkersAsync
+  href: api/Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.html#Virtufin_WorkManager_Services_IWorkerRecoveryExecutor_RecoverWorkersAsync_
+  commentId: Overload:Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.RecoverWorkersAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.RecoverWorkersAsync
+  nameWithType: IWorkerRecoveryExecutor.RecoverWorkersAsync
+- uid: Virtufin.WorkManager.Services.LeaderLease
+  name: LeaderLease
+  href: api/Virtufin.WorkManager.Services.LeaderLease.html
+  commentId: T:Virtufin.WorkManager.Services.LeaderLease
+  fullName: Virtufin.WorkManager.Services.LeaderLease
+  nameWithType: LeaderLease
+- uid: Virtufin.WorkManager.Services.LeaderLease.#ctor(System.String,System.DateTime,System.TimeSpan)
+  name: LeaderLease(string, DateTime, TimeSpan)
+  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease__ctor_System_String_System_DateTime_System_TimeSpan_
+  commentId: M:Virtufin.WorkManager.Services.LeaderLease.#ctor(System.String,System.DateTime,System.TimeSpan)
+  name.vb: New(String, Date, TimeSpan)
+  fullName: Virtufin.WorkManager.Services.LeaderLease.LeaderLease(string, System.DateTime, System.TimeSpan)
+  fullName.vb: Virtufin.WorkManager.Services.LeaderLease.New(String, Date, System.TimeSpan)
+  nameWithType: LeaderLease.LeaderLease(string, DateTime, TimeSpan)
+  nameWithType.vb: LeaderLease.New(String, Date, TimeSpan)
+- uid: Virtufin.WorkManager.Services.LeaderLease.#ctor*
+  name: LeaderLease
+  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease__ctor_
+  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Virtufin.WorkManager.Services.LeaderLease.LeaderLease
+  fullName.vb: Virtufin.WorkManager.Services.LeaderLease.New
+  nameWithType: LeaderLease.LeaderLease
+  nameWithType.vb: LeaderLease.New
+- uid: Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
+  name: AcquiredAt
+  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_AcquiredAt
+  commentId: P:Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
+  fullName: Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
+  nameWithType: LeaderLease.AcquiredAt
+- uid: Virtufin.WorkManager.Services.LeaderLease.AcquiredAt*
+  name: AcquiredAt
+  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_AcquiredAt_
+  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
+  nameWithType: LeaderLease.AcquiredAt
+- uid: Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
+  name: ExpiresAt
+  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_ExpiresAt
+  commentId: P:Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
+  fullName: Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
+  nameWithType: LeaderLease.ExpiresAt
+- uid: Virtufin.WorkManager.Services.LeaderLease.ExpiresAt*
+  name: ExpiresAt
+  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_ExpiresAt_
+  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
+  nameWithType: LeaderLease.ExpiresAt
+- uid: Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
+  name: OwnerInstanceId
+  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_OwnerInstanceId
+  commentId: P:Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
+  fullName: Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
+  nameWithType: LeaderLease.OwnerInstanceId
+- uid: Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId*
+  name: OwnerInstanceId
+  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_OwnerInstanceId_
+  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
+  nameWithType: LeaderLease.OwnerInstanceId
+- uid: Virtufin.WorkManager.Services.LeaderLease.Ttl
+  name: Ttl
+  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_Ttl
+  commentId: P:Virtufin.WorkManager.Services.LeaderLease.Ttl
+  fullName: Virtufin.WorkManager.Services.LeaderLease.Ttl
+  nameWithType: LeaderLease.Ttl
+- uid: Virtufin.WorkManager.Services.LeaderLease.Ttl*
+  name: Ttl
+  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_Ttl_
+  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.Ttl
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.LeaderLease.Ttl
+  nameWithType: LeaderLease.Ttl
 - uid: Virtufin.WorkManager.Services.RecoveryHealthCheck
   name: RecoveryHealthCheck
   href: api/Virtufin.WorkManager.Services.RecoveryHealthCheck.html
@@ -1781,6 +2200,63 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Services.RecoveryHealthCheck.CheckHealthAsync
   nameWithType: RecoveryHealthCheck.CheckHealthAsync
+- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector
+  name: RecoveryLeaderElector
+  href: api/Virtufin.WorkManager.Services.RecoveryLeaderElector.html
+  commentId: T:Virtufin.WorkManager.Services.RecoveryLeaderElector
+  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector
+  nameWithType: RecoveryLeaderElector
+- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Dapr.Client.DaprClient,System.String,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  name: RecoveryLeaderElector(DaprClient, string, string, ILogger<RecoveryLeaderElector>, WorkerRecoveryOptions)
+  href: api/Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector__ctor_Dapr_Client_DaprClient_System_String_System_String_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_RecoveryLeaderElector__Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_
+  commentId: M:Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Dapr.Client.DaprClient,System.String,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  name.vb: New(DaprClient, String, String, ILogger(Of RecoveryLeaderElector), WorkerRecoveryOptions)
+  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector.RecoveryLeaderElector(Dapr.Client.DaprClient, string, string, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.RecoveryLeaderElector>, Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  fullName.vb: Virtufin.WorkManager.Services.RecoveryLeaderElector.New(Dapr.Client.DaprClient, String, String, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.RecoveryLeaderElector), Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  nameWithType: RecoveryLeaderElector.RecoveryLeaderElector(DaprClient, string, string, ILogger<RecoveryLeaderElector>, WorkerRecoveryOptions)
+  nameWithType.vb: RecoveryLeaderElector.New(DaprClient, String, String, ILogger(Of RecoveryLeaderElector), WorkerRecoveryOptions)
+- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor*
+  name: RecoveryLeaderElector
+  href: api/Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector__ctor_
+  commentId: Overload:Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector.RecoveryLeaderElector
+  fullName.vb: Virtufin.WorkManager.Services.RecoveryLeaderElector.New
+  nameWithType: RecoveryLeaderElector.RecoveryLeaderElector
+  nameWithType.vb: RecoveryLeaderElector.New
+- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.LeaseKey
+  name: LeaseKey
+  href: api/Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector_LeaseKey
+  commentId: F:Virtufin.WorkManager.Services.RecoveryLeaderElector.LeaseKey
+  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector.LeaseKey
+  nameWithType: RecoveryLeaderElector.LeaseKey
+- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.ReleaseLeaseAsync
+  name: ReleaseLeaseAsync()
+  href: api/Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector_ReleaseLeaseAsync
+  commentId: M:Virtufin.WorkManager.Services.RecoveryLeaderElector.ReleaseLeaseAsync
+  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector.ReleaseLeaseAsync()
+  nameWithType: RecoveryLeaderElector.ReleaseLeaseAsync()
+- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.ReleaseLeaseAsync*
+  name: ReleaseLeaseAsync
+  href: api/Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector_ReleaseLeaseAsync_
+  commentId: Overload:Virtufin.WorkManager.Services.RecoveryLeaderElector.ReleaseLeaseAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector.ReleaseLeaseAsync
+  nameWithType: RecoveryLeaderElector.ReleaseLeaseAsync
+- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.TryAcquireLeaseAsync(System.Threading.CancellationToken)
+  name: TryAcquireLeaseAsync(CancellationToken)
+  href: api/Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector_TryAcquireLeaseAsync_System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Services.RecoveryLeaderElector.TryAcquireLeaseAsync(System.Threading.CancellationToken)
+  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector.TryAcquireLeaseAsync(System.Threading.CancellationToken)
+  nameWithType: RecoveryLeaderElector.TryAcquireLeaseAsync(CancellationToken)
+- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.TryAcquireLeaseAsync*
+  name: TryAcquireLeaseAsync
+  href: api/Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector_TryAcquireLeaseAsync_
+  commentId: Overload:Virtufin.WorkManager.Services.RecoveryLeaderElector.TryAcquireLeaseAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector.TryAcquireLeaseAsync
+  nameWithType: RecoveryLeaderElector.TryAcquireLeaseAsync
 - uid: Virtufin.WorkManager.Services.RecoveryState
   name: RecoveryState
   href: api/Virtufin.WorkManager.Services.RecoveryState.html
@@ -2054,15 +2530,15 @@ references:
   commentId: T:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
   fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
   nameWithType: WorkManagerRecoveryHostedService
-- uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState)
-  name: WorkManagerRecoveryHostedService(WorkManager, ILogger<WorkManagerRecoveryHostedService>, RecoveryState)
-  href: api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html#Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__ctor_Virtufin_WorkManager_Components_WorkManager_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__Virtufin_WorkManager_Services_RecoveryState_
-  commentId: M:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState)
-  name.vb: New(WorkManager, ILogger(Of WorkManagerRecoveryHostedService), RecoveryState)
-  fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService>, Virtufin.WorkManager.Services.RecoveryState)
-  fullName.vb: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.New(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService), Virtufin.WorkManager.Services.RecoveryState)
-  nameWithType: WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService(WorkManager, ILogger<WorkManagerRecoveryHostedService>, RecoveryState)
-  nameWithType.vb: WorkManagerRecoveryHostedService.New(WorkManager, ILogger(Of WorkManagerRecoveryHostedService), RecoveryState)
+- uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Services.IWorkerRecoveryExecutor,Virtufin.WorkManager.Services.IRecoveryLeaderElector,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState,Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  name: WorkManagerRecoveryHostedService(IWorkerRecoveryExecutor, IRecoveryLeaderElector, ILogger<WorkManagerRecoveryHostedService>, RecoveryState, WorkerRecoveryOptions)
+  href: api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html#Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__ctor_Virtufin_WorkManager_Services_IWorkerRecoveryExecutor_Virtufin_WorkManager_Services_IRecoveryLeaderElector_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__Virtufin_WorkManager_Services_RecoveryState_Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor(Virtufin.WorkManager.Services.IWorkerRecoveryExecutor,Virtufin.WorkManager.Services.IRecoveryLeaderElector,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService},Virtufin.WorkManager.Services.RecoveryState,Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  name.vb: New(IWorkerRecoveryExecutor, IRecoveryLeaderElector, ILogger(Of WorkManagerRecoveryHostedService), RecoveryState, WorkerRecoveryOptions)
+  fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService(Virtufin.WorkManager.Services.IWorkerRecoveryExecutor, Virtufin.WorkManager.Services.IRecoveryLeaderElector, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService>, Virtufin.WorkManager.Services.RecoveryState, Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  fullName.vb: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.New(Virtufin.WorkManager.Services.IWorkerRecoveryExecutor, Virtufin.WorkManager.Services.IRecoveryLeaderElector, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService), Virtufin.WorkManager.Services.RecoveryState, Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  nameWithType: WorkManagerRecoveryHostedService.WorkManagerRecoveryHostedService(IWorkerRecoveryExecutor, IRecoveryLeaderElector, ILogger<WorkManagerRecoveryHostedService>, RecoveryState, WorkerRecoveryOptions)
+  nameWithType.vb: WorkManagerRecoveryHostedService.New(IWorkerRecoveryExecutor, IRecoveryLeaderElector, ILogger(Of WorkManagerRecoveryHostedService), RecoveryState, WorkerRecoveryOptions)
 - uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.#ctor*
   name: WorkManagerRecoveryHostedService
   href: api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html#Virtufin_WorkManager_Services_WorkManagerRecoveryHostedService__ctor_

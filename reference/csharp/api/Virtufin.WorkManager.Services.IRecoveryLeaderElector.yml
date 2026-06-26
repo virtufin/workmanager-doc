@@ -1,0 +1,282 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector
+  commentId: T:Virtufin.WorkManager.Services.IRecoveryLeaderElector
+  id: IRecoveryLeaderElector
+  parent: Virtufin.WorkManager.Services
+  children:
+  - Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync
+  - Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync(System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IRecoveryLeaderElector
+  nameWithType: IRecoveryLeaderElector
+  fullName: Virtufin.WorkManager.Services.IRecoveryLeaderElector
+  type: Interface
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: IRecoveryLeaderElector
+    path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
+    startLine: 10
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  summary: >-
+    Abstraction over the leader-election primitive. Allows the hosted
+
+    service to be unit-tested without touching a real Dapr state store.
+  example: []
+  syntax:
+    content: public interface IRecoveryLeaderElector
+    content.vb: Public Interface IRecoveryLeaderElector
+  derivedClasses:
+  - Virtufin.WorkManager.Services.RecoveryLeaderElector
+- uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync(System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync(System.Threading.CancellationToken)
+  id: TryAcquireLeaseAsync(System.Threading.CancellationToken)
+  parent: Virtufin.WorkManager.Services.IRecoveryLeaderElector
+  langs:
+  - csharp
+  - vb
+  name: TryAcquireLeaseAsync(CancellationToken)
+  nameWithType: IRecoveryLeaderElector.TryAcquireLeaseAsync(CancellationToken)
+  fullName: Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: TryAcquireLeaseAsync
+    path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
+    startLine: 12
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  syntax:
+    content: Task<bool> TryAcquireLeaseAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Function TryAcquireLeaseAsync(cancellationToken As CancellationToken) As Task(Of Boolean)
+  overload: Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync*
+- uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync
+  commentId: M:Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync
+  id: ReleaseLeaseAsync
+  parent: Virtufin.WorkManager.Services.IRecoveryLeaderElector
+  langs:
+  - csharp
+  - vb
+  name: ReleaseLeaseAsync()
+  nameWithType: IRecoveryLeaderElector.ReleaseLeaseAsync()
+  fullName: Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync()
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: ReleaseLeaseAsync
+    path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
+    startLine: 13
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  syntax:
+    content: Task ReleaseLeaseAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function ReleaseLeaseAsync() As Task
+  overload: Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync*
+references:
+- uid: Virtufin.WorkManager.Services
+  commentId: N:Virtufin.WorkManager.Services
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Services
+  nameWithType: Virtufin.WorkManager.Services
+  fullName: Virtufin.WorkManager.Services
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Services
+    name: Services
+    href: Virtufin.WorkManager.Services.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Services
+    name: Services
+    href: Virtufin.WorkManager.Services.html
+- uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync*
+  commentId: Overload:Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync
+  href: Virtufin.WorkManager.Services.IRecoveryLeaderElector.html#Virtufin_WorkManager_Services_IRecoveryLeaderElector_TryAcquireLeaseAsync_System_Threading_CancellationToken_
+  name: TryAcquireLeaseAsync
+  nameWithType: IRecoveryLeaderElector.TryAcquireLeaseAsync
+  fullName: Virtufin.WorkManager.Services.IRecoveryLeaderElector.TryAcquireLeaseAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync*
+  commentId: Overload:Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync
+  href: Virtufin.WorkManager.Services.IRecoveryLeaderElector.html#Virtufin_WorkManager_Services_IRecoveryLeaderElector_ReleaseLeaseAsync
+  name: ReleaseLeaseAsync
+  nameWithType: IRecoveryLeaderElector.ReleaseLeaseAsync
+  fullName: Virtufin.WorkManager.Services.IRecoveryLeaderElector.ReleaseLeaseAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task

@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/31855087c5923849fac68d469246409889f9ae0c"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/241debb3a04b2c7680f0b70a07d8af23454cb13d"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 3185508">
+       title="View commit 241debb">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3185508</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">241debb</text>
       </svg>
     </a>
 </div>
@@ -401,14 +401,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/31855087c5923849fac68d469246409889f9ae0c"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/241debb3a04b2c7680f0b70a07d8af23454cb13d"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 3185508">
+       title="View commit 241debb">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3185508</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">241debb</text>
       </svg>
     </a>
 </div>
@@ -567,6 +567,34 @@
     
   
     Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Service Integration
   
 
     
@@ -1165,15 +1193,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#iworker-and-workerbase" class="md-nav__link">
+  <a href="#iworker-and-workerbasetinput-toutput" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IWorker and WorkerBase
+        IWorker and WorkerBase&lt;TInput, TOutput&gt;
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="IWorker and WorkerBase">
+    <nav class="md-nav" aria-label="IWorker and WorkerBase&lt;TInput, TOutput&gt;">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1583,15 +1611,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#iworker-and-workerbase" class="md-nav__link">
+  <a href="#iworker-and-workerbasetinput-toutput" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IWorker and WorkerBase
+        IWorker and WorkerBase&lt;TInput, TOutput&gt;
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="IWorker and WorkerBase">
+    <nav class="md-nav" aria-label="IWorker and WorkerBase&lt;TInput, TOutput&gt;">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1819,12 +1847,12 @@ that runs against the two managed engines:</p>
 <tbody>
 <tr>
 <td><code>DotnetDllEngine</code></td>
-<td><code>WorkerBase</code> (or one of its subclasses)</td>
+<td><code>WorkerBase&lt;TInput, TOutput&gt;</code> (or one of its subclasses)</td>
 <td>In-process (JIT via hostfxr)</td>
 </tr>
 <tr>
 <td><code>NativeDllEngine</code></td>
-<td><code>WorkerBase</code> (or one of its subclasses), wrapped in <code>AotNative&lt;W&gt;</code></td>
+<td><code>WorkerBase&lt;TInput, TOutput&gt;</code> (or one of its subclasses), wrapped in <code>AotNative&lt;W&gt;</code></td>
 <td>In-process (AOT-compiled, FlatBuffer wire format)</td>
 </tr>
 </tbody>
@@ -1835,42 +1863,69 @@ references <code>Google.FlatBuffers</code>.</p>
 <p>The package is published from this repository at the same <code>LIBRARY_VERSION</code> as
 the WorkManager service. See the introduction for the package-publishing model.</p>
 <h2 id="class-hierarchy">Class hierarchy</h2>
+<p>The hierarchy is <strong>generic on the wire codec</strong>. The base
+<code>WorkerBase&lt;TInput, TOutput&gt;</code> takes a codec that owns payload decode/encode;
+the worker only deals with the typed in/out. The default JSON codec is
+<code>JsonCloudEventCodec</code>; plug a different codec in for non-JSON formats.</p>
 <pre class="mermaid"><code>classDiagram
     class IWorker {
         &lt;&lt;interface&gt;&gt;
         +ProcessAsync(CloudEvent) Task~CloudEvent?~
     }
 
-    class WorkerBase {
-        &lt;&lt;abstract&gt;&gt;
+    class WorkerBase~TInput, TOutput~ {
+        &lt;&lt;abstract, generic&gt;&gt;
         +Source Uri
         +ResponseEventType string
-        +Response(action, ...) CloudEvent
-        +Error(...) CloudEvent
-        +WithCorrelationId(input) CloudEvent
+        +Codec ICloudEventCodec~TInput, TOutput~
+        +ProcessAsync(CloudEvent) Task~CloudEvent?~
+        +BuildResponse(CloudEvent, TOutput) CloudEvent
+        +WithCorrelationId(CloudEvent) CloudEvent
+        +WithTimestamp(CloudEvent) CloudEvent
     }
-    IWorker &lt;|.. WorkerBase
+    IWorker &lt;|.. WorkerBase~TInput, TOutput~
+
+    class CommandWorker~TInput, TOutput, TCommand~ {
+        &lt;&lt;abstract, generic&gt;&gt;
+        +HandleCommandAsync(CloudEvent, TCommand, TInput) Task~TOutput?~
+        +ExtractCommand(CloudEvent, TInput) TCommand
+    }
+    WorkerBase~TInput, TOutput~ &lt;|-- CommandWorker~TInput, TOutput, TCommand~
 
     class CommandWorker~T~ {
-        &lt;&lt;abstract, generic&gt;&gt;
-        +HandleAsync(input, T, JsonNode) Task~CloudEvent?~
+        &lt;&lt;abstract, generic (JSON convenience)&gt;&gt;
+        -Codec JsonCloudEventCodec
     }
-    WorkerBase &lt;|-- CommandWorker~T~
+    CommandWorker~TInput, TOutput, TCommand~ &lt;|-- CommandWorker~T~
 
     class ApiWorker {
-        &lt;&lt;abstract&gt;&gt;
-        +Api ApiClient
-        +ProcessAsync(input, Api) Task~CloudEvent?~
+        &lt;&lt;sealed (JSON)&gt;&gt;
+        +Api ApiClient?
+        +HandleAsync(CloudEvent, JsonNode) Task~JsonObject?~
     }
-    WorkerBase &lt;|-- ApiWorker
+    WorkerBase~JsonNode, JsonObject~ &lt;|-- ApiWorker
 
     class ApiCommandWorker~T~ {
-        &lt;&lt;abstract, generic&gt;&gt;
+        &lt;&lt;sealed (JSON)&gt;&gt;
         +Api ApiClient?
-        +HandleAsync(input, T, JsonNode, Api) Task~CloudEvent?~
+        +HandleCommandAsync(CloudEvent, T, JsonNode) Task~JsonObject?~
+        +EnsureClient(host, port)
+        +EnsureClientFromCommand(node)
     }
     CommandWorker~T~ &lt;|-- ApiCommandWorker~T~
-    ApiWorker &lt;|-- ApiCommandWorker~T~ : "(alternative ctor)"
+
+    class ICloudEventCodec~TInput, TOutput~ {
+        &lt;&lt;interface&gt;&gt;
+        +ContentType string
+        +DecodePayload(CloudEvent) TInput
+        +EncodeResponse(CloudEvent, TOutput) (object?, string)
+        +EncodeError(CloudEvent, string) TOutput
+    }
+
+    class JsonCloudEventCodec {
+        +ContentType = "application/json"
+    }
+    ICloudEventCodec~TInput, TOutput~ &lt;|.. JsonCloudEventCodec
 
     class AotNative~W~ {
         &lt;&lt;sealed, generic bridge&gt;&gt;
@@ -1883,52 +1938,66 @@ the WorkManager service. See the introduction for the package-publishing model.<
 identifier names to match the wire-level command strings (case-insensitive).
 See the <code>CommandWorker&lt;T&gt;</code> section below for the data flow.</p>
 <h2 id="public-api-jit-side-dotnetdllengine">Public API (JIT side: <code>DotnetDllEngine</code>)</h2>
-<h3 id="iworker-and-workerbase"><code>IWorker</code> and <code>WorkerBase</code></h3>
+<h3 id="iworker-and-workerbasetinput-toutput"><code>IWorker</code> and <code>WorkerBase&lt;TInput, TOutput&gt;</code></h3>
 <p>The minimal contract a worker must satisfy:</p>
 <div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IWorker</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">ProcessAsync</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><code>WorkerBase</code> is the abstract base class. You provide the <code>Source</code> URI and the
-<code>ResponseEventType</code> CloudEvent <code>type</code> string in the constructor; <code>WorkerBase</code>
-provides response-building helpers, automatic correlation-id propagation, and
-the canonical CloudEvent extension attribute names.</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">WorkerBase</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IWorker</span>
+<p><code>WorkerBase&lt;TInput, TOutput&gt;</code> is the abstract, <strong>generic</strong> base class. The
+codec — supplied in the constructor — owns the wire-format decode/encode
+(<code>ICloudEventCodec&lt;TInput, TOutput&gt;</code>). The base class provides response-building
+helpers, automatic correlation-id propagation, and the canonical CloudEvent
+extension attribute names.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">WorkerBase</span><span class="o">&lt;</span><span class="n">TInput</span><span class="p">,</span><span class="w"> </span><span class="n">TOutput</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IWorker</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">CorrelationIdAttribute</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;correlationid&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ReplyTopicAttribute</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;replytopic&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">FieldError</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;error&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DataContentTypeJson</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;application/json&quot;</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="nf">WorkerBase</span><span class="p">(</span><span class="n">Uri</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">responseEventType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="n">ICloudEventCodec</span><span class="o">&lt;</span><span class="n">TInput</span><span class="p">,</span><span class="w"> </span><span class="n">TOutput</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Codec</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">ProcessAsync</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">);</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="nf">WorkerBase</span><span class="p">(</span>
+<span class="w">        </span><span class="n">Uri</span><span class="w"> </span><span class="n">source</span><span class="p">,</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">responseEventType</span><span class="p">,</span>
+<span class="w">        </span><span class="n">ICloudEventCodec</span><span class="o">&lt;</span><span class="n">TInput</span><span class="p">,</span><span class="w"> </span><span class="n">TOutput</span><span class="o">&gt;</span><span class="w"> </span><span class="n">codec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="n">CloudEvent</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">action</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="kt">object?</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="n">CloudEvent</span><span class="w"> </span><span class="nf">Error</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">ProcessAsync</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">);</span><span class="w">   </span><span class="c1">// not sealed</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">TOutput</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">ProcessAsync</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">TInput</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="n">CloudEvent</span><span class="w"> </span><span class="nf">BuildResponse</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">TOutput</span><span class="w"> </span><span class="n">payload</span><span class="p">);</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="n">CloudEvent</span><span class="w"> </span><span class="nf">BuildResponse</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">object?</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">contentType</span><span class="p">);</span>
 <span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="n">CloudEvent</span><span class="w"> </span><span class="nf">WithCorrelationId</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">);</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="n">CloudEvent</span><span class="w"> </span><span class="nf">WithTimestamp</span><span class="p">(</span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <h4 id="response-helpers">Response helpers</h4>
-<p><code>Response</code> builds a CloudEvent with the configured <code>Source</code> and
+<p><code>BuildResponse</code> builds a CloudEvent with the configured <code>Source</code> and
 <code>ResponseEventType</code>. If the input has a <code>correlationid</code> extension, the reply
-inherits it automatically (this is what <code>WithCorrelationId</code> does):</p>
+inherits it automatically (via <code>WithCorrelationId</code>); the <code>WithTimestamp</code>
+extension is also applied automatically:</p>
 <pre class="mermaid"><code>sequenceDiagram
     autonumber
     participant Sub as Pub/Sub
     participant WM as WorkManager
     participant W as WorkerBase.ProcessAsync
-    participant H as HandleAsync
+    participant Codec as JsonCloudEventCodec
+    participant H as HandleAsync(CloudEvent, JsonNode)
 
     Sub-&gt;&gt;WM: input CE (with correlationid)
     WM-&gt;&gt;W: ProcessAsync(ce)
-    W-&gt;&gt;H: HandleAsync(ce)
-    H--&gt;&gt;W: action="create", data=...
-    W--&gt;&gt;WM: Response() → CE with same correlationid
+    W-&gt;&gt;Codec: DecodePayload(ce) → node
+    Codec--&gt;&gt;W: node
+    W-&gt;&gt;H: HandleAsync(ce, node)
+    H--&gt;&gt;W: JsonObject payload
+    W-&gt;&gt;W: WithCorrelationId(ce).WithTimestamp()&lt;br/&gt;Type = responseEventType
+    W--&gt;&gt;WM: CloudEvent envelope with payload
     WM-&gt;&gt;Sub: publish response</code></pre>
-<p><code>Error</code> builds a CloudEvent with <code>data.action = "error"</code> and the message. The
-WorkManager surfaces this as a <code>worker.error</code> lifecycle event.</p>
+<p>If the handler throws, the base class catches and builds an error envelope
+via <code>codec.EncodeError(...)</code> — the typed error payload (<code>JsonObject</code>
+shaped like <code>{"command":"error","success":false,"message":"..."}</code> for JSON).</p>
 <h4 id="replytopic-extension"><code>replytopic</code> extension</h4>
 <p>If the input CloudEvent carries a <code>replytopic</code> extension attribute, the
 WorkManager routes the response to that topic instead of the worker's default
@@ -1947,14 +2016,19 @@ enum value plus the full <code>JsonNode</code> payload to your override:</p>
     participant Sub as Pub/Sub
     participant WM as WorkManager
     participant CW as CommandWorker.ProcessAsync
-    participant H as HandleAsync
+    participant Codec as JsonCloudEventCodec
+    participant H as HandleCommandAsync
 
     Sub-&gt;&gt;WM: data = {"command": "create", ...}
     WM-&gt;&gt;CW: ProcessAsync(ce)
-    CW-&gt;&gt;CW: JsonNode.Parse(data) → node&lt;br/&gt;node["command"] → "create"&lt;br/&gt;Enum.TryParse&lt;T&gt;("create") → MyCmd.create
-    CW-&gt;&gt;H: HandleAsync(ce, MyCmd.create, node)
-    alt Handler returns CloudEvent
-        H--&gt;&gt;CW: response CE
+    CW-&gt;&gt;Codec: DecodePayload(ce) → node
+    Codec--&gt;&gt;CW: node
+    CW-&gt;&gt;CW: ExtractCommand(ce, node)&lt;br/&gt;node["command"] → "create"&lt;br/&gt;Enum.TryParse&lt;T&gt;("create") → MyCmd.create
+    CW-&gt;&gt;H: HandleCommandAsync(ce, MyCmd.create, node)
+    alt Handler returns JsonObject
+        H--&gt;&gt;CW: payload JsonObject
+        CW-&gt;&gt;Codec: EncodeResponse(ce, payload) → (data, contentType)
+        CW-&gt;&gt;CW: envelope = WithCorrelationId(ce).WithTimestamp()&lt;br/&gt;Type = responseEventType
         CW--&gt;&gt;WM: response CE
     else Handler returns null
         H--&gt;&gt;CW: null (no reply)
@@ -1969,7 +2043,7 @@ enum value plus the full <code>JsonNode</code> payload to your override:</p>
 <span class="w">                    </span><span class="kt">string</span><span class="w"> </span><span class="n">responseEventType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;com.example.myworker.response&quot;</span><span class="p">)</span>
 <span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">responseEventType</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleAsync</span><span class="p">(</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleCommandAsync</span><span class="p">(</span>
 <span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">MyCommand</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span>
 <span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="k">switch</span>
 <span class="w">        </span><span class="p">{</span>
@@ -1983,10 +2057,22 @@ enum value plus the full <code>JsonNode</code> payload to your override:</p>
 <p>The enum identifier names are the wire strings. The same enum drives both the
 gRPC service definition (proto) and the worker handler, so a rename in one
 place surfaces as a wire-protocol break.</p>
+<p>The handler returns a <strong>typed payload</strong> (<code>JsonObject</code>), not a <code>CloudEvent</code>.
+The base class wraps it in the envelope with <code>Id</code>, <code>Type</code>, <code>Source</code>,
+<code>correlationid</code> extension (auto-applied from input), and <code>time</code> extension
+(auto-applied). Use the <code>Response(...)</code> helper on <code>CommandWorker&lt;T&gt;</code> to build
+the standard <code>{ "command", "success", "id", "message" }</code> payload:</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">MyCommand</span><span class="p">.</span><span class="n">create</span><span class="p">.</span><span class="n">ToString</span><span class="p">(),</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<span class="w">                 </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">createdId</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Created&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>For richer payloads, build a <code>JsonObject</code> directly.</p>
 <h3 id="apiworker-and-apicommandworkert"><code>ApiWorker</code> and <code>ApiCommandWorker&lt;T&gt;</code></h3>
-<p><code>ApiWorker</code> extends <code>WorkerBase</code> and injects a pre-configured <code>Virtufin.Api.Client.ApiClient</code>
-for backend calls through the API Gateway. <code>ApiCommandWorker&lt;T&gt;</code> combines
-typed command dispatch with the API client.</p>
+<p><code>ApiWorker : WorkerBase&lt;JsonNode, JsonObject&gt;</code> is the JSON-convenience base
+for workers that call backend services through the API Gateway without a
+typed command. Override <code>HandleAsync(CloudEvent, JsonNode) → Task&lt;JsonObject?&gt;</code>.</p>
+<p><code>ApiCommandWorker&lt;T&gt; : CommandWorker&lt;T&gt;</code> combines typed command dispatch with
+the API client helper. Both inject a pre-configured
+<code>Virtufin.Api.Client.ApiClient</code> for backend calls through the API Gateway.</p>
 <div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyApiWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ApiCommandWorker</span><span class="o">&lt;</span><span class="n">MyCommand</span><span class="o">&gt;</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyApiWorker</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span>
@@ -1995,32 +2081,35 @@ typed command dispatch with the API client.</p>
 <span class="w">        </span><span class="n">apiHost</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;localhost&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="n">apiPort</span><span class="p">:</span><span class="w"> </span><span class="mi">5002</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleAsync</span><span class="p">(</span>
-<span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">MyCommand</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">ApiClient</span><span class="w"> </span><span class="n">api</span><span class="p">)</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleCommandAsync</span><span class="p">(</span>
+<span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">MyCommand</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">command</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MyCommand</span><span class="p">.</span><span class="n">create</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">api</span><span class="p">.</span><span class="n">SomeService</span><span class="p">.</span><span class="n">CreateAsync</span><span class="p">(...);</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="s">&quot;create&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">:</span><span class="w"> </span><span class="n">created</span><span class="p">);</span>
+<span class="w">            </span><span class="n">EnsureClientFromCommand</span><span class="p">(</span><span class="n">node</span><span class="p">);</span><span class="w">   </span><span class="c1">// or pass apiHost/apiPort in ctor</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">Api</span><span class="o">!</span><span class="p">.</span><span class="n">SomeService</span><span class="p">.</span><span class="n">CreateAsync</span><span class="p">(...);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="n">ToString</span><span class="p">(),</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">id</span><span class="p">:</span><span class="w"> </span><span class="n">created</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Created&quot;</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">ErrorPayload</span><span class="p">(</span><span class="s">&quot;Unsupported command&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Two constructors are available:</p>
+<p>Two API-client construction modes are available:</p>
 <ul>
-<li>Fixed API host/port: pass <code>apiHost</code> and <code>apiPort</code> to the base ctor; <code>Api</code> is
-  ready in <code>HandleAsync</code>.</li>
-<li>Lazy: pass only <code>source</code> and <code>responseEventType</code>. <code>Api</code> is <code>null</code> until
-  <code>EnsureClient(apiHost, apiPort)</code> (or <code>EnsureClientFromCommand(node)</code>) is
-  called. Use this when the API host comes from the command payload.</li>
+<li><strong>Eager</strong>: pass <code>apiHost</code> and <code>apiPort</code> to the base ctor; <code>Api</code> is ready in
+  <code>HandleCommandAsync</code>.</li>
+<li><strong>Lazy</strong>: pass only <code>source</code> and <code>responseEventType</code>. <code>Api</code> is <code>null</code> until
+  <code>EnsureClient(host, port)</code> (or <code>EnsureClientFromCommand(node)</code>, which reads
+  the <code>api_host</code> field from the decoded <code>JsonNode</code>) is called. Use this when
+  the API host comes from the command payload.</li>
 </ul>
 <h2 id="aot-native-side-nativedllengine">AOT native side (<code>NativeDllEngine</code>)</h2>
 <p>The AOT side is <strong>a thin bridge over the same <code>IWorker</code> contract</strong> — there
 is no parallel class hierarchy. Any <code>IWorker</code> implementation (typically
-extending <code>WorkerBase</code> or <code>CommandWorker&lt;T&gt;</code>) runs unchanged under
-<code>DotnetDllEngine</code> (JIT, in-process ALC) and <code>NativeDllEngine</code> (AOT, via
-the <code>AotNative&lt;W&gt;</code> wrapper).</p>
+extending <code>WorkerBase&lt;TInput, TOutput&gt;</code> or <code>CommandWorker&lt;T&gt;</code>) runs unchanged
+under <code>DotnetDllEngine</code> (JIT, in-process ALC) and <code>NativeDllEngine</code>
+(AOT, via the <code>AotNative&lt;W&gt;</code> wrapper).</p>
 <h3 id="aotnativew"><code>AotNative&lt;W&gt;</code></h3>
 <p><code>AotNative&lt;W&gt; where W : IWorker, new()</code> is the only AOT-side base — a
 sealed generic bridge that provides the FlatBuffer / native C ABI plumbing
@@ -2031,21 +2120,25 @@ to <code>AotNative&lt;W&gt;.ProcessStatic</code> and <code>AotNative&lt;W&gt;.Fr
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyWorker</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;urn:com.example&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;com.example.response&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleAsync</span><span class="p">(</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleCommandAsync</span><span class="p">(</span>
 <span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">MyCommand</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AotNative</span><span class="o">&lt;</span><span class="n">MyWorker</span><span class="o">&gt;</span><span class="p">.</span><span class="n">CurrentContext</span><span class="p">;</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Error</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;no AOT context&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">context</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">ErrorPayload</span><span class="p">(</span><span class="s">&quot;no AOT context&quot;</span><span class="p">);</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">gateway</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NativeApiGateway</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
 <span class="w">        </span><span class="c1">// ... dispatch on command ...</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="n">ToString</span><span class="p">(),</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ok&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="na">[UnmanagedCallersOnly(EntryPoint = &quot;Process&quot;)]</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Process</span><span class="p">(</span><span class="n">IntPtr</span><span class="w"> </span><span class="n">host</span><span class="p">,</span><span class="w"> </span><span class="n">IntPtr</span><span class="w"> </span><span class="n">inBuf</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">inLen</span><span class="p">,</span>
 <span class="w">                              </span><span class="n">IntPtr</span><span class="w"> </span><span class="n">outBuf</span><span class="p">,</span><span class="w"> </span><span class="n">IntPtr</span><span class="w"> </span><span class="n">outLen</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">unsafe</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">AotNative</span><span class="o">&lt;</span><span class="n">MyWorker</span><span class="o">&gt;</span><span class="p">.</span><span class="n">ProcessStatic</span><span class="p">(</span>
-<span class="w">            </span><span class="n">host</span><span class="p">,</span><span class="w"> </span><span class="n">inBuf</span><span class="p">,</span><span class="w"> </span><span class="n">inLen</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">IntPtr</span><span class="o">*</span><span class="p">)</span><span class="n">outBuf</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">outLen</span><span class="p">);</span>
+<span class="w">        </span><span class="k">unsafe</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">AotNative</span><span class="o">&lt;</span><span class="n">MyWorker</span><span class="o">&gt;</span><span class="p">.</span><span class="n">ProcessStatic</span><span class="p">(</span>
+<span class="w">                </span><span class="n">host</span><span class="p">,</span><span class="w"> </span><span class="n">inBuf</span><span class="p">,</span><span class="w"> </span><span class="n">inLen</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">IntPtr</span><span class="o">*</span><span class="p">)</span><span class="n">outBuf</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="n">outLen</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="na">[UnmanagedCallersOnly(EntryPoint = &quot;FreeResult&quot;)]</span>
@@ -2072,7 +2165,7 @@ get independent state.</p>
     participant WM as WorkManager&lt;br/&gt;(NativeDllEngine)
     participant Lib as Native worker&lt;br/&gt;(lib*.so)
     participant Bridge as AotNative&lt;MyWorker&gt;
-    participant Sub as MyWorker.HandleAsync
+    participant Sub as MyWorker.HandleCommandAsync
     participant Ctx as WorkerContext
 
     WM-&gt;&gt;Lib: Process(host, inBuf, inLen, &amp;outBuf, &amp;outLen)
@@ -2088,9 +2181,10 @@ get independent state.</p>
     Sub-&gt;&gt;Ctx: gateway.InvokeAsync(...)
     Ctx-&gt;&gt;Lib: VirtufinHost.gateway_call(host, ...)
     Lib--&gt;&gt;Ctx: gateway goes back to WM
-    Sub--&gt;&gt;Bridge: result CE (or null)
-    Bridge-&gt;&gt;Bridge: CurrentContext = null
-    Bridge-&gt;&gt;Bridge: CloudEventCodec.EncodeWorkerResponse(result) → bytes
+    Sub--&gt;&gt;Bridge: payload JsonObject (or null)
+    Bridge-&gt;&gt;Bridge: codec.EncodeResponse(ce, payload) → envelope
+    Bridge-&gt;&gt;Bridge: WithCorrelationId(ce).WithTimestamp()
+    Bridge-&gt;&gt;Bridge: CloudEventCodec.EncodeWorkerResponse(envelope) → bytes
     Bridge-&gt;&gt;Bridge: Marshal.AllocHGlobal(bytes)&lt;br/&gt;*outBuf = ptr, *outLen = bytes.Length
     Bridge--&gt;&gt;Lib: 0
     Lib--&gt;&gt;WM: outBuf, outLen
@@ -2159,7 +2253,8 @@ size prefix — <code>ByteBuffer.Wrap(bytes)</code> consumes the bytes.</p>
 <code>InvalidOperationException</code>. If neither field is set, the worker declines to
 publish a reply (the engine returns <code>null</code>).</p>
 <h3 id="jit-vs-aot-what-changes">JIT vs AOT — what changes?</h3>
-<p>The JIT and AOT paths share <code>IWorker</code>, <code>WorkerBase</code>, <code>CommandWorker&lt;T&gt;</code>,
+<p>The JIT and AOT paths share <code>WorkerBase&lt;TInput, TOutput&gt;</code>,
+<code>CommandWorker&lt;TInput, TOutput, TCommand&gt;</code>, <code>CommandWorker&lt;T&gt;</code>,
 <code>ApiWorker</code>, and <code>ApiCommandWorker&lt;T&gt;</code>. Only the <em>plumbing</em> differs:</p>
 <table>
 <thead>
@@ -2270,7 +2365,7 @@ flatc<span class="w"> </span>--csharp<span class="w"> </span>-o<span class="w"> 
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-06-26T01:10:03Z</span>
+  <span style="display:table-cell;text-align:right">2026-06-26T21:39:08Z</span>
 </div>
 
     </div>

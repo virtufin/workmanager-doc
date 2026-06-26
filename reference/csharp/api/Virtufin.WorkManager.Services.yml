@@ -8,7 +8,11 @@ items:
   - Virtufin.WorkManager.Services.AppMetrics
   - Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
   - Virtufin.WorkManager.Services.DaprResiliencePipeline
+  - Virtufin.WorkManager.Services.IRecoveryLeaderElector
+  - Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+  - Virtufin.WorkManager.Services.LeaderLease
   - Virtufin.WorkManager.Services.RecoveryHealthCheck
+  - Virtufin.WorkManager.Services.RecoveryLeaderElector
   - Virtufin.WorkManager.Services.RecoveryState
   - Virtufin.WorkManager.Services.ResilientDaprPublisher
   - Virtufin.WorkManager.Services.WorkManagerGrpcService
@@ -55,6 +59,32 @@ references:
   name: ResilientDaprPublisher
   nameWithType: ResilientDaprPublisher
   fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher
+- uid: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+  commentId: T:Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.html
+  name: IWorkerRecoveryExecutor
+  nameWithType: IWorkerRecoveryExecutor
+  fullName: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+- uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector
+  commentId: T:Virtufin.WorkManager.Services.IRecoveryLeaderElector
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.IRecoveryLeaderElector.html
+  name: IRecoveryLeaderElector
+  nameWithType: IRecoveryLeaderElector
+  fullName: Virtufin.WorkManager.Services.IRecoveryLeaderElector
+- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector
+  commentId: T:Virtufin.WorkManager.Services.RecoveryLeaderElector
+  href: Virtufin.WorkManager.Services.RecoveryLeaderElector.html
+  name: RecoveryLeaderElector
+  nameWithType: RecoveryLeaderElector
+  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector
+- uid: Virtufin.WorkManager.Services.LeaderLease
+  commentId: T:Virtufin.WorkManager.Services.LeaderLease
+  href: Virtufin.WorkManager.Services.LeaderLease.html
+  name: LeaderLease
+  nameWithType: LeaderLease
+  fullName: Virtufin.WorkManager.Services.LeaderLease
 - uid: Virtufin.WorkManager.Services.RecoveryState
   commentId: T:Virtufin.WorkManager.Services.RecoveryState
   parent: Virtufin.WorkManager.Services

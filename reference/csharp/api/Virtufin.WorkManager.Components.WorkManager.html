@@ -49,10 +49,10 @@
             Virtufin.WorkManager
           </a>
           <div class="git-info">
-            <a href="{git_repo_url}/commit/31855087c5923849fac68d469246409889f9ae0c" target="_blank" rel="noopener" class="commit-badge" title="View commit 3185508">
+            <a href="{git_repo_url}/commit/241debb3a04b2c7680f0b70a07d8af23454cb13d" target="_blank" rel="noopener" class="commit-badge" title="View commit 241debb">
               <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
                 <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"></rect>
-                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3185508</text>
+                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">241debb</text>
               </svg>
             </a>
           </div>          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,7 +106,7 @@ Class WorkManager
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class WorkManager : IAsyncDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class WorkManager : IAsyncDisposable, IWorkerRecoveryExecutor</code></pre>
   </div>
 
 
@@ -124,6 +124,7 @@ Class WorkManager
     <dt>Implements</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
+      <div><a class="xref" href="Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.html">IWorkerRecoveryExecutor</a></div>
     </dd>
   </dl>
 
@@ -162,8 +163,8 @@ Class WorkManager
 
   <a id="Virtufin_WorkManager_Components_WorkManager__ctor_" data-uid="Virtufin.WorkManager.Components.WorkManager.#ctor*"></a>
 
-  <h3 id="Virtufin_WorkManager_Components_WorkManager__ctor_Dapr_Messaging_PublishSubscribe_DaprPublishSubscribeClient_Dapr_Client_DaprClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_System_String_System_String_System_String_" data-uid="Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String)">
-  WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger&lt;WorkManager&gt;, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, string?, string?, string?)
+  <h3 id="Virtufin_WorkManager_Components_WorkManager__ctor_Dapr_Messaging_PublishSubscribe_DaprPublishSubscribeClient_Dapr_Client_DaprClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_System_String_System_String_System_String_Virtufin_WorkManager_Configuration_GroupLockOptions_" data-uid="Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,System.String,System.String,System.String,Virtufin.WorkManager.Configuration.GroupLockOptions)">
+  WorkManager(DaprPublishSubscribeClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger&lt;WorkManager&gt;, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, string?, string?, string?, GroupLockOptions?)
   
   </h3>
 
@@ -172,7 +173,7 @@ Class WorkManager
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public WorkManager(DaprPublishSubscribeClient pubsubClient, DaprClient daprClient, IHttpClientFactory httpClientFactory, IEngineRegistry engineRegistry, ILogger&lt;WorkManager&gt; logger, ILoggerFactory loggerFactory, DaprResiliencePipeline resilience, ResilientDaprPublisher publisher, string? stateStoreName = null, string? pubsubName = null, string? allowedCodeSourceHosts = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public WorkManager(DaprPublishSubscribeClient pubsubClient, DaprClient daprClient, IHttpClientFactory httpClientFactory, IEngineRegistry engineRegistry, ILogger&lt;WorkManager&gt; logger, ILoggerFactory loggerFactory, DaprResiliencePipeline resilience, ResilientDaprPublisher publisher, string? stateStoreName = null, string? pubsubName = null, string? allowedCodeSourceHosts = null, GroupLockOptions? lockOptions = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -198,6 +199,8 @@ Class WorkManager
     <dt><code>pubsubName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
     <dt><code>allowedCodeSourceHosts</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>lockOptions</code> <a class="xref" href="Virtufin.WorkManager.Configuration.GroupLockOptions.html">GroupLockOptions</a></dt>
     <dd></dd>
   </dl>
 

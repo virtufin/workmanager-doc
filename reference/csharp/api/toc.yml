@@ -17,11 +17,20 @@ items:
   - uid: Virtufin.WorkManager.Configuration.DaprConstants
     name: DaprConstants
     type: Class
+  - uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions
+    name: DaprResilienceOptions
+    type: Class
+  - uid: Virtufin.WorkManager.Configuration.GroupLockOptions
+    name: GroupLockOptions
+    type: Class
   - uid: Virtufin.WorkManager.Configuration.PortConstants
     name: PortConstants
     type: Class
   - uid: Virtufin.WorkManager.Configuration.Topics
     name: Topics
+    type: Class
+  - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+    name: WorkerRecoveryOptions
     type: Class
 - uid: Virtufin.WorkManager.Contracts
   name: Virtufin.WorkManager.Contracts
@@ -101,8 +110,20 @@ items:
   - uid: Virtufin.WorkManager.Services.DaprResiliencePipeline
     name: DaprResiliencePipeline
     type: Class
+  - uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector
+    name: IRecoveryLeaderElector
+    type: Interface
+  - uid: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+    name: IWorkerRecoveryExecutor
+    type: Interface
+  - uid: Virtufin.WorkManager.Services.LeaderLease
+    name: LeaderLease
+    type: Class
   - uid: Virtufin.WorkManager.Services.RecoveryHealthCheck
     name: RecoveryHealthCheck
+    type: Class
+  - uid: Virtufin.WorkManager.Services.RecoveryLeaderElector
+    name: RecoveryLeaderElector
     type: Class
   - uid: Virtufin.WorkManager.Services.RecoveryState
     name: RecoveryState

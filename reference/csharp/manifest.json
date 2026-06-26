@@ -60,6 +60,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Configuration.DaprResilienceOptions",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.DaprResilienceOptions.yml\" sourcestartlinenumber=\"1\">Tunable knobs for <xref href=\"Virtufin.WorkManager.Services.DaprResiliencePipeline\" data-throw-if-not-resolved=\"false\"></xref>:\nthe Polly-based retry + circuit breaker wrapping every Dapr SDK call\nthe WorkManager makes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Configuration.GroupLockOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Configuration.GroupLockOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Configuration.GroupLockOptions",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.GroupLockOptions.yml\" sourcestartlinenumber=\"1\">Group lock acquisition tuning. All values are configurable via\nenvironment variables; defaults are tuned for the typical\n&quot;two workers contending for a single group lock&quot; scenario.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Virtufin.WorkManager.Configuration.PortConstants.yml",
       "output": {
         ".html": {
@@ -85,6 +113,20 @@
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Configuration.Topics",
       "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.Topics.yml\" sourcestartlinenumber=\"1\">Pubsub topics published by the WorkManager. Each service owns\nits own topic; ce-type discriminates events inside the topic.\nThis is the source of truth for any service that needs to consume\nworkmanager.* events — see the worker-management spec for the\nevent taxonomy.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Configuration.WorkerRecoveryOptions",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.yml\" sourcestartlinenumber=\"1\">Worker recovery tuning. Controls whether <xref href=\"Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService\" data-throw-if-not-resolved=\"false\"></xref>\nruns on startup and how it elects a leader when multiple WorkManager instances start concurrently.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -434,7 +476,49 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Services.DaprResiliencePipeline",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.DaprResiliencePipeline.yml\" sourcestartlinenumber=\"1\">Provides resilience policies for Dapr operations with retry and circuit breaker.</p>\n"
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.DaprResiliencePipeline.yml\" sourcestartlinenumber=\"1\">Provides resilience policies for Dapr operations with retry and circuit breaker.\nConstants are configurable via <xref href=\"Virtufin.WorkManager.Configuration.DaprResilienceOptions\" data-throw-if-not-resolved=\"false\"></xref> (env-var-driven).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.IRecoveryLeaderElector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.IRecoveryLeaderElector.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.IRecoveryLeaderElector",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.IRecoveryLeaderElector.yml\" sourcestartlinenumber=\"1\">Abstraction over the leader-election primitive. Allows the hosted\nservice to be unit-tested without touching a real Dapr state store.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.IWorkerRecoveryExecutor",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.yml\" sourcestartlinenumber=\"1\">Abstraction over the WorkManager's recovery entry point. Allows the\nhosted service to be unit-tested without mocking the sealed\n<code>WorkManager</code> class.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.LeaderLease.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.LeaderLease.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.LeaderLease",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.LeaderLease.yml\" sourcestartlinenumber=\"1\">Persistent lease record stored at <xref href=\"Virtufin.WorkManager.Services.RecoveryLeaderElector.LeaseKey\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -449,6 +533,20 @@
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Services.RecoveryHealthCheck",
       "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.RecoveryHealthCheck.yml\" sourcestartlinenumber=\"1\">Health check that verifies worker recovery has completed successfully.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.RecoveryLeaderElector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.RecoveryLeaderElector.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.RecoveryLeaderElector",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.RecoveryLeaderElector.yml\" sourcestartlinenumber=\"1\">Lease-based leader election backed by the Dapr state store.\nMultiple WorkManager instances can race to acquire a lease for the\n<code>workmanager/recovery/leader</code> key; only the holder performs\nworker recovery. The lease has a TTL so a crashed instance's lease\nexpires automatically and another instance can take over.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -504,7 +602,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"1\">Hosted service that automatically recovers workers on application startup.\nGates Kestrel readiness until recovery is complete.</p>\n"
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"1\">Hosted service that automatically recovers workers on application startup,\ngated by <xref href=\"Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled\" data-throw-if-not-resolved=\"false\"></xref> and coordinated across\nmultiple WorkManager instances via <xref href=\"Virtufin.WorkManager.Services.RecoveryLeaderElector\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n<p sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"5\">When multiple instances start concurrently, only the leader performs\nrecovery — the others wait for the leader lease to expire (or be released)\nbefore they would attempt to take over. This avoids the N×W engine-load\nwaste described in WM #4.</p>\n<p sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"10\">Kestrel readiness is gated via <xref href=\"Virtufin.WorkManager.Services.RecoveryHealthCheck\" data-throw-if-not-resolved=\"false\"></xref>:</p>\n<ul sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"11\">\n<li sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"11\"><code>Degraded</code> while recovery is in progress.</li>\n<li sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"12\"><code>Unhealthy</code> if recovery failed.</li>\n<li sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"13\"><code>Healthy</code> once recovery completes (whether this instance performed it\nor another leader did).</li>\n</ul>\n"
     },
     {
       "type": "ManagedReference",
