@@ -23,11 +23,17 @@ items:
   - uid: Virtufin.WorkManager.Configuration.GroupLockOptions
     name: GroupLockOptions
     type: Class
+  - uid: Virtufin.WorkManager.Configuration.InfraEvents
+    name: InfraEvents
+    type: Class
   - uid: Virtufin.WorkManager.Configuration.PortConstants
     name: PortConstants
     type: Class
   - uid: Virtufin.WorkManager.Configuration.Topics
     name: Topics
+    type: Class
+  - uid: Virtufin.WorkManager.Configuration.WorkerEvents
+    name: WorkerEvents
     type: Class
   - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
     name: WorkerRecoveryOptions

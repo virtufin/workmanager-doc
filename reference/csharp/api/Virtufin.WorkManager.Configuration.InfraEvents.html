@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class RecoveryHealthCheck | Virtufin WorkManager - C# Reference </title>
+      <title>Class InfraEvents | Virtufin WorkManager - C# Reference </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class RecoveryHealthCheck | Virtufin WorkManager - C# Reference ">
+      <meta name="title" content="Class InfraEvents | Virtufin WorkManager - C# Reference ">
       
-      <meta name="description" content="Health check that verifies worker recovery has completed successfully.">
+      <meta name="description" content="CloudEvents v1.0 type strings for WorkManager infra events (heartbeats, grouplock changes).">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,25 +88,26 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Virtufin.WorkManager.Services.RecoveryHealthCheck">
+        <article data-uid="Virtufin.WorkManager.Configuration.InfraEvents">
 
 
 
-  <h1 id="Virtufin_WorkManager_Services_RecoveryHealthCheck" data-uid="Virtufin.WorkManager.Services.RecoveryHealthCheck" class="text-break">
-Class RecoveryHealthCheck  
+  <h1 id="Virtufin_WorkManager_Configuration_InfraEvents" data-uid="Virtufin.WorkManager.Configuration.InfraEvents" class="text-break">
+Class InfraEvents  
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="Virtufin.html">Virtufin</a>.<a class="xref" href="Virtufin.WorkManager.html">WorkManager</a>.<a class="xref" href="Virtufin.WorkManager.Services.html">Services</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Virtufin.html">Virtufin</a>.<a class="xref" href="Virtufin.WorkManager.html">WorkManager</a>.<a class="xref" href="Virtufin.WorkManager.Configuration.html">Configuration</a></dd></dl>
   <dl><dt>Assembly</dt><dd>Virtufin.WorkManager.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Health check that verifies worker recovery has completed successfully.</p>
+  <div class="markdown summary"><p>CloudEvents v1.0 type strings for WorkManager infra events
+(heartbeats, grouplock changes).</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class RecoveryHealthCheck : IHealthCheck</code></pre>
+    <pre><code class="lang-csharp hljs">public static class InfraEvents</code></pre>
   </div>
 
 
@@ -116,16 +117,10 @@ Class RecoveryHealthCheck
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">RecoveryHealthCheck</span></div>
+      <div><span class="xref">InfraEvents</span></div>
     </dd>
   </dl>
 
-  <dl class="typelist implements">
-    <dt>Implements</dt>
-    <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.diagnostics.healthchecks.ihealthcheck">IHealthCheck</a></div>
-    </dd>
-  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -144,6 +139,9 @@ Class RecoveryHealthCheck
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
@@ -156,28 +154,29 @@ Class RecoveryHealthCheck
 
 
 
-  <h2 class="section" id="constructors">Constructors
+  <h2 class="section" id="fields">Fields
 </h2>
 
 
-  <a id="Virtufin_WorkManager_Services_RecoveryHealthCheck__ctor_" data-uid="Virtufin.WorkManager.Services.RecoveryHealthCheck.#ctor*"></a>
 
-  <h3 id="Virtufin_WorkManager_Services_RecoveryHealthCheck__ctor_Virtufin_WorkManager_Services_RecoveryState_" data-uid="Virtufin.WorkManager.Services.RecoveryHealthCheck.#ctor(Virtufin.WorkManager.Services.RecoveryState)">
-  RecoveryHealthCheck(RecoveryState)
+  <h3 id="Virtufin_WorkManager_Configuration_InfraEvents_GrouplockAcquired" data-uid="Virtufin.WorkManager.Configuration.InfraEvents.GrouplockAcquired">
+  GrouplockAcquired
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Creates a new RecoveryHealthCheck.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public RecoveryHealthCheck(RecoveryState recoveryState)</code></pre>
+    <pre><code class="lang-csharp hljs">public const string GrouplockAcquired = &quot;com.virtufin.workmanager.infra.grouplock.acquired&quot;</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
+
+
+
+  <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><code>recoveryState</code> <a class="xref" href="Virtufin.WorkManager.Services.RecoveryState.html">RecoveryState</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -190,45 +189,116 @@ Class RecoveryHealthCheck
 
 
 
-
-
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
-  <a id="Virtufin_WorkManager_Services_RecoveryHealthCheck_CheckHealthAsync_" data-uid="Virtufin.WorkManager.Services.RecoveryHealthCheck.CheckHealthAsync*"></a>
-
-  <h3 id="Virtufin_WorkManager_Services_RecoveryHealthCheck_CheckHealthAsync_Microsoft_Extensions_Diagnostics_HealthChecks_HealthCheckContext_System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Services.RecoveryHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)">
-  CheckHealthAsync(HealthCheckContext, CancellationToken)
+  <h3 id="Virtufin_WorkManager_Configuration_InfraEvents_GrouplockReleased" data-uid="Virtufin.WorkManager.Configuration.InfraEvents.GrouplockReleased">
+  GrouplockReleased
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Runs the health check, returning the status of the component being checked.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;HealthCheckResult&gt; CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">public const string GrouplockReleased = &quot;com.virtufin.workmanager.infra.grouplock.released&quot;</code></pre>
   </div>
 
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>context</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.diagnostics.healthchecks.healthcheckcontext">HealthCheckContext</a></dt>
-    <dd><p>A context object associated with the current execution.</p>
-</dd>
-    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> that can be used to cancel the health check.</p>
-</dd>
-  </dl>
 
-  <h4 class="section">Returns</h4>
+
+
+  <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.diagnostics.healthchecks.healthcheckresult">HealthCheckResult</a>&gt;</dt>
-    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task&lt;TResult&gt;</a> that completes when the health check has finished, yielding the status of the component being checked.</p>
-</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
   </dl>
 
 
+
+
+
+
+
+
+
+
+  <h3 id="Virtufin_WorkManager_Configuration_InfraEvents_TypePrefix" data-uid="Virtufin.WorkManager.Configuration.InfraEvents.TypePrefix">
+  TypePrefix
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string TypePrefix = &quot;com.virtufin.workmanager.infra.&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Virtufin_WorkManager_Configuration_InfraEvents_WorkerHeartbeat" data-uid="Virtufin.WorkManager.Configuration.InfraEvents.WorkerHeartbeat">
+  WorkerHeartbeat
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string WorkerHeartbeat = &quot;com.virtufin.workmanager.infra.worker.heartbeat&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Virtufin_WorkManager_Configuration_InfraEvents_WorkerOnline" data-uid="Virtufin.WorkManager.Configuration.InfraEvents.WorkerOnline">
+  WorkerOnline
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string WorkerOnline = &quot;com.virtufin.workmanager.infra.worker.online&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
 
 
 

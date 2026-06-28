@@ -14,7 +14,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Components.NuGetAuthHandler",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Components.NuGetAuthHandler.yml\" sourcestartlinenumber=\"1\">HTTP message handler that injects HTTP Basic credentials into\noutbound requests to the configured NuGet registry. Used by the\nWorkManager's <xref href=\"System.Net.Http.IHttpClientFactory\" data-throw-if-not-resolved=\"false\"></xref>-managed\n<code>CodeFetcher</code> client so it can download worker\n<code>.nupkg</code> artefacts from a private Gitea NuGet registry\n(e.g. <code>https://nuget.haenerconsulting.com/api/packages/virtufin/nuget/package/...</code>)\nwithout requiring public-read access on the registry.</p>\n"
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Components.NuGetAuthHandler.yml\" sourcestartlinenumber=\"1\">HTTP message handler that injects HTTP Basic credentials into\noutbound requests to the configured NuGet registry. Used by the\nWorkManager's <xref href=\"System.Net.Http.IHttpClientFactory\" data-throw-if-not-resolved=\"false\"></xref>-managed\n<code>CodeFetcher</code> client so it can download worker\n<code>.nupkg</code> artefacts from a private Gitea NuGet registry\n(e.g. <code>https://gitea.haenerconsulting.com/api/packages/virtufin/nuget/package/...</code>)\nwithout requiring public-read access on the registry.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -88,6 +88,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Configuration.InfraEvents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Configuration.InfraEvents.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Configuration.InfraEvents",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.InfraEvents.yml\" sourcestartlinenumber=\"1\">CloudEvents v1.0 type strings for WorkManager infra events\n(heartbeats, grouplock changes).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Virtufin.WorkManager.Configuration.PortConstants.yml",
       "output": {
         ".html": {
@@ -112,7 +126,21 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Configuration.Topics",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.Topics.yml\" sourcestartlinenumber=\"1\">Pubsub topics published by the WorkManager. Each service owns\nits own topic; ce-type discriminates events inside the topic.\nThis is the source of truth for any service that needs to consume\nworkmanager.* events — see the worker-management spec for the\nevent taxonomy.</p>\n"
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.Topics.yml\" sourcestartlinenumber=\"1\">Pubsub topics published by the WorkManager. Topic naming follows\nthe lane + scenario scheme in\nvirtufin-openspec/openspec/specs/pubsub-topics/spec.md.\nThis file is the source of truth for any service that needs to\nconsume workmanager.* events.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Configuration.WorkerEvents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Configuration.WorkerEvents.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Configuration.WorkerEvents",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.WorkerEvents.yml\" sourcestartlinenumber=\"1\">CloudEvents v1.0 type strings for WorkManager events. See\nvirtufin-openspec/openspec/specs/pubsub-topics/spec.md for the\nce-type taxonomy.</p>\n"
     },
     {
       "type": "ManagedReference",

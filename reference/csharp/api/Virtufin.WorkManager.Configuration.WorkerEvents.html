@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class CreateWorkerRequest | Virtufin WorkManager - C# Reference </title>
+      <title>Class WorkerEvents | Virtufin WorkManager - C# Reference </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class CreateWorkerRequest | Virtufin WorkManager - C# Reference ">
+      <meta name="title" content="Class WorkerEvents | Virtufin WorkManager - C# Reference ">
       
-      <meta name="description" content="Request to create a new worker.">
+      <meta name="description" content="CloudEvents v1.0 type strings for WorkManager events. See virtufin-openspec/openspec/specs/pubsub-topics/spec.md for the ce-type taxonomy.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,25 +88,27 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Virtufin.WorkManager.Contracts.CreateWorkerRequest">
+        <article data-uid="Virtufin.WorkManager.Configuration.WorkerEvents">
 
 
 
-  <h1 id="Virtufin_WorkManager_Contracts_CreateWorkerRequest" data-uid="Virtufin.WorkManager.Contracts.CreateWorkerRequest" class="text-break">
-Class CreateWorkerRequest  
+  <h1 id="Virtufin_WorkManager_Configuration_WorkerEvents" data-uid="Virtufin.WorkManager.Configuration.WorkerEvents" class="text-break">
+Class WorkerEvents  
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="Virtufin.html">Virtufin</a>.<a class="xref" href="Virtufin.WorkManager.html">WorkManager</a>.<a class="xref" href="Virtufin.WorkManager.Contracts.html">Contracts</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Virtufin.html">Virtufin</a>.<a class="xref" href="Virtufin.WorkManager.html">WorkManager</a>.<a class="xref" href="Virtufin.WorkManager.Configuration.html">Configuration</a></dd></dl>
   <dl><dt>Assembly</dt><dd>Virtufin.WorkManager.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Request to create a new worker.</p>
+  <div class="markdown summary"><p>CloudEvents v1.0 type strings for WorkManager events. See
+virtufin-openspec/openspec/specs/pubsub-topics/spec.md for the
+ce-type taxonomy.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed record CreateWorkerRequest : IEquatable&lt;CreateWorkerRequest&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public static class WorkerEvents</code></pre>
   </div>
 
 
@@ -116,16 +118,10 @@ Class CreateWorkerRequest
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">CreateWorkerRequest</span></div>
+      <div><span class="xref">WorkerEvents</span></div>
     </dd>
   </dl>
 
-  <dl class="typelist implements">
-    <dt>Implements</dt>
-    <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Virtufin.WorkManager.Contracts.CreateWorkerRequest.html">CreateWorkerRequest</a>&gt;</div>
-    </dd>
-  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -144,6 +140,9 @@ Class CreateWorkerRequest
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
@@ -156,108 +155,27 @@ Class CreateWorkerRequest
 
 
 
-  <h2 class="section" id="constructors">Constructors
+  <h2 class="section" id="fields">Fields
 </h2>
 
 
-  <a id="Virtufin_WorkManager_Contracts_CreateWorkerRequest__ctor_" data-uid="Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor*"></a>
 
-  <h3 id="Virtufin_WorkManager_Contracts_CreateWorkerRequest__ctor_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_String_System_String_" data-uid="Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String)">
-  CreateWorkerRequest(CodeSource, string, string, string?)
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerEvents_Degraded" data-uid="Virtufin.WorkManager.Configuration.WorkerEvents.Degraded">
+  Degraded
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Request to create a new worker.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CreateWorkerRequest(CodeSource CodeSource, string MimeType, string Topic, string? Group)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>CodeSource</code> <a class="xref" href="Virtufin.WorkManager.Contracts.CodeSource.html">CodeSource</a></dt>
-    <dd><p>The source of the worker's code.</p>
-</dd>
-    <dt><code>MimeType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The MIME type of the code.</p>
-</dd>
-    <dt><code>Topic</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The topic to subscribe to.</p>
-</dd>
-    <dt><code>Group</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The optional group identifier.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 class="section" id="properties">Properties
-</h2>
-
-
-  <a id="Virtufin_WorkManager_Contracts_CreateWorkerRequest_CodeSource_" data-uid="Virtufin.WorkManager.Contracts.CreateWorkerRequest.CodeSource*"></a>
-
-  <h3 id="Virtufin_WorkManager_Contracts_CreateWorkerRequest_CodeSource" data-uid="Virtufin.WorkManager.Contracts.CreateWorkerRequest.CodeSource">
-  CodeSource
-  
-  </h3>
-
-  <div class="markdown level1 summary"><p>The source of the worker's code.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CodeSource CodeSource { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public const string Degraded = &quot;com.virtufin.workmanager.lifecycle.degraded&quot;</code></pre>
   </div>
 
 
 
 
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Virtufin.WorkManager.Contracts.CodeSource.html">CodeSource</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="Virtufin_WorkManager_Contracts_CreateWorkerRequest_Group_" data-uid="Virtufin.WorkManager.Contracts.CreateWorkerRequest.Group*"></a>
-
-  <h3 id="Virtufin_WorkManager_Contracts_CreateWorkerRequest_Group" data-uid="Virtufin.WorkManager.Contracts.CreateWorkerRequest.Group">
-  Group
-  
-  </h3>
-
-  <div class="markdown level1 summary"><p>The optional group identifier.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? Group { get; init; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
+  <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
@@ -270,26 +188,24 @@ Class CreateWorkerRequest
 
 
 
-  <a id="Virtufin_WorkManager_Contracts_CreateWorkerRequest_MimeType_" data-uid="Virtufin.WorkManager.Contracts.CreateWorkerRequest.MimeType*"></a>
 
-  <h3 id="Virtufin_WorkManager_Contracts_CreateWorkerRequest_MimeType" data-uid="Virtufin.WorkManager.Contracts.CreateWorkerRequest.MimeType">
-  MimeType
+
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerEvents_Failed" data-uid="Virtufin.WorkManager.Configuration.WorkerEvents.Failed">
+  Failed
   
   </h3>
 
-  <div class="markdown level1 summary"><p>The MIME type of the code.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string MimeType { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public const string Failed = &quot;com.virtufin.workmanager.lifecycle.failed&quot;</code></pre>
   </div>
 
 
 
 
-
-  <h4 class="section">Property Value</h4>
+  <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
@@ -302,30 +218,209 @@ Class CreateWorkerRequest
 
 
 
-  <a id="Virtufin_WorkManager_Contracts_CreateWorkerRequest_Topic_" data-uid="Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic*"></a>
 
-  <h3 id="Virtufin_WorkManager_Contracts_CreateWorkerRequest_Topic" data-uid="Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic">
-  Topic
+
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerEvents_Online" data-uid="Virtufin.WorkManager.Configuration.WorkerEvents.Online">
+  Online
   
   </h3>
 
-  <div class="markdown level1 summary"><p>The topic to subscribe to.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Topic { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public const string Online = &quot;com.virtufin.workmanager.lifecycle.online&quot;</code></pre>
   </div>
 
 
 
 
-
-  <h4 class="section">Property Value</h4>
+  <h4 class="section">Field Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerEvents_Registered" data-uid="Virtufin.WorkManager.Configuration.WorkerEvents.Registered">
+  Registered
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string Registered = &quot;com.virtufin.workmanager.lifecycle.registered&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerEvents_Starting" data-uid="Virtufin.WorkManager.Configuration.WorkerEvents.Starting">
+  Starting
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string Starting = &quot;com.virtufin.workmanager.lifecycle.starting&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerEvents_Stopped" data-uid="Virtufin.WorkManager.Configuration.WorkerEvents.Stopped">
+  Stopped
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string Stopped = &quot;com.virtufin.workmanager.lifecycle.stopped&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerEvents_Stopping" data-uid="Virtufin.WorkManager.Configuration.WorkerEvents.Stopping">
+  Stopping
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string Stopping = &quot;com.virtufin.workmanager.lifecycle.stopping&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerEvents_TypePrefix" data-uid="Virtufin.WorkManager.Configuration.WorkerEvents.TypePrefix">
+  TypePrefix
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string TypePrefix = &quot;com.virtufin.workmanager.lifecycle.&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerEvents_Unknown" data-uid="Virtufin.WorkManager.Configuration.WorkerEvents.Unknown">
+  Unknown
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string Unknown = &quot;com.virtufin.workmanager.lifecycle.unknown&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
 
 
 

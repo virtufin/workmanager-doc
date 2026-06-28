@@ -22,6 +22,15 @@ references:
   fullName.vb: Virtufin.WorkManager.Components.NuGetAuthHandler.New(String)
   nameWithType: NuGetAuthHandler.NuGetAuthHandler(string)
   nameWithType.vb: NuGetAuthHandler.New(String)
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String[])
+  name: NuGetAuthHandler(string[])
+  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler__ctor_System_String___
+  commentId: M:Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String[])
+  name.vb: New(String())
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.NuGetAuthHandler(string[])
+  fullName.vb: Virtufin.WorkManager.Components.NuGetAuthHandler.New(String())
+  nameWithType: NuGetAuthHandler.NuGetAuthHandler(string[])
+  nameWithType.vb: NuGetAuthHandler.New(String())
 - uid: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor*
   name: NuGetAuthHandler
   href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler__ctor_
@@ -32,25 +41,25 @@ references:
   fullName.vb: Virtufin.WorkManager.Components.NuGetAuthHandler.New
   nameWithType: NuGetAuthHandler.NuGetAuthHandler
   nameWithType.vb: NuGetAuthHandler.New
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHost
-  name: DefaultRegistryHost
-  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_DefaultRegistryHost
-  commentId: F:Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHost
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHost
-  nameWithType: NuGetAuthHandler.DefaultRegistryHost
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
-  name: RegistryHost
-  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHost
-  commentId: P:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
-  nameWithType: NuGetAuthHandler.RegistryHost
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost*
-  name: RegistryHost
-  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHost_
-  commentId: Overload:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHosts
+  name: DefaultRegistryHosts
+  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_DefaultRegistryHosts
+  commentId: F:Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHosts
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHosts
+  nameWithType: NuGetAuthHandler.DefaultRegistryHosts
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+  name: RegistryHosts
+  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHosts
+  commentId: P:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+  nameWithType: NuGetAuthHandler.RegistryHosts
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts*
+  name: RegistryHosts
+  href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHosts_
+  commentId: Overload:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
   isSpec: "True"
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
-  nameWithType: NuGetAuthHandler.RegistryHost
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+  nameWithType: NuGetAuthHandler.RegistryHosts
 - uid: Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
   name: SendAsync(HttpRequestMessage, CancellationToken)
   href: api/Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_SendAsync_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_
@@ -498,6 +507,42 @@ references:
   commentId: F:Virtufin.WorkManager.Configuration.GroupLockOptions.RetryBaseDelayMsEnvVar
   fullName: Virtufin.WorkManager.Configuration.GroupLockOptions.RetryBaseDelayMsEnvVar
   nameWithType: GroupLockOptions.RetryBaseDelayMsEnvVar
+- uid: Virtufin.WorkManager.Configuration.InfraEvents
+  name: InfraEvents
+  href: api/Virtufin.WorkManager.Configuration.InfraEvents.html
+  commentId: T:Virtufin.WorkManager.Configuration.InfraEvents
+  fullName: Virtufin.WorkManager.Configuration.InfraEvents
+  nameWithType: InfraEvents
+- uid: Virtufin.WorkManager.Configuration.InfraEvents.GrouplockAcquired
+  name: GrouplockAcquired
+  href: api/Virtufin.WorkManager.Configuration.InfraEvents.html#Virtufin_WorkManager_Configuration_InfraEvents_GrouplockAcquired
+  commentId: F:Virtufin.WorkManager.Configuration.InfraEvents.GrouplockAcquired
+  fullName: Virtufin.WorkManager.Configuration.InfraEvents.GrouplockAcquired
+  nameWithType: InfraEvents.GrouplockAcquired
+- uid: Virtufin.WorkManager.Configuration.InfraEvents.GrouplockReleased
+  name: GrouplockReleased
+  href: api/Virtufin.WorkManager.Configuration.InfraEvents.html#Virtufin_WorkManager_Configuration_InfraEvents_GrouplockReleased
+  commentId: F:Virtufin.WorkManager.Configuration.InfraEvents.GrouplockReleased
+  fullName: Virtufin.WorkManager.Configuration.InfraEvents.GrouplockReleased
+  nameWithType: InfraEvents.GrouplockReleased
+- uid: Virtufin.WorkManager.Configuration.InfraEvents.TypePrefix
+  name: TypePrefix
+  href: api/Virtufin.WorkManager.Configuration.InfraEvents.html#Virtufin_WorkManager_Configuration_InfraEvents_TypePrefix
+  commentId: F:Virtufin.WorkManager.Configuration.InfraEvents.TypePrefix
+  fullName: Virtufin.WorkManager.Configuration.InfraEvents.TypePrefix
+  nameWithType: InfraEvents.TypePrefix
+- uid: Virtufin.WorkManager.Configuration.InfraEvents.WorkerHeartbeat
+  name: WorkerHeartbeat
+  href: api/Virtufin.WorkManager.Configuration.InfraEvents.html#Virtufin_WorkManager_Configuration_InfraEvents_WorkerHeartbeat
+  commentId: F:Virtufin.WorkManager.Configuration.InfraEvents.WorkerHeartbeat
+  fullName: Virtufin.WorkManager.Configuration.InfraEvents.WorkerHeartbeat
+  nameWithType: InfraEvents.WorkerHeartbeat
+- uid: Virtufin.WorkManager.Configuration.InfraEvents.WorkerOnline
+  name: WorkerOnline
+  href: api/Virtufin.WorkManager.Configuration.InfraEvents.html#Virtufin_WorkManager_Configuration_InfraEvents_WorkerOnline
+  commentId: F:Virtufin.WorkManager.Configuration.InfraEvents.WorkerOnline
+  fullName: Virtufin.WorkManager.Configuration.InfraEvents.WorkerOnline
+  nameWithType: InfraEvents.WorkerOnline
 - uid: Virtufin.WorkManager.Configuration.PortConstants
   name: PortConstants
   href: api/Virtufin.WorkManager.Configuration.PortConstants.html
@@ -558,12 +603,84 @@ references:
   commentId: T:Virtufin.WorkManager.Configuration.Topics
   fullName: Virtufin.WorkManager.Configuration.Topics
   nameWithType: Topics
-- uid: Virtufin.WorkManager.Configuration.Topics.WorkerStatus
-  name: WorkerStatus
-  href: api/Virtufin.WorkManager.Configuration.Topics.html#Virtufin_WorkManager_Configuration_Topics_WorkerStatus
-  commentId: F:Virtufin.WorkManager.Configuration.Topics.WorkerStatus
-  fullName: Virtufin.WorkManager.Configuration.Topics.WorkerStatus
-  nameWithType: Topics.WorkerStatus
+- uid: Virtufin.WorkManager.Configuration.Topics.InfraGrouplock
+  name: InfraGrouplock
+  href: api/Virtufin.WorkManager.Configuration.Topics.html#Virtufin_WorkManager_Configuration_Topics_InfraGrouplock
+  commentId: F:Virtufin.WorkManager.Configuration.Topics.InfraGrouplock
+  fullName: Virtufin.WorkManager.Configuration.Topics.InfraGrouplock
+  nameWithType: Topics.InfraGrouplock
+- uid: Virtufin.WorkManager.Configuration.Topics.InfraWorker
+  name: InfraWorker
+  href: api/Virtufin.WorkManager.Configuration.Topics.html#Virtufin_WorkManager_Configuration_Topics_InfraWorker
+  commentId: F:Virtufin.WorkManager.Configuration.Topics.InfraWorker
+  fullName: Virtufin.WorkManager.Configuration.Topics.InfraWorker
+  nameWithType: Topics.InfraWorker
+- uid: Virtufin.WorkManager.Configuration.Topics.Lifecycle
+  name: Lifecycle
+  href: api/Virtufin.WorkManager.Configuration.Topics.html#Virtufin_WorkManager_Configuration_Topics_Lifecycle
+  commentId: F:Virtufin.WorkManager.Configuration.Topics.Lifecycle
+  fullName: Virtufin.WorkManager.Configuration.Topics.Lifecycle
+  nameWithType: Topics.Lifecycle
+- uid: Virtufin.WorkManager.Configuration.WorkerEvents
+  name: WorkerEvents
+  href: api/Virtufin.WorkManager.Configuration.WorkerEvents.html
+  commentId: T:Virtufin.WorkManager.Configuration.WorkerEvents
+  fullName: Virtufin.WorkManager.Configuration.WorkerEvents
+  nameWithType: WorkerEvents
+- uid: Virtufin.WorkManager.Configuration.WorkerEvents.Degraded
+  name: Degraded
+  href: api/Virtufin.WorkManager.Configuration.WorkerEvents.html#Virtufin_WorkManager_Configuration_WorkerEvents_Degraded
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Degraded
+  fullName: Virtufin.WorkManager.Configuration.WorkerEvents.Degraded
+  nameWithType: WorkerEvents.Degraded
+- uid: Virtufin.WorkManager.Configuration.WorkerEvents.Failed
+  name: Failed
+  href: api/Virtufin.WorkManager.Configuration.WorkerEvents.html#Virtufin_WorkManager_Configuration_WorkerEvents_Failed
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Failed
+  fullName: Virtufin.WorkManager.Configuration.WorkerEvents.Failed
+  nameWithType: WorkerEvents.Failed
+- uid: Virtufin.WorkManager.Configuration.WorkerEvents.Online
+  name: Online
+  href: api/Virtufin.WorkManager.Configuration.WorkerEvents.html#Virtufin_WorkManager_Configuration_WorkerEvents_Online
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Online
+  fullName: Virtufin.WorkManager.Configuration.WorkerEvents.Online
+  nameWithType: WorkerEvents.Online
+- uid: Virtufin.WorkManager.Configuration.WorkerEvents.Registered
+  name: Registered
+  href: api/Virtufin.WorkManager.Configuration.WorkerEvents.html#Virtufin_WorkManager_Configuration_WorkerEvents_Registered
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Registered
+  fullName: Virtufin.WorkManager.Configuration.WorkerEvents.Registered
+  nameWithType: WorkerEvents.Registered
+- uid: Virtufin.WorkManager.Configuration.WorkerEvents.Starting
+  name: Starting
+  href: api/Virtufin.WorkManager.Configuration.WorkerEvents.html#Virtufin_WorkManager_Configuration_WorkerEvents_Starting
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Starting
+  fullName: Virtufin.WorkManager.Configuration.WorkerEvents.Starting
+  nameWithType: WorkerEvents.Starting
+- uid: Virtufin.WorkManager.Configuration.WorkerEvents.Stopped
+  name: Stopped
+  href: api/Virtufin.WorkManager.Configuration.WorkerEvents.html#Virtufin_WorkManager_Configuration_WorkerEvents_Stopped
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Stopped
+  fullName: Virtufin.WorkManager.Configuration.WorkerEvents.Stopped
+  nameWithType: WorkerEvents.Stopped
+- uid: Virtufin.WorkManager.Configuration.WorkerEvents.Stopping
+  name: Stopping
+  href: api/Virtufin.WorkManager.Configuration.WorkerEvents.html#Virtufin_WorkManager_Configuration_WorkerEvents_Stopping
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Stopping
+  fullName: Virtufin.WorkManager.Configuration.WorkerEvents.Stopping
+  nameWithType: WorkerEvents.Stopping
+- uid: Virtufin.WorkManager.Configuration.WorkerEvents.TypePrefix
+  name: TypePrefix
+  href: api/Virtufin.WorkManager.Configuration.WorkerEvents.html#Virtufin_WorkManager_Configuration_WorkerEvents_TypePrefix
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.TypePrefix
+  fullName: Virtufin.WorkManager.Configuration.WorkerEvents.TypePrefix
+  nameWithType: WorkerEvents.TypePrefix
+- uid: Virtufin.WorkManager.Configuration.WorkerEvents.Unknown
+  name: Unknown
+  href: api/Virtufin.WorkManager.Configuration.WorkerEvents.html#Virtufin_WorkManager_Configuration_WorkerEvents_Unknown
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Unknown
+  fullName: Virtufin.WorkManager.Configuration.WorkerEvents.Unknown
+  nameWithType: WorkerEvents.Unknown
 - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
   name: WorkerRecoveryOptions
   href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html

@@ -6,8 +6,9 @@ items:
   parent: Virtufin.WorkManager.Components
   children:
   - Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String)
-  - Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHost
-  - Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
+  - Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String[])
+  - Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHosts
+  - Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
   - Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
   langs:
   - csharp
@@ -23,7 +24,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: NuGetAuthHandler
     path: ../../../src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
-    startLine: 39
+    startLine: 42
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -38,7 +39,7 @@ items:
 
     <code>.nupkg</code> artefacts from a private Gitea NuGet registry
 
-    (e.g. <code>https://nuget.haenerconsulting.com/api/packages/virtufin/nuget/package/...</code>)
+    (e.g. <code>https://gitea.haenerconsulting.com/api/packages/virtufin/nuget/package/...</code>)
 
     without requiring public-read access on the registry.
   remarks: >-
@@ -57,13 +58,19 @@ items:
 
     The handler only injects the <code>Authorization</code> header for
 
-    requests whose URL host matches <xref href="Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost" data-throw-if-not-resolved="false"></xref> (a
+    requests whose URL host matches one of the configured
 
-    case-insensitive exact match). Requests to other hosts are
+    <xref href="Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts" data-throw-if-not-resolved="false"></xref> (case-insensitive exact match).
 
-    passed through unchanged, so non-NuGet code-source URLs do not
+    Requests to other hosts are passed through unchanged, so
 
-    leak credentials.
+    non-NuGet code-source URLs do not leak credentials. The default
+
+    list is <code>nuget.haenerconsulting.com</code> (the legacy DNS name
+
+    pointing at the same Gitea backend) and
+
+    <code>gitea.haenerconsulting.com</code> (the canonical Gitea host).
 
     </p>
 
@@ -99,35 +106,40 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHost
-  commentId: F:Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHost
-  id: DefaultRegistryHost
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHosts
+  commentId: F:Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHosts
+  id: DefaultRegistryHosts
   parent: Virtufin.WorkManager.Components.NuGetAuthHandler
   langs:
   - csharp
   - vb
-  name: DefaultRegistryHost
-  nameWithType: NuGetAuthHandler.DefaultRegistryHost
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHost
+  name: DefaultRegistryHosts
+  nameWithType: NuGetAuthHandler.DefaultRegistryHosts
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHosts
   type: Field
   source:
     remote:
       path: src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: DefaultRegistryHost
+    id: DefaultRegistryHosts
     path: ../../../src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
-    startLine: 44
+    startLine: 49
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
-  summary: Default host pattern for the project's NuGet registry.
+  summary: >-
+    Default host patterns for the project's NuGet registry.
+
+    Both names point at the same Gitea backend (one is a DNS
+
+    alias of the other).
   example: []
   syntax:
-    content: public const string DefaultRegistryHost = "nuget.haenerconsulting.com"
+    content: public static readonly string[] DefaultRegistryHosts
     return:
-      type: System.String
-    content.vb: Public Const DefaultRegistryHost As String = "nuget.haenerconsulting.com"
+      type: System.String[]
+    content.vb: Public Shared ReadOnly DefaultRegistryHosts As String()
 - uid: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String)
   commentId: M:Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String)
   id: '#ctor(System.String)'
@@ -146,7 +158,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
-    startLine: 50
+    startLine: 59
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -160,35 +172,67 @@ items:
   nameWithType.vb: NuGetAuthHandler.New(String)
   fullName.vb: Virtufin.WorkManager.Components.NuGetAuthHandler.New(String)
   name.vb: New(String)
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
-  commentId: P:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
-  id: RegistryHost
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String[])
+  commentId: M:Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String[])
+  id: '#ctor(System.String[])'
   parent: Virtufin.WorkManager.Components.NuGetAuthHandler
   langs:
   - csharp
   - vb
-  name: RegistryHost
-  nameWithType: NuGetAuthHandler.RegistryHost
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
+  name: NuGetAuthHandler(string[])
+  nameWithType: NuGetAuthHandler.NuGetAuthHandler(string[])
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.NuGetAuthHandler(string[])
+  type: Constructor
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: .ctor
+    path: ../../../src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
+    startLine: 64
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  syntax:
+    content: public NuGetAuthHandler(string[] registryHosts)
+    parameters:
+    - id: registryHosts
+      type: System.String[]
+    content.vb: Public Sub New(registryHosts As String())
+  overload: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor*
+  nameWithType.vb: NuGetAuthHandler.New(String())
+  fullName.vb: Virtufin.WorkManager.Components.NuGetAuthHandler.New(String())
+  name.vb: New(String())
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+  commentId: P:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+  id: RegistryHosts
+  parent: Virtufin.WorkManager.Components.NuGetAuthHandler
+  langs:
+  - csharp
+  - vb
+  name: RegistryHosts
+  nameWithType: NuGetAuthHandler.RegistryHosts
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
   type: Property
   source:
     remote:
       path: src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: RegistryHost
+    id: RegistryHosts
     path: ../../../src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
-    startLine: 57
+    startLine: 71
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
   syntax:
-    content: public string RegistryHost { get; }
+    content: public IReadOnlyList<string> RegistryHosts { get; }
     parameters: []
     return:
-      type: System.String
-    content.vb: Public ReadOnly Property RegistryHost As String
-  overload: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost*
+      type: System.Collections.Generic.IReadOnlyList{System.String}
+    content.vb: Public ReadOnly Property RegistryHosts As IReadOnlyList(Of String)
+  overload: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts*
 - uid: Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
   commentId: M:Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
   id: SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
@@ -207,7 +251,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SendAsync
     path: ../../../src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
-    startLine: 59
+    startLine: 73
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -244,12 +288,12 @@ references:
   name: IHttpClientFactory
   nameWithType: IHttpClientFactory
   fullName: System.Net.Http.IHttpClientFactory
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
-  commentId: P:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
-  href: Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHost
-  name: RegistryHost
-  nameWithType: NuGetAuthHandler.RegistryHost
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+  commentId: P:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+  href: Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHosts
+  name: RegistryHosts
+  nameWithType: NuGetAuthHandler.RegistryHosts
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
 - uid: Virtufin.WorkManager.Components
   commentId: N:Virtufin.WorkManager.Components
   href: Virtufin.html
@@ -584,6 +628,38 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor*
+  commentId: Overload:Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor
+  href: Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler__ctor_System_String_
+  name: NuGetAuthHandler
+  nameWithType: NuGetAuthHandler.NuGetAuthHandler
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.NuGetAuthHandler
+  nameWithType.vb: NuGetAuthHandler.New
+  fullName.vb: Virtufin.WorkManager.Components.NuGetAuthHandler.New
+  name.vb: New
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -595,21 +671,112 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor*
-  commentId: Overload:Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor
-  href: Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler__ctor_System_String_
-  name: NuGetAuthHandler
-  nameWithType: NuGetAuthHandler.NuGetAuthHandler
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.NuGetAuthHandler
-  nameWithType.vb: NuGetAuthHandler.New
-  fullName.vb: Virtufin.WorkManager.Components.NuGetAuthHandler.New
-  name.vb: New
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost*
-  commentId: Overload:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
-  href: Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHost
-  name: RegistryHost
-  nameWithType: NuGetAuthHandler.RegistryHost
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHost
+- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts*
+  commentId: Overload:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+  href: Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHosts
+  name: RegistryHosts
+  nameWithType: NuGetAuthHandler.RegistryHosts
+  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+- uid: System.Collections.Generic.IReadOnlyList{System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyList{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<string>
+  nameWithType: IReadOnlyList<string>
+  fullName: System.Collections.Generic.IReadOnlyList<string>
+  nameWithType.vb: IReadOnlyList(Of String)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of String)
+  name.vb: IReadOnlyList(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: System.ArgumentNullException
   commentId: T:System.ArgumentNullException
   isExternal: true

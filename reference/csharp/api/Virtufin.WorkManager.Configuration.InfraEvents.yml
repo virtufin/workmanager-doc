@@ -1,45 +1,41 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Virtufin.WorkManager.Configuration.Topics
-  commentId: T:Virtufin.WorkManager.Configuration.Topics
-  id: Topics
+- uid: Virtufin.WorkManager.Configuration.InfraEvents
+  commentId: T:Virtufin.WorkManager.Configuration.InfraEvents
+  id: InfraEvents
   parent: Virtufin.WorkManager.Configuration
   children:
-  - Virtufin.WorkManager.Configuration.Topics.InfraGrouplock
-  - Virtufin.WorkManager.Configuration.Topics.InfraWorker
-  - Virtufin.WorkManager.Configuration.Topics.Lifecycle
+  - Virtufin.WorkManager.Configuration.InfraEvents.GrouplockAcquired
+  - Virtufin.WorkManager.Configuration.InfraEvents.GrouplockReleased
+  - Virtufin.WorkManager.Configuration.InfraEvents.TypePrefix
+  - Virtufin.WorkManager.Configuration.InfraEvents.WorkerHeartbeat
+  - Virtufin.WorkManager.Configuration.InfraEvents.WorkerOnline
   langs:
   - csharp
   - vb
-  name: Topics
-  nameWithType: Topics
-  fullName: Virtufin.WorkManager.Configuration.Topics
+  name: InfraEvents
+  nameWithType: InfraEvents
+  fullName: Virtufin.WorkManager.Configuration.InfraEvents
   type: Class
   source:
     remote:
-      path: src/Virtufin.WorkManager/Configuration/Topics.cs
+      path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: Topics
-    path: ../../../src/Virtufin.WorkManager/Configuration/Topics.cs
-    startLine: 9
+    id: InfraEvents
+    path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
+    startLine: 25
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
   summary: >-
-    Pubsub topics published by the WorkManager. Topic naming follows
+    CloudEvents v1.0 type strings for WorkManager infra events
 
-    the lane + scenario scheme in
-
-    virtufin-openspec/openspec/specs/pubsub-topics/spec.md.
-
-    This file is the source of truth for any service that needs to
-
-    consume workmanager.* events.
+    (heartbeats, grouplock changes).
   example: []
   syntax:
-    content: public static class Topics
-    content.vb: Public Module Topics
+    content: public static class InfraEvents
+    content.vb: Public Module InfraEvents
   inheritance:
   - System.Object
   inheritedMembers:
@@ -50,106 +46,141 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Configuration.Topics.Lifecycle
-  commentId: F:Virtufin.WorkManager.Configuration.Topics.Lifecycle
-  id: Lifecycle
-  parent: Virtufin.WorkManager.Configuration.Topics
+- uid: Virtufin.WorkManager.Configuration.InfraEvents.TypePrefix
+  commentId: F:Virtufin.WorkManager.Configuration.InfraEvents.TypePrefix
+  id: TypePrefix
+  parent: Virtufin.WorkManager.Configuration.InfraEvents
   langs:
   - csharp
   - vb
-  name: Lifecycle
-  nameWithType: Topics.Lifecycle
-  fullName: Virtufin.WorkManager.Configuration.Topics.Lifecycle
+  name: TypePrefix
+  nameWithType: InfraEvents.TypePrefix
+  fullName: Virtufin.WorkManager.Configuration.InfraEvents.TypePrefix
   type: Field
   source:
     remote:
-      path: src/Virtufin.WorkManager/Configuration/Topics.cs
+      path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: Lifecycle
-    path: ../../../src/Virtufin.WorkManager/Configuration/Topics.cs
-    startLine: 17
+    id: TypePrefix
+    path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
+    startLine: 27
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
-  summary: >-
-    Worker lifecycle events (registered, starting, online,
-
-    degraded, stopping, stopped, failed). Carries CloudEvents
-
-    v1.0 envelopes; see <xref href="Virtufin.WorkManager.Configuration.WorkerEvents" data-throw-if-not-resolved="false"></xref> for ce-type
-
-    values.
-  example: []
   syntax:
-    content: public const string Lifecycle = "workmanager.lifecycle"
+    content: public const string TypePrefix = "com.virtufin.workmanager.infra."
     return:
       type: System.String
-    content.vb: Public Const Lifecycle As String = "workmanager.lifecycle"
-- uid: Virtufin.WorkManager.Configuration.Topics.InfraWorker
-  commentId: F:Virtufin.WorkManager.Configuration.Topics.InfraWorker
-  id: InfraWorker
-  parent: Virtufin.WorkManager.Configuration.Topics
+    content.vb: Public Const TypePrefix As String = "com.virtufin.workmanager.infra."
+- uid: Virtufin.WorkManager.Configuration.InfraEvents.WorkerHeartbeat
+  commentId: F:Virtufin.WorkManager.Configuration.InfraEvents.WorkerHeartbeat
+  id: WorkerHeartbeat
+  parent: Virtufin.WorkManager.Configuration.InfraEvents
   langs:
   - csharp
   - vb
-  name: InfraWorker
-  nameWithType: Topics.InfraWorker
-  fullName: Virtufin.WorkManager.Configuration.Topics.InfraWorker
+  name: WorkerHeartbeat
+  nameWithType: InfraEvents.WorkerHeartbeat
+  fullName: Virtufin.WorkManager.Configuration.InfraEvents.WorkerHeartbeat
   type: Field
   source:
     remote:
-      path: src/Virtufin.WorkManager/Configuration/Topics.cs
+      path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: InfraWorker
-    path: ../../../src/Virtufin.WorkManager/Configuration/Topics.cs
-    startLine: 23
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Configuration
-  summary: >-
-    Finer-grained worker infra events (heartbeat). Carries
-
-    CloudEvents v1.0 envelopes.
-  example: []
-  syntax:
-    content: public const string InfraWorker = "workmanager.infra.worker"
-    return:
-      type: System.String
-    content.vb: Public Const InfraWorker As String = "workmanager.infra.worker"
-- uid: Virtufin.WorkManager.Configuration.Topics.InfraGrouplock
-  commentId: F:Virtufin.WorkManager.Configuration.Topics.InfraGrouplock
-  id: InfraGrouplock
-  parent: Virtufin.WorkManager.Configuration.Topics
-  langs:
-  - csharp
-  - vb
-  name: InfraGrouplock
-  nameWithType: Topics.InfraGrouplock
-  fullName: Virtufin.WorkManager.Configuration.Topics.InfraGrouplock
-  type: Field
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Configuration/Topics.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: InfraGrouplock
-    path: ../../../src/Virtufin.WorkManager/Configuration/Topics.cs
+    id: WorkerHeartbeat
+    path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 29
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
-  summary: >-
-    Grouplock changes (acquired / released). Carries CloudEvents
-
-    v1.0 envelopes.
-  example: []
   syntax:
-    content: public const string InfraGrouplock = "workmanager.infra.grouplock"
+    content: public const string WorkerHeartbeat = "com.virtufin.workmanager.infra.worker.heartbeat"
     return:
       type: System.String
-    content.vb: Public Const InfraGrouplock As String = "workmanager.infra.grouplock"
+    content.vb: Public Const WorkerHeartbeat As String = "com.virtufin.workmanager.infra.worker.heartbeat"
+- uid: Virtufin.WorkManager.Configuration.InfraEvents.WorkerOnline
+  commentId: F:Virtufin.WorkManager.Configuration.InfraEvents.WorkerOnline
+  id: WorkerOnline
+  parent: Virtufin.WorkManager.Configuration.InfraEvents
+  langs:
+  - csharp
+  - vb
+  name: WorkerOnline
+  nameWithType: InfraEvents.WorkerOnline
+  fullName: Virtufin.WorkManager.Configuration.InfraEvents.WorkerOnline
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: WorkerOnline
+    path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
+    startLine: 30
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  syntax:
+    content: public const string WorkerOnline = "com.virtufin.workmanager.infra.worker.online"
+    return:
+      type: System.String
+    content.vb: Public Const WorkerOnline As String = "com.virtufin.workmanager.infra.worker.online"
+- uid: Virtufin.WorkManager.Configuration.InfraEvents.GrouplockAcquired
+  commentId: F:Virtufin.WorkManager.Configuration.InfraEvents.GrouplockAcquired
+  id: GrouplockAcquired
+  parent: Virtufin.WorkManager.Configuration.InfraEvents
+  langs:
+  - csharp
+  - vb
+  name: GrouplockAcquired
+  nameWithType: InfraEvents.GrouplockAcquired
+  fullName: Virtufin.WorkManager.Configuration.InfraEvents.GrouplockAcquired
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: GrouplockAcquired
+    path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
+    startLine: 31
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  syntax:
+    content: public const string GrouplockAcquired = "com.virtufin.workmanager.infra.grouplock.acquired"
+    return:
+      type: System.String
+    content.vb: Public Const GrouplockAcquired As String = "com.virtufin.workmanager.infra.grouplock.acquired"
+- uid: Virtufin.WorkManager.Configuration.InfraEvents.GrouplockReleased
+  commentId: F:Virtufin.WorkManager.Configuration.InfraEvents.GrouplockReleased
+  id: GrouplockReleased
+  parent: Virtufin.WorkManager.Configuration.InfraEvents
+  langs:
+  - csharp
+  - vb
+  name: GrouplockReleased
+  nameWithType: InfraEvents.GrouplockReleased
+  fullName: Virtufin.WorkManager.Configuration.InfraEvents.GrouplockReleased
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: GrouplockReleased
+    path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
+    startLine: 32
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  syntax:
+    content: public const string GrouplockReleased = "com.virtufin.workmanager.infra.grouplock.released"
+    return:
+      type: System.String
+    content.vb: Public Const GrouplockReleased As String = "com.virtufin.workmanager.infra.grouplock.released"
 references:
 - uid: Virtufin.WorkManager.Configuration
   commentId: N:Virtufin.WorkManager.Configuration
@@ -418,12 +449,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Virtufin.WorkManager.Configuration.WorkerEvents
-  commentId: T:Virtufin.WorkManager.Configuration.WorkerEvents
-  href: Virtufin.WorkManager.Configuration.WorkerEvents.html
-  name: WorkerEvents
-  nameWithType: WorkerEvents
-  fullName: Virtufin.WorkManager.Configuration.WorkerEvents
 - uid: System.String
   commentId: T:System.String
   parent: System
