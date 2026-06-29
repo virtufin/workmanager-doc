@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/00c9d53d3d24392e37f549393db8b70d0053dc7e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/6342cc802c8b5499e2643dc1db866c94e5967b73"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 00c9d53">
+       title="View commit 6342cc8">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">00c9d53</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">6342cc8</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/00c9d53d3d24392e37f549393db8b70d0053dc7e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/6342cc802c8b5499e2643dc1db866c94e5967b73"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 00c9d53">
+       title="View commit 6342cc8">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">00c9d53</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">6342cc8</text>
       </svg>
     </a>
 </div>
@@ -846,7 +846,7 @@
   <a href="#dotnetdllengine-in-process-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DotnetDllEngine (in-process, default)
+        DotNetDllEngine (in-process, default)
       
     </span>
   </a>
@@ -1364,7 +1364,7 @@
   <span class="md-ellipsis">
     
   
-    DotnetDll Workers
+    DotNetDll Workers
   
 
     
@@ -1613,7 +1613,7 @@
   <a href="#dotnetdllengine-in-process-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DotnetDllEngine (in-process, default)
+        DotNetDllEngine (in-process, default)
       
     </span>
   </a>
@@ -1758,13 +1758,13 @@
     subgraph ER["EngineRegistry"]
         P["text/x-python"] --&gt; PE[PythonEngine Factory]
         C["text/x-csharp"] --&gt; CS[CSharpSourceEngine Factory]
-        D["application/x-dotnet-dll"] --&gt; CD[DotnetDllEngine Factory]
+        D["application/x-dotnet-dll"] --&gt; CD[DotNetDllEngine Factory]
         N["application/x-native-dll"] --&gt; CN[NativeDllEngine Factory]
     end
     ER --&gt; EF[Engine Factory&lt;br/&gt;per worker]
     EF --&gt; E1[PythonEngine Instance]
     EF --&gt; E2[CSharpSourceEngine Instance]
-    EF --&gt; E3[DotnetDllEngine Instance]
+    EF --&gt; E3[DotNetDllEngine Instance]
     EF --&gt; E4[NativeDllEngine Instance]</code></pre>
 <p><strong>Engine Instance Lifecycle:</strong></p>
 <pre class="mermaid"><code>flowchart LR
@@ -1938,7 +1938,7 @@
 - Missing / malformed <code>.nuspec</code>, invalid library basename, missing RID entry (<code>InvalidWorkerNuspecException</code> / <code>UnsupportedArchitectureException</code>).
 - Process returns non-zero → engine returns null (caller publishes <code>worker.error</code>).
 - Process returns <code>error_message</code> in <code>WorkerResponse</code> → engine throws <code>InvalidOperationException</code>; lifecycle publisher surfaces <code>worker.error</code>.</p>
-<h3 id="dotnetdllengine-in-process-default">DotnetDllEngine (in-process, default)</h3>
+<h3 id="dotnetdllengine-in-process-default">DotNetDllEngine (in-process, default)</h3>
 <p><strong>MIME Type:</strong> <code>application/x-dotnet-dll</code></p>
 <p><strong>Default engine</strong> as of <code>LIBRARY_VERSION 0.0.59</code>. The engine is
 AOT-compiled into the WorkManager binary and embeds the .NET
@@ -1946,13 +1946,13 @@ runtime (<code>CoreCLR</code>) on first use via <code>libhostfxr</code>. Worker 
 are loaded into a per-worker, collectible
 <code>AssemblyLoadContext</code>. Per-call latency: sub-microsecond (direct
 in-process method dispatch, no socket, no JSON).</p>
-<p>See <a href="../in-process-dotnet-dll-workers/">In-Process Dotnet DLL Workers</a>
+<p>See <a href="../in-process-dotnet-dll-workers/">In-Process DotNet DLL Workers</a>
 for the full architecture, setup contract, and trade-offs.</p>
 <p><strong>Data flow:</strong></p>
 <pre class="mermaid"><code>sequenceDiagram
     autonumber
     participant Sub as Pub/Sub
-    participant WM as WorkManager&lt;br/&gt;(DotnetDllEngine,&lt;br/&gt;AOT + CoreCLR)
+    participant WM as WorkManager&lt;br/&gt;(DotNetDllEngine,&lt;br/&gt;AOT + CoreCLR)
     participant Ctx as AssemblyLoadContext
     participant W as IWorker impl
 
@@ -1975,7 +1975,7 @@ for the full architecture, setup contract, and trade-offs.</p>
 worker DLL is published as a NuGet <code>.nupkg</code> with a
 <code>lib/&lt;tfm&gt;/&lt;id&gt;.dll</code> entry and a <code>&lt;virtufinLibrary&gt;</code> extension
 in the nuspec. See
-<a href="../dotnet-dll-workers/">Dotnet DLL Workers</a> for the full author
+<a href="../dotnet-dll-workers/">DotNet DLL Workers</a> for the full author
 guide.</p>
 <p><strong>Discovery:</strong> The engine scans the loaded assembly for the
 first non-abstract, non-interface type implementing <code>IWorker</code>.
@@ -1984,7 +1984,7 @@ is thrown.</p>
 <p><strong>Virtufin.Worker.DevKit</strong> is a lightweight NuGet package
 (dependency: <code>CloudNative.CloudEvents</code> only) that provides the
 <code>IWorker</code> interface and <code>WorkerBase</code> abstract class. It is
-specifically for the in-process Dotnet DLL engine — not used by
+specifically for the in-process DotNet DLL engine — not used by
 other engines.</p>
 <p>The same package also provides the AOT-native bridge
 (<code>AotNative&lt;W&gt;</code>), the <code>CloudEventCodec</code>, and <code>WorkerContext</code> (plus
@@ -2053,7 +2053,7 @@ format.</p>
 <p>Engine instances are specific to a single worker and accessed sequentially (one message at a time). However:</p>
 <ul>
 <li><code>PythonEngine</code> uses <code>IDisposable</code> - dispose is called when engine is replaced</li>
-<li><code>CSharpSourceEngine</code> and <code>DotnetDllEngine</code> do not require disposal</li>
+<li><code>CSharpSourceEngine</code> and <code>DotNetDllEngine</code> do not require disposal</li>
 <li><code>NativeDllEngine</code> implements <code>IAsyncDisposable</code>; dispose frees the loaded library and releases the host struct</li>
 </ul>
 <h2 id="performance-characteristics">Performance Characteristics</h2>
@@ -2076,7 +2076,7 @@ format.</p>
 <td>High-throughput topics, complex logic</td>
 </tr>
 <tr>
-<td><strong>DotnetDllEngine</strong></td>
+<td><strong>DotNetDllEngine</strong></td>
 <td>&lt; 10ms</td>
 <td>&lt; 1ms</td>
 <td>Highest</td>
@@ -2145,7 +2145,7 @@ format.</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-06-29T06:35:37Z</span>
+  <span style="display:table-cell;text-align:right">2026-06-29T11:02:37Z</span>
 </div>
 
     </div>

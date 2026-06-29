@@ -27,7 +27,7 @@
     
     
       
-        <title>DotnetDll Workers - Virtufin WorkManager Documentation</title>
+        <title>DotNetDll Workers - Virtufin WorkManager Documentation</title>
       
     
     
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DotnetDll Workers
+              DotNetDll Workers
             
           </span>
         </div>
@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/00c9d53d3d24392e37f549393db8b70d0053dc7e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/6342cc802c8b5499e2643dc1db866c94e5967b73"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 00c9d53">
+       title="View commit 6342cc8">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">00c9d53</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">6342cc8</text>
       </svg>
     </a>
 </div>
@@ -401,14 +401,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/00c9d53d3d24392e37f549393db8b70d0053dc7e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/6342cc802c8b5499e2643dc1db866c94e5967b73"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 00c9d53">
+       title="View commit 6342cc8">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">00c9d53</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">6342cc8</text>
       </svg>
     </a>
 </div>
@@ -1154,7 +1154,7 @@
   <span class="md-ellipsis">
     
   
-    DotnetDll Workers
+    DotNetDll Workers
   
 
     
@@ -1172,7 +1172,7 @@
   <span class="md-ellipsis">
     
   
-    DotnetDll Workers
+    DotNetDll Workers
   
 
     
@@ -1808,8 +1808,8 @@
 
 
 
-<h1 id="dotnet-dll-workers">Dotnet DLL Workers</h1>
-<p>The <code>DotnetDllEngine</code> (in-process, <strong>default</strong> as of
+<h1 id="dotnet-dll-workers">DotNet DLL Workers</h1>
+<p>The <code>DotNetDllEngine</code> (in-process, <strong>default</strong> as of
 <code>LIBRARY_VERSION 0.0.59</code>) loads pre-compiled .NET assemblies
 into an isolated <code>AssemblyLoadContext</code> <em>inside</em> the
 AOT-compiled WorkManager. Workers must implement the
@@ -1817,9 +1817,9 @@ AOT-compiled WorkManager. Workers must implement the
 NuGet package.</p>
 <blockquote>
 <p><strong>Scope:</strong> <code>Virtufin.Worker.DevKit</code> is specifically for the
-Dotnet DLL engine. It is not used by the PythonEngine,
+DotNet DLL engine. It is not used by the PythonEngine,
 CSharpSourceEngine, or any other engine.</p>
-<p>See <a href="../in-process-dotnet-dll-workers/">In-Process Dotnet DLL Workers</a>
+<p>See <a href="../in-process-dotnet-dll-workers/">In-Process DotNet DLL Workers</a>
 for the architecture and trade-offs.</p>
 <p>See <a href="../devkit/">Worker DevKit</a> for the full hierarchy and
 codec-driven API contract.</p>
@@ -1926,7 +1926,7 @@ the (optional) <code>virtufin*</code> extensions:</p>
 </code></pre></div>
 <p>The <code>&lt;id&gt;.dll</code> (your worker assembly) is placed under <code>lib/&lt;tfm&gt;/</code> by
 <code>dotnet pack</code> (e.g. <code>lib/net10.0/Virtufin.Worker.MyWorker.dll</code>). The
-DotnetDll engine host picks the entry whose TFM best matches its own
+DotNetDll engine host picks the entry whose TFM best matches its own
 runtime, falling back to the first <code>lib/</code> group if none match.</p>
 <p>You can also pack manually if you need finer control — just produce
 the same <code>&lt;id&gt;.nuspec</code> + <code>lib/&lt;tfm&gt;/&lt;id&gt;.dll</code> layout and zip it into
@@ -2287,7 +2287,7 @@ dispatch.</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-06-29T06:35:37Z</span>
+  <span style="display:table-cell;text-align:right">2026-06-29T11:02:37Z</span>
 </div>
 
     </div>

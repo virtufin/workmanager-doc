@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/00c9d53d3d24392e37f549393db8b70d0053dc7e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/6342cc802c8b5499e2643dc1db866c94e5967b73"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 00c9d53">
+       title="View commit 6342cc8">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">00c9d53</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">6342cc8</text>
       </svg>
     </a>
 </div>
@@ -401,14 +401,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/00c9d53d3d24392e37f549393db8b70d0053dc7e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/6342cc802c8b5499e2643dc1db866c94e5967b73"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 00c9d53">
+       title="View commit 6342cc8">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">00c9d53</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">6342cc8</text>
       </svg>
     </a>
 </div>
@@ -1184,12 +1184,12 @@
   <a href="#public-api-jit-side-dotnetdllengine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Public API (JIT side: DotnetDllEngine)
+        Public API (JIT side: DotNetDllEngine)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Public API (JIT side: DotnetDllEngine)">
+    <nav class="md-nav" aria-label="Public API (JIT side: DotNetDllEngine)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1420,7 +1420,7 @@
   <span class="md-ellipsis">
     
   
-    DotnetDll Workers
+    DotNetDll Workers
   
 
     
@@ -1602,12 +1602,12 @@
   <a href="#public-api-jit-side-dotnetdllengine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Public API (JIT side: DotnetDllEngine)
+        Public API (JIT side: DotNetDllEngine)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Public API (JIT side: DotnetDllEngine)">
+    <nav class="md-nav" aria-label="Public API (JIT side: DotNetDllEngine)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1846,7 +1846,7 @@ that runs against the two managed engines:</p>
 </thead>
 <tbody>
 <tr>
-<td><code>DotnetDllEngine</code></td>
+<td><code>DotNetDllEngine</code></td>
 <td><code>WorkerBase&lt;TInput, TOutput&gt;</code> (or one of its subclasses)</td>
 <td>In-process (JIT via hostfxr)</td>
 </tr>
@@ -1933,11 +1933,11 @@ the worker only deals with the typed in/out. The default JSON codec is
         +ProcessStatic(host, inBuf, inLen) int
         +FreeResultStatic(result) void
     }
-    note for AotNative~W~ "Wraps any IWorker; the same worker&lt;br/&gt;class works under DotnetDllEngine&lt;br/&gt;(JIT) and NativeDllEngine (AOT)."</code></pre>
+    note for AotNative~W~ "Wraps any IWorker; the same worker&lt;br/&gt;class works under DotNetDllEngine&lt;br/&gt;(JIT) and NativeDllEngine (AOT)."</code></pre>
 <p><code>CommandWorker&lt;T&gt;</code> and the <code>*CommandWorker*</code> variants require the enum
 identifier names to match the wire-level command strings (case-insensitive).
 See the <code>CommandWorker&lt;T&gt;</code> section below for the data flow.</p>
-<h2 id="public-api-jit-side-dotnetdllengine">Public API (JIT side: <code>DotnetDllEngine</code>)</h2>
+<h2 id="public-api-jit-side-dotnetdllengine">Public API (JIT side: <code>DotNetDllEngine</code>)</h2>
 <h3 id="iworker-and-workerbasetinput-toutput"><code>IWorker</code> and <code>WorkerBase&lt;TInput, TOutput&gt;</code></h3>
 <p>The minimal contract a worker must satisfy:</p>
 <div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IWorker</span>
@@ -2108,7 +2108,7 @@ the API client helper. Both inject a pre-configured
 <p>The AOT side is <strong>a thin bridge over the same <code>IWorker</code> contract</strong> — there
 is no parallel class hierarchy. Any <code>IWorker</code> implementation (typically
 extending <code>WorkerBase&lt;TInput, TOutput&gt;</code> or <code>CommandWorker&lt;T&gt;</code>) runs unchanged
-under <code>DotnetDllEngine</code> (JIT, in-process ALC) and <code>NativeDllEngine</code>
+under <code>DotNetDllEngine</code> (JIT, in-process ALC) and <code>NativeDllEngine</code>
 (AOT, via the <code>AotNative&lt;W&gt;</code> wrapper).</p>
 <h3 id="aotnativew"><code>AotNative&lt;W&gt;</code></h3>
 <p><code>AotNative&lt;W&gt; where W : IWorker, new()</code> is the only AOT-side base — a
@@ -2146,7 +2146,7 @@ to <code>AotNative&lt;W&gt;.ProcessStatic</code> and <code>AotNative&lt;W&gt;.Fr
 <span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">AotNative</span><span class="o">&lt;</span><span class="n">MyWorker</span><span class="o">&gt;</span><span class="p">.</span><span class="n">FreeResultStatic</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>The same <code>MyWorker</code> class is also usable directly by <code>DotnetDllEngine</code>
+<p>The same <code>MyWorker</code> class is also usable directly by <code>DotNetDllEngine</code>
 (the JIT engine calls <code>worker.ProcessAsync(CloudEvent)</code> without going
 through the <code>AotNative</code> bridge).</p>
 <h4 id="aotnativewcurrentcontext"><code>AotNative&lt;W&gt;.CurrentContext</code></h4>
@@ -2154,7 +2154,7 @@ through the <code>AotNative</code> bridge).</p>
 before the wrapped worker's <code>ProcessAsync</code> is called and cleared in a
 <code>finally</code> block after it returns. Workers read this to obtain a
 <code>NativeApiGateway</code> for backend calls under <code>NativeDllEngine</code>. It is
-<code>null</code> outside a native invocation (i.e. under <code>DotnetDllEngine</code>).</p>
+<code>null</code> outside a native invocation (i.e. under <code>DotNetDllEngine</code>).</p>
 <h4 id="per-instance-state">Per-instance state</h4>
 <p>Each unique host pointer (one per <code>LoadCodeAsync</code> call) gets its own
 wrapped <code>W</code> instance, looked up via a <code>ConcurrentDictionary&lt;IntPtr,
@@ -2260,7 +2260,7 @@ publish a reply (the engine returns <code>null</code>).</p>
 <thead>
 <tr>
 <th>Concern</th>
-<th><code>DotnetDllEngine</code> (JIT)</th>
+<th><code>DotNetDllEngine</code> (JIT)</th>
 <th><code>NativeDllEngine</code> (AOT)</th>
 </tr>
 </thead>
@@ -2327,7 +2327,7 @@ flatc<span class="w"> </span>--csharp<span class="w"> </span>-o<span class="w"> 
 <ul>
 <li><a href="../engines/">Engine System</a> — how each engine loads, calls, and disposes
   the worker</li>
-<li><a href="../dotnet-dll-workers/">DotnetDll Workers</a> — full guide for JIT workers,
+<li><a href="../dotnet-dll-workers/">DotNetDll Workers</a> — full guide for JIT workers,
   including dependency resolution and the <code>Virtufin.Worker.DevKit</code> package
   reference</li>
 <li><a href="../native-dll-workers/">NativeDll Workers</a> — full guide for in-process
@@ -2365,7 +2365,7 @@ flatc<span class="w"> </span>--csharp<span class="w"> </span>-o<span class="w"> 
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-06-29T06:35:37Z</span>
+  <span style="display:table-cell;text-align:right">2026-06-29T11:02:37Z</span>
 </div>
 
     </div>

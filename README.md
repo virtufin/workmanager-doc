@@ -12,7 +12,7 @@ Worker lifecycle management and code execution service with Dapr integration.
 ## Features
 
 - Worker lifecycle management (create, start, stop, delete)
-- Code execution engines: Python, C# Source, Dotnet DLL
+- Code execution engines: Python, C# Source, DotNet DLL
 - Pub/sub-based worker invocation via Dapr
 - State store persistence for worker configurations and history
 - gRPC API with reflection
@@ -27,7 +27,7 @@ virtufin-workmanager/
 │   ├── Virtufin.WorkManager.Protos/       # Protobuf definitions (workmanager.proto)
 │   ├── Virtufin.Worker.DevKit/            # Worker base classes (WorkerBase, CommandWorker)
 │   ├── Virtufin.WorkManager.Engines/      # Engine registry
-│   ├── Virtufin.WorkManager.Engine.*/     # Engine implementations (Python, CSharpSource, DotnetDll)
+│   ├── Virtufin.WorkManager.Engine.*/     # Engine implementations (Python, CSharpSource, DotNetDll)
 │   ├── python/virtufin/workmanager/       # Python client library
 │   └── typescript/src/                    # TypeScript client library
 ├── tests/
