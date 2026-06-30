@@ -27,7 +27,7 @@ virtufin-workmanager/
 │   ├── Virtufin.WorkManager.Protos/       # Protobuf definitions (workmanager.proto)
 │   ├── Virtufin.Worker.DevKit/            # Worker base classes (WorkerBase, CommandWorker)
 │   ├── Virtufin.WorkManager.Engines/      # Engine registry
-│   ├── Virtufin.WorkManager.Engine.*/     # Engine implementations (Python, CSharpSource, DotNetDll)
+│   ├── Virtufin.WorkManager.Engine.*/     # Engine implementations (Python, CSharpSource, DotNetDll, NativeDll)
 │   ├── python/virtufin/workmanager/       # Python client library
 │   └── typescript/src/                    # TypeScript client library
 ├── tests/
