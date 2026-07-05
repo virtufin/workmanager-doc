@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e0b0510b28716b92716a43b66706b3182baf16dd"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/1258125baae091ce97a3b61706977095771e922d"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit e0b0510">
+       title="View commit 1258125">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e0b0510</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">1258125</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e0b0510b28716b92716a43b66706b3182baf16dd"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/1258125baae091ce97a3b61706977095771e922d"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit e0b0510">
+       title="View commit 1258125">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e0b0510</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">1258125</text>
       </svg>
     </a>
 </div>
@@ -1058,6 +1058,50 @@
     <span class="md-ellipsis">
       
         SetEnvironmentVariables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTags
       
     </span>
   </a>
@@ -1875,6 +1919,50 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#gettag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GetTags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SetTags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#recoverworkersasync" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2542,6 +2630,113 @@
 - <code>ArgumentNullException</code>: <code>env</code> is null.
 - <code>WorkerNotFoundException</code>: Worker does not exist.</p>
 <hr />
+<h3 id="gettag">GetTag</h3>
+<p>Returns the current value of a single tag on a worker. Returns <code>null</code> if the tag is not set. Tags are resource metadata (NOT injected into the worker process) used for filtering and discovery.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="kt">string?</span><span class="w"> </span><span class="n">GetTag</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">key</span><span class="p">)</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Guid</code></td>
+<td>Worker ID</td>
+</tr>
+<tr>
+<td><code>key</code></td>
+<td><code>string</code></td>
+<td>The tag name</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> The current value, or <code>null</code> if unset.</p>
+<hr />
+<h3 id="gettags">GetTags</h3>
+<p>Returns a snapshot of all tags currently set on a worker.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="n">IReadOnlyDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetTags</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Guid</code></td>
+<td>Worker ID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> All current tag entries (possibly empty).</p>
+<hr />
+<h3 id="settag">SetTag</h3>
+<p>Sets (or replaces) a single tag on a worker. Tags are resource metadata and do NOT affect engine execution.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetTag</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="k">value</span><span class="p">)</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Guid</code></td>
+<td>Worker ID</td>
+</tr>
+<tr>
+<td><code>key</code></td>
+<td><code>string</code></td>
+<td>Tag name</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>Tag value</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="settags">SetTags</h3>
+<p>Replaces the worker's entire tag map with the supplied dictionary.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetTags</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">IDictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tags</span><span class="p">)</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>Guid</code></td>
+<td>Worker ID</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>IDictionary&lt;string, string&gt;</code></td>
+<td>New tag map (empty clears all)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Limits:</strong> Max 50 tags per worker, keys ≤ 128 chars, values ≤ 1024 chars.</p>
+<hr />
 <h3 id="recoverworkersasync">RecoverWorkersAsync</h3>
 <p>Recovers all workers from persistent state and resumes processing.</p>
 <div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">RecoverWorkersAsync</span><span class="p">(</span><span class="n">CancellationToken</span><span class="w"> </span><span class="n">cancellationToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">)</span>
@@ -2698,7 +2893,7 @@
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-07-05T17:55:20Z</span>
+  <span style="display:table-cell;text-align:right">2026-07-05T18:30:31Z</span>
 </div>
 
     </div>

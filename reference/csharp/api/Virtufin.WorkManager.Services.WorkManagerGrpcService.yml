@@ -10,12 +10,16 @@ items:
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.DeleteWorker(Virtufin.WorkManager.Protos.DeleteWorkerRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariable(Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariables(Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  - Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag(Virtufin.WorkManager.Protos.GetTagRequest,Grpc.Core.ServerCallContext)
+  - Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags(Virtufin.WorkManager.Protos.GetTagsRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.RecoverWorkers(Virtufin.WorkManager.Protos.RecoverWorkersRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariables(Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  - Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag(Virtufin.WorkManager.Protos.SetTagRequest,Grpc.Core.ServerCallContext)
+  - Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags(Virtufin.WorkManager.Protos.SetTagsRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.StartWorker(Virtufin.WorkManager.Protos.StartWorkerRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.StopWorker(Virtufin.WorkManager.Protos.StopWorkerRequest,Grpc.Core.ServerCallContext)
   langs:
@@ -138,7 +142,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StartWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 64
+    startLine: 65
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -173,7 +177,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StopWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 83
+    startLine: 84
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -208,7 +212,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 102
+    startLine: 103
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -243,7 +247,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCode
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 131
+    startLine: 139
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -278,7 +282,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeleteWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 168
+    startLine: 176
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -313,7 +317,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 187
+    startLine: 195
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -348,7 +352,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoverWorkers
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 215
+    startLine: 223
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -383,7 +387,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariable
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 223
+    startLine: 231
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -418,7 +422,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetEnvironmentVariable
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 242
+    startLine: 250
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -453,7 +457,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariables
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 266
+    startLine: 274
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -488,7 +492,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetEnvironmentVariables
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 290
+    startLine: 298
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -505,6 +509,146 @@ items:
     content.vb: Public Overrides Function GetEnvironmentVariables(request As GetEnvironmentVariablesRequest, context As ServerCallContext) As Task(Of GetEnvironmentVariablesResponse)
   overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetEnvironmentVariables(Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
   overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariables*
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag(Virtufin.WorkManager.Protos.SetTagRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag(Virtufin.WorkManager.Protos.SetTagRequest,Grpc.Core.ServerCallContext)
+  id: SetTag(Virtufin.WorkManager.Protos.SetTagRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
+  langs:
+  - csharp
+  - vb
+  name: SetTag(SetTagRequest, ServerCallContext)
+  nameWithType: WorkManagerGrpcService.SetTag(SetTagRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag(Virtufin.WorkManager.Protos.SetTagRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: SetTag
+    path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+    startLine: 322
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  example: []
+  syntax:
+    content: public override Task<SetTagResponse> SetTag(SetTagRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Virtufin.WorkManager.Protos.SetTagRequest
+    - id: context
+      type: Grpc.Core.ServerCallContext
+    return:
+      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.SetTagResponse}
+    content.vb: Public Overrides Function SetTag(request As SetTagRequest, context As ServerCallContext) As Task(Of SetTagResponse)
+  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetTag(Virtufin.WorkManager.Protos.SetTagRequest,Grpc.Core.ServerCallContext)
+  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag*
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag(Virtufin.WorkManager.Protos.GetTagRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag(Virtufin.WorkManager.Protos.GetTagRequest,Grpc.Core.ServerCallContext)
+  id: GetTag(Virtufin.WorkManager.Protos.GetTagRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
+  langs:
+  - csharp
+  - vb
+  name: GetTag(GetTagRequest, ServerCallContext)
+  nameWithType: WorkManagerGrpcService.GetTag(GetTagRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag(Virtufin.WorkManager.Protos.GetTagRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: GetTag
+    path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+    startLine: 341
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  example: []
+  syntax:
+    content: public override Task<GetTagResponse> GetTag(GetTagRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Virtufin.WorkManager.Protos.GetTagRequest
+    - id: context
+      type: Grpc.Core.ServerCallContext
+    return:
+      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetTagResponse}
+    content.vb: Public Overrides Function GetTag(request As GetTagRequest, context As ServerCallContext) As Task(Of GetTagResponse)
+  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetTag(Virtufin.WorkManager.Protos.GetTagRequest,Grpc.Core.ServerCallContext)
+  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag*
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags(Virtufin.WorkManager.Protos.SetTagsRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags(Virtufin.WorkManager.Protos.SetTagsRequest,Grpc.Core.ServerCallContext)
+  id: SetTags(Virtufin.WorkManager.Protos.SetTagsRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
+  langs:
+  - csharp
+  - vb
+  name: SetTags(SetTagsRequest, ServerCallContext)
+  nameWithType: WorkManagerGrpcService.SetTags(SetTagsRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags(Virtufin.WorkManager.Protos.SetTagsRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: SetTags
+    path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+    startLine: 365
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  example: []
+  syntax:
+    content: public override Task<SetTagsResponse> SetTags(SetTagsRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Virtufin.WorkManager.Protos.SetTagsRequest
+    - id: context
+      type: Grpc.Core.ServerCallContext
+    return:
+      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.SetTagsResponse}
+    content.vb: Public Overrides Function SetTags(request As SetTagsRequest, context As ServerCallContext) As Task(Of SetTagsResponse)
+  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetTags(Virtufin.WorkManager.Protos.SetTagsRequest,Grpc.Core.ServerCallContext)
+  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags*
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags(Virtufin.WorkManager.Protos.GetTagsRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags(Virtufin.WorkManager.Protos.GetTagsRequest,Grpc.Core.ServerCallContext)
+  id: GetTags(Virtufin.WorkManager.Protos.GetTagsRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
+  langs:
+  - csharp
+  - vb
+  name: GetTags(GetTagsRequest, ServerCallContext)
+  nameWithType: WorkManagerGrpcService.GetTags(GetTagsRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags(Virtufin.WorkManager.Protos.GetTagsRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: GetTags
+    path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+    startLine: 389
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  example: []
+  syntax:
+    content: public override Task<GetTagsResponse> GetTags(GetTagsRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Virtufin.WorkManager.Protos.GetTagsRequest
+    - id: context
+      type: Grpc.Core.ServerCallContext
+    return:
+      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetTagsResponse}
+    content.vb: Public Overrides Function GetTags(request As GetTagsRequest, context As ServerCallContext) As Task(Of GetTagsResponse)
+  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetTags(Virtufin.WorkManager.Protos.GetTagsRequest,Grpc.Core.ServerCallContext)
+  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags*
 references:
 - uid: Virtufin.WorkManager.Services
   commentId: N:Virtufin.WorkManager.Services
@@ -1952,4 +2096,312 @@ references:
   - name: " "
   - uid: Virtufin.WorkManager.Protos.GetEnvironmentVariablesResponse
     name: GetEnvironmentVariablesResponse
+  - name: )
+- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetTag(Virtufin.WorkManager.Protos.SetTagRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetTag(Virtufin.WorkManager.Protos.SetTagRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
+  isExternal: true
+  href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  name: SetTag(SetTagRequest, ServerCallContext)
+  nameWithType: WorkManager.WorkManagerBase.SetTag(SetTagRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetTag(Virtufin.WorkManager.Protos.SetTagRequest, Grpc.Core.ServerCallContext)
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetTag(Virtufin.WorkManager.Protos.SetTagRequest,Grpc.Core.ServerCallContext)
+    name: SetTag
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.SetTagRequest
+    name: SetTagRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetTag(Virtufin.WorkManager.Protos.SetTagRequest,Grpc.Core.ServerCallContext)
+    name: SetTag
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.SetTagRequest
+    name: SetTagRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag*
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag
+  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_SetTag_Virtufin_WorkManager_Protos_SetTagRequest_Grpc_Core_ServerCallContext_
+  name: SetTag
+  nameWithType: WorkManagerGrpcService.SetTag
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag
+- uid: Virtufin.WorkManager.Protos.SetTagRequest
+  commentId: T:Virtufin.WorkManager.Protos.SetTagRequest
+  parent: Virtufin.WorkManager.Protos
+  name: SetTagRequest
+  nameWithType: SetTagRequest
+  fullName: Virtufin.WorkManager.Protos.SetTagRequest
+- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.SetTagResponse}
+  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.SetTagResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<SetTagResponse>
+  nameWithType: Task<SetTagResponse>
+  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.SetTagResponse>
+  nameWithType.vb: Task(Of SetTagResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.SetTagResponse)
+  name.vb: Task(Of SetTagResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Virtufin.WorkManager.Protos.SetTagResponse
+    name: SetTagResponse
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Protos.SetTagResponse
+    name: SetTagResponse
+  - name: )
+- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetTag(Virtufin.WorkManager.Protos.GetTagRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetTag(Virtufin.WorkManager.Protos.GetTagRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
+  isExternal: true
+  href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  name: GetTag(GetTagRequest, ServerCallContext)
+  nameWithType: WorkManager.WorkManagerBase.GetTag(GetTagRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetTag(Virtufin.WorkManager.Protos.GetTagRequest, Grpc.Core.ServerCallContext)
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetTag(Virtufin.WorkManager.Protos.GetTagRequest,Grpc.Core.ServerCallContext)
+    name: GetTag
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.GetTagRequest
+    name: GetTagRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetTag(Virtufin.WorkManager.Protos.GetTagRequest,Grpc.Core.ServerCallContext)
+    name: GetTag
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.GetTagRequest
+    name: GetTagRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag*
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag
+  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_GetTag_Virtufin_WorkManager_Protos_GetTagRequest_Grpc_Core_ServerCallContext_
+  name: GetTag
+  nameWithType: WorkManagerGrpcService.GetTag
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag
+- uid: Virtufin.WorkManager.Protos.GetTagRequest
+  commentId: T:Virtufin.WorkManager.Protos.GetTagRequest
+  parent: Virtufin.WorkManager.Protos
+  name: GetTagRequest
+  nameWithType: GetTagRequest
+  fullName: Virtufin.WorkManager.Protos.GetTagRequest
+- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetTagResponse}
+  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetTagResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<GetTagResponse>
+  nameWithType: Task<GetTagResponse>
+  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.GetTagResponse>
+  nameWithType.vb: Task(Of GetTagResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.GetTagResponse)
+  name.vb: Task(Of GetTagResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Virtufin.WorkManager.Protos.GetTagResponse
+    name: GetTagResponse
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Protos.GetTagResponse
+    name: GetTagResponse
+  - name: )
+- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetTags(Virtufin.WorkManager.Protos.SetTagsRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetTags(Virtufin.WorkManager.Protos.SetTagsRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
+  isExternal: true
+  href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  name: SetTags(SetTagsRequest, ServerCallContext)
+  nameWithType: WorkManager.WorkManagerBase.SetTags(SetTagsRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetTags(Virtufin.WorkManager.Protos.SetTagsRequest, Grpc.Core.ServerCallContext)
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetTags(Virtufin.WorkManager.Protos.SetTagsRequest,Grpc.Core.ServerCallContext)
+    name: SetTags
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.SetTagsRequest
+    name: SetTagsRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetTags(Virtufin.WorkManager.Protos.SetTagsRequest,Grpc.Core.ServerCallContext)
+    name: SetTags
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.SetTagsRequest
+    name: SetTagsRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags*
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags
+  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_SetTags_Virtufin_WorkManager_Protos_SetTagsRequest_Grpc_Core_ServerCallContext_
+  name: SetTags
+  nameWithType: WorkManagerGrpcService.SetTags
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags
+- uid: Virtufin.WorkManager.Protos.SetTagsRequest
+  commentId: T:Virtufin.WorkManager.Protos.SetTagsRequest
+  parent: Virtufin.WorkManager.Protos
+  name: SetTagsRequest
+  nameWithType: SetTagsRequest
+  fullName: Virtufin.WorkManager.Protos.SetTagsRequest
+- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.SetTagsResponse}
+  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.SetTagsResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<SetTagsResponse>
+  nameWithType: Task<SetTagsResponse>
+  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.SetTagsResponse>
+  nameWithType.vb: Task(Of SetTagsResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.SetTagsResponse)
+  name.vb: Task(Of SetTagsResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Virtufin.WorkManager.Protos.SetTagsResponse
+    name: SetTagsResponse
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Protos.SetTagsResponse
+    name: SetTagsResponse
+  - name: )
+- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetTags(Virtufin.WorkManager.Protos.GetTagsRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetTags(Virtufin.WorkManager.Protos.GetTagsRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
+  isExternal: true
+  href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  name: GetTags(GetTagsRequest, ServerCallContext)
+  nameWithType: WorkManager.WorkManagerBase.GetTags(GetTagsRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetTags(Virtufin.WorkManager.Protos.GetTagsRequest, Grpc.Core.ServerCallContext)
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetTags(Virtufin.WorkManager.Protos.GetTagsRequest,Grpc.Core.ServerCallContext)
+    name: GetTags
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.GetTagsRequest
+    name: GetTagsRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetTags(Virtufin.WorkManager.Protos.GetTagsRequest,Grpc.Core.ServerCallContext)
+    name: GetTags
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.GetTagsRequest
+    name: GetTagsRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags*
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags
+  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_GetTags_Virtufin_WorkManager_Protos_GetTagsRequest_Grpc_Core_ServerCallContext_
+  name: GetTags
+  nameWithType: WorkManagerGrpcService.GetTags
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags
+- uid: Virtufin.WorkManager.Protos.GetTagsRequest
+  commentId: T:Virtufin.WorkManager.Protos.GetTagsRequest
+  parent: Virtufin.WorkManager.Protos
+  name: GetTagsRequest
+  nameWithType: GetTagsRequest
+  fullName: Virtufin.WorkManager.Protos.GetTagsRequest
+- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetTagsResponse}
+  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetTagsResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<GetTagsResponse>
+  nameWithType: Task<GetTagsResponse>
+  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.GetTagsResponse>
+  nameWithType.vb: Task(Of GetTagsResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.GetTagsResponse)
+  name.vb: Task(Of GetTagsResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Virtufin.WorkManager.Protos.GetTagsResponse
+    name: GetTagsResponse
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Protos.GetTagsResponse
+    name: GetTagsResponse
   - name: )

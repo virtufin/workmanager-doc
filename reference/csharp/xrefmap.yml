@@ -187,6 +187,35 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Components.WorkManager.GetEnvironmentVariables
   nameWithType: WorkManager.GetEnvironmentVariables
+- uid: Virtufin.WorkManager.Components.WorkManager.GetTag(System.Guid,System.String)
+  name: GetTag(Guid, string)
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_GetTag_System_Guid_System_String_
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.GetTag(System.Guid,System.String)
+  name.vb: GetTag(Guid, String)
+  fullName: Virtufin.WorkManager.Components.WorkManager.GetTag(System.Guid, string)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.GetTag(System.Guid, String)
+  nameWithType: WorkManager.GetTag(Guid, string)
+  nameWithType.vb: WorkManager.GetTag(Guid, String)
+- uid: Virtufin.WorkManager.Components.WorkManager.GetTag*
+  name: GetTag
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_GetTag_
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.GetTag
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Components.WorkManager.GetTag
+  nameWithType: WorkManager.GetTag
+- uid: Virtufin.WorkManager.Components.WorkManager.GetTags(System.Guid)
+  name: GetTags(Guid)
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_GetTags_System_Guid_
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.GetTags(System.Guid)
+  fullName: Virtufin.WorkManager.Components.WorkManager.GetTags(System.Guid)
+  nameWithType: WorkManager.GetTags(Guid)
+- uid: Virtufin.WorkManager.Components.WorkManager.GetTags*
+  name: GetTags
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_GetTags_
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.GetTags
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Components.WorkManager.GetTags
+  nameWithType: WorkManager.GetTags
 - uid: Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)
   name: GetWorkerHistory(Guid)
   href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_GetWorkerHistory_System_Guid_
@@ -287,6 +316,38 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Components.WorkManager.SetEnvironmentVariables
   nameWithType: WorkManager.SetEnvironmentVariables
+- uid: Virtufin.WorkManager.Components.WorkManager.SetTag(System.Guid,System.String,System.String)
+  name: SetTag(Guid, string, string)
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_SetTag_System_Guid_System_String_System_String_
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.SetTag(System.Guid,System.String,System.String)
+  name.vb: SetTag(Guid, String, String)
+  fullName: Virtufin.WorkManager.Components.WorkManager.SetTag(System.Guid, string, string)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.SetTag(System.Guid, String, String)
+  nameWithType: WorkManager.SetTag(Guid, string, string)
+  nameWithType.vb: WorkManager.SetTag(Guid, String, String)
+- uid: Virtufin.WorkManager.Components.WorkManager.SetTag*
+  name: SetTag
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_SetTag_
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.SetTag
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Components.WorkManager.SetTag
+  nameWithType: WorkManager.SetTag
+- uid: Virtufin.WorkManager.Components.WorkManager.SetTags(System.Guid,System.Collections.Generic.IDictionary{System.String,System.String})
+  name: SetTags(Guid, IDictionary<string, string>)
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_SetTags_System_Guid_System_Collections_Generic_IDictionary_System_String_System_String__
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.SetTags(System.Guid,System.Collections.Generic.IDictionary{System.String,System.String})
+  name.vb: SetTags(Guid, IDictionary(Of String, String))
+  fullName: Virtufin.WorkManager.Components.WorkManager.SetTags(System.Guid, System.Collections.Generic.IDictionary<string, string>)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.SetTags(System.Guid, System.Collections.Generic.IDictionary(Of String, String))
+  nameWithType: WorkManager.SetTags(Guid, IDictionary<string, string>)
+  nameWithType.vb: WorkManager.SetTags(Guid, IDictionary(Of String, String))
+- uid: Virtufin.WorkManager.Components.WorkManager.SetTags*
+  name: SetTags
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_SetTags_
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.SetTags
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Components.WorkManager.SetTags
+  nameWithType: WorkManager.SetTags
 - uid: Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync(System.Guid,System.Threading.CancellationToken)
   name: StartWorkerAsync(Guid, CancellationToken)
   href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_StartWorkerAsync_System_Guid_System_Threading_CancellationToken_
@@ -968,15 +1029,15 @@ references:
   commentId: T:Virtufin.WorkManager.Contracts.CreateWorkerRequest
   fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest
   nameWithType: CreateWorkerRequest
-- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})
-  name: CreateWorkerRequest(CodeSource, string, string, string?, Dictionary<string, string>?)
-  href: api/Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest__ctor_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__
-  commentId: M:Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})
-  name.vb: New(CodeSource, String, String, String, Dictionary(Of String, String))
-  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.CreateWorkerRequest(Virtufin.WorkManager.Contracts.CodeSource, string, string, string?, System.Collections.Generic.Dictionary<string, string>?)
-  fullName.vb: Virtufin.WorkManager.Contracts.CreateWorkerRequest.New(Virtufin.WorkManager.Contracts.CodeSource, String, String, String, System.Collections.Generic.Dictionary(Of String, String))
-  nameWithType: CreateWorkerRequest.CreateWorkerRequest(CodeSource, string, string, string?, Dictionary<string, string>?)
-  nameWithType.vb: CreateWorkerRequest.New(CodeSource, String, String, String, Dictionary(Of String, String))
+- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
+  name: CreateWorkerRequest(CodeSource, string, string, string?, Dictionary<string, string>?, Dictionary<string, string>?)
+  href: api/Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest__ctor_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
+  name.vb: New(CodeSource, String, String, String, Dictionary(Of String, String), Dictionary(Of String, String))
+  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.CreateWorkerRequest(Virtufin.WorkManager.Contracts.CodeSource, string, string, string?, System.Collections.Generic.Dictionary<string, string>?, System.Collections.Generic.Dictionary<string, string>?)
+  fullName.vb: Virtufin.WorkManager.Contracts.CreateWorkerRequest.New(Virtufin.WorkManager.Contracts.CodeSource, String, String, String, System.Collections.Generic.Dictionary(Of String, String), System.Collections.Generic.Dictionary(Of String, String))
+  nameWithType: CreateWorkerRequest.CreateWorkerRequest(CodeSource, string, string, string?, Dictionary<string, string>?, Dictionary<string, string>?)
+  nameWithType.vb: CreateWorkerRequest.New(CodeSource, String, String, String, Dictionary(Of String, String), Dictionary(Of String, String))
 - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor*
   name: CreateWorkerRequest
   href: api/Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest__ctor_
@@ -1039,6 +1100,19 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.MimeType
   nameWithType: CreateWorkerRequest.MimeType
+- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Tags
+  name: Tags
+  href: api/Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest_Tags
+  commentId: P:Virtufin.WorkManager.Contracts.CreateWorkerRequest.Tags
+  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Tags
+  nameWithType: CreateWorkerRequest.Tags
+- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Tags*
+  name: Tags
+  href: api/Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest_Tags_
+  commentId: Overload:Virtufin.WorkManager.Contracts.CreateWorkerRequest.Tags
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Tags
+  nameWithType: CreateWorkerRequest.Tags
 - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic
   name: Topic
   href: api/Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest_Topic
@@ -1285,15 +1359,15 @@ references:
   commentId: T:Virtufin.WorkManager.Contracts.WorkerConfig
   fullName: Virtufin.WorkManager.Contracts.WorkerConfig
   nameWithType: WorkerConfig
-- uid: Virtufin.WorkManager.Contracts.WorkerConfig.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.Dictionary{System.String,System.String})
-  name: WorkerConfig(Guid, CodeSource, string, string, string?, DateTime, List<HistoryEntry>, Dictionary<string, string>?)
-  href: api/Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_String_System_String_System_DateTime_System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__System_Collections_Generic_Dictionary_System_String_System_String__
-  commentId: M:Virtufin.WorkManager.Contracts.WorkerConfig.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.Dictionary{System.String,System.String})
-  name.vb: New(Guid, CodeSource, String, String, String, Date, List(Of HistoryEntry), Dictionary(Of String, String))
-  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.WorkerConfig(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, string, string?, System.DateTime, System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>, System.Collections.Generic.Dictionary<string, string>?)
-  fullName.vb: Virtufin.WorkManager.Contracts.WorkerConfig.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, String, String, Date, System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry), System.Collections.Generic.Dictionary(Of String, String))
-  nameWithType: WorkerConfig.WorkerConfig(Guid, CodeSource, string, string, string?, DateTime, List<HistoryEntry>, Dictionary<string, string>?)
-  nameWithType.vb: WorkerConfig.New(Guid, CodeSource, String, String, String, Date, List(Of HistoryEntry), Dictionary(Of String, String))
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
+  name: WorkerConfig(Guid, CodeSource, string, string, string?, DateTime, List<HistoryEntry>, Dictionary<string, string>?, Dictionary<string, string>?)
+  href: api/Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_String_System_String_System_DateTime_System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__System_Collections_Generic_Dictionary_System_String_System_String__System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Virtufin.WorkManager.Contracts.WorkerConfig.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.String,System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
+  name.vb: New(Guid, CodeSource, String, String, String, Date, List(Of HistoryEntry), Dictionary(Of String, String), Dictionary(Of String, String))
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.WorkerConfig(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, string, string?, System.DateTime, System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>, System.Collections.Generic.Dictionary<string, string>?, System.Collections.Generic.Dictionary<string, string>?)
+  fullName.vb: Virtufin.WorkManager.Contracts.WorkerConfig.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, String, String, Date, System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry), System.Collections.Generic.Dictionary(Of String, String), System.Collections.Generic.Dictionary(Of String, String))
+  nameWithType: WorkerConfig.WorkerConfig(Guid, CodeSource, string, string, string?, DateTime, List<HistoryEntry>, Dictionary<string, string>?, Dictionary<string, string>?)
+  nameWithType.vb: WorkerConfig.New(Guid, CodeSource, String, String, String, Date, List(Of HistoryEntry), Dictionary(Of String, String), Dictionary(Of String, String))
 - uid: Virtufin.WorkManager.Contracts.WorkerConfig.#ctor*
   name: WorkerConfig
   href: api/Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig__ctor_
@@ -1395,6 +1469,19 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Contracts.WorkerConfig.MimeType
   nameWithType: WorkerConfig.MimeType
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.Tags
+  name: Tags
+  href: api/Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig_Tags
+  commentId: P:Virtufin.WorkManager.Contracts.WorkerConfig.Tags
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.Tags
+  nameWithType: WorkerConfig.Tags
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.Tags*
+  name: Tags
+  href: api/Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig_Tags_
+  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerConfig.Tags
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.Tags
+  nameWithType: WorkerConfig.Tags
 - uid: Virtufin.WorkManager.Contracts.WorkerConfig.Topic
   name: Topic
   href: api/Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig_Topic
@@ -1414,15 +1501,15 @@ references:
   commentId: T:Virtufin.WorkManager.Contracts.WorkerInfo
   fullName: Virtufin.WorkManager.Contracts.WorkerInfo
   nameWithType: WorkerInfo
-- uid: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus,System.Collections.Generic.Dictionary{System.String,System.String})
-  name: WorkerInfo(Guid, string, string, string, string?, DateTime, WorkerStatus, Dictionary<string, string>?)
-  href: api/Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo__ctor_System_Guid_System_String_System_String_System_String_System_String_System_DateTime_Virtufin_WorkManager_Contracts_WorkerStatus_System_Collections_Generic_Dictionary_System_String_System_String__
-  commentId: M:Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus,System.Collections.Generic.Dictionary{System.String,System.String})
-  name.vb: New(Guid, String, String, String, String, Date, WorkerStatus, Dictionary(Of String, String))
-  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.WorkerInfo(System.Guid, string, string, string, string?, System.DateTime, Virtufin.WorkManager.Contracts.WorkerStatus, System.Collections.Generic.Dictionary<string, string>?)
-  fullName.vb: Virtufin.WorkManager.Contracts.WorkerInfo.New(System.Guid, String, String, String, String, Date, Virtufin.WorkManager.Contracts.WorkerStatus, System.Collections.Generic.Dictionary(Of String, String))
-  nameWithType: WorkerInfo.WorkerInfo(Guid, string, string, string, string?, DateTime, WorkerStatus, Dictionary<string, string>?)
-  nameWithType.vb: WorkerInfo.New(Guid, String, String, String, String, Date, WorkerStatus, Dictionary(Of String, String))
+- uid: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
+  name: WorkerInfo(Guid, string, string, string, string?, DateTime, WorkerStatus, Dictionary<string, string>?, Dictionary<string, string>?)
+  href: api/Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo__ctor_System_Guid_System_String_System_String_System_String_System_String_System_DateTime_Virtufin_WorkManager_Contracts_WorkerStatus_System_Collections_Generic_Dictionary_System_String_System_String__System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
+  name.vb: New(Guid, String, String, String, String, Date, WorkerStatus, Dictionary(Of String, String), Dictionary(Of String, String))
+  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.WorkerInfo(System.Guid, string, string, string, string?, System.DateTime, Virtufin.WorkManager.Contracts.WorkerStatus, System.Collections.Generic.Dictionary<string, string>?, System.Collections.Generic.Dictionary<string, string>?)
+  fullName.vb: Virtufin.WorkManager.Contracts.WorkerInfo.New(System.Guid, String, String, String, String, Date, Virtufin.WorkManager.Contracts.WorkerStatus, System.Collections.Generic.Dictionary(Of String, String), System.Collections.Generic.Dictionary(Of String, String))
+  nameWithType: WorkerInfo.WorkerInfo(Guid, string, string, string, string?, DateTime, WorkerStatus, Dictionary<string, string>?, Dictionary<string, string>?)
+  nameWithType.vb: WorkerInfo.New(Guid, String, String, String, String, Date, WorkerStatus, Dictionary(Of String, String), Dictionary(Of String, String))
 - uid: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor*
   name: WorkerInfo
   href: api/Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo__ctor_
@@ -1524,6 +1611,19 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Contracts.WorkerInfo.Status
   nameWithType: WorkerInfo.Status
+- uid: Virtufin.WorkManager.Contracts.WorkerInfo.Tags
+  name: Tags
+  href: api/Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo_Tags
+  commentId: P:Virtufin.WorkManager.Contracts.WorkerInfo.Tags
+  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.Tags
+  nameWithType: WorkerInfo.Tags
+- uid: Virtufin.WorkManager.Contracts.WorkerInfo.Tags*
+  name: Tags
+  href: api/Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo_Tags_
+  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerInfo.Tags
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.Tags
+  nameWithType: WorkerInfo.Tags
 - uid: Virtufin.WorkManager.Contracts.WorkerInfo.Topic
   name: Topic
   href: api/Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo_Topic
@@ -1726,15 +1826,15 @@ references:
   commentId: T:Virtufin.WorkManager.Runtime.Worker
   fullName: Virtufin.WorkManager.Runtime.Worker
   nameWithType: Worker
-- uid: Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})
-  name: Worker(Guid, CodeSource, string, IEngine, string, string?, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?)
-  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_Virtufin_WorkManager_Engines_IEngine_System_String_System_String_System_DateTime_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Runtime_Worker__System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__System_Collections_Generic_IDictionary_System_String_System_String__
-  commentId: M:Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})
-  name.vb: New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String))
-  fullName: Virtufin.WorkManager.Runtime.Worker.Worker(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, Virtufin.WorkManager.Engines.IEngine, string, string?, System.DateTime, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Runtime.Worker>, System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>?, System.Collections.Generic.IDictionary<string, string>?)
-  fullName.vb: Virtufin.WorkManager.Runtime.Worker.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, Virtufin.WorkManager.Engines.IEngine, String, String, Date, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Runtime.Worker), System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry), System.Collections.Generic.IDictionary(Of String, String))
-  nameWithType: Worker.Worker(Guid, CodeSource, string, IEngine, string, string?, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?)
-  nameWithType.vb: Worker.New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String))
+- uid: Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})
+  name: Worker(Guid, CodeSource, string, IEngine, string, string?, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?, IDictionary<string, string>?)
+  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_Virtufin_WorkManager_Engines_IEngine_System_String_System_String_System_DateTime_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Runtime_Worker__System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__System_Collections_Generic_IDictionary_System_String_System_String__System_Collections_Generic_IDictionary_System_String_System_String__
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})
+  name.vb: New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String), IDictionary(Of String, String))
+  fullName: Virtufin.WorkManager.Runtime.Worker.Worker(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, Virtufin.WorkManager.Engines.IEngine, string, string?, System.DateTime, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Runtime.Worker>, System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>?, System.Collections.Generic.IDictionary<string, string>?, System.Collections.Generic.IDictionary<string, string>?)
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, Virtufin.WorkManager.Engines.IEngine, String, String, Date, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Runtime.Worker), System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry), System.Collections.Generic.IDictionary(Of String, String), System.Collections.Generic.IDictionary(Of String, String))
+  nameWithType: Worker.Worker(Guid, CodeSource, string, IEngine, string, string?, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?, IDictionary<string, string>?)
+  nameWithType.vb: Worker.New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String), IDictionary(Of String, String))
 - uid: Virtufin.WorkManager.Runtime.Worker.#ctor*
   name: Worker
   href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker__ctor_
@@ -1897,6 +1997,38 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables
   nameWithType: Worker.SetEnvironmentVariables
+- uid: Virtufin.WorkManager.Runtime.Worker.SetTag(System.String,System.String)
+  name: SetTag(string, string)
+  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetTag_System_String_System_String_
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.SetTag(System.String,System.String)
+  name.vb: SetTag(String, String)
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetTag(string, string)
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.SetTag(String, String)
+  nameWithType: Worker.SetTag(string, string)
+  nameWithType.vb: Worker.SetTag(String, String)
+- uid: Virtufin.WorkManager.Runtime.Worker.SetTag*
+  name: SetTag
+  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetTag_
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.SetTag
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetTag
+  nameWithType: Worker.SetTag
+- uid: Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary{System.String,System.String})
+  name: SetTags(IDictionary<string, string>)
+  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetTags_System_Collections_Generic_IDictionary_System_String_System_String__
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary{System.String,System.String})
+  name.vb: SetTags(IDictionary(Of String, String))
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary<string, string>)
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary(Of String, String))
+  nameWithType: Worker.SetTags(IDictionary<string, string>)
+  nameWithType.vb: Worker.SetTags(IDictionary(Of String, String))
+- uid: Virtufin.WorkManager.Runtime.Worker.SetTags*
+  name: SetTags
+  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetTags_
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.SetTags
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetTags
+  nameWithType: Worker.SetTags
 - uid: Virtufin.WorkManager.Runtime.Worker.Status
   name: Status
   href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_Status
@@ -1910,6 +2042,19 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Runtime.Worker.Status
   nameWithType: Worker.Status
+- uid: Virtufin.WorkManager.Runtime.Worker.Tags
+  name: Tags
+  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_Tags
+  commentId: P:Virtufin.WorkManager.Runtime.Worker.Tags
+  fullName: Virtufin.WorkManager.Runtime.Worker.Tags
+  nameWithType: Worker.Tags
+- uid: Virtufin.WorkManager.Runtime.Worker.Tags*
+  name: Tags
+  href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_Tags_
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.Tags
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Runtime.Worker.Tags
+  nameWithType: Worker.Tags
 - uid: Virtufin.WorkManager.Runtime.Worker.Topic
   name: Topic
   href: api/Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_Topic
@@ -2708,6 +2853,32 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariables
   nameWithType: WorkManagerGrpcService.GetEnvironmentVariables
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag(Virtufin.WorkManager.Protos.GetTagRequest,Grpc.Core.ServerCallContext)
+  name: GetTag(GetTagRequest, ServerCallContext)
+  href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_GetTag_Virtufin_WorkManager_Protos_GetTagRequest_Grpc_Core_ServerCallContext_
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag(Virtufin.WorkManager.Protos.GetTagRequest,Grpc.Core.ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag(Virtufin.WorkManager.Protos.GetTagRequest, Grpc.Core.ServerCallContext)
+  nameWithType: WorkManagerGrpcService.GetTag(GetTagRequest, ServerCallContext)
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag*
+  name: GetTag
+  href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_GetTag_
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTag
+  nameWithType: WorkManagerGrpcService.GetTag
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags(Virtufin.WorkManager.Protos.GetTagsRequest,Grpc.Core.ServerCallContext)
+  name: GetTags(GetTagsRequest, ServerCallContext)
+  href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_GetTags_Virtufin_WorkManager_Protos_GetTagsRequest_Grpc_Core_ServerCallContext_
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags(Virtufin.WorkManager.Protos.GetTagsRequest,Grpc.Core.ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags(Virtufin.WorkManager.Protos.GetTagsRequest, Grpc.Core.ServerCallContext)
+  nameWithType: WorkManagerGrpcService.GetTags(GetTagsRequest, ServerCallContext)
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags*
+  name: GetTags
+  href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_GetTags_
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetTags
+  nameWithType: WorkManagerGrpcService.GetTags
 - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
   name: GetWorkerHistory(GetWorkerHistoryRequest, ServerCallContext)
   href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_GetWorkerHistory_Virtufin_WorkManager_Protos_GetWorkerHistoryRequest_Grpc_Core_ServerCallContext_
@@ -2786,6 +2957,32 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariables
   nameWithType: WorkManagerGrpcService.SetEnvironmentVariables
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag(Virtufin.WorkManager.Protos.SetTagRequest,Grpc.Core.ServerCallContext)
+  name: SetTag(SetTagRequest, ServerCallContext)
+  href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_SetTag_Virtufin_WorkManager_Protos_SetTagRequest_Grpc_Core_ServerCallContext_
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag(Virtufin.WorkManager.Protos.SetTagRequest,Grpc.Core.ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag(Virtufin.WorkManager.Protos.SetTagRequest, Grpc.Core.ServerCallContext)
+  nameWithType: WorkManagerGrpcService.SetTag(SetTagRequest, ServerCallContext)
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag*
+  name: SetTag
+  href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_SetTag_
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTag
+  nameWithType: WorkManagerGrpcService.SetTag
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags(Virtufin.WorkManager.Protos.SetTagsRequest,Grpc.Core.ServerCallContext)
+  name: SetTags(SetTagsRequest, ServerCallContext)
+  href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_SetTags_Virtufin_WorkManager_Protos_SetTagsRequest_Grpc_Core_ServerCallContext_
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags(Virtufin.WorkManager.Protos.SetTagsRequest,Grpc.Core.ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags(Virtufin.WorkManager.Protos.SetTagsRequest, Grpc.Core.ServerCallContext)
+  nameWithType: WorkManagerGrpcService.SetTags(SetTagsRequest, ServerCallContext)
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags*
+  name: SetTags
+  href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_SetTags_
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetTags
+  nameWithType: WorkManagerGrpcService.SetTags
 - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.StartWorker(Virtufin.WorkManager.Protos.StartWorkerRequest,Grpc.Core.ServerCallContext)
   name: StartWorker(StartWorkerRequest, ServerCallContext)
   href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_StartWorker_Virtufin_WorkManager_Protos_StartWorkerRequest_Grpc_Core_ServerCallContext_

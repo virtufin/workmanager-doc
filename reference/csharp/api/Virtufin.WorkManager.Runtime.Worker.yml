@@ -5,7 +5,7 @@ items:
   id: Worker
   parent: Virtufin.WorkManager.Runtime
   children:
-  - Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})
+  - Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})
   - Virtufin.WorkManager.Runtime.Worker.CodeSource
   - Virtufin.WorkManager.Runtime.Worker.CreatedAt
   - Virtufin.WorkManager.Runtime.Worker.Env
@@ -17,7 +17,10 @@ items:
   - Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable(System.String,System.String)
   - Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary{System.String,System.String})
+  - Virtufin.WorkManager.Runtime.Worker.SetTag(System.String,System.String)
+  - Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary{System.String,System.String})
   - Virtufin.WorkManager.Runtime.Worker.Status
+  - Virtufin.WorkManager.Runtime.Worker.Tags
   - Virtufin.WorkManager.Runtime.Worker.Topic
   langs:
   - csharp
@@ -317,7 +320,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Env
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 39
+    startLine: 40
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -335,16 +338,52 @@ items:
       type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
     content.vb: Public ReadOnly Property Env As IReadOnlyDictionary(Of String, String)
   overload: Virtufin.WorkManager.Runtime.Worker.Env*
-- uid: Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})
-  commentId: M:Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})
-  id: '#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})'
+- uid: Virtufin.WorkManager.Runtime.Worker.Tags
+  commentId: P:Virtufin.WorkManager.Runtime.Worker.Tags
+  id: Tags
   parent: Virtufin.WorkManager.Runtime.Worker
   langs:
   - csharp
   - vb
-  name: Worker(Guid, CodeSource, string, IEngine, string, string?, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?)
-  nameWithType: Worker.Worker(Guid, CodeSource, string, IEngine, string, string?, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?)
-  fullName: Virtufin.WorkManager.Runtime.Worker.Worker(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, Virtufin.WorkManager.Engines.IEngine, string, string?, System.DateTime, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Runtime.Worker>, System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>?, System.Collections.Generic.IDictionary<string, string>?)
+  name: Tags
+  nameWithType: Worker.Tags
+  fullName: Virtufin.WorkManager.Runtime.Worker.Tags
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Runtime/Worker.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Tags
+    path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
+    startLine: 47
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Runtime
+  summary: >-
+    Read-only view of the worker's currently-set tags (resource metadata).
+
+    Mutate via <xref href="Virtufin.WorkManager.Runtime.Worker.SetTag(System.String%2cSystem.String)" data-throw-if-not-resolved="false"></xref> or
+
+    <xref href="Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary%7bSystem.String%2cSystem.String%7d)" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IReadOnlyDictionary<string, string> Tags { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+    content.vb: Public ReadOnly Property Tags As IReadOnlyDictionary(Of String, String)
+  overload: Virtufin.WorkManager.Runtime.Worker.Tags*
+- uid: Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})
+  id: '#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})'
+  parent: Virtufin.WorkManager.Runtime.Worker
+  langs:
+  - csharp
+  - vb
+  name: Worker(Guid, CodeSource, string, IEngine, string, string?, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?, IDictionary<string, string>?)
+  nameWithType: Worker.Worker(Guid, CodeSource, string, IEngine, string, string?, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?, IDictionary<string, string>?)
+  fullName: Virtufin.WorkManager.Runtime.Worker.Worker(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, Virtufin.WorkManager.Engines.IEngine, string, string?, System.DateTime, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Runtime.Worker>, System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>?, System.Collections.Generic.IDictionary<string, string>?, System.Collections.Generic.IDictionary<string, string>?)
   type: Constructor
   source:
     remote:
@@ -353,14 +392,14 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 44
+    startLine: 52
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
   summary: Creates a new worker instance.
   example: []
   syntax:
-    content: public Worker(Guid id, CodeSource codeSource, string mimeType, IEngine engine, string topic, string? group, DateTime createdAt, ILogger<Worker> logger, List<HistoryEntry>? history = null, IDictionary<string, string>? env = null)
+    content: public Worker(Guid id, CodeSource codeSource, string mimeType, IEngine engine, string topic, string? group, DateTime createdAt, ILogger<Worker> logger, List<HistoryEntry>? history = null, IDictionary<string, string>? env = null, IDictionary<string, string>? tags = null)
     parameters:
     - id: id
       type: System.Guid
@@ -382,11 +421,13 @@ items:
       type: System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry}
     - id: env
       type: System.Collections.Generic.IDictionary{System.String,System.String}
-    content.vb: Public Sub New(id As Guid, codeSource As CodeSource, mimeType As String, engine As IEngine, topic As String, group As String, createdAt As Date, logger As ILogger(Of Worker), history As List(Of HistoryEntry) = Nothing, env As IDictionary(Of String, String) = Nothing)
+    - id: tags
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    content.vb: Public Sub New(id As Guid, codeSource As CodeSource, mimeType As String, engine As IEngine, topic As String, group As String, createdAt As Date, logger As ILogger(Of Worker), history As List(Of HistoryEntry) = Nothing, env As IDictionary(Of String, String) = Nothing, tags As IDictionary(Of String, String) = Nothing)
   overload: Virtufin.WorkManager.Runtime.Worker.#ctor*
-  nameWithType.vb: Worker.New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String))
-  fullName.vb: Virtufin.WorkManager.Runtime.Worker.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, Virtufin.WorkManager.Engines.IEngine, String, String, Date, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Runtime.Worker), System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry), System.Collections.Generic.IDictionary(Of String, String))
-  name.vb: New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String))
+  nameWithType.vb: Worker.New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String), IDictionary(Of String, String))
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, Virtufin.WorkManager.Engines.IEngine, String, String, Date, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Runtime.Worker), System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry), System.Collections.Generic.IDictionary(Of String, String), System.Collections.Generic.IDictionary(Of String, String))
+  name.vb: New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String), IDictionary(Of String, String))
 - uid: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
   commentId: M:Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
   id: LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
@@ -405,7 +446,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCodeAsync
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 75
+    startLine: 87
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -445,7 +486,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ProcessAsync
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 94
+    startLine: 106
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -483,7 +524,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariable
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 105
+    startLine: 117
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -524,7 +565,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariables
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 115
+    startLine: 127
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -540,6 +581,79 @@ items:
   nameWithType.vb: Worker.SetEnvironmentVariables(IDictionary(Of String, String))
   fullName.vb: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary(Of String, String))
   name.vb: SetEnvironmentVariables(IDictionary(Of String, String))
+- uid: Virtufin.WorkManager.Runtime.Worker.SetTag(System.String,System.String)
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.SetTag(System.String,System.String)
+  id: SetTag(System.String,System.String)
+  parent: Virtufin.WorkManager.Runtime.Worker
+  langs:
+  - csharp
+  - vb
+  name: SetTag(string, string)
+  nameWithType: Worker.SetTag(string, string)
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetTag(string, string)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Runtime/Worker.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: SetTag
+    path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
+    startLine: 158
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Runtime
+  summary: >-
+    Sets or replaces a single tag for this worker. Tags are resource
+
+    metadata and are NOT injected into the engine process.
+  example: []
+  syntax:
+    content: public void SetTag(string key, string value)
+    parameters:
+    - id: key
+      type: System.String
+    - id: value
+      type: System.String
+    content.vb: Public Sub SetTag(key As String, value As String)
+  overload: Virtufin.WorkManager.Runtime.Worker.SetTag*
+  nameWithType.vb: Worker.SetTag(String, String)
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.SetTag(String, String)
+  name.vb: SetTag(String, String)
+- uid: Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary{System.String,System.String})
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary{System.String,System.String})
+  id: SetTags(System.Collections.Generic.IDictionary{System.String,System.String})
+  parent: Virtufin.WorkManager.Runtime.Worker
+  langs:
+  - csharp
+  - vb
+  name: SetTags(IDictionary<string, string>)
+  nameWithType: Worker.SetTags(IDictionary<string, string>)
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary<string, string>)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Runtime/Worker.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: SetTags
+    path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
+    startLine: 167
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Runtime
+  summary: Replaces the entire tag set with the provided dictionary.
+  example: []
+  syntax:
+    content: public void SetTags(IDictionary<string, string> tags)
+    parameters:
+    - id: tags
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    content.vb: Public Sub SetTags(tags As IDictionary(Of String, String))
+  overload: Virtufin.WorkManager.Runtime.Worker.SetTags*
+  nameWithType.vb: Worker.SetTags(IDictionary(Of String, String))
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary(Of String, String))
+  name.vb: SetTags(IDictionary(Of String, String))
 references:
 - uid: Virtufin.WorkManager.Runtime
   commentId: N:Virtufin.WorkManager.Runtime
@@ -1189,9 +1303,113 @@ references:
   - name: " "
   - name: TValue
   - name: )
+- uid: Virtufin.WorkManager.Runtime.Worker.SetTag(System.String,System.String)
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.SetTag(System.String,System.String)
+  isExternal: true
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetTag_System_String_System_String_
+  name: SetTag(string, string)
+  nameWithType: Worker.SetTag(string, string)
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetTag(string, string)
+  nameWithType.vb: Worker.SetTag(String, String)
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.SetTag(String, String)
+  name.vb: SetTag(String, String)
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Runtime.Worker.SetTag(System.String,System.String)
+    name: SetTag
+    href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetTag_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Runtime.Worker.SetTag(System.String,System.String)
+    name: SetTag
+    href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetTag_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary{System.String,System.String})
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary{System.String,System.String})
+  isExternal: true
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetTags_System_Collections_Generic_IDictionary_System_String_System_String__
+  name: SetTags(IDictionary<string, string>)
+  nameWithType: Worker.SetTags(IDictionary<string, string>)
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary<string, string>)
+  nameWithType.vb: Worker.SetTags(IDictionary(Of String, String))
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary(Of String, String))
+  name.vb: SetTags(IDictionary(Of String, String))
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary{System.String,System.String})
+    name: SetTags
+    href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetTags_System_Collections_Generic_IDictionary_System_String_System_String__
+  - name: (
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Runtime.Worker.SetTags(System.Collections.Generic.IDictionary{System.String,System.String})
+    name: SetTags
+    href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetTags_System_Collections_Generic_IDictionary_System_String_System_String__
+  - name: (
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: Virtufin.WorkManager.Runtime.Worker.Tags*
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.Tags
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_Tags
+  name: Tags
+  nameWithType: Worker.Tags
+  fullName: Virtufin.WorkManager.Runtime.Worker.Tags
 - uid: Virtufin.WorkManager.Runtime.Worker.#ctor*
   commentId: Overload:Virtufin.WorkManager.Runtime.Worker.#ctor
-  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_Virtufin_WorkManager_Engines_IEngine_System_String_System_String_System_DateTime_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Runtime_Worker__System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__System_Collections_Generic_IDictionary_System_String_System_String__
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_Virtufin_WorkManager_Engines_IEngine_System_String_System_String_System_DateTime_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Runtime_Worker__System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__System_Collections_Generic_IDictionary_System_String_System_String__System_Collections_Generic_IDictionary_System_String_System_String__
   name: Worker
   nameWithType: Worker.Worker
   fullName: Virtufin.WorkManager.Runtime.Worker.Worker
@@ -1626,3 +1844,15 @@ references:
   name: SetEnvironmentVariables
   nameWithType: Worker.SetEnvironmentVariables
   fullName: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables
+- uid: Virtufin.WorkManager.Runtime.Worker.SetTag*
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.SetTag
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetTag_System_String_System_String_
+  name: SetTag
+  nameWithType: Worker.SetTag
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetTag
+- uid: Virtufin.WorkManager.Runtime.Worker.SetTags*
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.SetTags
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetTags_System_Collections_Generic_IDictionary_System_String_System_String__
+  name: SetTags
+  nameWithType: Worker.SetTags
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetTags

@@ -14,6 +14,8 @@ items:
   - Virtufin.WorkManager.Components.WorkManager.DisposeAsync
   - Virtufin.WorkManager.Components.WorkManager.GetEnvironmentVariable(System.Guid,System.String)
   - Virtufin.WorkManager.Components.WorkManager.GetEnvironmentVariables(System.Guid)
+  - Virtufin.WorkManager.Components.WorkManager.GetTag(System.Guid,System.String)
+  - Virtufin.WorkManager.Components.WorkManager.GetTags(System.Guid)
   - Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)
   - Virtufin.WorkManager.Components.WorkManager.ListWorkers
   - Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.Threading.CancellationToken)
@@ -21,6 +23,8 @@ items:
   - Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
   - Virtufin.WorkManager.Components.WorkManager.SetEnvironmentVariable(System.Guid,System.String,System.String)
   - Virtufin.WorkManager.Components.WorkManager.SetEnvironmentVariables(System.Guid,System.Collections.Generic.IDictionary{System.String,System.String})
+  - Virtufin.WorkManager.Components.WorkManager.SetTag(System.Guid,System.String,System.String)
+  - Virtufin.WorkManager.Components.WorkManager.SetTags(System.Guid,System.Collections.Generic.IDictionary{System.String,System.String})
   - Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync(System.Guid,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync(System.Guid,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventSourceUri
@@ -358,7 +362,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCode
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 194
+    startLine: 196
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -412,7 +416,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeleteWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 241
+    startLine: 243
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -453,7 +457,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StartWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 262
+    startLine: 264
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -494,7 +498,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StopWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 285
+    startLine: 287
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -535,7 +539,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 306
+    startLine: 308
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -566,7 +570,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetEnvironmentVariable
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 330
+    startLine: 333
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -608,7 +612,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetEnvironmentVariables
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 340
+    startLine: 343
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -641,7 +645,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariable
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 352
+    startLine: 355
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -684,7 +688,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariables
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 363
+    startLine: 366
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -702,6 +706,154 @@ items:
   nameWithType.vb: WorkManager.SetEnvironmentVariables(Guid, IDictionary(Of String, String))
   fullName.vb: Virtufin.WorkManager.Components.WorkManager.SetEnvironmentVariables(System.Guid, System.Collections.Generic.IDictionary(Of String, String))
   name.vb: SetEnvironmentVariables(Guid, IDictionary(Of String, String))
+- uid: Virtufin.WorkManager.Components.WorkManager.GetTag(System.Guid,System.String)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.GetTag(System.Guid,System.String)
+  id: GetTag(System.Guid,System.String)
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: GetTag(Guid, string)
+  nameWithType: WorkManager.GetTag(Guid, string)
+  fullName: Virtufin.WorkManager.Components.WorkManager.GetTag(System.Guid, string)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: GetTag
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 402
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Gets the worker's current value for a single tag.
+  example: []
+  syntax:
+    content: public string? GetTag(Guid id, string key)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: key
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Function GetTag(id As Guid, key As String) As String
+  overload: Virtufin.WorkManager.Components.WorkManager.GetTag*
+  nameWithType.vb: WorkManager.GetTag(Guid, String)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.GetTag(System.Guid, String)
+  name.vb: GetTag(Guid, String)
+- uid: Virtufin.WorkManager.Components.WorkManager.GetTags(System.Guid)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.GetTags(System.Guid)
+  id: GetTags(System.Guid)
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: GetTags(Guid)
+  nameWithType: WorkManager.GetTags(Guid)
+  fullName: Virtufin.WorkManager.Components.WorkManager.GetTags(System.Guid)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: GetTags
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 412
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Returns a snapshot of the worker's full tag map.
+  example: []
+  syntax:
+    content: public IReadOnlyDictionary<string, string> GetTags(Guid id)
+    parameters:
+    - id: id
+      type: System.Guid
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+    content.vb: Public Function GetTags(id As Guid) As IReadOnlyDictionary(Of String, String)
+  overload: Virtufin.WorkManager.Components.WorkManager.GetTags*
+- uid: Virtufin.WorkManager.Components.WorkManager.SetTag(System.Guid,System.String,System.String)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.SetTag(System.Guid,System.String,System.String)
+  id: SetTag(System.Guid,System.String,System.String)
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: SetTag(Guid, string, string)
+  nameWithType: WorkManager.SetTag(Guid, string, string)
+  fullName: Virtufin.WorkManager.Components.WorkManager.SetTag(System.Guid, string, string)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: SetTag
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 423
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: >-
+    Sets a single tag on the worker. Tags are resource metadata and are
+
+    NOT injected into the engine process.
+  example: []
+  syntax:
+    content: public void SetTag(Guid id, string key, string value)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: key
+      type: System.String
+    - id: value
+      type: System.String
+    content.vb: Public Sub SetTag(id As Guid, key As String, value As String)
+  overload: Virtufin.WorkManager.Components.WorkManager.SetTag*
+  nameWithType.vb: WorkManager.SetTag(Guid, String, String)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.SetTag(System.Guid, String, String)
+  name.vb: SetTag(Guid, String, String)
+- uid: Virtufin.WorkManager.Components.WorkManager.SetTags(System.Guid,System.Collections.Generic.IDictionary{System.String,System.String})
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.SetTags(System.Guid,System.Collections.Generic.IDictionary{System.String,System.String})
+  id: SetTags(System.Guid,System.Collections.Generic.IDictionary{System.String,System.String})
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: SetTags(Guid, IDictionary<string, string>)
+  nameWithType: WorkManager.SetTags(Guid, IDictionary<string, string>)
+  fullName: Virtufin.WorkManager.Components.WorkManager.SetTags(System.Guid, System.Collections.Generic.IDictionary<string, string>)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: SetTags
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 434
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: Replaces the worker's entire tag map with the supplied dictionary.
+  example: []
+  syntax:
+    content: public void SetTags(Guid id, IDictionary<string, string> tags)
+    parameters:
+    - id: id
+      type: System.Guid
+    - id: tags
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    content.vb: Public Sub SetTags(id As Guid, tags As IDictionary(Of String, String))
+  overload: Virtufin.WorkManager.Components.WorkManager.SetTags*
+  nameWithType.vb: WorkManager.SetTags(Guid, IDictionary(Of String, String))
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.SetTags(System.Guid, System.Collections.Generic.IDictionary(Of String, String))
+  name.vb: SetTags(Guid, IDictionary(Of String, String))
 - uid: Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)
   commentId: M:Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)
   id: GetWorkerHistory(System.Guid)
@@ -720,7 +872,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 402
+    startLine: 470
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -759,7 +911,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoverWorkersAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 415
+    startLine: 483
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -799,7 +951,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 952
+    startLine: 1020
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -2143,6 +2295,30 @@ references:
   - name: " "
   - name: TValue
   - name: )
+- uid: Virtufin.WorkManager.Components.WorkManager.GetTag*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.GetTag
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_GetTag_System_Guid_System_String_
+  name: GetTag
+  nameWithType: WorkManager.GetTag
+  fullName: Virtufin.WorkManager.Components.WorkManager.GetTag
+- uid: Virtufin.WorkManager.Components.WorkManager.GetTags*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.GetTags
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_GetTags_System_Guid_
+  name: GetTags
+  nameWithType: WorkManager.GetTags
+  fullName: Virtufin.WorkManager.Components.WorkManager.GetTags
+- uid: Virtufin.WorkManager.Components.WorkManager.SetTag*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.SetTag
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_SetTag_System_Guid_System_String_System_String_
+  name: SetTag
+  nameWithType: WorkManager.SetTag
+  fullName: Virtufin.WorkManager.Components.WorkManager.SetTag
+- uid: Virtufin.WorkManager.Components.WorkManager.SetTags*
+  commentId: Overload:Virtufin.WorkManager.Components.WorkManager.SetTags
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_SetTags_System_Guid_System_Collections_Generic_IDictionary_System_String_System_String__
+  name: SetTags
+  nameWithType: WorkManager.SetTags
+  fullName: Virtufin.WorkManager.Components.WorkManager.SetTags
 - uid: Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory*
   commentId: Overload:Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory
   href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_GetWorkerHistory_System_Guid_
