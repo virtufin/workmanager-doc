@@ -2,7 +2,8 @@
 items:
 - uid: Virtufin.WorkManager.Services
   commentId: N:Virtufin.WorkManager.Services
-  id: Virtufin.WorkManager.Services
+  id: Services
+  parent: Virtufin.WorkManager
   children:
   - Virtufin.WorkManager.Services.ApiLifecyclePublisher
   - Virtufin.WorkManager.Services.AppMetrics
@@ -39,6 +40,12 @@ references:
   name: AppMetrics
   nameWithType: AppMetrics
   fullName: Virtufin.WorkManager.Services.AppMetrics
+- uid: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
+  commentId: T:Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
+  href: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.html
+  name: DaprCircuitBreakerHealthCheck
+  nameWithType: DaprCircuitBreakerHealthCheck
+  fullName: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
 - uid: Virtufin.WorkManager.Services.DaprResiliencePipeline
   commentId: T:Virtufin.WorkManager.Services.DaprResiliencePipeline
   parent: Virtufin.WorkManager.Services
@@ -46,26 +53,6 @@ references:
   name: DaprResiliencePipeline
   nameWithType: DaprResiliencePipeline
   fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline
-- uid: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
-  commentId: T:Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
-  href: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck.html
-  name: DaprCircuitBreakerHealthCheck
-  nameWithType: DaprCircuitBreakerHealthCheck
-  fullName: Virtufin.WorkManager.Services.DaprCircuitBreakerHealthCheck
-- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher
-  commentId: T:Virtufin.WorkManager.Services.ResilientDaprPublisher
-  parent: Virtufin.WorkManager.Services
-  href: Virtufin.WorkManager.Services.ResilientDaprPublisher.html
-  name: ResilientDaprPublisher
-  nameWithType: ResilientDaprPublisher
-  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher
-- uid: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
-  commentId: T:Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
-  parent: Virtufin.WorkManager.Services
-  href: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.html
-  name: IWorkerRecoveryExecutor
-  nameWithType: IWorkerRecoveryExecutor
-  fullName: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
 - uid: Virtufin.WorkManager.Services.IRecoveryLeaderElector
   commentId: T:Virtufin.WorkManager.Services.IRecoveryLeaderElector
   parent: Virtufin.WorkManager.Services
@@ -73,18 +60,31 @@ references:
   name: IRecoveryLeaderElector
   nameWithType: IRecoveryLeaderElector
   fullName: Virtufin.WorkManager.Services.IRecoveryLeaderElector
-- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector
-  commentId: T:Virtufin.WorkManager.Services.RecoveryLeaderElector
-  href: Virtufin.WorkManager.Services.RecoveryLeaderElector.html
-  name: RecoveryLeaderElector
-  nameWithType: RecoveryLeaderElector
-  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector
+- uid: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+  commentId: T:Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.html
+  name: IWorkerRecoveryExecutor
+  nameWithType: IWorkerRecoveryExecutor
+  fullName: Virtufin.WorkManager.Services.IWorkerRecoveryExecutor
 - uid: Virtufin.WorkManager.Services.LeaderLease
   commentId: T:Virtufin.WorkManager.Services.LeaderLease
   href: Virtufin.WorkManager.Services.LeaderLease.html
   name: LeaderLease
   nameWithType: LeaderLease
   fullName: Virtufin.WorkManager.Services.LeaderLease
+- uid: Virtufin.WorkManager.Services.RecoveryHealthCheck
+  commentId: T:Virtufin.WorkManager.Services.RecoveryHealthCheck
+  href: Virtufin.WorkManager.Services.RecoveryHealthCheck.html
+  name: RecoveryHealthCheck
+  nameWithType: RecoveryHealthCheck
+  fullName: Virtufin.WorkManager.Services.RecoveryHealthCheck
+- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector
+  commentId: T:Virtufin.WorkManager.Services.RecoveryLeaderElector
+  href: Virtufin.WorkManager.Services.RecoveryLeaderElector.html
+  name: RecoveryLeaderElector
+  nameWithType: RecoveryLeaderElector
+  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector
 - uid: Virtufin.WorkManager.Services.RecoveryState
   commentId: T:Virtufin.WorkManager.Services.RecoveryState
   parent: Virtufin.WorkManager.Services
@@ -92,12 +92,13 @@ references:
   name: RecoveryState
   nameWithType: RecoveryState
   fullName: Virtufin.WorkManager.Services.RecoveryState
-- uid: Virtufin.WorkManager.Services.RecoveryHealthCheck
-  commentId: T:Virtufin.WorkManager.Services.RecoveryHealthCheck
-  href: Virtufin.WorkManager.Services.RecoveryHealthCheck.html
-  name: RecoveryHealthCheck
-  nameWithType: RecoveryHealthCheck
-  fullName: Virtufin.WorkManager.Services.RecoveryHealthCheck
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher
+  commentId: T:Virtufin.WorkManager.Services.ResilientDaprPublisher
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.ResilientDaprPublisher.html
+  name: ResilientDaprPublisher
+  nameWithType: ResilientDaprPublisher
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher
 - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService
   commentId: T:Virtufin.WorkManager.Services.WorkManagerGrpcService
   href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html

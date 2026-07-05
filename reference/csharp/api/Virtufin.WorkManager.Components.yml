@@ -2,7 +2,8 @@
 items:
 - uid: Virtufin.WorkManager.Components
   commentId: N:Virtufin.WorkManager.Components
-  id: Virtufin.WorkManager.Components
+  id: Components
+  parent: Virtufin.WorkManager
   children:
   - Virtufin.WorkManager.Components.NuGetAuthHandler
   - Virtufin.WorkManager.Components.WorkManager

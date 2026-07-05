@@ -1,6 +1,9 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: Virtufin.WorkManager
+  name: Virtufin.WorkManager
+  href: api/Virtufin.WorkManager.html
 - uid: Virtufin.WorkManager.Components
   name: Virtufin.WorkManager.Components
   href: api/Virtufin.WorkManager.Components.html

@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Interface IWorkerRecoveryExecutor | Virtufin WorkManager - C# Reference </title>
+      <title>Namespace Virtufin.WorkManager | Virtufin WorkManager - C# Reference </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface IWorkerRecoveryExecutor | Virtufin WorkManager - C# Reference ">
+      <meta name="title" content="Namespace Virtufin.WorkManager | Virtufin WorkManager - C# Reference ">
       
-      <meta name="description" content="Abstraction over the WorkManager&#39;s recovery entry point. Allows the hosted service to be unit-tested without mocking the sealed WorkManager class.">
+      
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,82 +88,36 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Virtufin.WorkManager.Services.IWorkerRecoveryExecutor">
+        <article data-uid="Virtufin.WorkManager">
 
+  <h1 id="Virtufin_WorkManager" data-uid="Virtufin.WorkManager" class="text-break">Namespace Virtufin.WorkManager</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
 
-
-  <h1 id="Virtufin_WorkManager_Services_IWorkerRecoveryExecutor" data-uid="Virtufin.WorkManager.Services.IWorkerRecoveryExecutor" class="text-break">
-Interface IWorkerRecoveryExecutor  
-  </h1>
-
-  <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="Virtufin.html">Virtufin</a>.<a class="xref" href="Virtufin.WorkManager.html">WorkManager</a>.<a class="xref" href="Virtufin.WorkManager.Services.html">Services</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>Virtufin.WorkManager.dll</dd></dl>
-  </div>
-
-  <div class="markdown summary"><p>Abstraction over the WorkManager's recovery entry point. Allows the
-hosted service to be unit-tested without mocking the sealed
-<code>WorkManager</code> class.</p>
-</div>
-  <div class="markdown conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IWorkerRecoveryExecutor</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
-  <a id="Virtufin_WorkManager_Services_IWorkerRecoveryExecutor_RecoverWorkersAsync_" data-uid="Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.RecoverWorkersAsync*"></a>
-
-  <h3 id="Virtufin_WorkManager_Services_IWorkerRecoveryExecutor_RecoverWorkersAsync_System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.RecoverWorkersAsync(System.Threading.CancellationToken)">
-  RecoverWorkersAsync(CancellationToken)
-  
-  </h3>
-
-  <div class="markdown level1 summary"><p>Recovers all persisted worker assignments: loads code blobs,
-registers them with the appropriate engine, and (re)subscribes to topics.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task RecoverWorkersAsync(CancellationToken cancellationToken = default)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
+    <h3 id="namespaces">
+Namespaces
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Virtufin.WorkManager.Components.html">Virtufin.WorkManager.Components</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Virtufin.WorkManager.Configuration.html">Virtufin.WorkManager.Configuration</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Virtufin.WorkManager.Contracts.html">Virtufin.WorkManager.Contracts</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Virtufin.WorkManager.Runtime.html">Virtufin.WorkManager.Runtime</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Virtufin.WorkManager.Services.html">Virtufin.WorkManager.Services</a></dt>
+      <dd></dd>
+    </dl>
 
 
 </article>

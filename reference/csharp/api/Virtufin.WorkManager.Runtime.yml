@@ -2,7 +2,8 @@
 items:
 - uid: Virtufin.WorkManager.Runtime
   commentId: N:Virtufin.WorkManager.Runtime
-  id: Virtufin.WorkManager.Runtime
+  id: Runtime
+  parent: Virtufin.WorkManager
   children:
   - Virtufin.WorkManager.Runtime.EngineNotFoundException
   - Virtufin.WorkManager.Runtime.EngineRegistry
@@ -20,24 +21,18 @@ items:
   assemblies:
   - Virtufin.WorkManager
 references:
-- uid: Virtufin.WorkManager.Runtime.EngineRegistry
-  commentId: T:Virtufin.WorkManager.Runtime.EngineRegistry
-  href: Virtufin.WorkManager.Runtime.EngineRegistry.html
-  name: EngineRegistry
-  nameWithType: EngineRegistry
-  fullName: Virtufin.WorkManager.Runtime.EngineRegistry
-- uid: Virtufin.WorkManager.Runtime.WorkerNotFoundException
-  commentId: T:Virtufin.WorkManager.Runtime.WorkerNotFoundException
-  href: Virtufin.WorkManager.Runtime.WorkerNotFoundException.html
-  name: WorkerNotFoundException
-  nameWithType: WorkerNotFoundException
-  fullName: Virtufin.WorkManager.Runtime.WorkerNotFoundException
 - uid: Virtufin.WorkManager.Runtime.EngineNotFoundException
   commentId: T:Virtufin.WorkManager.Runtime.EngineNotFoundException
   href: Virtufin.WorkManager.Runtime.EngineNotFoundException.html
   name: EngineNotFoundException
   nameWithType: EngineNotFoundException
   fullName: Virtufin.WorkManager.Runtime.EngineNotFoundException
+- uid: Virtufin.WorkManager.Runtime.EngineRegistry
+  commentId: T:Virtufin.WorkManager.Runtime.EngineRegistry
+  href: Virtufin.WorkManager.Runtime.EngineRegistry.html
+  name: EngineRegistry
+  nameWithType: EngineRegistry
+  fullName: Virtufin.WorkManager.Runtime.EngineRegistry
 - uid: Virtufin.WorkManager.Runtime.LockContentionException
   commentId: T:Virtufin.WorkManager.Runtime.LockContentionException
   href: Virtufin.WorkManager.Runtime.LockContentionException.html
@@ -51,6 +46,12 @@ references:
   name: Worker
   nameWithType: Worker
   fullName: Virtufin.WorkManager.Runtime.Worker
+- uid: Virtufin.WorkManager.Runtime.WorkerNotFoundException
+  commentId: T:Virtufin.WorkManager.Runtime.WorkerNotFoundException
+  href: Virtufin.WorkManager.Runtime.WorkerNotFoundException.html
+  name: WorkerNotFoundException
+  nameWithType: WorkerNotFoundException
+  fullName: Virtufin.WorkManager.Runtime.WorkerNotFoundException
 - uid: Virtufin.WorkManager.Runtime.WorkerRegistry
   commentId: T:Virtufin.WorkManager.Runtime.WorkerRegistry
   href: Virtufin.WorkManager.Runtime.WorkerRegistry.html

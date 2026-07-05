@@ -1,4 +1,5 @@
 {
+  "Virtufin.WorkManager": "Virtufin.WorkManager.yml",
   "Virtufin.WorkManager.Components": "Virtufin.WorkManager.Components.yml",
   "Virtufin.WorkManager.Components.NuGetAuthHandler": "Virtufin.WorkManager.Components.NuGetAuthHandler.yml",
   "Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String)": "Virtufin.WorkManager.Components.NuGetAuthHandler.yml",

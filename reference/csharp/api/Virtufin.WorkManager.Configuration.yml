@@ -2,7 +2,8 @@
 items:
 - uid: Virtufin.WorkManager.Configuration
   commentId: N:Virtufin.WorkManager.Configuration
-  id: Virtufin.WorkManager.Configuration
+  id: Configuration
+  parent: Virtufin.WorkManager
   children:
   - Virtufin.WorkManager.Configuration.DaprConstants
   - Virtufin.WorkManager.Configuration.DaprResilienceOptions
@@ -42,30 +43,30 @@ references:
   name: GroupLockOptions
   nameWithType: GroupLockOptions
   fullName: Virtufin.WorkManager.Configuration.GroupLockOptions
-- uid: Virtufin.WorkManager.Configuration.PortConstants
-  commentId: T:Virtufin.WorkManager.Configuration.PortConstants
-  href: Virtufin.WorkManager.Configuration.PortConstants.html
-  name: PortConstants
-  nameWithType: PortConstants
-  fullName: Virtufin.WorkManager.Configuration.PortConstants
-- uid: Virtufin.WorkManager.Configuration.WorkerEvents
-  commentId: T:Virtufin.WorkManager.Configuration.WorkerEvents
-  href: Virtufin.WorkManager.Configuration.WorkerEvents.html
-  name: WorkerEvents
-  nameWithType: WorkerEvents
-  fullName: Virtufin.WorkManager.Configuration.WorkerEvents
 - uid: Virtufin.WorkManager.Configuration.InfraEvents
   commentId: T:Virtufin.WorkManager.Configuration.InfraEvents
   href: Virtufin.WorkManager.Configuration.InfraEvents.html
   name: InfraEvents
   nameWithType: InfraEvents
   fullName: Virtufin.WorkManager.Configuration.InfraEvents
+- uid: Virtufin.WorkManager.Configuration.PortConstants
+  commentId: T:Virtufin.WorkManager.Configuration.PortConstants
+  href: Virtufin.WorkManager.Configuration.PortConstants.html
+  name: PortConstants
+  nameWithType: PortConstants
+  fullName: Virtufin.WorkManager.Configuration.PortConstants
 - uid: Virtufin.WorkManager.Configuration.Topics
   commentId: T:Virtufin.WorkManager.Configuration.Topics
   href: Virtufin.WorkManager.Configuration.Topics.html
   name: Topics
   nameWithType: Topics
   fullName: Virtufin.WorkManager.Configuration.Topics
+- uid: Virtufin.WorkManager.Configuration.WorkerEvents
+  commentId: T:Virtufin.WorkManager.Configuration.WorkerEvents
+  href: Virtufin.WorkManager.Configuration.WorkerEvents.html
+  name: WorkerEvents
+  nameWithType: WorkerEvents
+  fullName: Virtufin.WorkManager.Configuration.WorkerEvents
 - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
   commentId: T:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
   parent: Virtufin.WorkManager.Configuration

@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: Virtufin.WorkManager
+  id: Virtufin.WorkManager
+  children:
+  - Virtufin.WorkManager.Components
+  - Virtufin.WorkManager.Configuration
+  - Virtufin.WorkManager.Contracts
+  - Virtufin.WorkManager.Runtime
+  - Virtufin.WorkManager.Services
+  langs:
+  - csharp
+  - vb
+  name: Virtufin.WorkManager
+  type: Namespace
+references:
+- uid: Virtufin.WorkManager.Components
+  commentId: N:Virtufin.WorkManager.Components
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Components
+  nameWithType: Virtufin.WorkManager.Components
+  fullName: Virtufin.WorkManager.Components
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Components
+    name: Components
+    href: Virtufin.WorkManager.Components.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Components
+    name: Components
+    href: Virtufin.WorkManager.Components.html
+- uid: Virtufin.WorkManager.Configuration
+  commentId: N:Virtufin.WorkManager.Configuration
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Configuration
+  nameWithType: Virtufin.WorkManager.Configuration
+  fullName: Virtufin.WorkManager.Configuration
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Configuration
+    name: Configuration
+    href: Virtufin.WorkManager.Configuration.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Configuration
+    name: Configuration
+    href: Virtufin.WorkManager.Configuration.html
+- uid: Virtufin.WorkManager.Contracts
+  commentId: N:Virtufin.WorkManager.Contracts
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Contracts
+  nameWithType: Virtufin.WorkManager.Contracts
+  fullName: Virtufin.WorkManager.Contracts
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Contracts
+    name: Contracts
+    href: Virtufin.WorkManager.Contracts.html
+- uid: Virtufin.WorkManager.Runtime
+  commentId: N:Virtufin.WorkManager.Runtime
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Runtime
+  nameWithType: Virtufin.WorkManager.Runtime
+  fullName: Virtufin.WorkManager.Runtime
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Runtime
+    name: Runtime
+    href: Virtufin.WorkManager.Runtime.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Runtime
+    name: Runtime
+    href: Virtufin.WorkManager.Runtime.html
+- uid: Virtufin.WorkManager.Services
+  commentId: N:Virtufin.WorkManager.Services
+  href: Virtufin.html
+  name: Virtufin.WorkManager.Services
+  nameWithType: Virtufin.WorkManager.Services
+  fullName: Virtufin.WorkManager.Services
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Services
+    name: Services
+    href: Virtufin.WorkManager.Services.html
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    href: Virtufin.html
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+    href: Virtufin.WorkManager.html
+  - name: .
+  - uid: Virtufin.WorkManager.Services
+    name: Services
+    href: Virtufin.WorkManager.Services.html
