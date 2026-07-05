@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9f032ec4656b37f7dfe7ce0343702d5e1b683d6e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e0b0510b28716b92716a43b66706b3182baf16dd"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 9f032ec">
+       title="View commit e0b0510">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9f032ec</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e0b0510</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9f032ec4656b37f7dfe7ce0343702d5e1b683d6e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e0b0510b28716b92716a43b66706b3182baf16dd"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 9f032ec">
+       title="View commit e0b0510">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9f032ec</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e0b0510</text>
       </svg>
     </a>
 </div>
@@ -2010,11 +2010,14 @@
 <div class="highlight"><pre><span></span><code><span class="c1">// Create a new worker</span>
 <span class="nx">createWorker</span><span class="p">(</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">CreateWorkerRequest</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">CreateWorkerResponse</span><span class="o">&gt;</span>
 
-<span class="c1">// Update worker code from content</span>
-<span class="nx">loadCodeFromContent</span><span class="p">(</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">LoadCodeFromContentRequest</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">LoadCodeFromContentResponse</span><span class="o">&gt;</span>
+<span class="c1">// Update worker code (consolidated: URL or content via CodeSource)</span>
+<span class="nx">loadCode</span><span class="p">(</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">LoadCodeRequest</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">LoadCodeResponse</span><span class="o">&gt;</span>
 
-<span class="c1">// Update worker code from URL</span>
-<span class="nx">loadCodeFromUrl</span><span class="p">(</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">LoadCodeFromUrlRequest</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">LoadCodeFromUrlResponse</span><span class="o">&gt;</span>
+<span class="c1">// Hot-reload env vars on a running worker</span>
+<span class="nx">setEnvironmentVariable</span><span class="p">(</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">SetEnvironmentVariableRequest</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">SetEnvironmentVariableResponse</span><span class="o">&gt;</span>
+<span class="nx">getEnvironmentVariable</span><span class="p">(</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">GetEnvironmentVariableRequest</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">GetEnvironmentVariableResponse</span><span class="o">&gt;</span>
+<span class="nx">setEnvironmentVariables</span><span class="p">(</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">SetEnvironmentVariablesRequest</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">SetEnvironmentVariablesResponse</span><span class="o">&gt;</span>
+<span class="nx">getEnvironmentVariables</span><span class="p">(</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">GetEnvironmentVariablesRequest</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">GetEnvironmentVariablesResponse</span><span class="o">&gt;</span>
 
 <span class="c1">// Delete a worker</span>
 <span class="nx">deleteWorker</span><span class="p">(</span><span class="nx">request</span><span class="o">:</span><span class="w"> </span><span class="kt">DeleteWorkerRequest</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">DeleteWorkerResponse</span><span class="o">&gt;</span>
@@ -2036,10 +2039,10 @@
 <span class="w">    </span><span class="nx">topic</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;events&quot;</span>
 <span class="p">});</span>
 
-<span class="c1">// Update code</span>
-<span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">loadCodeFromContent</span><span class="p">({</span>
+<span class="c1">// Update code (URL or content via CodeSource)</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">loadCode</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">workerId</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">TextEncoder</span><span class="p">().</span><span class="nx">encode</span><span class="p">(</span><span class="s2">&quot;def Process(e): return {\&quot;updated\&quot;: true}&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">codeSource</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">TextEncoder</span><span class="p">().</span><span class="nx">encode</span><span class="p">(</span><span class="s2">&quot;def Process(e): return {\&quot;updated\&quot;: true}&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
 <span class="p">});</span>
 
 <span class="c1">// Delete</span>
@@ -2201,7 +2204,7 @@
 
 <span class="w">    </span><span class="c1">// Update code</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\nUpdating worker code...&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">loadCodeFromContent</span><span class="p">({</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">loadCode</span><span class="p">({</span>
 <span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">workerId</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">TextEncoder</span><span class="p">().</span><span class="nx">encode</span><span class="p">(</span><span class="sb">`def Process(event):</span>
 <span class="sb">    return {</span>
@@ -2257,12 +2260,8 @@
 <td>Response with new worker ID</td>
 </tr>
 <tr>
-<td><code>LoadCodeFromContentRequest</code></td>
-<td>Request to update code from content</td>
-</tr>
-<tr>
-<td><code>LoadCodeFromUrlRequest</code></td>
-<td>Request to update code from URL</td>
+<td><code>LoadCodeRequest</code></td>
+<td>Request to update worker code (URL or content via <code>code_source</code>)</td>
 </tr>
 <tr>
 <td><code>DeleteWorkerRequest</code></td>
@@ -2342,7 +2341,7 @@
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-07-05T11:02:34Z</span>
+  <span style="display:table-cell;text-align:right">2026-07-05T17:55:20Z</span>
 </div>
 
     </div>

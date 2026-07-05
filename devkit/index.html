@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9f032ec4656b37f7dfe7ce0343702d5e1b683d6e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e0b0510b28716b92716a43b66706b3182baf16dd"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 9f032ec">
+       title="View commit e0b0510">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9f032ec</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e0b0510</text>
       </svg>
     </a>
 </div>
@@ -401,14 +401,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9f032ec4656b37f7dfe7ce0343702d5e1b683d6e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e0b0510b28716b92716a43b66706b3182baf16dd"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 9f032ec">
+       title="View commit e0b0510">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9f032ec</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e0b0510</text>
       </svg>
     </a>
 </div>
@@ -1294,6 +1294,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#per-instance-state" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1705,6 +1716,17 @@
     <span class="md-ellipsis">
       
         AotNative&lt;W&gt;.CurrentContext
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment variables
       
     </span>
   </a>
@@ -2155,6 +2177,35 @@ before the wrapped worker's <code>ProcessAsync</code> is called and cleared in a
 <code>finally</code> block after it returns. Workers read this to obtain a
 <code>NativeApiGateway</code> for backend calls under <code>NativeDllEngine</code>. It is
 <code>null</code> outside a native invocation (i.e. under <code>DotNetDllEngine</code>).</p>
+<h4 id="environment-variables">Environment variables</h4>
+<p><code>NativeDllEngine.SetIdentity</code> accepts a 4-argument <code>WorkerIdentity(Id, Topic, Group, Env)</code> — pass <code>Worker.Env</code> as the <code>Env</code> field. The engine sets three reserved env vars that identify the worker to the native side:</p>
+<table>
+<thead>
+<tr>
+<th>Environment variable</th>
+<th>Source</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>VIRTUFIN_WORKER_ID</code></td>
+<td><code>Id</code></td>
+<td>Always set</td>
+</tr>
+<tr>
+<td><code>VIRTUFIN_WORKER_TOPIC</code></td>
+<td><code>Topic</code></td>
+<td>Always set</td>
+</tr>
+<tr>
+<td><code>VIRTUFIN_WORKER_GROUP</code></td>
+<td><code>Group</code></td>
+<td>Cleared (set to <code>null</code>) when the worker has no group</td>
+</tr>
+</tbody>
+</table>
+<p>Plus any custom entries from <code>Env</code> — the engine calls <code>Environment.SetEnvironmentVariable(key, value)</code> for each one before invoking the native <code>Process</code> export and restores the prior value on dispose. Workers read these with <code>std::getenv("API_TOKEN")</code> or equivalent and can react to hot-reload via the <code>SetEnvironmentVariables</code> RPC (no worker restart needed for variables the worker reads on each invocation).</p>
 <h4 id="per-instance-state">Per-instance state</h4>
 <p>Each unique host pointer (one per <code>LoadCodeAsync</code> call) gets its own
 wrapped <code>W</code> instance, looked up via a <code>ConcurrentDictionary&lt;IntPtr,
@@ -2365,7 +2416,7 @@ flatc<span class="w"> </span>--csharp<span class="w"> </span>-o<span class="w"> 
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-07-05T11:02:34Z</span>
+  <span style="display:table-cell;text-align:right">2026-07-05T17:55:20Z</span>
 </div>
 
     </div>

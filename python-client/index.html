@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9f032ec4656b37f7dfe7ce0343702d5e1b683d6e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e0b0510b28716b92716a43b66706b3182baf16dd"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 9f032ec">
+       title="View commit e0b0510">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9f032ec</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e0b0510</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9f032ec4656b37f7dfe7ce0343702d5e1b683d6e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e0b0510b28716b92716a43b66706b3182baf16dd"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 9f032ec">
+       title="View commit e0b0510">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9f032ec</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e0b0510</text>
       </svg>
     </a>
 </div>
@@ -1100,21 +1100,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#load_code_from_content" class="md-nav__link">
+  <a href="#load_code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        load_code_from_content
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#load_code_from_url" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        load_code_from_url
+        load_code
       
     </span>
   </a>
@@ -1782,21 +1771,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#load_code_from_content" class="md-nav__link">
+  <a href="#load_code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        load_code_from_content
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#load_code_from_url" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        load_code_from_url
+        load_code
       
     </span>
   </a>
@@ -2097,9 +2075,9 @@ pip<span class="w"> </span>install<span class="w"> </span>virtufin-workmanager<s
     <span class="n">topic</span><span class="o">=</span><span class="s2">&quot;events&quot;</span>
 <span class="p">)</span>
 </code></pre></div></p>
-<h3 id="load_code_from_content">load_code_from_content</h3>
-<p>Update worker code with inline content.</p>
-<div class="highlight"><pre><span></span><code><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">load_code_from_content</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span>
+<h3 id="load_code">load_code</h3>
+<p>Update worker code (consolidated: URL or content via <code>CodeSource</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">load_code</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">code_source</span><span class="p">:</span> <span class="n">CodeSource</span><span class="p">)</span>
 </code></pre></div>
 <table>
 <thead>
@@ -2116,34 +2094,9 @@ pip<span class="w"> </span>install<span class="w"> </span>virtufin-workmanager<s
 <td>Worker ID</td>
 </tr>
 <tr>
-<td><code>content</code></td>
-<td><code>bytes</code></td>
-<td>New code content</td>
-</tr>
-</tbody>
-</table>
-<h3 id="load_code_from_url">load_code_from_url</h3>
-<p>Update worker code from a URL.</p>
-<div class="highlight"><pre><span></span><code><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">load_code_from_url</span><span class="p">(</span><span class="nb">id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span>
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td><code>str</code></td>
-<td>Worker ID</td>
-</tr>
-<tr>
-<td><code>url</code></td>
-<td><code>str</code></td>
-<td>URL to fetch new code from</td>
+<td><code>code_source</code></td>
+<td><code>CodeSource</code></td>
+<td><code>CodeSource(url=...)</code> or <code>CodeSource(content=...)</code></td>
 </tr>
 </tbody>
 </table>
@@ -2385,7 +2338,7 @@ marshaling).</p>
 <span class="s1">        }</span>
 <span class="s1">    }</span>
 <span class="s1">&#39;&#39;&#39;</span>
-        <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">load_code_from_content</span><span class="p">(</span><span class="n">worker_id</span><span class="p">,</span> <span class="n">new_code</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+        <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">load_code</span><span class="p">(</span><span class="n">worker_id</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">new_code</span><span class="o">.</span><span class="n">encode</span><span class="p">()})</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Code updated&quot;</span><span class="p">)</span>
 
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Getting history...&quot;</span><span class="p">)</span>
@@ -2464,7 +2417,7 @@ marshaling).</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-07-05T11:02:34Z</span>
+  <span style="display:table-cell;text-align:right">2026-07-05T17:55:20Z</span>
 </div>
 
     </div>

@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9f032ec4656b37f7dfe7ce0343702d5e1b683d6e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e0b0510b28716b92716a43b66706b3182baf16dd"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 9f032ec">
+       title="View commit e0b0510">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9f032ec</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e0b0510</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9f032ec4656b37f7dfe7ce0343702d5e1b683d6e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e0b0510b28716b92716a43b66706b3182baf16dd"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 9f032ec">
+       title="View commit e0b0510">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9f032ec</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e0b0510</text>
       </svg>
     </a>
 </div>
@@ -894,21 +894,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#loadcodefromcontent" class="md-nav__link">
+  <a href="#loadcode" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LoadCodeFromContent
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loadcodefromurl" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        LoadCodeFromUrl
+        LoadCode
       
     </span>
   </a>
@@ -1728,21 +1717,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#loadcodefromcontent" class="md-nav__link">
+  <a href="#loadcode" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LoadCodeFromContent
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loadcodefromurl" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        LoadCodeFromUrl
+        LoadCode
       
     </span>
   </a>
@@ -1973,22 +1951,18 @@
 - Idempotent: If already stopped, does nothing
 - Worker can be restarted with <code>StartWorkerAsync</code></p>
 <h2 id="code-updates">Code Updates</h2>
-<h3 id="loadcodefromcontent">LoadCodeFromContent</h3>
-<p>Updates worker code while running:</p>
-<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="n">workManager</span><span class="p">.</span><span class="n">LoadCodeFromContent</span><span class="p">(</span><span class="n">workerId</span><span class="p">,</span><span class="w"> </span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">newCode</span><span class="p">));</span>
+<h3 id="loadcode">LoadCode</h3>
+<p>Updates worker code while running. The <code>CodeSource</code> carries either inline bytes or a URL.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Inline content</span>
+<span class="k">await</span><span class="w"> </span><span class="n">workManager</span><span class="p">.</span><span class="n">LoadCode</span><span class="p">(</span><span class="n">workerId</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CodeSourceContent</span><span class="p">(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">newCode</span><span class="p">)));</span>
+
+<span class="c1">// From URL</span>
+<span class="k">await</span><span class="w"> </span><span class="n">workManager</span><span class="p">.</span><span class="n">LoadCode</span><span class="p">(</span><span class="n">workerId</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CodeSourceUrl</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;https://example.com/new-worker.py&quot;</span><span class="p">)));</span>
 </code></pre></div>
 <p><strong>What happens:</strong>
-1. Calls <code>worker.engine.LoadCodeAsync(newCode)</code>
-2. Adds history entry with new code source
-3. Updates persisted configuration</p>
-<h3 id="loadcodefromurl">LoadCodeFromUrl</h3>
-<p>Updates worker code from a URL:</p>
-<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="n">workManager</span><span class="p">.</span><span class="n">LoadCodeFromUrl</span><span class="p">(</span><span class="n">workerId</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;https://example.com/new-worker.py&quot;</span><span class="p">));</span>
-</code></pre></div>
-<p><strong>What happens:</strong>
-1. Fetches code from URL
-2. Calls <code>worker.engine.LoadCodeAsync(fetchedCode)</code>
-3. Adds history entry with new URL
+1. Fetches code from URL (if applicable) or uses inline content directly
+2. Calls <code>worker.engine.LoadCodeAsync(blob)</code>
+3. Adds history entry
 4. Updates persisted configuration</p>
 <h2 id="deletion">Deletion</h2>
 <h3 id="deleteworkerasync">DeleteWorkerAsync</h3>
@@ -2057,8 +2031,7 @@ gRPC endpoint.</p>
 </code></pre></div>
 <p><strong>What's tracked:</strong>
 - Initial creation with original code source
-- Each <code>LoadCodeFromContent</code> call
-- Each <code>LoadCodeFromUrl</code> call</p>
+- Each <code>LoadCode</code> call</p>
 <p><strong>What's not tracked:</strong>
 - Runtime execution errors (these go to logs)
 - Message processing counts</p>
@@ -2133,7 +2106,7 @@ AcquireGroupLock() ── retry (base × 2^attempt, max GROUP_LOCK_MAX_RETRIES)
 <p><strong>Stop before delete is optional</strong>: <code>DeleteWorkerAsync</code> cleans up subscriptions regardless of state, so explicit <code>StopWorkerAsync</code> is not required before deletion.</p>
 </li>
 <li>
-<p><strong>Code updates don't restart subscriptions</strong>: <code>LoadCodeFromContent</code> and <code>LoadCodeFromUrl</code> update code in-place without disrupting processing.</p>
+<p><strong>Code updates don't restart subscriptions</strong>: <code>LoadCode</code> updates code in-place without disrupting processing.</p>
 </li>
 </ol>
 
@@ -2167,7 +2140,7 @@ AcquireGroupLock() ── retry (base × 2^attempt, max GROUP_LOCK_MAX_RETRIES)
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-07-05T11:02:34Z</span>
+  <span style="display:table-cell;text-align:right">2026-07-05T17:55:20Z</span>
 </div>
 
     </div>

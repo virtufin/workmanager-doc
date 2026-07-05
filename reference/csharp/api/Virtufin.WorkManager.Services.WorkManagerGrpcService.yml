@@ -8,11 +8,14 @@ items:
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService})
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.CreateWorker(Virtufin.WorkManager.Protos.CreateWorkerRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.DeleteWorker(Virtufin.WorkManager.Protos.DeleteWorkerRequest,Grpc.Core.ServerCallContext)
+  - Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariable(Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  - Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariables(Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
-  - Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromContent(Virtufin.WorkManager.Protos.LoadCodeFromContentRequest,Grpc.Core.ServerCallContext)
-  - Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromUrl(Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest,Grpc.Core.ServerCallContext)
+  - Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.RecoverWorkers(Virtufin.WorkManager.Protos.RecoverWorkersRequest,Grpc.Core.ServerCallContext)
+  - Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  - Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariables(Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.StartWorker(Virtufin.WorkManager.Protos.StartWorkerRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.StopWorker(Virtufin.WorkManager.Protos.StopWorkerRequest,Grpc.Core.ServerCallContext)
   langs:
@@ -135,7 +138,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StartWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 63
+    startLine: 64
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -170,7 +173,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StopWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 82
+    startLine: 83
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -205,7 +208,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 101
+    startLine: 102
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -222,76 +225,41 @@ items:
     content.vb: Public Overrides Function ListWorkers(request As ListWorkersRequest, context As ServerCallContext) As Task(Of ListWorkersResponse)
   overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
   overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers*
-- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromContent(Virtufin.WorkManager.Protos.LoadCodeFromContentRequest,Grpc.Core.ServerCallContext)
-  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromContent(Virtufin.WorkManager.Protos.LoadCodeFromContentRequest,Grpc.Core.ServerCallContext)
-  id: LoadCodeFromContent(Virtufin.WorkManager.Protos.LoadCodeFromContentRequest,Grpc.Core.ServerCallContext)
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
+  id: LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
   parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
   langs:
   - csharp
   - vb
-  name: LoadCodeFromContent(LoadCodeFromContentRequest, ServerCallContext)
-  nameWithType: WorkManagerGrpcService.LoadCodeFromContent(LoadCodeFromContentRequest, ServerCallContext)
-  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromContent(Virtufin.WorkManager.Protos.LoadCodeFromContentRequest, Grpc.Core.ServerCallContext)
+  name: LoadCode(LoadCodeRequest, ServerCallContext)
+  nameWithType: WorkManagerGrpcService.LoadCode(LoadCodeRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest, Grpc.Core.ServerCallContext)
   type: Method
   source:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: LoadCodeFromContent
+    id: LoadCode
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 122
+    startLine: 131
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
   example: []
   syntax:
-    content: public override Task<LoadCodeFromContentResponse> LoadCodeFromContent(LoadCodeFromContentRequest request, ServerCallContext context)
+    content: public override Task<LoadCodeResponse> LoadCode(LoadCodeRequest request, ServerCallContext context)
     parameters:
     - id: request
-      type: Virtufin.WorkManager.Protos.LoadCodeFromContentRequest
+      type: Virtufin.WorkManager.Protos.LoadCodeRequest
     - id: context
       type: Grpc.Core.ServerCallContext
     return:
-      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.LoadCodeFromContentResponse}
-    content.vb: Public Overrides Function LoadCodeFromContent(request As LoadCodeFromContentRequest, context As ServerCallContext) As Task(Of LoadCodeFromContentResponse)
-  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCodeFromContent(Virtufin.WorkManager.Protos.LoadCodeFromContentRequest,Grpc.Core.ServerCallContext)
-  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromContent*
-- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromUrl(Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest,Grpc.Core.ServerCallContext)
-  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromUrl(Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest,Grpc.Core.ServerCallContext)
-  id: LoadCodeFromUrl(Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest,Grpc.Core.ServerCallContext)
-  parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
-  langs:
-  - csharp
-  - vb
-  name: LoadCodeFromUrl(LoadCodeFromUrlRequest, ServerCallContext)
-  nameWithType: WorkManagerGrpcService.LoadCodeFromUrl(LoadCodeFromUrlRequest, ServerCallContext)
-  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromUrl(Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest, Grpc.Core.ServerCallContext)
-  type: Method
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: LoadCodeFromUrl
-    path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 145
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Services
-  example: []
-  syntax:
-    content: public override Task<LoadCodeFromUrlResponse> LoadCodeFromUrl(LoadCodeFromUrlRequest request, ServerCallContext context)
-    parameters:
-    - id: request
-      type: Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest
-    - id: context
-      type: Grpc.Core.ServerCallContext
-    return:
-      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.LoadCodeFromUrlResponse}
-    content.vb: Public Overrides Function LoadCodeFromUrl(request As LoadCodeFromUrlRequest, context As ServerCallContext) As Task(Of LoadCodeFromUrlResponse)
-  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCodeFromUrl(Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest,Grpc.Core.ServerCallContext)
-  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromUrl*
+      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.LoadCodeResponse}
+    content.vb: Public Overrides Function LoadCode(request As LoadCodeRequest, context As ServerCallContext) As Task(Of LoadCodeResponse)
+  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
+  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCode*
 - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.DeleteWorker(Virtufin.WorkManager.Protos.DeleteWorkerRequest,Grpc.Core.ServerCallContext)
   commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.DeleteWorker(Virtufin.WorkManager.Protos.DeleteWorkerRequest,Grpc.Core.ServerCallContext)
   id: DeleteWorker(Virtufin.WorkManager.Protos.DeleteWorkerRequest,Grpc.Core.ServerCallContext)
@@ -310,7 +278,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeleteWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 173
+    startLine: 168
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -345,7 +313,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 192
+    startLine: 187
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -380,7 +348,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoverWorkers
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 220
+    startLine: 215
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -397,6 +365,146 @@ items:
     content.vb: Public Overrides Function RecoverWorkers(request As RecoverWorkersRequest, context As ServerCallContext) As Task(Of RecoverWorkersResponse)
   overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.RecoverWorkers(Virtufin.WorkManager.Protos.RecoverWorkersRequest,Grpc.Core.ServerCallContext)
   overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.RecoverWorkers*
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  id: SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
+  langs:
+  - csharp
+  - vb
+  name: SetEnvironmentVariable(SetEnvironmentVariableRequest, ServerCallContext)
+  nameWithType: WorkManagerGrpcService.SetEnvironmentVariable(SetEnvironmentVariableRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: SetEnvironmentVariable
+    path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+    startLine: 223
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  example: []
+  syntax:
+    content: public override Task<SetEnvironmentVariableResponse> SetEnvironmentVariable(SetEnvironmentVariableRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest
+    - id: context
+      type: Grpc.Core.ServerCallContext
+    return:
+      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.SetEnvironmentVariableResponse}
+    content.vb: Public Overrides Function SetEnvironmentVariable(request As SetEnvironmentVariableRequest, context As ServerCallContext) As Task(Of SetEnvironmentVariableResponse)
+  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariable*
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariable(Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariable(Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  id: GetEnvironmentVariable(Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
+  langs:
+  - csharp
+  - vb
+  name: GetEnvironmentVariable(GetEnvironmentVariableRequest, ServerCallContext)
+  nameWithType: WorkManagerGrpcService.GetEnvironmentVariable(GetEnvironmentVariableRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariable(Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: GetEnvironmentVariable
+    path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+    startLine: 242
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  example: []
+  syntax:
+    content: public override Task<GetEnvironmentVariableResponse> GetEnvironmentVariable(GetEnvironmentVariableRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest
+    - id: context
+      type: Grpc.Core.ServerCallContext
+    return:
+      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetEnvironmentVariableResponse}
+    content.vb: Public Overrides Function GetEnvironmentVariable(request As GetEnvironmentVariableRequest, context As ServerCallContext) As Task(Of GetEnvironmentVariableResponse)
+  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetEnvironmentVariable(Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariable*
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariables(Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariables(Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  id: SetEnvironmentVariables(Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
+  langs:
+  - csharp
+  - vb
+  name: SetEnvironmentVariables(SetEnvironmentVariablesRequest, ServerCallContext)
+  nameWithType: WorkManagerGrpcService.SetEnvironmentVariables(SetEnvironmentVariablesRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariables(Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: SetEnvironmentVariables
+    path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+    startLine: 266
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  example: []
+  syntax:
+    content: public override Task<SetEnvironmentVariablesResponse> SetEnvironmentVariables(SetEnvironmentVariablesRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest
+    - id: context
+      type: Grpc.Core.ServerCallContext
+    return:
+      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.SetEnvironmentVariablesResponse}
+    content.vb: Public Overrides Function SetEnvironmentVariables(request As SetEnvironmentVariablesRequest, context As ServerCallContext) As Task(Of SetEnvironmentVariablesResponse)
+  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariables(Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariables*
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariables(Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariables(Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  id: GetEnvironmentVariables(Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
+  langs:
+  - csharp
+  - vb
+  name: GetEnvironmentVariables(GetEnvironmentVariablesRequest, ServerCallContext)
+  nameWithType: WorkManagerGrpcService.GetEnvironmentVariables(GetEnvironmentVariablesRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariables(Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: GetEnvironmentVariables
+    path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+    startLine: 290
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  example: []
+  syntax:
+    content: public override Task<GetEnvironmentVariablesResponse> GetEnvironmentVariables(GetEnvironmentVariablesRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest
+    - id: context
+      type: Grpc.Core.ServerCallContext
+    return:
+      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetEnvironmentVariablesResponse}
+    content.vb: Public Overrides Function GetEnvironmentVariables(request As GetEnvironmentVariablesRequest, context As ServerCallContext) As Task(Of GetEnvironmentVariablesResponse)
+  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetEnvironmentVariables(Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariables*
 references:
 - uid: Virtufin.WorkManager.Services
   commentId: N:Virtufin.WorkManager.Services
@@ -1229,20 +1337,20 @@ references:
   - uid: Virtufin.WorkManager.Protos.ListWorkersResponse
     name: ListWorkersResponse
   - name: )
-- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCodeFromContent(Virtufin.WorkManager.Protos.LoadCodeFromContentRequest,Grpc.Core.ServerCallContext)
-  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCodeFromContent(Virtufin.WorkManager.Protos.LoadCodeFromContentRequest,Grpc.Core.ServerCallContext)
+- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
   parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
   isExternal: true
   href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
-  name: LoadCodeFromContent(LoadCodeFromContentRequest, ServerCallContext)
-  nameWithType: WorkManager.WorkManagerBase.LoadCodeFromContent(LoadCodeFromContentRequest, ServerCallContext)
-  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCodeFromContent(Virtufin.WorkManager.Protos.LoadCodeFromContentRequest, Grpc.Core.ServerCallContext)
+  name: LoadCode(LoadCodeRequest, ServerCallContext)
+  nameWithType: WorkManager.WorkManagerBase.LoadCode(LoadCodeRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest, Grpc.Core.ServerCallContext)
   spec.csharp:
-  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCodeFromContent(Virtufin.WorkManager.Protos.LoadCodeFromContentRequest,Grpc.Core.ServerCallContext)
-    name: LoadCodeFromContent
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
+    name: LoadCode
   - name: (
-  - uid: Virtufin.WorkManager.Protos.LoadCodeFromContentRequest
-    name: LoadCodeFromContentRequest
+  - uid: Virtufin.WorkManager.Protos.LoadCodeRequest
+    name: LoadCodeRequest
   - name: ','
   - name: " "
   - uid: Grpc.Core.ServerCallContext
@@ -1251,11 +1359,11 @@ references:
     href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
   - name: )
   spec.vb:
-  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCodeFromContent(Virtufin.WorkManager.Protos.LoadCodeFromContentRequest,Grpc.Core.ServerCallContext)
-    name: LoadCodeFromContent
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
+    name: LoadCode
   - name: (
-  - uid: Virtufin.WorkManager.Protos.LoadCodeFromContentRequest
-    name: LoadCodeFromContentRequest
+  - uid: Virtufin.WorkManager.Protos.LoadCodeRequest
+    name: LoadCodeRequest
   - name: ','
   - name: " "
   - uid: Grpc.Core.ServerCallContext
@@ -1263,37 +1371,37 @@ references:
     isExternal: true
     href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
   - name: )
-- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromContent*
-  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromContent
-  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_LoadCodeFromContent_Virtufin_WorkManager_Protos_LoadCodeFromContentRequest_Grpc_Core_ServerCallContext_
-  name: LoadCodeFromContent
-  nameWithType: WorkManagerGrpcService.LoadCodeFromContent
-  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromContent
-- uid: Virtufin.WorkManager.Protos.LoadCodeFromContentRequest
-  commentId: T:Virtufin.WorkManager.Protos.LoadCodeFromContentRequest
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCode*
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCode
+  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_LoadCode_Virtufin_WorkManager_Protos_LoadCodeRequest_Grpc_Core_ServerCallContext_
+  name: LoadCode
+  nameWithType: WorkManagerGrpcService.LoadCode
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCode
+- uid: Virtufin.WorkManager.Protos.LoadCodeRequest
+  commentId: T:Virtufin.WorkManager.Protos.LoadCodeRequest
   parent: Virtufin.WorkManager.Protos
-  name: LoadCodeFromContentRequest
-  nameWithType: LoadCodeFromContentRequest
-  fullName: Virtufin.WorkManager.Protos.LoadCodeFromContentRequest
-- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.LoadCodeFromContentResponse}
-  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.LoadCodeFromContentResponse}
+  name: LoadCodeRequest
+  nameWithType: LoadCodeRequest
+  fullName: Virtufin.WorkManager.Protos.LoadCodeRequest
+- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.LoadCodeResponse}
+  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.LoadCodeResponse}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<LoadCodeFromContentResponse>
-  nameWithType: Task<LoadCodeFromContentResponse>
-  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.LoadCodeFromContentResponse>
-  nameWithType.vb: Task(Of LoadCodeFromContentResponse)
-  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.LoadCodeFromContentResponse)
-  name.vb: Task(Of LoadCodeFromContentResponse)
+  name: Task<LoadCodeResponse>
+  nameWithType: Task<LoadCodeResponse>
+  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.LoadCodeResponse>
+  nameWithType.vb: Task(Of LoadCodeResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.LoadCodeResponse)
+  name.vb: Task(Of LoadCodeResponse)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-  - uid: Virtufin.WorkManager.Protos.LoadCodeFromContentResponse
-    name: LoadCodeFromContentResponse
+  - uid: Virtufin.WorkManager.Protos.LoadCodeResponse
+    name: LoadCodeResponse
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -1303,85 +1411,8 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: Virtufin.WorkManager.Protos.LoadCodeFromContentResponse
-    name: LoadCodeFromContentResponse
-  - name: )
-- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCodeFromUrl(Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest,Grpc.Core.ServerCallContext)
-  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCodeFromUrl(Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest,Grpc.Core.ServerCallContext)
-  parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
-  isExternal: true
-  href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
-  name: LoadCodeFromUrl(LoadCodeFromUrlRequest, ServerCallContext)
-  nameWithType: WorkManager.WorkManagerBase.LoadCodeFromUrl(LoadCodeFromUrlRequest, ServerCallContext)
-  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCodeFromUrl(Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest, Grpc.Core.ServerCallContext)
-  spec.csharp:
-  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCodeFromUrl(Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest,Grpc.Core.ServerCallContext)
-    name: LoadCodeFromUrl
-  - name: (
-  - uid: Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest
-    name: LoadCodeFromUrlRequest
-  - name: ','
-  - name: " "
-  - uid: Grpc.Core.ServerCallContext
-    name: ServerCallContext
-    isExternal: true
-    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
-  - name: )
-  spec.vb:
-  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCodeFromUrl(Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest,Grpc.Core.ServerCallContext)
-    name: LoadCodeFromUrl
-  - name: (
-  - uid: Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest
-    name: LoadCodeFromUrlRequest
-  - name: ','
-  - name: " "
-  - uid: Grpc.Core.ServerCallContext
-    name: ServerCallContext
-    isExternal: true
-    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
-  - name: )
-- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromUrl*
-  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromUrl
-  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_LoadCodeFromUrl_Virtufin_WorkManager_Protos_LoadCodeFromUrlRequest_Grpc_Core_ServerCallContext_
-  name: LoadCodeFromUrl
-  nameWithType: WorkManagerGrpcService.LoadCodeFromUrl
-  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCodeFromUrl
-- uid: Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest
-  commentId: T:Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest
-  parent: Virtufin.WorkManager.Protos
-  name: LoadCodeFromUrlRequest
-  nameWithType: LoadCodeFromUrlRequest
-  fullName: Virtufin.WorkManager.Protos.LoadCodeFromUrlRequest
-- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.LoadCodeFromUrlResponse}
-  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.LoadCodeFromUrlResponse}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<LoadCodeFromUrlResponse>
-  nameWithType: Task<LoadCodeFromUrlResponse>
-  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.LoadCodeFromUrlResponse>
-  nameWithType.vb: Task(Of LoadCodeFromUrlResponse)
-  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.LoadCodeFromUrlResponse)
-  name.vb: Task(Of LoadCodeFromUrlResponse)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: Virtufin.WorkManager.Protos.LoadCodeFromUrlResponse
-    name: LoadCodeFromUrlResponse
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: Virtufin.WorkManager.Protos.LoadCodeFromUrlResponse
-    name: LoadCodeFromUrlResponse
+  - uid: Virtufin.WorkManager.Protos.LoadCodeResponse
+    name: LoadCodeResponse
   - name: )
 - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.DeleteWorker(Virtufin.WorkManager.Protos.DeleteWorkerRequest,Grpc.Core.ServerCallContext)
   commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.DeleteWorker(Virtufin.WorkManager.Protos.DeleteWorkerRequest,Grpc.Core.ServerCallContext)
@@ -1613,4 +1644,312 @@ references:
   - name: " "
   - uid: Virtufin.WorkManager.Protos.RecoverWorkersResponse
     name: RecoverWorkersResponse
+  - name: )
+- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
+  isExternal: true
+  href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  name: SetEnvironmentVariable(SetEnvironmentVariableRequest, ServerCallContext)
+  nameWithType: WorkManager.WorkManagerBase.SetEnvironmentVariable(SetEnvironmentVariableRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest, Grpc.Core.ServerCallContext)
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+    name: SetEnvironmentVariable
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest
+    name: SetEnvironmentVariableRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+    name: SetEnvironmentVariable
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest
+    name: SetEnvironmentVariableRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariable*
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariable
+  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_SetEnvironmentVariable_Virtufin_WorkManager_Protos_SetEnvironmentVariableRequest_Grpc_Core_ServerCallContext_
+  name: SetEnvironmentVariable
+  nameWithType: WorkManagerGrpcService.SetEnvironmentVariable
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariable
+- uid: Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest
+  commentId: T:Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest
+  parent: Virtufin.WorkManager.Protos
+  name: SetEnvironmentVariableRequest
+  nameWithType: SetEnvironmentVariableRequest
+  fullName: Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest
+- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.SetEnvironmentVariableResponse}
+  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.SetEnvironmentVariableResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<SetEnvironmentVariableResponse>
+  nameWithType: Task<SetEnvironmentVariableResponse>
+  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.SetEnvironmentVariableResponse>
+  nameWithType.vb: Task(Of SetEnvironmentVariableResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.SetEnvironmentVariableResponse)
+  name.vb: Task(Of SetEnvironmentVariableResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Virtufin.WorkManager.Protos.SetEnvironmentVariableResponse
+    name: SetEnvironmentVariableResponse
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Protos.SetEnvironmentVariableResponse
+    name: SetEnvironmentVariableResponse
+  - name: )
+- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetEnvironmentVariable(Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetEnvironmentVariable(Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
+  isExternal: true
+  href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  name: GetEnvironmentVariable(GetEnvironmentVariableRequest, ServerCallContext)
+  nameWithType: WorkManager.WorkManagerBase.GetEnvironmentVariable(GetEnvironmentVariableRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetEnvironmentVariable(Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest, Grpc.Core.ServerCallContext)
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetEnvironmentVariable(Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+    name: GetEnvironmentVariable
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest
+    name: GetEnvironmentVariableRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetEnvironmentVariable(Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
+    name: GetEnvironmentVariable
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest
+    name: GetEnvironmentVariableRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariable*
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariable
+  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_GetEnvironmentVariable_Virtufin_WorkManager_Protos_GetEnvironmentVariableRequest_Grpc_Core_ServerCallContext_
+  name: GetEnvironmentVariable
+  nameWithType: WorkManagerGrpcService.GetEnvironmentVariable
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariable
+- uid: Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest
+  commentId: T:Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest
+  parent: Virtufin.WorkManager.Protos
+  name: GetEnvironmentVariableRequest
+  nameWithType: GetEnvironmentVariableRequest
+  fullName: Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest
+- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetEnvironmentVariableResponse}
+  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetEnvironmentVariableResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<GetEnvironmentVariableResponse>
+  nameWithType: Task<GetEnvironmentVariableResponse>
+  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.GetEnvironmentVariableResponse>
+  nameWithType.vb: Task(Of GetEnvironmentVariableResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.GetEnvironmentVariableResponse)
+  name.vb: Task(Of GetEnvironmentVariableResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Virtufin.WorkManager.Protos.GetEnvironmentVariableResponse
+    name: GetEnvironmentVariableResponse
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Protos.GetEnvironmentVariableResponse
+    name: GetEnvironmentVariableResponse
+  - name: )
+- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariables(Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariables(Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
+  isExternal: true
+  href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  name: SetEnvironmentVariables(SetEnvironmentVariablesRequest, ServerCallContext)
+  nameWithType: WorkManager.WorkManagerBase.SetEnvironmentVariables(SetEnvironmentVariablesRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariables(Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest, Grpc.Core.ServerCallContext)
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariables(Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+    name: SetEnvironmentVariables
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest
+    name: SetEnvironmentVariablesRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariables(Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+    name: SetEnvironmentVariables
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest
+    name: SetEnvironmentVariablesRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariables*
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariables
+  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_SetEnvironmentVariables_Virtufin_WorkManager_Protos_SetEnvironmentVariablesRequest_Grpc_Core_ServerCallContext_
+  name: SetEnvironmentVariables
+  nameWithType: WorkManagerGrpcService.SetEnvironmentVariables
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariables
+- uid: Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest
+  commentId: T:Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest
+  parent: Virtufin.WorkManager.Protos
+  name: SetEnvironmentVariablesRequest
+  nameWithType: SetEnvironmentVariablesRequest
+  fullName: Virtufin.WorkManager.Protos.SetEnvironmentVariablesRequest
+- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.SetEnvironmentVariablesResponse}
+  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.SetEnvironmentVariablesResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<SetEnvironmentVariablesResponse>
+  nameWithType: Task<SetEnvironmentVariablesResponse>
+  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.SetEnvironmentVariablesResponse>
+  nameWithType.vb: Task(Of SetEnvironmentVariablesResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.SetEnvironmentVariablesResponse)
+  name.vb: Task(Of SetEnvironmentVariablesResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Virtufin.WorkManager.Protos.SetEnvironmentVariablesResponse
+    name: SetEnvironmentVariablesResponse
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Protos.SetEnvironmentVariablesResponse
+    name: SetEnvironmentVariablesResponse
+  - name: )
+- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetEnvironmentVariables(Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetEnvironmentVariables(Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
+  isExternal: true
+  href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  name: GetEnvironmentVariables(GetEnvironmentVariablesRequest, ServerCallContext)
+  nameWithType: WorkManager.WorkManagerBase.GetEnvironmentVariables(GetEnvironmentVariablesRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetEnvironmentVariables(Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest, Grpc.Core.ServerCallContext)
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetEnvironmentVariables(Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+    name: GetEnvironmentVariables
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest
+    name: GetEnvironmentVariablesRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetEnvironmentVariables(Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest,Grpc.Core.ServerCallContext)
+    name: GetEnvironmentVariables
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest
+    name: GetEnvironmentVariablesRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariables*
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariables
+  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_GetEnvironmentVariables_Virtufin_WorkManager_Protos_GetEnvironmentVariablesRequest_Grpc_Core_ServerCallContext_
+  name: GetEnvironmentVariables
+  nameWithType: WorkManagerGrpcService.GetEnvironmentVariables
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariables
+- uid: Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest
+  commentId: T:Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest
+  parent: Virtufin.WorkManager.Protos
+  name: GetEnvironmentVariablesRequest
+  nameWithType: GetEnvironmentVariablesRequest
+  fullName: Virtufin.WorkManager.Protos.GetEnvironmentVariablesRequest
+- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetEnvironmentVariablesResponse}
+  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetEnvironmentVariablesResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<GetEnvironmentVariablesResponse>
+  nameWithType: Task<GetEnvironmentVariablesResponse>
+  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.GetEnvironmentVariablesResponse>
+  nameWithType.vb: Task(Of GetEnvironmentVariablesResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.GetEnvironmentVariablesResponse)
+  name.vb: Task(Of GetEnvironmentVariablesResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Virtufin.WorkManager.Protos.GetEnvironmentVariablesResponse
+    name: GetEnvironmentVariablesResponse
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Protos.GetEnvironmentVariablesResponse
+    name: GetEnvironmentVariablesResponse
   - name: )

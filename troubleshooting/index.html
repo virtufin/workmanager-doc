@@ -201,14 +201,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9f032ec4656b37f7dfe7ce0343702d5e1b683d6e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e0b0510b28716b92716a43b66706b3182baf16dd"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 9f032ec">
+       title="View commit e0b0510">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9f032ec</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e0b0510</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9f032ec4656b37f7dfe7ce0343702d5e1b683d6e"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e0b0510b28716b92716a43b66706b3182baf16dd"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 9f032ec">
+       title="View commit e0b0510">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9f032ec</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e0b0510</text>
       </svg>
     </a>
 </div>
@@ -1935,7 +1935,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>configmap<span class="
 to <code>PYTHON_ALLOWED_PACKAGES</code> (note: this only allows pip packages, not stdlib
 modules).</p>
 <h3 id="code-fetched-from-url-fails">Code fetched from URL fails</h3>
-<p><strong>Symptom:</strong> <code>LoadCodeFromUrl</code> returns success but the worker fails to start.</p>
+<p><strong>Symptom:</strong> <code>LoadCode</code> returns success but the worker fails to start.</p>
 <p><strong>Likely cause:</strong> The fetched content doesn't match the expected MIME type
 (loaded but unparseable), or the SHA-256 hash doesn't match (if
 <code>ContentSha256</code> is set).</p>
@@ -1956,10 +1956,10 @@ available in the runtime assemblies.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Check the Roslyn compilation error in the logs</span>
 kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>virtufin-workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;error CS\|roslyn&quot;</span>
 </code></pre></div>
-<p><strong>Fix:</strong> Fix the worker source code and call <code>LoadCodeFromContent</code> with the
+<p><strong>Fix:</strong> Fix the worker source code and call <code>LoadCode</code> with the
 updated bytes.</p>
 <h3 id="net-dll-load-errors">.NET DLL load errors</h3>
-<p><strong>Symptom:</strong> <code>LoadCodeFromUrl</code> returns success but the worker fails with
+<p><strong>Symptom:</strong> <code>LoadCode</code> returns success but the worker fails with
 <code>InvalidOperationException: Assembly load failed</code>.</p>
 <p><strong>Likely cause:</strong> A dependency DLL in the ZIP is missing, has a version
 conflict with the WorkManager's assemblies, or is for the wrong platform
@@ -2059,7 +2059,7 @@ Gitea issue:</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-07-05T11:02:34Z</span>
+  <span style="display:table-cell;text-align:right">2026-07-05T17:55:20Z</span>
 </div>
 
     </div>

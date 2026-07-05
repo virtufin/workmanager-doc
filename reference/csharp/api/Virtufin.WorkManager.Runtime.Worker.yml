@@ -5,15 +5,18 @@ items:
   id: Worker
   parent: Virtufin.WorkManager.Runtime
   children:
-  - Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry})
+  - Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})
   - Virtufin.WorkManager.Runtime.Worker.CodeSource
   - Virtufin.WorkManager.Runtime.Worker.CreatedAt
+  - Virtufin.WorkManager.Runtime.Worker.Env
   - Virtufin.WorkManager.Runtime.Worker.Group
   - Virtufin.WorkManager.Runtime.Worker.History
   - Virtufin.WorkManager.Runtime.Worker.Id
   - Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
   - Virtufin.WorkManager.Runtime.Worker.MimeType
   - Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent,System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable(System.String,System.String)
+  - Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary{System.String,System.String})
   - Virtufin.WorkManager.Runtime.Worker.Status
   - Virtufin.WorkManager.Runtime.Worker.Topic
   langs:
@@ -296,16 +299,52 @@ items:
       type: Virtufin.WorkManager.Contracts.WorkerStatus
     content.vb: Public Property Status As WorkerStatus
   overload: Virtufin.WorkManager.Runtime.Worker.Status*
-- uid: Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry})
-  commentId: M:Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry})
-  id: '#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry})'
+- uid: Virtufin.WorkManager.Runtime.Worker.Env
+  commentId: P:Virtufin.WorkManager.Runtime.Worker.Env
+  id: Env
   parent: Virtufin.WorkManager.Runtime.Worker
   langs:
   - csharp
   - vb
-  name: Worker(Guid, CodeSource, string, IEngine, string, string?, DateTime, ILogger<Worker>, List<HistoryEntry>?)
-  nameWithType: Worker.Worker(Guid, CodeSource, string, IEngine, string, string?, DateTime, ILogger<Worker>, List<HistoryEntry>?)
-  fullName: Virtufin.WorkManager.Runtime.Worker.Worker(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, Virtufin.WorkManager.Engines.IEngine, string, string?, System.DateTime, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Runtime.Worker>, System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>?)
+  name: Env
+  nameWithType: Worker.Env
+  fullName: Virtufin.WorkManager.Runtime.Worker.Env
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Runtime/Worker.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Env
+    path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
+    startLine: 39
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Runtime
+  summary: >-
+    Read-only view of the worker's currently-set environment variables.
+
+    Mutate via <xref href="Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable(System.String%2cSystem.String)" data-throw-if-not-resolved="false"></xref> or
+
+    <xref href="Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary%7bSystem.String%2cSystem.String%7d)" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IReadOnlyDictionary<string, string> Env { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+    content.vb: Public ReadOnly Property Env As IReadOnlyDictionary(Of String, String)
+  overload: Virtufin.WorkManager.Runtime.Worker.Env*
+- uid: Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})
+  id: '#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})'
+  parent: Virtufin.WorkManager.Runtime.Worker
+  langs:
+  - csharp
+  - vb
+  name: Worker(Guid, CodeSource, string, IEngine, string, string?, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?)
+  nameWithType: Worker.Worker(Guid, CodeSource, string, IEngine, string, string?, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?)
+  fullName: Virtufin.WorkManager.Runtime.Worker.Worker(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, Virtufin.WorkManager.Engines.IEngine, string, string?, System.DateTime, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Runtime.Worker>, System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>?, System.Collections.Generic.IDictionary<string, string>?)
   type: Constructor
   source:
     remote:
@@ -314,14 +353,14 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 35
+    startLine: 44
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
   summary: Creates a new worker instance.
   example: []
   syntax:
-    content: public Worker(Guid id, CodeSource codeSource, string mimeType, IEngine engine, string topic, string? group, DateTime createdAt, ILogger<Worker> logger, List<HistoryEntry>? history = null)
+    content: public Worker(Guid id, CodeSource codeSource, string mimeType, IEngine engine, string topic, string? group, DateTime createdAt, ILogger<Worker> logger, List<HistoryEntry>? history = null, IDictionary<string, string>? env = null)
     parameters:
     - id: id
       type: System.Guid
@@ -341,11 +380,13 @@ items:
       type: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker}
     - id: history
       type: System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry}
-    content.vb: Public Sub New(id As Guid, codeSource As CodeSource, mimeType As String, engine As IEngine, topic As String, group As String, createdAt As Date, logger As ILogger(Of Worker), history As List(Of HistoryEntry) = Nothing)
+    - id: env
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    content.vb: Public Sub New(id As Guid, codeSource As CodeSource, mimeType As String, engine As IEngine, topic As String, group As String, createdAt As Date, logger As ILogger(Of Worker), history As List(Of HistoryEntry) = Nothing, env As IDictionary(Of String, String) = Nothing)
   overload: Virtufin.WorkManager.Runtime.Worker.#ctor*
-  nameWithType.vb: Worker.New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry))
-  fullName.vb: Virtufin.WorkManager.Runtime.Worker.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, Virtufin.WorkManager.Engines.IEngine, String, String, Date, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Runtime.Worker), System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry))
-  name.vb: New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry))
+  nameWithType.vb: Worker.New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String))
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, Virtufin.WorkManager.Engines.IEngine, String, String, Date, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Runtime.Worker), System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry), System.Collections.Generic.IDictionary(Of String, String))
+  name.vb: New(Guid, CodeSource, String, IEngine, String, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String))
 - uid: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
   commentId: M:Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
   id: LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
@@ -364,7 +405,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCodeAsync
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 62
+    startLine: 75
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -404,7 +445,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ProcessAsync
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 81
+    startLine: 94
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -424,6 +465,81 @@ items:
       description: The response cloud event, or <code>null</code> if no response.
     content.vb: Public Function ProcessAsync(input As CloudEvent, cancellationToken As CancellationToken = Nothing) As Task(Of CloudEvent)
   overload: Virtufin.WorkManager.Runtime.Worker.ProcessAsync*
+- uid: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable(System.String,System.String)
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable(System.String,System.String)
+  id: SetEnvironmentVariable(System.String,System.String)
+  parent: Virtufin.WorkManager.Runtime.Worker
+  langs:
+  - csharp
+  - vb
+  name: SetEnvironmentVariable(string, string)
+  nameWithType: Worker.SetEnvironmentVariable(string, string)
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable(string, string)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Runtime/Worker.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: SetEnvironmentVariable
+    path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
+    startLine: 105
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Runtime
+  summary: >-
+    Sets or replaces a single environment variable for this worker.
+
+    Takes effect on the next invocation of the engine.
+  example: []
+  syntax:
+    content: public void SetEnvironmentVariable(string key, string value)
+    parameters:
+    - id: key
+      type: System.String
+      description: The variable name.
+    - id: value
+      type: System.String
+      description: The variable value (empty string clears it from the engine's POV).
+    content.vb: Public Sub SetEnvironmentVariable(key As String, value As String)
+  overload: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable*
+  nameWithType.vb: Worker.SetEnvironmentVariable(String, String)
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable(String, String)
+  name.vb: SetEnvironmentVariable(String, String)
+- uid: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary{System.String,System.String})
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary{System.String,System.String})
+  id: SetEnvironmentVariables(System.Collections.Generic.IDictionary{System.String,System.String})
+  parent: Virtufin.WorkManager.Runtime.Worker
+  langs:
+  - csharp
+  - vb
+  name: SetEnvironmentVariables(IDictionary<string, string>)
+  nameWithType: Worker.SetEnvironmentVariables(IDictionary<string, string>)
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary<string, string>)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Runtime/Worker.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: SetEnvironmentVariables
+    path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
+    startLine: 115
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Runtime
+  summary: Replaces the entire environment variable set with the provided dictionary.
+  example: []
+  syntax:
+    content: public void SetEnvironmentVariables(IDictionary<string, string> env)
+    parameters:
+    - id: env
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    content.vb: Public Sub SetEnvironmentVariables(env As IDictionary(Of String, String))
+  overload: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables*
+  nameWithType.vb: Worker.SetEnvironmentVariables(IDictionary(Of String, String))
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary(Of String, String))
+  name.vb: SetEnvironmentVariables(IDictionary(Of String, String))
 references:
 - uid: Virtufin.WorkManager.Runtime
   commentId: N:Virtufin.WorkManager.Runtime
@@ -888,9 +1004,194 @@ references:
   name: WorkerStatus
   nameWithType: WorkerStatus
   fullName: Virtufin.WorkManager.Contracts.WorkerStatus
+- uid: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable(System.String,System.String)
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable(System.String,System.String)
+  isExternal: true
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetEnvironmentVariable_System_String_System_String_
+  name: SetEnvironmentVariable(string, string)
+  nameWithType: Worker.SetEnvironmentVariable(string, string)
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable(string, string)
+  nameWithType.vb: Worker.SetEnvironmentVariable(String, String)
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable(String, String)
+  name.vb: SetEnvironmentVariable(String, String)
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable(System.String,System.String)
+    name: SetEnvironmentVariable
+    href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetEnvironmentVariable_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable(System.String,System.String)
+    name: SetEnvironmentVariable
+    href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetEnvironmentVariable_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary{System.String,System.String})
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary{System.String,System.String})
+  isExternal: true
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetEnvironmentVariables_System_Collections_Generic_IDictionary_System_String_System_String__
+  name: SetEnvironmentVariables(IDictionary<string, string>)
+  nameWithType: Worker.SetEnvironmentVariables(IDictionary<string, string>)
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary<string, string>)
+  nameWithType.vb: Worker.SetEnvironmentVariables(IDictionary(Of String, String))
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary(Of String, String))
+  name.vb: SetEnvironmentVariables(IDictionary(Of String, String))
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary{System.String,System.String})
+    name: SetEnvironmentVariables
+    href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetEnvironmentVariables_System_Collections_Generic_IDictionary_System_String_System_String__
+  - name: (
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables(System.Collections.Generic.IDictionary{System.String,System.String})
+    name: SetEnvironmentVariables
+    href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetEnvironmentVariables_System_Collections_Generic_IDictionary_System_String_System_String__
+  - name: (
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: Virtufin.WorkManager.Runtime.Worker.Env*
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.Env
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_Env
+  name: Env
+  nameWithType: Worker.Env
+  fullName: Virtufin.WorkManager.Runtime.Worker.Env
+- uid: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<string, string>
+  nameWithType: IReadOnlyDictionary<string, string>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string, string>
+  nameWithType.vb: IReadOnlyDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of String, String)
+  name.vb: IReadOnlyDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyDictionary`2
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<TKey, TValue>
+  nameWithType: IReadOnlyDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>
+  nameWithType.vb: IReadOnlyDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of TKey, TValue)
+  name.vb: IReadOnlyDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
 - uid: Virtufin.WorkManager.Runtime.Worker.#ctor*
   commentId: Overload:Virtufin.WorkManager.Runtime.Worker.#ctor
-  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_Virtufin_WorkManager_Engines_IEngine_System_String_System_String_System_DateTime_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Runtime_Worker__System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_Virtufin_WorkManager_Engines_IEngine_System_String_System_String_System_DateTime_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Runtime_Worker__System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__System_Collections_Generic_IDictionary_System_String_System_String__
   name: Worker
   nameWithType: Worker.Worker
   fullName: Virtufin.WorkManager.Runtime.Worker.Worker
@@ -935,6 +1236,53 @@ references:
   - uid: Virtufin.WorkManager.Runtime.Worker
     name: Worker
     href: Virtufin.WorkManager.Runtime.Worker.html
+  - name: )
+- uid: System.Collections.Generic.IDictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, string>
+  nameWithType: IDictionary<string, string>
+  fullName: System.Collections.Generic.IDictionary<string, string>
+  nameWithType.vb: IDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, String)
+  name.vb: IDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
 - uid: Virtufin.WorkManager.Engines
   commentId: N:Virtufin.WorkManager.Engines
@@ -1024,6 +1372,40 @@ references:
     name: Logging
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
 - uid: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync*
   commentId: Overload:Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync
   href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_LoadCodeAsync_System_Byte___System_Threading_CancellationToken_
@@ -1232,3 +1614,15 @@ references:
   - name: " "
   - name: TResult
   - name: )
+- uid: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable*
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetEnvironmentVariable_System_String_System_String_
+  name: SetEnvironmentVariable
+  nameWithType: Worker.SetEnvironmentVariable
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariable
+- uid: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables*
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_SetEnvironmentVariables_System_Collections_Generic_IDictionary_System_String_System_String__
+  name: SetEnvironmentVariables
+  nameWithType: Worker.SetEnvironmentVariables
+  fullName: Virtufin.WorkManager.Runtime.Worker.SetEnvironmentVariables
