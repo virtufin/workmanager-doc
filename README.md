@@ -93,6 +93,10 @@ helm install virtufin virtufin/virtufin \
 
 See [helm](https://helm.haenerconsulting.com/virtufin/helm) for all configurable values.
 
+## Scaling
+
+WorkManager scales horizontally across **different topics**, not across the same topic. Multiple WorkManager replicas deployed against the same Dapr pubsub component will **compete** for messages on each topic, not share load — a message won by replica A is **dropped** at replica B (no re-routing). For throughput scaling, run multiple workers on **different** topics on the same replica, or optimize the worker code to handle higher per-message rates. See the [Worker Manager Horizontal Scalability spec](https://git.haenerconsulting.com/virtufin/virtufin-openspec/src/branch/master/openspec/specs/worker-management/spec.md#requirement-worker-manager-horizontal-scalability) for the full design rationale.
+
 ## API
 
 | Protocol | Port | Description |

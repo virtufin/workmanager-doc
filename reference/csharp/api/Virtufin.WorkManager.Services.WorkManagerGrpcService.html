@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class WorkManagerGrpcService | Virtufin WorkManager - C# Reference ">
       
-      <meta name="description" content="gRPC service implementation for the WorkManager.">
+      
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -49,10 +49,10 @@
             Virtufin.WorkManager
           </a>
           <div class="git-info">
-            <a href="{git_repo_url}/commit/c69eba973c3c6ba09bf2420adfda89d34fbf57e3" target="_blank" rel="noopener" class="commit-badge" title="View commit c69eba9">
+            <a href="{git_repo_url}/commit/21ea2c5888d44621fc1a5f80b786e978a1e0d399" target="_blank" rel="noopener" class="commit-badge" title="View commit 21ea2c5888d44621fc1a5f80b786e978a1e0d399">
               <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
                 <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"></rect>
-                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">c69eba9</text>
+                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">21ea2c5888d44621fc1a5f80b786e978a1e0d399</text>
               </svg>
             </a>
           </div>          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,8 +101,7 @@ Class WorkManagerGrpcService
   <dl><dt>Assembly</dt><dd>Virtufin.WorkManager.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>gRPC service implementation for the WorkManager.</p>
-</div>
+  <div class="markdown summary"></div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -157,8 +156,8 @@ Class WorkManagerGrpcService
 
   <a id="Virtufin_WorkManager_Services_WorkManagerGrpcService__ctor_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor*"></a>
 
-  <h3 id="Virtufin_WorkManager_Services_WorkManagerGrpcService__ctor_Virtufin_WorkManager_Components_WorkManager_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerGrpcService__" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService})">
-  WorkManagerGrpcService(WorkManager, ILogger&lt;WorkManagerGrpcService&gt;)
+  <h3 id="Virtufin_WorkManager_Services_WorkManagerGrpcService__ctor_Virtufin_WorkManager_Components_WorkManager_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerGrpcService__Virtufin_Service_MultiInstance_IInstanceIdProvider_Virtufin_Service_MultiInstance_PeerRegistry_Virtufin_Service_MultiInstance_PeerChannelCache_Virtufin_WorkManager_Protos_WorkManager_WorkManagerClient__Dapr_Client_DaprClient_System_String_" data-uid="Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService},Virtufin.Service.MultiInstance.IInstanceIdProvider,Virtufin.Service.MultiInstance.PeerRegistry,Virtufin.Service.MultiInstance.PeerChannelCache{Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient},Dapr.Client.DaprClient,System.String)">
+  WorkManagerGrpcService(WorkManager, ILogger&lt;WorkManagerGrpcService&gt;, IInstanceIdProvider, PeerRegistry, PeerChannelCache&lt;WorkManagerClient&gt;, DaprClient, string?)
   
   </h3>
 
@@ -166,7 +165,7 @@ Class WorkManagerGrpcService
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public WorkManagerGrpcService(WorkManager workManager, ILogger&lt;WorkManagerGrpcService&gt; logger)</code></pre>
+    <pre><code class="lang-csharp hljs">public WorkManagerGrpcService(WorkManager workManager, ILogger&lt;WorkManagerGrpcService&gt; logger, IInstanceIdProvider instanceId, PeerRegistry peerRegistry, PeerChannelCache&lt;WorkManager.WorkManagerClient&gt; peerChannels, DaprClient daprClient, string? stateStoreName = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -174,6 +173,16 @@ Class WorkManagerGrpcService
     <dt><code>workManager</code> <a class="xref" href="Virtufin.WorkManager.Components.WorkManager.html">WorkManager</a></dt>
     <dd></dd>
     <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="Virtufin.WorkManager.Services.WorkManagerGrpcService.html">WorkManagerGrpcService</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>instanceId</code> <span class="xref">IInstanceIdProvider</span></dt>
+    <dd></dd>
+    <dt><code>peerRegistry</code> <span class="xref">PeerRegistry</span></dt>
+    <dd></dd>
+    <dt><code>peerChannels</code> <span class="xref">PeerChannelCache</span>&lt;<span class="xref">WorkManager</span>.<span class="xref">WorkManagerClient</span>&gt;</dt>
+    <dd></dd>
+    <dt><code>daprClient</code> <span class="xref">DaprClient</span></dt>
+    <dd></dd>
+    <dt><code>stateStoreName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 

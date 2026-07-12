@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/c69eba973c3c6ba09bf2420adfda89d34fbf57e3"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/21ea2c5888d44621fc1a5f80b786e978a1e0d399"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit c69eba9">
+       title="View commit 21ea2c5">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">c69eba9</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">21ea2c5</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/c69eba973c3c6ba09bf2420adfda89d34fbf57e3"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/21ea2c5888d44621fc1a5f80b786e978a1e0d399"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit c69eba9">
+       title="View commit 21ea2c5">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">c69eba9</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">21ea2c5</text>
       </svg>
     </a>
 </div>
@@ -870,17 +870,6 @@
     <span class="md-ellipsis">
       
         Dapr Configuration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#group-lock-tuning" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Group Lock Tuning
       
     </span>
   </a>
@@ -1594,17 +1583,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#group-lock-tuning" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Group Lock Tuning
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#worker-recovery" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1820,38 +1798,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="group-lock-tuning">Group Lock Tuning</h3>
-<p>When multiple workers share a group, the WorkManager acquires a
-distributed lock via the Dapr state store before publishing the
-worker's response. Lock contention is handled via Dapr redelivery
-(see <a href="worker-lifecycle/#group-lock">Worker Lifecycle</a> for the
-contract). These env vars tune the acquire loop; they do <strong>not</strong>
-gate the number of Dapr redeliveries — that is controlled by the
-Dapr pubsub component's <code>maxRetries</code> metadata.</p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-<th>Default</th>
-<th>Range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>GROUP_LOCK_MAX_RETRIES</code></td>
-<td>Max acquire attempts before throwing <code>LockContentionException</code>. The thrown exception causes the message to be nacked (<code>TopicResponseAction.Retry</code>), which makes Dapr redeliver it after backoff.</td>
-<td><code>3</code></td>
-<td><code>1</code>–<code>20</code></td>
-</tr>
-<tr>
-<td><code>GROUP_LOCK_RETRY_BASE_DELAY_MS</code></td>
-<td>Base delay between acquire attempts. Actual delay is <code>RetryBaseDelayMs * 2^attempt</code>.</td>
-<td><code>500</code></td>
-<td><code>10</code>–<code>60000</code></td>
-</tr>
-</tbody>
-</table>
 <h3 id="worker-recovery">Worker Recovery</h3>
 <p>The <code>WorkManagerRecoveryHostedService</code> runs on startup and restores
 all persisted worker assignments. Multiple WorkManager instances
@@ -2035,7 +1981,7 @@ rate trips the circuit). The above env vars control the other knobs.</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-07-05T21:04:21Z</span>
+  <span style="display:table-cell;text-align:right">2026-07-12T13:03:06Z</span>
 </div>
 
     </div>

@@ -24,9 +24,6 @@ items:
     - uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions
       name: DaprResilienceOptions
       type: Class
-    - uid: Virtufin.WorkManager.Configuration.GroupLockOptions
-      name: GroupLockOptions
-      type: Class
     - uid: Virtufin.WorkManager.Configuration.InfraEvents
       name: InfraEvents
       type: Class
@@ -70,9 +67,6 @@ items:
     - uid: Virtufin.WorkManager.Contracts.IEngineRegistry
       name: IEngineRegistry
       type: Interface
-    - uid: Virtufin.WorkManager.Contracts.LockData
-      name: LockData
-      type: Class
     - uid: Virtufin.WorkManager.Contracts.WorkerConfig
       name: WorkerConfig
       type: Class
@@ -91,9 +85,6 @@ items:
       type: Class
     - uid: Virtufin.WorkManager.Runtime.EngineRegistry
       name: EngineRegistry
-      type: Class
-    - uid: Virtufin.WorkManager.Runtime.LockContentionException
-      name: LockContentionException
       type: Class
     - uid: Virtufin.WorkManager.Runtime.Worker
       name: Worker

@@ -6,11 +6,9 @@ items:
   parent: Virtufin.WorkManager.Services
   children:
   - Virtufin.WorkManager.Services.AppMetrics.DaprCallLatency
-  - Virtufin.WorkManager.Services.AppMetrics.LockContentionEvents
   - Virtufin.WorkManager.Services.AppMetrics.MessagesProcessed
   - Virtufin.WorkManager.Services.AppMetrics.MeterName
   - Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity)
-  - Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(System.String)
   - Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed(System.String)
   - Virtufin.WorkManager.Services.AppMetrics.SetWorkerCounts(System.Int32,System.Int32)
   - Virtufin.WorkManager.Services.AppMetrics.WorkerCountByStatus
@@ -92,7 +90,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: WorkerCountByStatus
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 28
+    startLine: 26
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -121,7 +119,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: MessagesProcessed
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 38
+    startLine: 36
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -132,35 +130,6 @@ items:
     return:
       type: System.Diagnostics.Metrics.Counter{System.Int64}
     content.vb: Public Shared ReadOnly MessagesProcessed As Counter(Of Long)
-- uid: Virtufin.WorkManager.Services.AppMetrics.LockContentionEvents
-  commentId: F:Virtufin.WorkManager.Services.AppMetrics.LockContentionEvents
-  id: LockContentionEvents
-  parent: Virtufin.WorkManager.Services.AppMetrics
-  langs:
-  - csharp
-  - vb
-  name: LockContentionEvents
-  nameWithType: AppMetrics.LockContentionEvents
-  fullName: Virtufin.WorkManager.Services.AppMetrics.LockContentionEvents
-  type: Field
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Services/AppMetrics.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: LockContentionEvents
-    path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 43
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Services
-  summary: Counter for lock contention events.
-  example: []
-  syntax:
-    content: public static readonly Counter<long> LockContentionEvents
-    return:
-      type: System.Diagnostics.Metrics.Counter{System.Int64}
-    content.vb: Public Shared ReadOnly LockContentionEvents As Counter(Of Long)
 - uid: Virtufin.WorkManager.Services.AppMetrics.DaprCallLatency
   commentId: F:Virtufin.WorkManager.Services.AppMetrics.DaprCallLatency
   id: DaprCallLatency
@@ -179,7 +148,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DaprCallLatency
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 48
+    startLine: 41
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -208,7 +177,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetWorkerCounts
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 60
+    startLine: 53
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -244,7 +213,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecordMessageProcessed
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 69
+    startLine: 62
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -260,40 +229,6 @@ items:
   nameWithType.vb: AppMetrics.RecordMessageProcessed(String)
   fullName.vb: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed(String)
   name.vb: RecordMessageProcessed(String)
-- uid: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(System.String)
-  commentId: M:Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(System.String)
-  id: RecordLockContention(System.String)
-  parent: Virtufin.WorkManager.Services.AppMetrics
-  langs:
-  - csharp
-  - vb
-  name: RecordLockContention(string)
-  nameWithType: AppMetrics.RecordLockContention(string)
-  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(string)
-  type: Method
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Services/AppMetrics.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: RecordLockContention
-    path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 77
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Services
-  summary: Records a lock contention event.
-  example: []
-  syntax:
-    content: public static void RecordLockContention(string groupId)
-    parameters:
-    - id: groupId
-      type: System.String
-    content.vb: Public Shared Sub RecordLockContention(groupId As String)
-  overload: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention*
-  nameWithType.vb: AppMetrics.RecordLockContention(String)
-  fullName.vb: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention(String)
-  name.vb: RecordLockContention(String)
 - uid: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity)
   commentId: M:Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency(System.Diagnostics.Activity)
   id: RecordDaprCallLatency(System.Diagnostics.Activity)
@@ -312,7 +247,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecordDaprCallLatency
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
-    startLine: 85
+    startLine: 70
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -856,12 +791,6 @@ references:
   name: RecordMessageProcessed
   nameWithType: AppMetrics.RecordMessageProcessed
   fullName: Virtufin.WorkManager.Services.AppMetrics.RecordMessageProcessed
-- uid: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention*
-  commentId: Overload:Virtufin.WorkManager.Services.AppMetrics.RecordLockContention
-  href: Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_RecordLockContention_System_String_
-  name: RecordLockContention
-  nameWithType: AppMetrics.RecordLockContention
-  fullName: Virtufin.WorkManager.Services.AppMetrics.RecordLockContention
 - uid: Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency*
   commentId: Overload:Virtufin.WorkManager.Services.AppMetrics.RecordDaprCallLatency
   href: Virtufin.WorkManager.Services.AppMetrics.html#Virtufin_WorkManager_Services_AppMetrics_RecordDaprCallLatency_System_Diagnostics_Activity_

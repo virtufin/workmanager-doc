@@ -5,7 +5,7 @@ items:
   id: WorkManagerGrpcService
   parent: Virtufin.WorkManager.Services
   children:
-  - Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService})
+  - Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService},Virtufin.Service.MultiInstance.IInstanceIdProvider,Virtufin.Service.MultiInstance.PeerRegistry,Virtufin.Service.MultiInstance.PeerChannelCache{Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient},Dapr.Client.DaprClient,System.String)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.CreateWorker(Virtufin.WorkManager.Protos.CreateWorkerRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.DeleteWorker(Virtufin.WorkManager.Protos.DeleteWorkerRequest,Grpc.Core.ServerCallContext)
   - Virtufin.WorkManager.Services.WorkManagerGrpcService.GetEnvironmentVariable(Virtufin.WorkManager.Protos.GetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
@@ -36,12 +36,10 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: WorkManagerGrpcService
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 10
+    startLine: 26
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
-  summary: gRPC service implementation for the WorkManager.
-  example: []
   syntax:
     content: 'public sealed class WorkManagerGrpcService : WorkManager.WorkManagerBase'
     content.vb: Public NotInheritable Class WorkManagerGrpcService Inherits WorkManager.WorkManagerBase
@@ -55,16 +53,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService})
-  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService})
-  id: '#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService})'
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService},Virtufin.Service.MultiInstance.IInstanceIdProvider,Virtufin.Service.MultiInstance.PeerRegistry,Virtufin.Service.MultiInstance.PeerChannelCache{Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient},Dapr.Client.DaprClient,System.String)
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService},Virtufin.Service.MultiInstance.IInstanceIdProvider,Virtufin.Service.MultiInstance.PeerRegistry,Virtufin.Service.MultiInstance.PeerChannelCache{Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient},Dapr.Client.DaprClient,System.String)
+  id: '#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService},Virtufin.Service.MultiInstance.IInstanceIdProvider,Virtufin.Service.MultiInstance.PeerRegistry,Virtufin.Service.MultiInstance.PeerChannelCache{Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient},Dapr.Client.DaprClient,System.String)'
   parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
   langs:
   - csharp
   - vb
-  name: WorkManagerGrpcService(WorkManager, ILogger<WorkManagerGrpcService>)
-  nameWithType: WorkManagerGrpcService.WorkManagerGrpcService(WorkManager, ILogger<WorkManagerGrpcService>)
-  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.WorkManagerGrpcService(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.WorkManagerGrpcService>)
+  name: WorkManagerGrpcService(WorkManager, ILogger<WorkManagerGrpcService>, IInstanceIdProvider, PeerRegistry, PeerChannelCache<WorkManagerClient>, DaprClient, string?)
+  nameWithType: WorkManagerGrpcService.WorkManagerGrpcService(WorkManager, ILogger<WorkManagerGrpcService>, IInstanceIdProvider, PeerRegistry, PeerChannelCache<WorkManager.WorkManagerClient>, DaprClient, string?)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.WorkManagerGrpcService(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.WorkManagerGrpcService>, Virtufin.Service.MultiInstance.IInstanceIdProvider, Virtufin.Service.MultiInstance.PeerRegistry, Virtufin.Service.MultiInstance.PeerChannelCache<Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient>, Dapr.Client.DaprClient, string?)
   type: Constructor
   source:
     remote:
@@ -73,22 +71,32 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 15
+    startLine: 36
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
   syntax:
-    content: public WorkManagerGrpcService(WorkManager workManager, ILogger<WorkManagerGrpcService> logger)
+    content: public WorkManagerGrpcService(WorkManager workManager, ILogger<WorkManagerGrpcService> logger, IInstanceIdProvider instanceId, PeerRegistry peerRegistry, PeerChannelCache<WorkManager.WorkManagerClient> peerChannels, DaprClient daprClient, string? stateStoreName = null)
     parameters:
     - id: workManager
       type: Virtufin.WorkManager.Components.WorkManager
     - id: logger
       type: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService}
-    content.vb: Public Sub New(workManager As WorkManager, logger As ILogger(Of WorkManagerGrpcService))
+    - id: instanceId
+      type: Virtufin.Service.MultiInstance.IInstanceIdProvider
+    - id: peerRegistry
+      type: Virtufin.Service.MultiInstance.PeerRegistry
+    - id: peerChannels
+      type: Virtufin.Service.MultiInstance.PeerChannelCache{Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient}
+    - id: daprClient
+      type: Dapr.Client.DaprClient
+    - id: stateStoreName
+      type: System.String
+    content.vb: Public Sub New(workManager As WorkManager, logger As ILogger(Of WorkManagerGrpcService), instanceId As IInstanceIdProvider, peerRegistry As PeerRegistry, peerChannels As PeerChannelCache(Of WorkManager.WorkManagerClient), daprClient As DaprClient, stateStoreName As String = Nothing)
   overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor*
-  nameWithType.vb: WorkManagerGrpcService.New(WorkManager, ILogger(Of WorkManagerGrpcService))
-  fullName.vb: Virtufin.WorkManager.Services.WorkManagerGrpcService.New(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.WorkManagerGrpcService))
-  name.vb: New(WorkManager, ILogger(Of WorkManagerGrpcService))
+  nameWithType.vb: WorkManagerGrpcService.New(WorkManager, ILogger(Of WorkManagerGrpcService), IInstanceIdProvider, PeerRegistry, PeerChannelCache(Of WorkManager.WorkManagerClient), DaprClient, String)
+  fullName.vb: Virtufin.WorkManager.Services.WorkManagerGrpcService.New(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.WorkManagerGrpcService), Virtufin.Service.MultiInstance.IInstanceIdProvider, Virtufin.Service.MultiInstance.PeerRegistry, Virtufin.Service.MultiInstance.PeerChannelCache(Of Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient), Dapr.Client.DaprClient, String)
+  name.vb: New(WorkManager, ILogger(Of WorkManagerGrpcService), IInstanceIdProvider, PeerRegistry, PeerChannelCache(Of WorkManagerClient), DaprClient, String)
 - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.CreateWorker(Virtufin.WorkManager.Protos.CreateWorkerRequest,Grpc.Core.ServerCallContext)
   commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.CreateWorker(Virtufin.WorkManager.Protos.CreateWorkerRequest,Grpc.Core.ServerCallContext)
   id: CreateWorker(Virtufin.WorkManager.Protos.CreateWorkerRequest,Grpc.Core.ServerCallContext)
@@ -107,7 +115,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CreateWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 37
+    startLine: 66
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -142,7 +150,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StartWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 65
+    startLine: 92
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -177,7 +185,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StopWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 84
+    startLine: 110
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -194,41 +202,6 @@ items:
     content.vb: Public Overrides Function StopWorker(request As StopWorkerRequest, context As ServerCallContext) As Task(Of StopWorkerResponse)
   overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.StopWorker(Virtufin.WorkManager.Protos.StopWorkerRequest,Grpc.Core.ServerCallContext)
   overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.StopWorker*
-- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
-  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
-  id: ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
-  parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
-  langs:
-  - csharp
-  - vb
-  name: ListWorkers(ListWorkersRequest, ServerCallContext)
-  nameWithType: WorkManagerGrpcService.ListWorkers(ListWorkersRequest, ServerCallContext)
-  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest, Grpc.Core.ServerCallContext)
-  type: Method
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: ListWorkers
-    path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 103
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Services
-  example: []
-  syntax:
-    content: public override Task<ListWorkersResponse> ListWorkers(ListWorkersRequest request, ServerCallContext context)
-    parameters:
-    - id: request
-      type: Virtufin.WorkManager.Protos.ListWorkersRequest
-    - id: context
-      type: Grpc.Core.ServerCallContext
-    return:
-      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.ListWorkersResponse}
-    content.vb: Public Overrides Function ListWorkers(request As ListWorkersRequest, context As ServerCallContext) As Task(Of ListWorkersResponse)
-  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
-  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers*
 - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
   commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
   id: LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
@@ -247,7 +220,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCode
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 139
+    startLine: 128
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -282,7 +255,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeleteWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 176
+    startLine: 158
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -299,41 +272,41 @@ items:
     content.vb: Public Overrides Function DeleteWorker(request As DeleteWorkerRequest, context As ServerCallContext) As Task(Of DeleteWorkerResponse)
   overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.DeleteWorker(Virtufin.WorkManager.Protos.DeleteWorkerRequest,Grpc.Core.ServerCallContext)
   overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.DeleteWorker*
-- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
-  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
-  id: GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
+  id: ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
   parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
   langs:
   - csharp
   - vb
-  name: GetWorkerHistory(GetWorkerHistoryRequest, ServerCallContext)
-  nameWithType: WorkManagerGrpcService.GetWorkerHistory(GetWorkerHistoryRequest, ServerCallContext)
-  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest, Grpc.Core.ServerCallContext)
+  name: ListWorkers(ListWorkersRequest, ServerCallContext)
+  nameWithType: WorkManagerGrpcService.ListWorkers(ListWorkersRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest, Grpc.Core.ServerCallContext)
   type: Method
   source:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: GetWorkerHistory
+    id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 195
+    startLine: 176
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
   example: []
   syntax:
-    content: public override Task<GetWorkerHistoryResponse> GetWorkerHistory(GetWorkerHistoryRequest request, ServerCallContext context)
+    content: public override Task<ListWorkersResponse> ListWorkers(ListWorkersRequest request, ServerCallContext context)
     parameters:
     - id: request
-      type: Virtufin.WorkManager.Protos.GetWorkerHistoryRequest
+      type: Virtufin.WorkManager.Protos.ListWorkersRequest
     - id: context
       type: Grpc.Core.ServerCallContext
     return:
-      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetWorkerHistoryResponse}
-    content.vb: Public Overrides Function GetWorkerHistory(request As GetWorkerHistoryRequest, context As ServerCallContext) As Task(Of GetWorkerHistoryResponse)
-  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
-  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory*
+      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.ListWorkersResponse}
+    content.vb: Public Overrides Function ListWorkers(request As ListWorkersRequest, context As ServerCallContext) As Task(Of ListWorkersResponse)
+  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
+  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers*
 - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.RecoverWorkers(Virtufin.WorkManager.Protos.RecoverWorkersRequest,Grpc.Core.ServerCallContext)
   commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.RecoverWorkers(Virtufin.WorkManager.Protos.RecoverWorkersRequest,Grpc.Core.ServerCallContext)
   id: RecoverWorkers(Virtufin.WorkManager.Protos.RecoverWorkersRequest,Grpc.Core.ServerCallContext)
@@ -352,7 +325,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoverWorkers
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 223
+    startLine: 200
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -369,6 +342,41 @@ items:
     content.vb: Public Overrides Function RecoverWorkers(request As RecoverWorkersRequest, context As ServerCallContext) As Task(Of RecoverWorkersResponse)
   overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.RecoverWorkers(Virtufin.WorkManager.Protos.RecoverWorkersRequest,Grpc.Core.ServerCallContext)
   overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.RecoverWorkers*
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
+  id: GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Services.WorkManagerGrpcService
+  langs:
+  - csharp
+  - vb
+  name: GetWorkerHistory(GetWorkerHistoryRequest, ServerCallContext)
+  nameWithType: WorkManagerGrpcService.GetWorkerHistory(GetWorkerHistoryRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest, Grpc.Core.ServerCallContext)
+  type: Method
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: GetWorkerHistory
+    path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
+    startLine: 207
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Services
+  example: []
+  syntax:
+    content: public override Task<GetWorkerHistoryResponse> GetWorkerHistory(GetWorkerHistoryRequest request, ServerCallContext context)
+    parameters:
+    - id: request
+      type: Virtufin.WorkManager.Protos.GetWorkerHistoryRequest
+    - id: context
+      type: Grpc.Core.ServerCallContext
+    return:
+      type: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetWorkerHistoryResponse}
+    content.vb: Public Overrides Function GetWorkerHistory(request As GetWorkerHistoryRequest, context As ServerCallContext) As Task(Of GetWorkerHistoryResponse)
+  overridden: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
+  overload: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory*
 - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
   commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
   id: SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
@@ -387,7 +395,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariable
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 231
+    startLine: 232
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -422,7 +430,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetEnvironmentVariable
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 250
+    startLine: 251
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -457,7 +465,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariables
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 274
+    startLine: 269
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -492,7 +500,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetEnvironmentVariables
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 298
+    startLine: 291
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -527,7 +535,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTag
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 322
+    startLine: 309
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -562,7 +570,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetTag
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 341
+    startLine: 327
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -597,7 +605,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTags
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 365
+    startLine: 344
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -632,7 +640,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetTags
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 389
+    startLine: 365
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -936,7 +944,7 @@ references:
     name: Protos
 - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor*
   commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor
-  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService__ctor_Virtufin_WorkManager_Components_WorkManager_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerGrpcService__
+  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService__ctor_Virtufin_WorkManager_Components_WorkManager_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerGrpcService__Virtufin_Service_MultiInstance_IInstanceIdProvider_Virtufin_Service_MultiInstance_PeerRegistry_Virtufin_Service_MultiInstance_PeerChannelCache_Virtufin_WorkManager_Protos_WorkManager_WorkManagerClient__Dapr_Client_DaprClient_System_String_
   name: WorkManagerGrpcService
   nameWithType: WorkManagerGrpcService.WorkManagerGrpcService
   fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.WorkManagerGrpcService
@@ -983,6 +991,72 @@ references:
     name: WorkManagerGrpcService
     href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html
   - name: )
+- uid: Virtufin.Service.MultiInstance.IInstanceIdProvider
+  commentId: T:Virtufin.Service.MultiInstance.IInstanceIdProvider
+  parent: Virtufin.Service.MultiInstance
+  isExternal: true
+  name: IInstanceIdProvider
+  nameWithType: IInstanceIdProvider
+  fullName: Virtufin.Service.MultiInstance.IInstanceIdProvider
+- uid: Virtufin.Service.MultiInstance.PeerRegistry
+  commentId: T:Virtufin.Service.MultiInstance.PeerRegistry
+  parent: Virtufin.Service.MultiInstance
+  isExternal: true
+  name: PeerRegistry
+  nameWithType: PeerRegistry
+  fullName: Virtufin.Service.MultiInstance.PeerRegistry
+- uid: Virtufin.Service.MultiInstance.PeerChannelCache{Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient}
+  commentId: T:Virtufin.Service.MultiInstance.PeerChannelCache{Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient}
+  parent: Virtufin.Service.MultiInstance
+  definition: Virtufin.Service.MultiInstance.PeerChannelCache`1
+  name: PeerChannelCache<WorkManager.WorkManagerClient>
+  nameWithType: PeerChannelCache<WorkManager.WorkManagerClient>
+  fullName: Virtufin.Service.MultiInstance.PeerChannelCache<Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient>
+  nameWithType.vb: PeerChannelCache(Of WorkManager.WorkManagerClient)
+  fullName.vb: Virtufin.Service.MultiInstance.PeerChannelCache(Of Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient)
+  name.vb: PeerChannelCache(Of WorkManager.WorkManagerClient)
+  spec.csharp:
+  - uid: Virtufin.Service.MultiInstance.PeerChannelCache`1
+    name: PeerChannelCache
+    isExternal: true
+  - name: <
+  - uid: Virtufin.WorkManager.Protos.WorkManager
+    name: WorkManager
+  - name: .
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient
+    name: WorkManagerClient
+  - name: '>'
+  spec.vb:
+  - uid: Virtufin.Service.MultiInstance.PeerChannelCache`1
+    name: PeerChannelCache
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Protos.WorkManager
+    name: WorkManager
+  - name: .
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient
+    name: WorkManagerClient
+  - name: )
+- uid: Dapr.Client.DaprClient
+  commentId: T:Dapr.Client.DaprClient
+  parent: Dapr.Client
+  isExternal: true
+  name: DaprClient
+  nameWithType: DaprClient
+  fullName: Dapr.Client.DaprClient
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: Virtufin.WorkManager.Components
   commentId: N:Virtufin.WorkManager.Components
   href: Virtufin.html
@@ -1078,6 +1152,83 @@ references:
     name: Logging
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: Virtufin.Service.MultiInstance
+  commentId: N:Virtufin.Service.MultiInstance
+  isExternal: true
+  name: Virtufin.Service.MultiInstance
+  nameWithType: Virtufin.Service.MultiInstance
+  fullName: Virtufin.Service.MultiInstance
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+    isExternal: true
+  - name: .
+  - uid: Virtufin.Service
+    name: Service
+    isExternal: true
+  - name: .
+  - uid: Virtufin.Service.MultiInstance
+    name: MultiInstance
+    isExternal: true
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+    isExternal: true
+  - name: .
+  - uid: Virtufin.Service
+    name: Service
+    isExternal: true
+  - name: .
+  - uid: Virtufin.Service.MultiInstance
+    name: MultiInstance
+    isExternal: true
+- uid: Virtufin.Service.MultiInstance.PeerChannelCache`1
+  commentId: T:Virtufin.Service.MultiInstance.PeerChannelCache`1
+  isExternal: true
+  name: PeerChannelCache<TClient>
+  nameWithType: PeerChannelCache<TClient>
+  fullName: Virtufin.Service.MultiInstance.PeerChannelCache<TClient>
+  nameWithType.vb: PeerChannelCache(Of TClient)
+  fullName.vb: Virtufin.Service.MultiInstance.PeerChannelCache(Of TClient)
+  name.vb: PeerChannelCache(Of TClient)
+  spec.csharp:
+  - uid: Virtufin.Service.MultiInstance.PeerChannelCache`1
+    name: PeerChannelCache
+    isExternal: true
+  - name: <
+  - name: TClient
+  - name: '>'
+  spec.vb:
+  - uid: Virtufin.Service.MultiInstance.PeerChannelCache`1
+    name: PeerChannelCache
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TClient
+  - name: )
+- uid: Dapr.Client
+  commentId: N:Dapr.Client
+  isExternal: true
+  name: Dapr.Client
+  nameWithType: Dapr.Client
+  fullName: Dapr.Client
+  spec.csharp:
+  - uid: Dapr
+    name: Dapr
+    isExternal: true
+  - name: .
+  - uid: Dapr.Client
+    name: Client
+    isExternal: true
+  spec.vb:
+  - uid: Dapr
+    name: Dapr
+    isExternal: true
+  - name: .
+  - uid: Dapr.Client
+    name: Client
+    isExternal: true
 - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.CreateWorker(Virtufin.WorkManager.Protos.CreateWorkerRequest,Grpc.Core.ServerCallContext)
   commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.CreateWorker(Virtufin.WorkManager.Protos.CreateWorkerRequest,Grpc.Core.ServerCallContext)
   parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
@@ -1404,83 +1555,6 @@ references:
   - uid: Virtufin.WorkManager.Protos.StopWorkerResponse
     name: StopWorkerResponse
   - name: )
-- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
-  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
-  parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
-  isExternal: true
-  href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
-  name: ListWorkers(ListWorkersRequest, ServerCallContext)
-  nameWithType: WorkManager.WorkManagerBase.ListWorkers(ListWorkersRequest, ServerCallContext)
-  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest, Grpc.Core.ServerCallContext)
-  spec.csharp:
-  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
-    name: ListWorkers
-  - name: (
-  - uid: Virtufin.WorkManager.Protos.ListWorkersRequest
-    name: ListWorkersRequest
-  - name: ','
-  - name: " "
-  - uid: Grpc.Core.ServerCallContext
-    name: ServerCallContext
-    isExternal: true
-    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
-  - name: )
-  spec.vb:
-  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
-    name: ListWorkers
-  - name: (
-  - uid: Virtufin.WorkManager.Protos.ListWorkersRequest
-    name: ListWorkersRequest
-  - name: ','
-  - name: " "
-  - uid: Grpc.Core.ServerCallContext
-    name: ServerCallContext
-    isExternal: true
-    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
-  - name: )
-- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers*
-  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers
-  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_ListWorkers_Virtufin_WorkManager_Protos_ListWorkersRequest_Grpc_Core_ServerCallContext_
-  name: ListWorkers
-  nameWithType: WorkManagerGrpcService.ListWorkers
-  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers
-- uid: Virtufin.WorkManager.Protos.ListWorkersRequest
-  commentId: T:Virtufin.WorkManager.Protos.ListWorkersRequest
-  parent: Virtufin.WorkManager.Protos
-  name: ListWorkersRequest
-  nameWithType: ListWorkersRequest
-  fullName: Virtufin.WorkManager.Protos.ListWorkersRequest
-- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.ListWorkersResponse}
-  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.ListWorkersResponse}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<ListWorkersResponse>
-  nameWithType: Task<ListWorkersResponse>
-  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.ListWorkersResponse>
-  nameWithType.vb: Task(Of ListWorkersResponse)
-  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.ListWorkersResponse)
-  name.vb: Task(Of ListWorkersResponse)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: Virtufin.WorkManager.Protos.ListWorkersResponse
-    name: ListWorkersResponse
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: Virtufin.WorkManager.Protos.ListWorkersResponse
-    name: ListWorkersResponse
-  - name: )
 - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
   commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.LoadCode(Virtufin.WorkManager.Protos.LoadCodeRequest,Grpc.Core.ServerCallContext)
   parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
@@ -1635,20 +1709,20 @@ references:
   - uid: Virtufin.WorkManager.Protos.DeleteWorkerResponse
     name: DeleteWorkerResponse
   - name: )
-- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
-  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
+- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
   parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
   isExternal: true
   href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
-  name: GetWorkerHistory(GetWorkerHistoryRequest, ServerCallContext)
-  nameWithType: WorkManager.WorkManagerBase.GetWorkerHistory(GetWorkerHistoryRequest, ServerCallContext)
-  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest, Grpc.Core.ServerCallContext)
+  name: ListWorkers(ListWorkersRequest, ServerCallContext)
+  nameWithType: WorkManager.WorkManagerBase.ListWorkers(ListWorkersRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest, Grpc.Core.ServerCallContext)
   spec.csharp:
-  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
-    name: GetWorkerHistory
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
+    name: ListWorkers
   - name: (
-  - uid: Virtufin.WorkManager.Protos.GetWorkerHistoryRequest
-    name: GetWorkerHistoryRequest
+  - uid: Virtufin.WorkManager.Protos.ListWorkersRequest
+    name: ListWorkersRequest
   - name: ','
   - name: " "
   - uid: Grpc.Core.ServerCallContext
@@ -1657,11 +1731,11 @@ references:
     href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
   - name: )
   spec.vb:
-  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
-    name: GetWorkerHistory
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.ListWorkers(Virtufin.WorkManager.Protos.ListWorkersRequest,Grpc.Core.ServerCallContext)
+    name: ListWorkers
   - name: (
-  - uid: Virtufin.WorkManager.Protos.GetWorkerHistoryRequest
-    name: GetWorkerHistoryRequest
+  - uid: Virtufin.WorkManager.Protos.ListWorkersRequest
+    name: ListWorkersRequest
   - name: ','
   - name: " "
   - uid: Grpc.Core.ServerCallContext
@@ -1669,37 +1743,37 @@ references:
     isExternal: true
     href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
   - name: )
-- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory*
-  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory
-  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_GetWorkerHistory_Virtufin_WorkManager_Protos_GetWorkerHistoryRequest_Grpc_Core_ServerCallContext_
-  name: GetWorkerHistory
-  nameWithType: WorkManagerGrpcService.GetWorkerHistory
-  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory
-- uid: Virtufin.WorkManager.Protos.GetWorkerHistoryRequest
-  commentId: T:Virtufin.WorkManager.Protos.GetWorkerHistoryRequest
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers*
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers
+  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_ListWorkers_Virtufin_WorkManager_Protos_ListWorkersRequest_Grpc_Core_ServerCallContext_
+  name: ListWorkers
+  nameWithType: WorkManagerGrpcService.ListWorkers
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.ListWorkers
+- uid: Virtufin.WorkManager.Protos.ListWorkersRequest
+  commentId: T:Virtufin.WorkManager.Protos.ListWorkersRequest
   parent: Virtufin.WorkManager.Protos
-  name: GetWorkerHistoryRequest
-  nameWithType: GetWorkerHistoryRequest
-  fullName: Virtufin.WorkManager.Protos.GetWorkerHistoryRequest
-- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetWorkerHistoryResponse}
-  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetWorkerHistoryResponse}
+  name: ListWorkersRequest
+  nameWithType: ListWorkersRequest
+  fullName: Virtufin.WorkManager.Protos.ListWorkersRequest
+- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.ListWorkersResponse}
+  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.ListWorkersResponse}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<GetWorkerHistoryResponse>
-  nameWithType: Task<GetWorkerHistoryResponse>
-  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.GetWorkerHistoryResponse>
-  nameWithType.vb: Task(Of GetWorkerHistoryResponse)
-  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.GetWorkerHistoryResponse)
-  name.vb: Task(Of GetWorkerHistoryResponse)
+  name: Task<ListWorkersResponse>
+  nameWithType: Task<ListWorkersResponse>
+  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.ListWorkersResponse>
+  nameWithType.vb: Task(Of ListWorkersResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.ListWorkersResponse)
+  name.vb: Task(Of ListWorkersResponse)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-  - uid: Virtufin.WorkManager.Protos.GetWorkerHistoryResponse
-    name: GetWorkerHistoryResponse
+  - uid: Virtufin.WorkManager.Protos.ListWorkersResponse
+    name: ListWorkersResponse
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -1709,8 +1783,8 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: Virtufin.WorkManager.Protos.GetWorkerHistoryResponse
-    name: GetWorkerHistoryResponse
+  - uid: Virtufin.WorkManager.Protos.ListWorkersResponse
+    name: ListWorkersResponse
   - name: )
 - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.RecoverWorkers(Virtufin.WorkManager.Protos.RecoverWorkersRequest,Grpc.Core.ServerCallContext)
   commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.RecoverWorkers(Virtufin.WorkManager.Protos.RecoverWorkersRequest,Grpc.Core.ServerCallContext)
@@ -1788,6 +1862,83 @@ references:
   - name: " "
   - uid: Virtufin.WorkManager.Protos.RecoverWorkersResponse
     name: RecoverWorkersResponse
+  - name: )
+- uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
+  commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
+  parent: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase
+  isExternal: true
+  href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  name: GetWorkerHistory(GetWorkerHistoryRequest, ServerCallContext)
+  nameWithType: WorkManager.WorkManagerBase.GetWorkerHistory(GetWorkerHistoryRequest, ServerCallContext)
+  fullName: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest, Grpc.Core.ServerCallContext)
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
+    name: GetWorkerHistory
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.GetWorkerHistoryRequest
+    name: GetWorkerHistoryRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.GetWorkerHistory(Virtufin.WorkManager.Protos.GetWorkerHistoryRequest,Grpc.Core.ServerCallContext)
+    name: GetWorkerHistory
+  - name: (
+  - uid: Virtufin.WorkManager.Protos.GetWorkerHistoryRequest
+    name: GetWorkerHistoryRequest
+  - name: ','
+  - name: " "
+  - uid: Grpc.Core.ServerCallContext
+    name: ServerCallContext
+    isExternal: true
+    href: https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.Core.Api/ServerCallContext.cs
+  - name: )
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory*
+  commentId: Overload:Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory
+  href: Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService_GetWorkerHistory_Virtufin_WorkManager_Protos_GetWorkerHistoryRequest_Grpc_Core_ServerCallContext_
+  name: GetWorkerHistory
+  nameWithType: WorkManagerGrpcService.GetWorkerHistory
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.GetWorkerHistory
+- uid: Virtufin.WorkManager.Protos.GetWorkerHistoryRequest
+  commentId: T:Virtufin.WorkManager.Protos.GetWorkerHistoryRequest
+  parent: Virtufin.WorkManager.Protos
+  name: GetWorkerHistoryRequest
+  nameWithType: GetWorkerHistoryRequest
+  fullName: Virtufin.WorkManager.Protos.GetWorkerHistoryRequest
+- uid: System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetWorkerHistoryResponse}
+  commentId: T:System.Threading.Tasks.Task{Virtufin.WorkManager.Protos.GetWorkerHistoryResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<GetWorkerHistoryResponse>
+  nameWithType: Task<GetWorkerHistoryResponse>
+  fullName: System.Threading.Tasks.Task<Virtufin.WorkManager.Protos.GetWorkerHistoryResponse>
+  nameWithType.vb: Task(Of GetWorkerHistoryResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Virtufin.WorkManager.Protos.GetWorkerHistoryResponse)
+  name.vb: Task(Of GetWorkerHistoryResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Virtufin.WorkManager.Protos.GetWorkerHistoryResponse
+    name: GetWorkerHistoryResponse
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Virtufin.WorkManager.Protos.GetWorkerHistoryResponse
+    name: GetWorkerHistoryResponse
   - name: )
 - uid: Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)
   commentId: M:Virtufin.WorkManager.Protos.WorkManager.WorkManagerBase.SetEnvironmentVariable(Virtufin.WorkManager.Protos.SetEnvironmentVariableRequest,Grpc.Core.ServerCallContext)

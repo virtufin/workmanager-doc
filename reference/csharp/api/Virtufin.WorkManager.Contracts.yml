@@ -13,7 +13,6 @@ items:
   - Virtufin.WorkManager.Contracts.EngineInfo
   - Virtufin.WorkManager.Contracts.HistoryEntry
   - Virtufin.WorkManager.Contracts.IEngineRegistry
-  - Virtufin.WorkManager.Contracts.LockData
   - Virtufin.WorkManager.Contracts.WorkerConfig
   - Virtufin.WorkManager.Contracts.WorkerInfo
   - Virtufin.WorkManager.Contracts.WorkerStatus
@@ -79,12 +78,6 @@ references:
   name: IEngineRegistry
   nameWithType: IEngineRegistry
   fullName: Virtufin.WorkManager.Contracts.IEngineRegistry
-- uid: Virtufin.WorkManager.Contracts.LockData
-  commentId: T:Virtufin.WorkManager.Contracts.LockData
-  href: Virtufin.WorkManager.Contracts.LockData.html
-  name: LockData
-  nameWithType: LockData
-  fullName: Virtufin.WorkManager.Contracts.LockData
 - uid: Virtufin.WorkManager.Contracts.WorkerConfig
   commentId: T:Virtufin.WorkManager.Contracts.WorkerConfig
   href: Virtufin.WorkManager.Contracts.WorkerConfig.html

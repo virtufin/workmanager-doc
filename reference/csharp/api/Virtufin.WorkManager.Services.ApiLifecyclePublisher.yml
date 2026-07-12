@@ -6,7 +6,7 @@ items:
   parent: Virtufin.WorkManager.Services
   children:
   - Virtufin.WorkManager.Services.ApiLifecyclePublisher.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ApiLifecyclePublisher},Virtufin.Api.Protos.Pubsub.PubsubClient)
-  - Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(System.String,System.Guid,System.String,System.String,System.Exception,System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(System.String,System.Guid,System.String,System.Exception,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
@@ -85,16 +85,16 @@ items:
   nameWithType.vb: ApiLifecyclePublisher.New(ILogger(Of ApiLifecyclePublisher), Pubsub.PubsubClient)
   fullName.vb: Virtufin.WorkManager.Services.ApiLifecyclePublisher.New(Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.ApiLifecyclePublisher), Virtufin.Api.Protos.Pubsub.PubsubClient)
   name.vb: New(ILogger(Of ApiLifecyclePublisher), PubsubClient)
-- uid: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(System.String,System.Guid,System.String,System.String,System.Exception,System.Threading.CancellationToken)
-  commentId: M:Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(System.String,System.Guid,System.String,System.String,System.Exception,System.Threading.CancellationToken)
-  id: PublishWorkerEventAsync(System.String,System.Guid,System.String,System.String,System.Exception,System.Threading.CancellationToken)
+- uid: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(System.String,System.Guid,System.String,System.Exception,System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(System.String,System.Guid,System.String,System.Exception,System.Threading.CancellationToken)
+  id: PublishWorkerEventAsync(System.String,System.Guid,System.String,System.Exception,System.Threading.CancellationToken)
   parent: Virtufin.WorkManager.Services.ApiLifecyclePublisher
   langs:
   - csharp
   - vb
-  name: PublishWorkerEventAsync(string, Guid, string?, string?, Exception?, CancellationToken)
-  nameWithType: ApiLifecyclePublisher.PublishWorkerEventAsync(string, Guid, string?, string?, Exception?, CancellationToken)
-  fullName: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(string, System.Guid, string?, string?, System.Exception?, System.Threading.CancellationToken)
+  name: PublishWorkerEventAsync(string, Guid, string?, Exception?, CancellationToken)
+  nameWithType: ApiLifecyclePublisher.PublishWorkerEventAsync(string, Guid, string?, Exception?, CancellationToken)
+  fullName: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(string, System.Guid, string?, System.Exception?, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -108,14 +108,12 @@ items:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
   syntax:
-    content: public Task PublishWorkerEventAsync(string type, Guid workerId, string? group, string? topic, Exception? error = null, CancellationToken cancellationToken = default)
+    content: public Task PublishWorkerEventAsync(string type, Guid workerId, string? topic, Exception? error = null, CancellationToken cancellationToken = default)
     parameters:
     - id: type
       type: System.String
     - id: workerId
       type: System.Guid
-    - id: group
-      type: System.String
     - id: topic
       type: System.String
     - id: error
@@ -124,11 +122,11 @@ items:
       type: System.Threading.CancellationToken
     return:
       type: System.Threading.Tasks.Task
-    content.vb: Public Function PublishWorkerEventAsync(type As String, workerId As Guid, group As String, topic As String, [error] As Exception = Nothing, cancellationToken As CancellationToken = Nothing) As Task
+    content.vb: Public Function PublishWorkerEventAsync(type As String, workerId As Guid, topic As String, [error] As Exception = Nothing, cancellationToken As CancellationToken = Nothing) As Task
   overload: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync*
-  nameWithType.vb: ApiLifecyclePublisher.PublishWorkerEventAsync(String, Guid, String, String, Exception, CancellationToken)
-  fullName.vb: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(String, System.Guid, String, String, System.Exception, System.Threading.CancellationToken)
-  name.vb: PublishWorkerEventAsync(String, Guid, String, String, Exception, CancellationToken)
+  nameWithType.vb: ApiLifecyclePublisher.PublishWorkerEventAsync(String, Guid, String, Exception, CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync(String, System.Guid, String, System.Exception, System.Threading.CancellationToken)
+  name.vb: PublishWorkerEventAsync(String, Guid, String, Exception, CancellationToken)
 references:
 - uid: Virtufin.WorkManager.Services
   commentId: N:Virtufin.WorkManager.Services
@@ -559,7 +557,7 @@ references:
     isExternal: true
 - uid: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync*
   commentId: Overload:Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync
-  href: Virtufin.WorkManager.Services.ApiLifecyclePublisher.html#Virtufin_WorkManager_Services_ApiLifecyclePublisher_PublishWorkerEventAsync_System_String_System_Guid_System_String_System_String_System_Exception_System_Threading_CancellationToken_
+  href: Virtufin.WorkManager.Services.ApiLifecyclePublisher.html#Virtufin_WorkManager_Services_ApiLifecyclePublisher_PublishWorkerEventAsync_System_String_System_Guid_System_String_System_Exception_System_Threading_CancellationToken_
   name: PublishWorkerEventAsync
   nameWithType: ApiLifecyclePublisher.PublishWorkerEventAsync
   fullName: Virtufin.WorkManager.Services.ApiLifecyclePublisher.PublishWorkerEventAsync

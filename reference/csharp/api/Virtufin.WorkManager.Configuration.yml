@@ -7,7 +7,6 @@ items:
   children:
   - Virtufin.WorkManager.Configuration.DaprConstants
   - Virtufin.WorkManager.Configuration.DaprResilienceOptions
-  - Virtufin.WorkManager.Configuration.GroupLockOptions
   - Virtufin.WorkManager.Configuration.InfraEvents
   - Virtufin.WorkManager.Configuration.PortConstants
   - Virtufin.WorkManager.Configuration.Topics
@@ -36,13 +35,6 @@ references:
   name: DaprResilienceOptions
   nameWithType: DaprResilienceOptions
   fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions
-- uid: Virtufin.WorkManager.Configuration.GroupLockOptions
-  commentId: T:Virtufin.WorkManager.Configuration.GroupLockOptions
-  parent: Virtufin.WorkManager.Configuration
-  href: Virtufin.WorkManager.Configuration.GroupLockOptions.html
-  name: GroupLockOptions
-  nameWithType: GroupLockOptions
-  fullName: Virtufin.WorkManager.Configuration.GroupLockOptions
 - uid: Virtufin.WorkManager.Configuration.InfraEvents
   commentId: T:Virtufin.WorkManager.Configuration.InfraEvents
   href: Virtufin.WorkManager.Configuration.InfraEvents.html

@@ -5,7 +5,6 @@ items:
   id: Topics
   parent: Virtufin.WorkManager.Configuration
   children:
-  - Virtufin.WorkManager.Configuration.Topics.InfraGrouplock
   - Virtufin.WorkManager.Configuration.Topics.InfraWorker
   - Virtufin.WorkManager.Configuration.Topics.Lifecycle
   langs:
@@ -118,38 +117,6 @@ items:
     return:
       type: System.String
     content.vb: Public Const InfraWorker As String = "workmanager.infra.worker"
-- uid: Virtufin.WorkManager.Configuration.Topics.InfraGrouplock
-  commentId: F:Virtufin.WorkManager.Configuration.Topics.InfraGrouplock
-  id: InfraGrouplock
-  parent: Virtufin.WorkManager.Configuration.Topics
-  langs:
-  - csharp
-  - vb
-  name: InfraGrouplock
-  nameWithType: Topics.InfraGrouplock
-  fullName: Virtufin.WorkManager.Configuration.Topics.InfraGrouplock
-  type: Field
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Configuration/Topics.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: InfraGrouplock
-    path: ../../../src/Virtufin.WorkManager/Configuration/Topics.cs
-    startLine: 29
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Configuration
-  summary: >-
-    Grouplock changes (acquired / released). Carries CloudEvents
-
-    v1.0 envelopes.
-  example: []
-  syntax:
-    content: public const string InfraGrouplock = "workmanager.infra.grouplock"
-    return:
-      type: System.String
-    content.vb: Public Const InfraGrouplock As String = "workmanager.infra.grouplock"
 references:
 - uid: Virtufin.WorkManager.Configuration
   commentId: N:Virtufin.WorkManager.Configuration

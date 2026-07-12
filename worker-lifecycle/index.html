@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/c69eba973c3c6ba09bf2420adfda89d34fbf57e3"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/21ea2c5888d44621fc1a5f80b786e978a1e0d399"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit c69eba9">
+       title="View commit 21ea2c5">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">c69eba9</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">21ea2c5</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/c69eba973c3c6ba09bf2420adfda89d34fbf57e3"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/21ea2c5888d44621fc1a5f80b786e978a1e0d399"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit c69eba9">
+       title="View commit 21ea2c5">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">c69eba9</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">21ea2c5</text>
       </svg>
     </a>
 </div>
@@ -1014,17 +1014,6 @@
     <span class="md-ellipsis">
       
         History Tracking
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#group-coordination" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Group Coordination
       
     </span>
   </a>
@@ -1844,17 +1833,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#group-coordination" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Group Coordination
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#cleanup-on-disposal" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1908,8 +1886,7 @@
 <div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">workerId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">workManager</span><span class="p">.</span><span class="n">CreateWorkerAsync</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CreateWorkerRequest</span><span class="p">(</span>
 <span class="w">    </span><span class="n">CodeSource</span><span class="p">:</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CodeSourceContent</span><span class="p">(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">pythonCode</span><span class="p">)),</span>
 <span class="w">    </span><span class="n">MimeType</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;text/x-python&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Topic</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-topic&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Group</span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="w">  </span><span class="c1">// or &quot;my-group&quot; for coordination</span>
+<span class="w">    </span><span class="n">Topic</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;my-topic&quot;</span>
 <span class="p">));</span>
 </code></pre></div>
 <p><strong>What happens:</strong></p>
@@ -2035,52 +2012,6 @@ gRPC endpoint.</p>
 <p><strong>What's not tracked:</strong>
 - Runtime execution errors (these go to logs)
 - Message processing counts</p>
-<h2 id="group-coordination">Group Coordination</h2>
-<p>Workers can belong to a group for mutually exclusive execution:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Worker 1</span>
-<span class="k">await</span><span class="w"> </span><span class="n">workManager</span><span class="p">.</span><span class="n">CreateWorkerAsync</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CreateWorkerRequest</span><span class="p">(</span>
-<span class="w">    </span><span class="n">CodeSource</span><span class="p">:</span><span class="w"> </span><span class="n">code1</span><span class="p">,</span>
-<span class="w">    </span><span class="n">MimeType</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;text/x-python&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Topic</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;shared-topic&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Group</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;group-a&quot;</span><span class="w">  </span><span class="c1">// Same group as Worker 2</span>
-<span class="p">));</span>
-
-<span class="c1">// Worker 2</span>
-<span class="k">await</span><span class="w"> </span><span class="n">workManager</span><span class="p">.</span><span class="n">CreateWorkerAsync</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CreateWorkerRequest</span><span class="p">(</span>
-<span class="w">    </span><span class="n">CodeSource</span><span class="p">:</span><span class="w"> </span><span class="n">code2</span><span class="p">,</span>
-<span class="w">    </span><span class="n">MimeType</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;text/x-python&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Topic</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;shared-topic&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Group</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;group-a&quot;</span><span class="w">  </span><span class="c1">// Same group as Worker 1</span>
-<span class="p">));</span>
-</code></pre></div>
-<p><strong>Behavior:</strong>
-- Only one worker in a group processes a message at a time
-- Distributed lock acquired before processing with exponential backoff retry (default 500ms base, default max 3 attempts — both tunable via <code>GROUP_LOCK_RETRY_BASE_DELAY_MS</code> and <code>GROUP_LOCK_MAX_RETRIES</code>, see <a href="configuration/#group-lock-tuning">Configuration</a>)
-- Each lock acquisition increments a monotonic <strong>fencing token</strong>, preventing lock theft races
-- Lock released after processing (or on error)
-- Lock max age is 30 seconds (stale locks can be stolen if the original holder hasn't made writes)
-- If lock cannot be acquired after all retries, a <code>LockContentionException</code> is thrown, which causes Dapr to nack the message and redeliver it later</p>
-<p><strong>Retry semantics (audit, June 2026):</strong>
-- The subscribe handler returns <code>TopicResponseAction.Retry</code> on <code>LockContentionException</code> (see <code>Components/WorkManager.cs:SubscribeToTopicAsync</code>). The Dapr SDK sends a negative acknowledgement with <code>retry=true</code>, which causes Dapr to redeliver the message after backoff. <strong>No message is silently dropped on lock contention.</strong>
-- Dapr redelivers the message with exponential backoff (configured in the pubsub component)
-- After exhausting all Dapr redeliveries (<code>maxRedeliveryCount: 3</code>), messages are routed to the dead-letter topic
-- Monitor the dead-letter topic for alerting on persistent lock contention
-- The acquire-loop retries are <strong>independent</strong> of the Dapr redelivery retries: the former exhausts the local in-process backoff (default 3 attempts with 500ms → 1s → 2s backoff), then throws, then Dapr handles redelivery at the broker level</p>
-<p><strong>Lock lifecycle:</strong>
-<div class="highlight"><pre><span></span><code>Message received
-     │
-     ▼
-AcquireGroupLock() ── retry (base × 2^attempt, max GROUP_LOCK_MAX_RETRIES)
-     │
-     ├── Lock acquired (fencing token incremented) ──► Process message ──► ReleaseLock()
-     │
-     ├── Lock held by another ──► retry with backoff
-     │
-     ├── Lock stolen from stale holder ──► fence check: if owner wrote, abort steal
-     │
-     └── Exhausted retries ──► LockContentionException ──► TopicResponseAction.Retry ──► Dapr nack(retry=true) ──► redeliver ──► dead-letter topic (after Dapr maxRedeliveryCount)
-</code></pre></div></p>
-<p><strong>Fencing token:</strong> Each lock includes a monotonically increasing integer. Before a stale lock is stolen, the new owner checks whether the original owner made writes under the old fence token. If writes were made, the lock theft is aborted, preventing dual-processing of the same message. This protects against slow-but-valid workers (e.g., first-time Roslyn compilation) from having their lock stolen mid-processing.</p>
 <h2 id="cleanup-on-disposal">Cleanup on Disposal</h2>
 <p>When <code>WorkManager.DisposeAsync()</code> is called:</p>
 <ol>
@@ -2091,9 +2022,6 @@ AcquireGroupLock() ── retry (base × 2^attempt, max GROUP_LOCK_MAX_RETRIES)
 <p><strong>Note:</strong> State store data is NOT deleted. Workers can be recovered on restart.</p>
 <h2 id="best-practices">Best Practices</h2>
 <ol>
-<li>
-<p><strong>Use groups for related workers</strong>: If multiple workers should handle the same topic without duplicate processing, use a group.</p>
-</li>
 <li>
 <p><strong>Recovery is automatic</strong>: Worker recovery runs automatically on startup via the <code>WorkManagerRecoveryHostedService</code>. No manual gRPC call is required. The service readiness probe ensures traffic is not routed until recovery completes.</p>
 </li>
@@ -2140,7 +2068,7 @@ AcquireGroupLock() ── retry (base × 2^attempt, max GROUP_LOCK_MAX_RETRIES)
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-07-05T21:04:21Z</span>
+  <span style="display:table-cell;text-align:right">2026-07-12T13:03:06Z</span>
 </div>
 
     </div>

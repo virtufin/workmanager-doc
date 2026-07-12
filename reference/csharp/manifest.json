@@ -74,20 +74,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Virtufin.WorkManager.Configuration.GroupLockOptions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Virtufin.WorkManager.Configuration.GroupLockOptions.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Virtufin.WorkManager.Configuration.GroupLockOptions",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.GroupLockOptions.yml\" sourcestartlinenumber=\"1\">Group lock acquisition tuning. All values are configurable via\nenvironment variables; defaults are tuned for the typical\n&quot;two workers contending for a single group lock&quot; scenario.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Virtufin.WorkManager.Configuration.InfraEvents.yml",
       "output": {
         ".html": {
@@ -98,7 +84,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Configuration.InfraEvents",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.InfraEvents.yml\" sourcestartlinenumber=\"1\">CloudEvents v1.0 type strings for WorkManager infra events\n(heartbeats, grouplock changes).</p>\n"
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.InfraEvents.yml\" sourcestartlinenumber=\"1\">CloudEvents v1.0 type strings for WorkManager infra events (heartbeats).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -284,20 +270,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Virtufin.WorkManager.Contracts.LockData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Virtufin.WorkManager.Contracts.LockData.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Virtufin.WorkManager.Contracts.LockData",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Virtufin.WorkManager.Contracts.WorkerConfig.yml",
       "output": {
         ".html": {
@@ -379,20 +351,6 @@
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Runtime.EngineRegistry",
       "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Runtime.EngineRegistry.yml\" sourcestartlinenumber=\"1\">Registry for managing engine instances.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Virtufin.WorkManager.Runtime.LockContentionException.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Virtufin.WorkManager.Runtime.LockContentionException.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Virtufin.WorkManager.Runtime.LockContentionException",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Runtime.LockContentionException.yml\" sourcestartlinenumber=\"1\">Exception thrown when a distributed group lock cannot be acquired,\nindicating the message should be retried.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -616,7 +574,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Services.WorkManagerGrpcService",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerGrpcService.yml\" sourcestartlinenumber=\"1\">gRPC service implementation for the WorkManager.</p>\n"
+      "Summary": null
     },
     {
       "type": "ManagedReference",

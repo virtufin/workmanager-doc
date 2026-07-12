@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/c69eba973c3c6ba09bf2420adfda89d34fbf57e3"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/21ea2c5888d44621fc1a5f80b786e978a1e0d399"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit c69eba9">
+       title="View commit 21ea2c5">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">c69eba9</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">21ea2c5</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/c69eba973c3c6ba09bf2420adfda89d34fbf57e3"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/21ea2c5888d44621fc1a5f80b786e978a1e0d399"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit c69eba9">
+       title="View commit 21ea2c5">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">c69eba9</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">21ea2c5</text>
       </svg>
     </a>
 </div>
@@ -874,17 +874,6 @@
     <span class="md-ellipsis">
       
         Persistence
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#group-coordination" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Group Coordination
       
     </span>
   </a>
@@ -1704,17 +1693,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#group-coordination" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Group Coordination
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#code-source-types" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1805,7 +1783,7 @@
 <li>Creates, starts, stops, and deletes workers</li>
 <li>Manages Dapr subscriptions to pub/sub topics</li>
 <li>Persists worker configurations to the state store for recovery</li>
-<li>Handles message processing and group-based locking for coordinated execution</li>
+<li>Handles message processing and publishes output</li>
 <li>Publishes worker output back to pub/sub topics</li>
 </ul>
 <h3 id="worker-runtimeworkercs">Worker (Runtime/Worker.cs)</h3>
@@ -1815,7 +1793,6 @@
 <li><strong>CodeSource</strong>: Where the code comes from (URL or inline content)</li>
 <li><strong>MimeType</strong>: The content type identifying the language/engine</li>
 <li><strong>Topic</strong>: The pub/sub topic to subscribe to</li>
-<li><strong>Group</strong>: Optional coordination group for mutually exclusive execution</li>
 <li><strong>Status</strong>: Either <code>Stopped</code> or <code>Running</code></li>
 <li><strong>History</strong>: Track of all code changes over time</li>
 </ul>
@@ -1877,12 +1854,8 @@
 <h3 id="message-processing-flow">Message Processing Flow</h3>
 <ol>
 <li>Dapr delivers a CloudEvent to the subscription handler</li>
-<li>For workers in a group: Try to acquire a distributed lock</li>
 <li>Worker engine processes the input CloudEvent</li>
-<li>If engine returns a response CloudEvent:</li>
-<li>If no group: Publish directly to output topic</li>
-<li>If group: Publish after lock acquisition</li>
-<li>Lock is released (if group-based)</li>
+<li>If engine returns a response CloudEvent, publish to output topic</li>
 </ol>
 <h3 id="worker-recovery-flow">Worker Recovery Flow</h3>
 <p>On service restart:</p>
@@ -1904,17 +1877,6 @@
 <ul>
 <li><code>workmanager/workers/index</code> - List of all worker IDs</li>
 <li><code>workmanager/workers/{workerId}</code> - Individual worker configuration</li>
-</ul>
-<p>Group locks use:</p>
-<ul>
-<li><code>workmanager/groups/{groupId}/lock</code> - Lock data (owner instance ID and acquisition time)</li>
-</ul>
-<h2 id="group-coordination">Group Coordination</h2>
-<p>Workers can be assigned to a group for mutually exclusive execution. When multiple workers share a group:</p>
-<ul>
-<li>Only one worker processes a message at a time</li>
-<li>A distributed lock prevents concurrent processing</li>
-<li>Locks have a 30-second max age and can be "stolen" if stale</li>
 </ul>
 <h2 id="code-source-types">Code Source Types</h2>
 <p>Workers support two code source types:</p>
@@ -1988,7 +1950,7 @@
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-07-05T21:04:21Z</span>
+  <span style="display:table-cell;text-align:right">2026-07-12T13:03:06Z</span>
 </div>
 
     </div>
