@@ -199,14 +199,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/ed4d18b3728c556e80606516901c9e0a54238031"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/58a4ce2971e55e47e6a97da0fb6140fc5aa62725"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit ed4d18b">
+       title="View commit 58a4ce2">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">ed4d18b</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">58a4ce2</text>
       </svg>
     </a>
 </div>
@@ -393,14 +393,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/ed4d18b3728c556e80606516901c9e0a54238031"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/58a4ce2971e55e47e6a97da0fb6140fc5aa62725"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit ed4d18b">
+       title="View commit 58a4ce2">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">ed4d18b</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">58a4ce2</text>
       </svg>
     </a>
 </div>
@@ -1421,31 +1421,47 @@ directly in-process via the in-process engine
 is the <strong>default</strong> engine for the <code>application/x-dotnet-dll</code>
 MIME type as of <code>LIBRARY_VERSION 0.0.59</code>.</p>
 <h2 id="architecture">Architecture</h2>
-<div class="highlight"><pre><span></span><code>┌────────────────────────────────────────────────────────┐
-│  WorkManager (AOT-compiled native binary)              │
-│                                                         │
-│  ┌──────────────────┐  ┌────────────────────────────┐  │
-│  │ DotNetDllEngine  │  │  CoreCLR (embedded via     │  │
-│  │ (AOT code)       │  │  libhostfxr on first use)  │  │
-│  │                  │  │                            │  │
-│  │  LoadCodeAsync   │──▶  JIT-compile worker.dll    │  │
-│  │  ProcessAsync    │──▶  Direct in-process call    │  │
-│  │  (no socket)     │  │  (sub-microsecond)         │  │
-│  └──────────────────┘  └────────────────────────────┘  │
-│           │                                              │
-│           ▼                                              │
-│  ┌──────────────────────────────────────────────────┐  │
-│  │  WorkerLoadContext (per worker, isCollectible)   │  │
-│  │  Holds the worker assembly + its dependencies    │  │
-│  └──────────────────────────────────────────────────┘  │
-└────────────────────────────────────────────────────────┘
+<p>The engine has two paths, selected automatically by whether a JIT
+runtime is already resident (<code>HostFxrBootstrap.IsCoreClrLoaded()</code>):</p>
+<ul>
+<li><strong>JIT host</strong> (dev <code>dotnet run</code>, <code>dotnet test</code>): the worker DLL is
+  loaded directly into a collectible <code>WorkerLoadContext</code> in-process
+  and dispatched with no serialization.</li>
+<li><strong>NativeAOT host</strong> (the published WorkManager): the AOT runtime has
+  no JIT, so <code>AssemblyLoadContext.LoadFromStream</code> throws
+  <code>PlatformNotSupportedException</code>. The engine instead embeds a real
+  CoreCLR via <code>libhostfxr</code> and loads the <strong>bridge</strong> assembly
+  (<code>Virtufin.WorkManager.Engine.DotNetDll.Bridge</code>) into it through
+  <code>hostfxr_get_runtime_delegate(load_assembly_and_get_function_pointer)</code>.
+  The bridge (plain IL, running under CoreCLR) does the actual
+  <code>AssemblyLoadContext.LoadFromStream</code> + <code>IWorker</code> discovery and
+  dispatch. CloudEvents cross the C-ABI boundary as UTF-8 JSON.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────┐
+│  WorkManager (AOT-compiled native binary)                    │
+│                                                              │
+│  ┌──────────────────┐        ┌───────────────────────────┐  │
+│  │ DotNetDllEngine  │        │  CoreCLR (embedded via     │  │
+│  │ (AOT code)       │        │  libhostfxr on first use)  │  │
+│  │                  │  C ABI │                            │  │
+│  │  LoadCodeAsync   │──fnptr─▶  WorkerBridge.LoadWorker   │  │
+│  │  ProcessAsync    │──fnptr─▶  WorkerBridge.ProcessEvent │  │
+│  │  (CloudEvent as  │        │   └─▶ WorkerLoadContext +   │  │
+│  │   UTF-8 JSON)    │◀─bytes─┤        IWorker (JIT)        │  │
+│  └──────────────────┘        └───────────────────────────┘  │
+│                                                              │
+│  The bridge assembly ships framework-dependent at            │
+│  &lt;app&gt;/bridge; it is NOT linked into the AOT host.           │
+└─────────────────────────────────────────────────────────────┘
 </code></pre></div>
+<p>Under a JIT host the bridge is skipped and <code>DotNetDllEngine</code> calls
+the worker directly in-process (the diagram's right-hand box is the
+host's own runtime).</p>
 <h2 id="what-you-get">What you get</h2>
 <ul>
-<li><strong>Sub-microsecond per-call latency.</strong> A direct in-process
-  method dispatch, vs. ~100-1000 µs over a Unix socket +
-  JSON serialization + subprocess scheduling for the
-  out-of-process engine.</li>
+<li><strong>Low per-call latency.</strong> Under JIT, a direct in-process method
+  dispatch. Under AOT, an in-process C-ABI call into the embedded
+  CoreCLR with a JSON round-trip (no socket, no subprocess).</li>
 <li><strong>Shared runtime.</strong> All in-process workers share one
   <code>CoreCLR</code> instance. A WM with 10 in-process managed workers
   uses ~50-80 MB of working set, vs. ~300-500 MB for 10
@@ -1608,7 +1624,7 @@ for programmatic inspection. Common failures you'll see:</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-07-12T21:21:49Z</span>
+  <span style="display:table-cell;text-align:right">2026-07-12T22:02:35Z</span>
 </div>
 
     </div>
