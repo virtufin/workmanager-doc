@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/767ddcdf5ee3cdc7826693f2bfe9795da7f82f23"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/d51990279b3f164b79d87736ee4e2faeb72ec2df"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 767ddcd">
+       title="View commit d519902">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">767ddcd</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">d519902</text>
       </svg>
     </a>
 </div>
@@ -401,14 +401,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/767ddcdf5ee3cdc7826693f2bfe9795da7f82f23"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/d51990279b3f164b79d87736ee4e2faeb72ec2df"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 767ddcd">
+       title="View commit d519902">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">767ddcd</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">d519902</text>
       </svg>
     </a>
 </div>
@@ -1335,6 +1335,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#native-dll-workers-aot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native DLL Workers (AOT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#url-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1510,6 +1521,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#native-dll-workers-aot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native DLL Workers (AOT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#url-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1603,6 +1625,10 @@
 <p>The subprocess communicates with the host via a JSON-line message loop over stdin/stdout and stays alive for the worker's lifetime (no per-message process spawn overhead).</p>
 <h3 id="c-workers">C# Workers</h3>
 <p>C# workers run in-process within the WorkManager host. They share the host process's permissions. For maximum safety, use Python workers with the module blocklist or consider containerizing C# workers as sidecar containers in Kubernetes.</p>
+<h3 id="native-dll-workers-aot">Native DLL Workers (AOT)</h3>
+<p>Native DLL workers (<code>application/x-native-dll</code>, loaded via <code>NativeDllEngine</code>) run in-process within the WorkManager host with <strong>no sandbox whatsoever</strong>. A native segfault, stack overflow, or P/Invoke that corrupts the heap will terminate the WorkManager and all of its other in-process workers. The native DLL has root-equivalent access to the host process.</p>
+<p>Because of this, native DLL workers must come from a <strong>fully trusted source</strong> — the registered NuGet feed with content-addressed versioning, the same feed the build pipeline publishes to. Native workers should be treated as root-equivalent in the trust model.</p>
+<p>The worker source file (<code>WebSocketManagerControllerNative.cs</code>) carries a class-docstring caveat to this effect; operators should read it before deploying native workers.</p>
 <h3 id="url-validation">URL Validation</h3>
 <p>When loading worker code from a URL, the WorkManager validates:</p>
 <ul>
@@ -1682,7 +1708,7 @@
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-07-14T06:12:53Z</span>
+  <span style="display:table-cell;text-align:right">2026-07-15T08:00:26Z</span>
 </div>
 
     </div>
