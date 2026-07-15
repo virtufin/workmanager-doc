@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/808defb6792729e5d6bf9e5b2ff708049e0086d5"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/3afaa393a89d13cda9cac53c628516757b541079"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 808defb">
+       title="View commit 3afaa39">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">808defb</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3afaa39</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/808defb6792729e5d6bf9e5b2ff708049e0086d5"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/3afaa393a89d13cda9cac53c628516757b541079"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 808defb">
+       title="View commit 3afaa39">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">808defb</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3afaa39</text>
       </svg>
     </a>
 </div>
@@ -1787,7 +1787,7 @@
 <h2 id="built-in-engines">Built-in Engines</h2>
 <h3 id="pythonengine">PythonEngine</h3>
 <p><strong>MIME Type:</strong> <code>text/x-python</code></p>
-<p>Executes Python code in a persistent sandboxed <code>python3</code> subprocess. Code is injected directly via stdin at startup — no temporary files are written. The subprocess stays alive for the worker's lifetime, communicating via a JSON-line message loop over stdin/stdout.</p>
+<p>Executes Python code in a persistent sandboxed <code>python3</code> subprocess. Code is written to a <code>.py</code> temp file at startup; the subprocess is started with a Unix domain socket (<code>python3 --socket &lt;path&gt; --code &lt;path&gt;</code>). The subprocess stays alive for the worker's lifetime, communicating via length-prefixed JSON frames over the Unix domain socket (not stdin/stdout).</p>
 <p><strong>Data flow:</strong></p>
 <pre class="mermaid"><code>sequenceDiagram
     autonumber
@@ -2099,13 +2099,17 @@ format.</p>
 </tbody>
 </table>
 <h3 id="python-engine-internals">Python Engine Internals</h3>
-<p>The Python engine uses a <strong>persistent subprocess</strong> that communicates via stdin/stdout:</p>
+<p>The Python engine uses a <strong>persistent subprocess</strong> that communicates via a Unix domain socket:</p>
 <ul>
 <li>The subprocess is started once at <code>LoadCode</code> and stays alive for the worker's lifetime</li>
-<li>CloudEvents are exchanged as <strong>JSON lines</strong> — the host writes the input event to stdin and reads the response from stdout</li>
-<li>A <strong>health check</strong> pings the subprocess every 10 seconds with an empty heartbeat; if the subprocess fails to respond, it is automatically restarted</li>
+<li><strong>Code is written to temp files</strong> under <code>/tmp/worker-sockets/code/&lt;id&gt;/</code>: <code>code.py</code> (the worker source) and <code>code.bootstrap.py</code> (a thin bootstrap that <code>exec()</code>s the code file and runs the socket frame loop)</li>
+<li>A <strong>Unix domain socket</strong> at <code>/tmp/worker-sockets/&lt;id&gt;.sock</code> is bound by the C# side; the Python subprocess connects to it as a client (<code>--socket</code>)</li>
+<li>The subprocess sends a <code>{"type": "ready"}</code> frame before entering the processing loop; the engine blocks until it receives this frame (or a <code>{"type": "error"}</code> frame on init failure)</li>
+<li>CloudEvents are exchanged as <strong>length-prefixed JSON frames</strong> over the socket: 4-byte big-endian unsigned integer length + UTF-8 JSON bytes</li>
+<li>Frame types: <code>ready</code>, <code>process</code> (host → worker), <code>result</code> (worker → host, with an optional <code>cloudEvent</code> field), <code>ping</code>/<code>pong</code> (heartbeat), <code>shutdown</code> (graceful stop), <code>error</code> (worker → host)</li>
+<li>A <strong>health check</strong> pings the subprocess every 10 seconds with an empty <code>ping</code>; if the subprocess fails to respond, it is automatically restarted on the next <code>ProcessAsync</code> call</li>
 <li><strong>Stderr</strong> is captured as a Warning-level log channel, <strong>not</strong> treated as an error</li>
-<li><strong>No temporary files</strong> are written — code is injected directly via stdin at startup</li>
+<li><strong>Stdout is discarded</strong> — all protocol communication goes over the Unix domain socket</li>
 </ul>
 <h3 id="recommendations">Recommendations</h3>
 <ul>
@@ -2145,7 +2149,7 @@ format.</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-07-15T08:32:39Z</span>
+  <span style="display:table-cell;text-align:right">2026-07-15T09:19:07Z</span>
 </div>
 
     </div>
