@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/3d29b8892fd5a354b83ba858bc87bd83f00982ca"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/808defb6792729e5d6bf9e5b2ff708049e0086d5"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 3d29b88">
+       title="View commit 808defb">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3d29b88</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">808defb</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/3d29b8892fd5a354b83ba858bc87bd83f00982ca"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/808defb6792729e5d6bf9e5b2ff708049e0086d5"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 3d29b88">
+       title="View commit 808defb">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3d29b88</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">808defb</text>
       </svg>
     </a>
 </div>
@@ -2025,6 +2025,15 @@ gRPC endpoint.</p>
 <li>Individual worker load failures are logged but don't stop recovery of other workers</li>
 <li>Workers can still be recovered manually via the <code>RecoverWorkers</code> gRPC endpoint if needed</li>
 </ul>
+<blockquote>
+<p><strong>Known limitation:</strong> if the state store contains a corrupted worker
+entry that always fails to load (e.g. a stale nupkg URL that 404s,
+or a code blob whose SHA-256 no longer matches), the pod is
+permanently unready — there is no admin endpoint to delete a single
+bad state-store entry without clearing the entire store. A
+<code>WORKER_SKIP_FAILED_WORKERS=true</code> flag (skip unrecoverable workers,
+log + continue) is planned as a remediation.</p>
+</blockquote>
 <h3 id="monitoring">Monitoring</h3>
 <p>The <code>/health</code> endpoint includes a <code>recovery</code> health check that reports:
 - <code>Healthy</code> — all workers recovered successfully (or recovery disabled by config, or another instance is the recovery leader)
@@ -2101,7 +2110,7 @@ gRPC endpoint.</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-07-15T08:14:53Z</span>
+  <span style="display:table-cell;text-align:right">2026-07-15T08:32:39Z</span>
 </div>
 
     </div>
