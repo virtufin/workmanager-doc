@@ -255,6 +255,12 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Components.WorkManager.LoadCode
   nameWithType: WorkManager.LoadCode
+- uid: Virtufin.WorkManager.Components.WorkManager.ProbeMetadataKey
+  name: ProbeMetadataKey
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_ProbeMetadataKey
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.ProbeMetadataKey
+  fullName: Virtufin.WorkManager.Components.WorkManager.ProbeMetadataKey
+  nameWithType: WorkManager.ProbeMetadataKey
 - uid: Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync(System.Threading.CancellationToken)
   name: RecoverWorkersAsync(CancellationToken)
   href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_RecoverWorkersAsync_System_Threading_CancellationToken_

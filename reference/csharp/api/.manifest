@@ -22,6 +22,7 @@
   "Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)": "Virtufin.WorkManager.Components.WorkManager.yml",
   "Virtufin.WorkManager.Components.WorkManager.ListWorkers": "Virtufin.WorkManager.Components.WorkManager.yml",
   "Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.Threading.CancellationToken)": "Virtufin.WorkManager.Components.WorkManager.yml",
+  "Virtufin.WorkManager.Components.WorkManager.ProbeMetadataKey": "Virtufin.WorkManager.Components.WorkManager.yml",
   "Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync(System.Threading.CancellationToken)": "Virtufin.WorkManager.Components.WorkManager.yml",
   "Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})": "Virtufin.WorkManager.Components.WorkManager.yml",
   "Virtufin.WorkManager.Components.WorkManager.SetEnvironmentVariable(System.Guid,System.String,System.String)": "Virtufin.WorkManager.Components.WorkManager.yml",
