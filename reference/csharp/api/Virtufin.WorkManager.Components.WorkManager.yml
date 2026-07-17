@@ -19,7 +19,8 @@ items:
   - Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)
   - Virtufin.WorkManager.Components.WorkManager.ListWorkers
   - Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.Threading.CancellationToken)
-  - Virtufin.WorkManager.Components.WorkManager.ProbeMetadataKey
+  - Virtufin.WorkManager.Components.WorkManager.ProbeEventType
+  - Virtufin.WorkManager.Components.WorkManager.ProbeInstanceExtension
   - Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync(System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
   - Virtufin.WorkManager.Components.WorkManager.SetEnvironmentVariable(System.Guid,System.String,System.String)
@@ -202,40 +203,77 @@ items:
     return:
       type: System.Uri
     content.vb: Public Shared ReadOnly UnknownCloudEventSourceUri As Uri
-- uid: Virtufin.WorkManager.Components.WorkManager.ProbeMetadataKey
-  commentId: F:Virtufin.WorkManager.Components.WorkManager.ProbeMetadataKey
-  id: ProbeMetadataKey
+- uid: Virtufin.WorkManager.Components.WorkManager.ProbeEventType
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.ProbeEventType
+  id: ProbeEventType
   parent: Virtufin.WorkManager.Components.WorkManager
   langs:
   - csharp
   - vb
-  name: ProbeMetadataKey
-  nameWithType: WorkManager.ProbeMetadataKey
-  fullName: Virtufin.WorkManager.Components.WorkManager.ProbeMetadataKey
+  name: ProbeEventType
+  nameWithType: WorkManager.ProbeEventType
+  fullName: Virtufin.WorkManager.Components.WorkManager.ProbeEventType
   type: Field
   source:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: ProbeMetadataKey
+    id: ProbeEventType
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 77
+    startLine: 82
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
   summary: >-
-    Publish-metadata key marking a topic liveness probe. The value is the
+    CloudEvent type marking a topic liveness probe. Probes carry the
 
-    publishing instance id; the handler echoes probes carrying its own id
+    publishing instance id in the <xref href="Virtufin.WorkManager.Components.WorkManager.ProbeInstanceExtension" data-throw-if-not-resolved="false"></xref>
 
-    and drops all probes without dispatching them to workers.
+    CloudEvent extension attribute; the handler echoes probes carrying
+
+    its own id and drops all probes without dispatching them to workers.
+
+    The marker must travel as CloudEvent attributes inside the payload —
+
+    NOT as Dapr publish metadata — because the streamer populates
+
+    TopicMessage.Type/Extensions from the CloudEvent envelope parsed out
+
+    of the stored payload, not from the broker-level metadata.
   example: []
   syntax:
-    content: public const string ProbeMetadataKey = "wmtopicprobe"
+    content: public const string ProbeEventType = "com.virtufin.workmanager.topic-probe"
     return:
       type: System.String
-    content.vb: Public Const ProbeMetadataKey As String = "wmtopicprobe"
+    content.vb: Public Const ProbeEventType As String = "com.virtufin.workmanager.topic-probe"
+- uid: Virtufin.WorkManager.Components.WorkManager.ProbeInstanceExtension
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.ProbeInstanceExtension
+  id: ProbeInstanceExtension
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: ProbeInstanceExtension
+  nameWithType: WorkManager.ProbeInstanceExtension
+  fullName: Virtufin.WorkManager.Components.WorkManager.ProbeInstanceExtension
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: ProbeInstanceExtension
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 83
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  syntax:
+    content: public const string ProbeInstanceExtension = "wmtopicprobe"
+    return:
+      type: System.String
+    content.vb: Public Const ProbeInstanceExtension As String = "wmtopicprobe"
 - uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String,System.String)
   commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String,System.String)
   id: '#ctor(Dapr.Messaging.PublishSubscribe.DaprPublishSubscribeClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String,System.String)'
@@ -254,7 +292,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 97
+    startLine: 102
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -310,7 +348,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RegisterEngine
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 138
+    startLine: 143
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -355,7 +393,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CreateWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 150
+    startLine: 155
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -397,7 +435,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCode
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 220
+    startLine: 225
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -451,7 +489,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeleteWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 267
+    startLine: 272
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -492,7 +530,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StartWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 288
+    startLine: 293
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -533,7 +571,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StopWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 311
+    startLine: 316
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -574,7 +612,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 332
+    startLine: 337
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -605,7 +643,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetEnvironmentVariable
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 356
+    startLine: 361
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -647,7 +685,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetEnvironmentVariables
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 366
+    startLine: 371
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -680,7 +718,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariable
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 378
+    startLine: 383
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -723,7 +761,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariables
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 389
+    startLine: 394
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -759,7 +797,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetTag
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 424
+    startLine: 429
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -797,7 +835,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetTags
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 434
+    startLine: 439
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -830,7 +868,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTag
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 445
+    startLine: 450
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -871,7 +909,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTags
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 456
+    startLine: 461
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -907,7 +945,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 491
+    startLine: 496
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -946,7 +984,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoverWorkersAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 504
+    startLine: 509
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -986,7 +1024,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 1155
+    startLine: 1172
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -1323,6 +1361,12 @@ references:
   name: Uri
   nameWithType: Uri
   fullName: System.Uri
+- uid: Virtufin.WorkManager.Components.WorkManager.ProbeInstanceExtension
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.ProbeInstanceExtension
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_ProbeInstanceExtension
+  name: ProbeInstanceExtension
+  nameWithType: WorkManager.ProbeInstanceExtension
+  fullName: Virtufin.WorkManager.Components.WorkManager.ProbeInstanceExtension
 - uid: Virtufin.WorkManager.Components.WorkManager.#ctor*
   commentId: Overload:Virtufin.WorkManager.Components.WorkManager.#ctor
   href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Dapr_Messaging_PublishSubscribe_DaprPublishSubscribeClient_Dapr_Client_DaprClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_Virtufin_Service_MultiInstance_IInstanceIdProvider_System_String_System_String_System_String_
