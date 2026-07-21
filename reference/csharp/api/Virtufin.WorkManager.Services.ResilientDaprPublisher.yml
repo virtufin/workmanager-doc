@@ -5,7 +5,7 @@ items:
   id: ResilientDaprPublisher
   parent: Virtufin.WorkManager.Services
   children:
-  - Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor(Dapr.Client.DaprClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.String,System.Int32)
+  - Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.Int32)
   - Virtufin.WorkManager.Services.ResilientDaprPublisher.DisposeAsync
   - Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(System.String,System.ReadOnlyMemory{System.Byte},System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Threading.CancellationToken)
   langs:
@@ -22,7 +22,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ResilientDaprPublisher
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 130
+    startLine: 132
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -42,16 +42,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor(Dapr.Client.DaprClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.String,System.Int32)
-  commentId: M:Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor(Dapr.Client.DaprClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.String,System.Int32)
-  id: '#ctor(Dapr.Client.DaprClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.String,System.Int32)'
+- uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.Int32)
+  commentId: M:Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.Int32)
+  id: '#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.WorkManager.Services.DaprResiliencePipeline,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher},System.Int32)'
   parent: Virtufin.WorkManager.Services.ResilientDaprPublisher
   langs:
   - csharp
   - vb
-  name: ResilientDaprPublisher(DaprClient, DaprResiliencePipeline, ILogger<ResilientDaprPublisher>, string, int)
-  nameWithType: ResilientDaprPublisher.ResilientDaprPublisher(DaprClient, DaprResiliencePipeline, ILogger<ResilientDaprPublisher>, string, int)
-  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.ResilientDaprPublisher(Dapr.Client.DaprClient, Virtufin.WorkManager.Services.DaprResiliencePipeline, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.ResilientDaprPublisher>, string, int)
+  name: ResilientDaprPublisher(PubsubClient, DaprResiliencePipeline, ILogger<ResilientDaprPublisher>, int)
+  nameWithType: ResilientDaprPublisher.ResilientDaprPublisher(Pubsub.PubsubClient, DaprResiliencePipeline, ILogger<ResilientDaprPublisher>, int)
+  fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.ResilientDaprPublisher(Virtufin.Api.Protos.Pubsub.PubsubClient, Virtufin.WorkManager.Services.DaprResiliencePipeline, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.ResilientDaprPublisher>, int)
   type: Constructor
   source:
     remote:
@@ -60,30 +60,28 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 145
+    startLine: 146
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
   summary: Creates a new ResilientDaprPublisher.
   example: []
   syntax:
-    content: public ResilientDaprPublisher(DaprClient daprClient, DaprResiliencePipeline resilience, ILogger<ResilientDaprPublisher> logger, string pubsubName, int maxBufferSize = 1000)
+    content: public ResilientDaprPublisher(Pubsub.PubsubClient pubsub, DaprResiliencePipeline resilience, ILogger<ResilientDaprPublisher> logger, int maxBufferSize = 1000)
     parameters:
-    - id: daprClient
-      type: Dapr.Client.DaprClient
+    - id: pubsub
+      type: Virtufin.Api.Protos.Pubsub.PubsubClient
     - id: resilience
       type: Virtufin.WorkManager.Services.DaprResiliencePipeline
     - id: logger
       type: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.ResilientDaprPublisher}
-    - id: pubsubName
-      type: System.String
     - id: maxBufferSize
       type: System.Int32
-    content.vb: Public Sub New(daprClient As DaprClient, resilience As DaprResiliencePipeline, logger As ILogger(Of ResilientDaprPublisher), pubsubName As String, maxBufferSize As Integer = 1000)
+    content.vb: Public Sub New(pubsub As Pubsub.PubsubClient, resilience As DaprResiliencePipeline, logger As ILogger(Of ResilientDaprPublisher), maxBufferSize As Integer = 1000)
   overload: Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor*
-  nameWithType.vb: ResilientDaprPublisher.New(DaprClient, DaprResiliencePipeline, ILogger(Of ResilientDaprPublisher), String, Integer)
-  fullName.vb: Virtufin.WorkManager.Services.ResilientDaprPublisher.New(Dapr.Client.DaprClient, Virtufin.WorkManager.Services.DaprResiliencePipeline, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.ResilientDaprPublisher), String, Integer)
-  name.vb: New(DaprClient, DaprResiliencePipeline, ILogger(Of ResilientDaprPublisher), String, Integer)
+  nameWithType.vb: ResilientDaprPublisher.New(Pubsub.PubsubClient, DaprResiliencePipeline, ILogger(Of ResilientDaprPublisher), Integer)
+  fullName.vb: Virtufin.WorkManager.Services.ResilientDaprPublisher.New(Virtufin.Api.Protos.Pubsub.PubsubClient, Virtufin.WorkManager.Services.DaprResiliencePipeline, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.ResilientDaprPublisher), Integer)
+  name.vb: New(PubsubClient, DaprResiliencePipeline, ILogger(Of ResilientDaprPublisher), Integer)
 - uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(System.String,System.ReadOnlyMemory{System.Byte},System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Threading.CancellationToken)
   commentId: M:Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(System.String,System.ReadOnlyMemory{System.Byte},System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Threading.CancellationToken)
   id: PublishAsync(System.String,System.ReadOnlyMemory{System.Byte},System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Threading.CancellationToken)
@@ -102,7 +100,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: PublishAsync
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 163
+    startLine: 162
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -146,7 +144,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 213
+    startLine: 232
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -418,20 +416,36 @@ references:
   fullName: System
 - uid: Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor*
   commentId: Overload:Virtufin.WorkManager.Services.ResilientDaprPublisher.#ctor
-  href: Virtufin.WorkManager.Services.ResilientDaprPublisher.html#Virtufin_WorkManager_Services_ResilientDaprPublisher__ctor_Dapr_Client_DaprClient_Virtufin_WorkManager_Services_DaprResiliencePipeline_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_ResilientDaprPublisher__System_String_System_Int32_
+  href: Virtufin.WorkManager.Services.ResilientDaprPublisher.html#Virtufin_WorkManager_Services_ResilientDaprPublisher__ctor_Virtufin_Api_Protos_Pubsub_PubsubClient_Virtufin_WorkManager_Services_DaprResiliencePipeline_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_ResilientDaprPublisher__System_Int32_
   name: ResilientDaprPublisher
   nameWithType: ResilientDaprPublisher.ResilientDaprPublisher
   fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.ResilientDaprPublisher
   nameWithType.vb: ResilientDaprPublisher.New
   fullName.vb: Virtufin.WorkManager.Services.ResilientDaprPublisher.New
   name.vb: New
-- uid: Dapr.Client.DaprClient
-  commentId: T:Dapr.Client.DaprClient
-  parent: Dapr.Client
+- uid: Virtufin.Api.Protos.Pubsub.PubsubClient
+  commentId: T:Virtufin.Api.Protos.Pubsub.PubsubClient
+  parent: Virtufin.Api.Protos
   isExternal: true
-  name: DaprClient
-  nameWithType: DaprClient
-  fullName: Dapr.Client.DaprClient
+  name: Pubsub.PubsubClient
+  nameWithType: Pubsub.PubsubClient
+  fullName: Virtufin.Api.Protos.Pubsub.PubsubClient
+  spec.csharp:
+  - uid: Virtufin.Api.Protos.Pubsub
+    name: Pubsub
+    isExternal: true
+  - name: .
+  - uid: Virtufin.Api.Protos.Pubsub.PubsubClient
+    name: PubsubClient
+    isExternal: true
+  spec.vb:
+  - uid: Virtufin.Api.Protos.Pubsub
+    name: Pubsub
+    isExternal: true
+  - name: .
+  - uid: Virtufin.Api.Protos.Pubsub.PubsubClient
+    name: PubsubClient
+    isExternal: true
 - uid: Virtufin.WorkManager.Services.DaprResiliencePipeline
   commentId: T:Virtufin.WorkManager.Services.DaprResiliencePipeline
   parent: Virtufin.WorkManager.Services
@@ -472,17 +486,6 @@ references:
     name: ResilientDaprPublisher
     href: Virtufin.WorkManager.Services.ResilientDaprPublisher.html
   - name: )
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -494,27 +497,35 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: Dapr.Client
-  commentId: N:Dapr.Client
+- uid: Virtufin.Api.Protos
+  commentId: N:Virtufin.Api.Protos
   isExternal: true
-  name: Dapr.Client
-  nameWithType: Dapr.Client
-  fullName: Dapr.Client
+  name: Virtufin.Api.Protos
+  nameWithType: Virtufin.Api.Protos
+  fullName: Virtufin.Api.Protos
   spec.csharp:
-  - uid: Dapr
-    name: Dapr
+  - uid: Virtufin
+    name: Virtufin
     isExternal: true
   - name: .
-  - uid: Dapr.Client
-    name: Client
+  - uid: Virtufin.Api
+    name: Api
+    isExternal: true
+  - name: .
+  - uid: Virtufin.Api.Protos
+    name: Protos
     isExternal: true
   spec.vb:
-  - uid: Dapr
-    name: Dapr
+  - uid: Virtufin
+    name: Virtufin
     isExternal: true
   - name: .
-  - uid: Dapr.Client
-    name: Client
+  - uid: Virtufin.Api
+    name: Api
+    isExternal: true
+  - name: .
+  - uid: Virtufin.Api.Protos
+    name: Protos
     isExternal: true
 - uid: Microsoft.Extensions.Logging.ILogger`1
   commentId: T:Microsoft.Extensions.Logging.ILogger`1
@@ -587,6 +598,17 @@ references:
   name: PublishAsync
   nameWithType: ResilientDaprPublisher.PublishAsync
   fullName: Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: System.ReadOnlyMemory{System.Byte}
   commentId: T:System.ReadOnlyMemory{System.Byte}
   parent: System
