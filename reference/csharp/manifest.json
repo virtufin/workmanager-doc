@@ -476,7 +476,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Services.IRecoveryLeaderElector",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.IRecoveryLeaderElector.yml\" sourcestartlinenumber=\"1\">Abstraction over the leader-election primitive. Allows the hosted\nservice to be unit-tested without touching a real Dapr state store.</p>\n"
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -504,7 +504,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Services.LeaderLease",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.LeaderLease.yml\" sourcestartlinenumber=\"1\">Persistent lease record stored at <xref href=\"Virtufin.WorkManager.Services.RecoveryLeaderElector.LeaseKey\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -532,7 +532,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Services.RecoveryLeaderElector",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.RecoveryLeaderElector.yml\" sourcestartlinenumber=\"1\">Lease-based leader election backed by the Dapr state store.\nMultiple WorkManager instances can race to acquire a lease for the\n<code>workmanager/recovery/leader</code> key; only the holder performs\nworker recovery. The lease has a TTL so a crashed instance's lease\nexpires automatically and another instance can take over.</p>\n"
+      "Summary": null
     },
     {
       "type": "ManagedReference",

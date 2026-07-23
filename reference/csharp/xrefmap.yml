@@ -82,15 +82,15 @@ references:
   commentId: T:Virtufin.WorkManager.Components.WorkManager
   fullName: Virtufin.WorkManager.Components.WorkManager
   nameWithType: WorkManager
-- uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
-  name: WorkManager(PubsubClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, IInstanceIdProvider, string?, string?)
-  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Virtufin_Api_Protos_Pubsub_PubsubClient_Dapr_Client_DaprClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_Virtufin_Service_MultiInstance_IInstanceIdProvider_System_String_System_String_
-  commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Dapr.Client.DaprClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
-  name.vb: New(PubsubClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, IInstanceIdProvider, String, String)
-  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager(Virtufin.Api.Protos.Pubsub.PubsubClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>, Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, Virtufin.Service.MultiInstance.IInstanceIdProvider, string?, string?)
-  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New(Virtufin.Api.Protos.Pubsub.PubsubClient, Dapr.Client.DaprClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager), Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, Virtufin.Service.MultiInstance.IInstanceIdProvider, String, String)
-  nameWithType: WorkManager.WorkManager(Pubsub.PubsubClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, IInstanceIdProvider, string?, string?)
-  nameWithType.vb: WorkManager.New(Pubsub.PubsubClient, DaprClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, IInstanceIdProvider, String, String)
+- uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
+  name: WorkManager(PubsubClient, StateClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, IInstanceIdProvider, string?, string?)
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Virtufin_Api_Protos_Pubsub_PubsubClient_Virtufin_Api_Protos_State_StateClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_Virtufin_Service_MultiInstance_IInstanceIdProvider_System_String_System_String_
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
+  name.vb: New(PubsubClient, StateClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, IInstanceIdProvider, String, String)
+  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager(Virtufin.Api.Protos.Pubsub.PubsubClient, Virtufin.Api.Protos.State.StateClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>, Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, Virtufin.Service.MultiInstance.IInstanceIdProvider, string?, string?)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New(Virtufin.Api.Protos.Pubsub.PubsubClient, Virtufin.Api.Protos.State.StateClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager), Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, Virtufin.Service.MultiInstance.IInstanceIdProvider, String, String)
+  nameWithType: WorkManager.WorkManager(Pubsub.PubsubClient, State.StateClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, IInstanceIdProvider, string?, string?)
+  nameWithType.vb: WorkManager.New(Pubsub.PubsubClient, State.StateClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, IInstanceIdProvider, String, String)
 - uid: Virtufin.WorkManager.Components.WorkManager.#ctor*
   name: WorkManager
   href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_
@@ -2231,25 +2231,6 @@ references:
   commentId: T:Virtufin.WorkManager.Services.LeaderLease
   fullName: Virtufin.WorkManager.Services.LeaderLease
   nameWithType: LeaderLease
-- uid: Virtufin.WorkManager.Services.LeaderLease.#ctor(System.String,System.DateTime,System.TimeSpan)
-  name: LeaderLease(string, DateTime, TimeSpan)
-  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease__ctor_System_String_System_DateTime_System_TimeSpan_
-  commentId: M:Virtufin.WorkManager.Services.LeaderLease.#ctor(System.String,System.DateTime,System.TimeSpan)
-  name.vb: New(String, Date, TimeSpan)
-  fullName: Virtufin.WorkManager.Services.LeaderLease.LeaderLease(string, System.DateTime, System.TimeSpan)
-  fullName.vb: Virtufin.WorkManager.Services.LeaderLease.New(String, Date, System.TimeSpan)
-  nameWithType: LeaderLease.LeaderLease(string, DateTime, TimeSpan)
-  nameWithType.vb: LeaderLease.New(String, Date, TimeSpan)
-- uid: Virtufin.WorkManager.Services.LeaderLease.#ctor*
-  name: LeaderLease
-  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease__ctor_
-  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: Virtufin.WorkManager.Services.LeaderLease.LeaderLease
-  fullName.vb: Virtufin.WorkManager.Services.LeaderLease.New
-  nameWithType: LeaderLease.LeaderLease
-  nameWithType.vb: LeaderLease.New
 - uid: Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
   name: AcquiredAt
   href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_AcquiredAt
@@ -2263,45 +2244,19 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
   nameWithType: LeaderLease.AcquiredAt
-- uid: Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
-  name: ExpiresAt
-  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_ExpiresAt
-  commentId: P:Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
-  fullName: Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
-  nameWithType: LeaderLease.ExpiresAt
-- uid: Virtufin.WorkManager.Services.LeaderLease.ExpiresAt*
-  name: ExpiresAt
-  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_ExpiresAt_
-  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
+- uid: Virtufin.WorkManager.Services.LeaderLease.InstanceId
+  name: InstanceId
+  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_InstanceId
+  commentId: P:Virtufin.WorkManager.Services.LeaderLease.InstanceId
+  fullName: Virtufin.WorkManager.Services.LeaderLease.InstanceId
+  nameWithType: LeaderLease.InstanceId
+- uid: Virtufin.WorkManager.Services.LeaderLease.InstanceId*
+  name: InstanceId
+  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_InstanceId_
+  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.InstanceId
   isSpec: "True"
-  fullName: Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
-  nameWithType: LeaderLease.ExpiresAt
-- uid: Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
-  name: OwnerInstanceId
-  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_OwnerInstanceId
-  commentId: P:Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
-  fullName: Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
-  nameWithType: LeaderLease.OwnerInstanceId
-- uid: Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId*
-  name: OwnerInstanceId
-  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_OwnerInstanceId_
-  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
-  isSpec: "True"
-  fullName: Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
-  nameWithType: LeaderLease.OwnerInstanceId
-- uid: Virtufin.WorkManager.Services.LeaderLease.Ttl
-  name: Ttl
-  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_Ttl
-  commentId: P:Virtufin.WorkManager.Services.LeaderLease.Ttl
-  fullName: Virtufin.WorkManager.Services.LeaderLease.Ttl
-  nameWithType: LeaderLease.Ttl
-- uid: Virtufin.WorkManager.Services.LeaderLease.Ttl*
-  name: Ttl
-  href: api/Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_Ttl_
-  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.Ttl
-  isSpec: "True"
-  fullName: Virtufin.WorkManager.Services.LeaderLease.Ttl
-  nameWithType: LeaderLease.Ttl
+  fullName: Virtufin.WorkManager.Services.LeaderLease.InstanceId
+  nameWithType: LeaderLease.InstanceId
 - uid: Virtufin.WorkManager.Services.RecoveryHealthCheck
   name: RecoveryHealthCheck
   href: api/Virtufin.WorkManager.Services.RecoveryHealthCheck.html
@@ -2346,15 +2301,15 @@ references:
   commentId: T:Virtufin.WorkManager.Services.RecoveryLeaderElector
   fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector
   nameWithType: RecoveryLeaderElector
-- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Dapr.Client.DaprClient,System.String,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
-  name: RecoveryLeaderElector(DaprClient, string, string, ILogger<RecoveryLeaderElector>, WorkerRecoveryOptions)
-  href: api/Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector__ctor_Dapr_Client_DaprClient_System_String_System_String_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_RecoveryLeaderElector__Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_
-  commentId: M:Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Dapr.Client.DaprClient,System.String,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
-  name.vb: New(DaprClient, String, String, ILogger(Of RecoveryLeaderElector), WorkerRecoveryOptions)
-  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector.RecoveryLeaderElector(Dapr.Client.DaprClient, string, string, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.RecoveryLeaderElector>, Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
-  fullName.vb: Virtufin.WorkManager.Services.RecoveryLeaderElector.New(Dapr.Client.DaprClient, String, String, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.RecoveryLeaderElector), Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
-  nameWithType: RecoveryLeaderElector.RecoveryLeaderElector(DaprClient, string, string, ILogger<RecoveryLeaderElector>, WorkerRecoveryOptions)
-  nameWithType.vb: RecoveryLeaderElector.New(DaprClient, String, String, ILogger(Of RecoveryLeaderElector), WorkerRecoveryOptions)
+- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Virtufin.Api.Protos.State.StateClient,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  name: RecoveryLeaderElector(StateClient, string, ILogger<RecoveryLeaderElector>, WorkerRecoveryOptions)
+  href: api/Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector__ctor_Virtufin_Api_Protos_State_StateClient_System_String_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_RecoveryLeaderElector__Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_
+  commentId: M:Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Virtufin.Api.Protos.State.StateClient,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  name.vb: New(StateClient, String, ILogger(Of RecoveryLeaderElector), WorkerRecoveryOptions)
+  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector.RecoveryLeaderElector(Virtufin.Api.Protos.State.StateClient, string, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.RecoveryLeaderElector>, Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  fullName.vb: Virtufin.WorkManager.Services.RecoveryLeaderElector.New(Virtufin.Api.Protos.State.StateClient, String, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.RecoveryLeaderElector), Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  nameWithType: RecoveryLeaderElector.RecoveryLeaderElector(State.StateClient, string, ILogger<RecoveryLeaderElector>, WorkerRecoveryOptions)
+  nameWithType.vb: RecoveryLeaderElector.New(State.StateClient, String, ILogger(Of RecoveryLeaderElector), WorkerRecoveryOptions)
 - uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor*
   name: RecoveryLeaderElector
   href: api/Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector__ctor_
@@ -2528,15 +2483,15 @@ references:
   commentId: T:Virtufin.WorkManager.Services.WorkManagerGrpcService
   fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService
   nameWithType: WorkManagerGrpcService
-- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService},Virtufin.Service.MultiInstance.IInstanceIdProvider,Virtufin.Service.MultiInstance.PeerRegistry,Virtufin.Service.MultiInstance.PeerChannelCache{Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient},Dapr.Client.DaprClient,System.String)
-  name: WorkManagerGrpcService(WorkManager, ILogger<WorkManagerGrpcService>, IInstanceIdProvider, PeerRegistry, PeerChannelCache<WorkManagerClient>, DaprClient, string?)
-  href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService__ctor_Virtufin_WorkManager_Components_WorkManager_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerGrpcService__Virtufin_Service_MultiInstance_IInstanceIdProvider_Virtufin_Service_MultiInstance_PeerRegistry_Virtufin_Service_MultiInstance_PeerChannelCache_Virtufin_WorkManager_Protos_WorkManager_WorkManagerClient__Dapr_Client_DaprClient_System_String_
-  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService},Virtufin.Service.MultiInstance.IInstanceIdProvider,Virtufin.Service.MultiInstance.PeerRegistry,Virtufin.Service.MultiInstance.PeerChannelCache{Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient},Dapr.Client.DaprClient,System.String)
-  name.vb: New(WorkManager, ILogger(Of WorkManagerGrpcService), IInstanceIdProvider, PeerRegistry, PeerChannelCache(Of WorkManagerClient), DaprClient, String)
-  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.WorkManagerGrpcService(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.WorkManagerGrpcService>, Virtufin.Service.MultiInstance.IInstanceIdProvider, Virtufin.Service.MultiInstance.PeerRegistry, Virtufin.Service.MultiInstance.PeerChannelCache<Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient>, Dapr.Client.DaprClient, string?)
-  fullName.vb: Virtufin.WorkManager.Services.WorkManagerGrpcService.New(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.WorkManagerGrpcService), Virtufin.Service.MultiInstance.IInstanceIdProvider, Virtufin.Service.MultiInstance.PeerRegistry, Virtufin.Service.MultiInstance.PeerChannelCache(Of Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient), Dapr.Client.DaprClient, String)
-  nameWithType: WorkManagerGrpcService.WorkManagerGrpcService(WorkManager, ILogger<WorkManagerGrpcService>, IInstanceIdProvider, PeerRegistry, PeerChannelCache<WorkManager.WorkManagerClient>, DaprClient, string?)
-  nameWithType.vb: WorkManagerGrpcService.New(WorkManager, ILogger(Of WorkManagerGrpcService), IInstanceIdProvider, PeerRegistry, PeerChannelCache(Of WorkManager.WorkManagerClient), DaprClient, String)
+- uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService},Virtufin.Service.MultiInstance.IInstanceIdProvider,Virtufin.Service.MultiInstance.PeerRegistry,Virtufin.Service.MultiInstance.PeerChannelCache{Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient},Virtufin.Api.Protos.State.StateClient)
+  name: WorkManagerGrpcService(WorkManager, ILogger<WorkManagerGrpcService>, IInstanceIdProvider, PeerRegistry, PeerChannelCache<WorkManagerClient>, StateClient)
+  href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService__ctor_Virtufin_WorkManager_Components_WorkManager_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkManagerGrpcService__Virtufin_Service_MultiInstance_IInstanceIdProvider_Virtufin_Service_MultiInstance_PeerRegistry_Virtufin_Service_MultiInstance_PeerChannelCache_Virtufin_WorkManager_Protos_WorkManager_WorkManagerClient__Virtufin_Api_Protos_State_StateClient_
+  commentId: M:Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor(Virtufin.WorkManager.Components.WorkManager,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkManagerGrpcService},Virtufin.Service.MultiInstance.IInstanceIdProvider,Virtufin.Service.MultiInstance.PeerRegistry,Virtufin.Service.MultiInstance.PeerChannelCache{Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient},Virtufin.Api.Protos.State.StateClient)
+  name.vb: New(WorkManager, ILogger(Of WorkManagerGrpcService), IInstanceIdProvider, PeerRegistry, PeerChannelCache(Of WorkManagerClient), StateClient)
+  fullName: Virtufin.WorkManager.Services.WorkManagerGrpcService.WorkManagerGrpcService(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.WorkManagerGrpcService>, Virtufin.Service.MultiInstance.IInstanceIdProvider, Virtufin.Service.MultiInstance.PeerRegistry, Virtufin.Service.MultiInstance.PeerChannelCache<Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient>, Virtufin.Api.Protos.State.StateClient)
+  fullName.vb: Virtufin.WorkManager.Services.WorkManagerGrpcService.New(Virtufin.WorkManager.Components.WorkManager, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.WorkManagerGrpcService), Virtufin.Service.MultiInstance.IInstanceIdProvider, Virtufin.Service.MultiInstance.PeerRegistry, Virtufin.Service.MultiInstance.PeerChannelCache(Of Virtufin.WorkManager.Protos.WorkManager.WorkManagerClient), Virtufin.Api.Protos.State.StateClient)
+  nameWithType: WorkManagerGrpcService.WorkManagerGrpcService(WorkManager, ILogger<WorkManagerGrpcService>, IInstanceIdProvider, PeerRegistry, PeerChannelCache<WorkManager.WorkManagerClient>, State.StateClient)
+  nameWithType.vb: WorkManagerGrpcService.New(WorkManager, ILogger(Of WorkManagerGrpcService), IInstanceIdProvider, PeerRegistry, PeerChannelCache(Of WorkManager.WorkManagerClient), State.StateClient)
 - uid: Virtufin.WorkManager.Services.WorkManagerGrpcService.#ctor*
   name: WorkManagerGrpcService
   href: api/Virtufin.WorkManager.Services.WorkManagerGrpcService.html#Virtufin_WorkManager_Services_WorkManagerGrpcService__ctor_

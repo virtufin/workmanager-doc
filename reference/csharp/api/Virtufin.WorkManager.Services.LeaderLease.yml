@@ -5,11 +5,8 @@ items:
   id: LeaderLease
   parent: Virtufin.WorkManager.Services
   children:
-  - Virtufin.WorkManager.Services.LeaderLease.#ctor(System.String,System.DateTime,System.TimeSpan)
   - Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
-  - Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
-  - Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
-  - Virtufin.WorkManager.Services.LeaderLease.Ttl
+  - Virtufin.WorkManager.Services.LeaderLease.InstanceId
   langs:
   - csharp
   - vb
@@ -24,93 +21,52 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LeaderLease
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 154
+    startLine: 147
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
-  summary: Persistent lease record stored at <xref href="Virtufin.WorkManager.Services.RecoveryLeaderElector.LeaseKey" data-throw-if-not-resolved="false"></xref>.
-  example: []
   syntax:
-    content: 'public sealed record LeaderLease : IEquatable<LeaderLease>'
-    content.vb: Public NotInheritable Class LeaderLease Implements IEquatable(Of LeaderLease)
+    content: public class LeaderLease
+    content.vb: Public Class LeaderLease
   inheritance:
   - System.Object
-  implements:
-  - System.IEquatable{Virtufin.WorkManager.Services.LeaderLease}
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
   - System.Object.GetType
+  - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Services.LeaderLease.#ctor(System.String,System.DateTime,System.TimeSpan)
-  commentId: M:Virtufin.WorkManager.Services.LeaderLease.#ctor(System.String,System.DateTime,System.TimeSpan)
-  id: '#ctor(System.String,System.DateTime,System.TimeSpan)'
+- uid: Virtufin.WorkManager.Services.LeaderLease.InstanceId
+  commentId: P:Virtufin.WorkManager.Services.LeaderLease.InstanceId
+  id: InstanceId
   parent: Virtufin.WorkManager.Services.LeaderLease
   langs:
   - csharp
   - vb
-  name: LeaderLease(string, DateTime, TimeSpan)
-  nameWithType: LeaderLease.LeaderLease(string, DateTime, TimeSpan)
-  fullName: Virtufin.WorkManager.Services.LeaderLease.LeaderLease(string, System.DateTime, System.TimeSpan)
-  type: Constructor
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: .ctor
-    path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 154
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Services
-  summary: Persistent lease record stored at <xref href="Virtufin.WorkManager.Services.RecoveryLeaderElector.LeaseKey" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: public LeaderLease(string OwnerInstanceId, DateTime AcquiredAt, TimeSpan Ttl)
-    parameters:
-    - id: OwnerInstanceId
-      type: System.String
-    - id: AcquiredAt
-      type: System.DateTime
-    - id: Ttl
-      type: System.TimeSpan
-    content.vb: Public Sub New(OwnerInstanceId As String, AcquiredAt As Date, Ttl As TimeSpan)
-  overload: Virtufin.WorkManager.Services.LeaderLease.#ctor*
-  nameWithType.vb: LeaderLease.New(String, Date, TimeSpan)
-  fullName.vb: Virtufin.WorkManager.Services.LeaderLease.New(String, Date, System.TimeSpan)
-  name.vb: New(String, Date, TimeSpan)
-- uid: Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
-  commentId: P:Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
-  id: OwnerInstanceId
-  parent: Virtufin.WorkManager.Services.LeaderLease
-  langs:
-  - csharp
-  - vb
-  name: OwnerInstanceId
-  nameWithType: LeaderLease.OwnerInstanceId
-  fullName: Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
+  name: InstanceId
+  nameWithType: LeaderLease.InstanceId
+  fullName: Virtufin.WorkManager.Services.LeaderLease.InstanceId
   type: Property
   source:
     remote:
       path: src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: OwnerInstanceId
+    id: InstanceId
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 154
+    startLine: 149
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
   syntax:
-    content: public string OwnerInstanceId { get; init; }
+    content: public string InstanceId { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property OwnerInstanceId As String
-  overload: Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId*
+    content.vb: Public Property InstanceId As String
+  overload: Virtufin.WorkManager.Services.LeaderLease.InstanceId*
 - uid: Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
   commentId: P:Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
   id: AcquiredAt
@@ -129,84 +85,18 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: AcquiredAt
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 154
+    startLine: 150
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
   syntax:
-    content: public DateTime AcquiredAt { get; init; }
+    content: public DateTime AcquiredAt { get; set; }
     parameters: []
     return:
       type: System.DateTime
     content.vb: Public Property AcquiredAt As Date
   overload: Virtufin.WorkManager.Services.LeaderLease.AcquiredAt*
-- uid: Virtufin.WorkManager.Services.LeaderLease.Ttl
-  commentId: P:Virtufin.WorkManager.Services.LeaderLease.Ttl
-  id: Ttl
-  parent: Virtufin.WorkManager.Services.LeaderLease
-  langs:
-  - csharp
-  - vb
-  name: Ttl
-  nameWithType: LeaderLease.Ttl
-  fullName: Virtufin.WorkManager.Services.LeaderLease.Ttl
-  type: Property
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: Ttl
-    path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 154
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Services
-  syntax:
-    content: public TimeSpan Ttl { get; init; }
-    parameters: []
-    return:
-      type: System.TimeSpan
-    content.vb: Public Property Ttl As TimeSpan
-  overload: Virtufin.WorkManager.Services.LeaderLease.Ttl*
-- uid: Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
-  commentId: P:Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
-  id: ExpiresAt
-  parent: Virtufin.WorkManager.Services.LeaderLease
-  langs:
-  - csharp
-  - vb
-  name: ExpiresAt
-  nameWithType: LeaderLease.ExpiresAt
-  fullName: Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
-  type: Property
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: ExpiresAt
-    path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 157
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Services
-  summary: When this lease expires (UTC). Used for fast-path rejection of stale leases.
-  example: []
-  syntax:
-    content: public DateTime ExpiresAt { get; }
-    parameters: []
-    return:
-      type: System.DateTime
-    content.vb: Public ReadOnly Property ExpiresAt As Date
-  overload: Virtufin.WorkManager.Services.LeaderLease.ExpiresAt*
 references:
-- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.LeaseKey
-  commentId: F:Virtufin.WorkManager.Services.RecoveryLeaderElector.LeaseKey
-  href: Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector_LeaseKey
-  name: LeaseKey
-  nameWithType: RecoveryLeaderElector.LeaseKey
-  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector.LeaseKey
 - uid: Virtufin.WorkManager.Services
   commentId: N:Virtufin.WorkManager.Services
   href: Virtufin.html
@@ -248,39 +138,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.IEquatable{Virtufin.WorkManager.Services.LeaderLease}
-  commentId: T:System.IEquatable{Virtufin.WorkManager.Services.LeaderLease}
-  parent: System
-  definition: System.IEquatable`1
-  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<LeaderLease>
-  nameWithType: IEquatable<LeaderLease>
-  fullName: System.IEquatable<Virtufin.WorkManager.Services.LeaderLease>
-  nameWithType.vb: IEquatable(Of LeaderLease)
-  fullName.vb: System.IEquatable(Of Virtufin.WorkManager.Services.LeaderLease)
-  name.vb: IEquatable(Of LeaderLease)
-  spec.csharp:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: <
-  - uid: Virtufin.WorkManager.Services.LeaderLease
-    name: LeaderLease
-    href: Virtufin.WorkManager.Services.LeaderLease.html
-  - name: '>'
-  spec.vb:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: Virtufin.WorkManager.Services.LeaderLease
-    name: LeaderLease
-    href: Virtufin.WorkManager.Services.LeaderLease.html
-  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -407,6 +264,30 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
   - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
@@ -483,43 +364,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.IEquatable`1
-  commentId: T:System.IEquatable`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<T>
-  nameWithType: IEquatable<T>
-  fullName: System.IEquatable<T>
-  nameWithType.vb: IEquatable(Of T)
-  fullName.vb: System.IEquatable(Of T)
-  name.vb: IEquatable(Of T)
-  spec.csharp:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: Virtufin.WorkManager.Services.LeaderLease.#ctor*
-  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.#ctor
-  href: Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease__ctor_System_String_System_DateTime_System_TimeSpan_
-  name: LeaderLease
-  nameWithType: LeaderLease.LeaderLease
-  fullName: Virtufin.WorkManager.Services.LeaderLease.LeaderLease
-  nameWithType.vb: LeaderLease.New
-  fullName.vb: Virtufin.WorkManager.Services.LeaderLease.New
-  name.vb: New
+- uid: Virtufin.WorkManager.Services.LeaderLease.InstanceId*
+  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.InstanceId
+  href: Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_InstanceId
+  name: InstanceId
+  nameWithType: LeaderLease.InstanceId
+  fullName: Virtufin.WorkManager.Services.LeaderLease.InstanceId
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -531,6 +381,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: Virtufin.WorkManager.Services.LeaderLease.AcquiredAt*
+  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
+  href: Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_AcquiredAt
+  name: AcquiredAt
+  nameWithType: LeaderLease.AcquiredAt
+  fullName: Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
 - uid: System.DateTime
   commentId: T:System.DateTime
   parent: System
@@ -542,35 +398,3 @@ references:
   nameWithType.vb: Date
   fullName.vb: Date
   name.vb: Date
-- uid: System.TimeSpan
-  commentId: T:System.TimeSpan
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.timespan
-  name: TimeSpan
-  nameWithType: TimeSpan
-  fullName: System.TimeSpan
-- uid: Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId*
-  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
-  href: Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_OwnerInstanceId
-  name: OwnerInstanceId
-  nameWithType: LeaderLease.OwnerInstanceId
-  fullName: Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId
-- uid: Virtufin.WorkManager.Services.LeaderLease.AcquiredAt*
-  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
-  href: Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_AcquiredAt
-  name: AcquiredAt
-  nameWithType: LeaderLease.AcquiredAt
-  fullName: Virtufin.WorkManager.Services.LeaderLease.AcquiredAt
-- uid: Virtufin.WorkManager.Services.LeaderLease.Ttl*
-  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.Ttl
-  href: Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_Ttl
-  name: Ttl
-  nameWithType: LeaderLease.Ttl
-  fullName: Virtufin.WorkManager.Services.LeaderLease.Ttl
-- uid: Virtufin.WorkManager.Services.LeaderLease.ExpiresAt*
-  commentId: Overload:Virtufin.WorkManager.Services.LeaderLease.ExpiresAt
-  href: Virtufin.WorkManager.Services.LeaderLease.html#Virtufin_WorkManager_Services_LeaderLease_ExpiresAt
-  name: ExpiresAt
-  nameWithType: LeaderLease.ExpiresAt
-  fullName: Virtufin.WorkManager.Services.LeaderLease.ExpiresAt

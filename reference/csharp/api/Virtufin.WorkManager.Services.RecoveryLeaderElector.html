@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class RecoveryLeaderElector | Virtufin WorkManager - C# Reference ">
       
-      <meta name="description" content="Lease-based leader election backed by the Dapr state store. Multiple WorkManager instances can race to acquire a lease for the workmanager/recovery/leader key; only the holder performs worker recovery. The lease has a TTL so a crashed instance&#39;s lease expires automatically and another instance can take over.">
+      
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -49,10 +49,10 @@
             Virtufin.WorkManager
           </a>
           <div class="git-info">
-            <a href="{git_repo_url}/commit/122b3e4f7b1332e692cb23fc3127e5bd486aa0bd" target="_blank" rel="noopener" class="commit-badge" title="View commit 122b3e4f7b1332e692cb23fc3127e5bd486aa0bd">
+            <a href="{git_repo_url}/commit/572751e6df9b024b28d89184724ad8b3f45c9446" target="_blank" rel="noopener" class="commit-badge" title="View commit 572751e6df9b024b28d89184724ad8b3f45c9446">
               <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
                 <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"></rect>
-                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">122b3e4f7b1332e692cb23fc3127e5bd486aa0bd</text>
+                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">572751e6df9b024b28d89184724ad8b3f45c9446</text>
               </svg>
             </a>
           </div>          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,12 +101,7 @@ Class RecoveryLeaderElector
   <dl><dt>Assembly</dt><dd>Virtufin.WorkManager.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Lease-based leader election backed by the Dapr state store.
-Multiple WorkManager instances can race to acquire a lease for the
-<code>workmanager/recovery/leader</code> key; only the holder performs
-worker recovery. The lease has a TTL so a crashed instance's lease
-expires automatically and another instance can take over.</p>
-</div>
+  <div class="markdown summary"></div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -166,8 +161,8 @@ expires automatically and another instance can take over.</p>
 
   <a id="Virtufin_WorkManager_Services_RecoveryLeaderElector__ctor_" data-uid="Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor*"></a>
 
-  <h3 id="Virtufin_WorkManager_Services_RecoveryLeaderElector__ctor_Dapr_Client_DaprClient_System_String_System_String_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_RecoveryLeaderElector__Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_" data-uid="Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Dapr.Client.DaprClient,System.String,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)">
-  RecoveryLeaderElector(DaprClient, string, string, ILogger&lt;RecoveryLeaderElector&gt;, WorkerRecoveryOptions)
+  <h3 id="Virtufin_WorkManager_Services_RecoveryLeaderElector__ctor_Virtufin_Api_Protos_State_StateClient_System_String_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_RecoveryLeaderElector__Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_" data-uid="Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Virtufin.Api.Protos.State.StateClient,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)">
+  RecoveryLeaderElector(StateClient, string, ILogger&lt;RecoveryLeaderElector&gt;, WorkerRecoveryOptions)
   
   </h3>
 
@@ -175,14 +170,12 @@ expires automatically and another instance can take over.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public RecoveryLeaderElector(DaprClient daprClient, string stateStoreName, string instanceId, ILogger&lt;RecoveryLeaderElector&gt; logger, WorkerRecoveryOptions options)</code></pre>
+    <pre><code class="lang-csharp hljs">public RecoveryLeaderElector(State.StateClient stateClient, string instanceId, ILogger&lt;RecoveryLeaderElector&gt; logger, WorkerRecoveryOptions options)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>daprClient</code> <span class="xref">DaprClient</span></dt>
-    <dd></dd>
-    <dt><code>stateStoreName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>stateClient</code> <span class="xref">State</span>.<span class="xref">StateClient</span></dt>
     <dd></dd>
     <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
@@ -213,12 +206,11 @@ expires automatically and another instance can take over.</p>
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Default state-store key for the recovery leader lease.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string LeaseKey = &quot;workmanager/recovery/leader&quot;</code></pre>
+    <pre><code class="lang-csharp hljs">public const string LeaseKey = &quot;workmanager.recovery.leader&quot;</code></pre>
   </div>
 
 
@@ -249,9 +241,7 @@ expires automatically and another instance can take over.</p>
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Releases the lease iff this instance holds it. Safe to call on shutdown.
-Failures are logged but not propagated.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -282,10 +272,7 @@ Failures are logged but not propagated.</p>
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Tries to acquire the recovery leader lease. Returns true iff this
-instance is the recovery leader; false if another instance holds it
-or the acquire timed out. The lease auto-expires after the configured TTL.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">

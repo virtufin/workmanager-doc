@@ -21,15 +21,10 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: IRecoveryLeaderElector
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 10
+    startLine: 8
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
-  summary: >-
-    Abstraction over the leader-election primitive. Allows the hosted
-
-    service to be unit-tested without touching a real Dapr state store.
-  example: []
   syntax:
     content: public interface IRecoveryLeaderElector
     content.vb: Public Interface IRecoveryLeaderElector
@@ -53,7 +48,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: TryAcquireLeaseAsync
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 12
+    startLine: 10
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -84,7 +79,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ReleaseLeaseAsync
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 13
+    startLine: 11
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services

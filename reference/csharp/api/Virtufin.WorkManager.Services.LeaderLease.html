@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class LeaderLease | Virtufin WorkManager - C# Reference ">
       
-      <meta name="description" content="Persistent lease record stored at .">
+      
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -49,10 +49,10 @@
             Virtufin.WorkManager
           </a>
           <div class="git-info">
-            <a href="{git_repo_url}/commit/122b3e4f7b1332e692cb23fc3127e5bd486aa0bd" target="_blank" rel="noopener" class="commit-badge" title="View commit 122b3e4f7b1332e692cb23fc3127e5bd486aa0bd">
+            <a href="{git_repo_url}/commit/572751e6df9b024b28d89184724ad8b3f45c9446" target="_blank" rel="noopener" class="commit-badge" title="View commit 572751e6df9b024b28d89184724ad8b3f45c9446">
               <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
                 <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"></rect>
-                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">122b3e4f7b1332e692cb23fc3127e5bd486aa0bd</text>
+                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">572751e6df9b024b28d89184724ad8b3f45c9446</text>
               </svg>
             </a>
           </div>          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,12 +101,11 @@ Class LeaderLease
   <dl><dt>Assembly</dt><dd>Virtufin.WorkManager.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Persistent lease record stored at <a class="xref" href="Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector_LeaseKey">LeaseKey</a>.</p>
-</div>
+  <div class="markdown summary"></div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed record LeaderLease : IEquatable&lt;LeaderLease&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class LeaderLease</code></pre>
   </div>
 
 
@@ -120,12 +119,6 @@ Class LeaderLease
     </dd>
   </dl>
 
-  <dl class="typelist implements">
-    <dt>Implements</dt>
-    <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Virtufin.WorkManager.Services.LeaderLease.html">LeaderLease</a>&gt;</div>
-    </dd>
-  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -144,52 +137,15 @@ Class LeaderLease
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </dd></dl>
-
-
-
-
-
-
-  <h2 class="section" id="constructors">Constructors
-</h2>
-
-
-  <a id="Virtufin_WorkManager_Services_LeaderLease__ctor_" data-uid="Virtufin.WorkManager.Services.LeaderLease.#ctor*"></a>
-
-  <h3 id="Virtufin_WorkManager_Services_LeaderLease__ctor_System_String_System_DateTime_System_TimeSpan_" data-uid="Virtufin.WorkManager.Services.LeaderLease.#ctor(System.String,System.DateTime,System.TimeSpan)">
-  LeaderLease(string, DateTime, TimeSpan)
-  
-  </h3>
-
-  <div class="markdown level1 summary"><p>Persistent lease record stored at <a class="xref" href="Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector_LeaseKey">LeaseKey</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LeaderLease(string OwnerInstanceId, DateTime AcquiredAt, TimeSpan Ttl)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>OwnerInstanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-    <dt><code>AcquiredAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
-    <dd></dd>
-    <dt><code>Ttl</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
 
 
 
@@ -211,7 +167,7 @@ Class LeaderLease
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime AcquiredAt { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public DateTime AcquiredAt { get; set; }</code></pre>
   </div>
 
 
@@ -231,42 +187,10 @@ Class LeaderLease
 
 
 
-  <a id="Virtufin_WorkManager_Services_LeaderLease_ExpiresAt_" data-uid="Virtufin.WorkManager.Services.LeaderLease.ExpiresAt*"></a>
+  <a id="Virtufin_WorkManager_Services_LeaderLease_InstanceId_" data-uid="Virtufin.WorkManager.Services.LeaderLease.InstanceId*"></a>
 
-  <h3 id="Virtufin_WorkManager_Services_LeaderLease_ExpiresAt" data-uid="Virtufin.WorkManager.Services.LeaderLease.ExpiresAt">
-  ExpiresAt
-  
-  </h3>
-
-  <div class="markdown level1 summary"><p>When this lease expires (UTC). Used for fast-path rejection of stale leases.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DateTime ExpiresAt { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="Virtufin_WorkManager_Services_LeaderLease_OwnerInstanceId_" data-uid="Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId*"></a>
-
-  <h3 id="Virtufin_WorkManager_Services_LeaderLease_OwnerInstanceId" data-uid="Virtufin.WorkManager.Services.LeaderLease.OwnerInstanceId">
-  OwnerInstanceId
+  <h3 id="Virtufin_WorkManager_Services_LeaderLease_InstanceId" data-uid="Virtufin.WorkManager.Services.LeaderLease.InstanceId">
+  InstanceId
   
   </h3>
 
@@ -274,7 +198,7 @@ Class LeaderLease
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string OwnerInstanceId { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string InstanceId { get; set; }</code></pre>
   </div>
 
 
@@ -284,37 +208,6 @@ Class LeaderLease
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="Virtufin_WorkManager_Services_LeaderLease_Ttl_" data-uid="Virtufin.WorkManager.Services.LeaderLease.Ttl*"></a>
-
-  <h3 id="Virtufin_WorkManager_Services_LeaderLease_Ttl" data-uid="Virtufin.WorkManager.Services.LeaderLease.Ttl">
-  Ttl
-  
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TimeSpan Ttl { get; init; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></dt>
     <dd></dd>
   </dl>
 

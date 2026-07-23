@@ -5,7 +5,7 @@ items:
   id: RecoveryLeaderElector
   parent: Virtufin.WorkManager.Services
   children:
-  - Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Dapr.Client.DaprClient,System.String,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  - Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Virtufin.Api.Protos.State.StateClient,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
   - Virtufin.WorkManager.Services.RecoveryLeaderElector.LeaseKey
   - Virtufin.WorkManager.Services.RecoveryLeaderElector.ReleaseLeaseAsync
   - Virtufin.WorkManager.Services.RecoveryLeaderElector.TryAcquireLeaseAsync(System.Threading.CancellationToken)
@@ -23,21 +23,10 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoveryLeaderElector
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 23
+    startLine: 14
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
-  summary: >-
-    Lease-based leader election backed by the Dapr state store.
-
-    Multiple WorkManager instances can race to acquire a lease for the
-
-    <code>workmanager/recovery/leader</code> key; only the holder performs
-
-    worker recovery. The lease has a TTL so a crashed instance's lease
-
-    expires automatically and another instance can take over.
-  example: []
   syntax:
     content: 'public sealed class RecoveryLeaderElector : IRecoveryLeaderElector'
     content.vb: Public NotInheritable Class RecoveryLeaderElector Implements IRecoveryLeaderElector
@@ -70,27 +59,25 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LeaseKey
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 26
+    startLine: 16
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
-  summary: Default state-store key for the recovery leader lease.
-  example: []
   syntax:
-    content: public const string LeaseKey = "workmanager/recovery/leader"
+    content: public const string LeaseKey = "workmanager.recovery.leader"
     return:
       type: System.String
-    content.vb: Public Const LeaseKey As String = "workmanager/recovery/leader"
-- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Dapr.Client.DaprClient,System.String,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
-  commentId: M:Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Dapr.Client.DaprClient,System.String,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
-  id: '#ctor(Dapr.Client.DaprClient,System.String,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)'
+    content.vb: Public Const LeaseKey As String = "workmanager.recovery.leader"
+- uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Virtufin.Api.Protos.State.StateClient,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  commentId: M:Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor(Virtufin.Api.Protos.State.StateClient,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  id: '#ctor(Virtufin.Api.Protos.State.StateClient,System.String,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector},Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)'
   parent: Virtufin.WorkManager.Services.RecoveryLeaderElector
   langs:
   - csharp
   - vb
-  name: RecoveryLeaderElector(DaprClient, string, string, ILogger<RecoveryLeaderElector>, WorkerRecoveryOptions)
-  nameWithType: RecoveryLeaderElector.RecoveryLeaderElector(DaprClient, string, string, ILogger<RecoveryLeaderElector>, WorkerRecoveryOptions)
-  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector.RecoveryLeaderElector(Dapr.Client.DaprClient, string, string, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.RecoveryLeaderElector>, Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  name: RecoveryLeaderElector(StateClient, string, ILogger<RecoveryLeaderElector>, WorkerRecoveryOptions)
+  nameWithType: RecoveryLeaderElector.RecoveryLeaderElector(State.StateClient, string, ILogger<RecoveryLeaderElector>, WorkerRecoveryOptions)
+  fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector.RecoveryLeaderElector(Virtufin.Api.Protos.State.StateClient, string, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.RecoveryLeaderElector>, Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
   type: Constructor
   source:
     remote:
@@ -99,28 +86,26 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 34
+    startLine: 25
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
   syntax:
-    content: public RecoveryLeaderElector(DaprClient daprClient, string stateStoreName, string instanceId, ILogger<RecoveryLeaderElector> logger, WorkerRecoveryOptions options)
+    content: public RecoveryLeaderElector(State.StateClient stateClient, string instanceId, ILogger<RecoveryLeaderElector> logger, WorkerRecoveryOptions options)
     parameters:
-    - id: daprClient
-      type: Dapr.Client.DaprClient
-    - id: stateStoreName
-      type: System.String
+    - id: stateClient
+      type: Virtufin.Api.Protos.State.StateClient
     - id: instanceId
       type: System.String
     - id: logger
       type: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector}
     - id: options
       type: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
-    content.vb: Public Sub New(daprClient As DaprClient, stateStoreName As String, instanceId As String, logger As ILogger(Of RecoveryLeaderElector), options As WorkerRecoveryOptions)
+    content.vb: Public Sub New(stateClient As State.StateClient, instanceId As String, logger As ILogger(Of RecoveryLeaderElector), options As WorkerRecoveryOptions)
   overload: Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor*
-  nameWithType.vb: RecoveryLeaderElector.New(DaprClient, String, String, ILogger(Of RecoveryLeaderElector), WorkerRecoveryOptions)
-  fullName.vb: Virtufin.WorkManager.Services.RecoveryLeaderElector.New(Dapr.Client.DaprClient, String, String, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.RecoveryLeaderElector), Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
-  name.vb: New(DaprClient, String, String, ILogger(Of RecoveryLeaderElector), WorkerRecoveryOptions)
+  nameWithType.vb: RecoveryLeaderElector.New(State.StateClient, String, ILogger(Of RecoveryLeaderElector), WorkerRecoveryOptions)
+  fullName.vb: Virtufin.WorkManager.Services.RecoveryLeaderElector.New(Virtufin.Api.Protos.State.StateClient, String, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.RecoveryLeaderElector), Virtufin.WorkManager.Configuration.WorkerRecoveryOptions)
+  name.vb: New(StateClient, String, ILogger(Of RecoveryLeaderElector), WorkerRecoveryOptions)
 - uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.TryAcquireLeaseAsync(System.Threading.CancellationToken)
   commentId: M:Virtufin.WorkManager.Services.RecoveryLeaderElector.TryAcquireLeaseAsync(System.Threading.CancellationToken)
   id: TryAcquireLeaseAsync(System.Threading.CancellationToken)
@@ -139,16 +124,10 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: TryAcquireLeaseAsync
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 53
+    startLine: 37
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
-  summary: >-
-    Tries to acquire the recovery leader lease. Returns true iff this
-
-    instance is the recovery leader; false if another instance holds it
-
-    or the acquire timed out. The lease auto-expires after the configured TTL.
   example: []
   syntax:
     content: public Task<bool> TryAcquireLeaseAsync(CancellationToken cancellationToken)
@@ -179,14 +158,10 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ReleaseLeaseAsync
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 136
+    startLine: 84
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
-  summary: >-
-    Releases the lease iff this instance holds it. Safe to call on shutdown.
-
-    Failures are logged but not propagated.
   example: []
   syntax:
     content: public Task ReleaseLeaseAsync()
@@ -460,20 +435,36 @@ references:
   name.vb: String
 - uid: Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor*
   commentId: Overload:Virtufin.WorkManager.Services.RecoveryLeaderElector.#ctor
-  href: Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector__ctor_Dapr_Client_DaprClient_System_String_System_String_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_RecoveryLeaderElector__Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_
+  href: Virtufin.WorkManager.Services.RecoveryLeaderElector.html#Virtufin_WorkManager_Services_RecoveryLeaderElector__ctor_Virtufin_Api_Protos_State_StateClient_System_String_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_RecoveryLeaderElector__Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_
   name: RecoveryLeaderElector
   nameWithType: RecoveryLeaderElector.RecoveryLeaderElector
   fullName: Virtufin.WorkManager.Services.RecoveryLeaderElector.RecoveryLeaderElector
   nameWithType.vb: RecoveryLeaderElector.New
   fullName.vb: Virtufin.WorkManager.Services.RecoveryLeaderElector.New
   name.vb: New
-- uid: Dapr.Client.DaprClient
-  commentId: T:Dapr.Client.DaprClient
-  parent: Dapr.Client
+- uid: Virtufin.Api.Protos.State.StateClient
+  commentId: T:Virtufin.Api.Protos.State.StateClient
+  parent: Virtufin.Api.Protos
   isExternal: true
-  name: DaprClient
-  nameWithType: DaprClient
-  fullName: Dapr.Client.DaprClient
+  name: State.StateClient
+  nameWithType: State.StateClient
+  fullName: Virtufin.Api.Protos.State.StateClient
+  spec.csharp:
+  - uid: Virtufin.Api.Protos.State
+    name: State
+    isExternal: true
+  - name: .
+  - uid: Virtufin.Api.Protos.State.StateClient
+    name: StateClient
+    isExternal: true
+  spec.vb:
+  - uid: Virtufin.Api.Protos.State
+    name: State
+    isExternal: true
+  - name: .
+  - uid: Virtufin.Api.Protos.State.StateClient
+    name: StateClient
+    isExternal: true
 - uid: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector}
   commentId: T:Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.RecoveryLeaderElector}
   parent: Microsoft.Extensions.Logging
@@ -514,27 +505,35 @@ references:
   name: WorkerRecoveryOptions
   nameWithType: WorkerRecoveryOptions
   fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
-- uid: Dapr.Client
-  commentId: N:Dapr.Client
+- uid: Virtufin.Api.Protos
+  commentId: N:Virtufin.Api.Protos
   isExternal: true
-  name: Dapr.Client
-  nameWithType: Dapr.Client
-  fullName: Dapr.Client
+  name: Virtufin.Api.Protos
+  nameWithType: Virtufin.Api.Protos
+  fullName: Virtufin.Api.Protos
   spec.csharp:
-  - uid: Dapr
-    name: Dapr
+  - uid: Virtufin
+    name: Virtufin
     isExternal: true
   - name: .
-  - uid: Dapr.Client
-    name: Client
+  - uid: Virtufin.Api
+    name: Api
+    isExternal: true
+  - name: .
+  - uid: Virtufin.Api.Protos
+    name: Protos
     isExternal: true
   spec.vb:
-  - uid: Dapr
-    name: Dapr
+  - uid: Virtufin
+    name: Virtufin
     isExternal: true
   - name: .
-  - uid: Dapr.Client
-    name: Client
+  - uid: Virtufin.Api
+    name: Api
+    isExternal: true
+  - name: .
+  - uid: Virtufin.Api.Protos
+    name: Protos
     isExternal: true
 - uid: Microsoft.Extensions.Logging.ILogger`1
   commentId: T:Microsoft.Extensions.Logging.ILogger`1
