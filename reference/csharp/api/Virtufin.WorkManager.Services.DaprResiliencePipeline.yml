@@ -23,7 +23,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DaprResiliencePipeline
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 18
+    startLine: 19
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -62,7 +62,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CircuitBroken
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -93,7 +93,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 33
+    startLine: 34
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -129,7 +129,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ExecuteAsync
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 87
+    startLine: 88
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -169,7 +169,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ExecuteAsync
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 95
+    startLine: 96
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services

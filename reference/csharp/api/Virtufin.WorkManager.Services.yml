@@ -30,6 +30,7 @@ items:
 references:
 - uid: Virtufin.WorkManager.Services.ApiLifecyclePublisher
   commentId: T:Virtufin.WorkManager.Services.ApiLifecyclePublisher
+  parent: Virtufin.WorkManager.Services
   href: Virtufin.WorkManager.Services.ApiLifecyclePublisher.html
   name: ApiLifecyclePublisher
   nameWithType: ApiLifecyclePublisher

@@ -49,10 +49,10 @@
             Virtufin.WorkManager
           </a>
           <div class="git-info">
-            <a href="{git_repo_url}/commit/ba84cb8c98dc2d36966e8efbc6730f5c1b6d3270" target="_blank" rel="noopener" class="commit-badge" title="View commit ba84cb8c98dc2d36966e8efbc6730f5c1b6d3270">
+            <a href="{git_repo_url}/commit/d3186848d1ada464d5dde7b0dc604e2d9683952c" target="_blank" rel="noopener" class="commit-badge" title="View commit d3186848d1ada464d5dde7b0dc604e2d9683952c">
               <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
                 <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"></rect>
-                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">ba84cb8c98dc2d36966e8efbc6730f5c1b6d3270</text>
+                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">d3186848d1ada464d5dde7b0dc604e2d9683952c</text>
               </svg>
             </a>
           </div>          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -238,8 +238,8 @@ resetting unmanaged resources asynchronously.</p>
 
   <a id="Virtufin_WorkManager_Services_ResilientDaprPublisher_PublishAsync_" data-uid="Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync*"></a>
 
-  <h3 id="Virtufin_WorkManager_Services_ResilientDaprPublisher_PublishAsync_System_String_System_ReadOnlyMemory_System_Byte__System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(System.String,System.ReadOnlyMemory{System.Byte},System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Threading.CancellationToken)">
-  PublishAsync(string, ReadOnlyMemory&lt;byte&gt;, string, Dictionary&lt;string, string&gt;, CancellationToken)
+  <h3 id="Virtufin_WorkManager_Services_ResilientDaprPublisher_PublishAsync_System_String_CloudNative_CloudEvents_CloudEvent_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Services.ResilientDaprPublisher.PublishAsync(System.String,CloudNative.CloudEvents.CloudEvent,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Threading.CancellationToken)">
+  PublishAsync(string, CloudEvent, IReadOnlyDictionary&lt;string, string&gt;?, CancellationToken)
   
   </h3>
 
@@ -248,18 +248,16 @@ resetting unmanaged resources asynchronously.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task PublishAsync(string topic, ReadOnlyMemory&lt;byte&gt; data, string contentType, Dictionary&lt;string, string&gt; metadata, CancellationToken cancellationToken)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task PublishAsync(string topic, CloudEvent cloudEvent, IReadOnlyDictionary&lt;string, string&gt;? extraAttributes, CancellationToken cancellationToken)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>topic</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
-    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dt><code>cloudEvent</code> <a class="xref" href="https://github.com/cloudevents/sdk-csharp/blob/master/src/CloudNative.CloudEvents/CloudEvent.cs">CloudEvent</a></dt>
     <dd></dd>
-    <dt><code>contentType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-    <dt><code>metadata</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><code>extraAttributes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd></dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd></dd>
