@@ -23,7 +23,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoveryLeaderElector
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -59,7 +59,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LeaseKey
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -86,7 +86,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -124,7 +124,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: TryAcquireLeaseAsync
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -158,7 +158,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ReleaseLeaseAsync
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 84
+    startLine: 85
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
