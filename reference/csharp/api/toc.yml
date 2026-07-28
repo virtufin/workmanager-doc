@@ -36,6 +36,9 @@ items:
     - uid: Virtufin.WorkManager.Configuration.WorkerEvents
       name: WorkerEvents
       type: Class
+    - uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions
+      name: WorkerProcessingRetryOptions
+      type: Class
     - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
       name: WorkerRecoveryOptions
       type: Class
@@ -137,5 +140,8 @@ items:
       type: Class
     - uid: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService
       name: WorkManagerRecoveryHostedService
+      type: Class
+    - uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
+      name: WorkerProcessingRetryPipeline
       type: Class
 memberLayout: SamePage

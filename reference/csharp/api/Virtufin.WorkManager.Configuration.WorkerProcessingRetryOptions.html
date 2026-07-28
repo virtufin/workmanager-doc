@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class WorkerRecoveryOptions | Virtufin WorkManager - C# Reference </title>
+      <title>Class WorkerProcessingRetryOptions | Virtufin WorkManager - C# Reference </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class WorkerRecoveryOptions | Virtufin WorkManager - C# Reference ">
+      <meta name="title" content="Class WorkerProcessingRetryOptions | Virtufin WorkManager - C# Reference ">
       
-      <meta name="description" content="Worker recovery tuning. Controls whether  runs on startup and how it elects a leader when multiple WorkManager instances start concurrently.">
+      <meta name="description" content="Tunable knobs for : the Polly-based retry wrapping worker.ProcessAsync in WorkManager.ProcessCloudEventAsync. Deliberately separate from  even though the defaults happen to match: that class scopes Dapr infra call retries (state store, pubsub RPCs), this one scopes worker business-logic processing failures -- restoring the pubsub-topics spec&#39;s &amp;quot;Retry Policy on Dapr Subscribe Exceptions&amp;quot; bounded-retry-then-dead-letter guarantee, which the streaming Pubsub.Subscribe migration moved from Dapr&#39;s broker-level redelivery to WorkManager&#39;s own application-level responsibility (broker redelivery is architecturally inapplicable once a message is inside the Gateway&#39;s multi-consumer fan-out -- see spec&#39;s &amp;quot;In-process exception on a subscriber&amp;quot; requirement).">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -88,12 +88,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions">
+        <article data-uid="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions">
 
 
 
-  <h1 id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions" class="text-break">
-Class WorkerRecoveryOptions  
+  <h1 id="Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions" data-uid="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions" class="text-break">
+Class WorkerProcessingRetryOptions  
   </h1>
 
   <div class="facts text-secondary">
@@ -101,13 +101,25 @@ Class WorkerRecoveryOptions
   <dl><dt>Assembly</dt><dd>Virtufin.WorkManager.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Worker recovery tuning. Controls whether <a class="xref" href="Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.html">WorkManagerRecoveryHostedService</a>
-runs on startup and how it elects a leader when multiple WorkManager instances start concurrently.</p>
+  <div class="markdown summary"><p>Tunable knobs for <a class="xref" href="Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.html">WorkerProcessingRetryPipeline</a>:
+the Polly-based retry wrapping <code>worker.ProcessAsync</code> in
+<code>WorkManager.ProcessCloudEventAsync</code>.</p>
+<p>Deliberately separate from <a class="xref" href="Virtufin.WorkManager.Configuration.DaprResilienceOptions.html">DaprResilienceOptions</a> even
+though the defaults happen to match: that class scopes Dapr <em>infra</em>
+call retries (state store, pubsub RPCs), this one scopes worker
+<em>business-logic</em> processing failures -- restoring the
+pubsub-topics spec's &quot;Retry Policy on Dapr Subscribe Exceptions&quot;
+bounded-retry-then-dead-letter guarantee, which the streaming
+Pubsub.Subscribe migration moved from Dapr's broker-level redelivery
+to WorkManager's own application-level responsibility (broker
+redelivery is architecturally inapplicable once a message is inside
+the Gateway's multi-consumer fan-out -- see spec's &quot;In-process
+exception on a subscriber&quot; requirement).</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed record WorkerRecoveryOptions : IEquatable&lt;WorkerRecoveryOptions&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed record WorkerProcessingRetryOptions : IEquatable&lt;WorkerProcessingRetryOptions&gt;</code></pre>
   </div>
 
 
@@ -117,14 +129,14 @@ runs on startup and how it elects a leader when multiple WorkManager instances s
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">WorkerRecoveryOptions</span></div>
+      <div><span class="xref">WorkerProcessingRetryOptions</span></div>
     </dd>
   </dl>
 
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html">WorkerRecoveryOptions</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html">WorkerProcessingRetryOptions</a>&gt;</div>
     </dd>
   </dl>
 
@@ -162,48 +174,17 @@ runs on startup and how it elects a leader when multiple WorkManager instances s
 
 
 
-  <h3 id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_AcquireTimeoutSecondsEnvVar" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar">
-  AcquireTimeoutSecondsEnvVar
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_DefaultRetryAttempts" data-uid="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.DefaultRetryAttempts">
+  DefaultRetryAttempts
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Env var for how long to wait for the leader lease before giving up.</p>
+  <div class="markdown level1 summary"><p>Default retry attempts -- matches the pubsub-topics spec's <code>maxRedeliveryCount</code> default of 3.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string AcquireTimeoutSecondsEnvVar = &quot;WORKER_RECOVERY_ACQUIRE_TIMEOUT_SECONDS&quot;</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_DefaultAcquireTimeoutSeconds" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds">
-  DefaultAcquireTimeoutSeconds
-  
-  </h3>
-
-  <div class="markdown level1 summary"><p>Default acquire timeout (30s — matches the typical Dapr state store call latency).</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int DefaultAcquireTimeoutSeconds = 30</code></pre>
+    <pre><code class="lang-csharp hljs">public const int DefaultRetryAttempts = 3</code></pre>
   </div>
 
 
@@ -224,48 +205,17 @@ runs on startup and how it elects a leader when multiple WorkManager instances s
 
 
 
-  <h3 id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_DefaultEnabled" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultEnabled">
-  DefaultEnabled
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_DefaultRetryBaseDelayMs" data-uid="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.DefaultRetryBaseDelayMs">
+  DefaultRetryBaseDelayMs
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Default: recovery is enabled.</p>
+  <div class="markdown level1 summary"><p>Default retry base delay in ms.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const bool DefaultEnabled = true</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_DefaultLeaseTtlSeconds" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultLeaseTtlSeconds">
-  DefaultLeaseTtlSeconds
-  
-  </h3>
-
-  <div class="markdown level1 summary"><p>Default lease TTL (5 minutes — long enough for typical recovery, short enough to release on crash).</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int DefaultLeaseTtlSeconds = 300</code></pre>
+    <pre><code class="lang-csharp hljs">public const int DefaultRetryBaseDelayMs = 200</code></pre>
   </div>
 
 
@@ -286,17 +236,17 @@ runs on startup and how it elects a leader when multiple WorkManager instances s
 
 
 
-  <h3 id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_EnabledEnvVar" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.EnabledEnvVar">
-  EnabledEnvVar
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryAttemptsEnvVar" data-uid="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttemptsEnvVar">
+  RetryAttemptsEnvVar
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Env var that gates whether recovery runs at all on startup.</p>
+  <div class="markdown level1 summary"><p>Env var for <a class="xref" href="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html#Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryAttempts">RetryAttempts</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string EnabledEnvVar = &quot;WORKER_RECOVERY_ON_START&quot;</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RetryAttemptsEnvVar = &quot;WORKER_RETRY_ATTEMPTS&quot;</code></pre>
   </div>
 
 
@@ -317,17 +267,17 @@ runs on startup and how it elects a leader when multiple WorkManager instances s
 
 
 
-  <h3 id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_LeaseTtlSecondsEnvVar" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSecondsEnvVar">
-  LeaseTtlSecondsEnvVar
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryBaseDelayMsEnvVar" data-uid="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryBaseDelayMsEnvVar">
+  RetryBaseDelayMsEnvVar
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Env var for the lease TTL in seconds when this instance wins the leader election.</p>
+  <div class="markdown level1 summary"><p>Env var for <a class="xref" href="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html#Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryBaseDelayMs">RetryBaseDelayMs</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string LeaseTtlSecondsEnvVar = &quot;WORKER_RECOVERY_LEASE_TTL_SECONDS&quot;</code></pre>
+    <pre><code class="lang-csharp hljs">public const string RetryBaseDelayMsEnvVar = &quot;WORKER_RETRY_BASE_DELAY_MS&quot;</code></pre>
   </div>
 
 
@@ -351,19 +301,19 @@ runs on startup and how it elects a leader when multiple WorkManager instances s
 </h2>
 
 
-  <a id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_AcquireTimeoutSeconds_" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds*"></a>
+  <a id="Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryAttempts_" data-uid="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttempts*"></a>
 
-  <h3 id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_AcquireTimeoutSeconds" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds">
-  AcquireTimeoutSeconds
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryAttempts" data-uid="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttempts">
+  RetryAttempts
   
   </h3>
 
-  <div class="markdown level1 summary"><p>How long this instance will wait to acquire the lease before skipping recovery.</p>
+  <div class="markdown level1 summary"><p>Number of retry attempts (Polly MaxRetryAttempts) before the message is dead-lettered.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int AcquireTimeoutSeconds { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int RetryAttempts { get; init; }</code></pre>
   </div>
 
 
@@ -383,51 +333,19 @@ runs on startup and how it elects a leader when multiple WorkManager instances s
 
 
 
-  <a id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_Enabled_" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled*"></a>
+  <a id="Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryBaseDelayMs_" data-uid="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryBaseDelayMs*"></a>
 
-  <h3 id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_Enabled" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled">
-  Enabled
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryBaseDelayMs" data-uid="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryBaseDelayMs">
+  RetryBaseDelayMs
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Whether recovery runs on startup at all.</p>
+  <div class="markdown level1 summary"><p>Base delay between attempts; actual delay is <code>RetryBaseDelayMs * 2^attempt</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Enabled { get; init; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_LeaseTtlSeconds_" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds*"></a>
-
-  <h3 id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_LeaseTtlSeconds" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.LeaseTtlSeconds">
-  LeaseTtlSeconds
-  
-  </h3>
-
-  <div class="markdown level1 summary"><p>How long the leader lease is held before another instance may take over.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int LeaseTtlSeconds { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int RetryBaseDelayMs { get; init; }</code></pre>
   </div>
 
 
@@ -451,20 +369,18 @@ runs on startup and how it elects a leader when multiple WorkManager instances s
 </h2>
 
 
-  <a id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_FromEnvironment_" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment*"></a>
+  <a id="Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_FromEnvironment_" data-uid="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.FromEnvironment*"></a>
 
-  <h3 id="Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_FromEnvironment_System_Func_System_String_System_String__" data-uid="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment(System.Func{System.String,System.String})">
+  <h3 id="Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_FromEnvironment_System_Func_System_String_System_String__" data-uid="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.FromEnvironment(System.Func{System.String,System.String})">
   FromEnvironment(Func&lt;string, string?&gt;)
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Reads options from the supplied environment-variable provider.
-Falls back to defaults when keys are absent or malformed.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static WorkerRecoveryOptions FromEnvironment(Func&lt;string, string?&gt; getEnvironment)</code></pre>
+    <pre><code class="lang-csharp hljs">public static WorkerProcessingRetryOptions FromEnvironment(Func&lt;string, string?&gt; getEnvironment)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -475,7 +391,7 @@ Falls back to defaults when keys are absent or malformed.</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html">WorkerRecoveryOptions</a></dt>
+    <dt><a class="xref" href="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html">WorkerProcessingRetryOptions</a></dt>
     <dd></dd>
   </dl>
 

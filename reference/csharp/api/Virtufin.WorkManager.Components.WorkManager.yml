@@ -5,7 +5,7 @@ items:
   id: WorkManager
   parent: Virtufin.WorkManager.Components
   children:
-  - Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
+  - Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
   - Virtufin.WorkManager.Components.WorkManager.CodeFetcherHttpClientName
   - Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.DeadLetterTopicSuffix
@@ -84,7 +84,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeadLetterTopicSuffix
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 63
+    startLine: 64
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -113,7 +113,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CodeFetcherHttpClientName
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 65
+    startLine: 66
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -140,7 +140,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DefaultCodeFetchTimeoutSeconds
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 66
+    startLine: 67
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -167,7 +167,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: UnknownCloudEventType
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 67
+    startLine: 68
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -194,7 +194,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: UnknownCloudEventSourceUri
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 68
+    startLine: 69
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -221,7 +221,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ProbeEventType
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 80
+    startLine: 81
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -265,7 +265,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ProbeInstanceExtension
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 81
+    startLine: 82
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -274,16 +274,16 @@ items:
     return:
       type: System.String
     content.vb: Public Const ProbeInstanceExtension As String = "wmtopicprobe"
-- uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
-  commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
-  id: '#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)'
+- uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
+  id: '#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)'
   parent: Virtufin.WorkManager.Components.WorkManager
   langs:
   - csharp
   - vb
-  name: WorkManager(PubsubClient, StateClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, string?, string?)
-  nameWithType: WorkManager.WorkManager(Pubsub.PubsubClient, State.StateClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, string?, string?)
-  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager(Virtufin.Api.Protos.Pubsub.PubsubClient, Virtufin.Api.Protos.State.StateClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>, Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, Virtufin.WorkManager.Services.ApiLifecyclePublisher, Virtufin.Service.MultiInstance.IInstanceIdProvider, string?, string?)
+  name: WorkManager(PubsubClient, StateClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, WorkerProcessingRetryPipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, string?, string?)
+  nameWithType: WorkManager.WorkManager(Pubsub.PubsubClient, State.StateClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, WorkerProcessingRetryPipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, string?, string?)
+  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager(Virtufin.Api.Protos.Pubsub.PubsubClient, Virtufin.Api.Protos.State.StateClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>, Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, Virtufin.WorkManager.Services.ApiLifecyclePublisher, Virtufin.Service.MultiInstance.IInstanceIdProvider, string?, string?)
   type: Constructor
   source:
     remote:
@@ -292,14 +292,14 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 102
+    startLine: 103
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
   summary: Creates a new WorkManager instance.
   example: []
   syntax:
-    content: public WorkManager(Pubsub.PubsubClient pubsubClient, State.StateClient stateClient, IHttpClientFactory httpClientFactory, IEngineRegistry engineRegistry, ILogger<WorkManager> logger, ILoggerFactory loggerFactory, DaprResiliencePipeline resilience, ResilientDaprPublisher publisher, ApiLifecyclePublisher lifecyclePublisher, IInstanceIdProvider instanceIdProvider, string? stateStoreName = null, string? allowedCodeSourceHosts = null)
+    content: public WorkManager(Pubsub.PubsubClient pubsubClient, State.StateClient stateClient, IHttpClientFactory httpClientFactory, IEngineRegistry engineRegistry, ILogger<WorkManager> logger, ILoggerFactory loggerFactory, DaprResiliencePipeline resilience, WorkerProcessingRetryPipeline workerRetry, ResilientDaprPublisher publisher, ApiLifecyclePublisher lifecyclePublisher, IInstanceIdProvider instanceIdProvider, string? stateStoreName = null, string? allowedCodeSourceHosts = null)
     parameters:
     - id: pubsubClient
       type: Virtufin.Api.Protos.Pubsub.PubsubClient
@@ -315,6 +315,8 @@ items:
       type: Microsoft.Extensions.Logging.ILoggerFactory
     - id: resilience
       type: Virtufin.WorkManager.Services.DaprResiliencePipeline
+    - id: workerRetry
+      type: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
     - id: publisher
       type: Virtufin.WorkManager.Services.ResilientDaprPublisher
     - id: lifecyclePublisher
@@ -325,11 +327,11 @@ items:
       type: System.String
     - id: allowedCodeSourceHosts
       type: System.String
-    content.vb: Public Sub New(pubsubClient As Pubsub.PubsubClient, stateClient As State.StateClient, httpClientFactory As IHttpClientFactory, engineRegistry As IEngineRegistry, logger As ILogger(Of WorkManager), loggerFactory As ILoggerFactory, resilience As DaprResiliencePipeline, publisher As ResilientDaprPublisher, lifecyclePublisher As ApiLifecyclePublisher, instanceIdProvider As IInstanceIdProvider, stateStoreName As String = Nothing, allowedCodeSourceHosts As String = Nothing)
+    content.vb: Public Sub New(pubsubClient As Pubsub.PubsubClient, stateClient As State.StateClient, httpClientFactory As IHttpClientFactory, engineRegistry As IEngineRegistry, logger As ILogger(Of WorkManager), loggerFactory As ILoggerFactory, resilience As DaprResiliencePipeline, workerRetry As WorkerProcessingRetryPipeline, publisher As ResilientDaprPublisher, lifecyclePublisher As ApiLifecyclePublisher, instanceIdProvider As IInstanceIdProvider, stateStoreName As String = Nothing, allowedCodeSourceHosts As String = Nothing)
   overload: Virtufin.WorkManager.Components.WorkManager.#ctor*
-  nameWithType.vb: WorkManager.New(Pubsub.PubsubClient, State.StateClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, String, String)
-  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New(Virtufin.Api.Protos.Pubsub.PubsubClient, Virtufin.Api.Protos.State.StateClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager), Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, Virtufin.WorkManager.Services.ApiLifecyclePublisher, Virtufin.Service.MultiInstance.IInstanceIdProvider, String, String)
-  name.vb: New(PubsubClient, StateClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, String, String)
+  nameWithType.vb: WorkManager.New(Pubsub.PubsubClient, State.StateClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, WorkerProcessingRetryPipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, String, String)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New(Virtufin.Api.Protos.Pubsub.PubsubClient, Virtufin.Api.Protos.State.StateClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager), Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, Virtufin.WorkManager.Services.ApiLifecyclePublisher, Virtufin.Service.MultiInstance.IInstanceIdProvider, String, String)
+  name.vb: New(PubsubClient, StateClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, WorkerProcessingRetryPipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, String, String)
 - uid: Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
   commentId: M:Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
   id: RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
@@ -348,7 +350,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RegisterEngine
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 142
+    startLine: 145
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -393,7 +395,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CreateWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 154
+    startLine: 157
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -435,7 +437,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCode
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 226
+    startLine: 229
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -489,7 +491,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeleteWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 272
+    startLine: 275
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -530,7 +532,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StartWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 293
+    startLine: 296
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -571,7 +573,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StopWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 318
+    startLine: 321
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -612,7 +614,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 341
+    startLine: 344
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -643,7 +645,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetEnvironmentVariable
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 365
+    startLine: 368
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -685,7 +687,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetEnvironmentVariables
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 375
+    startLine: 378
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -718,7 +720,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariable
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 387
+    startLine: 390
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -761,7 +763,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariables
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 398
+    startLine: 401
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -797,7 +799,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetTag
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 433
+    startLine: 436
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -835,7 +837,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetTags
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 443
+    startLine: 446
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -868,7 +870,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTag
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 454
+    startLine: 457
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -909,7 +911,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTags
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 465
+    startLine: 468
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -945,7 +947,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 500
+    startLine: 503
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -984,7 +986,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoverWorkersAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 513
+    startLine: 516
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -1024,7 +1026,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 1203
+    startLine: 1242
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -1369,7 +1371,7 @@ references:
   fullName: Virtufin.WorkManager.Components.WorkManager.ProbeInstanceExtension
 - uid: Virtufin.WorkManager.Components.WorkManager.#ctor*
   commentId: Overload:Virtufin.WorkManager.Components.WorkManager.#ctor
-  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Virtufin_Api_Protos_Pubsub_PubsubClient_Virtufin_Api_Protos_State_StateClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_Virtufin_WorkManager_Services_ApiLifecyclePublisher_Virtufin_Service_MultiInstance_IInstanceIdProvider_System_String_System_String_
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Virtufin_Api_Protos_Pubsub_PubsubClient_Virtufin_Api_Protos_State_StateClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_WorkerProcessingRetryPipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_Virtufin_WorkManager_Services_ApiLifecyclePublisher_Virtufin_Service_MultiInstance_IInstanceIdProvider_System_String_System_String_
   name: WorkManager
   nameWithType: WorkManager.WorkManager
   fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager
@@ -1485,6 +1487,13 @@ references:
   name: DaprResiliencePipeline
   nameWithType: DaprResiliencePipeline
   fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline
+- uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
+  commentId: T:Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.html
+  name: WorkerProcessingRetryPipeline
+  nameWithType: WorkerProcessingRetryPipeline
+  fullName: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
 - uid: Virtufin.WorkManager.Services.ResilientDaprPublisher
   commentId: T:Virtufin.WorkManager.Services.ResilientDaprPublisher
   parent: Virtufin.WorkManager.Services

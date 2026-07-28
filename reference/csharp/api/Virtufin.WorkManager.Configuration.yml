@@ -11,6 +11,7 @@ items:
   - Virtufin.WorkManager.Configuration.PortConstants
   - Virtufin.WorkManager.Configuration.Topics
   - Virtufin.WorkManager.Configuration.WorkerEvents
+  - Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions
   - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
   langs:
   - csharp
@@ -59,6 +60,13 @@ references:
   name: WorkerEvents
   nameWithType: WorkerEvents
   fullName: Virtufin.WorkManager.Configuration.WorkerEvents
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions
+  commentId: T:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions
+  parent: Virtufin.WorkManager.Configuration
+  href: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html
+  name: WorkerProcessingRetryOptions
+  nameWithType: WorkerProcessingRetryOptions
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions
 - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
   commentId: T:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
   parent: Virtufin.WorkManager.Configuration

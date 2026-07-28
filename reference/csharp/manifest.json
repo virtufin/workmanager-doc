@@ -130,6 +130,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.yml\" sourcestartlinenumber=\"1\">Tunable knobs for <xref href=\"Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline\" data-throw-if-not-resolved=\"false\"></xref>:\nthe Polly-based retry wrapping <code>worker.ProcessAsync</code> in\n<code>WorkManager.ProcessCloudEventAsync</code>.</p>\n<p sourcefile=\"api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.yml\" sourcestartlinenumber=\"5\">Deliberately separate from <xref href=\"Virtufin.WorkManager.Configuration.DaprResilienceOptions\" data-throw-if-not-resolved=\"false\"></xref> even\nthough the defaults happen to match: that class scopes Dapr <em sourcefile=\"api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.yml\" sourcestartlinenumber=\"6\">infra</em>\ncall retries (state store, pubsub RPCs), this one scopes worker\n<em sourcefile=\"api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.yml\" sourcestartlinenumber=\"8\">business-logic</em> processing failures -- restoring the\npubsub-topics spec's &quot;Retry Policy on Dapr Subscribe Exceptions&quot;\nbounded-retry-then-dead-letter guarantee, which the streaming\nPubsub.Subscribe migration moved from Dapr's broker-level redelivery\nto WorkManager's own application-level responsibility (broker\nredelivery is architecturally inapplicable once a message is inside\nthe Gateway's multi-consumer fan-out -- see spec's &quot;In-process\nexception on a subscriber&quot; requirement).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.yml",
       "output": {
         ".html": {
@@ -589,6 +603,20 @@
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService",
       "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"1\">Hosted service that automatically recovers workers on application startup,\ngated by <xref href=\"Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled\" data-throw-if-not-resolved=\"false\"></xref> and coordinated across\nmultiple WorkManager instances via <xref href=\"Virtufin.WorkManager.Services.RecoveryLeaderElector\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n<p sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"5\">When multiple instances start concurrently, only the leader performs\nrecovery — the others wait for the leader lease to expire (or be released)\nbefore they would attempt to take over. This avoids the N×W engine-load\nwaste described in WM #4.</p>\n<p sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"10\">Kestrel readiness is gated via <xref href=\"Virtufin.WorkManager.Services.RecoveryHealthCheck\" data-throw-if-not-resolved=\"false\"></xref>:</p>\n<ul sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"11\">\n<li sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"11\"><code>Degraded</code> while recovery is in progress.</li>\n<li sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"12\"><code>Unhealthy</code> if recovery failed.</li>\n<li sourcefile=\"api/Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.yml\" sourcestartlinenumber=\"13\"><code>Healthy</code> once recovery completes (whether this instance performed it\nor another leader did).</li>\n</ul>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.yml\" sourcestartlinenumber=\"1\">Polly-based retry pipeline for worker business-logic processing\nfailures, as distinct from <xref href=\"Virtufin.WorkManager.Services.DaprResiliencePipeline\" data-throw-if-not-resolved=\"false\"></xref> (which\nwraps Dapr/Gateway infra calls). Exhausting all attempts lets the\ncaller's exception propagate so it can dead-letter the message -- see\n<xref href=\"Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions\" data-throw-if-not-resolved=\"false\"></xref> for why this exists as its\nown pipeline.</p>\n"
     },
     {
       "type": "ManagedReference",

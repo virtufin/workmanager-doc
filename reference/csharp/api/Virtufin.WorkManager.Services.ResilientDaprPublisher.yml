@@ -22,7 +22,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ResilientDaprPublisher
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 132
+    startLine: 141
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -60,7 +60,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 146
+    startLine: 167
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -100,7 +100,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: PublishAsync
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 224
+    startLine: 245
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -142,7 +142,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 275
+    startLine: 296
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services

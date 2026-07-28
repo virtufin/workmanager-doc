@@ -1,40 +1,46 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline
-  commentId: T:Virtufin.WorkManager.Services.DaprResiliencePipeline
-  id: DaprResiliencePipeline
+- uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
+  commentId: T:Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
+  id: WorkerProcessingRetryPipeline
   parent: Virtufin.WorkManager.Services
   children:
-  - Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline},Virtufin.WorkManager.Configuration.DaprResilienceOptions)
-  - Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken
-  - Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
-  - Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline},Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions)
+  - Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
-  name: DaprResiliencePipeline
-  nameWithType: DaprResiliencePipeline
-  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline
+  name: WorkerProcessingRetryPipeline
+  nameWithType: WorkerProcessingRetryPipeline
+  fullName: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
   type: Class
   source:
     remote:
-      path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
+      path: src/Virtufin.WorkManager/Services/WorkerProcessingRetryPipeline.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: DaprResiliencePipeline
-    path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 19
+    id: WorkerProcessingRetryPipeline
+    path: ../../../src/Virtufin.WorkManager/Services/WorkerProcessingRetryPipeline.cs
+    startLine: 15
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
   summary: >-
-    Provides resilience policies for Dapr operations with retry and circuit breaker.
+    Polly-based retry pipeline for worker business-logic processing
 
-    Constants are configurable via <xref href="Virtufin.WorkManager.Configuration.DaprResilienceOptions" data-throw-if-not-resolved="false"></xref> (env-var-driven).
+    failures, as distinct from <xref href="Virtufin.WorkManager.Services.DaprResiliencePipeline" data-throw-if-not-resolved="false"></xref> (which
+
+    wraps Dapr/Gateway infra calls). Exhausting all attempts lets the
+
+    caller's exception propagate so it can dead-letter the message -- see
+
+    <xref href="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions" data-throw-if-not-resolved="false"></xref> for why this exists as its
+
+    own pipeline.
   example: []
   syntax:
-    content: public sealed class DaprResiliencePipeline
-    content.vb: Public NotInheritable Class DaprResiliencePipeline
+    content: public sealed class WorkerProcessingRetryPipeline
+    content.vb: Public NotInheritable Class WorkerProcessingRetryPipeline
   inheritance:
   - System.Object
   inheritedMembers:
@@ -44,96 +50,70 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken
-  commentId: P:Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken
-  id: CircuitBroken
-  parent: Virtufin.WorkManager.Services.DaprResiliencePipeline
+- uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline},Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions)
+  commentId: M:Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline},Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions)
+  id: '#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline},Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions)'
+  parent: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
   langs:
   - csharp
   - vb
-  name: CircuitBroken
-  nameWithType: DaprResiliencePipeline.CircuitBroken
-  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken
-  type: Property
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: CircuitBroken
-    path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 29
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Services
-  summary: Whether the Dapr circuit breaker is currently open.
-  example: []
-  syntax:
-    content: public bool CircuitBroken { get; }
-    parameters: []
-    return:
-      type: System.Boolean
-    content.vb: Public ReadOnly Property CircuitBroken As Boolean
-  overload: Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken*
-- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline},Virtufin.WorkManager.Configuration.DaprResilienceOptions)
-  commentId: M:Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline},Virtufin.WorkManager.Configuration.DaprResilienceOptions)
-  id: '#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline},Virtufin.WorkManager.Configuration.DaprResilienceOptions)'
-  parent: Virtufin.WorkManager.Services.DaprResiliencePipeline
-  langs:
-  - csharp
-  - vb
-  name: DaprResiliencePipeline(ILogger<DaprResiliencePipeline>, DaprResilienceOptions)
-  nameWithType: DaprResiliencePipeline.DaprResiliencePipeline(ILogger<DaprResiliencePipeline>, DaprResilienceOptions)
-  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.DaprResiliencePipeline(Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.DaprResiliencePipeline>, Virtufin.WorkManager.Configuration.DaprResilienceOptions)
+  name: WorkerProcessingRetryPipeline(ILogger<WorkerProcessingRetryPipeline>, WorkerProcessingRetryOptions)
+  nameWithType: WorkerProcessingRetryPipeline.WorkerProcessingRetryPipeline(ILogger<WorkerProcessingRetryPipeline>, WorkerProcessingRetryOptions)
+  fullName: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.WorkerProcessingRetryPipeline(Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline>, Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions)
   type: Constructor
   source:
     remote:
-      path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
+      path: src/Virtufin.WorkManager/Services/WorkerProcessingRetryPipeline.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
-    path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 34
+    path: ../../../src/Virtufin.WorkManager/Services/WorkerProcessingRetryPipeline.cs
+    startLine: 21
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
-  summary: Creates a new DaprResiliencePipeline with the supplied options.
-  example: []
   syntax:
-    content: public DaprResiliencePipeline(ILogger<DaprResiliencePipeline> logger, DaprResilienceOptions options)
+    content: public WorkerProcessingRetryPipeline(ILogger<WorkerProcessingRetryPipeline> logger, WorkerProcessingRetryOptions options)
     parameters:
     - id: logger
-      type: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline}
+      type: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline}
     - id: options
-      type: Virtufin.WorkManager.Configuration.DaprResilienceOptions
-    content.vb: Public Sub New(logger As ILogger(Of DaprResiliencePipeline), options As DaprResilienceOptions)
-  overload: Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor*
-  nameWithType.vb: DaprResiliencePipeline.New(ILogger(Of DaprResiliencePipeline), DaprResilienceOptions)
-  fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.New(Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.DaprResiliencePipeline), Virtufin.WorkManager.Configuration.DaprResilienceOptions)
-  name.vb: New(ILogger(Of DaprResiliencePipeline), DaprResilienceOptions)
-- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
-  commentId: M:Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+      type: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions
+    content.vb: Public Sub New(logger As ILogger(Of WorkerProcessingRetryPipeline), options As WorkerProcessingRetryOptions)
+  overload: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.#ctor*
+  nameWithType.vb: WorkerProcessingRetryPipeline.New(ILogger(Of WorkerProcessingRetryPipeline), WorkerProcessingRetryOptions)
+  fullName.vb: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.New(Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline), Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions)
+  name.vb: New(ILogger(Of WorkerProcessingRetryPipeline), WorkerProcessingRetryOptions)
+- uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
   id: ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
-  parent: Virtufin.WorkManager.Services.DaprResiliencePipeline
+  parent: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
   langs:
   - csharp
   - vb
   name: ExecuteAsync<T>(Func<CancellationToken, Task<T>>, CancellationToken)
-  nameWithType: DaprResiliencePipeline.ExecuteAsync<T>(Func<CancellationToken, Task<T>>, CancellationToken)
-  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync<T>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<T>>, System.Threading.CancellationToken)
+  nameWithType: WorkerProcessingRetryPipeline.ExecuteAsync<T>(Func<CancellationToken, Task<T>>, CancellationToken)
+  fullName: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync<T>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<T>>, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
-      path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
+      path: src/Virtufin.WorkManager/Services/WorkerProcessingRetryPipeline.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ExecuteAsync
-    path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 97
+    path: ../../../src/Virtufin.WorkManager/Services/WorkerProcessingRetryPipeline.cs
+    startLine: 62
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
-  summary: Executes a Dapr operation with retry and circuit breaker resilience.
+  summary: >-
+    Executes a worker-processing operation with retry. Throws the last
+
+    exception once <xref href="Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttempts" data-throw-if-not-resolved="false"></xref>
+
+    is exhausted -- callers are expected to dead-letter the message on
+
+    that final failure rather than let it propagate further.
   example: []
   syntax:
     content: public Task<T> ExecuteAsync<T>(Func<CancellationToken, Task<T>> action, CancellationToken cancellationToken)
@@ -147,56 +127,25 @@ items:
     return:
       type: System.Threading.Tasks.Task{{T}}
     content.vb: Public Function ExecuteAsync(Of T)(action As Func(Of CancellationToken, Task(Of T)), cancellationToken As CancellationToken) As Task(Of T)
-  overload: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync*
-  nameWithType.vb: DaprResiliencePipeline.ExecuteAsync(Of T)(Func(Of CancellationToken, Task(Of T)), CancellationToken)
-  fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(Of T)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of T)), System.Threading.CancellationToken)
+  overload: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync*
+  nameWithType.vb: WorkerProcessingRetryPipeline.ExecuteAsync(Of T)(Func(Of CancellationToken, Task(Of T)), CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync(Of T)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of T)), System.Threading.CancellationToken)
   name.vb: ExecuteAsync(Of T)(Func(Of CancellationToken, Task(Of T)), CancellationToken)
-- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
-  commentId: M:Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
-  id: ExecuteAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
-  parent: Virtufin.WorkManager.Services.DaprResiliencePipeline
-  langs:
-  - csharp
-  - vb
-  name: ExecuteAsync(Func<CancellationToken, Task>, CancellationToken)
-  nameWithType: DaprResiliencePipeline.ExecuteAsync(Func<CancellationToken, Task>, CancellationToken)
-  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>, System.Threading.CancellationToken)
-  type: Method
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: ExecuteAsync
-    path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
-    startLine: 105
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Services
-  summary: Executes a void Dapr operation with retry and circuit breaker resilience.
-  example: []
-  syntax:
-    content: public Task ExecuteAsync(Func<CancellationToken, Task> action, CancellationToken cancellationToken)
-    parameters:
-    - id: action
-      type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
-    - id: cancellationToken
-      type: System.Threading.CancellationToken
-    return:
-      type: System.Threading.Tasks.Task
-    content.vb: Public Function ExecuteAsync(action As Func(Of CancellationToken, Task), cancellationToken As CancellationToken) As Task
-  overload: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync*
-  nameWithType.vb: DaprResiliencePipeline.ExecuteAsync(Func(Of CancellationToken, Task), CancellationToken)
-  fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task), System.Threading.CancellationToken)
-  name.vb: ExecuteAsync(Func(Of CancellationToken, Task), CancellationToken)
 references:
-- uid: Virtufin.WorkManager.Configuration.DaprResilienceOptions
-  commentId: T:Virtufin.WorkManager.Configuration.DaprResilienceOptions
+- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline
+  commentId: T:Virtufin.WorkManager.Services.DaprResiliencePipeline
+  parent: Virtufin.WorkManager.Services
+  href: Virtufin.WorkManager.Services.DaprResiliencePipeline.html
+  name: DaprResiliencePipeline
+  nameWithType: DaprResiliencePipeline
+  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions
+  commentId: T:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions
   parent: Virtufin.WorkManager.Configuration
-  href: Virtufin.WorkManager.Configuration.DaprResilienceOptions.html
-  name: DaprResilienceOptions
-  nameWithType: DaprResilienceOptions
-  fullName: Virtufin.WorkManager.Configuration.DaprResilienceOptions
+  href: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html
+  name: WorkerProcessingRetryOptions
+  nameWithType: WorkerProcessingRetryOptions
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions
 - uid: Virtufin.WorkManager.Services
   commentId: N:Virtufin.WorkManager.Services
   href: Virtufin.html
@@ -470,52 +419,35 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken*
-  commentId: Overload:Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken
-  href: Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline_CircuitBroken
-  name: CircuitBroken
-  nameWithType: DaprResiliencePipeline.CircuitBroken
-  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.CircuitBroken
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor*
-  commentId: Overload:Virtufin.WorkManager.Services.DaprResiliencePipeline.#ctor
-  href: Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline__ctor_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_DaprResiliencePipeline__Virtufin_WorkManager_Configuration_DaprResilienceOptions_
-  name: DaprResiliencePipeline
-  nameWithType: DaprResiliencePipeline.DaprResiliencePipeline
-  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.DaprResiliencePipeline
-  nameWithType.vb: DaprResiliencePipeline.New
-  fullName.vb: Virtufin.WorkManager.Services.DaprResiliencePipeline.New
+- uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.#ctor*
+  commentId: Overload:Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.#ctor
+  href: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.html#Virtufin_WorkManager_Services_WorkerProcessingRetryPipeline__ctor_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkerProcessingRetryPipeline__Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_
+  name: WorkerProcessingRetryPipeline
+  nameWithType: WorkerProcessingRetryPipeline.WorkerProcessingRetryPipeline
+  fullName: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.WorkerProcessingRetryPipeline
+  nameWithType.vb: WorkerProcessingRetryPipeline.New
+  fullName.vb: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.New
   name.vb: New
-- uid: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline}
-  commentId: T:Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.DaprResiliencePipeline}
+- uid: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline}
   parent: Microsoft.Extensions.Logging
   definition: Microsoft.Extensions.Logging.ILogger`1
   href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
-  name: ILogger<DaprResiliencePipeline>
-  nameWithType: ILogger<DaprResiliencePipeline>
-  fullName: Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.DaprResiliencePipeline>
-  nameWithType.vb: ILogger(Of DaprResiliencePipeline)
-  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.DaprResiliencePipeline)
-  name.vb: ILogger(Of DaprResiliencePipeline)
+  name: ILogger<WorkerProcessingRetryPipeline>
+  nameWithType: ILogger<WorkerProcessingRetryPipeline>
+  fullName: Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline>
+  nameWithType.vb: ILogger(Of WorkerProcessingRetryPipeline)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline)
+  name.vb: ILogger(Of WorkerProcessingRetryPipeline)
   spec.csharp:
   - uid: Microsoft.Extensions.Logging.ILogger`1
     name: ILogger
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
   - name: <
-  - uid: Virtufin.WorkManager.Services.DaprResiliencePipeline
-    name: DaprResiliencePipeline
-    href: Virtufin.WorkManager.Services.DaprResiliencePipeline.html
+  - uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
+    name: WorkerProcessingRetryPipeline
+    href: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.html
   - name: '>'
   spec.vb:
   - uid: Microsoft.Extensions.Logging.ILogger`1
@@ -525,9 +457,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: Virtufin.WorkManager.Services.DaprResiliencePipeline
-    name: DaprResiliencePipeline
-    href: Virtufin.WorkManager.Services.DaprResiliencePipeline.html
+  - uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
+    name: WorkerProcessingRetryPipeline
+    href: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.html
   - name: )
 - uid: Microsoft.Extensions.Logging.ILogger`1
   commentId: T:Microsoft.Extensions.Logging.ILogger`1
@@ -594,12 +526,18 @@ references:
     name: Logging
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
-- uid: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync*
-  commentId: Overload:Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync
-  href: Virtufin.WorkManager.Services.DaprResiliencePipeline.html#Virtufin_WorkManager_Services_DaprResiliencePipeline_ExecuteAsync__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttempts
+  commentId: P:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttempts
+  href: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html#Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryAttempts
+  name: RetryAttempts
+  nameWithType: WorkerProcessingRetryOptions.RetryAttempts
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttempts
+- uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync*
+  commentId: Overload:Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync
+  href: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.html#Virtufin_WorkManager_Services_WorkerProcessingRetryPipeline_ExecuteAsync__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_
   name: ExecuteAsync
-  nameWithType: DaprResiliencePipeline.ExecuteAsync
-  fullName: Virtufin.WorkManager.Services.DaprResiliencePipeline.ExecuteAsync
+  nameWithType: WorkerProcessingRetryPipeline.ExecuteAsync
+  fullName: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync
 - uid: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{T}}}
   commentId: T:System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}}
   parent: System
@@ -818,58 +756,3 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
-  commentId: T:System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
-  parent: System
-  definition: System.Func`2
-  href: https://learn.microsoft.com/dotnet/api/system.func-2
-  name: Func<CancellationToken, Task>
-  nameWithType: Func<CancellationToken, Task>
-  fullName: System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>
-  nameWithType.vb: Func(Of CancellationToken, Task)
-  fullName.vb: System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task)
-  name.vb: Func(Of CancellationToken, Task)
-  spec.csharp:
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: <
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
-  - name: ','
-  - name: " "
-  - uid: System.Threading.Tasks.Task
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  - name: '>'
-  spec.vb:
-  - uid: System.Func`2
-    name: Func
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-2
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
-  - name: ','
-  - name: " "
-  - uid: System.Threading.Tasks.Task
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  - name: )
-- uid: System.Threading.Tasks.Task
-  commentId: T:System.Threading.Tasks.Task
-  parent: System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  name: Task
-  nameWithType: Task
-  fullName: System.Threading.Tasks.Task

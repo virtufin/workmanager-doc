@@ -49,10 +49,10 @@
             Virtufin.WorkManager
           </a>
           <div class="git-info">
-            <a href="{git_repo_url}/commit/9423cfee73b038bd103335d85d46d373fd8680f8" target="_blank" rel="noopener" class="commit-badge" title="View commit 9423cfee73b038bd103335d85d46d373fd8680f8">
+            <a href="{git_repo_url}/commit/881b4ec28c9d04d8b8336ef80343d4a3eb91d0f6" target="_blank" rel="noopener" class="commit-badge" title="View commit 881b4ec28c9d04d8b8336ef80343d4a3eb91d0f6">
               <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
                 <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"></rect>
-                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9423cfee73b038bd103335d85d46d373fd8680f8</text>
+                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">881b4ec28c9d04d8b8336ef80343d4a3eb91d0f6</text>
               </svg>
             </a>
           </div>          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -163,8 +163,8 @@ Class WorkManager
 
   <a id="Virtufin_WorkManager_Components_WorkManager__ctor_" data-uid="Virtufin.WorkManager.Components.WorkManager.#ctor*"></a>
 
-  <h3 id="Virtufin_WorkManager_Components_WorkManager__ctor_Virtufin_Api_Protos_Pubsub_PubsubClient_Virtufin_Api_Protos_State_StateClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_Virtufin_WorkManager_Services_ApiLifecyclePublisher_Virtufin_Service_MultiInstance_IInstanceIdProvider_System_String_System_String_" data-uid="Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)">
-  WorkManager(PubsubClient, StateClient, IHttpClientFactory, IEngineRegistry, ILogger&lt;WorkManager&gt;, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, string?, string?)
+  <h3 id="Virtufin_WorkManager_Components_WorkManager__ctor_Virtufin_Api_Protos_Pubsub_PubsubClient_Virtufin_Api_Protos_State_StateClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_WorkerProcessingRetryPipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_Virtufin_WorkManager_Services_ApiLifecyclePublisher_Virtufin_Service_MultiInstance_IInstanceIdProvider_System_String_System_String_" data-uid="Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)">
+  WorkManager(PubsubClient, StateClient, IHttpClientFactory, IEngineRegistry, ILogger&lt;WorkManager&gt;, ILoggerFactory, DaprResiliencePipeline, WorkerProcessingRetryPipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, string?, string?)
   
   </h3>
 
@@ -173,7 +173,7 @@ Class WorkManager
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public WorkManager(Pubsub.PubsubClient pubsubClient, State.StateClient stateClient, IHttpClientFactory httpClientFactory, IEngineRegistry engineRegistry, ILogger&lt;WorkManager&gt; logger, ILoggerFactory loggerFactory, DaprResiliencePipeline resilience, ResilientDaprPublisher publisher, ApiLifecyclePublisher lifecyclePublisher, IInstanceIdProvider instanceIdProvider, string? stateStoreName = null, string? allowedCodeSourceHosts = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public WorkManager(Pubsub.PubsubClient pubsubClient, State.StateClient stateClient, IHttpClientFactory httpClientFactory, IEngineRegistry engineRegistry, ILogger&lt;WorkManager&gt; logger, ILoggerFactory loggerFactory, DaprResiliencePipeline resilience, WorkerProcessingRetryPipeline workerRetry, ResilientDaprPublisher publisher, ApiLifecyclePublisher lifecyclePublisher, IInstanceIdProvider instanceIdProvider, string? stateStoreName = null, string? allowedCodeSourceHosts = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -191,6 +191,8 @@ Class WorkManager
     <dt><code>loggerFactory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggerfactory">ILoggerFactory</a></dt>
     <dd></dd>
     <dt><code>resilience</code> <a class="xref" href="Virtufin.WorkManager.Services.DaprResiliencePipeline.html">DaprResiliencePipeline</a></dt>
+    <dd></dd>
+    <dt><code>workerRetry</code> <a class="xref" href="Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.html">WorkerProcessingRetryPipeline</a></dt>
     <dd></dd>
     <dt><code>publisher</code> <a class="xref" href="Virtufin.WorkManager.Services.ResilientDaprPublisher.html">ResilientDaprPublisher</a></dt>
     <dd></dd>

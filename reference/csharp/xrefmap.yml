@@ -82,15 +82,15 @@ references:
   commentId: T:Virtufin.WorkManager.Components.WorkManager
   fullName: Virtufin.WorkManager.Components.WorkManager
   nameWithType: WorkManager
-- uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
-  name: WorkManager(PubsubClient, StateClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, string?, string?)
-  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Virtufin_Api_Protos_Pubsub_PubsubClient_Virtufin_Api_Protos_State_StateClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_Virtufin_WorkManager_Services_ApiLifecyclePublisher_Virtufin_Service_MultiInstance_IInstanceIdProvider_System_String_System_String_
-  commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
-  name.vb: New(PubsubClient, StateClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, String, String)
-  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager(Virtufin.Api.Protos.Pubsub.PubsubClient, Virtufin.Api.Protos.State.StateClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>, Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, Virtufin.WorkManager.Services.ApiLifecyclePublisher, Virtufin.Service.MultiInstance.IInstanceIdProvider, string?, string?)
-  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New(Virtufin.Api.Protos.Pubsub.PubsubClient, Virtufin.Api.Protos.State.StateClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager), Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, Virtufin.WorkManager.Services.ApiLifecyclePublisher, Virtufin.Service.MultiInstance.IInstanceIdProvider, String, String)
-  nameWithType: WorkManager.WorkManager(Pubsub.PubsubClient, State.StateClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, string?, string?)
-  nameWithType.vb: WorkManager.New(Pubsub.PubsubClient, State.StateClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, String, String)
+- uid: Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
+  name: WorkManager(PubsubClient, StateClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, WorkerProcessingRetryPipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, string?, string?)
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_Virtufin_Api_Protos_Pubsub_PubsubClient_Virtufin_Api_Protos_State_StateClient_System_Net_Http_IHttpClientFactory_Virtufin_WorkManager_Contracts_IEngineRegistry_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Components_WorkManager__Microsoft_Extensions_Logging_ILoggerFactory_Virtufin_WorkManager_Services_DaprResiliencePipeline_Virtufin_WorkManager_Services_WorkerProcessingRetryPipeline_Virtufin_WorkManager_Services_ResilientDaprPublisher_Virtufin_WorkManager_Services_ApiLifecyclePublisher_Virtufin_Service_MultiInstance_IInstanceIdProvider_System_String_System_String_
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
+  name.vb: New(PubsubClient, StateClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, WorkerProcessingRetryPipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, String, String)
+  fullName: Virtufin.WorkManager.Components.WorkManager.WorkManager(Virtufin.Api.Protos.Pubsub.PubsubClient, Virtufin.Api.Protos.State.StateClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Components.WorkManager>, Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, Virtufin.WorkManager.Services.ApiLifecyclePublisher, Virtufin.Service.MultiInstance.IInstanceIdProvider, string?, string?)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.New(Virtufin.Api.Protos.Pubsub.PubsubClient, Virtufin.Api.Protos.State.StateClient, System.Net.Http.IHttpClientFactory, Virtufin.WorkManager.Contracts.IEngineRegistry, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Components.WorkManager), Microsoft.Extensions.Logging.ILoggerFactory, Virtufin.WorkManager.Services.DaprResiliencePipeline, Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline, Virtufin.WorkManager.Services.ResilientDaprPublisher, Virtufin.WorkManager.Services.ApiLifecyclePublisher, Virtufin.Service.MultiInstance.IInstanceIdProvider, String, String)
+  nameWithType: WorkManager.WorkManager(Pubsub.PubsubClient, State.StateClient, IHttpClientFactory, IEngineRegistry, ILogger<WorkManager>, ILoggerFactory, DaprResiliencePipeline, WorkerProcessingRetryPipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, string?, string?)
+  nameWithType.vb: WorkManager.New(Pubsub.PubsubClient, State.StateClient, IHttpClientFactory, IEngineRegistry, ILogger(Of WorkManager), ILoggerFactory, DaprResiliencePipeline, WorkerProcessingRetryPipeline, ResilientDaprPublisher, ApiLifecyclePublisher, IInstanceIdProvider, String, String)
 - uid: Virtufin.WorkManager.Components.WorkManager.#ctor*
   name: WorkManager
   href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager__ctor_
@@ -712,6 +712,78 @@ references:
   commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Unknown
   fullName: Virtufin.WorkManager.Configuration.WorkerEvents.Unknown
   nameWithType: WorkerEvents.Unknown
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions
+  name: WorkerProcessingRetryOptions
+  href: api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html
+  commentId: T:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions
+  nameWithType: WorkerProcessingRetryOptions
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.DefaultRetryAttempts
+  name: DefaultRetryAttempts
+  href: api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html#Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_DefaultRetryAttempts
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.DefaultRetryAttempts
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.DefaultRetryAttempts
+  nameWithType: WorkerProcessingRetryOptions.DefaultRetryAttempts
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.DefaultRetryBaseDelayMs
+  name: DefaultRetryBaseDelayMs
+  href: api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html#Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_DefaultRetryBaseDelayMs
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.DefaultRetryBaseDelayMs
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.DefaultRetryBaseDelayMs
+  nameWithType: WorkerProcessingRetryOptions.DefaultRetryBaseDelayMs
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.FromEnvironment(System.Func{System.String,System.String})
+  name: FromEnvironment(Func<string, string?>)
+  href: api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html#Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_FromEnvironment_System_Func_System_String_System_String__
+  commentId: M:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.FromEnvironment(System.Func{System.String,System.String})
+  name.vb: FromEnvironment(Func(Of String, String))
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.FromEnvironment(System.Func<string, string?>)
+  fullName.vb: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.FromEnvironment(System.Func(Of String, String))
+  nameWithType: WorkerProcessingRetryOptions.FromEnvironment(Func<string, string?>)
+  nameWithType.vb: WorkerProcessingRetryOptions.FromEnvironment(Func(Of String, String))
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.FromEnvironment*
+  name: FromEnvironment
+  href: api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html#Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_FromEnvironment_
+  commentId: Overload:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.FromEnvironment
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.FromEnvironment
+  nameWithType: WorkerProcessingRetryOptions.FromEnvironment
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttempts
+  name: RetryAttempts
+  href: api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html#Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryAttempts
+  commentId: P:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttempts
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttempts
+  nameWithType: WorkerProcessingRetryOptions.RetryAttempts
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttempts*
+  name: RetryAttempts
+  href: api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html#Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryAttempts_
+  commentId: Overload:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttempts
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttempts
+  nameWithType: WorkerProcessingRetryOptions.RetryAttempts
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttemptsEnvVar
+  name: RetryAttemptsEnvVar
+  href: api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html#Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryAttemptsEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttemptsEnvVar
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryAttemptsEnvVar
+  nameWithType: WorkerProcessingRetryOptions.RetryAttemptsEnvVar
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryBaseDelayMs
+  name: RetryBaseDelayMs
+  href: api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html#Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryBaseDelayMs
+  commentId: P:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryBaseDelayMs
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryBaseDelayMs
+  nameWithType: WorkerProcessingRetryOptions.RetryBaseDelayMs
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryBaseDelayMs*
+  name: RetryBaseDelayMs
+  href: api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html#Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryBaseDelayMs_
+  commentId: Overload:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryBaseDelayMs
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryBaseDelayMs
+  nameWithType: WorkerProcessingRetryOptions.RetryBaseDelayMs
+- uid: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryBaseDelayMsEnvVar
+  name: RetryBaseDelayMsEnvVar
+  href: api/Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.html#Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_RetryBaseDelayMsEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryBaseDelayMsEnvVar
+  fullName: Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions.RetryBaseDelayMsEnvVar
+  nameWithType: WorkerProcessingRetryOptions.RetryBaseDelayMsEnvVar
 - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
   name: WorkerRecoveryOptions
   href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html
@@ -2748,3 +2820,44 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Services.WorkManagerRecoveryHostedService.ExecuteAsync
   nameWithType: WorkManagerRecoveryHostedService.ExecuteAsync
+- uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
+  name: WorkerProcessingRetryPipeline
+  href: api/Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.html
+  commentId: T:Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
+  fullName: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline
+  nameWithType: WorkerProcessingRetryPipeline
+- uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline},Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions)
+  name: WorkerProcessingRetryPipeline(ILogger<WorkerProcessingRetryPipeline>, WorkerProcessingRetryOptions)
+  href: api/Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.html#Virtufin_WorkManager_Services_WorkerProcessingRetryPipeline__ctor_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Services_WorkerProcessingRetryPipeline__Virtufin_WorkManager_Configuration_WorkerProcessingRetryOptions_
+  commentId: M:Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.#ctor(Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline},Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions)
+  name.vb: New(ILogger(Of WorkerProcessingRetryPipeline), WorkerProcessingRetryOptions)
+  fullName: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.WorkerProcessingRetryPipeline(Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline>, Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions)
+  fullName.vb: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.New(Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline), Virtufin.WorkManager.Configuration.WorkerProcessingRetryOptions)
+  nameWithType: WorkerProcessingRetryPipeline.WorkerProcessingRetryPipeline(ILogger<WorkerProcessingRetryPipeline>, WorkerProcessingRetryOptions)
+  nameWithType.vb: WorkerProcessingRetryPipeline.New(ILogger(Of WorkerProcessingRetryPipeline), WorkerProcessingRetryOptions)
+- uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.#ctor*
+  name: WorkerProcessingRetryPipeline
+  href: api/Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.html#Virtufin_WorkManager_Services_WorkerProcessingRetryPipeline__ctor_
+  commentId: Overload:Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.WorkerProcessingRetryPipeline
+  fullName.vb: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.New
+  nameWithType: WorkerProcessingRetryPipeline.WorkerProcessingRetryPipeline
+  nameWithType.vb: WorkerProcessingRetryPipeline.New
+- uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync*
+  name: ExecuteAsync
+  href: api/Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.html#Virtufin_WorkManager_Services_WorkerProcessingRetryPipeline_ExecuteAsync_
+  commentId: Overload:Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync
+  nameWithType: WorkerProcessingRetryPipeline.ExecuteAsync
+- uid: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+  name: ExecuteAsync<T>(Func<CancellationToken, Task<T>>, CancellationToken)
+  href: api/Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.html#Virtufin_WorkManager_Services_WorkerProcessingRetryPipeline_ExecuteAsync__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+  name.vb: ExecuteAsync(Of T)(Func(Of CancellationToken, Task(Of T)), CancellationToken)
+  fullName: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync<T>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<T>>, System.Threading.CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline.ExecuteAsync(Of T)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of T)), System.Threading.CancellationToken)
+  nameWithType: WorkerProcessingRetryPipeline.ExecuteAsync<T>(Func<CancellationToken, Task<T>>, CancellationToken)
+  nameWithType.vb: WorkerProcessingRetryPipeline.ExecuteAsync(Of T)(Func(Of CancellationToken, Task(Of T)), CancellationToken)
