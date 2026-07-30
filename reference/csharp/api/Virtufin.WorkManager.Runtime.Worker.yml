@@ -452,7 +452,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ProcessAsync
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 102
+    startLine: 101
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -490,7 +490,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariable
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 113
+    startLine: 112
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -531,7 +531,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetEnvironmentVariables
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 123
+    startLine: 122
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -565,7 +565,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTag
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 154
+    startLine: 153
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -604,7 +604,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTags
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 163
+    startLine: 162
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
