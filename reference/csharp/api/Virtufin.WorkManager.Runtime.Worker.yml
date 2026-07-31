@@ -5,8 +5,9 @@ items:
   id: Worker
   parent: Virtufin.WorkManager.Runtime
   children:
-  - Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})
+  - Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})
   - Virtufin.WorkManager.Runtime.Worker.CodeSource
+  - Virtufin.WorkManager.Runtime.Worker.Config
   - Virtufin.WorkManager.Runtime.Worker.CreatedAt
   - Virtufin.WorkManager.Runtime.Worker.History
   - Virtufin.WorkManager.Runtime.Worker.Id
@@ -285,7 +286,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Tags
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -303,16 +304,54 @@ items:
       type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
     content.vb: Public ReadOnly Property Tags As IReadOnlyDictionary(Of String, String)
   overload: Virtufin.WorkManager.Runtime.Worker.Tags*
-- uid: Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})
-  commentId: M:Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})
-  id: '#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String})'
+- uid: Virtufin.WorkManager.Runtime.Worker.Config
+  commentId: P:Virtufin.WorkManager.Runtime.Worker.Config
+  id: Config
   parent: Virtufin.WorkManager.Runtime.Worker
   langs:
   - csharp
   - vb
-  name: Worker(Guid, CodeSource, string, IEngine, string, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?)
-  nameWithType: Worker.Worker(Guid, CodeSource, string, IEngine, string, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?)
-  fullName: Virtufin.WorkManager.Runtime.Worker.Worker(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, Virtufin.WorkManager.Engines.IEngine, string, System.DateTime, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Runtime.Worker>, System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>?, System.Collections.Generic.IDictionary<string, string>?)
+  name: Config
+  nameWithType: Worker.Config
+  fullName: Virtufin.WorkManager.Runtime.Worker.Config
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Runtime/Worker.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: Config
+    path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
+    startLine: 46
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Runtime
+  summary: >-
+    Read-only view of the worker's creation-time config. Immutable for
+
+    the lifetime of the worker — set once via the constructor, no
+
+    setters. Stamped onto every incoming CloudEvent as extension
+
+    attributes by <xref href="Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent%2cSystem.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public IReadOnlyDictionary<string, string> Config { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.String}
+    content.vb: Public ReadOnly Property Config As IReadOnlyDictionary(Of String, String)
+  overload: Virtufin.WorkManager.Runtime.Worker.Config*
+- uid: Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})
+  id: '#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})'
+  parent: Virtufin.WorkManager.Runtime.Worker
+  langs:
+  - csharp
+  - vb
+  name: Worker(Guid, CodeSource, string, IEngine, string, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?, IDictionary<string, string>?)
+  nameWithType: Worker.Worker(Guid, CodeSource, string, IEngine, string, DateTime, ILogger<Worker>, List<HistoryEntry>?, IDictionary<string, string>?, IDictionary<string, string>?)
+  fullName: Virtufin.WorkManager.Runtime.Worker.Worker(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, Virtufin.WorkManager.Engines.IEngine, string, System.DateTime, Microsoft.Extensions.Logging.ILogger<Virtufin.WorkManager.Runtime.Worker>, System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>?, System.Collections.Generic.IDictionary<string, string>?, System.Collections.Generic.IDictionary<string, string>?)
   type: Constructor
   source:
     remote:
@@ -321,14 +360,14 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 42
+    startLine: 51
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
   summary: Creates a new worker instance.
   example: []
   syntax:
-    content: public Worker(Guid id, CodeSource codeSource, string mimeType, IEngine engine, string topic, DateTime createdAt, ILogger<Worker> logger, List<HistoryEntry>? history = null, IDictionary<string, string>? tags = null)
+    content: public Worker(Guid id, CodeSource codeSource, string mimeType, IEngine engine, string topic, DateTime createdAt, ILogger<Worker> logger, List<HistoryEntry>? history = null, IDictionary<string, string>? config = null, IDictionary<string, string>? tags = null)
     parameters:
     - id: id
       type: System.Guid
@@ -346,13 +385,15 @@ items:
       type: Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker}
     - id: history
       type: System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry}
+    - id: config
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
     - id: tags
       type: System.Collections.Generic.IDictionary{System.String,System.String}
-    content.vb: Public Sub New(id As Guid, codeSource As CodeSource, mimeType As String, engine As IEngine, topic As String, createdAt As Date, logger As ILogger(Of Worker), history As List(Of HistoryEntry) = Nothing, tags As IDictionary(Of String, String) = Nothing)
+    content.vb: Public Sub New(id As Guid, codeSource As CodeSource, mimeType As String, engine As IEngine, topic As String, createdAt As Date, logger As ILogger(Of Worker), history As List(Of HistoryEntry) = Nothing, config As IDictionary(Of String, String) = Nothing, tags As IDictionary(Of String, String) = Nothing)
   overload: Virtufin.WorkManager.Runtime.Worker.#ctor*
-  nameWithType.vb: Worker.New(Guid, CodeSource, String, IEngine, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String))
-  fullName.vb: Virtufin.WorkManager.Runtime.Worker.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, Virtufin.WorkManager.Engines.IEngine, String, Date, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Runtime.Worker), System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry), System.Collections.Generic.IDictionary(Of String, String))
-  name.vb: New(Guid, CodeSource, String, IEngine, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String))
+  nameWithType.vb: Worker.New(Guid, CodeSource, String, IEngine, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String), IDictionary(Of String, String))
+  fullName.vb: Virtufin.WorkManager.Runtime.Worker.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, Virtufin.WorkManager.Engines.IEngine, String, Date, Microsoft.Extensions.Logging.ILogger(Of Virtufin.WorkManager.Runtime.Worker), System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry), System.Collections.Generic.IDictionary(Of String, String), System.Collections.Generic.IDictionary(Of String, String))
+  name.vb: New(Guid, CodeSource, String, IEngine, String, Date, ILogger(Of Worker), List(Of HistoryEntry), IDictionary(Of String, String), IDictionary(Of String, String))
 - uid: Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
   commentId: M:Virtufin.WorkManager.Runtime.Worker.LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
   id: LoadCodeAsync(System.Byte[],System.Threading.CancellationToken)
@@ -371,7 +412,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCodeAsync
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 71
+    startLine: 84
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -411,11 +452,20 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ProcessAsync
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 89
+    startLine: 106
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
-  summary: Processes a cloud event through the worker's engine.
+  summary: >-
+    Processes a cloud event through the worker's engine. The worker's
+
+    creation-time <xref href="Virtufin.WorkManager.Runtime.Worker.Config" data-throw-if-not-resolved="false"></xref> entries are stamped onto
+
+    <code class="paramref">input</code> as CloudEvent extension attributes first,
+
+    giving the worker a per-instance default it can fall back to when
+
+    the event's own payload doesn't specify a value.
   example: []
   syntax:
     content: public Task<CloudEvent?> ProcessAsync(CloudEvent input, CancellationToken cancellationToken = default)
@@ -449,7 +499,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTag
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 98
+    startLine: 119
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -488,7 +538,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTags
     path: ../../../src/Virtufin.WorkManager/Runtime/Worker.cs
-    startLine: 107
+    startLine: 128
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Runtime
@@ -1147,9 +1197,54 @@ references:
   - name: " "
   - name: TValue
   - name: )
+- uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent,System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent,System.Threading.CancellationToken)
+  isExternal: true
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_ProcessAsync_CloudNative_CloudEvents_CloudEvent_System_Threading_CancellationToken_
+  name: ProcessAsync(CloudEvent, CancellationToken)
+  nameWithType: Worker.ProcessAsync(CloudEvent, CancellationToken)
+  fullName: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent,System.Threading.CancellationToken)
+    name: ProcessAsync
+    href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_ProcessAsync_CloudNative_CloudEvents_CloudEvent_System_Threading_CancellationToken_
+  - name: (
+  - uid: CloudNative.CloudEvents.CloudEvent
+    name: CloudEvent
+    isExternal: true
+    href: https://github.com/cloudevents/sdk-csharp/blob/master/src/CloudNative.CloudEvents/CloudEvent.cs
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync(CloudNative.CloudEvents.CloudEvent,System.Threading.CancellationToken)
+    name: ProcessAsync
+    href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_ProcessAsync_CloudNative_CloudEvents_CloudEvent_System_Threading_CancellationToken_
+  - name: (
+  - uid: CloudNative.CloudEvents.CloudEvent
+    name: CloudEvent
+    isExternal: true
+    href: https://github.com/cloudevents/sdk-csharp/blob/master/src/CloudNative.CloudEvents/CloudEvent.cs
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Virtufin.WorkManager.Runtime.Worker.Config*
+  commentId: Overload:Virtufin.WorkManager.Runtime.Worker.Config
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_Config
+  name: Config
+  nameWithType: Worker.Config
+  fullName: Virtufin.WorkManager.Runtime.Worker.Config
 - uid: Virtufin.WorkManager.Runtime.Worker.#ctor*
   commentId: Overload:Virtufin.WorkManager.Runtime.Worker.#ctor
-  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_Virtufin_WorkManager_Engines_IEngine_System_String_System_DateTime_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Runtime_Worker__System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__System_Collections_Generic_IDictionary_System_String_System_String__
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_Virtufin_WorkManager_Engines_IEngine_System_String_System_DateTime_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Runtime_Worker__System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__System_Collections_Generic_IDictionary_System_String_System_String__System_Collections_Generic_IDictionary_System_String_System_String__
   name: Worker
   nameWithType: Worker.Worker
   fullName: Virtufin.WorkManager.Runtime.Worker.Worker
@@ -1473,6 +1568,12 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Virtufin.WorkManager.Runtime.Worker.Config
+  commentId: P:Virtufin.WorkManager.Runtime.Worker.Config
+  href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_Config
+  name: Config
+  nameWithType: Worker.Config
+  fullName: Virtufin.WorkManager.Runtime.Worker.Config
 - uid: Virtufin.WorkManager.Runtime.Worker.ProcessAsync*
   commentId: Overload:Virtufin.WorkManager.Runtime.Worker.ProcessAsync
   href: Virtufin.WorkManager.Runtime.Worker.html#Virtufin_WorkManager_Runtime_Worker_ProcessAsync_CloudNative_CloudEvents_CloudEvent_System_Threading_CancellationToken_
