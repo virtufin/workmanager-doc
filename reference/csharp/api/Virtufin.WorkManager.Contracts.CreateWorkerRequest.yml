@@ -5,9 +5,8 @@ items:
   id: CreateWorkerRequest
   parent: Virtufin.WorkManager.Contracts
   children:
-  - Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
+  - Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})
   - Virtufin.WorkManager.Contracts.CreateWorkerRequest.CodeSource
-  - Virtufin.WorkManager.Contracts.CreateWorkerRequest.Env
   - Virtufin.WorkManager.Contracts.CreateWorkerRequest.MimeType
   - Virtufin.WorkManager.Contracts.CreateWorkerRequest.Tags
   - Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic
@@ -25,7 +24,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CreateWorkerRequest
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 182
+    startLine: 177
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -45,16 +44,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
-  commentId: M:Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
-  id: '#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})'
+- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})
+  commentId: M:Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})
+  id: '#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})'
   parent: Virtufin.WorkManager.Contracts.CreateWorkerRequest
   langs:
   - csharp
   - vb
-  name: CreateWorkerRequest(CodeSource, string, string, Dictionary<string, string>?, Dictionary<string, string>?)
-  nameWithType: CreateWorkerRequest.CreateWorkerRequest(CodeSource, string, string, Dictionary<string, string>?, Dictionary<string, string>?)
-  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.CreateWorkerRequest(Virtufin.WorkManager.Contracts.CodeSource, string, string, System.Collections.Generic.Dictionary<string, string>?, System.Collections.Generic.Dictionary<string, string>?)
+  name: CreateWorkerRequest(CodeSource, string, string, Dictionary<string, string>?)
+  nameWithType: CreateWorkerRequest.CreateWorkerRequest(CodeSource, string, string, Dictionary<string, string>?)
+  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.CreateWorkerRequest(Virtufin.WorkManager.Contracts.CodeSource, string, string, System.Collections.Generic.Dictionary<string, string>?)
   type: Constructor
   source:
     remote:
@@ -63,14 +62,14 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 182
+    startLine: 177
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
   summary: Request to create a new worker.
   example: []
   syntax:
-    content: public CreateWorkerRequest(CodeSource CodeSource, string MimeType, string Topic, Dictionary<string, string>? Env = null, Dictionary<string, string>? Tags = null)
+    content: public CreateWorkerRequest(CodeSource CodeSource, string MimeType, string Topic, Dictionary<string, string>? Tags = null)
     parameters:
     - id: CodeSource
       type: Virtufin.WorkManager.Contracts.CodeSource
@@ -81,16 +80,13 @@ items:
     - id: Topic
       type: System.String
       description: The topic to subscribe to.
-    - id: Env
-      type: System.Collections.Generic.Dictionary{System.String,System.String}
-      description: The initial environment variables for the worker.
     - id: Tags
       type: System.Collections.Generic.Dictionary{System.String,System.String}
-    content.vb: Public Sub New(CodeSource As CodeSource, MimeType As String, Topic As String, Env As Dictionary(Of String, String) = Nothing, Tags As Dictionary(Of String, String) = Nothing)
+    content.vb: Public Sub New(CodeSource As CodeSource, MimeType As String, Topic As String, Tags As Dictionary(Of String, String) = Nothing)
   overload: Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor*
-  nameWithType.vb: CreateWorkerRequest.New(CodeSource, String, String, Dictionary(Of String, String), Dictionary(Of String, String))
-  fullName.vb: Virtufin.WorkManager.Contracts.CreateWorkerRequest.New(Virtufin.WorkManager.Contracts.CodeSource, String, String, System.Collections.Generic.Dictionary(Of String, String), System.Collections.Generic.Dictionary(Of String, String))
-  name.vb: New(CodeSource, String, String, Dictionary(Of String, String), Dictionary(Of String, String))
+  nameWithType.vb: CreateWorkerRequest.New(CodeSource, String, String, Dictionary(Of String, String))
+  fullName.vb: Virtufin.WorkManager.Contracts.CreateWorkerRequest.New(Virtufin.WorkManager.Contracts.CodeSource, String, String, System.Collections.Generic.Dictionary(Of String, String))
+  name.vb: New(CodeSource, String, String, Dictionary(Of String, String))
 - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.CodeSource
   commentId: P:Virtufin.WorkManager.Contracts.CreateWorkerRequest.CodeSource
   id: CodeSource
@@ -109,7 +105,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CodeSource
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 183
+    startLine: 178
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -140,7 +136,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: MimeType
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 184
+    startLine: 179
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -171,7 +167,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Topic
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 185
+    startLine: 180
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -184,37 +180,6 @@ items:
       type: System.String
     content.vb: Public Property Topic As String
   overload: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic*
-- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Env
-  commentId: P:Virtufin.WorkManager.Contracts.CreateWorkerRequest.Env
-  id: Env
-  parent: Virtufin.WorkManager.Contracts.CreateWorkerRequest
-  langs:
-  - csharp
-  - vb
-  name: Env
-  nameWithType: CreateWorkerRequest.Env
-  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Env
-  type: Property
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: Env
-    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 186
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Contracts
-  summary: The initial environment variables for the worker.
-  example: []
-  syntax:
-    content: public Dictionary<string, string>? Env { get; init; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.Dictionary{System.String,System.String}
-    content.vb: Public Property Env As Dictionary(Of String, String)
-  overload: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Env*
 - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Tags
   commentId: P:Virtufin.WorkManager.Contracts.CreateWorkerRequest.Tags
   id: Tags
@@ -233,7 +198,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Tags
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 187
+    startLine: 181
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -551,7 +516,7 @@ references:
   - name: )
 - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor*
   commentId: Overload:Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor
-  href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest__ctor_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_Collections_Generic_Dictionary_System_String_System_String__
+  href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest__ctor_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__
   name: CreateWorkerRequest
   nameWithType: CreateWorkerRequest.CreateWorkerRequest
   fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.CreateWorkerRequest
@@ -712,12 +677,6 @@ references:
   name: Topic
   nameWithType: CreateWorkerRequest.Topic
   fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic
-- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Env*
-  commentId: Overload:Virtufin.WorkManager.Contracts.CreateWorkerRequest.Env
-  href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest_Env
-  name: Env
-  nameWithType: CreateWorkerRequest.Env
-  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Env
 - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Tags*
   commentId: Overload:Virtufin.WorkManager.Contracts.CreateWorkerRequest.Tags
   href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest_Tags

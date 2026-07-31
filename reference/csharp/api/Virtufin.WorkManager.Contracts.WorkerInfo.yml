@@ -5,9 +5,8 @@ items:
   id: WorkerInfo
   parent: Virtufin.WorkManager.Contracts
   children:
-  - Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
+  - Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus,System.Collections.Generic.Dictionary{System.String,System.String})
   - Virtufin.WorkManager.Contracts.WorkerInfo.CreatedAt
-  - Virtufin.WorkManager.Contracts.WorkerInfo.Env
   - Virtufin.WorkManager.Contracts.WorkerInfo.Id
   - Virtufin.WorkManager.Contracts.WorkerInfo.Language
   - Virtufin.WorkManager.Contracts.WorkerInfo.MimeType
@@ -28,7 +27,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: WorkerInfo
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 164
+    startLine: 161
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -48,16 +47,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
-  commentId: M:Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
-  id: '#ctor(System.Guid,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})'
+- uid: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus,System.Collections.Generic.Dictionary{System.String,System.String})
+  commentId: M:Virtufin.WorkManager.Contracts.WorkerInfo.#ctor(System.Guid,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus,System.Collections.Generic.Dictionary{System.String,System.String})
+  id: '#ctor(System.Guid,System.String,System.String,System.String,System.DateTime,Virtufin.WorkManager.Contracts.WorkerStatus,System.Collections.Generic.Dictionary{System.String,System.String})'
   parent: Virtufin.WorkManager.Contracts.WorkerInfo
   langs:
   - csharp
   - vb
-  name: WorkerInfo(Guid, string, string, string, DateTime, WorkerStatus, Dictionary<string, string>?, Dictionary<string, string>?)
-  nameWithType: WorkerInfo.WorkerInfo(Guid, string, string, string, DateTime, WorkerStatus, Dictionary<string, string>?, Dictionary<string, string>?)
-  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.WorkerInfo(System.Guid, string, string, string, System.DateTime, Virtufin.WorkManager.Contracts.WorkerStatus, System.Collections.Generic.Dictionary<string, string>?, System.Collections.Generic.Dictionary<string, string>?)
+  name: WorkerInfo(Guid, string, string, string, DateTime, WorkerStatus, Dictionary<string, string>?)
+  nameWithType: WorkerInfo.WorkerInfo(Guid, string, string, string, DateTime, WorkerStatus, Dictionary<string, string>?)
+  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.WorkerInfo(System.Guid, string, string, string, System.DateTime, Virtufin.WorkManager.Contracts.WorkerStatus, System.Collections.Generic.Dictionary<string, string>?)
   type: Constructor
   source:
     remote:
@@ -66,14 +65,14 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 164
+    startLine: 161
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
   summary: Information about a worker instance.
   example: []
   syntax:
-    content: public WorkerInfo(Guid Id, string MimeType, string Language, string Topic, DateTime CreatedAt, WorkerStatus Status, Dictionary<string, string>? Env = null, Dictionary<string, string>? Tags = null)
+    content: public WorkerInfo(Guid Id, string MimeType, string Language, string Topic, DateTime CreatedAt, WorkerStatus Status, Dictionary<string, string>? Tags = null)
     parameters:
     - id: Id
       type: System.Guid
@@ -93,16 +92,13 @@ items:
     - id: Status
       type: Virtufin.WorkManager.Contracts.WorkerStatus
       description: The current status.
-    - id: Env
-      type: System.Collections.Generic.Dictionary{System.String,System.String}
-      description: The current environment-variable snapshot for the worker.
     - id: Tags
       type: System.Collections.Generic.Dictionary{System.String,System.String}
-    content.vb: Public Sub New(Id As Guid, MimeType As String, Language As String, Topic As String, CreatedAt As Date, Status As WorkerStatus, Env As Dictionary(Of String, String) = Nothing, Tags As Dictionary(Of String, String) = Nothing)
+    content.vb: Public Sub New(Id As Guid, MimeType As String, Language As String, Topic As String, CreatedAt As Date, Status As WorkerStatus, Tags As Dictionary(Of String, String) = Nothing)
   overload: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor*
-  nameWithType.vb: WorkerInfo.New(Guid, String, String, String, Date, WorkerStatus, Dictionary(Of String, String), Dictionary(Of String, String))
-  fullName.vb: Virtufin.WorkManager.Contracts.WorkerInfo.New(System.Guid, String, String, String, Date, Virtufin.WorkManager.Contracts.WorkerStatus, System.Collections.Generic.Dictionary(Of String, String), System.Collections.Generic.Dictionary(Of String, String))
-  name.vb: New(Guid, String, String, String, Date, WorkerStatus, Dictionary(Of String, String), Dictionary(Of String, String))
+  nameWithType.vb: WorkerInfo.New(Guid, String, String, String, Date, WorkerStatus, Dictionary(Of String, String))
+  fullName.vb: Virtufin.WorkManager.Contracts.WorkerInfo.New(System.Guid, String, String, String, Date, Virtufin.WorkManager.Contracts.WorkerStatus, System.Collections.Generic.Dictionary(Of String, String))
+  name.vb: New(Guid, String, String, String, Date, WorkerStatus, Dictionary(Of String, String))
 - uid: Virtufin.WorkManager.Contracts.WorkerInfo.Id
   commentId: P:Virtufin.WorkManager.Contracts.WorkerInfo.Id
   id: Id
@@ -121,7 +117,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Id
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 165
+    startLine: 162
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -152,7 +148,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: MimeType
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 166
+    startLine: 163
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -183,7 +179,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Language
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 167
+    startLine: 164
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -214,7 +210,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Topic
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 168
+    startLine: 165
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -245,7 +241,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CreatedAt
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 169
+    startLine: 166
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -276,7 +272,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Status
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 170
+    startLine: 167
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -289,37 +285,6 @@ items:
       type: Virtufin.WorkManager.Contracts.WorkerStatus
     content.vb: Public Property Status As WorkerStatus
   overload: Virtufin.WorkManager.Contracts.WorkerInfo.Status*
-- uid: Virtufin.WorkManager.Contracts.WorkerInfo.Env
-  commentId: P:Virtufin.WorkManager.Contracts.WorkerInfo.Env
-  id: Env
-  parent: Virtufin.WorkManager.Contracts.WorkerInfo
-  langs:
-  - csharp
-  - vb
-  name: Env
-  nameWithType: WorkerInfo.Env
-  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.Env
-  type: Property
-  source:
-    remote:
-      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-      branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: Env
-    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 171
-  assemblies:
-  - Virtufin.WorkManager
-  namespace: Virtufin.WorkManager.Contracts
-  summary: The current environment-variable snapshot for the worker.
-  example: []
-  syntax:
-    content: public Dictionary<string, string>? Env { get; init; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.Dictionary{System.String,System.String}
-    content.vb: Public Property Env As Dictionary(Of String, String)
-  overload: Virtufin.WorkManager.Contracts.WorkerInfo.Env*
 - uid: Virtufin.WorkManager.Contracts.WorkerInfo.Tags
   commentId: P:Virtufin.WorkManager.Contracts.WorkerInfo.Tags
   id: Tags
@@ -338,7 +303,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Tags
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 172
+    startLine: 168
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -656,7 +621,7 @@ references:
   - name: )
 - uid: Virtufin.WorkManager.Contracts.WorkerInfo.#ctor*
   commentId: Overload:Virtufin.WorkManager.Contracts.WorkerInfo.#ctor
-  href: Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo__ctor_System_Guid_System_String_System_String_System_String_System_DateTime_Virtufin_WorkManager_Contracts_WorkerStatus_System_Collections_Generic_Dictionary_System_String_System_String__System_Collections_Generic_Dictionary_System_String_System_String__
+  href: Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo__ctor_System_Guid_System_String_System_String_System_String_System_DateTime_Virtufin_WorkManager_Contracts_WorkerStatus_System_Collections_Generic_Dictionary_System_String_System_String__
   name: WorkerInfo
   nameWithType: WorkerInfo.WorkerInfo
   fullName: Virtufin.WorkManager.Contracts.WorkerInfo.WorkerInfo
@@ -854,12 +819,6 @@ references:
   name: Status
   nameWithType: WorkerInfo.Status
   fullName: Virtufin.WorkManager.Contracts.WorkerInfo.Status
-- uid: Virtufin.WorkManager.Contracts.WorkerInfo.Env*
-  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerInfo.Env
-  href: Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo_Env
-  name: Env
-  nameWithType: WorkerInfo.Env
-  fullName: Virtufin.WorkManager.Contracts.WorkerInfo.Env
 - uid: Virtufin.WorkManager.Contracts.WorkerInfo.Tags*
   commentId: Overload:Virtufin.WorkManager.Contracts.WorkerInfo.Tags
   href: Virtufin.WorkManager.Contracts.WorkerInfo.html#Virtufin_WorkManager_Contracts_WorkerInfo_Tags
