@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e6f3175d194974fe4072ff8ce2fd82f17061835a"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/2153c77036df9e7e386c00f78791025c73d40301"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit e6f3175">
+       title="View commit 2153c77">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e6f3175</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">2153c77</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e6f3175d194974fe4072ff8ce2fd82f17061835a"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/2153c77036df9e7e386c00f78791025c73d40301"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit e6f3175">
+       title="View commit 2153c77">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e6f3175</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">2153c77</text>
       </svg>
     </a>
 </div>
@@ -1860,16 +1860,19 @@
 - The subprocess is health-checked every 10 seconds; if unresponsive, it is automatically restarted</p>
 <h3 id="pythonwheelengine">PythonWheelEngine</h3>
 <p><strong>MIME Type:</strong> <code>application/x-python</code></p>
-<p>Like <code>PythonEngine</code>, but the code file is a <strong>wheel</strong> (a <code>.whl</code>, which is just a zip with a <code>.dist-info/</code> folder) instead of a bare <code>.py</code> file, allowing third-party pip dependencies (<code>PythonEngine</code> supports only stdlib-only single-file scripts). The wheel is extracted to a sibling <code>extracted/</code> directory of the persisted <code>code.zip</code>, and that extraction directory itself is inserted onto <code>sys.path</code> before the worker's entry file is exec'd — dependencies and <code>worker.py</code> sit flat, side by side, matching how pip actually lays out an installed package's top-level modules. Otherwise the subprocess lifecycle, Unix-socket frame protocol, and health-check/auto-restart behavior are identical to <code>PythonEngine</code>.</p>
+<p>Like <code>PythonEngine</code>, but the code file is a <strong>wheel</strong> (a <code>.whl</code>, which is just a zip with a <code>.dist-info/</code> folder) instead of a bare <code>.py</code> file, allowing third-party pip dependencies (<code>PythonEngine</code> supports only stdlib-only single-file scripts). The published wheel itself is tiny — just <code>worker.py</code> plus a <code>Requires-Dist</code> dependency manifest, no vendored third-party code. <code>LoadCodeAsync</code> resolves and installs those dependencies at <strong>worker-load time</strong> via <code>uv pip install --target &lt;dir&gt;</code>, which installs both the wheel's own <code>worker.py</code> and its resolved dependencies flat into the same directory — exactly the layout the bootstrap script expects on <code>sys.path</code> (<code>worker.py</code> sitting alongside its now-installed dependencies). Otherwise the subprocess lifecycle, Unix-socket frame protocol, and health-check/auto-restart behavior are identical to <code>PythonEngine</code>.</p>
 <p><strong>Layout</strong> (fixed naming convention for the entry point; everything else is whatever the wheel's own build step put there):
 <div class="highlight"><pre><span></span><code>worker-1.0.0-py3-none-any.whl
 ├── worker.py            # entry point; module-level def Process(cloud_event): ...
-├── &lt;dependency modules/packages, flat&gt;
 └── &lt;name&gt;-&lt;version&gt;.dist-info/
+    └── METADATA         # Requires-Dist: &lt;dep&gt; lines declare third-party dependencies
 </code></pre></div></p>
-<p><strong>Code Requirements:</strong> same <code>Process(event)</code> contract as <code>PythonEngine</code> (see above) -- <code>worker.py</code> just has its own directory (containing all its pip-installed dependencies) already on <code>sys.path</code> by the time it's exec'd, so <code>import</code>s of those dependencies resolve normally.</p>
-<p><strong>No import-allowlist equivalent.</strong> <code>PythonEngine</code>'s <code>ValidatePythonImports</code>/blocked-modules check assumes decodable UTF-8 source text; it doesn't apply to zip bytes, and isn't reimplemented here. Dependencies are expected to be vetted at CI build time (which has network access to actually resolve/install them), not restricted at runtime.</p>
-<p><strong>Dependencies are never installed at runtime.</strong> The wheel is built (worker's own code + <code>pip install</code>-resolved dependencies) at CI time and published to PyPI as a single artefact -- the cluster never needs outbound access to a package index. See <code>virtufin-workers</code>' <code>HelloPython</code>/<code>GetTimePython</code> workers and their <code>@common/scripts/{build_python_wheel,publish_worker_package}.py</code> build/publish pipeline for the reference implementation.</p>
+<p><strong>Code Requirements:</strong> same <code>Process(event)</code> contract as <code>PythonEngine</code> (see above) -- by the time <code>worker.py</code> is exec'd, <code>uv pip install --target</code> has already resolved and installed its declared dependencies into the same flat directory, already on <code>sys.path</code>, so <code>import</code>s of those dependencies resolve normally.</p>
+<p><strong>No import-allowlist equivalent.</strong> <code>PythonEngine</code>'s <code>ValidatePythonImports</code>/blocked-modules check assumes decodable UTF-8 source text; it doesn't apply to zip bytes, and isn't reimplemented here. Dependencies are expected to be vetted via their <code>Requires-Dist</code> declaration, not restricted at runtime.</p>
+<p><strong>Dependencies are installed at worker-load time, not build time.</strong> This keeps the published wheel itself KB-scale (Gitea's PyPI package registry silently fails to index uploads above ~8-10MB, well under what a vendored <code>grpcio</code>/<code>protobuf</code> wheel would need) and means the cluster <em>does</em> need outbound access to a package index at load time. Two indexes are consulted:
+- <strong>Public/default index</strong> — <code>PYTHON_DEFAULT_INDEX_URL</code> env var (default <code>https://pypi.org/simple/</code>), configurable, used for everything except <code>virtufin-*</code> packages.
+- <strong>Private virtufin index</strong> — fixed at Gitea's PyPI feed, authenticated via <code>VIRTUFIN_PYPI_USERNAME</code>/<code>VIRTUFIN_PYPI_API_KEY</code> env vars (Basic auth, embedded in the index URL), used for <code>virtufin-*</code> packages (e.g. <code>virtufin-workmanager</code>).</p>
+<p>Installs run with <code>--index-strategy unsafe-best-match</code>, since uv's default dependency-confusion protection would otherwise stop at whichever index it checks first for a package name, even if that index's version doesn't satisfy the constraint — both indexes here are our own trusted infrastructure, so the safeguard isn't needed. A fixed <code>UV_CACHE_DIR</code> (<code>/tmp/worker-sockets/uv-cache</code>) means repeated loads of the same dependency versions within a pod's lifetime hit cache instead of re-downloading. Install timeout: <code>TimeoutConstants.PythonDependencyInstallTimeoutSeconds</code> (60s). See <code>virtufin-workers</code>' <code>HelloPython</code>/<code>GetTimePython</code> workers and their <code>@common/scripts/{build_python_wheel,publish_worker_package}.py</code> build/publish pipeline for the reference implementation.</p>
 <h3 id="csharpsourceengine">CSharpSourceEngine</h3>
 <p><strong>MIME Type:</strong> <code>text/x-csharp</code></p>
 <p>Compiles and executes C# source code at runtime using Roslyn. The code is compiled into an in-memory assembly.</p>
@@ -2127,7 +2130,7 @@ format.</p>
 </tr>
 <tr>
 <td><strong>PythonWheelEngine</strong></td>
-<td>~500ms + zip extraction</td>
+<td>~500ms + <code>uv pip install</code> (cold cache: network-bound; warm cache: fast)</td>
 <td>1-5ms</td>
 <td>Medium</td>
 <td>Python workers needing third-party pip dependencies</td>
@@ -2192,7 +2195,7 @@ format.</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-08-02T21:16:22Z</span>
+  <span style="display:table-cell;text-align:right">2026-08-02T22:36:28Z</span>
 </div>
 
     </div>
