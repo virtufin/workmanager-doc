@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/738268d78a9f85e0d6c9b57b70dbfbb937c2c092"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e6f3175d194974fe4072ff8ce2fd82f17061835a"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 738268d">
+       title="View commit e6f3175">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">738268d</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e6f3175</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/738268d78a9f85e0d6c9b57b70dbfbb937c2c092"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/e6f3175d194974fe4072ff8ce2fd82f17061835a"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 738268d">
+       title="View commit e6f3175">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">738268d</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e6f3175</text>
       </svg>
     </a>
 </div>
@@ -1869,7 +1869,7 @@
 </code></pre></div></p>
 <p><strong>Code Requirements:</strong> same <code>Process(event)</code> contract as <code>PythonEngine</code> (see above) -- <code>worker.py</code> just has its own directory (containing all its pip-installed dependencies) already on <code>sys.path</code> by the time it's exec'd, so <code>import</code>s of those dependencies resolve normally.</p>
 <p><strong>No import-allowlist equivalent.</strong> <code>PythonEngine</code>'s <code>ValidatePythonImports</code>/blocked-modules check assumes decodable UTF-8 source text; it doesn't apply to zip bytes, and isn't reimplemented here. Dependencies are expected to be vetted at CI build time (which has network access to actually resolve/install them), not restricted at runtime.</p>
-<p><strong>Dependencies are never installed at runtime.</strong> The wheel is built (worker's own code + <code>pip install</code>-resolved dependencies) at CI time and published to PyPI as a single artefact -- the cluster never needs outbound access to a package index. See <code>virtufin-workers</code>' <code>HelloPython</code>/<code>GetTimePython</code> workers and their <code>@common/scripts/{build_python_bundle,publish_worker_package}.py</code> build/publish pipeline for the reference implementation.</p>
+<p><strong>Dependencies are never installed at runtime.</strong> The wheel is built (worker's own code + <code>pip install</code>-resolved dependencies) at CI time and published to PyPI as a single artefact -- the cluster never needs outbound access to a package index. See <code>virtufin-workers</code>' <code>HelloPython</code>/<code>GetTimePython</code> workers and their <code>@common/scripts/{build_python_wheel,publish_worker_package}.py</code> build/publish pipeline for the reference implementation.</p>
 <h3 id="csharpsourceengine">CSharpSourceEngine</h3>
 <p><strong>MIME Type:</strong> <code>text/x-csharp</code></p>
 <p>Compiles and executes C# source code at runtime using Roslyn. The code is compiled into an in-memory assembly.</p>
@@ -2192,7 +2192,7 @@ format.</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-08-02T20:56:33Z</span>
+  <span style="display:table-cell;text-align:right">2026-08-02T21:16:22Z</span>
 </div>
 
     </div>
