@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/87de4a64c955be51c11ed01deb4806055131b3be"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/738268d78a9f85e0d6c9b57b70dbfbb937c2c092"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 87de4a6">
+       title="View commit 738268d">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">87de4a6</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">738268d</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/87de4a64c955be51c11ed01deb4806055131b3be"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/738268d78a9f85e0d6c9b57b70dbfbb937c2c092"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 87de4a6">
+       title="View commit 738268d">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">87de4a6</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">738268d</text>
       </svg>
     </a>
 </div>
@@ -821,10 +821,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pythonbundleengine" class="md-nav__link">
+  <a href="#pythonwheelengine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PythonBundleEngine
+        PythonWheelEngine
       
     </span>
   </a>
@@ -1599,10 +1599,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#pythonbundleengine" class="md-nav__link">
+  <a href="#pythonwheelengine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PythonBundleEngine
+        PythonWheelEngine
       
     </span>
   </a>
@@ -1858,17 +1858,18 @@
 - <code>stderr</code> output is captured as warning-level log entries (not treated as errors)
 - Execution timeout is 30 seconds by default
 - The subprocess is health-checked every 10 seconds; if unresponsive, it is automatically restarted</p>
-<h3 id="pythonbundleengine">PythonBundleEngine</h3>
+<h3 id="pythonwheelengine">PythonWheelEngine</h3>
 <p><strong>MIME Type:</strong> <code>application/x-python</code></p>
-<p>Like <code>PythonEngine</code>, but the code file is a <strong>zip bundle</strong> instead of a bare <code>.py</code> file, allowing third-party pip dependencies (<code>PythonEngine</code> supports only stdlib-only single-file scripts). The bundle is extracted to a sibling <code>extracted/</code> directory of the persisted <code>code.zip</code>, and the extracted <code>site-packages/</code> directory (if present) is inserted onto <code>sys.path</code> before the worker's entry file is exec'd. Otherwise the subprocess lifecycle, Unix-socket frame protocol, and health-check/auto-restart behavior are identical to <code>PythonEngine</code>.</p>
-<p><strong>Bundle format</strong> (fixed naming convention, no manifest file):
-<div class="highlight"><pre><span></span><code>bundle.zip
+<p>Like <code>PythonEngine</code>, but the code file is a <strong>wheel</strong> (a <code>.whl</code>, which is just a zip with a <code>.dist-info/</code> folder) instead of a bare <code>.py</code> file, allowing third-party pip dependencies (<code>PythonEngine</code> supports only stdlib-only single-file scripts). The wheel is extracted to a sibling <code>extracted/</code> directory of the persisted <code>code.zip</code>, and that extraction directory itself is inserted onto <code>sys.path</code> before the worker's entry file is exec'd — dependencies and <code>worker.py</code> sit flat, side by side, matching how pip actually lays out an installed package's top-level modules. Otherwise the subprocess lifecycle, Unix-socket frame protocol, and health-check/auto-restart behavior are identical to <code>PythonEngine</code>.</p>
+<p><strong>Layout</strong> (fixed naming convention for the entry point; everything else is whatever the wheel's own build step put there):
+<div class="highlight"><pre><span></span><code>worker-1.0.0-py3-none-any.whl
 ├── worker.py            # entry point; module-level def Process(cloud_event): ...
-└── site-packages/         # optional -- omitted if the worker has no third-party deps
+├── &lt;dependency modules/packages, flat&gt;
+└── &lt;name&gt;-&lt;version&gt;.dist-info/
 </code></pre></div></p>
-<p><strong>Code Requirements:</strong> same <code>Process(event)</code> contract as <code>PythonEngine</code> (see above) -- <code>worker.py</code> just has <code>site-packages/</code> already on <code>sys.path</code> by the time it's exec'd, so <code>import</code>s of pip-installed dependencies resolve normally.</p>
+<p><strong>Code Requirements:</strong> same <code>Process(event)</code> contract as <code>PythonEngine</code> (see above) -- <code>worker.py</code> just has its own directory (containing all its pip-installed dependencies) already on <code>sys.path</code> by the time it's exec'd, so <code>import</code>s of those dependencies resolve normally.</p>
 <p><strong>No import-allowlist equivalent.</strong> <code>PythonEngine</code>'s <code>ValidatePythonImports</code>/blocked-modules check assumes decodable UTF-8 source text; it doesn't apply to zip bytes, and isn't reimplemented here. Dependencies are expected to be vetted at CI build time (which has network access to actually resolve/install them), not restricted at runtime.</p>
-<p><strong>Dependencies are never installed at runtime.</strong> The bundle is built (worker's own code + <code>pip install</code>-resolved dependencies) at CI time and shipped as a single artefact -- the cluster never needs outbound access to a package index. See <code>virtufin-workers</code>' <code>HelloPython</code>/<code>GetTimePython</code> workers and their <code>@common/scripts/{build_worker_package,publish_worker_package,build_python_bundle,publish_python_bundle}.py</code> build/publish pipeline for the reference implementation.</p>
+<p><strong>Dependencies are never installed at runtime.</strong> The wheel is built (worker's own code + <code>pip install</code>-resolved dependencies) at CI time and published to PyPI as a single artefact -- the cluster never needs outbound access to a package index. See <code>virtufin-workers</code>' <code>HelloPython</code>/<code>GetTimePython</code> workers and their <code>@common/scripts/{build_python_bundle,publish_worker_package}.py</code> build/publish pipeline for the reference implementation.</p>
 <h3 id="csharpsourceengine">CSharpSourceEngine</h3>
 <p><strong>MIME Type:</strong> <code>text/x-csharp</code></p>
 <p>Compiles and executes C# source code at runtime using Roslyn. The code is compiled into an in-memory assembly.</p>
@@ -2034,7 +2035,7 @@ format.</p>
 <span class="w">    </span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ContentType</span><span class="p">(</span><span class="s">&quot;text/x-python&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;Python&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span>
 <span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="nf">PythonEngine</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w"> </span><span class="n">logger</span><span class="p">)),</span>
 <span class="w">    </span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ContentType</span><span class="p">(</span><span class="s">&quot;application/x-python&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;Python Bundle&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span>
-<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="nf">PythonBundleEngine</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w"> </span><span class="n">logger</span><span class="p">)),</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="nf">PythonWheelEngine</span><span class="p">(</span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="mi">30</span><span class="p">),</span><span class="w"> </span><span class="n">logger</span><span class="p">)),</span>
 <span class="p">};</span>
 
 <span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">engines</span><span class="p">)</span>
@@ -2125,7 +2126,7 @@ format.</p>
 <td>Prototyping, scripting, stdlib-only single-file Python</td>
 </tr>
 <tr>
-<td><strong>PythonBundleEngine</strong></td>
+<td><strong>PythonWheelEngine</strong></td>
 <td>~500ms + zip extraction</td>
 <td>1-5ms</td>
 <td>Medium</td>
@@ -2191,7 +2192,7 @@ format.</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-08-02T12:51:17Z</span>
+  <span style="display:table-cell;text-align:right">2026-08-02T20:56:33Z</span>
 </div>
 
     </div>
