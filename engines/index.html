@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/2153c77036df9e7e386c00f78791025c73d40301"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/62bd9bcbceeb8fb186057e01ac4b43dc001c48a2"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 2153c77">
+       title="View commit 62bd9bc">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">2153c77</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">62bd9bc</text>
       </svg>
     </a>
 </div>
@@ -399,14 +399,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/2153c77036df9e7e386c00f78791025c73d40301"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/62bd9bcbceeb8fb186057e01ac4b43dc001c48a2"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 2153c77">
+       title="View commit 62bd9bc">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">2153c77</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">62bd9bc</text>
       </svg>
     </a>
 </div>
@@ -1997,6 +1997,7 @@ for the full architecture, setup contract, and trade-offs.</p>
     WM-&gt;&gt;WM: HostFxrBootstrap&lt;br/&gt;ensure CoreCLR loaded
     Note over WM,Ctx: === Per-worker LoadCodeAsync ===
     WM-&gt;&gt;WM: WorkerNupkgLoader.Extract
+    WM-&gt;&gt;WM: NuGetDependencyInstaller&lt;br/&gt;resolve+download nuspec deps
     WM-&gt;&gt;Ctx: new AssemblyLoadContext
     WM-&gt;&gt;Ctx: LoadFromStream(worker.dll)
     WM-&gt;&gt;Ctx: scan for IWorker impl
@@ -2014,6 +2015,28 @@ worker DLL is published as a NuGet <code>.nupkg</code> with a
 in the nuspec. See
 <a href="../dotnet-dll-workers/">DotNet DLL Workers</a> for the full author
 guide.</p>
+<p><strong>Dependencies are resolved at worker-load time, not vendored into the nupkg.</strong>
+The published nupkg's <code>lib/&lt;tfm&gt;/</code> contains only the worker's own DLL;
+third-party dependencies are declared in the nuspec's <code>&lt;dependencies&gt;</code>
+element (standard NuGet convention — populated from the worker's
+<code>PackageReference</code>s at build time) and resolved+downloaded by
+<code>NuGetDependencyInstaller</code> (<code>Virtufin.WorkManager.Engine.DotNetDll.Bridge</code>)
+the first time the worker loads, using <code>NuGet.Protocol</code>/<code>NuGet.Resolver</code>
+driven in-process (no <code>dotnet</code> SDK is available in the runtime image,
+unlike a build machine, so this can't shell out to <code>dotnet restore</code>).
+This is the .NET analog of <code>PythonWheelEngine</code>'s load-time <code>uv pip
+install</code> — see that engine's section above for the motivating size-limit
+issue this design avoids. Two sources are consulted: a configurable
+public source (<code>DOTNET_DEFAULT_NUGET_SOURCE_URL</code>, default nuget.org)
+for everything, and the existing authenticated private virtufin Gitea
+feed (reusing <code>VIRTUFIN_NUGET_USERNAME</code>/<code>VIRTUFIN_NUGET_API_KEY</code>, the
+same credentials already used to fetch the nupkg itself) for
+<code>Virtufin.*</code> packages. Resolved packages are cached under a fixed
+<code>/tmp/worker-sockets/nuget-cache</code> so repeated loads of the same
+versions within a pod's lifetime don't re-download. Vendored sibling
+DLLs (old-style nupkgs published before this change) still take
+precedence on a filename conflict, so already-published nupkgs
+continue to load unchanged.</p>
 <p><strong>Discovery:</strong> The engine scans the loaded assembly for the
 first non-abstract, non-interface type implementing <code>IWorker</code>.
 If no implementation is found, an <code>InvalidOperationException</code>
@@ -2195,7 +2218,7 @@ format.</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-08-02T22:36:28Z</span>
+  <span style="display:table-cell;text-align:right">2026-08-03T01:21:19Z</span>
 </div>
 
     </div>
