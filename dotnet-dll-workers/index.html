@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/62bd9bcbceeb8fb186057e01ac4b43dc001c48a2"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9efdc2a70bcc784e44ddb1aa871fa966513df204"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 62bd9bc">
+       title="View commit 9efdc2a">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">62bd9bc</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9efdc2a</text>
       </svg>
     </a>
 </div>
@@ -401,14 +401,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/62bd9bcbceeb8fb186057e01ac4b43dc001c48a2"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9efdc2a70bcc784e44ddb1aa871fa966513df204"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 62bd9bc">
+       title="View commit 9efdc2a">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">62bd9bc</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9efdc2a</text>
       </svg>
     </a>
 </div>
@@ -1931,10 +1931,13 @@ DotNetDll engine host picks the entry whose TFM best matches its own</p>
 the same <code>&lt;id&gt;.nuspec</code> + <code>lib/&lt;tfm&gt;/&lt;id&gt;.dll</code> layout and zip it into
 a <code>.nupkg</code>.</p>
 <blockquote>
-<p><strong>Important:</strong> Do <strong>not</strong> include <code>CloudNative.CloudEvents.dll</code> in
-the package to avoid type identity conflicts with the WorkManager's
-own CloudEvent type. The <code>Virtufin.Worker.DevKit.dll</code> is automatically
-resolved by the engine host and does not need to be in the package.</p>
+<p><strong>Important:</strong> third-party dependencies (including
+<code>Virtufin.Worker.DevKit</code>) belong in <code>&lt;dependencies&gt;</code>, resolved at
+worker-load time — not vendored into <code>lib/&lt;tfm&gt;/</code>. <code>dotnet pack</code>
+already does the right thing by default from your <code>PackageReference</code>s.
+See "Dependency Resolution" below for the full guidance and the one
+exception (<code>CloudNative.CloudEvents</code> should stay an <em>indirect</em>
+dependency, not a direct <code>PackageReference</code>).</p>
 </blockquote>
 <h3 id="4-deploy-to-workmanager">4. Deploy to WorkManager</h3>
 <div class="highlight"><pre><span></span><code><span class="nv">WORKER_ID</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:5001/workers&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -2184,26 +2187,35 @@ dispatch.</p>
 <span class="k">public</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">MyCommand</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">create</span><span class="p">,</span><span class="w"> </span><span class="n">list</span><span class="p">,</span><span class="w"> </span><span class="n">delete</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <h2 id="dependency-resolution">Dependency Resolution</h2>
-<p>Worker assemblies may depend on third-party NuGet packages. Include all dependency <code>.dll</code> files in the ZIP. The engine's <code>AssemblyLoadContext.Resolving</code> handler resolves transitive dependencies by assembly name from the ZIP contents.</p>
-<p>However, <strong>do not include</strong> these assemblies in the ZIP:</p>
-<table>
-<thead>
-<tr>
-<th>Assembly</th>
-<th>Reason</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>CloudNative.CloudEvents.dll</code></td>
-<td>Type identity conflict with the WorkManager's copy</td>
-</tr>
-<tr>
-<td><code>Virtufin.Worker.DevKit.dll</code></td>
-<td>Resolved from the engine's copy via the <code>Resolving</code> handler</td>
-</tr>
-</tbody>
-</table>
+<p>Worker assemblies may depend on third-party NuGet packages. <strong>Don't
+vendor dependency <code>.dll</code> files into the nupkg</strong> — declare them as
+normal <code>PackageReference</code>s in your worker's <code>.csproj</code> instead;
+<code>dotnet pack</code> (or any standard NuGet packaging flow) already writes
+them into the nuspec's <code>&lt;dependencies&gt;</code> element automatically. The
+nupkg's <code>lib/&lt;tfm&gt;/</code> should contain only your own worker assembly.</p>
+<p>At load time, <code>NuGetDependencyInstaller</code>
+(<code>Virtufin.WorkManager.Engine.DotNetDll.Bridge</code>) reads the nuspec's
+declared <code>&lt;dependencies&gt;</code> and resolves + downloads them itself, via
+<code>NuGet.Protocol</code>/<code>NuGet.Resolver</code> driven in-process — against a
+configurable public source (<code>DOTNET_DEFAULT_NUGET_SOURCE_URL</code>, default
+nuget.org) and, for <code>Virtufin.*</code> packages, the private virtufin Gitea
+feed. This adds real network latency to the <em>first</em> <code>LoadCodeAsync</code>
+call for a given worker (subsequent loads within a pod's lifetime hit
+a local cache); see the <code>DotNetDllEngine</code> section of <code>engines.md</code> for
+the full design.</p>
+<p><code>Virtufin.Worker.DevKit</code> <strong>should</strong> be a normal, direct
+<code>PackageReference</code> — declaring it is exactly what lets
+<code>NuGetDependencyInstaller</code> resolve it at load time. At runtime it
+still ends up aliased to the host's own already-loaded copy (not a
+freshly-downloaded one) for type-identity reasons — downloading it too
+is harmless, just slightly wasted work.</p>
+<p>Do <strong>not</strong> add a <em>direct</em> <code>PackageReference</code> to
+<code>CloudNative.CloudEvents</code> in your worker's own <code>.csproj</code> — let it come
+in transitively through <code>Virtufin.Worker.DevKit</code>'s own declared
+dependency (<code>NuGetDependencyInstaller</code> walks the full transitive
+graph, so it'll be resolved regardless). A direct reference risks
+pinning a different version than DevKit expects, which can produce a
+type identity conflict with the WorkManager's own copy.</p>
 <h2 id="error-handling">Error Handling</h2>
 <table>
 <thead>
@@ -2226,8 +2238,8 @@ dispatch.</p>
 <td><code>InvalidOperationException</code></td>
 </tr>
 <tr>
-<td>Dependency DLL missing from ZIP</td>
-<td><code>Resolving</code> handler returns <code>null</code>, assembly load fails</td>
+<td>Declared dependency fails to resolve/download</td>
+<td><code>NuGetDependencyInstaller</code> throws before the assembly load is even attempted</td>
 </tr>
 <tr>
 <td>Assembly load fails</td>
@@ -2245,8 +2257,12 @@ dispatch.</p>
 </thead>
 <tbody>
 <tr>
-<td><code>LoadCodeAsync</code> (ZIP extraction + assembly load)</td>
-<td>&lt; 100ms typical</td>
+<td><code>LoadCodeAsync</code>, dependencies already cached</td>
+<td>&lt; 100ms typical (ZIP extraction + assembly load)</td>
+</tr>
+<tr>
+<td><code>LoadCodeAsync</code>, cold NuGet dependency cache</td>
+<td>seconds, network-bound (<code>NuGetDependencyInstaller</code> resolving + downloading declared dependencies -- see "Dependency Resolution" above)</td>
 </tr>
 <tr>
 <td>Per-message <code>ProcessAsync</code> invocation</td>
@@ -2285,7 +2301,7 @@ dispatch.</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-08-03T01:21:19Z</span>
+  <span style="display:table-cell;text-align:right">2026-08-03T04:57:07Z</span>
 </div>
 
     </div>

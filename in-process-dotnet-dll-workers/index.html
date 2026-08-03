@@ -199,14 +199,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/62bd9bcbceeb8fb186057e01ac4b43dc001c48a2"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9efdc2a70bcc784e44ddb1aa871fa966513df204"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 62bd9bc">
+       title="View commit 9efdc2a">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">62bd9bc</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9efdc2a</text>
       </svg>
     </a>
 </div>
@@ -393,14 +393,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/62bd9bcbceeb8fb186057e01ac4b43dc001c48a2"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/9efdc2a70bcc784e44ddb1aa871fa966513df204"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 62bd9bc">
+       title="View commit 9efdc2a">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">62bd9bc</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">9efdc2a</text>
       </svg>
     </a>
 </div>
@@ -1523,15 +1523,21 @@ all other engines. No changes needed for existing workers.</p>
 <h2 id="worker-packaging">Worker packaging</h2>
 <p>The same <code>.nupkg</code> layout used by the out-of-process engine:</p>
 <div class="highlight"><pre><span></span><code>worker.nupkg/
-├── &lt;id&gt;.nuspec                       # declares id, deps, virtufin* extensions
+├── &lt;id&gt;.nuspec                       # declares id, &lt;dependencies&gt;, virtufin* extensions
 └── lib/
     └── &lt;tfm&gt;/
-        ├── &lt;id&gt;.dll                  # the worker assembly
-        └── &lt;dep&gt;.dll                 # sibling dependencies (e.g. DevKit)
+        └── &lt;id&gt;.dll                  # the worker assembly ONLY -- no vendored deps
 </code></pre></div>
-<p>The <code>&lt;virtufinLibrary&gt;</code> extension element in the nuspec must
-match the worker DLL's basename (without extension). See
-<code>dotnet-dll-workers.md</code> for the full nupkg format.</p>
+<p>Third-party dependencies are declared in the nuspec's
+<code>&lt;dependencies&gt;</code> element (from your <code>PackageReference</code>s -- <code>dotnet
+pack</code> does this automatically), not vendored into <code>lib/&lt;tfm&gt;/</code>.
+<code>NuGetDependencyInstaller</code> resolves and downloads them at
+<code>LoadWorker</code> time; the resulting DLLs are merged into the same
+sibling-dependency dictionary the canonical-assembly invariant below
+already describes, so nothing else about that mechanism changes. The
+<code>&lt;virtufinLibrary&gt;</code> extension element in the nuspec must match the
+worker DLL's basename (without extension). See <code>dotnet-dll-workers.md</code>
+for the full nupkg format and dependency-declaration guidance.</p>
 <h2 id="canonical-assembly-invariant">Canonical-assembly invariant</h2>
 <p>The in-process engine relies on a load-order contract for
 type identity. For every assembly the worker DLL references:</p>
@@ -1555,12 +1561,16 @@ worker-private helper assembly). This path produces a separate
 <code>Type</code> instance in the worker ALC — fine for worker-local types,
 but the worker must not depend on these being identical to
 anything in the host.</p>
-<p><strong>Practical implication for worker authors:</strong> package every
-assembly your worker needs in the nupkg. The host will alias
-the ones it already has; the ones it doesn't will load from
-the sibling bytes. Don't assume the host has an assembly you
-didn't bundle — the worker ALC will fail to load and you'll see
-a <code>FileNotFoundException</code> in the loader diagnostics.</p>
+<p><strong>Practical implication for worker authors:</strong> declare every
+third-party assembly your worker needs as a <code>PackageReference</code> (so
+it ends up in the nuspec's <code>&lt;dependencies&gt;</code>) — don't vendor DLLs into
+the nupkg. <code>NuGetDependencyInstaller</code> resolves and downloads them at
+load time, filling the same "sibling DLLs" role a vendored nupkg used
+to. The host will alias the ones it already has (DevKit,
+CloudNative.CloudEvents); the rest load from the freshly-downloaded
+bytes. Don't assume the host has an assembly you didn't declare — the
+worker ALC will fail to load and you'll see a <code>FileNotFoundException</code>
+in the loader diagnostics.</p>
 <h2 id="loader-error-surfacing">Loader-error surfacing</h2>
 <p>When a worker assembly can't be loaded, the engine throws
 <code>Virtufin.WorkManager.Engine.DotNetDll.InvalidWorkerException</code>
@@ -1569,9 +1579,10 @@ whose message lists every loader error from
 <code>InnerException</code> is the original <code>ReflectionTypeLoadException</code>
 for programmatic inspection. Common failures you'll see:</p>
 <ul>
-<li><code>Could not load file or assembly 'X'</code> — a referenced assembly
-  is missing from both the host and the nupkg siblings. Add the
-  assembly to the nupkg's <code>lib/&lt;tfm&gt;/</code> directory.</li>
+<li><code>Could not load file or assembly 'X'</code> — a referenced assembly is
+  missing from both the host and the nupkg's resolved dependencies.
+  Add it as a <code>PackageReference</code> in your worker's <code>.csproj</code> so it ends
+  up in the nuspec's <code>&lt;dependencies&gt;</code> (don't vendor the DLL directly).</li>
 <li><code>Method 'HandleAsync' ... does not have an implementation</code> —
   pre-<code>0.0.60</code> failure mode. Fixed in <code>0.0.60</code> by the canonical-
   assembly invariant. If you see this on <code>0.0.60+</code>, your worker
@@ -1624,7 +1635,7 @@ for programmatic inspection. Common failures you'll see:</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-08-03T01:21:19Z</span>
+  <span style="display:table-cell;text-align:right">2026-08-03T04:57:07Z</span>
 </div>
 
     </div>
