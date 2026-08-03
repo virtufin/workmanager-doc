@@ -748,12 +748,37 @@ references:
   commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar
   fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar
   nameWithType: WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+  name: ConnectivityTimeoutSeconds
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_ConnectivityTimeoutSeconds
+  commentId: P:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+  nameWithType: WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds*
+  name: ConnectivityTimeoutSeconds
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_ConnectivityTimeoutSeconds_
+  commentId: Overload:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+  nameWithType: WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSecondsEnvVar
+  name: ConnectivityTimeoutSecondsEnvVar
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_ConnectivityTimeoutSecondsEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSecondsEnvVar
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSecondsEnvVar
+  nameWithType: WorkerRecoveryOptions.ConnectivityTimeoutSecondsEnvVar
 - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
   name: DefaultAcquireTimeoutSeconds
   href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_DefaultAcquireTimeoutSeconds
   commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
   fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
   nameWithType: WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultConnectivityTimeoutSeconds
+  name: DefaultConnectivityTimeoutSeconds
+  href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_DefaultConnectivityTimeoutSeconds
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultConnectivityTimeoutSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultConnectivityTimeoutSeconds
+  nameWithType: WorkerRecoveryOptions.DefaultConnectivityTimeoutSeconds
 - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultEnabled
   name: DefaultEnabled
   href: api/Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_DefaultEnabled

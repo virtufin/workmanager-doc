@@ -7,7 +7,10 @@ items:
   children:
   - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
   - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSecondsEnvVar
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSecondsEnvVar
   - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultAcquireTimeoutSeconds
+  - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultConnectivityTimeoutSeconds
   - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultEnabled
   - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultLeaseTtlSeconds
   - Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
@@ -139,6 +142,35 @@ items:
     return:
       type: System.String
     content.vb: Public Const AcquireTimeoutSecondsEnvVar As String = "WORKER_RECOVERY_ACQUIRE_TIMEOUT_SECONDS"
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSecondsEnvVar
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSecondsEnvVar
+  id: ConnectivityTimeoutSecondsEnvVar
+  parent: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  langs:
+  - csharp
+  - vb
+  name: ConnectivityTimeoutSecondsEnvVar
+  nameWithType: WorkerRecoveryOptions.ConnectivityTimeoutSecondsEnvVar
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSecondsEnvVar
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: ConnectivityTimeoutSecondsEnvVar
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 18
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: Env var for how long to keep retrying while the state store is unreachable (e.g. sidecar still starting).
+  example: []
+  syntax:
+    content: public const string ConnectivityTimeoutSecondsEnvVar = "WORKER_RECOVERY_CONNECTIVITY_TIMEOUT_SECONDS"
+    return:
+      type: System.String
+    content.vb: Public Const ConnectivityTimeoutSecondsEnvVar As String = "WORKER_RECOVERY_CONNECTIVITY_TIMEOUT_SECONDS"
 - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultEnabled
   commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultEnabled
   id: DefaultEnabled
@@ -157,7 +189,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DefaultEnabled
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
-    startLine: 18
+    startLine: 21
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
@@ -186,7 +218,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DefaultLeaseTtlSeconds
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
@@ -215,17 +247,55 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DefaultAcquireTimeoutSeconds
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
-    startLine: 24
+    startLine: 27
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
-  summary: Default acquire timeout (30s — matches the typical Dapr state store call latency).
+  summary: Default acquire timeout (30s — bounds how long we wait for a live competing lease to expire once the store is reachable).
   example: []
   syntax:
     content: public const int DefaultAcquireTimeoutSeconds = 30
     return:
       type: System.Int32
     content.vb: Public Const DefaultAcquireTimeoutSeconds As Integer = 30
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultConnectivityTimeoutSeconds
+  commentId: F:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultConnectivityTimeoutSeconds
+  id: DefaultConnectivityTimeoutSeconds
+  parent: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  langs:
+  - csharp
+  - vb
+  name: DefaultConnectivityTimeoutSeconds
+  nameWithType: WorkerRecoveryOptions.DefaultConnectivityTimeoutSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.DefaultConnectivityTimeoutSeconds
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: DefaultConnectivityTimeoutSeconds
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 36
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: >-
+    Default connectivity timeout (120s). Covers cold-start races where the state-store
+
+    sidecar (e.g. Dapr) isn't yet accepting connections when this instance starts —
+
+    observed in production as a burst of "Connection refused" errors that outlasted the
+
+    old fixed 30s <xref href="Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds" data-throw-if-not-resolved="false"></xref> window, permanently skipping recovery
+
+    for that instance's lifetime.
+  example: []
+  syntax:
+    content: public const int DefaultConnectivityTimeoutSeconds = 120
+    return:
+      type: System.Int32
+    content.vb: Public Const DefaultConnectivityTimeoutSeconds As Integer = 120
 - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
   commentId: P:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
   id: Enabled
@@ -244,7 +314,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Enabled
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
-    startLine: 27
+    startLine: 39
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
@@ -275,7 +345,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LeaseTtlSeconds
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
-    startLine: 30
+    startLine: 42
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
@@ -306,11 +376,11 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: AcquireTimeoutSeconds
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
-    startLine: 33
+    startLine: 45
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
-  summary: How long this instance will wait to acquire the lease before skipping recovery.
+  summary: How long this instance will wait to acquire the lease before skipping recovery, once the state store is reachable.
   example: []
   syntax:
     content: public int AcquireTimeoutSeconds { get; init; }
@@ -319,6 +389,37 @@ items:
       type: System.Int32
     content.vb: Public Property AcquireTimeoutSeconds As Integer
   overload: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds*
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+  commentId: P:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+  id: ConnectivityTimeoutSeconds
+  parent: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions
+  langs:
+  - csharp
+  - vb
+  name: ConnectivityTimeoutSeconds
+  nameWithType: WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: ConnectivityTimeoutSeconds
+    path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
+    startLine: 48
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Configuration
+  summary: How long this instance will keep retrying, with backoff, while it cannot reach the state store at all.
+  example: []
+  syntax:
+    content: public int ConnectivityTimeoutSeconds { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ConnectivityTimeoutSeconds As Integer
+  overload: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds*
 - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment(System.Func{System.String,System.String})
   commentId: M:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment(System.Func{System.String,System.String})
   id: FromEnvironment(System.Func{System.String,System.String})
@@ -337,7 +438,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: FromEnvironment
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerRecoveryOptions.cs
-    startLine: 39
+    startLine: 54
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
@@ -702,6 +803,12 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+  commentId: P:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+  href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_AcquireTimeoutSeconds
+  name: AcquireTimeoutSeconds
+  nameWithType: WorkerRecoveryOptions.AcquireTimeoutSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
 - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled*
   commentId: Overload:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.Enabled
   href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_Enabled
@@ -720,6 +827,12 @@ references:
   name: AcquireTimeoutSeconds
   nameWithType: WorkerRecoveryOptions.AcquireTimeoutSeconds
   fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.AcquireTimeoutSeconds
+- uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds*
+  commentId: Overload:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+  href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_ConnectivityTimeoutSeconds
+  name: ConnectivityTimeoutSeconds
+  nameWithType: WorkerRecoveryOptions.ConnectivityTimeoutSeconds
+  fullName: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.ConnectivityTimeoutSeconds
 - uid: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment*
   commentId: Overload:Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.FromEnvironment
   href: Virtufin.WorkManager.Configuration.WorkerRecoveryOptions.html#Virtufin_WorkManager_Configuration_WorkerRecoveryOptions_FromEnvironment_System_Func_System_String_System_String__
