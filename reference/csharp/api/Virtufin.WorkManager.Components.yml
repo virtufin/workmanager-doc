@@ -5,7 +5,7 @@ items:
   id: Components
   parent: Virtufin.WorkManager
   children:
-  - Virtufin.WorkManager.Components.NuGetAuthHandler
+  - Virtufin.WorkManager.Components.RegistryAuthHandler
   - Virtufin.WorkManager.Components.WorkManager
   langs:
   - csharp
@@ -17,12 +17,12 @@ items:
   assemblies:
   - Virtufin.WorkManager
 references:
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler
-  commentId: T:Virtufin.WorkManager.Components.NuGetAuthHandler
-  href: Virtufin.WorkManager.Components.NuGetAuthHandler.html
-  name: NuGetAuthHandler
-  nameWithType: NuGetAuthHandler
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler
+- uid: Virtufin.WorkManager.Components.RegistryAuthHandler
+  commentId: T:Virtufin.WorkManager.Components.RegistryAuthHandler
+  href: Virtufin.WorkManager.Components.RegistryAuthHandler.html
+  name: RegistryAuthHandler
+  nameWithType: RegistryAuthHandler
+  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler
 - uid: Virtufin.WorkManager.Components.WorkManager
   commentId: T:Virtufin.WorkManager.Components.WorkManager
   parent: Virtufin.WorkManager.Components

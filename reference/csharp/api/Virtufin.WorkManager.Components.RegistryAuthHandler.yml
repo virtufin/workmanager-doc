@@ -1,47 +1,57 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler
-  commentId: T:Virtufin.WorkManager.Components.NuGetAuthHandler
-  id: NuGetAuthHandler
+- uid: Virtufin.WorkManager.Components.RegistryAuthHandler
+  commentId: T:Virtufin.WorkManager.Components.RegistryAuthHandler
+  id: RegistryAuthHandler
   parent: Virtufin.WorkManager.Components
   children:
-  - Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String)
-  - Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String[])
-  - Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHosts
-  - Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
-  - Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor(System.String)
+  - Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor(System.String[])
+  - Virtufin.WorkManager.Components.RegistryAuthHandler.DefaultRegistryHosts
+  - Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
+  - Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
-  name: NuGetAuthHandler
-  nameWithType: NuGetAuthHandler
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler
+  name: RegistryAuthHandler
+  nameWithType: RegistryAuthHandler
+  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler
   type: Class
   source:
     remote:
-      path: src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
+      path: src/Virtufin.WorkManager/Components/RegistryAuthHandler.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: NuGetAuthHandler
-    path: ../../../src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
-    startLine: 42
+    id: RegistryAuthHandler
+    path: ../../../src/Virtufin.WorkManager/Components/RegistryAuthHandler.cs
+    startLine: 54
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
   summary: >-
     HTTP message handler that injects HTTP Basic credentials into
 
-    outbound requests to the configured NuGet registry. Used by the
+    outbound requests to the configured Gitea package registry. Used by
 
-    WorkManager's <xref href="System.Net.Http.IHttpClientFactory" data-throw-if-not-resolved="false"></xref>-managed
+    the WorkManager's <xref href="System.Net.Http.IHttpClientFactory" data-throw-if-not-resolved="false"></xref>-managed
 
-    <code>CodeFetcher</code> client so it can download worker
+    <code>CodeFetcher</code> client so it can download worker code-source
 
-    <code>.nupkg</code> artefacts from a private Gitea NuGet registry
+    artefacts -- both <code>.nupkg</code> (NuGet, .NET workers) and <code>.whl</code>
 
-    (e.g. <code>https://gitea.haenerconsulting.com/api/packages/virtufin/nuget/package/...</code>)
+    (PyPI, <code>PythonWheelEngine</code>'s wheel-bundle workers) -- from a
 
-    without requiring public-read access on the registry.
+    private Gitea registry (e.g.
+
+    <code>https://gitea.haenerconsulting.com/api/packages/virtufin/nuget/package/...</code>
+
+    or <code>.../api/packages/virtufin/pypi/files/...</code>) without requiring
+
+    public-read access on the registry. Despite the historical name, it
+
+    is registry/ecosystem-agnostic -- it matches purely on request host,
+
+    not on package type.
   remarks: >-
     <p>
 
@@ -50,8 +60,15 @@ items:
     construction:
 
 
-    <ul><li><code>VIRTUFIN_NUGET_USERNAME</code> — typically <code>buildbot</code>.</li><li><code>VIRTUFIN_NUGET_API_KEY</code> — the Gitea personal access
-            token with <code>read:package</code> + <code>write:package</code> scopes.</li></ul>
+    <ul><li><code>VIRTUFIN_REGISTRY_USER</code> — typically <code>buildbot</code>.</li><li><code>VIRTUFIN_REGISTRY_TOKEN</code> — a Gitea personal access
+            token. Needs <code>read:repository</code> scope, not just
+            <code>read:package</code>/<code>write:package</code> -- the latter is
+            sufficient to list/manage packages but not to download raw
+            package files from a private-repo project (confirmed live:
+            a token with only <code>read:package</code>/<code>write:package</code>
+            gets a 404, not a 401, fetching a <code>.whl</code> file this way
+            -- Gitea masks the permission failure as "not found" rather
+            than "forbidden").</li></ul>
     </p>
 
     <p>
@@ -60,17 +77,17 @@ items:
 
     requests whose URL host matches one of the configured
 
-    <xref href="Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts" data-throw-if-not-resolved="false"></xref> (case-insensitive exact match).
+    <xref href="Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts" data-throw-if-not-resolved="false"></xref> (case-insensitive exact match).
 
     Requests to other hosts are passed through unchanged, so
 
-    non-NuGet code-source URLs do not leak credentials. The default
+    non-Gitea code-source URLs do not leak credentials. The default
 
-    list is <code>nuget.haenerconsulting.com</code> (the legacy DNS name
+    list is <code>nuget.haenerconsulting.com</code> (a legacy DNS alias) and
 
-    pointing at the same Gitea backend) and
+    <code>gitea.haenerconsulting.com</code> (the canonical Gitea host) --
 
-    <code>gitea.haenerconsulting.com</code> (the canonical Gitea host).
+    both resolve to the same backend.
 
     </p>
 
@@ -89,8 +106,8 @@ items:
     </p>
   example: []
   syntax:
-    content: 'public sealed class NuGetAuthHandler : DelegatingHandler, IDisposable'
-    content.vb: Public NotInheritable Class NuGetAuthHandler Inherits DelegatingHandler Implements IDisposable
+    content: 'public sealed class RegistryAuthHandler : DelegatingHandler, IDisposable'
+    content.vb: Public NotInheritable Class RegistryAuthHandler Inherits DelegatingHandler Implements IDisposable
   inheritance:
   - System.Object
   - System.Net.Http.HttpMessageHandler
@@ -106,30 +123,30 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHosts
-  commentId: F:Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHosts
+- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.DefaultRegistryHosts
+  commentId: F:Virtufin.WorkManager.Components.RegistryAuthHandler.DefaultRegistryHosts
   id: DefaultRegistryHosts
-  parent: Virtufin.WorkManager.Components.NuGetAuthHandler
+  parent: Virtufin.WorkManager.Components.RegistryAuthHandler
   langs:
   - csharp
   - vb
   name: DefaultRegistryHosts
-  nameWithType: NuGetAuthHandler.DefaultRegistryHosts
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHosts
+  nameWithType: RegistryAuthHandler.DefaultRegistryHosts
+  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.DefaultRegistryHosts
   type: Field
   source:
     remote:
-      path: src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
+      path: src/Virtufin.WorkManager/Components/RegistryAuthHandler.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DefaultRegistryHosts
-    path: ../../../src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
-    startLine: 49
+    path: ../../../src/Virtufin.WorkManager/Components/RegistryAuthHandler.cs
+    startLine: 61
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
   summary: >-
-    Default host patterns for the project's NuGet registry.
+    Default host patterns for the project's Gitea package registry.
 
     Both names point at the same Gitea backend (one is a DNS
 
@@ -140,89 +157,89 @@ items:
     return:
       type: System.String[]
     content.vb: Public Shared ReadOnly DefaultRegistryHosts As String()
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String)
-  commentId: M:Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String)
+- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor(System.String)
+  commentId: M:Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor(System.String)
   id: '#ctor(System.String)'
-  parent: Virtufin.WorkManager.Components.NuGetAuthHandler
+  parent: Virtufin.WorkManager.Components.RegistryAuthHandler
   langs:
   - csharp
   - vb
-  name: NuGetAuthHandler(string)
-  nameWithType: NuGetAuthHandler.NuGetAuthHandler(string)
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.NuGetAuthHandler(string)
+  name: RegistryAuthHandler(string)
+  nameWithType: RegistryAuthHandler.RegistryAuthHandler(string)
+  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryAuthHandler(string)
   type: Constructor
   source:
     remote:
-      path: src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
+      path: src/Virtufin.WorkManager/Components/RegistryAuthHandler.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
-    path: ../../../src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
-    startLine: 59
+    path: ../../../src/Virtufin.WorkManager/Components/RegistryAuthHandler.cs
+    startLine: 71
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
   syntax:
-    content: public NuGetAuthHandler(string registryHost)
+    content: public RegistryAuthHandler(string registryHost)
     parameters:
     - id: registryHost
       type: System.String
     content.vb: Public Sub New(registryHost As String)
-  overload: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor*
-  nameWithType.vb: NuGetAuthHandler.New(String)
-  fullName.vb: Virtufin.WorkManager.Components.NuGetAuthHandler.New(String)
+  overload: Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor*
+  nameWithType.vb: RegistryAuthHandler.New(String)
+  fullName.vb: Virtufin.WorkManager.Components.RegistryAuthHandler.New(String)
   name.vb: New(String)
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String[])
-  commentId: M:Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String[])
+- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor(System.String[])
+  commentId: M:Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor(System.String[])
   id: '#ctor(System.String[])'
-  parent: Virtufin.WorkManager.Components.NuGetAuthHandler
+  parent: Virtufin.WorkManager.Components.RegistryAuthHandler
   langs:
   - csharp
   - vb
-  name: NuGetAuthHandler(string[])
-  nameWithType: NuGetAuthHandler.NuGetAuthHandler(string[])
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.NuGetAuthHandler(string[])
+  name: RegistryAuthHandler(string[])
+  nameWithType: RegistryAuthHandler.RegistryAuthHandler(string[])
+  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryAuthHandler(string[])
   type: Constructor
   source:
     remote:
-      path: src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
+      path: src/Virtufin.WorkManager/Components/RegistryAuthHandler.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
-    path: ../../../src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
-    startLine: 64
+    path: ../../../src/Virtufin.WorkManager/Components/RegistryAuthHandler.cs
+    startLine: 76
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
   syntax:
-    content: public NuGetAuthHandler(string[] registryHosts)
+    content: public RegistryAuthHandler(string[] registryHosts)
     parameters:
     - id: registryHosts
       type: System.String[]
     content.vb: Public Sub New(registryHosts As String())
-  overload: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor*
-  nameWithType.vb: NuGetAuthHandler.New(String())
-  fullName.vb: Virtufin.WorkManager.Components.NuGetAuthHandler.New(String())
+  overload: Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor*
+  nameWithType.vb: RegistryAuthHandler.New(String())
+  fullName.vb: Virtufin.WorkManager.Components.RegistryAuthHandler.New(String())
   name.vb: New(String())
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
-  commentId: P:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
+  commentId: P:Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
   id: RegistryHosts
-  parent: Virtufin.WorkManager.Components.NuGetAuthHandler
+  parent: Virtufin.WorkManager.Components.RegistryAuthHandler
   langs:
   - csharp
   - vb
   name: RegistryHosts
-  nameWithType: NuGetAuthHandler.RegistryHosts
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+  nameWithType: RegistryAuthHandler.RegistryHosts
+  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
   type: Property
   source:
     remote:
-      path: src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
+      path: src/Virtufin.WorkManager/Components/RegistryAuthHandler.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RegistryHosts
-    path: ../../../src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
-    startLine: 71
+    path: ../../../src/Virtufin.WorkManager/Components/RegistryAuthHandler.cs
+    startLine: 83
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -232,26 +249,26 @@ items:
     return:
       type: System.Collections.Generic.IReadOnlyList{System.String}
     content.vb: Public ReadOnly Property RegistryHosts As IReadOnlyList(Of String)
-  overload: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts*
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
-  commentId: M:Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  overload: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts*
+- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
   id: SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
-  parent: Virtufin.WorkManager.Components.NuGetAuthHandler
+  parent: Virtufin.WorkManager.Components.RegistryAuthHandler
   langs:
   - csharp
   - vb
   name: SendAsync(HttpRequestMessage, CancellationToken)
-  nameWithType: NuGetAuthHandler.SendAsync(HttpRequestMessage, CancellationToken)
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
+  nameWithType: RegistryAuthHandler.SendAsync(HttpRequestMessage, CancellationToken)
+  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
-      path: src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
+      path: src/Virtufin.WorkManager/Components/RegistryAuthHandler.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SendAsync
-    path: ../../../src/Virtufin.WorkManager/Components/NuGetAuthHandler.cs
-    startLine: 73
+    path: ../../../src/Virtufin.WorkManager/Components/RegistryAuthHandler.cs
+    startLine: 85
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -271,7 +288,7 @@ items:
       description: The task object representing the asynchronous operation.
     content.vb: Protected Overrides Function SendAsync(request As HttpRequestMessage, cancellationToken As CancellationToken) As Task(Of HttpResponseMessage)
   overridden: System.Net.Http.DelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
-  overload: Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync*
+  overload: Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync*
   exceptions:
   - type: System.ArgumentNullException
     commentId: T:System.ArgumentNullException
@@ -288,12 +305,12 @@ references:
   name: IHttpClientFactory
   nameWithType: IHttpClientFactory
   fullName: System.Net.Http.IHttpClientFactory
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
-  commentId: P:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
-  href: Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHosts
+- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
+  commentId: P:Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
+  href: Virtufin.WorkManager.Components.RegistryAuthHandler.html#Virtufin_WorkManager_Components_RegistryAuthHandler_RegistryHosts
   name: RegistryHosts
-  nameWithType: NuGetAuthHandler.RegistryHosts
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+  nameWithType: RegistryAuthHandler.RegistryHosts
+  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
 - uid: Virtufin.WorkManager.Components
   commentId: N:Virtufin.WorkManager.Components
   href: Virtufin.html
@@ -651,14 +668,14 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: (
   - name: )
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor*
-  commentId: Overload:Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor
-  href: Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler__ctor_System_String_
-  name: NuGetAuthHandler
-  nameWithType: NuGetAuthHandler.NuGetAuthHandler
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.NuGetAuthHandler
-  nameWithType.vb: NuGetAuthHandler.New
-  fullName.vb: Virtufin.WorkManager.Components.NuGetAuthHandler.New
+- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor*
+  commentId: Overload:Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor
+  href: Virtufin.WorkManager.Components.RegistryAuthHandler.html#Virtufin_WorkManager_Components_RegistryAuthHandler__ctor_System_String_
+  name: RegistryAuthHandler
+  nameWithType: RegistryAuthHandler.RegistryAuthHandler
+  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryAuthHandler
+  nameWithType.vb: RegistryAuthHandler.New
+  fullName.vb: Virtufin.WorkManager.Components.RegistryAuthHandler.New
   name.vb: New
 - uid: System.String
   commentId: T:System.String
@@ -671,12 +688,12 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts*
-  commentId: Overload:Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
-  href: Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHosts
+- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts*
+  commentId: Overload:Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
+  href: Virtufin.WorkManager.Components.RegistryAuthHandler.html#Virtufin_WorkManager_Components_RegistryAuthHandler_RegistryHosts
   name: RegistryHosts
-  nameWithType: NuGetAuthHandler.RegistryHosts
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts
+  nameWithType: RegistryAuthHandler.RegistryHosts
+  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
 - uid: System.Collections.Generic.IReadOnlyList{System.String}
   commentId: T:System.Collections.Generic.IReadOnlyList{System.String}
   parent: System.Collections.Generic
@@ -833,12 +850,12 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   - name: )
-- uid: Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync*
-  commentId: Overload:Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync
-  href: Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_SendAsync_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_
+- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync*
+  commentId: Overload:Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync
+  href: Virtufin.WorkManager.Components.RegistryAuthHandler.html#Virtufin_WorkManager_Components_RegistryAuthHandler_SendAsync_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_
   name: SendAsync
-  nameWithType: NuGetAuthHandler.SendAsync
-  fullName: Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync
+  nameWithType: RegistryAuthHandler.SendAsync
+  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync
 - uid: System.Net.Http.HttpRequestMessage
   commentId: T:System.Net.Http.HttpRequestMessage
   parent: System.Net.Http

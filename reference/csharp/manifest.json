@@ -4,17 +4,17 @@
   "files": [
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Virtufin.WorkManager.Components.NuGetAuthHandler.yml",
+      "source_relative_path": "api/Virtufin.WorkManager.Components.RegistryAuthHandler.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Virtufin.WorkManager.Components.NuGetAuthHandler.html"
+          "relative_path": "api/Virtufin.WorkManager.Components.RegistryAuthHandler.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Virtufin.WorkManager.Components.NuGetAuthHandler",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Components.NuGetAuthHandler.yml\" sourcestartlinenumber=\"1\">HTTP message handler that injects HTTP Basic credentials into\noutbound requests to the configured NuGet registry. Used by the\nWorkManager's <xref href=\"System.Net.Http.IHttpClientFactory\" data-throw-if-not-resolved=\"false\"></xref>-managed\n<code>CodeFetcher</code> client so it can download worker\n<code>.nupkg</code> artefacts from a private Gitea NuGet registry\n(e.g. <code>https://gitea.haenerconsulting.com/api/packages/virtufin/nuget/package/...</code>)\nwithout requiring public-read access on the registry.</p>\n"
+      "Title": "Virtufin.WorkManager.Components.RegistryAuthHandler",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Components.RegistryAuthHandler.yml\" sourcestartlinenumber=\"1\">HTTP message handler that injects HTTP Basic credentials into\noutbound requests to the configured Gitea package registry. Used by\nthe WorkManager's <xref href=\"System.Net.Http.IHttpClientFactory\" data-throw-if-not-resolved=\"false\"></xref>-managed\n<code>CodeFetcher</code> client so it can download worker code-source\nartefacts -- both <code>.nupkg</code> (NuGet, .NET workers) and <code>.whl</code>\n(PyPI, <code>PythonWheelEngine</code>'s wheel-bundle workers) -- from a\nprivate Gitea registry (e.g.\n<code>https://gitea.haenerconsulting.com/api/packages/virtufin/nuget/package/...</code>\nor <code>.../api/packages/virtufin/pypi/files/...</code>) without requiring\npublic-read access on the registry. Despite the historical name, it\nis registry/ecosystem-agnostic -- it matches purely on request host,\nnot on package type.</p>\n"
     },
     {
       "type": "ManagedReference",

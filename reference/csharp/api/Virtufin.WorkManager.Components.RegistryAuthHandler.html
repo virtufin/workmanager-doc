@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class NuGetAuthHandler | Virtufin WorkManager - C# Reference </title>
+      <title>Class RegistryAuthHandler | Virtufin WorkManager - C# Reference </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class NuGetAuthHandler | Virtufin WorkManager - C# Reference ">
+      <meta name="title" content="Class RegistryAuthHandler | Virtufin WorkManager - C# Reference ">
       
-      <meta name="description" content="HTTP message handler that injects HTTP Basic credentials into outbound requests to the configured NuGet registry. Used by the WorkManager&#39;s -managed CodeFetcher client so it can download worker .nupkg artefacts from a private Gitea NuGet registry (e.g. https://gitea.haenerconsulting.com/api/packages/virtufin/nuget/package/...) without requiring public-read access on the registry.">
+      <meta name="description" content="HTTP message handler that injects HTTP Basic credentials into outbound requests to the configured Gitea package registry. Used by the WorkManager&#39;s -managed CodeFetcher client so it can download worker code-source artefacts -- both .nupkg (NuGet, .NET workers) and .whl (PyPI, PythonWheelEngine&#39;s wheel-bundle workers) -- from a private Gitea registry (e.g. https://gitea.haenerconsulting.com/api/packages/virtufin/nuget/package/... or .../api/packages/virtufin/pypi/files/...) without requiring public-read access on the registry. Despite the historical name, it is registry/ecosystem-agnostic -- it matches purely on request host, not on package type.">
       <link rel="icon" href="../favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -49,10 +49,10 @@
             Virtufin.WorkManager
           </a>
           <div class="git-info">
-            <a href="{git_repo_url}/commit/98d93deaa4903c48ae6fedb21df18a5bc7c6dad6" target="_blank" rel="noopener" class="commit-badge" title="View commit 98d93deaa4903c48ae6fedb21df18a5bc7c6dad6">
+            <a href="{git_repo_url}/commit/b91b6627ad5d35e68261d4e9ed55424492834cf1" target="_blank" rel="noopener" class="commit-badge" title="View commit b91b6627ad5d35e68261d4e9ed55424492834cf1">
               <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
                 <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"></rect>
-                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">98d93deaa4903c48ae6fedb21df18a5bc7c6dad6</text>
+                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">b91b6627ad5d35e68261d4e9ed55424492834cf1</text>
               </svg>
             </a>
           </div>          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,12 +88,12 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Virtufin.WorkManager.Components.NuGetAuthHandler">
+        <article data-uid="Virtufin.WorkManager.Components.RegistryAuthHandler">
 
 
 
-  <h1 id="Virtufin_WorkManager_Components_NuGetAuthHandler" data-uid="Virtufin.WorkManager.Components.NuGetAuthHandler" class="text-break">
-Class NuGetAuthHandler  
+  <h1 id="Virtufin_WorkManager_Components_RegistryAuthHandler" data-uid="Virtufin.WorkManager.Components.RegistryAuthHandler" class="text-break">
+Class RegistryAuthHandler  
   </h1>
 
   <div class="facts text-secondary">
@@ -102,17 +102,22 @@ Class NuGetAuthHandler
   </div>
 
   <div class="markdown summary"><p>HTTP message handler that injects HTTP Basic credentials into
-outbound requests to the configured NuGet registry. Used by the
-WorkManager's <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.http.ihttpclientfactory">IHttpClientFactory</a>-managed
-<code>CodeFetcher</code> client so it can download worker
-<code>.nupkg</code> artefacts from a private Gitea NuGet registry
-(e.g. <code>https://gitea.haenerconsulting.com/api/packages/virtufin/nuget/package/...</code>)
-without requiring public-read access on the registry.</p>
+outbound requests to the configured Gitea package registry. Used by
+the WorkManager's <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.http.ihttpclientfactory">IHttpClientFactory</a>-managed
+<code>CodeFetcher</code> client so it can download worker code-source
+artefacts -- both <code>.nupkg</code> (NuGet, .NET workers) and <code>.whl</code>
+(PyPI, <code>PythonWheelEngine</code>'s wheel-bundle workers) -- from a
+private Gitea registry (e.g.
+<code>https://gitea.haenerconsulting.com/api/packages/virtufin/nuget/package/...</code>
+or <code>.../api/packages/virtufin/pypi/files/...</code>) without requiring
+public-read access on the registry. Despite the historical name, it
+is registry/ecosystem-agnostic -- it matches purely on request host,
+not on package type.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class NuGetAuthHandler : DelegatingHandler, IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class RegistryAuthHandler : DelegatingHandler, IDisposable</code></pre>
   </div>
 
 
@@ -124,7 +129,7 @@ without requiring public-read access on the registry.</p>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.http.httpmessagehandler">HttpMessageHandler</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.http.delegatinghandler">DelegatingHandler</a></div>
-      <div><span class="xref">NuGetAuthHandler</span></div>
+      <div><span class="xref">RegistryAuthHandler</span></div>
     </dd>
   </dl>
 
@@ -168,22 +173,29 @@ without requiring public-read access on the registry.</p>
 
 
 
-  <h2 id="Virtufin_WorkManager_Components_NuGetAuthHandler_remarks">Remarks</h2>
+  <h2 id="Virtufin_WorkManager_Components_RegistryAuthHandler_remarks">Remarks</h2>
   <div class="markdown level0 remarks"><p>
 Credentials are read from environment variables at handler
 construction:
-<ul><li><code>VIRTUFIN_NUGET_USERNAME</code> — typically <code>buildbot</code>.</li><li><code>VIRTUFIN_NUGET_API_KEY</code> — the Gitea personal access
-        token with <code>read:package</code> + <code>write:package</code> scopes.</li></ul>
+<ul><li><code>VIRTUFIN_REGISTRY_USER</code> — typically <code>buildbot</code>.</li><li><code>VIRTUFIN_REGISTRY_TOKEN</code> — a Gitea personal access
+        token. Needs <code>read:repository</code> scope, not just
+        <code>read:package</code>/<code>write:package</code> -- the latter is
+        sufficient to list/manage packages but not to download raw
+        package files from a private-repo project (confirmed live:
+        a token with only <code>read:package</code>/<code>write:package</code>
+        gets a 404, not a 401, fetching a <code>.whl</code> file this way
+        -- Gitea masks the permission failure as "not found" rather
+        than "forbidden").</li></ul>
 
 <p>
 The handler only injects the <code>Authorization</code> header for
 requests whose URL host matches one of the configured
-<a class="xref" href="Virtufin.WorkManager.Components.NuGetAuthHandler.html#Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHosts">RegistryHosts</a> (case-insensitive exact match).
+<a class="xref" href="Virtufin.WorkManager.Components.RegistryAuthHandler.html#Virtufin_WorkManager_Components_RegistryAuthHandler_RegistryHosts">RegistryHosts</a> (case-insensitive exact match).
 Requests to other hosts are passed through unchanged, so
-non-NuGet code-source URLs do not leak credentials. The default
-list is <code>nuget.haenerconsulting.com</code> (the legacy DNS name
-pointing at the same Gitea backend) and
-<code>gitea.haenerconsulting.com</code> (the canonical Gitea host).
+non-Gitea code-source URLs do not leak credentials. The default
+list is <code>nuget.haenerconsulting.com</code> (a legacy DNS alias) and
+<code>gitea.haenerconsulting.com</code> (the canonical Gitea host) --
+both resolve to the same backend.
 </p>
 <p>
 This is intentionally scoped: a future move to a different
@@ -199,10 +211,10 @@ handler variant or a richer routing config — the public
 </h2>
 
 
-  <a id="Virtufin_WorkManager_Components_NuGetAuthHandler__ctor_" data-uid="Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor*"></a>
+  <a id="Virtufin_WorkManager_Components_RegistryAuthHandler__ctor_" data-uid="Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor*"></a>
 
-  <h3 id="Virtufin_WorkManager_Components_NuGetAuthHandler__ctor_System_String_" data-uid="Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String)">
-  NuGetAuthHandler(string)
+  <h3 id="Virtufin_WorkManager_Components_RegistryAuthHandler__ctor_System_String_" data-uid="Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor(System.String)">
+  RegistryAuthHandler(string)
   
   </h3>
 
@@ -210,7 +222,7 @@ handler variant or a richer routing config — the public
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public NuGetAuthHandler(string registryHost)</code></pre>
+    <pre><code class="lang-csharp hljs">public RegistryAuthHandler(string registryHost)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -230,10 +242,10 @@ handler variant or a richer routing config — the public
 
 
 
-  <a id="Virtufin_WorkManager_Components_NuGetAuthHandler__ctor_" data-uid="Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor*"></a>
+  <a id="Virtufin_WorkManager_Components_RegistryAuthHandler__ctor_" data-uid="Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor*"></a>
 
-  <h3 id="Virtufin_WorkManager_Components_NuGetAuthHandler__ctor_System_String___" data-uid="Virtufin.WorkManager.Components.NuGetAuthHandler.#ctor(System.String[])">
-  NuGetAuthHandler(string[])
+  <h3 id="Virtufin_WorkManager_Components_RegistryAuthHandler__ctor_System_String___" data-uid="Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor(System.String[])">
+  RegistryAuthHandler(string[])
   
   </h3>
 
@@ -241,7 +253,7 @@ handler variant or a richer routing config — the public
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public NuGetAuthHandler(string[] registryHosts)</code></pre>
+    <pre><code class="lang-csharp hljs">public RegistryAuthHandler(string[] registryHosts)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -266,12 +278,12 @@ handler variant or a richer routing config — the public
 
 
 
-  <h3 id="Virtufin_WorkManager_Components_NuGetAuthHandler_DefaultRegistryHosts" data-uid="Virtufin.WorkManager.Components.NuGetAuthHandler.DefaultRegistryHosts">
+  <h3 id="Virtufin_WorkManager_Components_RegistryAuthHandler_DefaultRegistryHosts" data-uid="Virtufin.WorkManager.Components.RegistryAuthHandler.DefaultRegistryHosts">
   DefaultRegistryHosts
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Default host patterns for the project's NuGet registry.
+  <div class="markdown level1 summary"><p>Default host patterns for the project's Gitea package registry.
 Both names point at the same Gitea backend (one is a DNS
 alias of the other).</p>
 </div>
@@ -302,9 +314,9 @@ alias of the other).</p>
 </h2>
 
 
-  <a id="Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHosts_" data-uid="Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts*"></a>
+  <a id="Virtufin_WorkManager_Components_RegistryAuthHandler_RegistryHosts_" data-uid="Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts*"></a>
 
-  <h3 id="Virtufin_WorkManager_Components_NuGetAuthHandler_RegistryHosts" data-uid="Virtufin.WorkManager.Components.NuGetAuthHandler.RegistryHosts">
+  <h3 id="Virtufin_WorkManager_Components_RegistryAuthHandler_RegistryHosts" data-uid="Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts">
   RegistryHosts
   
   </h3>
@@ -337,9 +349,9 @@ alias of the other).</p>
 </h2>
 
 
-  <a id="Virtufin_WorkManager_Components_NuGetAuthHandler_SendAsync_" data-uid="Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync*"></a>
+  <a id="Virtufin_WorkManager_Components_RegistryAuthHandler_SendAsync_" data-uid="Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync*"></a>
 
-  <h3 id="Virtufin_WorkManager_Components_NuGetAuthHandler_SendAsync_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Components.NuGetAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+  <h3 id="Virtufin_WorkManager_Components_RegistryAuthHandler_SendAsync_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_" data-uid="Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
   SendAsync(HttpRequestMessage, CancellationToken)
   
   </h3>

@@ -8,8 +8,8 @@ items:
     name: Components
     type: Namespace
     items:
-    - uid: Virtufin.WorkManager.Components.NuGetAuthHandler
-      name: NuGetAuthHandler
+    - uid: Virtufin.WorkManager.Components.RegistryAuthHandler
+      name: RegistryAuthHandler
       type: Class
     - uid: Virtufin.WorkManager.Components.WorkManager
       name: WorkManager
