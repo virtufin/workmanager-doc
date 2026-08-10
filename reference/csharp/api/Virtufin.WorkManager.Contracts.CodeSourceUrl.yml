@@ -5,8 +5,9 @@ items:
   id: CodeSourceUrl
   parent: Virtufin.WorkManager.Contracts
   children:
-  - Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String)
+  - Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String,System.String)
   - Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256
+  - Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential
   - Virtufin.WorkManager.Contracts.CodeSourceUrl.Url
   langs:
   - csharp
@@ -22,7 +23,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CodeSourceUrl
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 18
+    startLine: 32
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -44,16 +45,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String)
-  commentId: M:Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String)
-  id: '#ctor(System.Uri,System.String)'
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String,System.String)
+  commentId: M:Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String,System.String)
+  id: '#ctor(System.Uri,System.String,System.String)'
   parent: Virtufin.WorkManager.Contracts.CodeSourceUrl
   langs:
   - csharp
   - vb
-  name: CodeSourceUrl(Uri, string?)
-  nameWithType: CodeSourceUrl.CodeSourceUrl(Uri, string?)
-  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.CodeSourceUrl(System.Uri, string?)
+  name: CodeSourceUrl(Uri, string?, string?)
+  nameWithType: CodeSourceUrl.CodeSourceUrl(Uri, string?, string?)
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.CodeSourceUrl(System.Uri, string?, string?)
   type: Constructor
   source:
     remote:
@@ -62,14 +63,14 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 18
+    startLine: 32
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
   summary: Represents code sourced from a URL.
   example: []
   syntax:
-    content: public CodeSourceUrl(Uri Url, string? ContentSha256 = null)
+    content: public CodeSourceUrl(Uri Url, string? ContentSha256 = null, string? NamedCredential = null)
     parameters:
     - id: Url
       type: System.Uri
@@ -77,11 +78,37 @@ items:
     - id: ContentSha256
       type: System.String
       description: Optional SHA-256 digest of the expected content, for integrity verification.
-    content.vb: Public Sub New(Url As Uri, ContentSha256 As String = Nothing)
+    - id: NamedCredential
+      type: System.String
+      description: >-
+        Optional server-resolved credential reference (e.g. <code>"virtufin"</code>),
+
+        persisted so a worker recovery re-fetch can still authorize itself.
+
+        Deliberately the ONLY credential material ever persisted here -- a
+
+        directly-supplied Basic/Bearer secret (see
+
+        <xref href="Virtufin.WorkManager.Protos.SourceCredential" data-throw-if-not-resolved="false"></xref>) is never written to this
+
+        record or to any <xref href="Virtufin.WorkManager.Contracts.WorkerConfig" data-throw-if-not-resolved="false"></xref>/<xref href="Virtufin.WorkManager.Contracts.HistoryEntry" data-throw-if-not-resolved="false"></xref>
+
+        state; it flows as a transient, per-call parameter through
+
+        <code>WorkManager.CreateWorkerAsync</code>/<code>LoadCode</code> and is discarded
+
+        after the fetch it authorizes. A worker created with a raw Basic/Bearer
+
+        credential therefore won't have one available on recovery after a
+
+        WorkManager restart -- a deliberate, documented tradeoff, not an
+
+        oversight.
+    content.vb: Public Sub New(Url As Uri, ContentSha256 As String = Nothing, NamedCredential As String = Nothing)
   overload: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor*
-  nameWithType.vb: CodeSourceUrl.New(Uri, String)
-  fullName.vb: Virtufin.WorkManager.Contracts.CodeSourceUrl.New(System.Uri, String)
-  name.vb: New(Uri, String)
+  nameWithType.vb: CodeSourceUrl.New(Uri, String, String)
+  fullName.vb: Virtufin.WorkManager.Contracts.CodeSourceUrl.New(System.Uri, String, String)
+  name.vb: New(Uri, String, String)
 - uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.Url
   commentId: P:Virtufin.WorkManager.Contracts.CodeSourceUrl.Url
   id: Url
@@ -100,7 +127,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Url
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 18
+    startLine: 32
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -131,7 +158,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ContentSha256
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
-    startLine: 18
+    startLine: 32
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
@@ -144,7 +171,79 @@ items:
       type: System.String
     content.vb: Public Property ContentSha256 As String
   overload: Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256*
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential
+  commentId: P:Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential
+  id: NamedCredential
+  parent: Virtufin.WorkManager.Contracts.CodeSourceUrl
+  langs:
+  - csharp
+  - vb
+  name: NamedCredential
+  nameWithType: CodeSourceUrl.NamedCredential
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential
+  type: Property
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: NamedCredential
+    path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
+    startLine: 32
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Contracts
+  summary: >-
+    Optional server-resolved credential reference (e.g. <code>"virtufin"</code>),
+
+    persisted so a worker recovery re-fetch can still authorize itself.
+
+    Deliberately the ONLY credential material ever persisted here -- a
+
+    directly-supplied Basic/Bearer secret (see
+
+    <xref href="Virtufin.WorkManager.Protos.SourceCredential" data-throw-if-not-resolved="false"></xref>) is never written to this
+
+    record or to any <xref href="Virtufin.WorkManager.Contracts.WorkerConfig" data-throw-if-not-resolved="false"></xref>/<xref href="Virtufin.WorkManager.Contracts.HistoryEntry" data-throw-if-not-resolved="false"></xref>
+
+    state; it flows as a transient, per-call parameter through
+
+    <code>WorkManager.CreateWorkerAsync</code>/<code>LoadCode</code> and is discarded
+
+    after the fetch it authorizes. A worker created with a raw Basic/Bearer
+
+    credential therefore won't have one available on recovery after a
+
+    WorkManager restart -- a deliberate, documented tradeoff, not an
+
+    oversight.
+  example: []
+  syntax:
+    content: public string? NamedCredential { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property NamedCredential As String
+  overload: Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential*
 references:
+- uid: Virtufin.WorkManager.Protos.SourceCredential
+  commentId: T:Virtufin.WorkManager.Protos.SourceCredential
+  parent: Virtufin.WorkManager.Protos
+  name: SourceCredential
+  nameWithType: SourceCredential
+  fullName: Virtufin.WorkManager.Protos.SourceCredential
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig
+  commentId: T:Virtufin.WorkManager.Contracts.WorkerConfig
+  href: Virtufin.WorkManager.Contracts.WorkerConfig.html
+  name: WorkerConfig
+  nameWithType: WorkerConfig
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig
+- uid: Virtufin.WorkManager.Contracts.HistoryEntry
+  commentId: T:Virtufin.WorkManager.Contracts.HistoryEntry
+  href: Virtufin.WorkManager.Contracts.HistoryEntry.html
+  name: HistoryEntry
+  nameWithType: HistoryEntry
+  fullName: Virtufin.WorkManager.Contracts.HistoryEntry
 - uid: Virtufin.WorkManager.Contracts
   commentId: N:Virtufin.WorkManager.Contracts
   href: Virtufin.html
@@ -454,6 +553,29 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: Virtufin.WorkManager.Protos
+  commentId: N:Virtufin.WorkManager.Protos
+  name: Virtufin.WorkManager.Protos
+  nameWithType: Virtufin.WorkManager.Protos
+  fullName: Virtufin.WorkManager.Protos
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+  - name: .
+  - uid: Virtufin.WorkManager.Protos
+    name: Protos
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+  - name: .
+  - uid: Virtufin.WorkManager.Protos
+    name: Protos
 - uid: System
   commentId: N:System
   isExternal: true
@@ -491,7 +613,7 @@ references:
   - name: )
 - uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor*
   commentId: Overload:Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor
-  href: Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl__ctor_System_Uri_System_String_
+  href: Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl__ctor_System_Uri_System_String_System_String_
   name: CodeSourceUrl
   nameWithType: CodeSourceUrl.CodeSourceUrl
   fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.CodeSourceUrl
@@ -529,3 +651,9 @@ references:
   name: ContentSha256
   nameWithType: CodeSourceUrl.ContentSha256
   fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential*
+  commentId: Overload:Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential
+  href: Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl_NamedCredential
+  name: NamedCredential
+  nameWithType: CodeSourceUrl.NamedCredential
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential

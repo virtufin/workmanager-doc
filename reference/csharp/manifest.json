@@ -4,17 +4,17 @@
   "files": [
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Virtufin.WorkManager.Components.RegistryAuthHandler.yml",
+      "source_relative_path": "api/Virtufin.WorkManager.Components.SourceCredentialResolver.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Virtufin.WorkManager.Components.RegistryAuthHandler.html"
+          "relative_path": "api/Virtufin.WorkManager.Components.SourceCredentialResolver.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Virtufin.WorkManager.Components.RegistryAuthHandler",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Components.RegistryAuthHandler.yml\" sourcestartlinenumber=\"1\">HTTP message handler that injects HTTP Basic credentials into\noutbound requests to the configured Gitea package registry. Used by\nthe WorkManager's <xref href=\"System.Net.Http.IHttpClientFactory\" data-throw-if-not-resolved=\"false\"></xref>-managed\n<code>CodeFetcher</code> client so it can download worker code-source\nartefacts -- both <code>.nupkg</code> (NuGet, .NET workers) and <code>.whl</code>\n(PyPI, <code>PythonWheelEngine</code>'s wheel-bundle workers) -- from a\nprivate Gitea registry (e.g.\n<code>https://gitea.haenerconsulting.com/api/packages/virtufin/nuget/package/...</code>\nor <code>.../api/packages/virtufin/pypi/files/...</code>) without requiring\npublic-read access on the registry. Despite the historical name, it\nis registry/ecosystem-agnostic -- it matches purely on request host,\nnot on package type.</p>\n"
+      "Title": "Virtufin.WorkManager.Components.SourceCredentialResolver",
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Components.SourceCredentialResolver.yml\" sourcestartlinenumber=\"1\">Resolves the effective <xref href=\"System.Net.Http.Headers.AuthenticationHeaderValue\" data-throw-if-not-resolved=\"false\"></xref> for a\ncode source fetch (<code>WorkManager.FetchFromUrlAsync</code>) from a\nper-request <xref href=\"Virtufin.WorkManager.Protos.SourceCredential\" data-throw-if-not-resolved=\"false\"></xref>, replacing the former\n<code>RegistryAuthHandler</code> -- a <xref href=\"System.Net.Http.DelegatingHandler\" data-throw-if-not-resolved=\"false\"></xref>\nregistered unconditionally on the <code>CodeFetcher</code>\n<xref href=\"System.Net.Http.IHttpClientFactory\" data-throw-if-not-resolved=\"false\"></xref> client and applied to every request\nwhose host matched, regardless of whether the caller actually wanted\nthe org credential used. Credentials are now explicit and per-request:\na directly-supplied Basic/Bearer secret, or a <code>named</code> reference\nresolved server-side (see <xref href=\"Virtufin.WorkManager.Components.SourceCredentialResolver.ResolveNamed(System.String%2cSystem.String%2cSystem.String%40)\" data-throw-if-not-resolved=\"false\"></xref>) so that secret\nnever has to be distributed to callers.</p>\n"
     },
     {
       "type": "ManagedReference",

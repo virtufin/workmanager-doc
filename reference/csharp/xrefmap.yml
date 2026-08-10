@@ -10,72 +10,56 @@ references:
   commentId: N:Virtufin.WorkManager.Components
   fullName: Virtufin.WorkManager.Components
   nameWithType: Virtufin.WorkManager.Components
-- uid: Virtufin.WorkManager.Components.RegistryAuthHandler
-  name: RegistryAuthHandler
-  href: api/Virtufin.WorkManager.Components.RegistryAuthHandler.html
-  commentId: T:Virtufin.WorkManager.Components.RegistryAuthHandler
-  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler
-  nameWithType: RegistryAuthHandler
-- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor(System.String)
-  name: RegistryAuthHandler(string)
-  href: api/Virtufin.WorkManager.Components.RegistryAuthHandler.html#Virtufin_WorkManager_Components_RegistryAuthHandler__ctor_System_String_
-  commentId: M:Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor(System.String)
-  name.vb: New(String)
-  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryAuthHandler(string)
-  fullName.vb: Virtufin.WorkManager.Components.RegistryAuthHandler.New(String)
-  nameWithType: RegistryAuthHandler.RegistryAuthHandler(string)
-  nameWithType.vb: RegistryAuthHandler.New(String)
-- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor(System.String[])
-  name: RegistryAuthHandler(string[])
-  href: api/Virtufin.WorkManager.Components.RegistryAuthHandler.html#Virtufin_WorkManager_Components_RegistryAuthHandler__ctor_System_String___
-  commentId: M:Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor(System.String[])
-  name.vb: New(String())
-  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryAuthHandler(string[])
-  fullName.vb: Virtufin.WorkManager.Components.RegistryAuthHandler.New(String())
-  nameWithType: RegistryAuthHandler.RegistryAuthHandler(string[])
-  nameWithType.vb: RegistryAuthHandler.New(String())
-- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor*
-  name: RegistryAuthHandler
-  href: api/Virtufin.WorkManager.Components.RegistryAuthHandler.html#Virtufin_WorkManager_Components_RegistryAuthHandler__ctor_
-  commentId: Overload:Virtufin.WorkManager.Components.RegistryAuthHandler.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryAuthHandler
-  fullName.vb: Virtufin.WorkManager.Components.RegistryAuthHandler.New
-  nameWithType: RegistryAuthHandler.RegistryAuthHandler
-  nameWithType.vb: RegistryAuthHandler.New
-- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.DefaultRegistryHosts
+- uid: Virtufin.WorkManager.Components.SourceCredentialResolver
+  name: SourceCredentialResolver
+  href: api/Virtufin.WorkManager.Components.SourceCredentialResolver.html
+  commentId: T:Virtufin.WorkManager.Components.SourceCredentialResolver
+  fullName: Virtufin.WorkManager.Components.SourceCredentialResolver
+  nameWithType: SourceCredentialResolver
+- uid: Virtufin.WorkManager.Components.SourceCredentialResolver.DefaultRegistryHosts
   name: DefaultRegistryHosts
-  href: api/Virtufin.WorkManager.Components.RegistryAuthHandler.html#Virtufin_WorkManager_Components_RegistryAuthHandler_DefaultRegistryHosts
-  commentId: F:Virtufin.WorkManager.Components.RegistryAuthHandler.DefaultRegistryHosts
-  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.DefaultRegistryHosts
-  nameWithType: RegistryAuthHandler.DefaultRegistryHosts
-- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
-  name: RegistryHosts
-  href: api/Virtufin.WorkManager.Components.RegistryAuthHandler.html#Virtufin_WorkManager_Components_RegistryAuthHandler_RegistryHosts
-  commentId: P:Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
-  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
-  nameWithType: RegistryAuthHandler.RegistryHosts
-- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts*
-  name: RegistryHosts
-  href: api/Virtufin.WorkManager.Components.RegistryAuthHandler.html#Virtufin_WorkManager_Components_RegistryAuthHandler_RegistryHosts_
-  commentId: Overload:Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
+  href: api/Virtufin.WorkManager.Components.SourceCredentialResolver.html#Virtufin_WorkManager_Components_SourceCredentialResolver_DefaultRegistryHosts
+  commentId: F:Virtufin.WorkManager.Components.SourceCredentialResolver.DefaultRegistryHosts
+  fullName: Virtufin.WorkManager.Components.SourceCredentialResolver.DefaultRegistryHosts
+  nameWithType: SourceCredentialResolver.DefaultRegistryHosts
+- uid: Virtufin.WorkManager.Components.SourceCredentialResolver.Resolve(Virtufin.WorkManager.Contracts.CodeSourceUrl,Virtufin.WorkManager.Protos.SourceCredential)
+  name: Resolve(CodeSourceUrl, SourceCredential?)
+  href: api/Virtufin.WorkManager.Components.SourceCredentialResolver.html#Virtufin_WorkManager_Components_SourceCredentialResolver_Resolve_Virtufin_WorkManager_Contracts_CodeSourceUrl_Virtufin_WorkManager_Protos_SourceCredential_
+  commentId: M:Virtufin.WorkManager.Components.SourceCredentialResolver.Resolve(Virtufin.WorkManager.Contracts.CodeSourceUrl,Virtufin.WorkManager.Protos.SourceCredential)
+  name.vb: Resolve(CodeSourceUrl, SourceCredential)
+  fullName: Virtufin.WorkManager.Components.SourceCredentialResolver.Resolve(Virtufin.WorkManager.Contracts.CodeSourceUrl, Virtufin.WorkManager.Protos.SourceCredential?)
+  fullName.vb: Virtufin.WorkManager.Components.SourceCredentialResolver.Resolve(Virtufin.WorkManager.Contracts.CodeSourceUrl, Virtufin.WorkManager.Protos.SourceCredential)
+  nameWithType: SourceCredentialResolver.Resolve(CodeSourceUrl, SourceCredential?)
+  nameWithType.vb: SourceCredentialResolver.Resolve(CodeSourceUrl, SourceCredential)
+- uid: Virtufin.WorkManager.Components.SourceCredentialResolver.Resolve*
+  name: Resolve
+  href: api/Virtufin.WorkManager.Components.SourceCredentialResolver.html#Virtufin_WorkManager_Components_SourceCredentialResolver_Resolve_
+  commentId: Overload:Virtufin.WorkManager.Components.SourceCredentialResolver.Resolve
   isSpec: "True"
-  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.RegistryHosts
-  nameWithType: RegistryAuthHandler.RegistryHosts
-- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
-  name: SendAsync(HttpRequestMessage, CancellationToken)
-  href: api/Virtufin.WorkManager.Components.RegistryAuthHandler.html#Virtufin_WorkManager_Components_RegistryAuthHandler_SendAsync_System_Net_Http_HttpRequestMessage_System_Threading_CancellationToken_
-  commentId: M:Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
-  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
-  nameWithType: RegistryAuthHandler.SendAsync(HttpRequestMessage, CancellationToken)
-- uid: Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync*
-  name: SendAsync
-  href: api/Virtufin.WorkManager.Components.RegistryAuthHandler.html#Virtufin_WorkManager_Components_RegistryAuthHandler_SendAsync_
-  commentId: Overload:Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync
+  fullName: Virtufin.WorkManager.Components.SourceCredentialResolver.Resolve
+  nameWithType: SourceCredentialResolver.Resolve
+- uid: Virtufin.WorkManager.Components.SourceCredentialResolver.ResolveNamed(System.String,System.String,System.String@)
+  name: ResolveNamed(string, string, out string?)
+  href: api/Virtufin.WorkManager.Components.SourceCredentialResolver.html#Virtufin_WorkManager_Components_SourceCredentialResolver_ResolveNamed_System_String_System_String_System_String__
+  commentId: M:Virtufin.WorkManager.Components.SourceCredentialResolver.ResolveNamed(System.String,System.String,System.String@)
+  name.vb: ResolveNamed(String, String, String)
+  fullName: Virtufin.WorkManager.Components.SourceCredentialResolver.ResolveNamed(string, string, out string?)
+  fullName.vb: Virtufin.WorkManager.Components.SourceCredentialResolver.ResolveNamed(String, String, String)
+  nameWithType: SourceCredentialResolver.ResolveNamed(string, string, out string?)
+  nameWithType.vb: SourceCredentialResolver.ResolveNamed(String, String, String)
+- uid: Virtufin.WorkManager.Components.SourceCredentialResolver.ResolveNamed*
+  name: ResolveNamed
+  href: api/Virtufin.WorkManager.Components.SourceCredentialResolver.html#Virtufin_WorkManager_Components_SourceCredentialResolver_ResolveNamed_
+  commentId: Overload:Virtufin.WorkManager.Components.SourceCredentialResolver.ResolveNamed
   isSpec: "True"
-  fullName: Virtufin.WorkManager.Components.RegistryAuthHandler.SendAsync
-  nameWithType: RegistryAuthHandler.SendAsync
+  fullName: Virtufin.WorkManager.Components.SourceCredentialResolver.ResolveNamed
+  nameWithType: SourceCredentialResolver.ResolveNamed
+- uid: Virtufin.WorkManager.Components.SourceCredentialResolver.VirtufinRegistryCredentialName
+  name: VirtufinRegistryCredentialName
+  href: api/Virtufin.WorkManager.Components.SourceCredentialResolver.html#Virtufin_WorkManager_Components_SourceCredentialResolver_VirtufinRegistryCredentialName
+  commentId: F:Virtufin.WorkManager.Components.SourceCredentialResolver.VirtufinRegistryCredentialName
+  fullName: Virtufin.WorkManager.Components.SourceCredentialResolver.VirtufinRegistryCredentialName
+  nameWithType: SourceCredentialResolver.VirtufinRegistryCredentialName
 - uid: Virtufin.WorkManager.Components.WorkManager
   name: WorkManager
   href: api/Virtufin.WorkManager.Components.WorkManager.html
@@ -107,12 +91,15 @@ references:
   commentId: F:Virtufin.WorkManager.Components.WorkManager.CodeFetcherHttpClientName
   fullName: Virtufin.WorkManager.Components.WorkManager.CodeFetcherHttpClientName
   nameWithType: WorkManager.CodeFetcherHttpClientName
-- uid: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
-  name: CreateWorkerAsync(CreateWorkerRequest, CancellationToken)
-  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_CreateWorkerAsync_Virtufin_WorkManager_Contracts_CreateWorkerRequest_System_Threading_CancellationToken_
-  commentId: M:Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
-  fullName: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest, System.Threading.CancellationToken)
-  nameWithType: WorkManager.CreateWorkerAsync(CreateWorkerRequest, CancellationToken)
+- uid: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
+  name: CreateWorkerAsync(CreateWorkerRequest, SourceCredential?, CancellationToken)
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_CreateWorkerAsync_Virtufin_WorkManager_Contracts_CreateWorkerRequest_Virtufin_WorkManager_Protos_SourceCredential_System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
+  name.vb: CreateWorkerAsync(CreateWorkerRequest, SourceCredential, CancellationToken)
+  fullName: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest, Virtufin.WorkManager.Protos.SourceCredential?, System.Threading.CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest, Virtufin.WorkManager.Protos.SourceCredential, System.Threading.CancellationToken)
+  nameWithType: WorkManager.CreateWorkerAsync(CreateWorkerRequest, SourceCredential?, CancellationToken)
+  nameWithType.vb: WorkManager.CreateWorkerAsync(CreateWorkerRequest, SourceCredential, CancellationToken)
 - uid: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync*
   name: CreateWorkerAsync
   href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_CreateWorkerAsync_
@@ -213,12 +200,15 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Components.WorkManager.ListWorkers
   nameWithType: WorkManager.ListWorkers
-- uid: Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.Threading.CancellationToken)
-  name: LoadCode(Guid, CodeSource, CancellationToken)
-  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_LoadCode_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_Threading_CancellationToken_
-  commentId: M:Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.Threading.CancellationToken)
-  fullName: Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, System.Threading.CancellationToken)
-  nameWithType: WorkManager.LoadCode(Guid, CodeSource, CancellationToken)
+- uid: Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
+  name: LoadCode(Guid, CodeSource, SourceCredential?, CancellationToken)
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_LoadCode_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_Virtufin_WorkManager_Protos_SourceCredential_System_Threading_CancellationToken_
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
+  name.vb: LoadCode(Guid, CodeSource, SourceCredential, CancellationToken)
+  fullName: Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, Virtufin.WorkManager.Protos.SourceCredential?, System.Threading.CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, Virtufin.WorkManager.Protos.SourceCredential, System.Threading.CancellationToken)
+  nameWithType: WorkManager.LoadCode(Guid, CodeSource, SourceCredential?, CancellationToken)
+  nameWithType.vb: WorkManager.LoadCode(Guid, CodeSource, SourceCredential, CancellationToken)
 - uid: Virtufin.WorkManager.Components.WorkManager.LoadCode*
   name: LoadCode
   href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_LoadCode_
@@ -936,15 +926,15 @@ references:
   commentId: T:Virtufin.WorkManager.Contracts.CodeSourceUrl
   fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl
   nameWithType: CodeSourceUrl
-- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String)
-  name: CodeSourceUrl(Uri, string?)
-  href: api/Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl__ctor_System_Uri_System_String_
-  commentId: M:Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String)
-  name.vb: New(Uri, String)
-  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.CodeSourceUrl(System.Uri, string?)
-  fullName.vb: Virtufin.WorkManager.Contracts.CodeSourceUrl.New(System.Uri, String)
-  nameWithType: CodeSourceUrl.CodeSourceUrl(Uri, string?)
-  nameWithType.vb: CodeSourceUrl.New(Uri, String)
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String,System.String)
+  name: CodeSourceUrl(Uri, string?, string?)
+  href: api/Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl__ctor_System_Uri_System_String_System_String_
+  commentId: M:Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String,System.String)
+  name.vb: New(Uri, String, String)
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.CodeSourceUrl(System.Uri, string?, string?)
+  fullName.vb: Virtufin.WorkManager.Contracts.CodeSourceUrl.New(System.Uri, String, String)
+  nameWithType: CodeSourceUrl.CodeSourceUrl(Uri, string?, string?)
+  nameWithType.vb: CodeSourceUrl.New(Uri, String, String)
 - uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor*
   name: CodeSourceUrl
   href: api/Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl__ctor_
@@ -968,6 +958,19 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.ContentSha256
   nameWithType: CodeSourceUrl.ContentSha256
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential
+  name: NamedCredential
+  href: api/Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl_NamedCredential
+  commentId: P:Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential
+  nameWithType: CodeSourceUrl.NamedCredential
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential*
+  name: NamedCredential
+  href: api/Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl_NamedCredential_
+  commentId: Overload:Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential
+  isSpec: "True"
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential
+  nameWithType: CodeSourceUrl.NamedCredential
 - uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.Url
   name: Url
   href: api/Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl_Url

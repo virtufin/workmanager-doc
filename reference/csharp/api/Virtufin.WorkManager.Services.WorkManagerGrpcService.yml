@@ -144,7 +144,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StartWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 86
+    startLine: 95
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -179,7 +179,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StopWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 104
+    startLine: 113
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -214,7 +214,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCode
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 122
+    startLine: 131
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -249,7 +249,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeleteWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 152
+    startLine: 165
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -284,7 +284,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 170
+    startLine: 183
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -319,7 +319,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoverWorkers
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 194
+    startLine: 207
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -354,7 +354,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 201
+    startLine: 214
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -389,7 +389,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTag
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 226
+    startLine: 239
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -424,7 +424,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetTag
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 244
+    startLine: 257
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -459,7 +459,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTags
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 261
+    startLine: 274
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -494,7 +494,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetTags
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
-    startLine: 282
+    startLine: 295
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services

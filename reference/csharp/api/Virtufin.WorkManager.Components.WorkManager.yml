@@ -7,7 +7,7 @@ items:
   children:
   - Virtufin.WorkManager.Components.WorkManager.#ctor(Virtufin.Api.Protos.Pubsub.PubsubClient,Virtufin.Api.Protos.State.StateClient,System.Net.Http.IHttpClientFactory,Virtufin.WorkManager.Contracts.IEngineRegistry,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Components.WorkManager},Microsoft.Extensions.Logging.ILoggerFactory,Virtufin.WorkManager.Services.DaprResiliencePipeline,Virtufin.WorkManager.Services.WorkerProcessingRetryPipeline,Virtufin.WorkManager.Services.ResilientDaprPublisher,Virtufin.WorkManager.Services.ApiLifecyclePublisher,Virtufin.Service.MultiInstance.IInstanceIdProvider,System.String,System.String)
   - Virtufin.WorkManager.Components.WorkManager.CodeFetcherHttpClientName
-  - Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.DeadLetterTopicSuffix
   - Virtufin.WorkManager.Components.WorkManager.DefaultCodeFetchTimeoutSeconds
   - Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync(System.Guid,System.Threading.CancellationToken)
@@ -16,7 +16,7 @@ items:
   - Virtufin.WorkManager.Components.WorkManager.GetTags(System.Guid)
   - Virtufin.WorkManager.Components.WorkManager.GetWorkerHistory(System.Guid)
   - Virtufin.WorkManager.Components.WorkManager.ListWorkers
-  - Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.Threading.CancellationToken)
+  - Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.ProbeEventType
   - Virtufin.WorkManager.Components.WorkManager.ProbeInstanceExtension
   - Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync(System.Threading.CancellationToken)
@@ -41,7 +41,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: WorkManager
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -80,7 +80,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeadLetterTopicSuffix
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 64
+    startLine: 66
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -109,7 +109,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CodeFetcherHttpClientName
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 66
+    startLine: 68
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -136,7 +136,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DefaultCodeFetchTimeoutSeconds
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 67
+    startLine: 69
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -163,7 +163,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: UnknownCloudEventType
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 68
+    startLine: 70
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -190,7 +190,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: UnknownCloudEventSourceUri
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 69
+    startLine: 71
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -217,7 +217,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ProbeEventType
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 81
+    startLine: 83
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -261,7 +261,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ProbeInstanceExtension
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 82
+    startLine: 84
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -288,7 +288,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 103
+    startLine: 105
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -346,7 +346,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RegisterEngine
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 145
+    startLine: 147
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -373,16 +373,16 @@ items:
   nameWithType.vb: WorkManager.RegisterEngine(ContentType, String, Func(Of IEngine))
   fullName.vb: Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType, String, System.Func(Of Virtufin.WorkManager.Engines.IEngine))
   name.vb: RegisterEngine(ContentType, String, Func(Of IEngine))
-- uid: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
-  commentId: M:Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
-  id: CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,System.Threading.CancellationToken)
+- uid: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
+  id: CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
   parent: Virtufin.WorkManager.Components.WorkManager
   langs:
   - csharp
   - vb
-  name: CreateWorkerAsync(CreateWorkerRequest, CancellationToken)
-  nameWithType: WorkManager.CreateWorkerAsync(CreateWorkerRequest, CancellationToken)
-  fullName: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest, System.Threading.CancellationToken)
+  name: CreateWorkerAsync(CreateWorkerRequest, SourceCredential?, CancellationToken)
+  nameWithType: WorkManager.CreateWorkerAsync(CreateWorkerRequest, SourceCredential?, CancellationToken)
+  fullName: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest, Virtufin.WorkManager.Protos.SourceCredential?, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -391,40 +391,57 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CreateWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 157
+    startLine: 167
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
   summary: Creates a new worker and starts processing.
   example: []
   syntax:
-    content: public Task<Guid> CreateWorkerAsync(CreateWorkerRequest request, CancellationToken cancellationToken = default)
+    content: public Task<Guid> CreateWorkerAsync(CreateWorkerRequest request, SourceCredential? credential = null, CancellationToken cancellationToken = default)
     parameters:
     - id: request
       type: Virtufin.WorkManager.Contracts.CreateWorkerRequest
       description: The worker creation request.
+    - id: credential
+      type: Virtufin.WorkManager.Protos.SourceCredential
+      description: >-
+        Optional, transient per-request fetch credential (see
+
+        <xref href="Virtufin.WorkManager.Protos.SourceCredential" data-throw-if-not-resolved="false"></xref>). Never persisted -- used
+
+        only for this creation's own fetch. A `named` reference is instead
+
+        captured onto <xref href="Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential" data-throw-if-not-resolved="false"></xref>
+
+        by the caller (the gRPC service layer) before <code class="paramref">request</code>
+
+        reaches here, so it survives into persisted state for recovery.
     - id: cancellationToken
       type: System.Threading.CancellationToken
       description: Cancellation token.
     return:
       type: System.Threading.Tasks.Task{System.Guid}
       description: The ID of the created worker.
-    content.vb: Public Function CreateWorkerAsync(request As CreateWorkerRequest, cancellationToken As CancellationToken = Nothing) As Task(Of Guid)
+    content.vb: Public Function CreateWorkerAsync(request As CreateWorkerRequest, credential As SourceCredential = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of Guid)
   overload: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync*
   exceptions:
   - type: Virtufin.WorkManager.Runtime.EngineNotFoundException
     commentId: T:Virtufin.WorkManager.Runtime.EngineNotFoundException
     description: Thrown if no engine is registered for the requested MIME type.
-- uid: Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.Threading.CancellationToken)
-  commentId: M:Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.Threading.CancellationToken)
-  id: LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.Threading.CancellationToken)
+  nameWithType.vb: WorkManager.CreateWorkerAsync(CreateWorkerRequest, SourceCredential, CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest, Virtufin.WorkManager.Protos.SourceCredential, System.Threading.CancellationToken)
+  name.vb: CreateWorkerAsync(CreateWorkerRequest, SourceCredential, CancellationToken)
+- uid: Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
+  id: LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
   parent: Virtufin.WorkManager.Components.WorkManager
   langs:
   - csharp
   - vb
-  name: LoadCode(Guid, CodeSource, CancellationToken)
-  nameWithType: WorkManager.LoadCode(Guid, CodeSource, CancellationToken)
-  fullName: Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, System.Threading.CancellationToken)
+  name: LoadCode(Guid, CodeSource, SourceCredential?, CancellationToken)
+  nameWithType: WorkManager.LoadCode(Guid, CodeSource, SourceCredential?, CancellationToken)
+  fullName: Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, Virtufin.WorkManager.Protos.SourceCredential?, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -433,7 +450,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCode
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 229
+    startLine: 240
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -444,10 +461,10 @@ items:
 
     construct the appropriate subtype via <xref href="Virtufin.WorkManager.Contracts.CodeSourceContent.%23ctor(System.Byte%5b%5d)" data-throw-if-not-resolved="false"></xref>
 
-    or <xref href="Virtufin.WorkManager.Contracts.CodeSourceUrl.%23ctor(System.Uri%2cSystem.String)" data-throw-if-not-resolved="false"></xref> on the wire.
+    or CodeSourceUrl(Uri, string?) on the wire.
   example: []
   syntax:
-    content: public Task LoadCode(Guid id, CodeSource codeSource, CancellationToken cancellationToken = default)
+    content: public Task LoadCode(Guid id, CodeSource codeSource, SourceCredential? credential = null, CancellationToken cancellationToken = default)
     parameters:
     - id: id
       type: System.Guid
@@ -455,12 +472,15 @@ items:
     - id: codeSource
       type: Virtufin.WorkManager.Contracts.CodeSource
       description: Either content bytes or a URL.
+    - id: credential
+      type: Virtufin.WorkManager.Protos.SourceCredential
+      description: Optional, transient per-request fetch credential -- see <xref href="Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest%2cVirtufin.WorkManager.Protos.SourceCredential%2cSystem.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref>.
     - id: cancellationToken
       type: System.Threading.CancellationToken
       description: Cancellation token.
     return:
       type: System.Threading.Tasks.Task
-    content.vb: Public Function LoadCode(id As Guid, codeSource As CodeSource, cancellationToken As CancellationToken = Nothing) As Task
+    content.vb: Public Function LoadCode(id As Guid, codeSource As CodeSource, credential As SourceCredential = Nothing, cancellationToken As CancellationToken = Nothing) As Task
   overload: Virtufin.WorkManager.Components.WorkManager.LoadCode*
   exceptions:
   - type: Virtufin.WorkManager.Runtime.WorkerNotFoundException
@@ -469,6 +489,9 @@ items:
   - type: System.ArgumentException
     commentId: T:System.ArgumentException
     description: Thrown on validation failure (empty content, non-HTTP URL).
+  nameWithType.vb: WorkManager.LoadCode(Guid, CodeSource, SourceCredential, CancellationToken)
+  fullName.vb: Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, Virtufin.WorkManager.Protos.SourceCredential, System.Threading.CancellationToken)
+  name.vb: LoadCode(Guid, CodeSource, SourceCredential, CancellationToken)
 - uid: Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync(System.Guid,System.Threading.CancellationToken)
   commentId: M:Virtufin.WorkManager.Components.WorkManager.DeleteWorkerAsync(System.Guid,System.Threading.CancellationToken)
   id: DeleteWorkerAsync(System.Guid,System.Threading.CancellationToken)
@@ -487,7 +510,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeleteWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 275
+    startLine: 286
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -528,7 +551,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StartWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 296
+    startLine: 307
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -569,7 +592,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StopWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 321
+    startLine: 332
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -610,7 +633,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 344
+    startLine: 355
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -641,7 +664,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetTag
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 367
+    startLine: 378
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -679,7 +702,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetTags
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 377
+    startLine: 388
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -712,7 +735,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTag
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 388
+    startLine: 399
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -753,7 +776,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTags
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 399
+    startLine: 410
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -789,7 +812,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 433
+    startLine: 444
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -828,7 +851,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoverWorkersAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 446
+    startLine: 457
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -868,7 +891,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 1185
+    startLine: 1206
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -1666,6 +1689,18 @@ references:
   - name: " "
   - name: TResult
   - name: )
+- uid: Virtufin.WorkManager.Protos.SourceCredential
+  commentId: T:Virtufin.WorkManager.Protos.SourceCredential
+  parent: Virtufin.WorkManager.Protos
+  name: SourceCredential
+  nameWithType: SourceCredential
+  fullName: Virtufin.WorkManager.Protos.SourceCredential
+- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential
+  commentId: P:Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential
+  href: Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl_NamedCredential
+  name: NamedCredential
+  nameWithType: CodeSourceUrl.NamedCredential
+  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.NamedCredential
 - uid: Virtufin.WorkManager.Runtime.EngineNotFoundException
   commentId: T:Virtufin.WorkManager.Runtime.EngineNotFoundException
   href: Virtufin.WorkManager.Runtime.EngineNotFoundException.html
@@ -1674,7 +1709,7 @@ references:
   fullName: Virtufin.WorkManager.Runtime.EngineNotFoundException
 - uid: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync*
   commentId: Overload:Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync
-  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_CreateWorkerAsync_Virtufin_WorkManager_Contracts_CreateWorkerRequest_System_Threading_CancellationToken_
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_CreateWorkerAsync_Virtufin_WorkManager_Contracts_CreateWorkerRequest_Virtufin_WorkManager_Protos_SourceCredential_System_Threading_CancellationToken_
   name: CreateWorkerAsync
   nameWithType: WorkManager.CreateWorkerAsync
   fullName: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync
@@ -1728,6 +1763,29 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.guid
   - name: )
+- uid: Virtufin.WorkManager.Protos
+  commentId: N:Virtufin.WorkManager.Protos
+  name: Virtufin.WorkManager.Protos
+  nameWithType: Virtufin.WorkManager.Protos
+  fullName: Virtufin.WorkManager.Protos
+  spec.csharp:
+  - uid: Virtufin
+    name: Virtufin
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+  - name: .
+  - uid: Virtufin.WorkManager.Protos
+    name: Protos
+  spec.vb:
+  - uid: Virtufin
+    name: Virtufin
+  - name: .
+  - uid: Virtufin.WorkManager
+    name: WorkManager
+  - name: .
+  - uid: Virtufin.WorkManager.Protos
+    name: Protos
 - uid: System.Threading
   commentId: N:System.Threading
   isExternal: true
@@ -1852,45 +1910,50 @@ references:
   - name: (
   - name: )
   - name: )
-- uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String)
-  commentId: M:Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String)
+- uid: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
+  commentId: M:Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
   isExternal: true
-  href: Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl__ctor_System_Uri_System_String_
-  name: CodeSourceUrl(Uri, string)
-  nameWithType: CodeSourceUrl.CodeSourceUrl(Uri, string)
-  fullName: Virtufin.WorkManager.Contracts.CodeSourceUrl.CodeSourceUrl(System.Uri, string)
-  nameWithType.vb: CodeSourceUrl.New(Uri, String)
-  fullName.vb: Virtufin.WorkManager.Contracts.CodeSourceUrl.New(System.Uri, String)
-  name.vb: New(Uri, String)
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_CreateWorkerAsync_Virtufin_WorkManager_Contracts_CreateWorkerRequest_Virtufin_WorkManager_Protos_SourceCredential_System_Threading_CancellationToken_
+  name: CreateWorkerAsync(CreateWorkerRequest, SourceCredential, CancellationToken)
+  nameWithType: WorkManager.CreateWorkerAsync(CreateWorkerRequest, SourceCredential, CancellationToken)
+  fullName: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest, Virtufin.WorkManager.Protos.SourceCredential, System.Threading.CancellationToken)
   spec.csharp:
-  - uid: Virtufin.WorkManager.Contracts.CodeSourceUrl.#ctor(System.Uri,System.String)
-    name: CodeSourceUrl
-    href: Virtufin.WorkManager.Contracts.CodeSourceUrl.html#Virtufin_WorkManager_Contracts_CodeSourceUrl__ctor_System_Uri_System_String_
+  - uid: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
+    name: CreateWorkerAsync
+    href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_CreateWorkerAsync_Virtufin_WorkManager_Contracts_CreateWorkerRequest_Virtufin_WorkManager_Protos_SourceCredential_System_Threading_CancellationToken_
   - name: (
-  - uid: System.Uri
-    name: Uri
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.uri
+  - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest
+    name: CreateWorkerRequest
+    href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html
   - name: ','
   - name: " "
-  - uid: System.String
-    name: string
+  - uid: Virtufin.WorkManager.Protos.SourceCredential
+    name: SourceCredential
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   - name: )
   spec.vb:
-  - name: New
+  - uid: Virtufin.WorkManager.Components.WorkManager.CreateWorkerAsync(Virtufin.WorkManager.Contracts.CreateWorkerRequest,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
+    name: CreateWorkerAsync
+    href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_CreateWorkerAsync_Virtufin_WorkManager_Contracts_CreateWorkerRequest_Virtufin_WorkManager_Protos_SourceCredential_System_Threading_CancellationToken_
   - name: (
-  - uid: System.Uri
-    name: Uri
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.uri
+  - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest
+    name: CreateWorkerRequest
+    href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html
   - name: ','
   - name: " "
-  - uid: System.String
-    name: String
+  - uid: Virtufin.WorkManager.Protos.SourceCredential
+    name: SourceCredential
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   - name: )
 - uid: Virtufin.WorkManager.Runtime.WorkerNotFoundException
   commentId: T:Virtufin.WorkManager.Runtime.WorkerNotFoundException
@@ -1907,7 +1970,7 @@ references:
   fullName: System.ArgumentException
 - uid: Virtufin.WorkManager.Components.WorkManager.LoadCode*
   commentId: Overload:Virtufin.WorkManager.Components.WorkManager.LoadCode
-  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_LoadCode_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_Threading_CancellationToken_
+  href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_LoadCode_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_Virtufin_WorkManager_Protos_SourceCredential_System_Threading_CancellationToken_
   name: LoadCode
   nameWithType: WorkManager.LoadCode
   fullName: Virtufin.WorkManager.Components.WorkManager.LoadCode
