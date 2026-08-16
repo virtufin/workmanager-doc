@@ -5,12 +5,12 @@ items:
   id: CreateWorkerRequest
   parent: Virtufin.WorkManager.Contracts
   children:
-  - Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
+  - Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
   - Virtufin.WorkManager.Contracts.CreateWorkerRequest.CodeSource
   - Virtufin.WorkManager.Contracts.CreateWorkerRequest.Config
   - Virtufin.WorkManager.Contracts.CreateWorkerRequest.MimeType
   - Virtufin.WorkManager.Contracts.CreateWorkerRequest.Tags
-  - Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic
+  - Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topics
   langs:
   - csharp
   - vb
@@ -45,16 +45,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
-  commentId: M:Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
-  id: '#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})'
+- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
+  commentId: M:Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})
+  id: '#ctor(Virtufin.WorkManager.Contracts.CodeSource,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})'
   parent: Virtufin.WorkManager.Contracts.CreateWorkerRequest
   langs:
   - csharp
   - vb
-  name: CreateWorkerRequest(CodeSource, string, string, Dictionary<string, string>?, Dictionary<string, string>?)
-  nameWithType: CreateWorkerRequest.CreateWorkerRequest(CodeSource, string, string, Dictionary<string, string>?, Dictionary<string, string>?)
-  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.CreateWorkerRequest(Virtufin.WorkManager.Contracts.CodeSource, string, string, System.Collections.Generic.Dictionary<string, string>?, System.Collections.Generic.Dictionary<string, string>?)
+  name: CreateWorkerRequest(CodeSource, string, List<string>, Dictionary<string, string>?, Dictionary<string, string>?)
+  nameWithType: CreateWorkerRequest.CreateWorkerRequest(CodeSource, string, List<string>, Dictionary<string, string>?, Dictionary<string, string>?)
+  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.CreateWorkerRequest(Virtufin.WorkManager.Contracts.CodeSource, string, System.Collections.Generic.List<string>, System.Collections.Generic.Dictionary<string, string>?, System.Collections.Generic.Dictionary<string, string>?)
   type: Constructor
   source:
     remote:
@@ -70,7 +70,7 @@ items:
   summary: Request to create a new worker.
   example: []
   syntax:
-    content: public CreateWorkerRequest(CodeSource CodeSource, string MimeType, string Topic, Dictionary<string, string>? Config = null, Dictionary<string, string>? Tags = null)
+    content: public CreateWorkerRequest(CodeSource CodeSource, string MimeType, List<string> Topics, Dictionary<string, string>? Config = null, Dictionary<string, string>? Tags = null)
     parameters:
     - id: CodeSource
       type: Virtufin.WorkManager.Contracts.CodeSource
@@ -78,19 +78,19 @@ items:
     - id: MimeType
       type: System.String
       description: The MIME type of the code.
-    - id: Topic
-      type: System.String
-      description: The topic to subscribe to.
+    - id: Topics
+      type: System.Collections.Generic.List{System.String}
+      description: The topics to subscribe to (one or more). A triggering CloudEvent arriving on any of them is dispatched to this worker.
     - id: Config
       type: System.Collections.Generic.Dictionary{System.String,System.String}
       description: Worker-instance defaults, immutable after creation (see <xref href="Virtufin.WorkManager.Contracts.WorkerConfig.Config" data-throw-if-not-resolved="false"></xref>).
     - id: Tags
       type: System.Collections.Generic.Dictionary{System.String,System.String}
-    content.vb: Public Sub New(CodeSource As CodeSource, MimeType As String, Topic As String, Config As Dictionary(Of String, String) = Nothing, Tags As Dictionary(Of String, String) = Nothing)
+    content.vb: Public Sub New(CodeSource As CodeSource, MimeType As String, Topics As List(Of String), Config As Dictionary(Of String, String) = Nothing, Tags As Dictionary(Of String, String) = Nothing)
   overload: Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor*
-  nameWithType.vb: CreateWorkerRequest.New(CodeSource, String, String, Dictionary(Of String, String), Dictionary(Of String, String))
-  fullName.vb: Virtufin.WorkManager.Contracts.CreateWorkerRequest.New(Virtufin.WorkManager.Contracts.CodeSource, String, String, System.Collections.Generic.Dictionary(Of String, String), System.Collections.Generic.Dictionary(Of String, String))
-  name.vb: New(CodeSource, String, String, Dictionary(Of String, String), Dictionary(Of String, String))
+  nameWithType.vb: CreateWorkerRequest.New(CodeSource, String, List(Of String), Dictionary(Of String, String), Dictionary(Of String, String))
+  fullName.vb: Virtufin.WorkManager.Contracts.CreateWorkerRequest.New(Virtufin.WorkManager.Contracts.CodeSource, String, System.Collections.Generic.List(Of String), System.Collections.Generic.Dictionary(Of String, String), System.Collections.Generic.Dictionary(Of String, String))
+  name.vb: New(CodeSource, String, List(Of String), Dictionary(Of String, String), Dictionary(Of String, String))
 - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.CodeSource
   commentId: P:Virtufin.WorkManager.Contracts.CreateWorkerRequest.CodeSource
   id: CodeSource
@@ -153,37 +153,37 @@ items:
       type: System.String
     content.vb: Public Property MimeType As String
   overload: Virtufin.WorkManager.Contracts.CreateWorkerRequest.MimeType*
-- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic
-  commentId: P:Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic
-  id: Topic
+- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topics
+  commentId: P:Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topics
+  id: Topics
   parent: Virtufin.WorkManager.Contracts.CreateWorkerRequest
   langs:
   - csharp
   - vb
-  name: Topic
-  nameWithType: CreateWorkerRequest.Topic
-  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic
+  name: Topics
+  nameWithType: CreateWorkerRequest.Topics
+  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topics
   type: Property
   source:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: Topic
+    id: Topics
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 211
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
-  summary: The topic to subscribe to.
+  summary: The topics to subscribe to (one or more). A triggering CloudEvent arriving on any of them is dispatched to this worker.
   example: []
   syntax:
-    content: public string Topic { get; init; }
+    content: public List<string> Topics { get; init; }
     parameters: []
     return:
-      type: System.String
-    content.vb: Public Property Topic As String
-  overload: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic*
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public Property Topics As List(Of String)
+  overload: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topics*
 - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Config
   commentId: P:Virtufin.WorkManager.Contracts.CreateWorkerRequest.Config
   id: Config
@@ -557,7 +557,7 @@ references:
   - name: )
 - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor*
   commentId: Overload:Virtufin.WorkManager.Contracts.CreateWorkerRequest.#ctor
-  href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest__ctor_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_String_System_Collections_Generic_Dictionary_System_String_System_String__System_Collections_Generic_Dictionary_System_String_System_String__
+  href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest__ctor_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_Collections_Generic_List_System_String__System_Collections_Generic_Dictionary_System_String_System_String__System_Collections_Generic_Dictionary_System_String_System_String__
   name: CreateWorkerRequest
   nameWithType: CreateWorkerRequest.CreateWorkerRequest
   fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.CreateWorkerRequest
@@ -582,6 +582,41 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: System.Collections.Generic.Dictionary{System.String,System.String}
   commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
   parent: System.Collections.Generic
@@ -629,39 +664,33 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: System.Collections.Generic.Dictionary`2
-  commentId: T:System.Collections.Generic.Dictionary`2
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
-  name: Dictionary<TKey, TValue>
-  nameWithType: Dictionary<TKey, TValue>
-  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
-  nameWithType.vb: Dictionary(Of TKey, TValue)
-  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
-  name.vb: Dictionary(Of TKey, TValue)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
   spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
+  - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
+  - name: T
   - name: )
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
@@ -700,6 +729,40 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
 - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.CodeSource*
   commentId: Overload:Virtufin.WorkManager.Contracts.CreateWorkerRequest.CodeSource
   href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest_CodeSource
@@ -712,12 +775,12 @@ references:
   name: MimeType
   nameWithType: CreateWorkerRequest.MimeType
   fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.MimeType
-- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic*
-  commentId: Overload:Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic
-  href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest_Topic
-  name: Topic
-  nameWithType: CreateWorkerRequest.Topic
-  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topic
+- uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topics*
+  commentId: Overload:Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topics
+  href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest_Topics
+  name: Topics
+  nameWithType: CreateWorkerRequest.Topics
+  fullName: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Topics
 - uid: Virtufin.WorkManager.Contracts.CreateWorkerRequest.Config*
   commentId: Overload:Virtufin.WorkManager.Contracts.CreateWorkerRequest.Config
   href: Virtufin.WorkManager.Contracts.CreateWorkerRequest.html#Virtufin_WorkManager_Contracts_CreateWorkerRequest_Config

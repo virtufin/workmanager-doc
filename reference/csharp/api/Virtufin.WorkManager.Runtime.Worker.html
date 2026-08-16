@@ -49,10 +49,10 @@
             Virtufin.WorkManager
           </a>
           <div class="git-info">
-            <a href="{git_repo_url}/commit/e9a2f6cad4f457ad4dedf987eb85ee569ca4eefe" target="_blank" rel="noopener" class="commit-badge" title="View commit e9a2f6cad4f457ad4dedf987eb85ee569ca4eefe">
+            <a href="{git_repo_url}/commit/502128099e35521992ca536e32aa388e920fa00b" target="_blank" rel="noopener" class="commit-badge" title="View commit 502128099e35521992ca536e32aa388e920fa00b">
               <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
                 <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"></rect>
-                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">e9a2f6cad4f457ad4dedf987eb85ee569ca4eefe</text>
+                <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">502128099e35521992ca536e32aa388e920fa00b</text>
               </svg>
             </a>
           </div>          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -156,8 +156,8 @@ Class Worker
 
   <a id="Virtufin_WorkManager_Runtime_Worker__ctor_" data-uid="Virtufin.WorkManager.Runtime.Worker.#ctor*"></a>
 
-  <h3 id="Virtufin_WorkManager_Runtime_Worker__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_Virtufin_WorkManager_Engines_IEngine_System_String_System_DateTime_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Runtime_Worker__System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__System_Collections_Generic_IDictionary_System_String_System_String__System_Collections_Generic_IDictionary_System_String_System_String__" data-uid="Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.String,System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})">
-  Worker(Guid, CodeSource, string, IEngine, string, DateTime, ILogger&lt;Worker&gt;, List&lt;HistoryEntry&gt;?, IDictionary&lt;string, string&gt;?, IDictionary&lt;string, string&gt;?)
+  <h3 id="Virtufin_WorkManager_Runtime_Worker__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_Virtufin_WorkManager_Engines_IEngine_System_Collections_Generic_IReadOnlyList_System_String__System_DateTime_Microsoft_Extensions_Logging_ILogger_Virtufin_WorkManager_Runtime_Worker__System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__System_Collections_Generic_IDictionary_System_String_System_String__System_Collections_Generic_IDictionary_System_String_System_String__" data-uid="Virtufin.WorkManager.Runtime.Worker.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,Virtufin.WorkManager.Engines.IEngine,System.Collections.Generic.IReadOnlyList{System.String},System.DateTime,Microsoft.Extensions.Logging.ILogger{Virtufin.WorkManager.Runtime.Worker},System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,System.String})">
+  Worker(Guid, CodeSource, string, IEngine, IReadOnlyList&lt;string&gt;, DateTime, ILogger&lt;Worker&gt;, List&lt;HistoryEntry&gt;?, IDictionary&lt;string, string&gt;?, IDictionary&lt;string, string&gt;?)
   
   </h3>
 
@@ -166,7 +166,7 @@ Class Worker
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Worker(Guid id, CodeSource codeSource, string mimeType, IEngine engine, string topic, DateTime createdAt, ILogger&lt;Worker&gt; logger, List&lt;HistoryEntry&gt;? history = null, IDictionary&lt;string, string&gt;? config = null, IDictionary&lt;string, string&gt;? tags = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Worker(Guid id, CodeSource codeSource, string mimeType, IEngine engine, IReadOnlyList&lt;string&gt; topics, DateTime createdAt, ILogger&lt;Worker&gt; logger, List&lt;HistoryEntry&gt;? history = null, IDictionary&lt;string, string&gt;? config = null, IDictionary&lt;string, string&gt;? tags = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -179,7 +179,7 @@ Class Worker
     <dd></dd>
     <dt><code>engine</code> <span class="xref">IEngine</span></dt>
     <dd></dd>
-    <dt><code>topic</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>topics</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd></dd>
     <dt><code>createdAt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
     <dd></dd>
@@ -469,19 +469,19 @@ Mutate via <a class="xref" href="Virtufin.WorkManager.Runtime.Worker.html#Virtuf
 
 
 
-  <a id="Virtufin_WorkManager_Runtime_Worker_Topic_" data-uid="Virtufin.WorkManager.Runtime.Worker.Topic*"></a>
+  <a id="Virtufin_WorkManager_Runtime_Worker_Topics_" data-uid="Virtufin.WorkManager.Runtime.Worker.Topics*"></a>
 
-  <h3 id="Virtufin_WorkManager_Runtime_Worker_Topic" data-uid="Virtufin.WorkManager.Runtime.Worker.Topic">
-  Topic
+  <h3 id="Virtufin_WorkManager_Runtime_Worker_Topics" data-uid="Virtufin.WorkManager.Runtime.Worker.Topics">
+  Topics
   
   </h3>
 
-  <div class="markdown level1 summary"><p>The topic this worker subscribes to.</p>
+  <div class="markdown level1 summary"><p>The topics this worker subscribes to (one or more).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Topic { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Topics { get; }</code></pre>
   </div>
 
 
@@ -490,7 +490,7 @@ Mutate via <a class="xref" href="Virtufin.WorkManager.Runtime.Worker.html#Virtuf
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd></dd>
   </dl>
 

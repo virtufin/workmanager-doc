@@ -19,6 +19,7 @@ items:
   - Virtufin.WorkManager.Components.WorkManager.LoadCode(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,Virtufin.WorkManager.Protos.SourceCredential,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.ProbeEventType
   - Virtufin.WorkManager.Components.WorkManager.ProbeInstanceExtension
+  - Virtufin.WorkManager.Components.WorkManager.PublishTopicAttribute
   - Virtufin.WorkManager.Components.WorkManager.RecoverWorkersAsync(System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
   - Virtufin.WorkManager.Components.WorkManager.SetTag(System.Guid,System.String,System.String)
@@ -450,7 +451,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LoadCode
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 240
+    startLine: 245
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -510,7 +511,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DeleteWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 286
+    startLine: 291
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -551,7 +552,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StartWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 307
+    startLine: 315
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -592,7 +593,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StopWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 332
+    startLine: 340
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -633,7 +634,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 355
+    startLine: 366
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -664,7 +665,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetTag
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 378
+    startLine: 389
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -702,7 +703,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetTags
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 388
+    startLine: 399
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -735,7 +736,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTag
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 399
+    startLine: 410
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -776,7 +777,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: SetTags
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 410
+    startLine: 421
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -812,7 +813,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 444
+    startLine: 455
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -851,7 +852,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoverWorkersAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 457
+    startLine: 468
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -873,6 +874,56 @@ items:
     description: Thrown if an engine is missing for a recovered worker.
   implements:
   - Virtufin.WorkManager.Services.IWorkerRecoveryExecutor.RecoverWorkersAsync(System.Threading.CancellationToken)
+- uid: Virtufin.WorkManager.Components.WorkManager.PublishTopicAttribute
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.PublishTopicAttribute
+  id: PublishTopicAttribute
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: PublishTopicAttribute
+  nameWithType: WorkManager.PublishTopicAttribute
+  fullName: Virtufin.WorkManager.Components.WorkManager.PublishTopicAttribute
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+    id: PublishTopicAttribute
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 992
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: >-
+    Extension attribute a worker's response CloudEvent can carry to
+
+    publish to a topic other than its own <code>ce-type</code>. Most workers
+
+    don't need this -- their response's <xref href="CloudNative.CloudEvents.CloudEvent.Type" data-throw-if-not-resolved="false"></xref>
+
+    serves as both the wire <code>ce-type</code> and the publish topic, which
+
+    is why that's still the default. It exists for workers whose
+
+    <code>ce-type</code> must stay a stable identifier independent of a
+
+    per-scenario topic (e.g. the pubsub-topics spec's trading events:
+
+    topic <code>sc.&lt;scenarioId&gt;.trading.order.submitted</code>, ce-type
+
+    <code>com.virtufin.trading.order.submitted</code>). Stripped from the
+
+    outgoing envelope before publish -- it's WorkManager-internal
+
+    routing, not part of the event a subscriber should see.
+  example: []
+  syntax:
+    content: public const string PublishTopicAttribute = "publishtopic"
+    return:
+      type: System.String
+    content.vb: Public Const PublishTopicAttribute As String = "publishtopic"
 - uid: Virtufin.WorkManager.Components.WorkManager.DisposeAsync
   commentId: M:Virtufin.WorkManager.Components.WorkManager.DisposeAsync
   id: DisposeAsync
@@ -891,7 +942,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 1206
+    startLine: 1246
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -2378,6 +2429,13 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   - name: )
+- uid: CloudNative.CloudEvents.CloudEvent.Type
+  commentId: P:CloudNative.CloudEvents.CloudEvent.Type
+  isExternal: true
+  href: https://github.com/cloudevents/sdk-csharp/blob/master/src/CloudNative.CloudEvents/CloudEvent.cs
+  name: Type
+  nameWithType: CloudEvent.Type
+  fullName: CloudNative.CloudEvents.CloudEvent.Type
 - uid: Virtufin.WorkManager.Components.WorkManager.DisposeAsync*
   commentId: Overload:Virtufin.WorkManager.Components.WorkManager.DisposeAsync
   href: Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_DisposeAsync

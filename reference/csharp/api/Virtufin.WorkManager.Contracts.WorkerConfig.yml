@@ -5,7 +5,7 @@ items:
   id: WorkerConfig
   parent: Virtufin.WorkManager.Contracts
   children:
-  - Virtufin.WorkManager.Contracts.WorkerConfig.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String)
+  - Virtufin.WorkManager.Contracts.WorkerConfig.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.Collections.Generic.List{System.String},System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String)
   - Virtufin.WorkManager.Contracts.WorkerConfig.CodeSource
   - Virtufin.WorkManager.Contracts.WorkerConfig.Config
   - Virtufin.WorkManager.Contracts.WorkerConfig.CreatedAt
@@ -14,7 +14,7 @@ items:
   - Virtufin.WorkManager.Contracts.WorkerConfig.InstanceId
   - Virtufin.WorkManager.Contracts.WorkerConfig.MimeType
   - Virtufin.WorkManager.Contracts.WorkerConfig.Tags
-  - Virtufin.WorkManager.Contracts.WorkerConfig.Topic
+  - Virtufin.WorkManager.Contracts.WorkerConfig.Topics
   langs:
   - csharp
   - vb
@@ -49,16 +49,16 @@ items:
   - System.Object.GetType
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: Virtufin.WorkManager.Contracts.WorkerConfig.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String)
-  commentId: M:Virtufin.WorkManager.Contracts.WorkerConfig.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String)
-  id: '#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.String,System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String)'
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.Collections.Generic.List{System.String},System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String)
+  commentId: M:Virtufin.WorkManager.Contracts.WorkerConfig.#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.Collections.Generic.List{System.String},System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String)
+  id: '#ctor(System.Guid,Virtufin.WorkManager.Contracts.CodeSource,System.String,System.Collections.Generic.List{System.String},System.DateTime,System.Collections.Generic.List{Virtufin.WorkManager.Contracts.HistoryEntry},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String)'
   parent: Virtufin.WorkManager.Contracts.WorkerConfig
   langs:
   - csharp
   - vb
-  name: WorkerConfig(Guid, CodeSource, string, string, DateTime, List<HistoryEntry>, Dictionary<string, string>?, Dictionary<string, string>?, string?)
-  nameWithType: WorkerConfig.WorkerConfig(Guid, CodeSource, string, string, DateTime, List<HistoryEntry>, Dictionary<string, string>?, Dictionary<string, string>?, string?)
-  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.WorkerConfig(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, string, System.DateTime, System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>, System.Collections.Generic.Dictionary<string, string>?, System.Collections.Generic.Dictionary<string, string>?, string?)
+  name: WorkerConfig(Guid, CodeSource, string, List<string>, DateTime, List<HistoryEntry>, Dictionary<string, string>?, Dictionary<string, string>?, string?)
+  nameWithType: WorkerConfig.WorkerConfig(Guid, CodeSource, string, List<string>, DateTime, List<HistoryEntry>, Dictionary<string, string>?, Dictionary<string, string>?, string?)
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.WorkerConfig(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, string, System.Collections.Generic.List<string>, System.DateTime, System.Collections.Generic.List<Virtufin.WorkManager.Contracts.HistoryEntry>, System.Collections.Generic.Dictionary<string, string>?, System.Collections.Generic.Dictionary<string, string>?, string?)
   type: Constructor
   source:
     remote:
@@ -74,7 +74,7 @@ items:
   summary: Configuration for a worker instance.
   example: []
   syntax:
-    content: public WorkerConfig(Guid Id, CodeSource CodeSource, string MimeType, string Topic, DateTime CreatedAt, List<HistoryEntry> History, Dictionary<string, string>? Config = null, Dictionary<string, string>? Tags = null, string? InstanceId = null)
+    content: public WorkerConfig(Guid Id, CodeSource CodeSource, string MimeType, List<string> Topics, DateTime CreatedAt, List<HistoryEntry> History, Dictionary<string, string>? Config = null, Dictionary<string, string>? Tags = null, string? InstanceId = null)
     parameters:
     - id: Id
       type: System.Guid
@@ -85,9 +85,9 @@ items:
     - id: MimeType
       type: System.String
       description: The MIME type of the code.
-    - id: Topic
-      type: System.String
-      description: The topic to subscribe to.
+    - id: Topics
+      type: System.Collections.Generic.List{System.String}
+      description: The topics to subscribe to (one or more).
     - id: CreatedAt
       type: System.DateTime
       description: The creation timestamp.
@@ -108,11 +108,11 @@ items:
       type: System.Collections.Generic.Dictionary{System.String,System.String}
     - id: InstanceId
       type: System.String
-    content.vb: Public Sub New(Id As Guid, CodeSource As CodeSource, MimeType As String, Topic As String, CreatedAt As Date, History As List(Of HistoryEntry), Config As Dictionary(Of String, String) = Nothing, Tags As Dictionary(Of String, String) = Nothing, InstanceId As String = Nothing)
+    content.vb: Public Sub New(Id As Guid, CodeSource As CodeSource, MimeType As String, Topics As List(Of String), CreatedAt As Date, History As List(Of HistoryEntry), Config As Dictionary(Of String, String) = Nothing, Tags As Dictionary(Of String, String) = Nothing, InstanceId As String = Nothing)
   overload: Virtufin.WorkManager.Contracts.WorkerConfig.#ctor*
-  nameWithType.vb: WorkerConfig.New(Guid, CodeSource, String, String, Date, List(Of HistoryEntry), Dictionary(Of String, String), Dictionary(Of String, String), String)
-  fullName.vb: Virtufin.WorkManager.Contracts.WorkerConfig.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, String, Date, System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry), System.Collections.Generic.Dictionary(Of String, String), System.Collections.Generic.Dictionary(Of String, String), String)
-  name.vb: New(Guid, CodeSource, String, String, Date, List(Of HistoryEntry), Dictionary(Of String, String), Dictionary(Of String, String), String)
+  nameWithType.vb: WorkerConfig.New(Guid, CodeSource, String, List(Of String), Date, List(Of HistoryEntry), Dictionary(Of String, String), Dictionary(Of String, String), String)
+  fullName.vb: Virtufin.WorkManager.Contracts.WorkerConfig.New(System.Guid, Virtufin.WorkManager.Contracts.CodeSource, String, System.Collections.Generic.List(Of String), Date, System.Collections.Generic.List(Of Virtufin.WorkManager.Contracts.HistoryEntry), System.Collections.Generic.Dictionary(Of String, String), System.Collections.Generic.Dictionary(Of String, String), String)
+  name.vb: New(Guid, CodeSource, String, List(Of String), Date, List(Of HistoryEntry), Dictionary(Of String, String), Dictionary(Of String, String), String)
 - uid: Virtufin.WorkManager.Contracts.WorkerConfig.Id
   commentId: P:Virtufin.WorkManager.Contracts.WorkerConfig.Id
   id: Id
@@ -206,37 +206,37 @@ items:
       type: System.String
     content.vb: Public Property MimeType As String
   overload: Virtufin.WorkManager.Contracts.WorkerConfig.MimeType*
-- uid: Virtufin.WorkManager.Contracts.WorkerConfig.Topic
-  commentId: P:Virtufin.WorkManager.Contracts.WorkerConfig.Topic
-  id: Topic
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.Topics
+  commentId: P:Virtufin.WorkManager.Contracts.WorkerConfig.Topics
+  id: Topics
   parent: Virtufin.WorkManager.Contracts.WorkerConfig
   langs:
   - csharp
   - vb
-  name: Topic
-  nameWithType: WorkerConfig.Topic
-  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.Topic
+  name: Topics
+  nameWithType: WorkerConfig.Topics
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.Topics
   type: Property
   source:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
-    id: Topic
+    id: Topics
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 143
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Contracts
-  summary: The topic to subscribe to.
+  summary: The topics to subscribe to (one or more).
   example: []
   syntax:
-    content: public string Topic { get; init; }
+    content: public List<string> Topics { get; init; }
     parameters: []
     return:
-      type: System.String
-    content.vb: Public Property Topic As String
-  overload: Virtufin.WorkManager.Contracts.WorkerConfig.Topic*
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public Property Topics As List(Of String)
+  overload: Virtufin.WorkManager.Contracts.WorkerConfig.Topics*
 - uid: Virtufin.WorkManager.Contracts.WorkerConfig.CreatedAt
   commentId: P:Virtufin.WorkManager.Contracts.WorkerConfig.CreatedAt
   id: CreatedAt
@@ -702,7 +702,7 @@ references:
   - name: )
 - uid: Virtufin.WorkManager.Contracts.WorkerConfig.#ctor*
   commentId: Overload:Virtufin.WorkManager.Contracts.WorkerConfig.#ctor
-  href: Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_String_System_DateTime_System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__System_Collections_Generic_Dictionary_System_String_System_String__System_Collections_Generic_Dictionary_System_String_System_String__System_String_
+  href: Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig__ctor_System_Guid_Virtufin_WorkManager_Contracts_CodeSource_System_String_System_Collections_Generic_List_System_String__System_DateTime_System_Collections_Generic_List_Virtufin_WorkManager_Contracts_HistoryEntry__System_Collections_Generic_Dictionary_System_String_System_String__System_Collections_Generic_Dictionary_System_String_System_String__System_String_
   name: WorkerConfig
   nameWithType: WorkerConfig.WorkerConfig
   fullName: Virtufin.WorkManager.Contracts.WorkerConfig.WorkerConfig
@@ -735,6 +735,41 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
 - uid: System.DateTime
   commentId: T:System.DateTime
   parent: System
@@ -943,12 +978,12 @@ references:
   name: MimeType
   nameWithType: WorkerConfig.MimeType
   fullName: Virtufin.WorkManager.Contracts.WorkerConfig.MimeType
-- uid: Virtufin.WorkManager.Contracts.WorkerConfig.Topic*
-  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerConfig.Topic
-  href: Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig_Topic
-  name: Topic
-  nameWithType: WorkerConfig.Topic
-  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.Topic
+- uid: Virtufin.WorkManager.Contracts.WorkerConfig.Topics*
+  commentId: Overload:Virtufin.WorkManager.Contracts.WorkerConfig.Topics
+  href: Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig_Topics
+  name: Topics
+  nameWithType: WorkerConfig.Topics
+  fullName: Virtufin.WorkManager.Contracts.WorkerConfig.Topics
 - uid: Virtufin.WorkManager.Contracts.WorkerConfig.CreatedAt*
   commentId: Overload:Virtufin.WorkManager.Contracts.WorkerConfig.CreatedAt
   href: Virtufin.WorkManager.Contracts.WorkerConfig.html#Virtufin_WorkManager_Contracts_WorkerConfig_CreatedAt
