@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/502128099e35521992ca536e32aa388e920fa00b"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/93be49be123b9e92795f6476bb13db80926a3f6a"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 5021280">
+       title="View commit 93be49b">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">5021280</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">93be49b</text>
       </svg>
     </a>
 </div>
@@ -380,14 +380,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/502128099e35521992ca536e32aa388e920fa00b"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/93be49be123b9e92795f6476bb13db80926a3f6a"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 5021280">
+       title="View commit 93be49b">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">5021280</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">93be49b</text>
       </svg>
     </a>
 </div>
@@ -1867,7 +1867,7 @@ they share the API's components via gRPC indirection.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">valkey</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">valkey/valkey:8</span>
-<span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;6379:6379&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"6379:6379"</span><span class="p p-Indicator">]</span>
 
 <span class="w">  </span><span class="nt">api</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">virtufin-api:latest</span>
@@ -1876,7 +1876,7 @@ they share the API's components via gRPC indirection.</p>
 <span class="w">      </span><span class="nt">VIRTUFIN_GRPC_PORT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5002</span>
 <span class="w">      </span><span class="nt">DAPR_GRPC_PORT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50001</span>
 <span class="w">      </span><span class="nt">DAPR_HTTP_PORT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3500</span>
-<span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;5001:5001&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;5002:5002&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"5001:5001"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"5002:5002"</span><span class="p p-Indicator">]</span>
 <span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">valkey</span><span class="p p-Indicator">]</span>
 
 <span class="w">  </span><span class="nt">websocketmanager</span><span class="p">:</span>
@@ -1888,7 +1888,7 @@ they share the API's components via gRPC indirection.</p>
 <span class="w">      </span><span class="nt">VIRTUFIN_API_GRPC_PORT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5002</span>
 <span class="w">      </span><span class="nt">DAPR_GRPC_PORT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50001</span>
 <span class="w">      </span><span class="nt">DAPR_HTTP_PORT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3500</span>
-<span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;5001:5001&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;5002:5002&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"5001:5001"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"5002:5002"</span><span class="p p-Indicator">]</span>
 <span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">api</span><span class="p p-Indicator">]</span>
 
 <span class="w">  </span><span class="nt">workmanager</span><span class="p">:</span>
@@ -1900,7 +1900,7 @@ they share the API's components via gRPC indirection.</p>
 <span class="w">      </span><span class="nt">VIRTUFIN_API_GRPC_PORT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5002</span>
 <span class="w">      </span><span class="nt">DAPR_GRPC_PORT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50001</span>
 <span class="w">      </span><span class="nt">DAPR_HTTP_PORT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3500</span>
-<span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;5001:5001&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;5002:5002&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"5001:5001"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"5002:5002"</span><span class="p p-Indicator">]</span>
 <span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">api</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 <p>Each service runs with its own Dapr sidecar — in production
@@ -1919,19 +1919,19 @@ a small cluster):</p>
 <span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> app</span><span class="p">:</span><span class="w"> </span><span class="nv">virtufin-api</span><span class="w"> </span><span class="p p-Indicator">}</span>
 <span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">dapr.io/enabled</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
-<span class="w">        </span><span class="nt">dapr.io/app-id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;virtufin-api&quot;</span>
-<span class="w">        </span><span class="nt">dapr.io/app-port</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;5001&quot;</span>
-<span class="w">        </span><span class="nt">dapr.io/app-protocol</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;grpc&quot;</span>
-<span class="w">        </span><span class="nt">dapr.io/enable-app-health-check</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span>
+<span class="w">        </span><span class="nt">dapr.io/enabled</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">dapr.io/app-id</span><span class="p">:</span><span class="w"> </span><span class="s">"virtufin-api"</span>
+<span class="w">        </span><span class="nt">dapr.io/app-port</span><span class="p">:</span><span class="w"> </span><span class="s">"5001"</span>
+<span class="w">        </span><span class="nt">dapr.io/app-protocol</span><span class="p">:</span><span class="w"> </span><span class="s">"grpc"</span>
+<span class="w">        </span><span class="nt">dapr.io/enable-app-health-check</span><span class="p">:</span><span class="w"> </span><span class="s">"false"</span>
 <span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api</span>
 <span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">virtufin-api:0.0.47</span>
 <span class="w">        </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[{</span><span class="nt"> containerPort</span><span class="p">:</span><span class="w"> </span><span class="nv">5001</span><span class="w"> </span><span class="p p-Indicator">},</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> containerPort</span><span class="p">:</span><span class="w"> </span><span class="nv">5002</span><span class="w"> </span><span class="p p-Indicator">}]</span>
 <span class="w">        </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">ASPNETCORE_URLS</span><span class="p p-Indicator">,</span><span class="nt"> value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://+:5001&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">VIRTUFIN_GRPC_PORT</span><span class="p p-Indicator">,</span><span class="nt"> value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;5002&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">ASPNETCORE_URLS</span><span class="p p-Indicator">,</span><span class="nt"> value</span><span class="p">:</span><span class="w"> </span><span class="s">"http://+:5001"</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">VIRTUFIN_GRPC_PORT</span><span class="p p-Indicator">,</span><span class="nt"> value</span><span class="p">:</span><span class="w"> </span><span class="s">"5002"</span><span class="w"> </span><span class="p p-Indicator">}</span>
 <span class="nn">---</span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span>
@@ -1945,8 +1945,8 @@ a small cluster):</p>
 <p>The WebSocketManager and WorkManager deployments are identical
 except for <code>app-id</code> and <code>image</code>, with one extra env var:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">env</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">VIRTUFIN_API_HOST</span><span class="p p-Indicator">,</span><span class="nt"> value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;virtufin-api&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">VIRTUFIN_API_GRPC_PORT</span><span class="p p-Indicator">,</span><span class="nt"> value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;5002&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">VIRTUFIN_API_HOST</span><span class="p p-Indicator">,</span><span class="nt"> value</span><span class="p">:</span><span class="w"> </span><span class="s">"virtufin-api"</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">VIRTUFIN_API_GRPC_PORT</span><span class="p p-Indicator">,</span><span class="nt"> value</span><span class="p">:</span><span class="w"> </span><span class="s">"5002"</span><span class="w"> </span><span class="p p-Indicator">}</span>
 </code></pre></div>
 <p>The dependency chain is enforced by Kubernetes' normal pod
 scheduling — the API pod just needs to be ready before the
@@ -2000,16 +2000,16 @@ grpcurl<span class="w"> </span>-plaintext<span class="w"> </span>virtufin-api:50
 
 <span class="c1"># Subscribe WSM to its own topic via API</span>
 grpcurl<span class="w"> </span>-plaintext<span class="w"> </span>virtufin-api:5002<span class="w"> </span>virtufin.api.v1.Pubsub/Subscribe<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;topic&quot;:&quot;websocketmanager.lifecycle&quot;,&quot;subscriber&quot;:&quot;test&quot;,&quot;group&quot;:&quot;smoke&quot;}&#39;</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"topic":"websocketmanager.lifecycle","subscriber":"test","group":"smoke"}'</span>
 
 <span class="c1"># Publish a test event via API (will fan out to WSM)</span>
 grpcurl<span class="w"> </span>-plaintext<span class="w"> </span>virtufin-api:5002<span class="w"> </span>virtufin.api.v1.Pubsub/PublishEvent<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;topic&quot;:&quot;websocketmanager.lifecycle&quot;,&quot;data&quot;:&quot;{\&quot;connection_id\&quot;:\&quot;smoke\&quot;,\&quot;url\&quot;:\&quot;ws://localhost\&quot;}&quot;,&quot;metadata&quot;:{&quot;ce-type&quot;:&quot;com.virtufin.websocketmanager.lifecycle.connected&quot;,&quot;ce-source&quot;:&quot;urn:test&quot;,&quot;ce-id&quot;:&quot;smoke-1&quot;}}&#39;</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"topic":"websocketmanager.lifecycle","data":"{\"connection_id\":\"smoke\",\"url\":\"ws://localhost\"}","metadata":{"ce-type":"com.virtufin.websocketmanager.lifecycle.connected","ce-source":"urn:test","ce-id":"smoke-1"}}'</span>
 </code></pre></div>
 <p>If both calls return OK, the wiring is functional. Tear down the
 smoke subscription afterwards:</p>
 <div class="highlight"><pre><span></span><code>grpcurl<span class="w"> </span>-plaintext<span class="w"> </span>virtufin-api:5002<span class="w"> </span>virtufin.api.v1.Pubsub/Unsubscribe<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;topic&quot;:&quot;websocketmanager.lifecycle&quot;,&quot;subscriber&quot;:&quot;test&quot;,&quot;group&quot;:&quot;smoke&quot;}&#39;</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"topic":"websocketmanager.lifecycle","subscriber":"test","group":"smoke"}'</span>
 </code></pre></div>
 <h2 id="see-also">See also</h2>
 <ul>
@@ -2049,7 +2049,7 @@ smoke subscription afterwards:</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-08-16T23:43:16Z</span>
+  <span style="display:table-cell;text-align:right">2026-08-18T09:24:25Z</span>
 </div>
 
     </div>

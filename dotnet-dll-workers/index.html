@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/502128099e35521992ca536e32aa388e920fa00b"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/93be49be123b9e92795f6476bb13db80926a3f6a"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 5021280">
+       title="View commit 93be49b">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">5021280</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">93be49b</text>
       </svg>
     </a>
 </div>
@@ -382,14 +382,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/502128099e35521992ca536e32aa388e920fa00b"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/93be49be123b9e92795f6476bb13db80926a3f6a"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 5021280">
+       title="View commit 93be49b">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">5021280</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">93be49b</text>
       </svg>
     </a>
 </div>
@@ -1780,7 +1780,7 @@ codec-driven API contract.</p>
 </blockquote>
 <h2 id="quick-start">Quick Start</h2>
 <h3 id="1-create-a-worker-project">1. Create a Worker Project</h3>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">Sdk=</span><span class="s">&quot;Microsoft.NET.Sdk&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Project</span><span class="w"> </span><span class="na">Sdk=</span><span class="s">"Microsoft.NET.Sdk"</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;PropertyGroup&gt;</span>
 <span class="w">    </span><span class="nt">&lt;OutputType&gt;</span>Library<span class="nt">&lt;/OutputType&gt;</span>
 <span class="w">    </span><span class="nt">&lt;TargetFramework&gt;</span>net10.0<span class="nt">&lt;/TargetFramework&gt;</span>
@@ -1790,8 +1790,8 @@ codec-driven API contract.</p>
 <span class="w">  </span><span class="nt">&lt;/PropertyGroup&gt;</span>
 
 <span class="w">  </span><span class="nt">&lt;ItemGroup&gt;</span>
-<span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;CloudNative.CloudEvents&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;2.8.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Virtufin.Worker.DevKit&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;*&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">"CloudNative.CloudEvents"</span><span class="w"> </span><span class="na">Version=</span><span class="s">"2.8.0"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">"Virtufin.Worker.DevKit"</span><span class="w"> </span><span class="na">Version=</span><span class="s">"*"</span><span class="w"> </span><span class="nt">/&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/ItemGroup&gt;</span>
 <span class="nt">&lt;/Project&gt;</span>
 </code></pre></div>
@@ -1809,14 +1809,14 @@ with <code>Id</code>, <code>Type</code>, <code>Source</code>, <code>correlationi
 
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CommandWorker</span><span class="o">&lt;</span><span class="n">MyCommand</span><span class="o">&gt;</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyWorker</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;urn:my-worker&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;my.response&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyWorker</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">"urn:my-worker"</span><span class="p">),</span><span class="w"> </span><span class="s">"my.response"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleCommandAsync</span><span class="p">(</span>
 <span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">MyCommand</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span>
 <span class="w">        </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="k">switch</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="n">MyCommand</span><span class="p">.</span><span class="n">hello</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">FromResult</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">?&gt;</span><span class="p">(</span>
-<span class="w">                </span><span class="n">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="n">ToString</span><span class="p">(),</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;world&quot;</span><span class="p">)),</span>
+<span class="w">                </span><span class="n">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="n">ToString</span><span class="p">(),</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="s">"world"</span><span class="p">)),</span>
 <span class="w">            </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">FromResult</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">?&gt;</span><span class="p">(</span><span class="k">null</span><span class="p">),</span>
 <span class="w">        </span><span class="p">};</span>
 <span class="p">}</span>
@@ -1836,14 +1836,14 @@ convenience and override <code>HandleAsync(CloudEvent, JsonNode)</code>:</p>
 
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ApiWorker</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyWorker</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;urn:my-worker&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;my.response&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyWorker</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">"urn:my-worker"</span><span class="p">),</span><span class="w"> </span><span class="s">"my.response"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleAsync</span><span class="p">(</span>
 <span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">payload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">.</span><span class="n">ToJsonString</span><span class="p">();</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">FromResult</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">?&gt;</span><span class="p">(</span>
-<span class="w">            </span><span class="n">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;process&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="s">$&quot;Processed: {payload}&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="n">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="s">"process"</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="s">$"Processed: {payload}"</span><span class="p">));</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -1859,10 +1859,10 @@ hierarchy. You build the <code>CloudEvent</code> envelope yourself:</p>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">FromResult</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CloudEvent</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my.response&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="n">Source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;urn:my-worker&quot;</span><span class="p">),</span>
-<span class="w">            </span><span class="n">DataContentType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;application/json&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="n">Data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;{\&quot;status\&quot;:\&quot;ok\&quot;}&quot;</span>
+<span class="w">            </span><span class="n">Type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"my.response"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">"urn:my-worker"</span><span class="p">),</span>
+<span class="w">            </span><span class="n">DataContentType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"application/json"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"{\"status\":\"ok\"}"</span>
 <span class="w">        </span><span class="p">});</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -1876,7 +1876,7 @@ the (optional) <code>virtufin*</code> extensions:</p>
 <span class="w">  </span>-o<span class="w"> </span>.<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-p:PackageId<span class="o">=</span>Virtufin.Worker.MyWorker<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-p:PackageVersion<span class="o">=</span><span class="m">0</span>.0.1<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-p:NuspecProperties<span class="o">=</span><span class="s2">&quot;virtufinAbiVersion=1;virtufinEntryPoint=Process;virtufinFreeResult=FreeResult&quot;</span>
+<span class="w">  </span>-p:NuspecProperties<span class="o">=</span><span class="s2">"virtufinAbiVersion=1;virtufinEntryPoint=Process;virtufinFreeResult=FreeResult"</span>
 </code></pre></div>
 <p>The <code>&lt;id&gt;.dll</code> (your worker assembly) is placed under <code>lib/&lt;tfm&gt;/</code> by
 <code>dotnet pack</code> (e.g. <code>lib/net10.0/Virtufin.Worker.MyWorker.dll</code>). The
@@ -1894,18 +1894,18 @@ exception (<code>CloudNative.CloudEvents</code> should stay an <em>indirect</em>
 dependency, not a direct <code>PackageReference</code>).</p>
 </blockquote>
 <h3 id="4-deploy-to-workmanager">4. Deploy to WorkManager</h3>
-<div class="highlight"><pre><span></span><code><span class="nv">WORKER_ID</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:5001/workers&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">    &quot;mimeType&quot;: &quot;application/x-dotnet-dll&quot;,</span>
-<span class="s1">    &quot;topics&quot;: [&quot;commands.my-worker&quot;],</span>
-<span class="s1">  }&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.id&#39;</span><span class="k">)</span>
+<div class="highlight"><pre><span></span><code><span class="nv">WORKER_ID</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://localhost:5001/workers"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">    "mimeType": "application/x-dotnet-dll",</span>
+<span class="s1">    "topics": ["commands.my-worker"],</span>
+<span class="s1">  }'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">'.id'</span><span class="k">)</span>
 
-curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">&quot;http://localhost:5001/workers/</span><span class="nv">$WORKER_ID</span><span class="s2">/code&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/octet-stream&quot;</span><span class="w"> </span><span class="se">\</span>
+curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://localhost:5001/workers/</span><span class="nv">$WORKER_ID</span><span class="s2">/code"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/octet-stream"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--data-binary<span class="w"> </span>@worker.nupkg
 
-curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://localhost:5001/workers/</span><span class="nv">$WORKER_ID</span><span class="s2">/start&quot;</span>
+curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://localhost:5001/workers/</span><span class="nv">$WORKER_ID</span><span class="s2">/start"</span>
 </code></pre></div>
 <h2 id="discovery">Discovery</h2>
 <p>The engine scans <strong>all assemblies</strong> loaded in the isolated <code>AssemblyLoadContext</code> for a non-abstract, non-interface type implementing <code>Virtufin.Worker.DevKit.IWorker</code>.</p>
@@ -2039,15 +2039,15 @@ dispatch.</p>
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyApiWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ApiWorker</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyApiWorker</span><span class="p">()</span>
-<span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;urn:my-api-worker&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;my.response&quot;</span><span class="p">,</span>
-<span class="w">               </span><span class="n">apiHost</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">apiPort</span><span class="p">:</span><span class="w"> </span><span class="mi">5002</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">"urn:my-api-worker"</span><span class="p">),</span><span class="w"> </span><span class="s">"my.response"</span><span class="p">,</span>
+<span class="w">               </span><span class="n">apiHost</span><span class="p">:</span><span class="w"> </span><span class="s">"localhost"</span><span class="p">,</span><span class="w"> </span><span class="n">apiPort</span><span class="p">:</span><span class="w"> </span><span class="mi">5002</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleAsync</span><span class="p">(</span>
 <span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">Api</span><span class="o">!</span><span class="p">.</span><span class="n">Gateway</span><span class="p">.</span><span class="n">targetservice</span><span class="p">.</span><span class="n">SomeMethodAsync</span><span class="p">(</span>
-<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">object?</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;key&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="w"> </span><span class="p">});</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;process&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="s">$&quot;Result: {result}&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">object?</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">[</span><span class="s">"key"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"value"</span><span class="w"> </span><span class="p">});</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="s">"process"</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="s">$"Result: {result}"</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -2089,8 +2089,8 @@ dispatch.</p>
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyApiCommandWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ApiCommandWorker</span><span class="o">&lt;</span><span class="n">MyCommand</span><span class="o">&gt;</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyApiCommandWorker</span><span class="p">()</span>
-<span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;urn:my-api-command-worker&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;my.response&quot;</span><span class="p">,</span>
-<span class="w">               </span><span class="n">apiHost</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">apiPort</span><span class="p">:</span><span class="w"> </span><span class="mi">5002</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">"urn:my-api-command-worker"</span><span class="p">),</span><span class="w"> </span><span class="s">"my.response"</span><span class="p">,</span>
+<span class="w">               </span><span class="n">apiHost</span><span class="p">:</span><span class="w"> </span><span class="s">"localhost"</span><span class="p">,</span><span class="w"> </span><span class="n">apiPort</span><span class="p">:</span><span class="w"> </span><span class="mi">5002</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleCommandAsync</span><span class="p">(</span>
 <span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">MyCommand</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span>
@@ -2109,15 +2109,15 @@ dispatch.</p>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">ApiClient</span><span class="w"> </span><span class="n">_client</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyWorker</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="s">&quot;my.response&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;urn:my-worker&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyWorker</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="s">"my.response"</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">"urn:my-worker"</span><span class="p">))</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">_client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ApiClient</span><span class="p">(</span><span class="s">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5002</span><span class="p">);</span>
+<span class="w">        </span><span class="n">_client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ApiClient</span><span class="p">(</span><span class="s">"localhost"</span><span class="p">,</span><span class="w"> </span><span class="mi">5002</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">CloudEvent</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleCommandAsync</span><span class="p">(</span>
 <span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_client</span><span class="p">.</span><span class="n">InvokeAsync</span><span class="p">(</span><span class="s">&quot;backend&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_client</span><span class="p">.</span><span class="n">InvokeAsync</span><span class="p">(</span><span class="s">"backend"</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="p">);</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Response</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">:</span><span class="w"> </span><span class="n">result</span><span class="o">?.</span><span class="n">ToString</span><span class="p">());</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -2126,8 +2126,8 @@ dispatch.</p>
 <div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyWorker</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ApiCommandWorker</span><span class="o">&lt;</span><span class="n">MyCommand</span><span class="o">&gt;</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">MyWorker</span><span class="p">()</span>
-<span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;urn:my-worker&quot;</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;my.response&quot;</span><span class="p">,</span>
-<span class="w">               </span><span class="n">apiHost</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;localhost&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">apiPort</span><span class="p">:</span><span class="w"> </span><span class="mi">5002</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">"urn:my-worker"</span><span class="p">),</span><span class="w"> </span><span class="s">"my.response"</span><span class="p">,</span>
+<span class="w">               </span><span class="n">apiHost</span><span class="p">:</span><span class="w"> </span><span class="s">"localhost"</span><span class="p">,</span><span class="w"> </span><span class="n">apiPort</span><span class="p">:</span><span class="w"> </span><span class="mi">5002</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">JsonObject</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleCommandAsync</span><span class="p">(</span>
 <span class="w">        </span><span class="n">CloudEvent</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">MyCommand</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="n">JsonNode</span><span class="w"> </span><span class="n">node</span><span class="p">)</span>
@@ -2255,7 +2255,7 @@ type identity conflict with the WorkManager's own copy.</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-08-16T23:43:16Z</span>
+  <span style="display:table-cell;text-align:right">2026-08-18T09:24:25Z</span>
 </div>
 
     </div>
