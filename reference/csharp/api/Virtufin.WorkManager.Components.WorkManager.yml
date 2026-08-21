@@ -892,7 +892,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: PublishTopicAttribute
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 992
+    startLine: 1012
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -942,7 +942,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 1246
+    startLine: 1266
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
