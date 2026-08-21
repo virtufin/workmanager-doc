@@ -21,7 +21,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: LeaderLease
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 180
+    startLine: 211
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -56,7 +56,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: InstanceId
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 182
+    startLine: 213
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
@@ -85,7 +85,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: AcquiredAt
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 183
+    startLine: 214
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services

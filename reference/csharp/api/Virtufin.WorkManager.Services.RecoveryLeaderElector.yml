@@ -158,7 +158,7 @@ items:
       repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ReleaseLeaseAsync
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
-    startLine: 117
+    startLine: 144
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Services
