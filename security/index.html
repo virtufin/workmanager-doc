@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/843dcb5a5322c90da2b94425515231002309c6b6"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/bd275c8b270574b2c46894dad6c02965721d2951"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 843dcb5">
+       title="View commit bd275c8">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">843dcb5</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">bd275c8</text>
       </svg>
     </a>
 </div>
@@ -382,14 +382,14 @@
     </div>
     <span class="md-source__repository">virtufin/virtufin-workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/843dcb5a5322c90da2b94425515231002309c6b6"
+    <a href="https://git.haenerconsulting.com/virtufin/virtufin-workmanager/commit/bd275c8b270574b2c46894dad6c02965721d2951"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 843dcb5">
+       title="View commit bd275c8">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">843dcb5</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">bd275c8</text>
       </svg>
     </a>
 </div>
@@ -1564,8 +1564,8 @@
 
 <h1 id="security">Security</h1>
 <h2 id="authentication">Authentication</h2>
-<p>The WorkManager gRPC and HTTP endpoints accept connections authenticated via Dapr's service-to-service mTLS. All inter-service calls between the API Gateway, WorkManager, and WebSocketManager are secured by Dapr's built-in mutual TLS.</p>
-<p>For external client access, authentication should be handled at the API Gateway layer. See <a href="https://api.docs.virtufin.com/security/">API Gateway Security</a> for JWT bearer token and role-based authorization configuration.</p>
+<p>The WorkManager's gRPC and HTTP endpoints carry no authentication or TLS of their own -- Kestrel binds plaintext, and neither <code>ApiKeyInterceptor</code>-style auth nor Dapr mTLS is wired to the primary listener or to instance-to-instance peer forwarding (<code>ForwardOrReclaimAsync</code>, which dials peers directly, bypassing the Dapr sidecar entirely). The trust boundary is the cluster network: WorkManager has no ingress and is only reachable from within the cluster, where every workload is assumed trusted. This is a deliberate scope decision, not Dapr-provided protection -- if that trust assumption ever changes (e.g. multi-tenant workloads sharing the cluster), this endpoint needs its own auth layer.</p>
+<p>For external client access, authentication is handled at the API Gateway layer via its <code>x-api-key</code> scheme -- the only externally-reachable surface in this platform. See <a href="https://api.docs.virtufin.com/security/">API Gateway Security</a> for configuration.</p>
 <h2 id="code-execution-safety">Code Execution Safety</h2>
 <h3 id="python-workers">Python Workers</h3>
 <p>Python workers execute in a <strong>persistent sandboxed subprocess</strong> with the following protections:</p>
@@ -1662,7 +1662,7 @@
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-08-21T11:35:45Z</span>
+  <span style="display:table-cell;text-align:right">2026-08-21T14:30:31Z</span>
 </div>
 
     </div>
