@@ -25,7 +25,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: WorkerEvents
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 7
@@ -67,7 +67,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: TypePrefix
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 9
@@ -94,7 +94,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Registered
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 11
@@ -121,7 +121,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Starting
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 12
@@ -148,7 +148,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Online
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 13
@@ -175,7 +175,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Degraded
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 14
@@ -202,7 +202,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Stopping
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 15
@@ -229,7 +229,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Stopped
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 16
@@ -256,7 +256,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Failed
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 17
@@ -283,7 +283,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Unknown
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 18

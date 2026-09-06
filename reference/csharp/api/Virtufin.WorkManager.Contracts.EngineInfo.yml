@@ -19,7 +19,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/IEngineRegistry.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: EngineInfo
     path: ../../../src/Virtufin.WorkManager/Contracts/IEngineRegistry.cs
     startLine: 10
@@ -57,7 +57,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/IEngineRegistry.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Contracts/IEngineRegistry.cs
     startLine: 10
@@ -95,7 +95,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/IEngineRegistry.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: MimeType
     path: ../../../src/Virtufin.WorkManager/Contracts/IEngineRegistry.cs
     startLine: 11
@@ -126,7 +126,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/IEngineRegistry.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Language
     path: ../../../src/Virtufin.WorkManager/Contracts/IEngineRegistry.cs
     startLine: 12

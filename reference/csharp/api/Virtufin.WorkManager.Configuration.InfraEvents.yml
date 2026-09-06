@@ -19,7 +19,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: InfraEvents
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 24
@@ -56,7 +56,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: TypePrefix
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 26
@@ -83,7 +83,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: WorkerHeartbeat
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 28
@@ -110,7 +110,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/SystemEvents.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: WorkerOnline
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
     startLine: 29

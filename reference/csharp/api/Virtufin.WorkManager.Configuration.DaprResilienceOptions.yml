@@ -29,7 +29,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DaprResilienceOptions
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 7
@@ -72,7 +72,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RetryAttemptsEnvVar
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 10
@@ -101,7 +101,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RetryBaseDelayMsEnvVar
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 13
@@ -130,7 +130,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CircuitBreakerMinimumThroughputEnvVar
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 16
@@ -159,7 +159,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CircuitBreakerBreakDurationSecondsEnvVar
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 19
@@ -188,7 +188,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DefaultRetryAttempts
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 22
@@ -217,7 +217,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DefaultRetryBaseDelayMs
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 25
@@ -246,7 +246,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DefaultCircuitBreakerMinimumThroughput
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 28
@@ -275,7 +275,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DefaultCircuitBreakerBreakDurationSeconds
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 31
@@ -304,7 +304,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RetryAttempts
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 34
@@ -335,7 +335,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RetryBaseDelayMs
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 37
@@ -366,7 +366,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CircuitBreakerMinimumThroughput
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 40
@@ -397,7 +397,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CircuitBreakerBreakDurationSeconds
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 43
@@ -428,7 +428,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: FromEnvironment
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprResilienceOptions.cs
     startLine: 45

@@ -18,7 +18,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/ApiLifecyclePublisher.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ApiLifecyclePublisher
     path: ../../../src/Virtufin.WorkManager/Services/ApiLifecyclePublisher.cs
     startLine: 20
@@ -66,7 +66,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/ApiLifecyclePublisher.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/ApiLifecyclePublisher.cs
     startLine: 39
@@ -100,7 +100,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/ApiLifecyclePublisher.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: PublishWorkerEventAsync
     path: ../../../src/Virtufin.WorkManager/Services/ApiLifecyclePublisher.cs
     startLine: 45

@@ -21,7 +21,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: WorkerRegistry
     path: ../../../src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
     startLine: 8
@@ -57,7 +57,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Add
     path: ../../../src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
     startLine: 17
@@ -93,7 +93,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Remove
     path: ../../../src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
     startLine: 31
@@ -134,7 +134,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Get
     path: ../../../src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
     startLine: 41
@@ -169,7 +169,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: GetAll
     path: ../../../src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
     startLine: 50
@@ -200,7 +200,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Exists
     path: ../../../src/Virtufin.WorkManager/Runtime/WorkerRegistry.cs
     startLine: 60

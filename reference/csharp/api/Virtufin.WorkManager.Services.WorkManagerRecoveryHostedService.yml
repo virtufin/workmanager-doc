@@ -18,7 +18,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerRecoveryHostedService.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: WorkManagerRecoveryHostedService
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerRecoveryHostedService.cs
     startLine: 22
@@ -86,7 +86,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerRecoveryHostedService.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerRecoveryHostedService.cs
     startLine: 30
@@ -126,7 +126,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerRecoveryHostedService.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: ExecuteAsync
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerRecoveryHostedService.cs
     startLine: 44

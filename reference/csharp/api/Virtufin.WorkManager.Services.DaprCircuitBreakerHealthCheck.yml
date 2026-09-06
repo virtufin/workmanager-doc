@@ -18,7 +18,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DaprCircuitBreakerHealthCheck
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
     startLine: 114
@@ -56,7 +56,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
     startLine: 121
@@ -90,7 +90,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CheckHealthAsync
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
     startLine: 127

@@ -21,7 +21,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/RecoveryState.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoveryState
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryState.cs
     startLine: 8
@@ -60,7 +60,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/RecoveryState.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoveryCompleted
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryState.cs
     startLine: 17
@@ -91,7 +91,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/RecoveryState.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoveryFailed
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryState.cs
     startLine: 22
@@ -122,7 +122,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/RecoveryState.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: RecoveryException
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryState.cs
     startLine: 27
@@ -153,7 +153,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/RecoveryState.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CompleteRecovery
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryState.cs
     startLine: 32
@@ -181,7 +181,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/RecoveryState.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: FailRecovery
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryState.cs
     startLine: 40

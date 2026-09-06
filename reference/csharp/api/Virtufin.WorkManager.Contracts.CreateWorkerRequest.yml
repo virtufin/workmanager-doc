@@ -22,7 +22,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CreateWorkerRequest
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 208
@@ -60,7 +60,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 208
@@ -106,7 +106,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: CodeSource
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 209
@@ -137,7 +137,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: MimeType
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 210
@@ -168,7 +168,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Topics
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 211
@@ -199,7 +199,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Config
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 212
@@ -230,7 +230,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Tags
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 213

@@ -19,7 +19,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: WorkerStatus
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 164
@@ -46,7 +46,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Unspecified
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 169
@@ -74,7 +74,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Stopped
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 173
@@ -102,7 +102,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: Running
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 177

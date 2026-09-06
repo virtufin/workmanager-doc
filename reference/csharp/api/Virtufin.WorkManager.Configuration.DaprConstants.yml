@@ -20,7 +20,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprConstants.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: DaprConstants
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprConstants.cs
     startLine: 2
@@ -55,7 +55,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprConstants.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: PubsubName
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprConstants.cs
     startLine: 4
@@ -82,7 +82,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprConstants.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StateStoreName
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprConstants.cs
     startLine: 5
@@ -109,7 +109,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprConstants.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: PubsubNameKey
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprConstants.cs
     startLine: 6
@@ -136,7 +136,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/DaprConstants.cs
       branch: master
-      repo: https://gitea.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
     id: StateStoreNameKey
     path: ../../../src/Virtufin.WorkManager/Configuration/DaprConstants.cs
     startLine: 7
