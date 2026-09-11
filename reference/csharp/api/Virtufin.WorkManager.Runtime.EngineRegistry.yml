@@ -20,7 +20,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/EngineRegistry.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: EngineRegistry
     path: ../../../src/Virtufin.WorkManager/Runtime/EngineRegistry.cs
     startLine: 10
@@ -58,7 +58,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/EngineRegistry.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: Register
     path: ../../../src/Virtufin.WorkManager/Runtime/EngineRegistry.cs
     startLine: 15
@@ -105,7 +105,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/EngineRegistry.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: Unregister
     path: ../../../src/Virtufin.WorkManager/Runtime/EngineRegistry.cs
     startLine: 29
@@ -142,7 +142,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/EngineRegistry.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: GetEngine
     path: ../../../src/Virtufin.WorkManager/Runtime/EngineRegistry.cs
     startLine: 37
@@ -179,7 +179,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/EngineRegistry.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: ListEngines
     path: ../../../src/Virtufin.WorkManager/Runtime/EngineRegistry.cs
     startLine: 51

@@ -18,7 +18,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/Exceptions.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: EngineNotFoundException
     path: ../../../src/Virtufin.WorkManager/Runtime/Exceptions.cs
     startLine: 25
@@ -66,7 +66,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/Exceptions.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: MimeType
     path: ../../../src/Virtufin.WorkManager/Runtime/Exceptions.cs
     startLine: 28
@@ -97,7 +97,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Runtime/Exceptions.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Runtime/Exceptions.cs
     startLine: 33

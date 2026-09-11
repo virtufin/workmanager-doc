@@ -23,7 +23,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: WorkerProcessingRetryOptions
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
     startLine: 19
@@ -89,7 +89,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: RetryAttemptsEnvVar
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
     startLine: 22
@@ -118,7 +118,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: RetryBaseDelayMsEnvVar
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
     startLine: 25
@@ -147,7 +147,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DefaultRetryAttempts
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
     startLine: 28
@@ -176,7 +176,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DefaultRetryBaseDelayMs
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
     startLine: 31
@@ -205,7 +205,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: RetryAttempts
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
     startLine: 34
@@ -236,7 +236,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: RetryBaseDelayMs
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
     startLine: 37
@@ -267,7 +267,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: FromEnvironment
     path: ../../../src/Virtufin.WorkManager/Configuration/WorkerProcessingRetryOptions.cs
     startLine: 39

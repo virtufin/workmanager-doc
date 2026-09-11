@@ -39,7 +39,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: WorkManager
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 27
@@ -78,7 +78,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DeadLetterTopicSuffix
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 66
@@ -107,7 +107,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: CodeFetcherHttpClientName
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 68
@@ -134,7 +134,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DefaultCodeFetchTimeoutSeconds
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 69
@@ -161,7 +161,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: UnknownCloudEventType
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 70
@@ -188,7 +188,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: UnknownCloudEventSourceUri
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 71
@@ -215,7 +215,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: ProbeEventType
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 83
@@ -259,7 +259,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: ProbeInstanceExtension
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 84
@@ -286,7 +286,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 105
@@ -344,7 +344,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: RegisterEngine
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 147
@@ -389,7 +389,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: CreateWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 167
@@ -448,7 +448,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: LoadCode
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 245
@@ -508,7 +508,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DeleteWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 291
@@ -549,7 +549,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: StartWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 315
@@ -590,7 +590,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: StopWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 340
@@ -631,7 +631,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 366
@@ -662,7 +662,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: GetTag
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 389
@@ -700,7 +700,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: GetTags
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 399
@@ -733,7 +733,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: SetTag
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 410
@@ -774,7 +774,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: SetTags
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 421
@@ -810,7 +810,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 455
@@ -849,7 +849,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: RecoverWorkersAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 468
@@ -889,7 +889,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: PublishTopicAttribute
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 1012
@@ -939,7 +939,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Components/WorkManager.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
     startLine: 1266

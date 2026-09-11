@@ -23,7 +23,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/AppMetrics.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: AppMetrics
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
     startLine: 8
@@ -60,7 +60,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/AppMetrics.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: MeterName
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
     startLine: 10
@@ -87,7 +87,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/AppMetrics.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: WorkerCountByStatus
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
     startLine: 26
@@ -116,7 +116,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/AppMetrics.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: MessagesProcessed
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
     startLine: 36
@@ -145,7 +145,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/AppMetrics.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DaprCallLatency
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
     startLine: 41
@@ -174,7 +174,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/AppMetrics.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: SetWorkerCounts
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
     startLine: 53
@@ -210,7 +210,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/AppMetrics.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: RecordMessageProcessed
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
     startLine: 62
@@ -244,7 +244,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/AppMetrics.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: RecordDaprCallLatency
     path: ../../../src/Virtufin.WorkManager/Services/AppMetrics.cs
     startLine: 70

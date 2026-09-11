@@ -20,7 +20,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DaprResiliencePipeline
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
     startLine: 19
@@ -59,7 +59,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: CircuitBroken
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
     startLine: 29
@@ -90,7 +90,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
     startLine: 34
@@ -126,7 +126,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: ExecuteAsync
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
     startLine: 97
@@ -166,7 +166,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: ExecuteAsync
     path: ../../../src/Virtufin.WorkManager/Services/DaprResiliencePipeline.cs
     startLine: 105

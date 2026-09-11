@@ -29,7 +29,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: WorkManagerGrpcService
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 25
@@ -64,7 +64,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 34
@@ -106,7 +106,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: CreateWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 62
@@ -141,7 +141,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: StartWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 95
@@ -176,7 +176,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: StopWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 113
@@ -211,7 +211,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: LoadCode
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 131
@@ -246,7 +246,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DeleteWorker
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 165
@@ -281,7 +281,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 183
@@ -316,7 +316,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: RecoverWorkers
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 207
@@ -351,7 +351,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 214
@@ -386,7 +386,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: SetTag
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 239
@@ -421,7 +421,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: GetTag
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 257
@@ -456,7 +456,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: SetTags
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 274
@@ -491,7 +491,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: GetTags
     path: ../../../src/Virtufin.WorkManager/Services/WorkManagerGrpcService.cs
     startLine: 295

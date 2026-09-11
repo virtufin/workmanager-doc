@@ -24,7 +24,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/PortConstants.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: PortConstants
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
     startLine: 2
@@ -59,7 +59,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/PortConstants.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DefaultHttpPort
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
     startLine: 4
@@ -86,7 +86,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/PortConstants.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DefaultGrpcPort
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
     startLine: 5
@@ -113,7 +113,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/PortConstants.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DefaultDaprHttpPort
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
     startLine: 6
@@ -140,7 +140,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/PortConstants.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DefaultDaprGrpcPort
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
     startLine: 7
@@ -167,7 +167,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/PortConstants.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: HttpPortKey
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
     startLine: 8
@@ -194,7 +194,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/PortConstants.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: GrpcPortKey
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
     startLine: 9
@@ -221,7 +221,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/PortConstants.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DaprHttpPortKey
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
     startLine: 10
@@ -248,7 +248,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Configuration/PortConstants.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DaprGrpcPortKey
     path: ../../../src/Virtufin.WorkManager/Configuration/PortConstants.cs
     startLine: 11

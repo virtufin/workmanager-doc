@@ -17,7 +17,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/IWorkerRecoveryExecutor.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: IWorkerRecoveryExecutor
     path: ../../../src/Virtufin.WorkManager/Services/IWorkerRecoveryExecutor.cs
     startLine: 7
@@ -51,7 +51,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/IWorkerRecoveryExecutor.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: RecoverWorkersAsync
     path: ../../../src/Virtufin.WorkManager/Services/IWorkerRecoveryExecutor.cs
     startLine: 13

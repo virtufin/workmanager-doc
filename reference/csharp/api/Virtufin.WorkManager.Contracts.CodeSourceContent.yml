@@ -18,7 +18,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: CodeSourceContent
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 38
@@ -58,7 +58,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 38
@@ -93,7 +93,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: Content
     path: ../../../src/Virtufin.WorkManager/Contracts/WorkerContracts.cs
     startLine: 38

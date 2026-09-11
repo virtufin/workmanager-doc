@@ -20,7 +20,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: RecoveryLeaderElector
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
     startLine: 15
@@ -56,7 +56,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: LeaseKey
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
     startLine: 17
@@ -83,7 +83,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
     startLine: 26
@@ -121,7 +121,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: TryAcquireLeaseAsync
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
     startLine: 40
@@ -155,7 +155,7 @@ items:
     remote:
       path: src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
       branch: master
-      repo: https://git.haenerconsulting.com/virtufin/virtufin-workmanager
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: ReleaseLeaseAsync
     path: ../../../src/Virtufin.WorkManager/Services/RecoveryLeaderElector.cs
     startLine: 144
