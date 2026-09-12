@@ -203,14 +203,14 @@
     </div>
     <span class="md-source__repository">virtufin/workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/workmanager/commit/3a8c99334597be3ca45371bba0561e9b07ba7739"
+    <a href="https://git.haenerconsulting.com/virtufin/workmanager/commit/2643dffe4d5291dcd97684b3f5ebe7005c71b978"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 3a8c993">
+       title="View commit 2643dff">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3a8c993</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">2643dff</text>
       </svg>
     </a>
 </div>
@@ -382,14 +382,14 @@
     </div>
     <span class="md-source__repository">virtufin/workmanager</span>
   </a>
-    <a href="https://git.haenerconsulting.com/virtufin/workmanager/commit/3a8c99334597be3ca45371bba0561e9b07ba7739"
+    <a href="https://git.haenerconsulting.com/virtufin/workmanager/commit/2643dffe4d5291dcd97684b3f5ebe7005c71b978"
        class="md-source-commit-badge"
        target="_blank"
        rel="noopener"
-       title="View commit 3a8c993">
+       title="View commit 2643dff">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 22" width="82" height="22" style="vertical-align:middle;">
         <rect width="82" height="22" rx="4" fill="#e9ecef" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
-        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">3a8c993</text>
+        <text x="41" y="15.5" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" font-weight="600" fill="currentColor">2643dff</text>
       </svg>
     </a>
 </div>
@@ -1817,13 +1817,13 @@ Kubernetes pod, image-pull, and worker-recovery issues.</p>
 - The worker code is unreachable (URL fetch failed)</p>
 <p><strong>Diagnose:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Check the engine startup logs</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>virtufin-workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"engine\|start\|load"</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"engine\|start\|load"</span>
 
 <span class="c1"># For Python workers, check the Python subprocess stderr</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>virtufin-workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"python\|subprocess"</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"python\|subprocess"</span>
 
 <span class="c1"># For C# workers, check the Roslyn compilation errors</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>virtufin-workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"roslyn\|compile"</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"roslyn\|compile"</span>
 </code></pre></div>
 <h3 id="worker-not-found-after-restart">"Worker not found" after restart</h3>
 <p><strong>Symptom:</strong> After a WorkManager restart, workers that were Running are no
@@ -1834,7 +1834,7 @@ re-creates worker instances, but this can take a few seconds depending on the
 worker count.</p>
 <p><strong>Diagnose:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Check the recovery logs</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>virtufin-workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"recovery"</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"recovery"</span>
 
 <span class="c1"># Verify the state store has the worker records</span>
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>dapr_redis_1<span class="w"> </span>redis-cli<span class="w"> </span>KEYS<span class="w"> </span><span class="s1">'worker|*'</span>
@@ -1877,7 +1877,7 @@ The readiness probe gates traffic until recovery finishes.</p>
 </table>
 <p><strong>Diagnose:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Check the Python engine logs</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>virtufin-workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"python\|sandbox"</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"python\|sandbox"</span>
 
 <span class="c1"># Check the blocked module list</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>configmap<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>workmanager-config<span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>PYTHON_BLOCKED
@@ -1897,7 +1897,7 @@ modules).</p>
 <code>ContentSha256</code> is set).</p>
 <p><strong>Diagnose:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Check the code fetcher logs</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>virtufin-workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"fetcher\|url\|sha256"</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"fetcher\|url\|sha256"</span>
 
 <span class="c1"># Verify the URL is in the allow-list</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>configmap<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>workmanager-config<span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ALLOWED_CODE_SOURCE_HOSTS
@@ -1910,7 +1910,7 @@ when loading the source.</p>
 available in the runtime assemblies.</p>
 <p><strong>Diagnose:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Check the Roslyn compilation error in the logs</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>virtufin-workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"error CS\|roslyn"</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"error CS\|roslyn"</span>
 </code></pre></div>
 <p><strong>Fix:</strong> Fix the worker source code and call <code>LoadCode</code> with the
 updated bytes.</p>
@@ -1922,7 +1922,7 @@ conflict with the WorkManager's assemblies, or is for the wrong platform
 (any CPU vs x64 vs ARM).</p>
 <p><strong>Diagnose:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Check the assembly load logs</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>virtufin-workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"assembly\|dependency\|resolving"</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"assembly\|dependency\|resolving"</span>
 </code></pre></div>
 <h2 id="state-store-failures">State store failures</h2>
 <h3 id="worker-state-not-persisting-across-restarts">Worker state not persisting across restarts</h3>
@@ -1934,7 +1934,7 @@ restart, or the recovery hosted service is misconfigured.</p>
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>dapr_redis_1<span class="w"> </span>redis-cli<span class="w"> </span>KEYS<span class="w"> </span><span class="s1">'worker|*'</span>
 
 <span class="c1"># Check the recovery service logs</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>virtufin-workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"recovery"</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>workmanager<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"recovery"</span>
 </code></pre></div>
 <h2 id="memory-and-resource-issues">Memory and resource issues</h2>
 <h3 id="memory-leak-in-long-running-workers">Memory leak in long-running workers</h3>
@@ -1962,16 +1962,16 @@ docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </spa
 docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>dapr_redis_1<span class="w"> </span>redis-cli<span class="w"> </span>--scan<span class="w"> </span>--pattern<span class="w"> </span><span class="s1">'worker|*'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-L<span class="w"> </span><span class="m">100</span><span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-i<span class="w"> </span>dapr_redis_1<span class="w"> </span>redis-cli<span class="w"> </span>DEL
 
 <span class="c1"># Restart the WorkManager</span>
-kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment/virtufin-workmanager<span class="w"> </span>-n<span class="w"> </span>virtufin
-kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/virtufin-workmanager<span class="w"> </span>-n<span class="w"> </span>virtufin
+kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment/workmanager<span class="w"> </span>-n<span class="w"> </span>virtufin
+kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/workmanager<span class="w"> </span>-n<span class="w"> </span>virtufin
 </code></pre></div>
 <h3 id="force-recovery-re-run">Force recovery re-run</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Restart the WorkManager — recovery runs on startup</span>
-kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment/virtufin-workmanager<span class="w"> </span>-n<span class="w"> </span>virtufin
-kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/virtufin-workmanager<span class="w"> </span>-n<span class="w"> </span>virtufin
+kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment/workmanager<span class="w"> </span>-n<span class="w"> </span>virtufin
+kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/workmanager<span class="w"> </span>-n<span class="w"> </span>virtufin
 
 <span class="c1"># Watch the recovery logs</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/name<span class="o">=</span>virtufin-workmanager<span class="w"> </span>-f<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>recovery
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>virtufin<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>workmanager<span class="w"> </span>-f<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>recovery
 </code></pre></div>
 <h2 id="reporting-issues">Reporting issues</h2>
 <p>If none of the above resolves your issue, gather the following and file a
@@ -2015,7 +2015,7 @@ Gitea issue:</p>
     <div class="md-copyright__highlight">
       <div style="display:table;width:100%">
   <span style="display:table-cell">&copy; 2026 Häner Consulting. All Rights Reserved.</span>
-  <span style="display:table-cell;text-align:right">2026-09-12T09:22:15Z</span>
+  <span style="display:table-cell;text-align:right">2026-09-12T09:42:22Z</span>
 </div>
 
     </div>
