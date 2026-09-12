@@ -59,15 +59,15 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: TypePrefix
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
-    startLine: 26
+    startLine: 30
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
   syntax:
-    content: public const string TypePrefix = "com.virtufin.workmanager.infra."
+    content: public const string TypePrefix = "com.virtufin.workmanager."
     return:
       type: System.String
-    content.vb: Public Const TypePrefix As String = "com.virtufin.workmanager.infra."
+    content.vb: Public Const TypePrefix As String = "com.virtufin.workmanager."
 - uid: Virtufin.WorkManager.Configuration.InfraEvents.WorkerHeartbeat
   commentId: F:Virtufin.WorkManager.Configuration.InfraEvents.WorkerHeartbeat
   id: WorkerHeartbeat
@@ -86,15 +86,15 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: WorkerHeartbeat
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
-    startLine: 28
+    startLine: 32
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
   syntax:
-    content: public const string WorkerHeartbeat = "com.virtufin.workmanager.infra.worker.heartbeat"
+    content: public const string WorkerHeartbeat = "com.virtufin.workmanager.heartbeat"
     return:
       type: System.String
-    content.vb: Public Const WorkerHeartbeat As String = "com.virtufin.workmanager.infra.worker.heartbeat"
+    content.vb: Public Const WorkerHeartbeat As String = "com.virtufin.workmanager.heartbeat"
 - uid: Virtufin.WorkManager.Configuration.InfraEvents.WorkerOnline
   commentId: F:Virtufin.WorkManager.Configuration.InfraEvents.WorkerOnline
   id: WorkerOnline
@@ -113,15 +113,15 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: WorkerOnline
     path: ../../../src/Virtufin.WorkManager/Configuration/SystemEvents.cs
-    startLine: 29
+    startLine: 33
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
   syntax:
-    content: public const string WorkerOnline = "com.virtufin.workmanager.infra.worker.online"
+    content: public const string WorkerOnline = "com.virtufin.workmanager.online"
     return:
       type: System.String
-    content.vb: Public Const WorkerOnline As String = "com.virtufin.workmanager.infra.worker.online"
+    content.vb: Public Const WorkerOnline As String = "com.virtufin.workmanager.online"
 references:
 - uid: Virtufin.WorkManager.Configuration
   commentId: N:Virtufin.WorkManager.Configuration

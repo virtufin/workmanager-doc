@@ -24,6 +24,7 @@ items:
   - Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})
   - Virtufin.WorkManager.Components.WorkManager.SetTag(System.Guid,System.String,System.String)
   - Virtufin.WorkManager.Components.WorkManager.SetTags(System.Guid,System.Collections.Generic.IDictionary{System.String,System.String})
+  - Virtufin.WorkManager.Components.WorkManager.SourceUrnPrefix
   - Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync(System.Guid,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync(System.Guid,System.Threading.CancellationToken)
   - Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventSourceUri
@@ -244,6 +245,35 @@ items:
     return:
       type: System.String
     content.vb: Public Const ProbeEventType As String = "com.virtufin.workmanager.topic-probe"
+- uid: Virtufin.WorkManager.Components.WorkManager.SourceUrnPrefix
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.SourceUrnPrefix
+  id: SourceUrnPrefix
+  parent: Virtufin.WorkManager.Components.WorkManager
+  langs:
+  - csharp
+  - vb
+  name: SourceUrnPrefix
+  nameWithType: WorkManager.SourceUrnPrefix
+  fullName: Virtufin.WorkManager.Components.WorkManager.SourceUrnPrefix
+  type: Field
+  source:
+    remote:
+      path: src/Virtufin.WorkManager/Components/WorkManager.cs
+      branch: master
+      repo: https://git.haenerconsulting.com/virtufin/workmanager
+    id: SourceUrnPrefix
+    path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
+    startLine: 86
+  assemblies:
+  - Virtufin.WorkManager
+  namespace: Virtufin.WorkManager.Components
+  summary: ce-source prefix for probes; the instance id is appended as the NSS tail.
+  example: []
+  syntax:
+    content: public const string SourceUrnPrefix = "urn:com.virtufin:workmanager"
+    return:
+      type: System.String
+    content.vb: Public Const SourceUrnPrefix As String = "urn:com.virtufin:workmanager"
 - uid: Virtufin.WorkManager.Components.WorkManager.ProbeInstanceExtension
   commentId: F:Virtufin.WorkManager.Components.WorkManager.ProbeInstanceExtension
   id: ProbeInstanceExtension
@@ -262,7 +292,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: ProbeInstanceExtension
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 84
+    startLine: 87
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -289,7 +319,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: .ctor
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 105
+    startLine: 108
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -347,7 +377,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: RegisterEngine
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 147
+    startLine: 150
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -392,7 +422,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: CreateWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 167
+    startLine: 170
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -451,7 +481,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: LoadCode
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 245
+    startLine: 248
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -511,7 +541,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DeleteWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 291
+    startLine: 294
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -552,7 +582,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: StartWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 315
+    startLine: 318
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -593,7 +623,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: StopWorkerAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 340
+    startLine: 343
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -634,7 +664,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: ListWorkers
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 366
+    startLine: 369
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -665,7 +695,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: GetTag
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 389
+    startLine: 392
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -703,7 +733,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: GetTags
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 399
+    startLine: 402
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -736,7 +766,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: SetTag
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 410
+    startLine: 413
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -777,7 +807,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: SetTags
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 421
+    startLine: 424
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -813,7 +843,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: GetWorkerHistory
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 455
+    startLine: 458
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -852,7 +882,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: RecoverWorkersAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 468
+    startLine: 471
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -892,7 +922,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: PublishTopicAttribute
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 1012
+    startLine: 1015
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components
@@ -942,7 +972,7 @@ items:
       repo: https://git.haenerconsulting.com/virtufin/workmanager
     id: DisposeAsync
     path: ../../../src/Virtufin.WorkManager/Components/WorkManager.cs
-    startLine: 1266
+    startLine: 1269
   assemblies:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Components

@@ -295,6 +295,12 @@ references:
   isSpec: "True"
   fullName: Virtufin.WorkManager.Components.WorkManager.SetTags
   nameWithType: WorkManager.SetTags
+- uid: Virtufin.WorkManager.Components.WorkManager.SourceUrnPrefix
+  name: SourceUrnPrefix
+  href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_SourceUrnPrefix
+  commentId: F:Virtufin.WorkManager.Components.WorkManager.SourceUrnPrefix
+  fullName: Virtufin.WorkManager.Components.WorkManager.SourceUrnPrefix
+  nameWithType: WorkManager.SourceUrnPrefix
 - uid: Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync(System.Guid,System.Threading.CancellationToken)
   name: StartWorkerAsync(Guid, CancellationToken)
   href: api/Virtufin.WorkManager.Components.WorkManager.html#Virtufin_WorkManager_Components_WorkManager_StartWorkerAsync_System_Guid_System_Threading_CancellationToken_

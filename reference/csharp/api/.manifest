@@ -26,6 +26,7 @@
   "Virtufin.WorkManager.Components.WorkManager.RegisterEngine(System.Net.Mime.ContentType,System.String,System.Func{Virtufin.WorkManager.Engines.IEngine})": "Virtufin.WorkManager.Components.WorkManager.yml",
   "Virtufin.WorkManager.Components.WorkManager.SetTag(System.Guid,System.String,System.String)": "Virtufin.WorkManager.Components.WorkManager.yml",
   "Virtufin.WorkManager.Components.WorkManager.SetTags(System.Guid,System.Collections.Generic.IDictionary{System.String,System.String})": "Virtufin.WorkManager.Components.WorkManager.yml",
+  "Virtufin.WorkManager.Components.WorkManager.SourceUrnPrefix": "Virtufin.WorkManager.Components.WorkManager.yml",
   "Virtufin.WorkManager.Components.WorkManager.StartWorkerAsync(System.Guid,System.Threading.CancellationToken)": "Virtufin.WorkManager.Components.WorkManager.yml",
   "Virtufin.WorkManager.Components.WorkManager.StopWorkerAsync(System.Guid,System.Threading.CancellationToken)": "Virtufin.WorkManager.Components.WorkManager.yml",
   "Virtufin.WorkManager.Components.WorkManager.UnknownCloudEventSourceUri": "Virtufin.WorkManager.Components.WorkManager.yml",

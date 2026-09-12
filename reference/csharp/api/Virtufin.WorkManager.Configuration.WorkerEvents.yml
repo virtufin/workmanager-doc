@@ -75,10 +75,10 @@ items:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
   syntax:
-    content: public const string TypePrefix = "com.virtufin.workmanager.lifecycle."
+    content: public const string TypePrefix = "com.virtufin.workmanager."
     return:
       type: System.String
-    content.vb: Public Const TypePrefix As String = "com.virtufin.workmanager.lifecycle."
+    content.vb: Public Const TypePrefix As String = "com.virtufin.workmanager."
 - uid: Virtufin.WorkManager.Configuration.WorkerEvents.Registered
   commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Registered
   id: Registered
@@ -102,10 +102,10 @@ items:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
   syntax:
-    content: public const string Registered = "com.virtufin.workmanager.lifecycle.registered"
+    content: public const string Registered = "com.virtufin.workmanager.registered"
     return:
       type: System.String
-    content.vb: Public Const Registered As String = "com.virtufin.workmanager.lifecycle.registered"
+    content.vb: Public Const Registered As String = "com.virtufin.workmanager.registered"
 - uid: Virtufin.WorkManager.Configuration.WorkerEvents.Starting
   commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Starting
   id: Starting
@@ -129,10 +129,10 @@ items:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
   syntax:
-    content: public const string Starting = "com.virtufin.workmanager.lifecycle.starting"
+    content: public const string Starting = "com.virtufin.workmanager.starting"
     return:
       type: System.String
-    content.vb: Public Const Starting As String = "com.virtufin.workmanager.lifecycle.starting"
+    content.vb: Public Const Starting As String = "com.virtufin.workmanager.starting"
 - uid: Virtufin.WorkManager.Configuration.WorkerEvents.Online
   commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Online
   id: Online
@@ -156,10 +156,10 @@ items:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
   syntax:
-    content: public const string Online = "com.virtufin.workmanager.lifecycle.online"
+    content: public const string Online = "com.virtufin.workmanager.online"
     return:
       type: System.String
-    content.vb: Public Const Online As String = "com.virtufin.workmanager.lifecycle.online"
+    content.vb: Public Const Online As String = "com.virtufin.workmanager.online"
 - uid: Virtufin.WorkManager.Configuration.WorkerEvents.Degraded
   commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Degraded
   id: Degraded
@@ -183,10 +183,10 @@ items:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
   syntax:
-    content: public const string Degraded = "com.virtufin.workmanager.lifecycle.degraded"
+    content: public const string Degraded = "com.virtufin.workmanager.degraded"
     return:
       type: System.String
-    content.vb: Public Const Degraded As String = "com.virtufin.workmanager.lifecycle.degraded"
+    content.vb: Public Const Degraded As String = "com.virtufin.workmanager.degraded"
 - uid: Virtufin.WorkManager.Configuration.WorkerEvents.Stopping
   commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Stopping
   id: Stopping
@@ -210,10 +210,10 @@ items:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
   syntax:
-    content: public const string Stopping = "com.virtufin.workmanager.lifecycle.stopping"
+    content: public const string Stopping = "com.virtufin.workmanager.stopping"
     return:
       type: System.String
-    content.vb: Public Const Stopping As String = "com.virtufin.workmanager.lifecycle.stopping"
+    content.vb: Public Const Stopping As String = "com.virtufin.workmanager.stopping"
 - uid: Virtufin.WorkManager.Configuration.WorkerEvents.Stopped
   commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Stopped
   id: Stopped
@@ -237,10 +237,10 @@ items:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
   syntax:
-    content: public const string Stopped = "com.virtufin.workmanager.lifecycle.stopped"
+    content: public const string Stopped = "com.virtufin.workmanager.stopped"
     return:
       type: System.String
-    content.vb: Public Const Stopped As String = "com.virtufin.workmanager.lifecycle.stopped"
+    content.vb: Public Const Stopped As String = "com.virtufin.workmanager.stopped"
 - uid: Virtufin.WorkManager.Configuration.WorkerEvents.Failed
   commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Failed
   id: Failed
@@ -264,10 +264,10 @@ items:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
   syntax:
-    content: public const string Failed = "com.virtufin.workmanager.lifecycle.failed"
+    content: public const string Failed = "com.virtufin.workmanager.failed"
     return:
       type: System.String
-    content.vb: Public Const Failed As String = "com.virtufin.workmanager.lifecycle.failed"
+    content.vb: Public Const Failed As String = "com.virtufin.workmanager.failed"
 - uid: Virtufin.WorkManager.Configuration.WorkerEvents.Unknown
   commentId: F:Virtufin.WorkManager.Configuration.WorkerEvents.Unknown
   id: Unknown
@@ -291,10 +291,10 @@ items:
   - Virtufin.WorkManager
   namespace: Virtufin.WorkManager.Configuration
   syntax:
-    content: public const string Unknown = "com.virtufin.workmanager.lifecycle.unknown"
+    content: public const string Unknown = "com.virtufin.workmanager.unknown"
     return:
       type: System.String
-    content.vb: Public Const Unknown As String = "com.virtufin.workmanager.lifecycle.unknown"
+    content.vb: Public Const Unknown As String = "com.virtufin.workmanager.unknown"
 references:
 - uid: Virtufin.WorkManager.Configuration
   commentId: N:Virtufin.WorkManager.Configuration
