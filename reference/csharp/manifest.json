@@ -112,7 +112,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Configuration.Topics",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.Topics.yml\" sourcestartlinenumber=\"1\">Pubsub topics published by the WorkManager. Topic naming follows\nthe lane + scenario scheme in\nvirtufin-openspec/openspec/specs/pubsub-topics/spec.md.\nThis file is the source of truth for any service that needs to\nconsume workmanager.* events.</p>\n"
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.Topics.yml\" sourcestartlinenumber=\"1\">Pubsub topics published by the WorkManager. Topic naming follows\nthe lane + scenario scheme in\nopenspec/openspec/specs/pubsub-topics/spec.md.\nThis file is the source of truth for any service that needs to\nconsume workmanager.* events.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -126,7 +126,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Virtufin.WorkManager.Configuration.WorkerEvents",
-      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.WorkerEvents.yml\" sourcestartlinenumber=\"1\">CloudEvents v1.0 type strings for WorkManager events. See\nvirtufin-openspec/openspec/specs/pubsub-topics/spec.md for the\nce-type taxonomy.</p>\n"
+      "Summary": "<p sourcefile=\"api/Virtufin.WorkManager.Configuration.WorkerEvents.yml\" sourcestartlinenumber=\"1\">CloudEvents v1.0 type strings for WorkManager events. See\nopenspec/openspec/specs/pubsub-topics/spec.md for the\nce-type taxonomy.</p>\n"
     },
     {
       "type": "ManagedReference",
